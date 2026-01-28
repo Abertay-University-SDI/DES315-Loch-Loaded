@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhulbkeyei13l"]
+
+[ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/tile_map.tscn" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/parallax_background.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/player.tscn" id="3_036b0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5a7ea"]
+normal = Vector2(-1, 0)
+distance = -4103.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8j60k"]
+normal = Vector2(1, 0)
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_tlwt5")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_aqk2v")]
+offset = Vector2(0, 358.69)
+transform = Transform2D(2, 0, 0, 2, 0, 358.69)
+
+[node name="world_bounds" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world_bounds"]
+
+[node name="right_edge" type="CollisionShape2D" parent="world_bounds/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_5a7ea")
+
+[node name="left_edge" type="CollisionShape2D" parent="world_bounds/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_8j60k")
+
+[node name="Player" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("3_036b0")]
+position = Vector2(129, 428)
+Tilemap = NodePath("../TileMap/Layer0")
+
+[editable path="TileMap"]

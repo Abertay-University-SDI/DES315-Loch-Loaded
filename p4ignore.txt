@@ -1,0 +1,4 @@
+.gitignore
+.godot/
+/android/
+.gitattributes
