@@ -11,10 +11,10 @@ public partial class player_controller : CharacterBody2D
 
 
     private const float WALK_SPEED = 60.0f;
-    private const float MAX_SPEED = 350.0f;
-    private const float TIME_TO_MAX_SPEED = 1.0f;
+    private const float MAX_SPEED = 120.0f;
+    private const float TIME_TO_MAX_SPEED = 0.4f;
     private const float FRICTION = 600.0f;
-    private const float JUMP_VELOCITY = -400.0f;
+    private const float JUMP_VELOCITY = -300.0f;
 
     private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
 
@@ -43,6 +43,7 @@ public partial class player_controller : CharacterBody2D
         {
             spraying = true;
             _animationPlayer.Play("Paint");
+            return;//spraying this way is currently disabled
             var sprayInstance = _spray.Instantiate() as Node2D;
             //sprayInstance.Material = (Material)sprayInstance.Material.Duplicate();
             sprayInstance.Position = Position + new Vector2(_animationPlayer.FlipH ? -67 : 67, -32);
@@ -122,7 +123,7 @@ public partial class player_controller : CharacterBody2D
         {
             _animationPlayer.Play("Jump");
         }
-        else if (_breaking && speed > 5.0f)
+        else if (_breaking && speed > 100.0f)
         {
             _animationPlayer.Play("Breaking");
             _particle.Emitting = true;
@@ -132,16 +133,12 @@ public partial class player_controller : CharacterBody2D
             _animationPlayer.Play("Idle");
             _particle.Emitting = false;
         }
-        else if (speed < WALK_SPEED)
-        {
-            _animationPlayer.Play("Run");
-            _particle.Emitting = false;
-        }
         else
         {
-            _animationPlayer.Play("Sprint");
+            _animationPlayer.Play("Walk");
             _particle.Emitting = false;
         }
+
     }
 
     private void SetupCameraLimits()

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://4wqots6lkb1s"]
+
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="1_10hqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_135x7"]
+bg_color = Color(0, 0.6745098, 0.75686276, 0.60784316)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(1, 0, 0, 0.7019608)
+shadow_size = 16
+
+[node name="Studio" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_10hqe")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 40.0
+offset_top = 39.0
+offset_right = 465.0
+offset_bottom = 377.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_135x7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Studio Menu"
+horizontal_alignment = 1
+
+[node name="level_select_button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Select
+"
+
+[node name="settings_button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="exit_button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"

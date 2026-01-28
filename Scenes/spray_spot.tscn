@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1cteboldo51h"]
+
+[ext_resource type="Script" uid="uid://ck678mustwn72" path="res://Code/spray_spot.gd" id="1_rvb18"]
+[ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Resources/Minecraft.ttf" id="2_mkaox"]
+[ext_resource type="Texture2D" uid="uid://bvokxk83ohi37" path="res://Textures/lnl-logo.png" id="3_mkaox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_poiec"]
+radius = 94.00532
+
+[sub_resource type="Shader" id="Shader_snjwu"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	COLOR = vec4(1,1,1,1);
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsfqt"]
+shader = SubResource("Shader_snjwu")
+
+[node name="Spray Spot" type="Node2D" node_paths=PackedStringArray("zone", "label")]
+script = ExtResource("1_rvb18")
+zone = NodePath("Area2D")
+label = NodePath("Label")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_poiec")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -59.0
+offset_right = 72.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_mkaox")
+text = "Press \"E\" to paint"
+
+[node name="Paint_Zone" type="Sprite2D" parent="."]
+z_index = -90
+material = SubResource("ShaderMaterial_qsfqt")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_mkaox")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_zone_body_exited"]
