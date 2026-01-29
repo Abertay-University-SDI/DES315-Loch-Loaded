@@ -19,6 +19,7 @@ public partial class player_controller : CharacterBody2D
     private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
 
     private bool spraying = false;
+    private float punching = 0.0f;
 
     private float _gravity;
     private bool _breaking = false;
@@ -48,6 +49,10 @@ public partial class player_controller : CharacterBody2D
             //sprayInstance.Material = (Material)sprayInstance.Material.Duplicate();
             sprayInstance.Position = Position + new Vector2(_animationPlayer.FlipH ? -67 : 67, -32);
             GetParent().AddChild(sprayInstance);
+        }
+        else if (@event.IsActionPressed("punch"))
+        {
+            punching = 0.4f;
         }
     }
 
@@ -122,6 +127,11 @@ public partial class player_controller : CharacterBody2D
         if (!IsOnFloor())
         {
             _animationPlayer.Play("Jump");
+        }
+        else if (punching > 0.0f)
+        {
+            punching -= (float)GetPhysicsProcessDeltaTime();
+            _animationPlayer.Play("Punch");
         }
         else if (_breaking && speed > 100.0f)
         {
