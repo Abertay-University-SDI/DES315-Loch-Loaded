@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Spray&Pray"
+config/name="Radical Ramapge"
 run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.72671556, 0.8490468, 1)
 boot_splash/image="uid://bvokxk83ohi37"
+config/icon="uid://bvokxk83ohi37"
 
 [display]
 
