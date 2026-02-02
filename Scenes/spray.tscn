@@ -69,7 +69,7 @@ vec4 rotate_hue(vec4 current_color, float hue_rot_angle) {
 					vec4(0.000, 0.000, 0.000, 0.0)) *
 					hue_rot_s;
 	return hue_rot_mat * current_color;
-	
+
 }
 
 float rand_from_seed(inout uint seed) {
@@ -264,27 +264,27 @@ void start() {
 	VELOCITY += EMITTER_VELOCITY * inherit_emitter_velocity_ratio;
 	VELOCITY.z = 0.0;
 	TRANSFORM[3].z = 0.0;
-	
+
 	vec2 particle_position = TRANSFORM[3].xy;
 	vec2 texture_size = vec2(textureSize(sprite,0).xy);
 	vec2 target_pos = round(texture_size * particle_position / (2.0 * emission_box_extents.xy));
 
 	vec2 sprite_uv = target_pos/texture_size + vec2(0.4999,0.4999);
 	vec4 sprite_color = texture(sprite,sprite_uv);
-	
+
 	particle_position.y += (sin(particle_position.x)-0.5)*50.0;
 	particle_position.x += (sin(particle_position.y)-0.5)*50.0;
 	TRANSFORM[3].xy = particle_position;
-	
-	
-	
+
+
+
 	target_pos *=sprite_scale;
 	if (sprite_color.a == 0.0) ACTIVE = false;
 	COLOR = sprite_color;
 	target_pos -= vec2(0.5, 0.5);
 	target_pos -= 0.5 * vec2(1.0 - mod(texture_size.x, 2), 1.0 - mod(texture_size.y, 2));
 	VELOCITY.xy = (target_pos-particle_position) * initial_linear_velocity/LIFETIME;
-	
+
 	CUSTOM.zw = target_pos;
 }
 
@@ -377,12 +377,12 @@ void process() {
 	TRANSFORM[2].xyz *= scale_sign_z * max(abs(params.scale.z), scale_minimum);
 
 	CUSTOM.z = params.animation_offset + lifetime_percent * params.animation_speed;
-	
-	
+
+
 	if (CUSTOM.y > LIFETIME) {
 		ACTIVE = false;
 	}
-	
+
 	float stopTime = 1.0 / initial_linear_velocity;
 	if (CUSTOM.y > stopTime)
 	{

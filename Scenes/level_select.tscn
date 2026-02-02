@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
+
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="1_1fiak"]
+[ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Scenes/level_select.gd" id="1_kb5mc"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="2_nkys2"]
+[ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Scenes/background.gd" id="3_lx4vd"]
+[ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/button_2.png" id="4_72w8f"]
+[ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/button_1.png" id="5_s6o25"]
+
+[sub_resource type="Gradient" id="Gradient_kb5mc"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnihq"]
+gradient = SubResource("Gradient_kb5mc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
+shader = ExtResource("1_1fiak")
+shader_parameter/aspect_ratio = 1.78
+shader_parameter/radius = 0.225
+shader_parameter/speed = 0.145
+shader_parameter/var_pos = Vector2(0, 0)
+shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kb5mc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_lx4vd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nkys2")
+stretch_mode = 2
+script = ExtResource("3_lx4vd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -66.0
+offset_right = 64.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Row_0" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="level_1" type="TextureButton" parent="VBoxContainer/Row_0"]
+layout_mode = 2
+texture_normal = ExtResource("4_72w8f")
+texture_hover = ExtResource("5_s6o25")
+
+[node name="Number" type="Label" parent="VBoxContainer/Row_0/level_1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_top = -97.0
+offset_right = 20.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row_1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="level_2" type="TextureButton" parent="VBoxContainer/Row_1"]
+layout_mode = 2
+texture_normal = ExtResource("4_72w8f")
+texture_hover = ExtResource("5_s6o25")
+
+[node name="Number" type="Label" parent="VBoxContainer/Row_1/level_2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_top = -97.0
+offset_right = 20.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level_3" type="TextureButton" parent="VBoxContainer/Row_1"]
+layout_mode = 2
+texture_normal = ExtResource("4_72w8f")
+texture_hover = ExtResource("5_s6o25")
+
+[node name="Number" type="Label" parent="VBoxContainer/Row_1/level_3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_top = -97.0
+offset_right = 20.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 106
+text = "LEVEL SELECT"
+
+[connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]
