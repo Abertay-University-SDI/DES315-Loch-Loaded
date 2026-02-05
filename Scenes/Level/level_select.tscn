@@ -16,11 +16,11 @@ gradient = SubResource("Gradient_kb5mc")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
 shader = ExtResource("2_6wpjx")
 shader_parameter/aspect_ratio = 1.78
-shader_parameter/radius = 0.225
-shader_parameter/speed = 0.05
+shader_parameter/radius = 0.34
+shader_parameter/speed = 0.1
 shader_parameter/var_pos = Vector2(0, 0)
 shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
-shader_parameter/SPHERE_COUNT = 216
+shader_parameter/SPHERE_COUNT = 157
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3

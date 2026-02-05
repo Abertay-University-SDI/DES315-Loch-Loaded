@@ -8,7 +8,7 @@ uniform float speed = 0.25;
 uniform vec2 var_pos = vec2(0.0,0.0);
 uniform sampler2D gradient; 
 
-const int SPHERE_COUNT = 32;
+uniform int SPHERE_COUNT = 32;
 
 float sd_circle(vec2 p, vec2 c, float r) {
 	return length(p - c) - r;
