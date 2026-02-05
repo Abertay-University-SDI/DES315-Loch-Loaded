@@ -17,7 +17,7 @@ func _on_zone_body_exited(body: Node) -> void:
 
 
 func _ready() -> void:
-	spray_scene = ResourceLoader.load("res://Scenes/spray.tscn")
+	spray_scene = ResourceLoader.load("res://Scenes/Interactables/spray.tscn")
 
 func _process(delta: float) -> void:
 	if player_in_zone and Input.is_action_just_pressed("spray"):

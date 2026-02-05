@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
 
-[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="1_1fiak"]
-[ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Scenes/level_select.gd" id="1_kb5mc"]
-[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="2_nkys2"]
-[ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Scenes/background.gd" id="3_lx4vd"]
-[ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/button_2.png" id="4_72w8f"]
-[ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/button_1.png" id="5_s6o25"]
+[ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="2_6wpjx"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="3_eiwkk"]
+[ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/background.gd" id="4_lqdj3"]
+[ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/button_2.png" id="5_ltq1i"]
+[ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/button_1.png" id="6_1v14q"]
 
 [sub_resource type="Gradient" id="Gradient_kb5mc"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
@@ -14,12 +14,13 @@ colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
 gradient = SubResource("Gradient_kb5mc")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
-shader = ExtResource("1_1fiak")
+shader = ExtResource("2_6wpjx")
 shader_parameter/aspect_ratio = 1.78
 shader_parameter/radius = 0.225
-shader_parameter/speed = 0.145
+shader_parameter/speed = 0.05
 shader_parameter/var_pos = Vector2(0, 0)
 shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
+shader_parameter/SPHERE_COUNT = 216
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -28,9 +29,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kb5mc")
+script = ExtResource("1_vxe13")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 6
 material = SubResource("ShaderMaterial_lx4vd")
 layout_mode = 1
 anchors_preset = 15
@@ -38,9 +40,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nkys2")
+texture = ExtResource("3_eiwkk")
 stretch_mode = 2
-script = ExtResource("3_lx4vd")
+script = ExtResource("4_lqdj3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -64,8 +66,8 @@ alignment = 1
 
 [node name="level_1" type="TextureButton" parent="VBoxContainer/Row_0"]
 layout_mode = 2
-texture_normal = ExtResource("4_72w8f")
-texture_hover = ExtResource("5_s6o25")
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_0/level_1"]
 layout_mode = 1
@@ -91,8 +93,8 @@ theme_override_constants/separation = 16
 
 [node name="level_2" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
-texture_normal = ExtResource("4_72w8f")
-texture_hover = ExtResource("5_s6o25")
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_1/level_2"]
 layout_mode = 1
@@ -114,8 +116,8 @@ vertical_alignment = 1
 
 [node name="level_3" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
-texture_normal = ExtResource("4_72w8f")
-texture_hover = ExtResource("5_s6o25")
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_1/level_3"]
 layout_mode = 1

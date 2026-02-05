@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://qcvlstrn8xi1"]
+
+[ext_resource type="Texture2D" uid="uid://dt3x0vhrau1qq" path="res://Textures/Robot.png" id="1_lp65t"]
+[ext_resource type="Script" uid="uid://cqym8j0dnfapb" path="res://Code/Robot.cs" id="2_rcx67"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rcx67"]
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcx67"]
+size = Vector2(22, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj8xj"]
+
+[node name="Robot" type="Node2D"]
+script = ExtResource("2_rcx67")
+
+[node name="alive_body" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alive_body"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_rcx67")
+
+[node name="Area2D" type="Area2D" parent="alive_body"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alive_body/Area2D"]
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_rcx67")
+debug_color = Color(0.95713764, 0, 0.17062542, 0.41960785)
+
+[node name="Sprite2D2" type="Sprite2D" parent="alive_body"]
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lp65t")
+hframes = 2
+
+[node name="dead_body" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dead_body"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_kj8xj")
+
+[node name="Sprite2D" type="Sprite2D" parent="dead_body"]
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lp65t")
+hframes = 2

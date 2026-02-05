@@ -32,7 +32,7 @@ public partial class player_controller : CharacterBody2D
 
         _gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
-        _spray = ResourceLoader.Load<PackedScene>("res://Scenes/spray.tscn");
+        _spray = ResourceLoader.Load<PackedScene>("res://Scenes/Interactables/spray.tscn");
 
         SetupCameraLimits();
     }
