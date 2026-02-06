@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class player_controller : CharacterBody2D
@@ -8,6 +9,7 @@ public partial class player_controller : CharacterBody2D
     private AnimatedSprite2D _animationPlayer;
     private GpuParticles2D _particle;
     private PackedScene _spray;
+    private Area2D _attack_area;
 
 
     private const float WALK_SPEED = 60.0f;
@@ -33,6 +35,9 @@ public partial class player_controller : CharacterBody2D
         _gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
         _spray = ResourceLoader.Load<PackedScene>("res://Scenes/Interactables/spray.tscn");
+        _attack_area = GetNode<Area2D>("attack_area");
+        _attack_area.Monitoring = false;
+        _attack_area.BodyEntered += OnBodyEntered;
 
         SetupCameraLimits();
     }
@@ -53,6 +58,7 @@ public partial class player_controller : CharacterBody2D
         else if (@event.IsActionPressed("punch"))
         {
             punching = 0.4f;
+            _attack_area.Monitoring = true;
         }
     }
 
@@ -95,6 +101,7 @@ public partial class player_controller : CharacterBody2D
             );
 
             _animationPlayer.FlipH = direction < 0;
+
         }
         else
         {
@@ -103,6 +110,11 @@ public partial class player_controller : CharacterBody2D
                 Velocity.Y
             );
         }
+
+        Vector2 attackOffset = _attack_area.Position;
+        attackOffset.X = _animationPlayer.FlipH ? -Mathf.Abs(attackOffset.X) : Mathf.Abs(attackOffset.X);
+        _attack_area.Position = attackOffset;
+
 
         UpdateAnimation();
         MoveAndSlide();
@@ -132,6 +144,10 @@ public partial class player_controller : CharacterBody2D
         {
             punching -= (float)GetPhysicsProcessDeltaTime();
             _animationPlayer.Play("Punch");
+            if(punching <= 0.0f)
+            {
+                _attack_area.Monitoring = false;
+            }
         }
         else if (_breaking && speed > 100.0f)
         {
@@ -149,6 +165,20 @@ public partial class player_controller : CharacterBody2D
             _particle.Emitting = false;
         }
 
+    }
+
+    private void OnBodyEntered(Node body)
+    {
+        Robot enemy = body.GetParent() as Robot;
+
+        if (enemy == null)
+            return;
+
+        if (!enemy.IsInGroup("Enemy"))
+            return;
+
+        Vector2 hitDir = (enemy.GlobalPosition-GlobalPosition).Normalized();
+        enemy.TakeHit(hitDir,punching, 100.0f);
     }
 
     private void SetupCameraLimits()

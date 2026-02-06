@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=68 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dbkltvnun1b2m" path="res://Code/player_controller.cs" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
@@ -476,6 +476,9 @@ initial_velocity_max = 60.84
 gravity = Vector3(0, 0, 0)
 turbulence_noise_strength = 14.38
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4i3e"]
+radius = 14.779228
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_6t5aa")
@@ -506,3 +509,11 @@ explosiveness = 0.35
 trail_enabled = true
 trail_lifetime = 0.36
 process_material = SubResource("ParticleProcessMaterial_ivps1")
+
+[node name="attack_area" type="Area2D" parent="."]
+position = Vector2(17.585, -24.57)
+scale = Vector2(0.8499999, 0.8499999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+shape = SubResource("CircleShape2D_h4i3e")
+debug_color = Color(0.99057287, 0, 0.28239766, 0.41960785)

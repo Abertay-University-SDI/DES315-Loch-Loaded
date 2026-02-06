@@ -37,6 +37,10 @@ folder_colors={
 "res://Textures/": "pink"
 }
 
+[global_group]
+
+Enemy=""
+
 [input]
 
 jump={
