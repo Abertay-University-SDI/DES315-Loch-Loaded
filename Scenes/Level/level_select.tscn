@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=13 format=3 uid="uid://dslpk2swr657b"]
 
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
 [ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="2_6wpjx"]
@@ -16,11 +16,96 @@ gradient = SubResource("Gradient_kb5mc")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
 shader = ExtResource("2_6wpjx")
 shader_parameter/aspect_ratio = 1.78
-shader_parameter/radius = 0.34
+shader_parameter/radius = 0.025
 shader_parameter/speed = 0.1
 shader_parameter/var_pos = Vector2(0, 0)
 shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
-shader_parameter/SPHERE_COUNT = 157
+shader_parameter/SPHERE_COUNT = 0
+
+[sub_resource type="Animation" id="Animation_6wpjx"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 256]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/radius")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.025, 0.34]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.56),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vxe13"]
+resource_name = "transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 256]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03, 1.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.34]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eiwkk"]
+_data = {
+&"RESET": SubResource("Animation_6wpjx"),
+&"transition": SubResource("Animation_vxe13")
+}
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -45,6 +130,7 @@ stretch_mode = 2
 script = ExtResource("4_lqdj3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,6 +224,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -149,5 +236,11 @@ grow_horizontal = 2
 theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 106
 text = "LEVEL SELECT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eiwkk")
+}
+autoplay = "RESET"
 
 [connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]

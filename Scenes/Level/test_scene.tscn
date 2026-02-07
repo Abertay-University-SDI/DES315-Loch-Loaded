@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bhulbkeyei13l"]
+[gd_scene load_steps=9 format=4 uid="uid://bhulbkeyei13l"]
 
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/tile_map.tscn" id="1_wqyeq"]
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/parallax_background.tscn" id="2_osgbe"]
@@ -12,6 +12,8 @@ distance = -4103.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8j60k"]
 normal = Vector2(1, 0)
+
+[sub_resource type="Environment" id="Environment_osgbe"]
 
 [node name="World" type="Node2D"]
 
@@ -45,5 +47,8 @@ position = Vector2(1072, 344)
 
 [node name="Robot" parent="." instance=ExtResource("5_6vt6i")]
 position = Vector2(236, 456)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_osgbe")
 
 [editable path="TileMap"]

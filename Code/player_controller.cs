@@ -8,8 +8,10 @@ public partial class player_controller : CharacterBody2D
     private Camera2D _camera;
     private AnimatedSprite2D _animationPlayer;
     private GpuParticles2D _particle;
+    private GpuParticles2D _dash_particle;
     private PackedScene _spray;
     private Area2D _attack_area;
+    private Area2D _dash_attack_area;
 
 
     private const float WALK_SPEED = 60.0f;
@@ -19,6 +21,8 @@ public partial class player_controller : CharacterBody2D
     private const float JUMP_VELOCITY = -300.0f;
 
     private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
+    private const float DASH_COOLDOWN = 0.4f;
+    private float dashCooldownTimer = 0.0f;
 
     private bool spraying = false;
     private float punching = 0.0f;
@@ -31,6 +35,12 @@ public partial class player_controller : CharacterBody2D
         _camera = GetNode<Camera2D>("Camera2D");
         _animationPlayer = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _particle = GetNode<GpuParticles2D>("GPUParticles2D");
+
+        //dash particle setup
+        _dash_particle = GetNode<GpuParticles2D>("dash_sfx");
+        _dash_attack_area = GetNode<Area2D>("dash_attack_area");
+        _dash_attack_area.BodyEntered += OnDashBodyHit;
+        _dash_attack_area.Monitoring = false;
 
         _gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
@@ -59,6 +69,14 @@ public partial class player_controller : CharacterBody2D
         {
             punching = 0.4f;
             _attack_area.Monitoring = true;
+        }
+        else if (@event.IsActionPressed("dash") && dashCooldownTimer<0.0f)
+        {
+            _dash_particle.Emitting = true;
+            _dash_attack_area.Monitoring = true;
+            Vector2 dashDir = new Vector2(Input.GetAxis("left", "right"), 0).Normalized();
+            Velocity += dashDir * 200.0f;
+            dashCooldownTimer = DASH_COOLDOWN;
         }
     }
 
@@ -136,7 +154,19 @@ public partial class player_controller : CharacterBody2D
 
         float speed = Mathf.Abs(Velocity.X);
 
-        if (!IsOnFloor())
+        if (dashCooldownTimer >= 0.0f)
+        {
+            dashCooldownTimer -= (float)GetPhysicsProcessDeltaTime();
+            _animationPlayer.Play("Dash");
+            var mat = _dash_particle.ProcessMaterial as ShaderMaterial;
+            mat.SetShaderParameter("fliph", _animationPlayer.FlipH);
+            if (dashCooldownTimer <= 0.0f)
+            {
+                _dash_attack_area.Monitoring = false;
+                _dash_particle.Emitting = false;
+            }
+        }
+        else if (!IsOnFloor())
         {
             _animationPlayer.Play("Jump");
         }
@@ -179,6 +209,18 @@ public partial class player_controller : CharacterBody2D
 
         Vector2 hitDir = (enemy.GlobalPosition-GlobalPosition).Normalized();
         enemy.TakeHit(hitDir,punching, 100.0f);
+    }
+
+    private void OnDashBodyHit(Node body)
+    {
+        Robot enemy = body.GetParent() as Robot;
+
+        if (enemy == null)
+            return;
+
+        if (!enemy.IsInGroup("Enemy"))
+            return;
+        enemy.TakeDash(dashCooldownTimer, 400.0f);
     }
 
     private void SetupCameraLimits()

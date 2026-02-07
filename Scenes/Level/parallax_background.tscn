@@ -38,6 +38,7 @@ texture_filter = 1
 texture = ExtResource("4_m5fgl")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+z_index = 1
 motion_scale = Vector2(0.6, 0)
 motion_mirroring = Vector2(1280, 0)
 

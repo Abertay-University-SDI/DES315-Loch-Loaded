@@ -48,6 +48,21 @@ public partial class Robot : Node2D
             Die(hitDir, force);
     }
 
+    public void TakeDash(float hit_duration, float force)
+    {
+        if (immunity > 0.0f)
+            return;
+
+        immunity = hit_duration;
+        _alive.Velocity = new Vector2(0.0f, -force);
+
+        _health--;
+        Debug.Print($"TrashCanEnemy took a dash! Remaining health: {_health}");
+        _animationPlayer.Play("take_hit");
+        if (_health <= 0)
+            Die(Vector2.Up, force);
+    }
+
     private bool HasGroundAhead()
     {
         Vector2 origin = _alive.GlobalPosition;
@@ -80,6 +95,7 @@ public partial class Robot : Node2D
             _alive.Velocity += Vector2.Down * 1200f * dt;
 
         // walk
+        if (immunity<0)
         _alive.Velocity = new Vector2(_direction * WalkSpeed, _alive.Velocity.Y);
 
         // ledge check
