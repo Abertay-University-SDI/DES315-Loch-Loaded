@@ -46,7 +46,7 @@ Tilemap = NodePath("../TileMap/Layer0")
 position = Vector2(1072, 344)
 
 [node name="Robot" parent="." instance=ExtResource("5_6vt6i")]
-position = Vector2(236, 456)
+position = Vector2(239, 458)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_osgbe")
