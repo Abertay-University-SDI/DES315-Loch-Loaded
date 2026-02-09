@@ -163,6 +163,8 @@ public partial class player_controller : CharacterBody2D
             if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
             {
                 dashing = false;
+                var mat = _dash_particle.ProcessMaterial as ShaderMaterial;
+                mat.SetShaderParameter("fliph", _animationPlayer.FlipH);
                 _dash_attack_area.Monitoring = false;
                 _dash_particle.Emitting = false;
             }

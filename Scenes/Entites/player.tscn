@@ -896,7 +896,7 @@ shader_parameter/color_value = Color(1, 1, 1, 1)
 shader_parameter/gravity = Vector3(0, -1e-06, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4i3e"]
-radius = 17.499998
+radius = 23.750002
 height = 72.49999
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
