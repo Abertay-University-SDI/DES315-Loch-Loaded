@@ -40,6 +40,9 @@ vertical_alignment = 1
 
 [node name="master_slider" type="HSlider" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="music_title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -49,6 +52,9 @@ vertical_alignment = 1
 
 [node name="music_slider" type="HSlider" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="soundEffect_title" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -58,6 +64,9 @@ vertical_alignment = 1
 
 [node name="soundEffect_slider" type="HSlider" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [connection signal="value_changed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]

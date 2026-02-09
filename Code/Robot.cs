@@ -19,6 +19,7 @@ public partial class Robot : Node2D
     private int _direction = -1; // -1 = left, 1 = right
 
     private float immunity = 0.0f;
+    bool _is_dead = false;
 
     public override void _Ready()
     {
@@ -48,19 +49,21 @@ public partial class Robot : Node2D
             Die(hitDir, force);
     }
 
+
     public void TakeDash(float hit_duration, float force)
     {
         if (immunity > 0.0f)
             return;
 
         immunity = hit_duration;
+        _alive.CollisionLayer = 0;
         _alive.Velocity = new Vector2(0.0f, -force);
 
         _health--;
         Debug.Print($"TrashCanEnemy took a dash! Remaining health: {_health}");
         _animationPlayer.Play("take_hit");
         if (_health <= 0)
-            Die(Vector2.Up, force);
+            Die(Vector2.Down, force);
     }
 
     private bool HasGroundAhead()
@@ -95,7 +98,7 @@ public partial class Robot : Node2D
             _alive.Velocity += Vector2.Down * 1200f * dt;
 
         // walk
-        if (immunity<0)
+        if (immunity<=  0)
         _alive.Velocity = new Vector2(_direction * WalkSpeed, _alive.Velocity.Y);
 
         // ledge check
@@ -109,12 +112,16 @@ public partial class Robot : Node2D
     public override void _Process(double delta)
     {
         immunity -= (float)delta;
+        if (immunity < 0 && !_is_dead)
+        {
+            _alive.CollisionLayer = 1;
+        }
     }
 
     private void ApplyDeathImpulse(Vector2 hitDir, float force)
     {
         _dead.ApplyImpulse(hitDir * force);
-        _dead.ApplyTorqueImpulse(force * 0.4f);
+        _dead.ApplyTorqueImpulse(force * 10.4f);
     }
 
     private void Die(Vector2 hitDir, float force)
@@ -130,6 +137,7 @@ public partial class Robot : Node2D
         _alive.CollisionMask = 0;
 
         // enable physics body
+        _is_dead = true;
         _dead.Visible = true;
         _dead.CollisionLayer = 0;
         _dead.CollisionMask = 1;

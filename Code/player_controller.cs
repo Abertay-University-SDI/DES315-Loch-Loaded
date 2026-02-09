@@ -21,7 +21,9 @@ public partial class player_controller : CharacterBody2D
 	private const float JUMP_VELOCITY = -300.0f;
 
 	private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
-	private const float DASH_COOLDOWN = 0.4f;
+	private const float DASH_COOLDOWN = 1.0f;
+	private const float dashDuration = 0.2f;
+	private bool dashing = false;
 	private float dashCooldownTimer = 0.0f;
 
 	private bool spraying = false;
@@ -74,9 +76,10 @@ public partial class player_controller : CharacterBody2D
 		{
 			_dash_particle.Emitting = true;
 			_dash_attack_area.Monitoring = true;
-			Vector2 dashDir = new Vector2(Input.GetAxis("left", "right"), 0).Normalized();
-			Velocity += dashDir * 200.0f;
+			Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
+			Velocity = dashDir * 300.0f;
 			dashCooldownTimer = DASH_COOLDOWN;
+			dashing = true;
 		}
 	}
 
@@ -84,8 +87,14 @@ public partial class player_controller : CharacterBody2D
 	{
 		float dt = (float)delta;
 
+
+		if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
+		{
+			dashing = false;
+		}
+
 		// Gravity
-		if (!IsOnFloor())
+		if (!IsOnFloor()&&!dashing)
 		{
 			Velocity += Vector2.Down * _gravity * dt;
 		}
@@ -133,9 +142,33 @@ public partial class player_controller : CharacterBody2D
 		attackOffset.X = _animationPlayer.FlipH ? -Mathf.Abs(attackOffset.X) : Mathf.Abs(attackOffset.X);
 		_attack_area.Position = attackOffset;
 
-
+		updateCooldowns(dt);
 		UpdateAnimation();
 		MoveAndSlide();
+	}
+
+	private void updateCooldowns(float dt)
+	{
+		if (punching > 0.0f)
+		{
+			punching -= dt;
+			if (punching <= 0.0f)
+			{
+				_attack_area.Monitoring = false;
+			}
+		}
+		if (dashCooldownTimer >= 0.0f)
+		{
+			dashCooldownTimer -= dt;
+			if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
+			{
+				dashing = false;
+				var mat = _dash_particle.ProcessMaterial as ShaderMaterial;
+				mat.SetShaderParameter("fliph", _animationPlayer.FlipH);
+				_dash_attack_area.Monitoring = false;
+				_dash_particle.Emitting = false;
+			}
+		}
 	}
 
 	private void UpdateAnimation()
@@ -154,17 +187,9 @@ public partial class player_controller : CharacterBody2D
 
 		float speed = Mathf.Abs(Velocity.X);
 
-		if (dashCooldownTimer >= 0.0f)
+		if (dashing)
 		{
-			dashCooldownTimer -= (float)GetPhysicsProcessDeltaTime();
 			_animationPlayer.Play("Dash");
-			var mat = _dash_particle.ProcessMaterial as ShaderMaterial;
-			mat.SetShaderParameter("fliph", _animationPlayer.FlipH);
-			if (dashCooldownTimer <= 0.0f)
-			{
-				_dash_attack_area.Monitoring = false;
-				_dash_particle.Emitting = false;
-			}
 		}
 		else if (!IsOnFloor())
 		{
@@ -172,12 +197,7 @@ public partial class player_controller : CharacterBody2D
 		}
 		else if (punching > 0.0f)
 		{
-			punching -= (float)GetPhysicsProcessDeltaTime();
 			_animationPlayer.Play("Punch");
-			if(punching <= 0.0f)
-			{
-				_attack_area.Monitoring = false;
-			}
 		}
 		else if (_breaking && speed > 100.0f)
 		{
