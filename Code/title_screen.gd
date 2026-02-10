@@ -1,6 +1,8 @@
 extends Control
 
 const studio := preload("res://Scenes/Level/studio.tscn")
+@onready var settings = $SettingsScene;
+@onready var title_screen_ui = $title_screen_ui;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +20,8 @@ func _on_studio_button_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	title_screen_ui.hide();
+	settings.show();
 
 
 func _on_credits_button_pressed() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyts38hutibwa"]
+[gd_scene load_steps=4 format=3 uid="uid://dyts38hutibwa"]
 
 [ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="1_lomov"]
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
 
 [node name="PauseScene" type="Control"]
 layout_mode = 3
@@ -41,6 +42,7 @@ size_flags_horizontal = 4
 [node name="BackGameButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("3_f8ftb")
 text = "back to game"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]

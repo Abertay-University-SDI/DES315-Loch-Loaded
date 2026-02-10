@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ncs60230vi61"]
+
+[ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="1_xguql"]
+
+[resource]
+default_font = ExtResource("1_xguql")

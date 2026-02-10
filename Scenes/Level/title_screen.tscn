@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbw2scq626wau"]
+[gd_scene load_steps=11 format=3 uid="uid://bbw2scq626wau"]
 
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/Level/animated_background.tscn" id="1_mtll8"]
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="1_tr630"]
-[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Scenes/Level/title_screen.gd" id="1_yjy2p"]
+[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/title_screen.gd" id="1_yjy2p"]
 [ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="2_2tc6i"]
 [ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://dynamic_text_shadow.gd" id="2_mtll8"]
+[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="4_ubah6"]
 
 [sub_resource type="Gradient" id="Gradient_2tc6i"]
 offsets = PackedFloat32Array(0.00952381, 0.041269843, 0.4888889, 0.51746035, 1)
@@ -48,7 +49,19 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="SettingsScene" parent="." instance=ExtResource("4_ubah6")]
+visible = false
+layout_mode = 0
+
+[node name="title_screen_ui" type="Control" parent="." groups=["current_ui"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="title_screen_ui"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,8 +73,9 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="Label" type="Label" parent="title_screen_ui/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(1, 0, 1, 1)
 theme_override_constants/shadow_offset_x = 6
@@ -72,23 +86,23 @@ text = "Radical Rampage"
 horizontal_alignment = 1
 script = ExtResource("2_mtll8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="title_screen_ui"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -287.0
-offset_top = -192.0
-offset_right = 288.0
-offset_bottom = 78.0
+offset_left = -287.5
+offset_top = -135.0
+offset_right = 287.5
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="studio_button" type="Button" parent="VBoxContainer"]
+[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_tr630")
@@ -96,7 +110,7 @@ theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_2tc6i")
 text = "Studio"
 
-[node name="settings_button" type="Button" parent="VBoxContainer"]
+[node name="settings_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_tr630")
@@ -104,7 +118,7 @@ theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_2tc6i")
 text = "Settings"
 
-[node name="credits_button" type="Button" parent="VBoxContainer"]
+[node name="credits_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_tr630")
@@ -112,7 +126,7 @@ theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_2tc6i")
 text = "Credits"
 
-[node name="exit_button" type="Button" parent="VBoxContainer"]
+[node name="exit_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_tr630")
@@ -121,7 +135,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2tc6i")
 text = "Exit
 "
 
-[connection signal="pressed" from="VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

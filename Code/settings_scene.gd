@@ -21,4 +21,5 @@ func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
 	screenShake = toggled_on;
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_packed(LEVEL_SELECT)
+	hide();
+	get_tree().get_nodes_in_group("current_ui").back().show()
