@@ -6,6 +6,7 @@ uniform float aspect_ratio = 1.78;
 uniform float radius = 0.08;
 uniform float speed = 0.25;
 uniform vec2 var_pos = vec2(0.0,0.0);
+uniform vec4 color: source_color = vec4(1.0,1.0,1.0,1.0);
 uniform sampler2D gradient; 
 
 uniform int SPHERE_COUNT = 32;
@@ -33,7 +34,7 @@ void fragment() {
 	float rim_dist = 0.04;
 	float inside_dist = 0.0;
 	
-	vec3 col = vec3(0.0,0.1,0.8);
+	vec3 col = vec3(0.0);
 
 	for (int i = 0; i < SPHERE_COUNT; i++) {
 		float fi = float(i);
@@ -58,9 +59,9 @@ void fragment() {
 		dist = smin(dist, d, 0.12);
 		if (dist < inside_dist)
 		{
-			col.r = sin(fi*34.1);
-			col.g = sin(fi*3.1);
-			col.b +=0.2;
+			col.r = sin(fi*34.1)*color.r;
+			col.g = sin(fi*1.535)*color.g;
+			col.b = sin(fi*3.1)*color.b;
 			break;
 		}
 	}

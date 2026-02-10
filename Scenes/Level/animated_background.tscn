@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq46xt1yq4xty"]
+
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="1_kscw6"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="2_u6hfa"]
+[ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/background.gd" id="3_pu2ig"]
+
+[sub_resource type="Gradient" id="Gradient_kscw6"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnihq"]
+gradient = SubResource("Gradient_kscw6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
+shader = ExtResource("1_kscw6")
+shader_parameter/aspect_ratio = 1.78
+shader_parameter/radius = 0.34
+shader_parameter/speed = 0.1
+shader_parameter/var_pos = Vector2(0, 0)
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
+shader_parameter/SPHERE_COUNT = 256
+
+[node name="animated_background" type="TextureRect"]
+texture_filter = 6
+material = SubResource("ShaderMaterial_lx4vd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u6hfa")
+stretch_mode = 2
+script = ExtResource("3_pu2ig")

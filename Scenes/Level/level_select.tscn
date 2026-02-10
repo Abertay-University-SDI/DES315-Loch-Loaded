@@ -1,33 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=8 format=3 uid="uid://dslpk2swr657b"]
 
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
-[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="2_6wpjx"]
-[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="3_eiwkk"]
-[ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/background.gd" id="4_lqdj3"]
+[ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/Level/animated_background.tscn" id="2_ubgp3"]
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/button_2.png" id="5_ltq1i"]
 [ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/button_1.png" id="6_1v14q"]
-
-[sub_resource type="Gradient" id="Gradient_kb5mc"]
-colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnihq"]
-gradient = SubResource("Gradient_kb5mc")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lx4vd"]
-shader = ExtResource("2_6wpjx")
-shader_parameter/aspect_ratio = 1.78
-shader_parameter/radius = 0.025
-shader_parameter/speed = 0.1
-shader_parameter/var_pos = Vector2(0, 0)
-shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
-shader_parameter/SPHERE_COUNT = 0
 
 [sub_resource type="Animation" id="Animation_6wpjx"]
 length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:material:shader_parameter/SPHERE_COUNT")
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -39,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:material:shader_parameter/radius")
+tracks/1/path = NodePath("animated_background:material:shader_parameter/radius")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -79,7 +62,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:material:shader_parameter/SPHERE_COUNT")
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -91,7 +74,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:material:shader_parameter/radius")
+tracks/1/path = NodePath("animated_background:material:shader_parameter/radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -116,18 +99,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vxe13")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 6
-material = SubResource("ShaderMaterial_lx4vd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_eiwkk")
-stretch_mode = 2
-script = ExtResource("4_lqdj3")
+[node name="animated_background" parent="." instance=ExtResource("2_ubgp3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -244,3 +222,4 @@ libraries = {
 autoplay = "RESET"
 
 [connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Row_1/level_2" to="." method="_on_level_2_pressed"]
