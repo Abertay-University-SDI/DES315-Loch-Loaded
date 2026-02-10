@@ -1,6 +1,25 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ncs60230vi61"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ncs60230vi61"]
 
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="1_xguql"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xguql"]
+bg_color = Color(0, 0, 0, 0.652)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(1, 0.40863404, 1, 0.6)
+shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkys1"]
+bg_color = Color(0, 0, 0, 0.514)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [resource]
 default_font = ExtResource("1_xguql")
+default_font_size = 31
+Button/styles/hover = SubResource("StyleBoxFlat_xguql")
+Button/styles/normal = SubResource("StyleBoxFlat_pkys1")
