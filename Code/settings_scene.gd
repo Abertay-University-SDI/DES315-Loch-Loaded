@@ -6,7 +6,6 @@ var sfxVolume = AudioServer.get_bus_index("SFX")
 
 var screenShake
 
-const LEVEL_SELECT := preload("res://Scenes/Level/studio.tscn")
 
 func _on_master_slider_value_changed(masterValue: float) -> void:
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(masterValue))

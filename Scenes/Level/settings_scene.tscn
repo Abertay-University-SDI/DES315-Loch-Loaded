@@ -87,7 +87,7 @@ size_flags_horizontal = 4
 [node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-text = "back to studio"
+text = "back"
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
