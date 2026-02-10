@@ -100,7 +100,7 @@ public partial class player_controller : CharacterBody2D
 		}
 
 		// Jump
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump") && IsOnFloor()&& !dashing)
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
 		}
