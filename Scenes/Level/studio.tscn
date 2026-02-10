@@ -12,7 +12,9 @@ corner_radius_bottom_left = 25
 shadow_color = Color(1, 0, 0, 0.7019608)
 shadow_size = 16
 
-[node name="Studio" type="Node2D"]
+[node name="Studio" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_0t5tv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -51,8 +53,12 @@ text = "Level Select
 
 [node name="settings_button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+text = "Settings"
 
 [node name="exit_button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/level_select_button" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

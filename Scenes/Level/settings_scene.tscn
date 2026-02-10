@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="1_ayjlc"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
 
-[node name="SettingsScene" type="Node2D"]
+[node name="SettingsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_j0xhm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -68,6 +70,29 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Screen Shake"
+
+[node name="screenShake_button" type="CheckButton" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BackButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "back to studio"
+
 [connection signal="value_changed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
+[connection signal="toggled" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
