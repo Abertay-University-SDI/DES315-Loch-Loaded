@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=3 format=3 uid="uid://ci1im0k5mjoxu"]
 
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -26,11 +28,10 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "
-Settings
-"
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 61
+text = "Settings"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="master_title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -72,13 +73,10 @@ value = 1.0
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Screen Shake"
-
 [node name="screenShake_button" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
+text = "Screen Shake"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
