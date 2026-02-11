@@ -50,14 +50,16 @@ collision_mask = 3
 Tilemap = NodePath("../TileMap/Layer0")
 
 [node name="Spray Spot" parent="." instance=ExtResource("4_cunvl")]
-position = Vector2(1072, 344)
-
-[node name="Robot" parent="." instance=ExtResource("5_6vt6i")]
-position = Vector2(239, 458)
+position = Vector2(849, 199)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_osgbe")
 
 [node name="TileMap" parent="." instance=ExtResource("1_wqyeq")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Robot" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(239, 458)
 
 [editable path="TileMap"]
