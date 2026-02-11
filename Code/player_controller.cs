@@ -24,7 +24,9 @@ public partial class player_controller : CharacterBody2D
 	private const float FRICTION = 600.0f;
 	private const float JUMP_VELOCITY = -300.0f;
 
-	private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
+	private int jumps_left = 1;
+
+    private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
 	private const float DASH_COOLDOWN = 1.0f;
 	private const float dashDuration = 0.2f;
 	private bool dashing = false;
@@ -99,17 +101,23 @@ public partial class player_controller : CharacterBody2D
 			dashing = false;
 		}
 
-		// Gravity
-		if (!IsOnFloor()&&!dashing)
+		if(IsOnFloor())
+		{
+			jumps_left = 1;
+        }
+
+        // Gravity
+        if (!IsOnFloor()&&!dashing)
 		{
 			Velocity += Vector2.Down * _gravity * dt;
 		}
 
 		// Jump
-		if (Input.IsActionJustPressed("jump") && IsOnFloor()&& !dashing)
+		if (Input.IsActionJustPressed("jump") && jumps_left >0&& !dashing)
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
-		}
+			jumps_left--;
+        }
 
 		// Horizontal movement (momentum-based)
 		float direction = Input.GetAxis("left", "right");
