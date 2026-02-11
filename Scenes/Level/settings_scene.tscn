@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=3 format=3 uid="uid://ci1im0k5mjoxu"]
 
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
