@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
+[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="3_ktoib"]
 
 [node name="PauseScene" type="Control"]
 layout_mode = 3

@@ -18,7 +18,6 @@ public partial class player_controller : CharacterBody2D
 	[Export] public AudioStreamPlayer2D dashSfx;
 	[Export] public AudioStreamPlayer2D punchSfx;
 
-
 	[Export] public Sprite2D yoyo;
 	[Export] public Line2D yoyo_string;
 
@@ -86,14 +85,14 @@ public partial class player_controller : CharacterBody2D
 		{
 			punching = 0.4f;
 			punchSfx.Play();
-            _attack_area.Monitoring = true;
+			_attack_area.Monitoring = true;
 		}
 		else if (@event.IsActionPressed("dash") && dashCooldownTimer<0.0f)
 		{
 			_dash_particle.Emitting = true;
 			_dash_attack_area.Monitoring = true;
 			dashSfx.Play();
-            Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
+			Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
 			Velocity = dashDir * 300.0f;
 			dashCooldownTimer = DASH_COOLDOWN;
 			dashing = true;
@@ -268,10 +267,10 @@ public partial class player_controller : CharacterBody2D
 			{
 				Random random = new Random();
 				if (random.NextDouble() < 0.2)
-                    footstepSfx.Play();
+					footstepSfx.Play();
 			}
 			
-            _particle.Emitting = false;
+			_particle.Emitting = false;
 		}
 
 	}
