@@ -1,19 +1,20 @@
 extends Control
-
-const GAME_SCENE := preload("res://Scenes/Level/test_scene.tscn")
-const STUDIO_SCENE := preload("res://Scenes/Level/studio.tscn")
-const SETTINGS_SCENE := preload("res://Scenes/Level/settings_scene.tscn")
+@onready var settings = $"../SettingsScene"
+@onready var pause_ui = $"."
 
 func _on_back_game_button_pressed() -> void:
-	get_tree().change_scene_to_packed(GAME_SCENE)
+	get_tree().paused = false
+	hide()
 
 
 func _on_back_studio_button_pressed() -> void:
-	get_tree().change_scene_to_packed(STUDIO_SCENE)
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Level/studio.tscn")
 
 
 func _on_settings_button_pressed() -> void:
-	get_tree().change_scene_to_packed(SETTINGS_SCENE)
+	pause_ui.hide()
+	settings.show()
 
 
 func _on_exit_button_pressed() -> void:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=9 format=3 uid="uid://dslpk2swr657b"]
 
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_2yuxf"]
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/Level/animated_background.tscn" id="2_ubgp3"]
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/button_2.png" id="5_ltq1i"]
@@ -55,6 +56,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("to_studio:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0666666, 0.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_vxe13"]
 resource_name = "transition"
@@ -97,6 +110,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_2yuxf")
 script = ExtResource("1_vxe13")
 
 [node name="animated_background" parent="." instance=ExtResource("2_ubgp3")]
@@ -140,9 +154,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.5
-offset_top = -97.0
-offset_right = 20.5
+offset_left = -22.0
+offset_top = -103.0
+offset_right = 19.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 25
@@ -167,9 +182,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.5
-offset_top = -97.0
-offset_right = 20.5
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 21.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 25
@@ -190,9 +206,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.5
-offset_top = -97.0
-offset_right = 20.5
+offset_left = -24.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 25
@@ -215,6 +232,19 @@ theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 106
 text = "LEVEL SELECT"
 
+[node name="to_studio" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -90.0
+offset_right = 191.0
+offset_bottom = -31.0
+grow_vertical = 0
+text = "TO STUDIO"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_eiwkk")
@@ -223,3 +253,4 @@ autoplay = "RESET"
 
 [connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Row_1/level_2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="to_studio" to="." method="_on_to_studio_pressed"]
