@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="1_tr630"]
 [ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/title_screen.gd" id="1_yjy2p"]
 [ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="2_2tc6i"]
-[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://dynamic_text_shadow.gd" id="2_mtll8"]
+[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/dynamic_text_shadow.gd" id="2_mtll8"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="4_ubah6"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="7_q5dkg"]
 

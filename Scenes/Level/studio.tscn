@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://4wqots6lkb1s"]
+[gd_scene load_steps=6 format=3 uid="uid://4wqots6lkb1s"]
 
 [ext_resource type="Script" uid="uid://durnpsq1hrblp" path="res://Code/studio_select.gd" id="1_0t5tv"]
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="1_10hqe"]
-[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="3_cj3df"]
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_cj3df"]
+[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="4_mk24u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_135x7"]
-bg_color = Color(0, 0.6745098, 0.75686276, 0.60784316)
+bg_color = Color(0, 0, 0, 0.60784316)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-shadow_color = Color(1, 0, 0, 0.7019608)
+shadow_color = Color(1, 0, 1, 0.702)
 shadow_size = 16
 
 [node name="Studio" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_cj3df")
 script = ExtResource("1_0t5tv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -24,12 +26,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_10hqe")
 
-[node name="StudioUI" type="Control" parent="." groups=["current_ui"]]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PanelContainer" type="PanelContainer" parent="StudioUI"]
+[node name="studio_menu" type="PanelContainer" parent="." groups=["current_ui"]]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 39.0
@@ -37,38 +34,52 @@ offset_right = 465.0
 offset_bottom = 377.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_135x7")
 
-[node name="MarginContainer" type="MarginContainer" parent="StudioUI/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="studio_menu"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StudioUI/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="studio_menu/MarginContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="StudioUI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="studio_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Studio Menu"
 horizontal_alignment = 1
 
-[node name="level_select_button" type="Button" parent="StudioUI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="level_select_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level Select
 "
 
-[node name="settings_button" type="Button" parent="StudioUI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="settings_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
 
-[node name="exit_button" type="Button" parent="StudioUI/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="main_menu_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu
+"
+
+[node name="exit_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
 
-[node name="SettingsScene" parent="." instance=ExtResource("3_cj3df")]
+[node name="SettingsScene" parent="." instance=ExtResource("4_mk24u")]
 visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -14.0
+offset_right = -410.0
+offset_bottom = -14.0
+grow_vertical = 0
 
-[connection signal="pressed" from="StudioUI/PanelContainer/MarginContainer/VBoxContainer/level_select_button" to="." method="_on_level_select_button_pressed"]
-[connection signal="pressed" from="StudioUI/PanelContainer/MarginContainer/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="StudioUI/PanelContainer/MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/level_select_button" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

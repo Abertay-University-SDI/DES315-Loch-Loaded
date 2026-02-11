@@ -4,8 +4,21 @@ var masterVolume = AudioServer.get_bus_index("Master")
 var musicVolume = AudioServer.get_bus_index("Music")
 var sfxVolume = AudioServer.get_bus_index("SFX")
 
+@export var master_slider:HSlider
+@export var sfx_slider:HSlider
+@export var music_slider:HSlider
+
+
 var screenShake
 
+func _ready() -> void:
+	master_slider.set_value_no_signal(
+		db_to_linear(AudioServer.get_bus_volume_db(masterVolume)))
+	music_slider.set_value_no_signal(
+		db_to_linear(AudioServer.get_bus_volume_db(musicVolume)))
+	sfx_slider.set_value_no_signal(
+		db_to_linear(AudioServer.get_bus_volume_db(sfxVolume)))
+	
 func _ready() -> void:
 	load_from_file()
 

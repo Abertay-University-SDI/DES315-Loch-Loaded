@@ -12,6 +12,10 @@ shadow_color = Color(1, 0.40863404, 1, 0.6)
 shadow_size = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkys1"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
 bg_color = Color(0, 0, 0, 0.514)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
