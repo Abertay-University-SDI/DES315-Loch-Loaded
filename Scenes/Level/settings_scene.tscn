@@ -3,12 +3,15 @@
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
 
-[node name="SettingsScene" type="Control"]
+[node name="SettingsScene" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
+master_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/master_slider")
+sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/soundEffect_slider")
+music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/music_slider")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
