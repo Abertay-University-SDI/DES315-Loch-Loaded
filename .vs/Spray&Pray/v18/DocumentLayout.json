@@ -31,8 +31,7 @@
               "ViewState": "AgIAAAEAAAAAAAAAAAAQwA8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T18:34:57.338Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "Code\\player_controller.cs",
               "ToolTip": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
               "RelativeToolTip": "Code\\player_controller.cs",
-              "ViewState": "AgIAAMsAAAAAAAAAAAAIwNsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T18:25:39.622Z",
               "EditorCaption": ""
