@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvokxk83ohi37"
-path="res://.godot/imported/lnl-logo.png-c3b0eb46cf68fdb3a88a79f680efeb60.ctex"
+uid="uid://c2646e6js648i"
+path="res://.godot/imported/Paralax_city_3.png-642db6cefd9612267ce6e4c69ccab659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/lnl-logo.png"
-dest_files=["res://.godot/imported/lnl-logo.png-c3b0eb46cf68fdb3a88a79f680efeb60.ctex"]
+source_file="res://Textures/Background/Paralax_city_3.png"
+dest_files=["res://.godot/imported/Paralax_city_3.png-642db6cefd9612267ce6e4c69ccab659.ctex"]
 
 [params]
 

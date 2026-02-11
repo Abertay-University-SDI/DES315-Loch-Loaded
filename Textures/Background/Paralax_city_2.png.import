@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dik274e2fmjq4"
-path="res://.godot/imported/lamp.png-140a75c35b4a2eb9068ab011d7c3031c.ctex"
+uid="uid://c3afndhhw4jfl"
+path="res://.godot/imported/Paralax_city_2.png-b1769b1021de7595e3fb354a020b942c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/lamp.png"
-dest_files=["res://.godot/imported/lamp.png-140a75c35b4a2eb9068ab011d7c3031c.ctex"]
+source_file="res://Textures/Background/Paralax_city_2.png"
+dest_files=["res://.godot/imported/Paralax_city_2.png-b1769b1021de7595e3fb354a020b942c.ctex"]
 
 [params]
 

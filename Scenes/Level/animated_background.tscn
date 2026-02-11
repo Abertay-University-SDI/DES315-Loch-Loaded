@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq46xt1yq4xty"]
 
 [ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="1_kscw6"]
-[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/studio_temp.png" id="2_u6hfa"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="2_u6hfa"]
 [ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/background.gd" id="3_pu2ig"]
+
 
 [sub_resource type="Gradient" id="Gradient_kscw6"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)

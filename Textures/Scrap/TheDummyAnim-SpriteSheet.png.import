@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4c78fwvhmche"
-path="res://.godot/imported/Paralax_city.png-5742eb4dfab72c2461938749fbdf9036.ctex"
+uid="uid://ch5b08f0lwj6h"
+path="res://.godot/imported/TheDummyAnim-SpriteSheet.png-711800ce341f95e0483080f985190a98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Paralax_city.png"
-dest_files=["res://.godot/imported/Paralax_city.png-5742eb4dfab72c2461938749fbdf9036.ctex"]
+source_file="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png"
+dest_files=["res://.godot/imported/TheDummyAnim-SpriteSheet.png-711800ce341f95e0483080f985190a98.ctex"]
 
 [params]
 

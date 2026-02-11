@@ -1,11 +1,12 @@
-[gd_scene load_steps=76 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=77 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dbkltvnun1b2m" path="res://Code/player_controller.cs" id="1_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
-[ext_resource type="Texture2D" uid="uid://cyr1u6nafbpel" path="res://Textures/spark.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
+[ext_resource type="Texture2D" uid="uid://cyr1u6nafbpel" path="res://Textures/Scrap/spark.png" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
 [ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]
 [ext_resource type="AudioStream" uid="uid://nkf748y5acc4" path="res://Sounds/punch.wav" id="6_kov73"]
+[ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 
@@ -902,12 +903,14 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 23.750002
 height = 72.49999
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstepSfx", "dashSfx", "punchSfx") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstepSfx", "dashSfx", "punchSfx", "yoyo", "yoyo_string") groups=["player"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_6t5aa")
 footstepSfx = NodePath("sound/footstep")
 dashSfx = NodePath("sound/dash")
 punchSfx = NodePath("sound/punch")
+yoyo = NodePath("YoYo")
+yoyo_string = NodePath("YoYo/YoYoLine")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -19)
@@ -984,3 +987,17 @@ bus = &"SFX"
 position = Vector2(0, -28.749994)
 scale = Vector2(0.99999994, 0.99999994)
 current = true
+
+[node name="YoYo" type="Sprite2D" parent="."]
+top_level = true
+texture_filter = 1
+position = Vector2(52.499996, -29.999996)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("7_82p5m")
+
+[node name="YoYoLine" type="Line2D" parent="YoYo"]
+top_level = true
+z_index = -45
+position = Vector2(0, -21)
+points = PackedVector2Array(0, 0, 53.02, 0)
+width = 3.0

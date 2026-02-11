@@ -18,6 +18,12 @@ public partial class player_controller : CharacterBody2D
 	[Export] public AudioStreamPlayer2D dashSfx;
 	[Export] public AudioStreamPlayer2D punchSfx;
 
+
+	[Export] public Sprite2D yoyo;
+	[Export] public Line2D yoyo_string;
+
+
+	//player movement constants
     private const float WALK_SPEED = 60.0f;
 	private const float MAX_SPEED = 120.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
@@ -26,6 +32,7 @@ public partial class player_controller : CharacterBody2D
 
 	private int jumps_left = 1;
 
+	//dash
     private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
 	private const float DASH_COOLDOWN = 1.0f;
 	private const float dashDuration = 0.2f;
@@ -34,6 +41,8 @@ public partial class player_controller : CharacterBody2D
 
 	private bool spraying = false;
 	private float punching = 0.0f;
+
+	private Vector2 last_hit_position;
 
 	private float _gravity;
 	private bool _breaking = false;
@@ -89,10 +98,40 @@ public partial class player_controller : CharacterBody2D
 			dashCooldownTimer = DASH_COOLDOWN;
 			dashing = true;
 		}
-	}
+    }
 
+
+    void updateYoyo()
+    {
+        if (!yoyo.Visible)
+            return;
+
+        // Player position in yoyo_string local space
+        Vector2 player_local =
+            yoyo_string.ToLocal(GlobalPosition);
+
+		player_local.Y -= 10;
+
+        // Impact position in yoyo_string local space
+        Vector2 hit_local =
+            yoyo_string.ToLocal(last_hit_position);
+
+        // Update string
+        yoyo_string.SetPointPosition(0, player_local);
+        yoyo_string.SetPointPosition(1, hit_local);
+
+        // Move yoyo sprite to impact point
+        yoyo.GlobalPosition = last_hit_position;
+    }
+
+    public override void _Process(double delta)
+    {
+        updateCooldowns((float)delta);
+		updateYoyo();
+    }
 	public override void _PhysicsProcess(double delta)
 	{
+			yoyo_string.SetPointPosition(0, last_hit_position);
 		float dt = (float)delta;
 
 
@@ -156,7 +195,6 @@ public partial class player_controller : CharacterBody2D
 		attackOffset.X = _animationPlayer.FlipH ? -Mathf.Abs(attackOffset.X) : Mathf.Abs(attackOffset.X);
 		_attack_area.Position = attackOffset;
 
-		updateCooldowns(dt);
 		UpdateAnimation();
 		MoveAndSlide();
 	}
@@ -261,6 +299,7 @@ public partial class player_controller : CharacterBody2D
 
 		if (!enemy.IsInGroup("Enemy"))
 			return;
+		last_hit_position = enemy.GlobalPosition;
 		enemy.TakeDash(dashCooldownTimer, 400.0f);
 	}
 

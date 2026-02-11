@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pmg5jb60xuvv"
-path="res://.godot/imported/roadrage.webp-67435bf8358460d12fddc797c857f618.ctex"
+uid="uid://bhubckbu5yqm1"
+path="res://.godot/imported/button_1.png-9f32b230f20dfd7dc538b961b55d014e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/roadrage.webp"
-dest_files=["res://.godot/imported/roadrage.webp-67435bf8358460d12fddc797c857f618.ctex"]
+source_file="res://Textures/UI/button_1.png"
+dest_files=["res://.godot/imported/button_1.png-9f32b230f20dfd7dc538b961b55d014e.ctex"]
 
 [params]
 

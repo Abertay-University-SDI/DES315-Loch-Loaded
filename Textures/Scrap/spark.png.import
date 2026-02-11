@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3afndhhw4jfl"
-path="res://.godot/imported/Paralax_city_2.png-75e412f4e1cea2a65d958e530401ae40.ctex"
+uid="uid://cyr1u6nafbpel"
+path="res://.godot/imported/spark.png-a423f4f3aa7dcfc206ed5403fea777d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Paralax_city_2.png"
-dest_files=["res://.godot/imported/Paralax_city_2.png-75e412f4e1cea2a65d958e530401ae40.ctex"]
+source_file="res://Textures/Scrap/spark.png"
+dest_files=["res://.godot/imported/spark.png-a423f4f3aa7dcfc206ed5403fea777d1.ctex"]
 
 [params]
 

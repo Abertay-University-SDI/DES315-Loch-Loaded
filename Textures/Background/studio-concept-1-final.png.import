@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyr1u6nafbpel"
-path="res://.godot/imported/spark.png-daf5c9e4d90e63b564502f800fff61d1.ctex"
+uid="uid://6gymgacifnx"
+path="res://.godot/imported/studio-concept-1-final.png-a87020ecb67337b5bd379ac8f24fdc57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/spark.png"
-dest_files=["res://.godot/imported/spark.png-daf5c9e4d90e63b564502f800fff61d1.ctex"]
+source_file="res://Textures/Background/studio-concept-1-final.png"
+dest_files=["res://.godot/imported/studio-concept-1-final.png-a87020ecb67337b5bd379ac8f24fdc57.ctex"]
 
 [params]
 

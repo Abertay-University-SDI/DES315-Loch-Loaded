@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://qcvlstrn8xi1"]
 
-[ext_resource type="Texture2D" uid="uid://dt3x0vhrau1qq" path="res://Textures/Robot.png" id="1_lp65t"]
+[ext_resource type="Texture2D" uid="uid://dt3x0vhrau1qq" path="res://Textures/Scrap/Robot.png" id="1_lp65t"]
 [ext_resource type="Script" uid="uid://cqym8j0dnfapb" path="res://Code/Robot.cs" id="2_rcx67"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="3_kj8xj"]
 

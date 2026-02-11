@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://u20ievdr005p"]
 
-[ext_resource type="Texture2D" uid="uid://dik274e2fmjq4" path="res://Textures/lamp.png" id="1_bekw5"]
+[ext_resource type="Texture2D" uid="uid://dik274e2fmjq4" path="res://Textures/Scrap/lamp.png" id="1_bekw5"]
 
 [sub_resource type="Gradient" id="Gradient_bekw5"]
 offsets = PackedFloat32Array(0, 0.6336336)
