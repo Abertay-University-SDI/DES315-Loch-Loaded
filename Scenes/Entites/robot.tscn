@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://qcvlstrn8xi1"]
+[gd_scene load_steps=10 format=3 uid="uid://qcvlstrn8xi1"]
 
 [ext_resource type="Texture2D" uid="uid://dt3x0vhrau1qq" path="res://Textures/Robot.png" id="1_lp65t"]
 [ext_resource type="Script" uid="uid://cqym8j0dnfapb" path="res://Code/Robot.cs" id="2_rcx67"]
+[ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="3_kj8xj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rcx67"]
 height = 24.0
@@ -37,6 +38,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(18.892157, 18.892157, 18.892157, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_rcx67"]
 resource_name = "take_hit"
@@ -64,6 +77,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7u2p"]
@@ -118,3 +143,6 @@ frame = 1
 libraries = {
 &"": SubResource("AnimationLibrary_r7u2p")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kj8xj")

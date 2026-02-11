@@ -1,8 +1,11 @@
-[gd_scene load_steps=73 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=76 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dbkltvnun1b2m" path="res://Code/player_controller.cs" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
 [ext_resource type="Texture2D" uid="uid://cyr1u6nafbpel" path="res://Textures/spark.png" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
+[ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]
+[ext_resource type="AudioStream" uid="uid://nkf748y5acc4" path="res://Sounds/punch.wav" id="6_kov73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 
@@ -899,9 +902,12 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 23.750002
 height = 72.49999
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstepSfx", "dashSfx", "punchSfx") groups=["player"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_6t5aa")
+footstepSfx = NodePath("sound/footstep")
+dashSfx = NodePath("sound/dash")
+punchSfx = NodePath("sound/punch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -19)
@@ -955,3 +961,26 @@ position = Vector2(-3.8146973e-06, -18.750004)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_h4i3e")
 debug_color = Color(0.78630257, 0.8483335, 7.70092e-07, 0.41960785)
+
+[node name="sound" type="Node2D" parent="."]
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="sound"]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("4_nwvk4")
+max_polyphony = 16
+bus = &"SFX"
+
+[node name="dash" type="AudioStreamPlayer2D" parent="sound"]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("5_82p5m")
+bus = &"SFX"
+
+[node name="punch" type="AudioStreamPlayer2D" parent="sound"]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("6_kov73")
+bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="sound"]
+position = Vector2(0, -28.749994)
+scale = Vector2(0.99999994, 0.99999994)
+current = true

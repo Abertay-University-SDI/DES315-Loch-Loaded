@@ -13,8 +13,12 @@ public partial class player_controller : CharacterBody2D
 	private Area2D _attack_area;
 	private Area2D _dash_attack_area;
 
+	//sound effects
+	[Export] public AudioStreamPlayer2D footstepSfx;
+	[Export] public AudioStreamPlayer2D dashSfx;
+	[Export] public AudioStreamPlayer2D punchSfx;
 
-	private const float WALK_SPEED = 60.0f;
+    private const float WALK_SPEED = 60.0f;
 	private const float MAX_SPEED = 120.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
 	private const float FRICTION = 600.0f;
@@ -70,13 +74,15 @@ public partial class player_controller : CharacterBody2D
 		else if (@event.IsActionPressed("punch"))
 		{
 			punching = 0.4f;
-			_attack_area.Monitoring = true;
+			punchSfx.Play();
+            _attack_area.Monitoring = true;
 		}
 		else if (@event.IsActionPressed("dash") && dashCooldownTimer<0.0f)
 		{
 			_dash_particle.Emitting = true;
 			_dash_attack_area.Monitoring = true;
-			Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
+			dashSfx.Play();
+            Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
 			Velocity = dashDir * 300.0f;
 			dashCooldownTimer = DASH_COOLDOWN;
 			dashing = true;
@@ -212,7 +218,14 @@ public partial class player_controller : CharacterBody2D
 		else
 		{
 			_animationPlayer.Play("Walk");
-			_particle.Emitting = false;
+			if (footstepSfx.Playing == false)
+			{
+				Random random = new Random();
+				if (random.NextDouble() < 0.2)
+                    footstepSfx.Play();
+			}
+			
+            _particle.Emitting = false;
 		}
 
 	}
