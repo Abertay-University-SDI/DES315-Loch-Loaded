@@ -24,10 +24,10 @@ public partial class player_controller : CharacterBody2D
 
 	//player movement constants
     private const float WALK_SPEED = 60.0f;
-	private const float MAX_SPEED = 120.0f;
+	private const float MAX_SPEED = 150.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
 	private const float FRICTION = 600.0f;
-	private const float JUMP_VELOCITY = -300.0f;
+	private const float JUMP_VELOCITY = -400.0f;
 
 	private int jumps_left = 1;
 
@@ -313,7 +313,7 @@ public partial class player_controller : CharacterBody2D
 		Rect2I usedRect = Tilemap.GetUsedRect();
 		Vector2I tileSize = Tilemap.TileSet.TileSize;
 
-		_camera.LimitLeft = usedRect.Position.X * tileSize.X;
+		_camera.LimitLeft = usedRect.Position.X * tileSize.X + tileSize.X;
 		_camera.LimitRight = (usedRect.Position.X + usedRect.Size.X) * tileSize.X;
 		_camera.LimitBottom = (usedRect.Position.Y + usedRect.Size.Y) * tileSize.Y;
 	}

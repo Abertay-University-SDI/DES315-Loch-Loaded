@@ -44,22 +44,104 @@ shape = SubResource("WorldBoundaryShape2D_5a7ea")
 shape = SubResource("WorldBoundaryShape2D_8j60k")
 
 [node name="Player" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("3_bvu58")]
-position = Vector2(69, 527)
+position = Vector2(272, 554)
 collision_layer = 3
 collision_mask = 3
 Tilemap = NodePath("../TileMap/Layer0")
 
 [node name="Spray Spot" parent="." instance=ExtResource("4_cunvl")]
-position = Vector2(849, 199)
+position = Vector2(2434, -23)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_osgbe")
 
-[node name="TileMap" parent="." instance=ExtResource("1_wqyeq")]
-
 [node name="Enemies" type="Node2D" parent="."]
+position = Vector2(-15, 25)
 
 [node name="Robot" parent="Enemies" instance=ExtResource("5_6vt6i")]
-position = Vector2(168, 364)
+position = Vector2(372, 659)
+
+[node name="Robot2" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(567, 660)
+
+[node name="Robot3" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(532, 546)
+
+[node name="Robot4" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(561, 432)
+
+[node name="Robot5" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(314, 193)
+
+[node name="Robot6" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(331, 34)
+
+[node name="Robot7" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(608, 34)
+
+[node name="Robot8" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(857, 96)
+
+[node name="Robot9" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(857, 256)
+
+[node name="Robot10" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(807, 541)
+
+[node name="Robot11" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(760, 657)
+
+[node name="Robot12" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(962, 660)
+
+[node name="Robot13" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1307, 659)
+
+[node name="Robot14" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1409, 404)
+
+[node name="Robot15" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1437, 131)
+
+[node name="Robot16" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1606, 134)
+
+[node name="Robot17" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1615, 303)
+
+[node name="Robot18" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1831, 161)
+
+[node name="Robot19" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2011, 37)
+
+[node name="Robot20" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2094, 195)
+
+[node name="Robot21" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2095, 340)
+
+[node name="Robot22" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2020, 630)
+
+[node name="Robot23" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1791, 434)
+
+[node name="Robot24" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(1662, 661)
+
+[node name="Robot25" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2153, 548)
+
+[node name="Robot26" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2153, 192)
+
+[node name="Robot27" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2220, 662)
+
+[node name="Robot28" parent="Enemies" instance=ExtResource("5_6vt6i")]
+position = Vector2(2305, 47)
+
+[node name="TileMap" parent="." instance=ExtResource("1_wqyeq")]
 
 [editable path="TileMap"]
