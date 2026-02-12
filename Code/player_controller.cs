@@ -298,7 +298,10 @@ public partial class player_controller : CharacterBody2D
 
 		if (!enemy.IsInGroup("Enemy"))
 			return;
-		last_hit_position = enemy.GlobalPosition;
+		var hit_postion = (body as Node2D).GlobalPosition;
+		hit_postion.Y -= 16;
+
+        last_hit_position = hit_postion;
 		enemy.TakeDash(dashCooldownTimer, 400.0f);
 	}
 

@@ -60,6 +60,6 @@ environment = SubResource("Environment_osgbe")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Robot" parent="Enemies" instance=ExtResource("5_6vt6i")]
-position = Vector2(239, 458)
+position = Vector2(168, 364)
 
 [editable path="TileMap"]
