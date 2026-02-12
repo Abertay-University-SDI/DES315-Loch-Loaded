@@ -4,13 +4,14 @@
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_ktoib"]
 
-[node name="PauseScene" type="Control"]
+[node name="PauseScene" type="Control" node_paths=PackedStringArray("back_button")]
 process_mode = 3
 process_priority = 1
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("3_f8ftb")
 script = ExtResource("1_irnjd")
+back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -75,6 +76,7 @@ size_flags_vertical = 4
 text = "exit game"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_pressed"]
+[connection signal="visibility_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_visibility_changed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BackStudioButton" to="." method="_on_back_studio_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ExitButton" to="." method="_on_exit_button_pressed"]

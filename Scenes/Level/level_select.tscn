@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/Level/animated_background.tscn" id="2_ubgp3"]
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/UI/button_2.png" id="5_ltq1i"]
 [ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/UI/button_1.png" id="6_1v14q"]
-[ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/texture_button.gd" id="6_vxe13"]
+[ext_resource type="Script" path="res://Code/texture_button.gd" id="6_vxe13"]
 
 [sub_resource type="Animation" id="Animation_6wpjx"]
 length = 6.0
@@ -142,6 +142,7 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
+texture_focused = ExtResource("6_1v14q")
 script = ExtResource("6_vxe13")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_0/level_1"]
@@ -171,6 +172,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
+texture_focused = ExtResource("6_1v14q")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_1/level_2"]
 layout_mode = 1
@@ -195,6 +197,7 @@ vertical_alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
+texture_focused = ExtResource("6_1v14q")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_1/level_3"]
 layout_mode = 1
