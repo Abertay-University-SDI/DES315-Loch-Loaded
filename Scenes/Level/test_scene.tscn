@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhulbkeyei13l"]
+[gd_scene load_steps=16 format=3 uid="uid://bhulbkeyei13l"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/level.gd" id="1_bvu58"]
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/tile_map.tscn" id="1_wqyeq"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="3_cunvl"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="4_cunvl"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="5_6vt6i"]
+[ext_resource type="Texture2D" uid="uid://cveptdss4aqol" path="res://Textures/trash-bin-concept-1.png" id="9_6vt6i"]
+[ext_resource type="Texture2D" uid="uid://41q2v7d756j1" path="res://Textures/TEMP_ASSET_TrashCap.png" id="10_aq261"]
+[ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/scaffolding.tscn" id="11_idrhf"]
+[ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/house_1.tscn" id="12_lvm3j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5a7ea"]
 normal = Vector2(-1, 0)
@@ -44,7 +48,8 @@ shape = SubResource("WorldBoundaryShape2D_5a7ea")
 shape = SubResource("WorldBoundaryShape2D_8j60k")
 
 [node name="Player" parent="." node_paths=PackedStringArray("Tilemap") instance=ExtResource("3_bvu58")]
-position = Vector2(272, 554)
+z_index = 1
+position = Vector2(59, 688)
 collision_layer = 3
 collision_mask = 3
 Tilemap = NodePath("../TileMap/Layer0")
@@ -143,5 +148,26 @@ position = Vector2(2220, 662)
 position = Vector2(2305, 47)
 
 [node name="TileMap" parent="." instance=ExtResource("1_wqyeq")]
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="TempAssetScaffolding" parent="Decorations" instance=ExtResource("11_idrhf")]
+z_index = -65
+position = Vector2(216, 592.00006)
+scale = Vector2(0.099609375, 0.10058592)
+
+[node name="TrashBinConcept1" type="Sprite2D" parent="Decorations"]
+position = Vector2(89, 670)
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("9_6vt6i")
+
+[node name="TempAssetTrashCap" type="Sprite2D" parent="Decorations"]
+position = Vector2(260, 679)
+scale = Vector2(0.011260998, 0.011260998)
+texture = ExtResource("10_aq261")
+
+[node name="House1" parent="." instance=ExtResource("12_lvm3j")]
+z_index = -165
+position = Vector2(526, 630)
 
 [editable path="TileMap"]

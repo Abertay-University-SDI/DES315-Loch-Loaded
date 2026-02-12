@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_2yuxf"]
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/Level/animated_background.tscn" id="2_ubgp3"]
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/UI/button_2.png" id="5_ltq1i"]
 [ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/UI/button_1.png" id="6_1v14q"]
+[ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/texture_button.gd" id="6_vxe13"]
 
 [sub_resource type="Animation" id="Animation_6wpjx"]
 length = 6.0
@@ -141,6 +142,7 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
+script = ExtResource("6_vxe13")
 
 [node name="Number" type="Label" parent="VBoxContainer/Row_0/level_1"]
 layout_mode = 1

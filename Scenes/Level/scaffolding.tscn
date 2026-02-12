@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3johr7vw3myf"]
+
+[ext_resource type="Texture2D" uid="uid://v0kdda3xgxvj" path="res://Textures/TEMP_ASSET_Scaffolding.png" id="1_epgah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4uil"]
+size = Vector2(1063.6898, 31.751904)
+
+[node name="TempAssetScaffolding" type="Sprite2D"]
+scale = Vector2(0.06298829, 0.06298829)
+texture = ExtResource("1_epgah")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(31.751934, -317.51935)
+shape = SubResource("RectangleShape2D_r4uil")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(31.751934, 254.01544)
+shape = SubResource("RectangleShape2D_r4uil")
+one_way_collision = true

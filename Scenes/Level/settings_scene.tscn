@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=4 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
+[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_1lvst"]
 
 [node name="SettingsScene" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
@@ -91,6 +92,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_vertical = 4
 text = "back"
+script = ExtResource("3_1lvst")
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
