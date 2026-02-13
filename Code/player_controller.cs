@@ -23,7 +23,7 @@ public partial class player_controller : CharacterBody2D
 
 
 	//player movement constants
-    private const float WALK_SPEED = 60.0f;
+	private const float WALK_SPEED = 60.0f;
 	private const float MAX_SPEED = 120.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
 	private const float FRICTION = 600.0f;
@@ -32,7 +32,7 @@ public partial class player_controller : CharacterBody2D
 	private int jumps_left = 1;
 
 	//dash
-    private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
+	private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
 	private const float DASH_COOLDOWN = 1.0f;
 	private const float dashDuration = 0.2f;
 	private bool dashing = false;
@@ -97,37 +97,37 @@ public partial class player_controller : CharacterBody2D
 			dashCooldownTimer = DASH_COOLDOWN;
 			dashing = true;
 		}
-    }
+	}
 
 
-    void updateYoyo()
-    {
-        if (!yoyo.Visible)
-            return;
+	void updateYoyo()
+	{
+		if (!yoyo.Visible)
+			return;
 
-        // Player position in yoyo_string local space
-        Vector2 player_local =
-            yoyo_string.ToLocal(GlobalPosition);
+		// Player position in yoyo_string local space
+		Vector2 player_local =
+			yoyo_string.ToLocal(GlobalPosition);
 
 		player_local.Y -= 10;
 
-        // Impact position in yoyo_string local space
-        Vector2 hit_local =
-            yoyo_string.ToLocal(last_hit_position);
+		// Impact position in yoyo_string local space
+		Vector2 hit_local =
+			yoyo_string.ToLocal(last_hit_position);
 
-        // Update string
-        yoyo_string.SetPointPosition(0, player_local);
-        yoyo_string.SetPointPosition(1, hit_local);
+		// Update string
+		yoyo_string.SetPointPosition(0, player_local);
+		yoyo_string.SetPointPosition(1, hit_local);
 
-        // Move yoyo sprite to impact point
-        yoyo.GlobalPosition = last_hit_position;
-    }
+		// Move yoyo sprite to impact point
+		yoyo.GlobalPosition = last_hit_position;
+	}
 
-    public override void _Process(double delta)
-    {
-        updateCooldowns((float)delta);
+	public override void _Process(double delta)
+	{
+		updateCooldowns((float)delta);
 		updateYoyo();
-    }
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 			yoyo_string.SetPointPosition(0, last_hit_position);
@@ -142,10 +142,10 @@ public partial class player_controller : CharacterBody2D
 		if(IsOnFloor())
 		{
 			jumps_left = 1;
-        }
+		}
 
-        // Gravity
-        if (!IsOnFloor()&&!dashing)
+		// Gravity
+		if (!IsOnFloor()&&!dashing)
 		{
 			Velocity += Vector2.Down * _gravity * dt;
 		}
@@ -155,7 +155,7 @@ public partial class player_controller : CharacterBody2D
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
 			jumps_left--;
-        }
+		}
 
 		// Horizontal movement (momentum-based)
 		float direction = Input.GetAxis("left", "right");
@@ -301,7 +301,7 @@ public partial class player_controller : CharacterBody2D
 		var hit_postion = (body as Node2D).GlobalPosition;
 		hit_postion.Y -= 16;
 
-        last_hit_position = hit_postion;
+		last_hit_position = hit_postion;
 		enemy.TakeDash(dashCooldownTimer, 400.0f);
 	}
 

@@ -1,4 +1,7 @@
-1.00
-1.00
-1.00
-true
+masterValue
+0.76
+musicValue
+0.67
+sfxValue
+0.58
+screenShake
