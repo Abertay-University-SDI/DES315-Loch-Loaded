@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7emvgj3ce5w2"
-path="res://.godot/imported/TEMP_ASSET_WireFence.png-c11a4712b6ae24e35b62287896383584.ctex"
+uid="uid://ceomji24jqk64"
+path="res://.godot/imported/TEMP_ASSET_SprayPaint.png-e4d7fd5d064112ca28f4add96d27b23e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_WireFence.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_WireFence.png-c11a4712b6ae24e35b62287896383584.ctex"]
+source_file="res://Textures/Decorations/TEMP_ASSET_SprayPaint.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_SprayPaint.png-e4d7fd5d064112ca28f4add96d27b23e.ctex"]
 
 [params]
 

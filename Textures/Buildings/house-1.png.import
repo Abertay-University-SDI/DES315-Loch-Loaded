@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byod54gf341i4"
-path="res://.godot/imported/TEMP_ASSET_FoodStall.png-f4e5316e9c30b37574411a0b0bc226ed.ctex"
+uid="uid://c2vtakgeh54fd"
+path="res://.godot/imported/house-1.png-7a0fa4cac87c11126368b7d4e6fbd6f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_FoodStall.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_FoodStall.png-f4e5316e9c30b37574411a0b0bc226ed.ctex"]
+source_file="res://Textures/Buildings/house-1.png"
+dest_files=["res://.godot/imported/house-1.png-7a0fa4cac87c11126368b7d4e6fbd6f0.ctex"]
 
 [params]
 

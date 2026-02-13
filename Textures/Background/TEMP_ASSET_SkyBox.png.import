@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1vsnpwcedq1b"
-path="res://.godot/imported/TEMP_ASSET_TrafficConDesat.png-78d683f26eb38d9db9066195184c2fcd.ctex"
+uid="uid://c80ifgovk8tm4"
+path="res://.godot/imported/TEMP_ASSET_SkyBox.png-087f23627cc3a7d66406682df3b92218.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_TrafficConDesat.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_TrafficConDesat.png-78d683f26eb38d9db9066195184c2fcd.ctex"]
+source_file="res://Textures/Background/TEMP_ASSET_SkyBox.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_SkyBox.png-087f23627cc3a7d66406682df3b92218.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ui6arg3l1ed"
-path="res://.godot/imported/TEMP_ASSET_Box.png-cdba15cf342bfde93dfd3626eb62073f.ctex"
+uid="uid://h40gjxsdlqxl"
+path="res://.godot/imported/fly-bot-2.png-c8375e6e772ca806dc9f51c241b0e650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_Box.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_Box.png-cdba15cf342bfde93dfd3626eb62073f.ctex"]
+source_file="res://Textures/Enemies/fly-bot-2.png"
+dest_files=["res://.godot/imported/fly-bot-2.png-c8375e6e772ca806dc9f51c241b0e650.ctex"]
 
 [params]
 

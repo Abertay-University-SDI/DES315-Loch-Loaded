@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsqqq1wprmrmi"
-path="res://.godot/imported/house-3.png-ad9b8e4fe58eb9d9dc9788ef2b6c7ff8.ctex"
+uid="uid://d1vsnpwcedq1b"
+path="res://.godot/imported/TEMP_ASSET_TrafficConDesat.png-2ac4d02473932de2bf9c57eaa10cec4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/house-3.png"
-dest_files=["res://.godot/imported/house-3.png-ad9b8e4fe58eb9d9dc9788ef2b6c7ff8.ctex"]
+source_file="res://Textures/Decorations/TEMP_ASSET_TrafficConDesat.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_TrafficConDesat.png-2ac4d02473932de2bf9c57eaa10cec4d.ctex"]
 
 [params]
 
