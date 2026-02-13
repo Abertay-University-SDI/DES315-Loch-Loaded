@@ -1,6 +1,7 @@
 extends Control
 @onready var settings = $"../SettingsScene"
 @onready var pause_ui = $"."
+@export var back_button:Button
 
 func _on_back_game_button_pressed() -> void:
 	get_tree().paused = false
@@ -19,3 +20,8 @@ func _on_settings_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_back_game_button_visibility_changed() -> void:
+	if visible:
+		back_button.grab_focus()

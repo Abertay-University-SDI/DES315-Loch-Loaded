@@ -23,13 +23,14 @@ public partial class player_controller : CharacterBody2D
 
 
 	//player movement constants
-	private const float WALK_SPEED = 60.0f;
-	private const float MAX_SPEED = 120.0f;
+    private const float WALK_SPEED = 60.0f;
+	private const float MAX_SPEED = 150.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
 	private const float FRICTION = 600.0f;
-	private const float JUMP_VELOCITY = -300.0f;
+	private const float JUMP_VELOCITY = -400.0f;
 
-	private int jumps_left = 1;
+	private const int MAX_JUMPS = 1;
+	private int jumps_left = MAX_JUMPS;
 
 	//dash
 	private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
@@ -45,6 +46,8 @@ public partial class player_controller : CharacterBody2D
 
 	private float _gravity;
 	private bool _breaking = false;
+
+	private Robot yoyo_enemy;
 
 	public override void _Ready()
 	{
@@ -93,11 +96,18 @@ public partial class player_controller : CharacterBody2D
 			_dash_attack_area.Monitoring = true;
 			dashSfx.Play();
 			Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
-			Velocity = dashDir * 300.0f;
+			Velocity = dashDir * 400.0f;
 			dashCooldownTimer = DASH_COOLDOWN;
 			dashing = true;
 		}
-	}
+		else if (@event.IsActionPressed("yoyo") && yoyo.Visible)
+		{
+			if (yoyo_enemy != null)
+			{
+				yoyo_enemy.TakeHit((yoyo_enemy.Position-Position).Normalized(), 0.0f, 100.0f);
+			}
+		}
+    }
 
 
 	void updateYoyo()
@@ -141,8 +151,8 @@ public partial class player_controller : CharacterBody2D
 
 		if(IsOnFloor())
 		{
-			jumps_left = 1;
-		}
+			jumps_left = MAX_JUMPS;
+        }
 
 		// Gravity
 		if (!IsOnFloor()&&!dashing)
@@ -219,6 +229,11 @@ public partial class player_controller : CharacterBody2D
 				_dash_attack_area.Monitoring = false;
 				_dash_particle.Emitting = false;
 			}
+		}
+		else
+		{
+			yoyo.Visible = false;
+			yoyo_enemy = null;
 		}
 	}
 
@@ -300,6 +315,8 @@ public partial class player_controller : CharacterBody2D
 			return;
 		var hit_postion = (body as Node2D).GlobalPosition;
 		hit_postion.Y -= 16;
+		yoyo.Visible = true;
+		yoyo_enemy = enemy;
 
 		last_hit_position = hit_postion;
 		enemy.TakeDash(dashCooldownTimer, 400.0f);
@@ -313,7 +330,7 @@ public partial class player_controller : CharacterBody2D
 		Rect2I usedRect = Tilemap.GetUsedRect();
 		Vector2I tileSize = Tilemap.TileSet.TileSize;
 
-		_camera.LimitLeft = usedRect.Position.X * tileSize.X;
+		_camera.LimitLeft = usedRect.Position.X * tileSize.X + tileSize.X;
 		_camera.LimitRight = (usedRect.Position.X + usedRect.Size.X) * tileSize.X;
 		_camera.LimitBottom = (usedRect.Position.Y + usedRect.Size.Y) * tileSize.Y;
 	}

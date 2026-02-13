@@ -1,5 +1,7 @@
 extends Control
 
+@export var back_button:Button
+
 var masterVolume = AudioServer.get_bus_index("Master")
 var musicVolume = AudioServer.get_bus_index("Music")
 var sfxVolume = AudioServer.get_bus_index("SFX")
@@ -81,6 +83,11 @@ func _on_back_button_pressed() -> void:
 	save_settings_to_file()
 	hide();
 	get_tree().get_nodes_in_group("current_ui").back().show()
+
+
+func _on_back_button_visibility_changed() -> void:
+	if (back_button.visible):
+		back_button.grab_focus()
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	print_debug(index)

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="2_u6hfa"]
 [ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/background.gd" id="3_pu2ig"]
 
-
 [sub_resource type="Gradient" id="Gradient_kscw6"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
 

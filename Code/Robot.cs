@@ -86,6 +86,27 @@ public partial class Robot : Node2D
         return result.Count > 0;
     }
 
+    private bool HasWallAhead()
+    {
+        Vector2 origin = _alive.GlobalPosition;
+        origin.X += _direction * 12f;
+
+        Vector2 target = origin;
+        target.X += _direction* 2f;
+
+        var space = GetWorld2D().DirectSpaceState;
+
+        var query = PhysicsRayQueryParameters2D.Create(
+            origin,
+            target
+        );
+
+        query.CollisionMask = 1; // world layer
+        var result = space.IntersectRay(query);
+
+        return result.Count > 0;
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         if (!_alive.Visible)
@@ -103,6 +124,8 @@ public partial class Robot : Node2D
 
         // ledge check
         if (!HasGroundAhead())
+            _direction *= -1;
+        if (HasWallAhead())
             _direction *= -1;
 
         _alive_sprite.FlipH = _direction > 0;
