@@ -23,7 +23,7 @@ public partial class player_controller : CharacterBody2D
 
 
 	//player movement constants
-    private const float WALK_SPEED = 60.0f;
+	private const float WALK_SPEED = 60.0f;
 	private const float MAX_SPEED = 150.0f;
 	private const float TIME_TO_MAX_SPEED = 0.4f;
 	private const float FRICTION = 600.0f;
@@ -107,7 +107,7 @@ public partial class player_controller : CharacterBody2D
 				yoyo_enemy.TakeHit((yoyo_enemy.Position-Position).Normalized(), 0.0f, 100.0f);
 			}
 		}
-    }
+	}
 
 
 	void updateYoyo()
@@ -152,7 +152,7 @@ public partial class player_controller : CharacterBody2D
 		if(IsOnFloor())
 		{
 			jumps_left = MAX_JUMPS;
-        }
+		}
 
 		// Gravity
 		if (!IsOnFloor()&&!dashing)
