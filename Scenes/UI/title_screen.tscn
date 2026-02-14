@@ -44,16 +44,11 @@ script = ExtResource("1_824g0")
 
 [node name="animated_background" parent="." instance=ExtResource("2_tjte5")]
 material = SubResource("ShaderMaterial_yjy2p")
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 
 [node name="SettingsScene" parent="." instance=ExtResource("4_nd20k")]
 visible = false
-layout_mode = 0
+layout_mode = 1
 
 [node name="title_screen_ui" type="Control" parent="." groups=["current_ui"]]
 layout_mode = 1

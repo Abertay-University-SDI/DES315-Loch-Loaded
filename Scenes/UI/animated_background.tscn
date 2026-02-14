@@ -29,5 +29,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_u6hfa")
-stretch_mode = 2
+expand_mode = 2
+stretch_mode = 4
 script = ExtResource("3_pu2ig")

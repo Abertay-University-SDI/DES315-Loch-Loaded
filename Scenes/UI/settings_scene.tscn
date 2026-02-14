@@ -7,7 +7,11 @@
 [node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
 back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/back_box_container/BackButton")
@@ -16,11 +20,18 @@ sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContaine
 music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_left = 441.0
-offset_top = 51.0
-offset_right = 879.0
-offset_bottom = 641.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -277.5
+offset_right = 311.0
+offset_bottom = 277.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2

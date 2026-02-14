@@ -933,11 +933,12 @@ texture_filter = 1
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Wall"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.355, 2.355)
+limit_smoothed = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
