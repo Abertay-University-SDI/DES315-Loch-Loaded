@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\arch\\documents\\des315-loch-loaded\\code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\arch\\documents\\des315-loch-loaded\\code\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:code\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\arch\\documents\\des315-loch-loaded\\code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\arch\\documents\\des315-loch-loaded\\spray\u0026pray.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:spray\u0026pray.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,20 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Robot.cs",
               "DocumentMoniker": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Code\\Robot.cs",
               "RelativeDocumentMoniker": "Code\\Robot.cs",
               "ToolTip": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Code\\Robot.cs",
               "RelativeToolTip": "Code\\Robot.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwA8AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T18:34:57.338Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Spray\u0026Pray",
+              "DocumentMoniker": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Spray\u0026Pray.csproj",
+              "RelativeDocumentMoniker": "Spray\u0026Pray.csproj",
+              "ToolTip": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Spray\u0026Pray.csproj",
+              "RelativeToolTip": "Spray\u0026Pray.csproj",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-14T15:07:30.763Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -51,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "player_controller.cs",
               "DocumentMoniker": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
               "RelativeDocumentMoniker": "Code\\player_controller.cs",
               "ToolTip": "C:\\Users\\Arch\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
               "RelativeToolTip": "Code\\player_controller.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAiwI4AAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMBAAAAAAAAAAAEwBEBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-23T18:25:39.622Z",
               "EditorCaption": ""

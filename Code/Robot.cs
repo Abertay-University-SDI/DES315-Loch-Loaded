@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using Godot;
 
@@ -10,6 +11,7 @@ public partial class Robot : Node2D
     private CharacterBody2D _alive;
     private RigidBody2D _dead;
     private Sprite2D _alive_sprite;
+    private Sprite2D _dead_sprite;
 
     private AnimationPlayer _animationPlayer;
 
@@ -30,6 +32,7 @@ public partial class Robot : Node2D
 
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _alive_sprite = _alive.GetNode<Sprite2D>("Sprite2D");
+        _dead_sprite = _dead.GetNode<Sprite2D>("Sprite2D");
 
         _dead.Freeze = true;
         _dead.Visible = false;  
@@ -128,7 +131,7 @@ public partial class Robot : Node2D
         if (HasWallAhead())
             _direction *= -1;
 
-        _alive_sprite.FlipH = _direction > 0;
+        _alive_sprite.Frame = Convert.ToInt32(_direction > 0);
         _alive.MoveAndSlide();
     }
 
@@ -161,6 +164,7 @@ public partial class Robot : Node2D
 
         // enable physics body
         _is_dead = true;
+        _dead_sprite.Frame = Convert.ToInt32(_direction > 0)+2;
         _dead.Visible = true;
         _dead.CollisionLayer = 0;
         _dead.CollisionMask = 1;

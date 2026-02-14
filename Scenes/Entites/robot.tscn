@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://qcvlstrn8xi1"]
 
-[ext_resource type="Texture2D" uid="uid://dt3x0vhrau1qq" path="res://Textures/Scrap/Robot.png" id="1_lp65t"]
+[ext_resource type="Texture2D" uid="uid://br0kakvsd1g8o" path="res://Textures/Enemies/cone-bot-Sheet.png" id="2_kj8xj"]
 [ext_resource type="Script" uid="uid://cqym8j0dnfapb" path="res://Code/Robot.cs" id="2_rcx67"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="3_kj8xj"]
 
@@ -29,22 +29,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("dead_body/Sprite2D:modulate")
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(18.892157, 18.892157, 18.892157, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -69,22 +57,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("dead_body/Sprite2D:modulate")
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.03333334, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -116,10 +92,10 @@ debug_color = Color(0.95713764, 0, 0.17062542, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="alive_body"]
 texture_filter = 1
-position = Vector2(0, -16)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_lp65t")
-hframes = 3
+position = Vector2(-0.75, -14)
+scale = Vector2(0.023450231, 0.023450231)
+texture = ExtResource("2_kj8xj")
+hframes = 4
 
 [node name="dead_body" type="RigidBody2D" parent="."]
 visible = false
@@ -131,13 +107,12 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_kj8xj")
 
 [node name="Sprite2D" type="Sprite2D" parent="dead_body"]
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
 texture_filter = 1
-position = Vector2(0, -16)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_lp65t")
-hframes = 3
-frame = 1
+position = Vector2(-0.75, -14)
+scale = Vector2(0.023450231, 0.023450231)
+texture = ExtResource("2_kj8xj")
+hframes = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
