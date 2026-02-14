@@ -45,6 +45,8 @@ public partial class player_controller : CharacterBody2D
     private Vector2 last_hit_position;
     private Robot yoyo_enemy;
 
+    private Vector2 dirRadial;
+
     public override void _Ready()
     {
         _camera = GetNode<Camera2D>("Camera2D");
@@ -124,9 +126,11 @@ public partial class player_controller : CharacterBody2D
         if (!IsOnFloor() && !dashing)
             Velocity += Vector2.Down * _gravity * dt;
 
-        if (IsOnWall() && !IsOnFloor())
+
+        if (IsOnWall() && !IsOnFloor() && Velocity.Y >0)
         {
-            Velocity = Vector2.Down * _gravity * dt * 0.2f;
+            float damp = dirRadial.Y > 0 ? 1.2f : 0.2f;
+            Velocity = Vector2.Down * _gravity * dt * damp;
             jumps_left = MAX_JUMPS;
         }
     }
@@ -139,18 +143,18 @@ public partial class player_controller : CharacterBody2D
         Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
         jumps_left--;
 
-        if (IsOnWall())
+        if (IsOnWall()&&!IsOnFloor())
             Velocity = (new Vector2(GetWallNormal().X * 400, JUMP_VELOCITY / 2)+Velocity)*0.5f;
     }
 
     private void HandleMovement(float dt)
     {
-        float dir = Input.GetAxis("left", "right");
-        _breaking = Mathf.Sign(dir) != Mathf.Sign(Velocity.X) && dir != 0;
+        dirRadial = new Vector2(Input.GetAxis("left", "right"), Input.GetAxis("jump", "down"));
+        _breaking = Mathf.Sign(dirRadial.X) != Mathf.Sign(Velocity.X) && dirRadial.X != 0;
 
-        if (dir != 0)
+        if (dirRadial.X != 0)
         {
-            float target = dir * MAX_SPEED;
+            float target = dirRadial.X * MAX_SPEED;
             float accel = ACCEL * dt * (1f + (_breaking ? 1f : 0f));
 
             Velocity = new Vector2(
@@ -158,10 +162,10 @@ public partial class player_controller : CharacterBody2D
                 Velocity.Y
             );
 
-            _anim.FlipH = dir < 0;
+            _anim.FlipH = dirRadial.X < 0;
 
             if (_move_particles.ProcessMaterial is ParticleProcessMaterial mat)
-                mat.Direction = new Vector3(Mathf.Sign(-dir), -0.3f, 0);
+                mat.Direction = new Vector3(Mathf.Sign(-dirRadial.X), -0.3f, 0);
         }
         else
         {
@@ -201,6 +205,8 @@ public partial class player_controller : CharacterBody2D
             if (dash_timer < DASH_COOLDOWN - DASH_DURATION)
             {
                 dashing = false;
+                var mat = _dash_particles.ProcessMaterial as ShaderMaterial;
+                mat.SetShaderParameter("fliph", _anim.FlipH);
                 _dash_attack_area.Monitoring = false;
                 _dash_particles.Emitting = false;
             }
