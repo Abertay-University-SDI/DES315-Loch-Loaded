@@ -91,3 +91,8 @@ func _on_back_button_visibility_changed() -> void:
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	print_debug(index)
+	# pass index into the color blind shader
+
+func _on_controlls_button_toggled(toggled_on: bool) -> void:
+	# show controlls, have ability to change controlls
+	return

@@ -2,15 +2,14 @@
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
-[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_1lvst"]
+[ext_resource type="Script" path="res://Code/button.gd" id="3_1lvst"]
 
-[node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider")]
+[node name="SettingsScene" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
-back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton")
 master_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/master_slider")
 sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider")
 music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider")
@@ -105,6 +104,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Screen Shake"
 
+[node name="controlls_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="controlls_button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/controlls_container"]
+layout_mode = 2
+text = "Controlls"
+
 [node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -120,10 +127,5 @@ script = ExtResource("3_1lvst")
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/colorBlind_container/colorBlind_list" to="." method="_on_color_blind_list_item_selected"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/screenShake_container/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/controlls_container/controlls_button" to="." method="_on_controlls_button_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/back_box_container/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/master_slider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/music_slider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="visibility_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_visibility_changed"]

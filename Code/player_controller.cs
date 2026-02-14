@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Godot;
 
 public partial class player_controller : CharacterBody2D
@@ -140,8 +141,10 @@ public partial class player_controller : CharacterBody2D
 	}
 	public override void _PhysicsProcess(double delta)
 	{
-			yoyo_string.SetPointPosition(0, last_hit_position);
+		yoyo_string.SetPointPosition(0, last_hit_position);
 		float dt = (float)delta;
+		bool holdingWall = false;
+		float wallHoldTimer = 0;
 
 
 		if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
@@ -154,18 +157,41 @@ public partial class player_controller : CharacterBody2D
 			jumps_left = MAX_JUMPS;
 		}
 
+		
+		if (IsOnWall() && !IsOnFloor() && !holdingWall)
+		{
+			Velocity = new Vector2(0, 0);
+			jumps_left = MAX_JUMPS;
+			_gravity = _gravity / 2;
+			holdingWall = true;
+			//wallHoldTimer = dt;
+		}
+
 		// Gravity
-		if (!IsOnFloor()&&!dashing)
+		if (!IsOnFloor() && !dashing)
 		{
 			Velocity += Vector2.Down * _gravity * dt;
 		}
 
+		if (!IsOnWall())
+		{
+			holdingWall = false;
+			_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+
+		}
+
 		// Jump
-		if (Input.IsActionJustPressed("jump") && jumps_left >0&& !dashing)
+		if (Input.IsActionJustPressed("jump") && jumps_left > 0 && !dashing)
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
 			jumps_left--;
+			if (IsOnWall())
+			{
+				_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+				Velocity += new Vector2 (GetWallNormal().X * 400, JUMP_VELOCITY / 2);
+			}
 		}
+
 
 		// Horizontal movement (momentum-based)
 		float direction = Input.GetAxis("left", "right");
@@ -180,11 +206,8 @@ public partial class player_controller : CharacterBody2D
 			}
 
 			float targetSpeed = direction * MAX_SPEED;
-			Velocity = new Vector2(
-				Mathf.MoveToward(
-					Velocity.X,
-					targetSpeed,
-					ACCELERATION * dt * (1.0f + (_breaking ? 1.0f : 0.0f))
+			Velocity = new Vector2( 
+				Mathf.MoveToward(Velocity.X, targetSpeed, ACCELERATION * dt * (1.0f + (_breaking ? 1.0f : 0.0f))
 				),
 				Velocity.Y
 			);
