@@ -90,4 +90,5 @@ func _on_color_blind_list_item_selected(index: int) -> void:
 
 
 func _on_visibility_changed() -> void:
+	if(visible):
 		back_button.grab_focus()
