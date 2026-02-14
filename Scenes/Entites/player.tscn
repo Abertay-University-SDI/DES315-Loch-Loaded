@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=78 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dbkltvnun1b2m" path="res://Code/player_controller.cs" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
@@ -250,6 +250,10 @@ region = Rect2(384, 192, 64, 64)
 atlas = ExtResource("2_pwsgj")
 region = Rect2(448, 192, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_82p5m"]
+atlas = ExtResource("2_pwsgj")
+region = Rect2(256, 704, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxq14"]
 animations = [{
 "frames": [{
@@ -475,6 +479,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82p5m")
+}],
+"loop": true,
+"name": &"Wall",
 "speed": 5.0
 }]
 
@@ -921,7 +933,7 @@ texture_filter = 1
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Paint"
+animation = &"Wall"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]

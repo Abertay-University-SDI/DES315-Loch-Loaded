@@ -1,360 +1,314 @@
 using System;
-using System.Diagnostics;
 using Godot;
 
 public partial class player_controller : CharacterBody2D
 {
-	[Export] public TileMapLayer Tilemap;
+    [Export] public TileMapLayer Tilemap;
 
-	private Camera2D _camera;
-	private AnimatedSprite2D _animationPlayer;
-	private GpuParticles2D _particle;
-	private GpuParticles2D _dash_particle;
-	private PackedScene _spray;
-	private Area2D _attack_area;
-	private Area2D _dash_attack_area;
+    private Camera2D _camera;
+    private AnimatedSprite2D _anim;
+    private GpuParticles2D _move_particles;
+    private GpuParticles2D _dash_particles;
 
-	//sound effects
-	[Export] public AudioStreamPlayer2D footstepSfx;
-	[Export] public AudioStreamPlayer2D dashSfx;
-	[Export] public AudioStreamPlayer2D punchSfx;
+    private PackedScene _spray_scene;
+    private Area2D _attack_area;
+    private Area2D _dash_attack_area;
 
-	[Export] public Sprite2D yoyo;
-	[Export] public Line2D yoyo_string;
+    [Export] public AudioStreamPlayer2D footstepSfx;
+    [Export] public AudioStreamPlayer2D dashSfx;
+    [Export] public AudioStreamPlayer2D punchSfx;
 
+    [Export] public Sprite2D yoyo;
+    [Export] public Line2D yoyo_string;
 
-	//player movement constants
-	private const float WALK_SPEED = 60.0f;
-	private const float MAX_SPEED = 150.0f;
-	private const float TIME_TO_MAX_SPEED = 0.4f;
-	private const float FRICTION = 600.0f;
-	private const float JUMP_VELOCITY = -400.0f;
+    private const float MAX_SPEED = 150f;
+    private const float TIME_TO_MAX = 0.4f;
+    private const float ACCEL = MAX_SPEED / TIME_TO_MAX;
+    private const float FRICTION = 600f;
+    private const float JUMP_VELOCITY = -400f;
 
-	private const int MAX_JUMPS = 1;
-	private int jumps_left = MAX_JUMPS;
+    private const int MAX_JUMPS = 1;
+    private int jumps_left = MAX_JUMPS;
 
-	//dash
-	private const float ACCELERATION = MAX_SPEED / TIME_TO_MAX_SPEED;
-	private const float DASH_COOLDOWN = 1.0f;
-	private const float dashDuration = 0.2f;
-	private bool dashing = false;
-	private float dashCooldownTimer = 0.0f;
+    private const float DASH_COOLDOWN = 1f;
+    private const float DASH_DURATION = 0.2f;
 
-	private bool spraying = false;
-	private float punching = 0.0f;
+    private float dash_timer = 0f;
+    private bool dashing = false;
 
-	private Vector2 last_hit_position;
+    private bool spraying = false;
+    private float punching = 0f;
 
-	private float _gravity;
-	private bool _breaking = false;
+    private float _gravity;
+    private bool _breaking = false;
 
-	private Robot yoyo_enemy;
+    private Vector2 last_hit_position;
+    private Robot yoyo_enemy;
 
-	public override void _Ready()
-	{
-		_camera = GetNode<Camera2D>("Camera2D");
-		_animationPlayer = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		_particle = GetNode<GpuParticles2D>("GPUParticles2D");
+    public override void _Ready()
+    {
+        _camera = GetNode<Camera2D>("Camera2D");
+        _anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        _move_particles = GetNode<GpuParticles2D>("GPUParticles2D");
+        _dash_particles = GetNode<GpuParticles2D>("dash_sfx");
 
-		//dash particle setup
-		_dash_particle = GetNode<GpuParticles2D>("dash_sfx");
-		_dash_attack_area = GetNode<Area2D>("dash_attack_area");
-		_dash_attack_area.BodyEntered += OnDashBodyHit;
-		_dash_attack_area.Monitoring = false;
+        _attack_area = GetNode<Area2D>("attack_area");
+        _dash_attack_area = GetNode<Area2D>("dash_attack_area");
 
-		_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+        _attack_area.BodyEntered += OnBodyEntered;
+        _dash_attack_area.BodyEntered += OnDashBodyHit;
 
-		_spray = ResourceLoader.Load<PackedScene>("res://Scenes/Interactables/spray.tscn");
-		_attack_area = GetNode<Area2D>("attack_area");
-		_attack_area.Monitoring = false;
-		_attack_area.BodyEntered += OnBodyEntered;
+        _attack_area.Monitoring = false;
+        _dash_attack_area.Monitoring = false;
 
-		SetupCameraLimits();
-	}
+        _spray_scene = ResourceLoader.Load<PackedScene>("res://Scenes/Interactables/spray.tscn");
+        _gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
+        SetupCameraLimits();
+    }
 
-	public override void _Input(InputEvent @event)
-	{
-		if (@event.IsActionPressed("spray"))
-		{
-			spraying = true;
-			_animationPlayer.Play("Paint");
-			return;//spraying this way is currently disabled
-			var sprayInstance = _spray.Instantiate() as Node2D;
-			//sprayInstance.Material = (Material)sprayInstance.Material.Duplicate();
-			sprayInstance.Position = Position + new Vector2(_animationPlayer.FlipH ? -67 : 67, -32);
-			GetParent().AddChild(sprayInstance);
-		}
-		else if (@event.IsActionPressed("punch"))
-		{
-			punching = 0.4f;
-			punchSfx.Play();
-			_attack_area.Monitoring = true;
-		}
-		else if (@event.IsActionPressed("dash") && dashCooldownTimer<0.0f)
-		{
-			_dash_particle.Emitting = true;
-			_dash_attack_area.Monitoring = true;
-			dashSfx.Play();
-			Vector2 dashDir = new Vector2(_animationPlayer.FlipH ? -1 : 1,0);
-			Velocity = dashDir * 400.0f;
-			dashCooldownTimer = DASH_COOLDOWN;
-			dashing = true;
-		}
-		else if (@event.IsActionPressed("yoyo") && yoyo.Visible)
-		{
-			if (yoyo_enemy != null)
-			{
-				yoyo_enemy.TakeHit((yoyo_enemy.Position-Position).Normalized(), 0.0f, 100.0f);
-			}
-		}
-	}
+    public override void _Input(InputEvent e)
+    {
+        if (e.IsActionPressed("spray"))
+        {
+            spraying = true;
+            _anim.Play("Paint");
+            return;
+        }
 
+        if (e.IsActionPressed("punch"))
+        {
+            punching = 0.4f;
+            punchSfx.Play();
+            _attack_area.Monitoring = true;
+        }
 
-	void updateYoyo()
-	{
-		if (!yoyo.Visible)
-			return;
+        if (e.IsActionPressed("dash") && dash_timer < 0f)
+            StartDash();
 
-		// Player position in yoyo_string local space
-		Vector2 player_local =
-			yoyo_string.ToLocal(GlobalPosition);
+        if (e.IsActionPressed("yoyo") && yoyo.Visible && yoyo_enemy != null)
+        {
+            Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
+            yoyo_enemy.TakeHit(dir, 0f, 100f);
+        }
+    }
 
-		player_local.Y -= 10;
+    public override void _Process(double delta)
+    {
+        UpdateCooldowns((float)delta);
+        UpdateYoyo();
+    }
 
-		// Impact position in yoyo_string local space
-		Vector2 hit_local =
-			yoyo_string.ToLocal(last_hit_position);
+    public override void _PhysicsProcess(double delta)
+    {
+        float dt = (float)delta;
 
-		// Update string
-		yoyo_string.SetPointPosition(0, player_local);
-		yoyo_string.SetPointPosition(1, hit_local);
+        if (dash_timer < DASH_COOLDOWN - DASH_DURATION)
+            dashing = false;
 
-		// Move yoyo sprite to impact point
-		yoyo.GlobalPosition = last_hit_position;
-	}
+        if (IsOnFloor())
+            jumps_left = MAX_JUMPS;
 
-	public override void _Process(double delta)
-	{
-		updateCooldowns((float)delta);
-		updateYoyo();
-	}
-	public override void _PhysicsProcess(double delta)
-	{
-		yoyo_string.SetPointPosition(0, last_hit_position);
-		float dt = (float)delta;
-		bool holdingWall = false;
-		float wallHoldTimer = 0;
+        ApplyGravity(dt);
+        HandleJump();
+        HandleMovement(dt);
 
+        UpdateAttackOffset();
+        UpdateAnimation();
 
-		if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
-		{
-			dashing = false;
-		}
+        MoveAndSlide();
+    }
 
-		if(IsOnFloor())
-		{
-			jumps_left = MAX_JUMPS;
-		}
+    private void ApplyGravity(float dt)
+    {
+        if (!IsOnFloor() && !dashing)
+            Velocity += Vector2.Down * _gravity * dt;
 
-		
-		if (IsOnWall() && !IsOnFloor() && !holdingWall)
-		{
-			Velocity = new Vector2(0, 0);
-			jumps_left = MAX_JUMPS;
-			_gravity = _gravity / 2;
-			holdingWall = true;
-			//wallHoldTimer = dt;
-		}
+        if (IsOnWall() && !IsOnFloor())
+        {
+            Velocity = Vector2.Down * _gravity * dt * 0.2f;
+            jumps_left = MAX_JUMPS;
+        }
+    }
 
-		// Gravity
-		if (!IsOnFloor() && !dashing)
-		{
-			Velocity += Vector2.Down * _gravity * dt;
-		}
+    private void HandleJump()
+    {
+        if (!Input.IsActionJustPressed("jump") || jumps_left <= 0 || dashing)
+            return;
 
-		if (!IsOnWall())
-		{
-			holdingWall = false;
-			_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+        Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
+        jumps_left--;
 
-		}
+        if (IsOnWall())
+            Velocity = (new Vector2(GetWallNormal().X * 400, JUMP_VELOCITY / 2)+Velocity)*0.5f;
+    }
 
-		// Jump
-		if (Input.IsActionJustPressed("jump") && jumps_left > 0 && !dashing)
-		{
-			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
-			jumps_left--;
-			if (IsOnWall())
-			{
-				_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
-				Velocity += new Vector2 (GetWallNormal().X * 400, JUMP_VELOCITY / 2);
-			}
-		}
+    private void HandleMovement(float dt)
+    {
+        float dir = Input.GetAxis("left", "right");
+        _breaking = Mathf.Sign(dir) != Mathf.Sign(Velocity.X) && dir != 0;
 
+        if (dir != 0)
+        {
+            float target = dir * MAX_SPEED;
+            float accel = ACCEL * dt * (1f + (_breaking ? 1f : 0f));
 
-		// Horizontal movement (momentum-based)
-		float direction = Input.GetAxis("left", "right");
+            Velocity = new Vector2(
+                Mathf.MoveToward(Velocity.X, target, accel),
+                Velocity.Y
+            );
 
-		_breaking = Mathf.Sign(direction) != Mathf.Sign(Velocity.X) && direction != 0;
+            _anim.FlipH = dir < 0;
 
-		if (direction != 0)
-		{
-			if (_particle.ProcessMaterial is ParticleProcessMaterial mat)
-			{
-				mat.Direction = new Vector3(Mathf.Sign(-direction), -0.3f, 0);
-			}
+            if (_move_particles.ProcessMaterial is ParticleProcessMaterial mat)
+                mat.Direction = new Vector3(Mathf.Sign(-dir), -0.3f, 0);
+        }
+        else
+        {
+            Velocity = new Vector2(
+                Mathf.MoveToward(Velocity.X, 0f, FRICTION * dt),
+                Velocity.Y
+            );
+        }
+    }
 
-			float targetSpeed = direction * MAX_SPEED;
-			Velocity = new Vector2( 
-				Mathf.MoveToward(Velocity.X, targetSpeed, ACCELERATION * dt * (1.0f + (_breaking ? 1.0f : 0.0f))
-				),
-				Velocity.Y
-			);
+    private void StartDash()
+    {
+        dashing = true;
+        dash_timer = DASH_COOLDOWN;
 
-			_animationPlayer.FlipH = direction < 0;
+        Vector2 dir = new(_anim.FlipH ? -1 : 1, 0);
+        Velocity = dir * 400f;
 
-		}
-		else
-		{
-			Velocity = new Vector2(
-				Mathf.MoveToward(Velocity.X, 0.0f, FRICTION * dt),
-				Velocity.Y
-			);
-		}
+        _dash_particles.Emitting = true;
+        _dash_attack_area.Monitoring = true;
+        dashSfx.Play();
+    }
 
-		Vector2 attackOffset = _attack_area.Position;
-		attackOffset.X = _animationPlayer.FlipH ? -Mathf.Abs(attackOffset.X) : Mathf.Abs(attackOffset.X);
-		_attack_area.Position = attackOffset;
+    private void UpdateCooldowns(float dt)
+    {
+        if (punching > 0f)
+        {
+            punching -= dt;
+            if (punching <= 0f)
+                _attack_area.Monitoring = false;
+        }
 
-		UpdateAnimation();
-		MoveAndSlide();
-	}
+        if (dash_timer >= 0f)
+        {
+            dash_timer -= dt;
 
-	private void updateCooldowns(float dt)
-	{
-		if (punching > 0.0f)
-		{
-			punching -= dt;
-			if (punching <= 0.0f)
-			{
-				_attack_area.Monitoring = false;
-			}
-		}
-		if (dashCooldownTimer >= 0.0f)
-		{
-			dashCooldownTimer -= dt;
-			if (dashCooldownTimer < DASH_COOLDOWN - dashDuration)
-			{
-				dashing = false;
-				var mat = _dash_particle.ProcessMaterial as ShaderMaterial;
-				mat.SetShaderParameter("fliph", _animationPlayer.FlipH);
-				_dash_attack_area.Monitoring = false;
-				_dash_particle.Emitting = false;
-			}
-		}
-		else
-		{
-			yoyo.Visible = false;
-			yoyo_enemy = null;
-		}
-	}
+            if (dash_timer < DASH_COOLDOWN - DASH_DURATION)
+            {
+                dashing = false;
+                _dash_attack_area.Monitoring = false;
+                _dash_particles.Emitting = false;
+            }
+        }
+        else
+        {
+            yoyo.Visible = false;
+            yoyo_enemy = null;
+        }
+    }
 
-	private void UpdateAnimation()
-	{
-		if (spraying)
-		{
-			if (_animationPlayer.Animation != "Paint" || !_animationPlayer.IsPlaying())
-			{
-				spraying = false;
-			}
-			else
-			{
-				return;
-			}
-		}
+    private void UpdateAnimation()
+    {
+        if (spraying)
+        {
+            if (_anim.Animation != "Paint" || !_anim.IsPlaying())
+                spraying = false;
+            else
+                return;
+        }
 
-		float speed = Mathf.Abs(Velocity.X);
+        float speed = Mathf.Abs(Velocity.X);
 
-		if (dashing)
-		{
-			_animationPlayer.Play("Dash");
-		}
-		else if (!IsOnFloor())
-		{
-			_animationPlayer.Play("Jump");
-		}
-		else if (punching > 0.0f)
-		{
-			_animationPlayer.Play("Punch");
-		}
-		else if (_breaking && speed > 100.0f)
-		{
-			_animationPlayer.Play("Breaking");
-			_particle.Emitting = true;
-		}
-		else if (speed < 5.0f)
-		{
-			_animationPlayer.Play("Idle");
-			_particle.Emitting = false;
-		}
-		else
-		{
-			_animationPlayer.Play("Walk");
-			if (footstepSfx.Playing == false)
-			{
-				Random random = new Random();
-				if (random.NextDouble() < 0.2)
-					footstepSfx.Play();
-			}
-			
-			_particle.Emitting = false;
-		}
+        if (dashing)
+            _anim.Play("Dash");
+        else if (IsOnWall() && !IsOnFloor())
+            _anim.Play("Wall");
+        else if (!IsOnFloor())
+            _anim.Play("Jump");
+        else if (punching > 0f)
+            _anim.Play("Punch");
+        else if (_breaking && speed > 100f)
+        {
+            _anim.Play("Breaking");
+            _move_particles.Emitting = true;
+        }
+        else if (speed < 5f)
+        {
+            _anim.Play("Idle");
+            _move_particles.Emitting = false;
+        }
+        else
+        {
+            _anim.Play("Walk");
+            _move_particles.Emitting = false;
 
-	}
+            if (!footstepSfx.Playing && new Random().NextDouble() < 0.2)
+                footstepSfx.Play();
+        }
+    }
 
-	private void OnBodyEntered(Node body)
-	{
-		Robot enemy = body.GetParent() as Robot;
+    private void UpdateYoyo()
+    {
+        if (!yoyo.Visible)
+            return;
 
-		if (enemy == null)
-			return;
+        Vector2 player_local = yoyo_string.ToLocal(GlobalPosition);
+        player_local.Y -= 10;
 
-		if (!enemy.IsInGroup("Enemy"))
-			return;
+        Vector2 hit_local = yoyo_string.ToLocal(last_hit_position);
 
-		Vector2 hitDir = (enemy.GlobalPosition-GlobalPosition).Normalized();
-		enemy.TakeHit(hitDir,punching, 100.0f);
-	}
+        yoyo_string.SetPointPosition(0, player_local);
+        yoyo_string.SetPointPosition(1, hit_local);
 
-	private void OnDashBodyHit(Node body)
-	{
-		Robot enemy = body.GetParent() as Robot;
+        yoyo.GlobalPosition = last_hit_position;
+    }
 
-		if (enemy == null)
-			return;
+    private void UpdateAttackOffset()
+    {
+        Vector2 offset = _attack_area.Position;
+        offset.X = _anim.FlipH ? -Mathf.Abs(offset.X) : Mathf.Abs(offset.X);
+        _attack_area.Position = offset;
+    }
 
-		if (!enemy.IsInGroup("Enemy"))
-			return;
-		var hit_postion = (body as Node2D).GlobalPosition;
-		hit_postion.Y -= 16;
-		yoyo.Visible = true;
-		yoyo_enemy = enemy;
+    private void OnBodyEntered(Node body)
+    {
+        if (body.GetParent() is not Robot enemy || !enemy.IsInGroup("Enemy"))
+            return;
 
-		last_hit_position = hit_postion;
-		enemy.TakeDash(dashCooldownTimer, 400.0f);
-	}
+        Vector2 dir = (enemy.GlobalPosition - GlobalPosition).Normalized();
+        enemy.TakeHit(dir, punching, 100f);
+    }
 
-	private void SetupCameraLimits()
-	{
-		if (Tilemap == null)
-			return;
+    private void OnDashBodyHit(Node body)
+    {
+        if (body.GetParent() is not Robot enemy || !enemy.IsInGroup("Enemy"))
+            return;
 
-		Rect2I usedRect = Tilemap.GetUsedRect();
-		Vector2I tileSize = Tilemap.TileSet.TileSize;
+        Vector2 hit = (body as Node2D).GlobalPosition;
+        hit.Y -= 16;
 
-		_camera.LimitLeft = usedRect.Position.X * tileSize.X + tileSize.X;
-		_camera.LimitRight = (usedRect.Position.X + usedRect.Size.X) * tileSize.X;
-		_camera.LimitBottom = (usedRect.Position.Y + usedRect.Size.Y) * tileSize.Y;
-	}
+        last_hit_position = hit;
+        yoyo_enemy = enemy;
+        yoyo.Visible = true;
+
+        enemy.TakeDash(dash_timer, 400f);
+    }
+
+    private void SetupCameraLimits()
+    {
+        if (Tilemap == null)
+            return;
+
+        Rect2I rect = Tilemap.GetUsedRect();
+        Vector2I size = Tilemap.TileSet.TileSize;
+
+        _camera.LimitLeft = rect.Position.X * size.X + size.X;
+        _camera.LimitRight = (rect.Position.X + rect.Size.X) * size.X;
+        _camera.LimitBottom = (rect.Position.Y + rect.Size.Y) * size.Y;
+    }
 }
