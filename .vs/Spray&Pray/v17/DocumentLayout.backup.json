@@ -14,7 +14,7 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 157,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -32,9 +32,10 @@
               "RelativeDocumentMoniker": "Code\\Robot.cs",
               "ToolTip": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\Robot.cs",
               "RelativeToolTip": "Code\\Robot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T19:03:03.617Z"
+              "WhenOpened": "2026-02-04T19:03:03.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -44,7 +45,7 @@
               "RelativeDocumentMoniker": "Code\\player_controller.cs",
               "ToolTip": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
               "RelativeToolTip": "Code\\player_controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAqwLsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T12:59:56.184Z",
               "EditorCaption": ""
