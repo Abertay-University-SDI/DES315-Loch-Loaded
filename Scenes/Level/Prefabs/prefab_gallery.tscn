@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmvdtfxqjb2m1"]
+
+[ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="1_p4jkq"]
+[ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="2_lms0j"]
+[ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="3_i1g2s"]
+[ext_resource type="PackedScene" uid="uid://b4hrx48bddmmi" path="res://Scenes/Level/Prefabs/house_3.tscn" id="4_iyig6"]
+[ext_resource type="PackedScene" uid="uid://nrbu06nmkajc" path="res://Scenes/Level/Prefabs/market.tscn" id="5_hhvuw"]
+
+[node name="PrefabGallery" type="Node2D"]
+
+[node name="House1" parent="." instance=ExtResource("1_p4jkq")]
+position = Vector2(69, -68)
+
+[node name="TempAssetScaffolding" parent="." instance=ExtResource("2_lms0j")]
+position = Vector2(175, -67)
+
+[node name="House2" parent="." instance=ExtResource("3_i1g2s")]
+position = Vector2(308, -99)
+
+[node name="House3" parent="." instance=ExtResource("4_iyig6")]
+position = Vector2(436, -68)
+
+[node name="TempAssetFoodStall" parent="." instance=ExtResource("5_hhvuw")]
+position = Vector2(587, -49.000004)

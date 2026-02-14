@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://nrbu06nmkajc"]
+
+[ext_resource type="Texture2D" uid="uid://byod54gf341i4" path="res://Textures/Buildings/TEMP_ASSET_FoodStall.png" id="1_5bd6g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bd6g"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ughkx"]
+size = Vector2(1587.8906, 107.44821)
+
+[node name="TempAssetFoodStall" type="Sprite2D"]
+scale = Vector2(0.068115175, 0.068115175)
+texture = ExtResource("1_5bd6g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_5bd6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14.681016, -587.24066)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_ughkx")
+one_way_collision = true

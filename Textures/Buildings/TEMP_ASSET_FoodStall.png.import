@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byod54gf341i4"
-path="res://.godot/imported/TEMP_ASSET_FoodStall.png-22e4732240396638690ae6a74e7d16d2.ctex"
+path="res://.godot/imported/TEMP_ASSET_FoodStall.png-4f5f4abb50332a4a060d0f828f9529b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Decorations/TEMP_ASSET_FoodStall.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_FoodStall.png-22e4732240396638690ae6a74e7d16d2.ctex"]
+source_file="res://Textures/Buildings/TEMP_ASSET_FoodStall.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_FoodStall.png-4f5f4abb50332a4a060d0f828f9529b7.ctex"]
 
 [params]
 
