@@ -143,7 +143,7 @@ public partial class player_controller : CharacterBody2D
         Velocity = new Vector2(Velocity.X, JUMP_VELOCITY);
         jumps_left--;
 
-        if (IsOnWall()&&!IsOnFloor())
+        if (IsOnWallOnly())
             Velocity = (new Vector2(GetWallNormal().X * 400, JUMP_VELOCITY / 2)+Velocity)*0.5f;
     }
 
@@ -173,6 +173,15 @@ public partial class player_controller : CharacterBody2D
                 Mathf.MoveToward(Velocity.X, 0f, FRICTION * dt),
                 Velocity.Y
             );
+        }
+
+        if (dirRadial.Y > 0.0)
+        {
+            SetCollisionMaskValue(2, false);
+        }
+        else
+        {
+            SetCollisionMaskValue(2, true);
         }
     }
 

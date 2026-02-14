@@ -10,6 +10,8 @@ scale = Vector2(0.06298829, 0.06298829)
 texture = ExtResource("1_epgah")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(31.751934, -317.51935)
