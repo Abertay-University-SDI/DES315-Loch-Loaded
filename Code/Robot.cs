@@ -83,7 +83,7 @@ public partial class Robot : Node2D
             target
         );
 
-        query.CollisionMask = 1; // world layer
+        query.CollisionMask = 3; // world layer
         var result = space.IntersectRay(query);
 
         return result.Count > 0;
@@ -91,23 +91,12 @@ public partial class Robot : Node2D
 
     private bool HasWallAhead()
     {
-        Vector2 origin = _alive.GlobalPosition;
-        origin.X += _direction * 12f;
-
-        Vector2 target = origin;
-        target.X += _direction* 2f;
-
-        var space = GetWorld2D().DirectSpaceState;
-
-        var query = PhysicsRayQueryParameters2D.Create(
-            origin,
-            target
-        );
-
-        query.CollisionMask = 1; // world layer
-        var result = space.IntersectRay(query);
-
-        return result.Count > 0;
+        if (_alive.IsOnWall())
+        {
+            float wall_dir = _alive.GetWallNormal().X;
+            return wall_dir * _direction < 0;
+        }
+        return false;
     }
 
     public override void _PhysicsProcess(double delta)
