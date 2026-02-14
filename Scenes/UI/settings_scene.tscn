@@ -2,9 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
-[ext_resource type="Script" path="res://Code/button.gd" id="3_1lvst"]
+[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_1lvst"]
 
-[node name="SettingsScene" type="Control" node_paths=PackedStringArray("master_slider", "sfx_slider", "music_slider")]
+[node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
