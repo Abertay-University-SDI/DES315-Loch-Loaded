@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1rel3euyj5yn"
-path="res://.godot/imported/cone-bot-2.png-dfdd9e05c6cb9555c3439a5037f8e719.ctex"
+uid="uid://4ui6arg3l1ed"
+path="res://.godot/imported/TEMP_ASSET_Box.png-bb12942b6afa608ab8b74383fb0f3fe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/cone-bot-2.png"
-dest_files=["res://.godot/imported/cone-bot-2.png-dfdd9e05c6cb9555c3439a5037f8e719.ctex"]
+source_file="res://Textures/Decorations/TEMP_ASSET_Box.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_Box.png-bb12942b6afa608ab8b74383fb0f3fe8.ctex"]
 
 [params]
 

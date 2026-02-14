@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceomji24jqk64"
-path="res://.godot/imported/TEMP_ASSET_SprayPaint.png-e6d1f710643fa291abc8d6597b7a258a.ctex"
+uid="uid://41q2v7d756j1"
+path="res://.godot/imported/TEMP_ASSET_TrashCap.png-13c0d958a69cd417f7a3c1cbf154cd25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_SprayPaint.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_SprayPaint.png-e6d1f710643fa291abc8d6597b7a258a.ctex"]
+source_file="res://Textures/Decorations/TEMP_ASSET_TrashCap.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_TrashCap.png-13c0d958a69cd417f7a3c1cbf154cd25.ctex"]
 
 [params]
 

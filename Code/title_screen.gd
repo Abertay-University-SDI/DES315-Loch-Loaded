@@ -1,6 +1,6 @@
 extends Control
 
-const studio := preload("res://Scenes/Level/studio.tscn")
+const studio := preload("res://Scenes/UI/studio.tscn")
 @onready var settings = $SettingsScene;
 @onready var title_screen_ui = $title_screen_ui;
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3johr7vw3myf"]
 
-[ext_resource type="Texture2D" uid="uid://v0kdda3xgxvj" path="res://Textures/TEMP_ASSET_Scaffolding.png" id="1_epgah"]
+[ext_resource type="Texture2D" uid="uid://v0kdda3xgxvj" path="res://Textures/Decorations/TEMP_ASSET_Scaffolding.png" id="1_epgah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4uil"]
 size = Vector2(1063.6898, 31.751904)

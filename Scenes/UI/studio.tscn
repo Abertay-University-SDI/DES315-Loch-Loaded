@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://durnpsq1hrblp" path="res://Code/studio_select.gd" id="1_0t5tv"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_cj3df"]
 [ext_resource type="Texture2D" uid="uid://6gymgacifnx" path="res://Textures/Background/studio-concept-1-final.png" id="3_mk24u"]
-[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/Level/settings_scene.tscn" id="4_mk24u"]
+[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="4_mk24u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_135x7"]
 bg_color = Color(0, 0, 0, 0.60784316)

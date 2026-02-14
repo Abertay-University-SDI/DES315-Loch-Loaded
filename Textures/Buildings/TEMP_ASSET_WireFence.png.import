@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://41q2v7d756j1"
-path="res://.godot/imported/TEMP_ASSET_TrashCap.png-d0a68ffce164c43ed921aac8208f1afa.ctex"
+uid="uid://7emvgj3ce5w2"
+path="res://.godot/imported/TEMP_ASSET_WireFence.png-d083ee0388da0e9f575ac3b973ece5a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_TrashCap.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_TrashCap.png-d0a68ffce164c43ed921aac8208f1afa.ctex"]
+source_file="res://Textures/Buildings/TEMP_ASSET_WireFence.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_WireFence.png-d083ee0388da0e9f575ac3b973ece5a9.ctex"]
 
 [params]
 

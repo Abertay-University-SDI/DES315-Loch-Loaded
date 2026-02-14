@@ -10,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
+back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/back_box_container/BackButton")
 master_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/master_slider")
 sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider")
 music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider")
@@ -122,6 +123,7 @@ size_flags_vertical = 4
 text = "back"
 script = ExtResource("3_1lvst")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]

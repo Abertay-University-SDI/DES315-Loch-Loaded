@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80ifgovk8tm4"
-path="res://.godot/imported/TEMP_ASSET_SkyBox.png-4473cba074d106b200867761a87d3ad5.ctex"
+uid="uid://cfr6o7uvxh0iu"
+path="res://.godot/imported/cone-bot-1.png-e5204210f8314fd12f2f82e26184b482.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEMP_ASSET_SkyBox.png"
-dest_files=["res://.godot/imported/TEMP_ASSET_SkyBox.png-4473cba074d106b200867761a87d3ad5.ctex"]
+source_file="res://Textures/Enemies/cone-bot-1.png"
+dest_files=["res://.godot/imported/cone-bot-1.png-e5204210f8314fd12f2f82e26184b482.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfr6o7uvxh0iu"
-path="res://.godot/imported/cone-bot-1.png-f39c617e4dca778149c5565dca2b4574.ctex"
+uid="uid://v0kdda3xgxvj"
+path="res://.godot/imported/TEMP_ASSET_Scaffolding.png-746dce8f3d968a75a6f556fe35b4d80e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/cone-bot-1.png"
-dest_files=["res://.godot/imported/cone-bot-1.png-f39c617e4dca778149c5565dca2b4574.ctex"]
+source_file="res://Textures/Decorations/TEMP_ASSET_Scaffolding.png"
+dest_files=["res://.godot/imported/TEMP_ASSET_Scaffolding.png-746dce8f3d968a75a6f556fe35b4d80e.ctex"]
 
 [params]
 

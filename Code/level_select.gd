@@ -9,4 +9,5 @@ func _on_level_2_pressed() -> void:
 	pass
 
 func _on_to_studio_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Level/studio.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/studio.tscn"
+	)

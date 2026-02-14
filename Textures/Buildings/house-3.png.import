@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dujwaugcui85d"
-path="res://.godot/imported/trash-bin-concept-2.png-6f4fba74364b49389e436a5142f3b977.ctex"
+uid="uid://bsqqq1wprmrmi"
+path="res://.godot/imported/house-3.png-56a43a5d83d7ebf0eaeea31422759176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/trash-bin-concept-2.png"
-dest_files=["res://.godot/imported/trash-bin-concept-2.png-6f4fba74364b49389e436a5142f3b977.ctex"]
+source_file="res://Textures/Buildings/house-3.png"
+dest_files=["res://.godot/imported/house-3.png-56a43a5d83d7ebf0eaeea31422759176.ctex"]
 
 [params]
 

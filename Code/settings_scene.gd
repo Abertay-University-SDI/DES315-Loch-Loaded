@@ -85,10 +85,6 @@ func _on_back_button_pressed() -> void:
 	get_tree().get_nodes_in_group("current_ui").back().show()
 
 
-func _on_back_button_visibility_changed() -> void:
-	if (back_button.visible):
-		back_button.grab_focus()
-
 func _on_color_blind_list_item_selected(index: int) -> void:
 	print_debug(index)
 	# pass index into the color blind shader
@@ -96,3 +92,8 @@ func _on_color_blind_list_item_selected(index: int) -> void:
 func _on_controlls_button_toggled(toggled_on: bool) -> void:
 	# show controlls, have ability to change controlls
 	return
+
+
+func _on_visibility_changed() -> void:
+	if(visible):
+		back_button.grab_focus()
