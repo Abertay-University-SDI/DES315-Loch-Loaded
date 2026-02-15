@@ -94,7 +94,7 @@ public partial class player_controller : CharacterBody2D
             GD.Print("Yoyo hit!");
             GD.Print(yoyo_enemy);
             Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
-            yoyo_enemy.TakeHit(-dir, -0.1f, 1000f);
+            yoyo_enemy.TakeHit(dir, -0.1f, 100f);
         }
     }
 
