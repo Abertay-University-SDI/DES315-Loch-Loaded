@@ -1,20 +1,36 @@
-# Godot 4+ specific ignores
+# Godot 4+
 .godot/
+.import/
 .nomedia
 
-# Godot-specific ignores
-.import/
+# Godot export settings
 export.cfg
 export_credentials.cfg
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# Godot temp files
+*.tmp
+*.TMP
+*~
 
-# Mono-specific ignores
+# Mono / C#
 .mono/
 data_*/
 mono_crash.*.json
-.vs/Spray&Pray/FileContentIndex/50248001-f63d-49f4-a709-37071dd0129a.vsidx
-.vs/Spray&Pray/FileContentIndex/a0c2c59b-9e57-4539-a011-fcf6331f2f69.vsidx
-.vs/Spray&Pray/FileContentIndex/84cd6cb6-21d7-48ca-a276-8f0c6325d4a7.vsidx
-.vs/Spray&Pray/FileContentIndex/128de533-28b2-4104-9aca-62911e501af3.vsidx
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# JetBrains IDEs
+.idea/
+
+# Exported builds
+Export/
+
+# Save data
+Saves/
