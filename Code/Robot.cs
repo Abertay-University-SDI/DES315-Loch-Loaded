@@ -40,13 +40,15 @@ public partial class Robot : Node2D
 
     public void TakeHit(Vector2 hitDir,float hit_duration, float force)
     {
-        if (immunity > 0.0f)
+        if (immunity > 0.0f && !(hit_duration<0.0f))
             return;
         
         immunity = hit_duration;
 
         _health--;
         Debug.Print($"TrashCanEnemy took hit! Remaining health: {_health}");
+
+        _alive.Velocity = hitDir * force;
         _animationPlayer.Play("take_hit");
         if (_health <= 0)
             Die(hitDir, force);

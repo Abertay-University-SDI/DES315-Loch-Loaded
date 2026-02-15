@@ -44,6 +44,7 @@ public partial class player_controller : CharacterBody2D
 
     private Vector2 last_hit_position;
     private Robot yoyo_enemy;
+    private CharacterBody2D yoyo_enemy_body;
 
     private Vector2 dirRadial;
 
@@ -88,10 +89,12 @@ public partial class player_controller : CharacterBody2D
         if (e.IsActionPressed("dash") && dash_timer < 0f)
             StartDash();
 
-        if (e.IsActionPressed("yoyo") && yoyo.Visible && yoyo_enemy != null)
+        if (e.IsActionPressed("yoyo") && yoyo.Visible && IsInstanceValid(yoyo_enemy))
         {
+            GD.Print("Yoyo hit!");
+            GD.Print(yoyo_enemy);
             Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
-            yoyo_enemy.TakeHit(dir, 0f, 100f);
+            yoyo_enemy.TakeHit(-dir, -0.1f, 1000f);
         }
     }
 
@@ -223,7 +226,6 @@ public partial class player_controller : CharacterBody2D
         else
         {
             yoyo.Visible = false;
-            yoyo_enemy = null;
         }
     }
 
@@ -272,15 +274,19 @@ public partial class player_controller : CharacterBody2D
         if (!yoyo.Visible)
             return;
 
+
+        Vector2 hit = yoyo_enemy_body.GlobalPosition;
+        hit.Y -= 16;
+
         Vector2 player_local = yoyo_string.ToLocal(GlobalPosition);
         player_local.Y -= 10;
 
-        Vector2 hit_local = yoyo_string.ToLocal(last_hit_position);
+        Vector2 hit_local = yoyo_string.ToLocal(hit);
 
         yoyo_string.SetPointPosition(0, player_local);
         yoyo_string.SetPointPosition(1, hit_local);
 
-        yoyo.GlobalPosition = last_hit_position;
+        yoyo.GlobalPosition = hit;
     }
 
     private void UpdateAttackOffset()
@@ -309,6 +315,7 @@ public partial class player_controller : CharacterBody2D
 
         last_hit_position = hit;
         yoyo_enemy = enemy;
+        yoyo_enemy_body = body as CharacterBody2D;
         yoyo.Visible = true;
 
         enemy.TakeDash(dash_timer, 400f);
