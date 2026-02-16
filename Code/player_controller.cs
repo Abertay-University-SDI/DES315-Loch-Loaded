@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using Godot;
 
 public partial class player_controller : CharacterBody2D
@@ -42,6 +43,9 @@ public partial class player_controller : CharacterBody2D
     private float _gravity;
     private bool _breaking = false;
 
+    private bool _yoyo_returning = false;
+    private float _yoyo_timer = 0f;
+    private float _yoyo_duration = 1.0f;
     private Vector2 last_hit_position;
     private Robot yoyo_enemy;
     private CharacterBody2D yoyo_enemy_body;
@@ -94,7 +98,8 @@ public partial class player_controller : CharacterBody2D
             GD.Print("Yoyo hit!");
             GD.Print(yoyo_enemy);
             Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
-            yoyo_enemy.TakeHit(dir, -0.1f, 100f);
+            dir += Vector2.Down;
+            yoyo_enemy.TakeHit(-dir, -0.1f, 100f);
         }
     }
 
@@ -223,10 +228,6 @@ public partial class player_controller : CharacterBody2D
                 _dash_particles.Emitting = false;
             }
         }
-        else
-        {
-            yoyo.Visible = false;
-        }
     }
 
     private void UpdateAnimation()
@@ -274,20 +275,50 @@ public partial class player_controller : CharacterBody2D
         if (!yoyo.Visible)
             return;
 
+        float dt = (float)GetProcessDeltaTime();
 
-        Vector2 hit = yoyo_enemy_body.GlobalPosition;
-        hit.Y -= 16;
+        if (!_yoyo_returning)
+        {
+            _yoyo_timer -= dt;
 
+            // Stay attached to enemy
+            if (IsInstanceValid(yoyo_enemy_body))
+            {
+                Vector2 hit = yoyo_enemy_body.GlobalPosition;
+                hit.Y -= 16;
+                yoyo.GlobalPosition = hit;
+            }
+
+            if (_yoyo_timer <= 0f)
+                _yoyo_returning = true;
+        }
+        else
+        {
+            // Return to player
+            Vector2 target = GlobalPosition;
+            target.Y -= 10;
+
+            yoyo.GlobalPosition = yoyo.GlobalPosition.MoveToward(target, 300f * dt);
+
+            if (yoyo.GlobalPosition.DistanceTo(target) < 5f)
+            {
+                yoyo.Visible = false;
+                _yoyo_returning = false;
+                yoyo_enemy = null;
+                yoyo_enemy_body = null;
+            }
+        }
+
+        // Update string
         Vector2 player_local = yoyo_string.ToLocal(GlobalPosition);
         player_local.Y -= 10;
 
-        Vector2 hit_local = yoyo_string.ToLocal(hit);
+        Vector2 yoyo_local = yoyo_string.ToLocal(yoyo.GlobalPosition);
 
         yoyo_string.SetPointPosition(0, player_local);
-        yoyo_string.SetPointPosition(1, hit_local);
-
-        yoyo.GlobalPosition = hit;
+        yoyo_string.SetPointPosition(1, yoyo_local);
     }
+
 
     private void UpdateAttackOffset()
     {
@@ -317,6 +348,9 @@ public partial class player_controller : CharacterBody2D
         yoyo_enemy = enemy;
         yoyo_enemy_body = body as CharacterBody2D;
         yoyo.Visible = true;
+
+        _yoyo_timer = _yoyo_duration;
+        _yoyo_returning = false;
 
         enemy.TakeDash(dash_timer, 400f);
     }

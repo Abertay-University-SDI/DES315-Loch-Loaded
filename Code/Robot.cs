@@ -45,6 +45,11 @@ public partial class Robot : Node2D
         
         immunity = hit_duration;
 
+        if (hit_duration < 0.0f)
+        {
+            immunity = 1.0f;
+        }
+
         _health--;
         Debug.Print($"TrashCanEnemy took hit! Remaining health: {_health}");
 
