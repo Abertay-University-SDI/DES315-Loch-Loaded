@@ -14,10 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1lvst")
 script = ExtResource("1_j0xhm")
-back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/back_box_container/BackButton")
-master_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/master_slider")
-sfx_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider")
-music_slider = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider")
+back_button = NodePath("PanelContainer/MarginContainer/back_box_container/BackButton")
+master_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider")
+sfx_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/soundEffect_slider")
+music_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/music_slider")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -40,11 +40,11 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="main_vertical_container" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = -17
 
-[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -52,52 +52,79 @@ theme_override_font_sizes/font_size = 61
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
+current_tab = 0
 
-[node name="volumes_container" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
-[node name="master_title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="volumes_container" type="VBoxContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 6.5
+offset_right = 4.0
+offset_bottom = 221.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="master_title" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="master_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="master_slider" type="HSlider" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="music_title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="music_title" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="music_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="music_slider" type="HSlider" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="soundEffect_title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="soundEffect_title" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 text = "Sound Effect Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="soundEffect_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container"]
+[node name="soundEffect_slider" type="HSlider" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container"]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="colorBlind_container" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Video" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
-[node name="colorBlind_list" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/colorBlind_container"]
+[node name="colorBlind_container" type="VBoxContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = 19.5
+offset_right = 139.0
+offset_bottom = 302.5
+grow_horizontal = 2
+
+[node name="colorBlind_list" type="ItemList" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container"]
 layout_mode = 2
 auto_width = true
 auto_height = true
@@ -107,38 +134,55 @@ item_1/text = "PROTANOPIA"
 item_2/text = "DEUTERANOPIA"
 item_3/text = "TRITANOPIA"
 
-[node name="screenShake_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="screenShake_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="screenShake_button" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/screenShake_container"]
+[node name="screenShake_button" type="CheckButton" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container/screenShake_container"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Screen Shake"
 
-[node name="controlls_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Controls" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="controlls_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 128.5
+offset_right = 101.0
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="controlls_button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/controlls_container"]
+[node name="controlls_button" type="Button" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls/controlls_container"]
 layout_mode = 2
 text = "Controlls"
 
-[node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/back_box_container"]
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/back_box_container"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "back"
 script = ExtResource("3_1lvst")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/music_slider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/volumes_container/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
-[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/colorBlind_container/colorBlind_list" to="." method="_on_color_blind_list_item_selected"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/screenShake_container/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/controlls_container/controlls_button" to="." method="_on_controlls_button_toggled"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/back_box_container/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container/colorBlind_list" to="." method="_on_color_blind_list_item_selected"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container/screenShake_container/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls/controlls_container/controlls_button" to="." method="_on_controlls_button_toggled"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/back_box_container/BackButton" to="." method="_on_back_button_pressed"]
