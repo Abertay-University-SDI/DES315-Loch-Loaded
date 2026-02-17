@@ -1,3 +1,4 @@
+@tool
 extends RichTextLabel
 
 @export var scroll_speed: float = 56.1  # pixels per second
@@ -10,7 +11,7 @@ func _ready() -> void:
 	
 	# Programmers
 	text += "[center][b]Programmers[/b]\n\n"
-	text += "Peter Mazanik\n[img=300x600]res://credits_images/peter.png[/img]\n\n"
+	text += "Peter Mazanik\n[img=300x500]res://credits_images/peter.png[/img]\n\n"
 	text += "Andrew Moore\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
 	
 	# Artists
@@ -25,7 +26,7 @@ func _ready() -> void:
 	
 	# Music / SFX
 	text += "[b]Music/SFX[/b]\n\n"
-	text += "Laurence Watt\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
+	text += "Laurence Watt\n[img=300x500]res://credits_images/laurence.png[/img]\n\n"
 	
 	# Level Design
 	text += "[b]Level Design[/b]\n\n"
