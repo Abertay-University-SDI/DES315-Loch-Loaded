@@ -15,6 +15,7 @@ position = Vector2(69, -68)
 position = Vector2(175, -67)
 
 [node name="House2" parent="." instance=ExtResource("3_i1g2s")]
+modulate = Color(1.365921, 1.365921, 1.365921, 1)
 position = Vector2(308, -99)
 
 [node name="House3" parent="." instance=ExtResource("4_iyig6")]
