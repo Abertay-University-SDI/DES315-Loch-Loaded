@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4c6kxewkr8gw"]
+
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_nm7lk"]
+[ext_resource type="Script" uid="uid://c4ybi0v4kx2bd" path="res://Code/credits.gd" id="2_c1t8d"]
+[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_g4wvt"]
+
+[node name="credits_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nm7lk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(1, 0, 1, 1)
+theme_override_constants/paragraph_separation = -5
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 66
+theme_override_font_sizes/bold_font_size = 84
+text = "Programers
+Peter Mazanik
+Andrew Moore
+Artists
+Niamh
+Mcmillan Lucy Doris Carah Paterson Producer Lee Cumming Music/SFX Laurence Watt Level Design Kris Clark"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_c1t8d")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+offset_right = 88.0
+grow_vertical = 0
+size_flags_vertical = 4
+text = "back"
+script = ExtResource("3_g4wvt")
