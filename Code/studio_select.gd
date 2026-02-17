@@ -3,6 +3,11 @@ extends Control
 const LEVEL_SELECT := preload("res://Scenes/UI/level_select.tscn")
 @onready var settings = $SettingsScene
 @onready var studio_ui = $studio_menu
+@export var button:Button
+
+
+func _ready() -> void:
+	button.grab_focus()
 
 func _on_level_select_button_pressed() -> void:
 	get_tree().change_scene_to_packed(LEVEL_SELECT)
