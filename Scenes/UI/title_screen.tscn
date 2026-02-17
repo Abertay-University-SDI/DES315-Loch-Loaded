@@ -104,11 +104,12 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer"]
+[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer" node_paths=PackedStringArray("scene")]
 layout_mode = 2
 theme = ExtResource("7_bvwvd")
 text = "Studio"
 script = ExtResource("8_5b5vi")
+scene = NodePath("../../..")
 
 [node name="settings_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2

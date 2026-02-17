@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\andre\\onedrive\\documents\\des315-loch-loaded\\code\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:code\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|c:\\users\\andre\\onedrive\\documents\\des315-loch-loaded\\code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73E6FF24-1606-4EE8-9329-10E7BFD9DBC1}|Spray\u0026Pray.csproj|solutionrelative:code\\robot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 157,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Robot.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\Robot.cs",
+              "RelativeDocumentMoniker": "Code\\Robot.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\Robot.cs",
+              "RelativeToolTip": "Code\\Robot.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T19:03:03.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "player_controller.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
+              "RelativeDocumentMoniker": "Code\\player_controller.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
+              "RelativeToolTip": "Code\\player_controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T12:59:56.184Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

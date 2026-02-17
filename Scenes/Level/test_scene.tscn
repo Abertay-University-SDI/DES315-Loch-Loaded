@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhulbkeyei13l"]
+[gd_scene load_steps=20 format=3 uid="uid://bhulbkeyei13l"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/level.gd" id="1_bvu58"]
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/Prefabs/tile_map.tscn" id="1_wqyeq"]
@@ -7,12 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="3_bvu58"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="3_cunvl"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="4_cunvl"]
+[ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/ColorBlind.gdshader" id="4_xq4ya"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="5_6vt6i"]
+[ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/colorBlind.gd" id="6_33tym"]
 [ext_resource type="Texture2D" uid="uid://cveptdss4aqol" path="res://Textures/Decorations/trash-bin-concept-1.png" id="9_6vt6i"]
 [ext_resource type="Texture2D" uid="uid://41q2v7d756j1" path="res://Textures/Decorations/TEMP_ASSET_TrashCap.png" id="10_aq261"]
 [ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="11_idrhf"]
 [ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="12_lvm3j"]
 [ext_resource type="PackedScene" uid="uid://nrbu06nmkajc" path="res://Scenes/Level/Prefabs/market.tscn" id="13_ncw8l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dpgr0"]
+shader = ExtResource("4_xq4ya")
+shader_parameter/mode = 0
+shader_parameter/intensity = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5a7ea"]
 normal = Vector2(-1, 0)
@@ -33,6 +40,13 @@ visible = false
 
 [node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_cunvl")]
 visible = false
+
+[node name="ColorBlindShader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_dpgr0")
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+script = ExtResource("6_33tym")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_osgbe")]
 offset = Vector2(0, 358.69)

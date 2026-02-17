@@ -172,11 +172,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/back_box_container"]
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/back_box_container" node_paths=PackedStringArray("scene")]
 layout_mode = 2
 size_flags_vertical = 4
 text = "back"
 script = ExtResource("3_1lvst")
+scene = NodePath("../../../..")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
