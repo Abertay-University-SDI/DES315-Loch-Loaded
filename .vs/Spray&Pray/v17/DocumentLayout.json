@@ -14,7 +14,7 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 157,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Code\\player_controller.cs",
               "ToolTip": "C:\\Users\\andre\\OneDrive\\Documents\\DES315-Loch-Loaded\\Code\\player_controller.cs",
               "RelativeToolTip": "Code\\player_controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALsAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T12:59:56.184Z",
               "EditorCaption": ""
