@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=5 format=3 uid="uid://bve12h40ll6sx"]
 
 [ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
 [ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/health_bar.gd" id="3_t3flm"]
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="4_8n2hl"]
 
 [node name="player_ui" type="Control" node_paths=PackedStringArray("HealthBar")]
 layout_mode = 3
@@ -11,10 +12,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("3_t3flm")
 HealthBar = NodePath("TextureProgressBar")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+self_modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -29,3 +33,17 @@ grow_vertical = 0
 value = 100.0
 texture_under = ExtResource("1_7jiju")
 texture_progress = ExtResource("2_t3flm")
+
+[node name="Label" type="Label" parent="TextureProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_8n2hl")
+text = "Health"
+horizontal_alignment = 1
