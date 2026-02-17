@@ -14,7 +14,7 @@ corner_radius_bottom_left = 25
 shadow_color = Color(1, 0, 1, 0.702)
 shadow_size = 16
 
-[node name="Studio" type="Control"]
+[node name="Studio" type="Control" node_paths=PackedStringArray("button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,6 +24,7 @@ grow_vertical = 2
 size_flags_vertical = 4
 theme = ExtResource("1_cj3df")
 script = ExtResource("1_0t5tv")
+button = NodePath("studio_menu/MarginContainer/VBoxContainer/level_select_button")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -82,11 +83,12 @@ visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
 offset_left = -410.0
 offset_top = -14.0
 offset_right = -410.0
 offset_bottom = -14.0
+grow_horizontal = 1
 grow_vertical = 0
 
 [connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/level_select_button" to="." method="_on_level_select_button_pressed"]

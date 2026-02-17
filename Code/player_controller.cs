@@ -99,7 +99,7 @@ public partial class player_controller : CharacterBody2D
             GD.Print(yoyo_enemy);
             Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
             dir += Vector2.Down;
-            yoyo_enemy.TakeHit(-dir, -0.1f, 100f);
+            yoyo_enemy.TakeHit(-dir, -0.1f, 200f);
         }
     }
 
