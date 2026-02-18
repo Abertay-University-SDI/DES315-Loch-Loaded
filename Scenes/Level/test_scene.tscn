@@ -61,7 +61,7 @@ collision_mask = 3
 Tilemap = NodePath("../TileMap/Layer0")
 
 [node name="Spray Spot" parent="." instance=ExtResource("4_cunvl")]
-position = Vector2(2434, -23)
+position = Vector2(59, 525)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_osgbe")
