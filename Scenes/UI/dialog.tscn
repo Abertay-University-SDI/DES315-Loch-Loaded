@@ -1,33 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://2syl2f47nme2"]
+[gd_scene load_steps=10 format=3 uid="uid://2syl2f47nme2"]
 
 [ext_resource type="Texture2D" uid="uid://dhxs68arsh0a1" path="res://Textures/UI/dialog.png" id="1_ep86y"]
+[ext_resource type="Script" uid="uid://bfvpkm3s0ck2s" path="res://Scenes/UI/dialog.gd" id="2_q6lr5"]
+[ext_resource type="FontFile" uid="uid://do55iicb26lmy" path="res://Fonts/BlueScreenPersonalUseRegular-0W1M9.ttf" id="3_p4jgp"]
+[ext_resource type="PackedScene" uid="uid://btw4f17p4lc4o" path="res://Scenes/UI/character_box.tscn" id="4_p4jgp"]
 
-[sub_resource type="Animation" id="Animation_deklj"]
-resource_name = "Draw Text"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 14.766666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
+[sub_resource type="SystemFont" id="SystemFont_lv3fa"]
+font_names = PackedStringArray("Ink Free")
 
 [sub_resource type="Animation" id="Animation_nwg7q"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:visible_ratio")
+tracks/0/path = NodePath("MarginContainer/RichTextLabel:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
@@ -35,34 +25,42 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ep86y"]
 resource_name = "text_idle"
+
+[sub_resource type="Animation" id="Animation_deklj"]
+resource_name = "draw_text"
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:visible_ratio")
+tracks/0/path = NodePath("MarginContainer/RichTextLabel:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0]
+"values": [0.05, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nfne"]
 _data = {
-&"Draw Text": SubResource("Animation_deklj"),
 &"RESET": SubResource("Animation_nwg7q"),
+&"draw_text": SubResource("Animation_deklj"),
 &"text_idle": SubResource("Animation_ep86y")
 }
 
-[node name="NinePatchRect" type="NinePatchRect"]
-offset_right = 480.0
-offset_bottom = 352.0
+[node name="NinePatchRect" type="NinePatchRect" node_paths=PackedStringArray("text_box", "anim")]
+texture_filter = 1
+offset_right = 907.0
+offset_bottom = 196.0
 texture = ExtResource("1_ep86y")
 patch_margin_left = 9
 patch_margin_top = 9
 patch_margin_right = 9
 patch_margin_bottom = 9
+script = ExtResource("2_q6lr5")
+text_box = NodePath("MarginContainer/RichTextLabel")
+anim = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -76,15 +74,24 @@ theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 9
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 25
-text = "Yoo, im the surfer dude yeah, wassup cuh hows it going you see that sick ahh tower over there how about making it even more sick, go get em champ"
-autowrap_mode = 2
-visible_characters_behavior = 3
+theme_override_fonts/normal_font = ExtResource("3_p4jgp")
+theme_override_fonts/bold_font = SubResource("SystemFont_lv3fa")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_6nfne")
 }
+
+[node name="character_box" parent="." instance=ExtResource("4_p4jgp")]
+layout_mode = 0
+offset_left = -262.0
+offset_top = -21.0
+offset_right = -6.0
+offset_bottom = 235.0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

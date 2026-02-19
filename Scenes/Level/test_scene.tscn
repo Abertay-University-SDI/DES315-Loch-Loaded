@@ -184,7 +184,8 @@ position = Vector2(58.000008, 647)
 [node name="House2" parent="." instance=ExtResource("14_6pdjf")]
 position = Vector2(1103, 593)
 
-[node name="NPC" parent="." instance=ExtResource("16_xq4ya")]
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_xq4ya")]
 position = Vector2(312, 467)
+dialogbox = NodePath("../CanvasLayer/player_ui")
 
 [editable path="TileMap"]

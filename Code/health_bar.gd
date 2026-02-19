@@ -1,6 +1,7 @@
 extends Control
 @export var HealthBar:TextureProgressBar
 @export var player:Node2D
+@export var dialog:NinePatchRect
 
 
 
