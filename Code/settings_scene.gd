@@ -2,6 +2,8 @@ extends Control
 
 @export var back_button:Button
 
+var SAVED_PATH = "res://Saves/save_data.txt"
+
 var masterVolume = AudioServer.get_bus_index("Master")
 var musicVolume = AudioServer.get_bus_index("Music")
 var sfxVolume = AudioServer.get_bus_index("SFX")
@@ -17,6 +19,7 @@ var sfxValue = 1
 var screenShake
 
 
+
 func _ready() -> void:
 	load_settings_from_file()
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(masterValue))
@@ -30,7 +33,9 @@ func _ready() -> void:
 		db_to_linear(AudioServer.get_bus_volume_db(sfxVolume)))
 
 func load_settings_from_file():
-	var file = FileAccess.open("res://Saves/save_data.txt", FileAccess.READ)
+	if not FileAccess.file_exists(SAVED_PATH):
+		return
+	var file = FileAccess.open(SAVED_PATH, FileAccess.READ)
 	var contents = file.get_as_text()
 	var text_file_contents : PackedStringArray = contents.split("\n", true)
 	var next = 0
@@ -54,7 +59,7 @@ func load_settings_from_file():
 	return
 	
 func save_settings_to_file():
-	var file = FileAccess.open("res://Saves/save_data.txt", FileAccess.WRITE)
+	var file = FileAccess.open(SAVED_PATH, FileAccess.WRITE)
 	file.store_line("masterValue")
 	file.store_line(str(masterValue).pad_decimals(2))
 	file.store_line("musicValue")
