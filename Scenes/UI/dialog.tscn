@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://2syl2f47nme2"]
+
+[ext_resource type="Texture2D" uid="uid://dhxs68arsh0a1" path="res://Textures/UI/dialog.png" id="1_ep86y"]
+
+[sub_resource type="Animation" id="Animation_deklj"]
+resource_name = "Draw Text"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14.766666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nwg7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nfne"]
+_data = {
+&"Draw Text": SubResource("Animation_deklj"),
+&"RESET": SubResource("Animation_nwg7q")
+}
+
+[node name="NinePatchRect" type="NinePatchRect"]
+offset_right = 480.0
+offset_bottom = 352.0
+texture = ExtResource("1_ep86y")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Yoo, im the surfer dude yeah, wassup cuh hows it going you see that sick ahh tower over there how about making it even more sick, go get em champ"
+autowrap_mode = 2
+visible_characters = 0
+visible_characters_behavior = 3
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6nfne")
+}
