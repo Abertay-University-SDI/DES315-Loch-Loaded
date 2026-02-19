@@ -35,7 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_mk24u")
 expand_mode = 2
-stretch_mode = 4
 
 [node name="studio_menu" type="PanelContainer" parent="." groups=["current_ui"]]
 layout_mode = 0
