@@ -20,6 +20,7 @@ config/icon="uid://bvokxk83ohi37"
 [autoload]
 
 Global="*res://Code/Global.gd"
+SceneTransition="*res://Scenes/UI/SceneTransition.tscn"
 
 [display]
 

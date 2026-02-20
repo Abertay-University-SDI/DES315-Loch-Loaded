@@ -2,6 +2,8 @@ shader_type canvas_item;
 
 //thank Inigo Quilez for the invetion of sdfs in rendering
 
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+
 uniform float aspect_ratio = 1.78;
 uniform float radius = 0.08;
 uniform float speed = 0.25;
@@ -65,6 +67,6 @@ void fragment() {
 			break;
 		}
 	}
-	col += texture(gradient,vec2(uv.y,0)).rgb;
+	col += texture(screen_texture,SCREEN_UV).rgb;
 	COLOR = vec4(col, 1.0);
 }

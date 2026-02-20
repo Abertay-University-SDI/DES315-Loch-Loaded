@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=12 format=3 uid="uid://dslpk2swr657b"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_2yuxf"]
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/level_select.gd" id="1_vxe13"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/UI/button_2.png" id="5_ltq1i"]
 [ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/UI/button_1.png" id="6_1v14q"]
 [ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/texture_button.gd" id="6_vxe13"]
+
+[sub_resource type="Gradient" id="Gradient_40fl8"]
+offsets = PackedFloat32Array(0.02, 1)
+colors = PackedColorArray(0, 1, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_texu8"]
+gradient = SubResource("Gradient_40fl8")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="Animation" id="Animation_6wpjx"]
 length = 6.0
@@ -114,8 +122,14 @@ grow_vertical = 2
 theme = ExtResource("1_2yuxf")
 script = ExtResource("1_vxe13")
 
-[node name="animated_background" parent="." instance=ExtResource("2_ubgp3")]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_texu8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -250,6 +264,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_eiwkk")
 }
 autoplay = "RESET"
+
+[node name="animated_background" parent="." instance=ExtResource("2_ubgp3")]
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Row_1/level_2" to="." method="_on_level_2_pressed"]

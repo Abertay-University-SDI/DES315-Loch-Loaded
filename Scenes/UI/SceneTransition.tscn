@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://2eb6gia1kxwf"]
+
+[ext_resource type="Script" uid="uid://1ydfy0srjcuh" path="res://Scenes/Level/scene_transition.gd" id="1_3koea"]
+[ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_7fd8r"]
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="3_rnd7t"]
+
+[sub_resource type="Gradient" id="Gradient_kscw6"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnihq"]
+gradient = SubResource("Gradient_kscw6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gn0bv"]
+shader = ExtResource("3_rnd7t")
+shader_parameter/aspect_ratio = 1.78
+shader_parameter/radius = 0.075
+shader_parameter/speed = 0.1
+shader_parameter/var_pos = Vector2(0, 0)
+shader_parameter/color = Color(1, 1, 0, 1)
+shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
+shader_parameter/SPHERE_COUNT = 0
+
+[sub_resource type="Animation" id="Animation_e6ksq"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 256, 0]
+}
+
+[sub_resource type="Animation" id="Animation_7rxwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sekb"]
+_data = {
+&"RESET": SubResource("Animation_7rxwd"),
+&"transition": SubResource("Animation_e6ksq")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("background_old", "background_new", "anim")]
+script = ExtResource("1_3koea")
+background_old = NodePath("old_screen")
+background_new = NodePath("new_screen")
+anim = NodePath("AnimationPlayer")
+
+[node name="animated_background" parent="." instance=ExtResource("2_7fd8r")]
+z_index = 115
+material = SubResource("ShaderMaterial_gn0bv")
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7sekb")
+}
+
+[node name="new_screen" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="old_screen" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
