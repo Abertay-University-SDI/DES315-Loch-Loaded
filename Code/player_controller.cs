@@ -8,7 +8,8 @@ public partial class player_controller : CharacterBody2D
 	[Signal]
 	public delegate void health_changedEventHandler(float health);
 
-	[Export] public TileMapLayer Tilemap;
+	[Export] public Area2D play_area;
+	[Export] public CollisionShape2D play_area_shape;
 
 	private Camera2D _camera;
 	private AnimatedSprite2D _anim;
@@ -18,13 +19,15 @@ public partial class player_controller : CharacterBody2D
 	private PackedScene _spray_scene;
 	private Area2D _attack_area;
 	private Area2D _dash_attack_area;
-
+	
 	[Export] public AudioStreamPlayer2D footstepSfx;
 	[Export] public AudioStreamPlayer2D dashSfx;
 	[Export] public AudioStreamPlayer2D punchSfx;
 
 	[Export] public Sprite2D yoyo;
 	[Export] public Line2D yoyo_string;
+
+	[Export] public Marker2D spawn;
 
 	private const float MAX_SPEED = 150f;
 	private const float TIME_TO_MAX = 0.4f;
@@ -77,6 +80,8 @@ public partial class player_controller : CharacterBody2D
 
 		_spray_scene = ResourceLoader.Load<PackedScene>("res://Scenes/Interactables/spray.tscn");
 		_gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
+
+		play_area.BodyExited += RespawnPlayer;
 
 		SetupCameraLimits();
 	}
@@ -136,6 +141,13 @@ public partial class player_controller : CharacterBody2D
 		UpdateAnimation();
 
 		MoveAndSlide();
+	}
+
+
+	private void RespawnPlayer(Node body)
+	{
+		if (body != this) return;
+		GlobalPosition = spawn.GlobalPosition;
 	}
 
 	private void ApplyGravity(float dt)
@@ -364,16 +376,43 @@ public partial class player_controller : CharacterBody2D
 		enemy.TakeDash(dash_timer, 400f);
 	}
 
-	private void SetupCameraLimits()
-	{
-		if (Tilemap == null)
-			return;
+    private void SetupCameraLimits()
+    {
+        if (play_area == null || play_area_shape == null)
+        {
+            GD.PrintErr("Play area or play area shape not assigned!");
+            return;
+        }
 
-		Rect2I rect = Tilemap.GetUsedRect();
-		Vector2I size = Tilemap.TileSet.TileSize;
+        // Get the collision shape from the play area
+        var shape = play_area_shape.Shape;
 
-		_camera.LimitLeft = rect.Position.X * size.X + size.X;
-		_camera.LimitRight = (rect.Position.X + rect.Size.X) * size.X;
-		_camera.LimitBottom = (rect.Position.Y + rect.Size.Y) * size.Y;
-	}
+        if (shape is RectangleShape2D rectShape)
+        {
+            // Get the rectangle bounds
+            Vector2 shapeSize = rectShape.Size;
+            Vector2 areaPosition = play_area.GlobalPosition;
+            Vector2 shapePosition = play_area_shape.GlobalPosition;
+
+            // Calculate the actual bounds
+            Vector2 topLeft = areaPosition + shapePosition - (shapeSize / 2);
+            Vector2 bottomRight = areaPosition + shapePosition + (shapeSize / 2);
+
+            // Set camera limits
+            _camera.LimitLeft = (int)topLeft.X;
+            _camera.LimitTop = (int)topLeft.Y;
+            _camera.LimitRight = (int)bottomRight.X;
+            _camera.LimitBottom = (int)bottomRight.Y;
+
+            // Enable camera limits
+            _camera.LimitSmoothed = true;
+
+            GD.Print($"Camera limits set: Left={_camera.LimitLeft}, Top={_camera.LimitTop}, Right={_camera.LimitRight}, Bottom={_camera.LimitBottom}");
+        }
+        else
+        {
+            GD.PrintErr("Play area shape is not a RectangleShape2D!");
+        }
+    }
+
 }
