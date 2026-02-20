@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 
 func _on_studio_button_pressed() -> void:
 	SceneTransition.transition_to(studio)
-	get_tree().change_scene_to_packed(studio)
 
 
 func _on_settings_button_pressed() -> void:
