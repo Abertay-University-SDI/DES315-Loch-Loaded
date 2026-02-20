@@ -1,28 +1,56 @@
 @tool
 extends NinePatchRect
+@export var text_box: RichTextLabel
+@export var anim: AnimationPlayer
+@export var chars_per_second: float = 30.0
 
-@export var text_box:RichTextLabel
-@export var anim:AnimationPlayer
+var dialog_lines: Array = []
+var current_line: int = 0
+var current_speaker: String = ""
+var tween: Tween
 
+func _play_current_line() -> void:
+	text_box.text = "[b]%s[/b]\n%s" % [current_speaker, dialog_lines[current_line]]
+	var speaker_chars = current_speaker.length() + 7  # skip [b][/b]\n
+	var total_chars = text_box.get_total_character_count()
+	var duration = (total_chars - speaker_chars) / chars_per_second
+	
+	text_box.visible_characters = speaker_chars
+	
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.tween_property(text_box, "visible_characters", total_chars, duration)
 
-# Called when the node enters the scene tree for the first time.
+func show_dialog(dialog_id: String) -> void:
+	var file = FileAccess.open("res://dialog.json", FileAccess.READ)
+	var data = JSON.parse_string(file.get_as_text())
+	var entry = data[dialog_id]
+	current_speaker = entry["speaker"]
+	dialog_lines = entry["lines"]
+	current_line = 0
+	show()
+	_play_current_line()
+
 func _ready() -> void:
-	text_box.text = "[b]Surfer Dude[/b]\n"
-	text_box.text+= "Yoo, im the surfer dude yeah, wassup cuh hows it going you see that sick ahh tower over there how about making it even more sick, go get em champ"
+	show_dialog("surfer_dude_intro")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		if !anim.is_playing() && visible:
-			hide()
+	if event.is_action_pressed("ui_accept") && visible:
+		if tween && tween.is_running():
+			# skip to end
+			tween.kill()
+			text_box.visible_characters = -1
 		else:
-			anim.speed_scale = 10.0
+			current_line += 1
+			if current_line < dialog_lines.size():
+				_play_current_line()
+			else:
+				hide()
 
 func _on_visibility_changed() -> void:
 	if visible:
-		anim.speed_scale = 1
-		anim.play("draw_text")
+		_play_current_line()
