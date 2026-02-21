@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=18 format=3 uid="uid://dsc0vr7gqde8h"]
 
-[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/level.gd" id="1_50v45"]
+[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="3_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="4_unuuj"]
+[ext_resource type="PackedScene" uid="uid://jb118bi61s4g" path="res://Scenes/UI/dialog_container.tscn" id="5_hnohd"]
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="5_qs4fp"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
@@ -32,9 +33,11 @@ visible = false
 visible = false
 
 [node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
-visible = false
 mouse_filter = 2
 player = NodePath("../../Player")
+
+[node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
+visible = false
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
 offset = Vector2(0, 358.69)

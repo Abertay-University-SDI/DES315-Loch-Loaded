@@ -9,6 +9,7 @@ var current_line: int = 0
 var current_speaker: String = ""
 var tween: Tween
 
+
 func _play_current_line() -> void:
 	text_box.text = "[b]%s[/b]\n%s" % [current_speaker, dialog_lines[current_line]]
 	var speaker_chars = current_speaker.length() + 7  # skip [b][/b]\n

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://jb118bi61s4g"]
+
+[ext_resource type="PackedScene" uid="uid://2syl2f47nme2" path="res://Scenes/UI/dialog.tscn" id="1_m5xpj"]
+
+[node name="dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dialog" parent="." instance=ExtResource("1_m5xpj")]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 464.0
+offset_right = 1276.0
+offset_bottom = 677.0

@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://bbw2scq626wau"]
 
-[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/title_screen.gd" id="1_824g0"]
+[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/scene_managers/title_screen.gd" id="1_824g0"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_tjte5"]
-[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="3_uv4ns"]
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/shaders/background.gdshader" id="3_uv4ns"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="4_nd20k"]
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="5_3txao"]
 [ext_resource type="PackedScene" uid="uid://c4c6kxewkr8gw" path="res://Scenes/UI/credits.tscn" id="5_tjte5"]
-[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/dynamic_text_shadow.gd" id="6_28uqs"]
+[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/ui/dynamic_text_shadow.gd" id="6_28uqs"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="7_bvwvd"]
-[ext_resource type="Script" uid="uid://vohrkxsb3oih" path="res://Scenes/UI/grab_focus.gd" id="9_tjte5"]
+[ext_resource type="Script" uid="uid://vohrkxsb3oih" path="res://Code/ui/grab_focus.gd" id="9_tjte5"]
 
 [sub_resource type="Gradient" id="Gradient_tjte5"]
 offsets = PackedFloat32Array(0.033333335, 1)

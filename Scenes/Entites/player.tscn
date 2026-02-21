@@ -1,6 +1,6 @@
 [gd_scene load_steps=78 format=3 uid="uid://x178r7x56d5w"]
 
-[ext_resource type="Script" uid="uid://dbkltvnun1b2m" path="res://Code/player_controller.cs" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
 [ext_resource type="Texture2D" uid="uid://cyr1u6nafbpel" path="res://Textures/Scrap/spark.png" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
@@ -915,12 +915,12 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 19.750004
 height = 72.49999
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstepSfx", "dashSfx", "punchSfx", "yoyo", "yoyo_string") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstep_sfx", "dash_sfx", "punch_sfx", "yoyo", "yoyo_string") groups=["player"]]
 collision_layer = 3
-script = ExtResource("1_6t5aa")
-footstepSfx = NodePath("sound/footstep")
-dashSfx = NodePath("sound/dash")
-punchSfx = NodePath("sound/punch")
+script = ExtResource("1_82p5m")
+footstep_sfx = NodePath("sound/footstep")
+dash_sfx = NodePath("sound/dash")
+punch_sfx = NodePath("sound/punch")
 yoyo = NodePath("YoYo")
 yoyo_string = NodePath("YoYo/YoYoLine")
 

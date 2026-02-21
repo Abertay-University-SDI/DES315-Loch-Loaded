@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd6pk3y5bbvoe"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_8kv44"]
-[ext_resource type="Script" uid="uid://cns2a70fsut21" path="res://Code/paint.gd" id="1_mfdx8"]
+[ext_resource type="Script" uid="uid://cns2a70fsut21" path="res://Code/ui/paint.gd" id="1_mfdx8"]
 [ext_resource type="Texture2D" uid="uid://cf8lf28iki38v" path="res://Textures/UI/spray_studio.png" id="2_i046t"]
 
 [sub_resource type="Image" id="Image_i046t"]

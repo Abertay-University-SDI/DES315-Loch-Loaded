@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjbqx458gfnfo"]
 
 [ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Fonts/Minecraft.ttf" id="1_4l3ya"]
-[ext_resource type="Script" uid="uid://bu7xmcxq8532f" path="res://Code/npc.gd" id="1_gpvyx"]
+[ext_resource type="Script" uid="uid://bu7xmcxq8532f" path="res://Code/interactables/npc.gd" id="1_gpvyx"]
 [ext_resource type="Texture2D" uid="uid://dhi1bqcvfb2b1" path="res://Textures/Scrap/surfer_temp.png" id="2_gpvyx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fj317"]

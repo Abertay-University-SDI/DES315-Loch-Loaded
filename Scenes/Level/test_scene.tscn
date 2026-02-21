@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bhulbkeyei13l"]
 
-[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/level.gd" id="1_bvu58"]
+[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_bvu58"]
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/Prefabs/tile_map.tscn" id="1_wqyeq"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_cunvl"]
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="2_osgbe"]
