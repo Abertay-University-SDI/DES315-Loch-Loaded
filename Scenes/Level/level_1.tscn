@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=19 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="13_hxng5"]
 [ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
+[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
 
 [sub_resource type="Environment" id="Environment_osgbe"]
 
@@ -101,3 +102,15 @@ position = Vector2(1079, 530)
 
 [node name="Robot4" parent="." instance=ExtResource("8_jrwi5")]
 position = Vector2(1129, 529)
+
+[node name="Zipline" parent="." instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Line2D" parent="Zipline/Zipline_0" index="0"]
+position = Vector2(0, -20)
+points = PackedVector2Array(0, 0, 403, 83)
+
+[node name="Zipline_1" parent="Zipline" index="1"]
+position = Vector2(401, 81)
+
+[editable path="Zipline"]

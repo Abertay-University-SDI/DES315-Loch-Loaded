@@ -17,7 +17,6 @@ signal health_changed(health: float)
 
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
-var _move_particles: GPUParticles2D
 var _dash_particles: GPUParticles2D
 
 var _spray_scene: PackedScene
@@ -30,11 +29,23 @@ const ACCEL := MAX_SPEED / TIME_TO_MAX
 const FRICTION := 600.0
 const JUMP_VELOCITY := -400.0
 
+# --- Variable jump height ---
+const JUMP_CUT_MULTIPLIER := 0.4
+
 const MAX_HEALTH := 100.0
 var health_value := MAX_HEALTH
 
 const MAX_JUMPS := 1
 var jumps_left := MAX_JUMPS
+
+# --- Coyote time ---
+const COYOTE_TIME := 0.12
+var _coyote_timer := 0.0
+var _was_on_floor := false
+
+# --- Jump buffer ---
+const JUMP_BUFFER_TIME := 0.1
+var _jump_buffer_timer := 0.0
 
 const DASH_COOLDOWN := 1.0
 const DASH_DURATION := 0.2
@@ -48,6 +59,16 @@ var punching := 0.0
 var _gravity: float
 var _breaking := false
 
+# --- Crouch / Slide ---
+var crouching := false
+var sliding := false
+const SLIDE_SPEED := 280.0
+const SLIDE_FRICTION := 180.0
+const SLIDE_MIN_SPEED := 30.0
+const CROUCH_SPEED_MULT := 0.5
+var _slide_dir := 1.0
+
+# --- Yoyo ---
 var _yoyo_returning := false
 var _yoyo_timer := 0.0
 var _yoyo_duration := 1.0
@@ -61,7 +82,6 @@ var dir_radial := Vector2.ZERO
 func _ready() -> void:
 	_camera = $Camera2D
 	_anim = $AnimatedSprite2D
-	_move_particles = $GPUParticles2D
 	_dash_particles = $dash_sfx
 
 	_attack_area = $attack_area
@@ -95,18 +115,31 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dash") and dash_timer < 0.0:
 		_start_dash()
 
+	# Buffer jump input so pressing just before landing still jumps
+	if event.is_action_pressed("jump"):
+		_jump_buffer_timer = JUMP_BUFFER_TIME
+
+	# Variable jump height — cut velocity when jump released early
+	if event.is_action_released("jump") and velocity.y < 0:
+		velocity.y *= JUMP_CUT_MULTIPLIER
+
 	if event.is_action_pressed("yoyo") and yoyo.visible and is_instance_valid(yoyo_enemy):
-		print("Yoyo hit!")
-		print(yoyo_enemy)
 		var dir := (yoyo_enemy.position - position).normalized()
 		dir += Vector2.DOWN
 		yoyo_enemy.take_hit(-dir, -0.1, 100.0)
+
+	# Crouch input — only on floor and not dashing
+	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
+		_try_start_crouch_or_slide()
+
+	if event.is_action_released("crouch"):
+		_end_crouch()
 
 
 func _process(delta: float) -> void:
 	if health_value < 0:
 		_respawn_player(self)
-		
+
 	emit_signal("health_changed", health_value)
 	_update_cooldowns(delta)
 	_update_yoyo()
@@ -116,8 +149,18 @@ func _physics_process(delta: float) -> void:
 	if dash_timer < DASH_COOLDOWN - DASH_DURATION:
 		dashing = false
 
-	if is_on_floor():
+	# Coyote time tracking
+	if is_on_floor() || is_on_wall():
 		jumps_left = MAX_JUMPS
+		_coyote_timer = COYOTE_TIME
+		_was_on_floor = true
+	else:
+		if _was_on_floor:
+			_coyote_timer -= delta
+			if _coyote_timer <= 0.0:
+				_was_on_floor = false
+				if jumps_left == MAX_JUMPS:
+					jumps_left -= 1
 
 	_apply_gravity(delta)
 	_handle_jump()
@@ -128,6 +171,40 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	# End slide if nearly stopped or left the floor
+	if sliding and (absf(velocity.x) < SLIDE_MIN_SPEED or not is_on_floor()):
+		_end_slide()
+
+
+# ─── Crouch / Slide helpers ──────────────────────────────────────────────────
+
+func _try_start_crouch_or_slide() -> void:
+	var speed := absf(velocity.x)
+	if speed > 60.0:
+		_start_slide()
+	else:
+		crouching = true
+	set_collision_mask_value(2, false)
+
+
+func _start_slide() -> void:
+	sliding = true
+	crouching = false
+	_slide_dir = sign(velocity.x) if velocity.x != 0.0 else (-1.0 if _anim.flip_h else 1.0)
+	velocity.x = _slide_dir * max(absf(velocity.x), SLIDE_SPEED)
+
+
+func _end_slide() -> void:
+	sliding = false
+
+
+func _end_crouch() -> void:
+	crouching = false
+	sliding = false
+	set_collision_mask_value(2, true)
+
+
+# ─── Core movement ───────────────────────────────────────────────────────────
 
 func _respawn_player(body: Node) -> void:
 	if body != self:
@@ -138,7 +215,8 @@ func _respawn_player(body: Node) -> void:
 
 func _apply_gravity(dt: float) -> void:
 	if not is_on_floor() and not dashing:
-		velocity += Vector2.DOWN * _gravity * dt
+		var grav_mult := 1.5 if velocity.y > 0 else 1.0
+		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
 	if is_on_wall() and not is_on_floor() and velocity.y > 0:
 		var damp := 1.2 if dir_radial.y > 0 else 0.2
@@ -147,11 +225,19 @@ func _apply_gravity(dt: float) -> void:
 
 
 func _handle_jump() -> void:
-	if not Input.is_action_just_pressed("jump") or jumps_left <= 0 or dashing:
+	if _jump_buffer_timer > 0.0:
+		_jump_buffer_timer -= get_physics_process_delta_time()
+
+	var can_jump := (is_on_floor() or _coyote_timer > 0.0) and jumps_left > 0
+	if not (_jump_buffer_timer > 0.0 and can_jump) or dashing:
 		return
 
+	_end_crouch()
+
+	_jump_buffer_timer = 0.0
 	velocity = Vector2(velocity.x, JUMP_VELOCITY)
 	jumps_left -= 1
+	_coyote_timer = 0.0
 
 	if is_on_wall_only():
 		velocity = (Vector2(get_wall_normal().x * 400.0, JUMP_VELOCITY / 2.0) + velocity) * 0.5
@@ -161,8 +247,14 @@ func _handle_movement(dt: float) -> void:
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
+	if sliding:
+		velocity.x = move_toward(velocity.x, 0.0, SLIDE_FRICTION * dt)
+		_anim.flip_h = _slide_dir < 0
+		return
+
 	if dir_radial.x != 0:
-		var target := dir_radial.x * MAX_SPEED
+		var speed_cap := MAX_SPEED * (CROUCH_SPEED_MULT if crouching else 1.0)
+		var target := dir_radial.x * speed_cap
 		var accel := ACCEL * dt * (2.0 if _breaking else 1.0)
 
 		velocity = Vector2(
@@ -171,25 +263,23 @@ func _handle_movement(dt: float) -> void:
 		)
 
 		_anim.flip_h = dir_radial.x < 0
-
-		var mat := _move_particles.process_material as ParticleProcessMaterial
-		if mat:
-			mat.direction = Vector3(sign(-dir_radial.x), -0.3, 0)
 	else:
 		velocity = Vector2(
 			move_toward(velocity.x, 0.0, FRICTION * dt),
 			velocity.y
 		)
 
-	if dir_radial.y > 0.0:
+	if dir_radial.y > 0.0 and not crouching:
 		set_collision_mask_value(2, false)
-	else:
+	elif not crouching:
 		set_collision_mask_value(2, true)
 
 
 func _start_dash() -> void:
 	dashing = true
 	dash_timer = DASH_COOLDOWN
+
+	_end_crouch()
 
 	var dir := Vector2(-1 if _anim.flip_h else 1, 0)
 	velocity = dir * 400.0
@@ -228,6 +318,10 @@ func _update_animation() -> void:
 
 	if dashing:
 		_anim.play("Dash")
+	elif sliding:
+		_anim.play("Slide")
+	elif crouching:
+		_anim.play("Crouch")
 	elif is_on_wall() and not is_on_floor():
 		_anim.play("Wall")
 	elif not is_on_floor():
@@ -236,13 +330,10 @@ func _update_animation() -> void:
 		_anim.play("Punch")
 	elif _breaking and speed > 100.0:
 		_anim.play("Breaking")
-		_move_particles.emitting = true
 	elif speed < 5.0:
 		_anim.play("Idle")
-		_move_particles.emitting = false
 	else:
 		_anim.play("Walk")
-		_move_particles.emitting = false
 		if not footstep_sfx.playing and randf() < 0.2:
 			footstep_sfx.play()
 
@@ -295,7 +386,7 @@ func _on_body_entered(body: Node) -> void:
 	if not enemy is Robot or not enemy.is_in_group("Enemy"):
 		return
 
-	var dir :Vector2= (enemy.global_position - global_position).normalized()
+	var dir: Vector2 = (enemy.global_position - global_position).normalized()
 	enemy.take_hit(dir, punching, 100.0)
 
 

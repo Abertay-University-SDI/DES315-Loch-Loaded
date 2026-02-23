@@ -33,6 +33,7 @@ var _in_contact: bool = false
 @onready var _zap_line: Line2D = $alive_body/ZapAttackLine
 const ZAP_DURATION := 0.1
 var _zap_timer := 0.0
+var _zap_force :float= 400.0
 
 func _ready() -> void:
 	_health = max_health
@@ -77,10 +78,12 @@ func _on_attack_area_body_exited(body: Node) -> void:
 
 func _spawn_zap() -> void:
 	_zap_line.clear_points()
-	var zap_start:Vector2= Vector2.ZERO
-	_zap_line.add_point(zap_start)
+	var zap_start:Vector2= _alive.global_position
+	zap_start.y -=8
+	_zap_line.global_position = zap_start
+	_zap_line.add_point(Vector2.ZERO)
 	
-	var zap_end:Vector2= to_local(_player.global_position)
+	var zap_end:Vector2= _player.global_position -_alive.global_position
 	zap_end.y-=16
 	_zap_line.add_point(zap_end)
 	
@@ -89,8 +92,9 @@ func _spawn_zap() -> void:
 
 func _try_attack() -> void:
 	_animation_player.play("attack")
-	if (_player.global_position.distance_to(global_position) < attack_range):
+	if (_player.global_position.distance_to(_alive.global_position) < attack_range):
 		_spawn_zap()
+		_player.velocity+= _zap_force* (_player.global_position-_alive.global_position).normalized()
 		_player.health_value -= 35
 	print("Robot attacks!")
 
