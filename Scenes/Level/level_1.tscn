@@ -1,116 +1,253 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=10 format=3 uid="uid://dslpk2swr657b"]
 
-[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
-[ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
-[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="3_ia3c5"]
-[ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="4_unuuj"]
-[ext_resource type="PackedScene" uid="uid://jb118bi61s4g" path="res://Scenes/UI/dialog_container.tscn" id="5_hnohd"]
-[ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="5_qs4fp"]
-[ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
-[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
-[ext_resource type="PackedScene" uid="uid://b4hrx48bddmmi" path="res://Scenes/Level/Prefabs/house_3.tscn" id="8_d68a7"]
-[ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
-[ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="10_jn63p"]
-[ext_resource type="PackedScene" uid="uid://dmvdtfxqjb2m1" path="res://Scenes/Level/Prefabs/prefab_gallery.tscn" id="13_fvaf1"]
-[ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="13_hxng5"]
-[ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
-[ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
-[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_2yuxf"]
+[ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/scene_managers/level_select.gd" id="1_vxe13"]
+[ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_ubgp3"]
+[ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/UI/button_2.png" id="5_ltq1i"]
+[ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/UI/button_1.png" id="6_1v14q"]
+[ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/ui/texture_button.gd" id="6_vxe13"]
 
-[sub_resource type="Environment" id="Environment_osgbe"]
+[sub_resource type="Animation" id="Animation_6wpjx"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 256]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animated_background:material:shader_parameter/radius")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.025, 0.34]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.56),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("to_studio:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0666666, 0.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(4119, 729)
+[sub_resource type="Animation" id="Animation_vxe13"]
+resource_name = "transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 256]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animated_background:material:shader_parameter/radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03, 1.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.34]
+}
 
-[node name="World" type="Node2D"]
-script = ExtResource("1_50v45")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eiwkk"]
+_data = {
+&"RESET": SubResource("Animation_6wpjx"),
+&"transition": SubResource("Animation_vxe13")
+}
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2yuxf")
+script = ExtResource("1_vxe13")
 
-[node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
-visible = false
+[node name="animated_background" parent="." instance=ExtResource("2_ubgp3")]
+layout_mode = 1
 
-[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_ia3c5")]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -66.0
+offset_right = 64.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
 
-[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
-mouse_filter = 2
-player = NodePath("../../Player")
+[node name="Row_0" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
-visible = false
+[node name="level_1" type="TextureButton" parent="VBoxContainer/Row_0"]
+layout_mode = 2
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
+script = ExtResource("6_vxe13")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
-offset = Vector2(0, 358.69)
-transform = Transform2D(2, 0, 0, 2, 0, 358.69)
+[node name="Number" type="Label" parent="VBoxContainer/Row_0/level_1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -103.0
+offset_right = 19.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
-z_index = 1
-position = Vector2(62, 524)
-collision_mask = 3
-play_area = NodePath("../PlayArea")
-play_area_shape = NodePath("../PlayArea/CollisionShape2D")
-spawn = NodePath("../PlayArea/Spawn")
+[node name="Row_1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_osgbe")
+[node name="level_2" type="TextureButton" parent="VBoxContainer/Row_1"]
+layout_mode = 2
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
 
-[node name="PlayArea" type="Area2D" parent="."]
+[node name="Number" type="Label" parent="VBoxContainer/Row_1/level_2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -100.0
+offset_right = 21.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Spawn" type="Marker2D" parent="PlayArea"]
-position = Vector2(62, 521)
-gizmo_extents = 28.3
+[node name="level_3" type="TextureButton" parent="VBoxContainer/Row_1"]
+layout_mode = 2
+texture_normal = ExtResource("5_ltq1i")
+texture_hover = ExtResource("6_1v14q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(1802.5, 354.5)
-shape = SubResource("RectangleShape2D_4snqv")
-debug_color = Color(1, 1, 1, 0.16078432)
+[node name="Number" type="Label" parent="VBoxContainer/Row_1/level_3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="House2" parent="." instance=ExtResource("15_eqj4t")]
-position = Vector2(86, 623)
+[node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 106
+text = "LEVEL SELECT"
 
-[node name="House3" parent="." instance=ExtResource("8_d68a7")]
-position = Vector2(274, 651)
+[node name="to_studio" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -90.0
+offset_right = 191.0
+offset_bottom = -31.0
+grow_vertical = 0
+text = "TO STUDIO"
 
-[node name="House1" parent="." instance=ExtResource("13_hxng5")]
-position = Vector2(463, 661)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eiwkk")
+}
+autoplay = "RESET"
 
-[node name="TempAssetScaffolding" parent="." instance=ExtResource("10_jn63p")]
-position = Vector2(609, 658)
-
-[node name="House4" parent="." instance=ExtResource("15_eqj4t")]
-position = Vector2(779, 624)
-
-[node name="PrefabGallery" parent="." instance=ExtResource("13_fvaf1")]
-position = Vector2(824, 727)
-
-[node name="Spray Spot" parent="." instance=ExtResource("7_y7471")]
-position = Vector2(1259, 554)
-
-[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
-position = Vector2(757, 527)
-dialogbox = NodePath("../CanvasLayer/player_ui")
-
-[node name="Robot" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(266, 601)
-
-[node name="Robot2" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(474, 609)
-
-[node name="Robot3" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(1079, 530)
-
-[node name="Robot4" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(1129, 529)
-
-[node name="Zipline" parent="." instance=ExtResource("16_50v45")]
-position = Vector2(111, 494)
-
-[node name="Line2D" parent="Zipline/Zipline_0" index="0"]
-position = Vector2(0, -20)
-points = PackedVector2Array(0, 0, 403, 83)
-
-[node name="Zipline_1" parent="Zipline" index="1"]
-position = Vector2(401, 81)
-
-[editable path="Zipline"]
+[connection signal="pressed" from="VBoxContainer/Row_0/level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Row_1/level_2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="to_studio" to="." method="_on_to_studio_pressed"]

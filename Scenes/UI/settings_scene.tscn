@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
-[ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/settings_scene.gd" id="1_j0xhm"]
-[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_1lvst"]
+[ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/scene_managers/settings_scene.gd" id="1_j0xhm"]
+[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_1lvst"]
 [ext_resource type="PackedScene" uid="uid://3b2vc2rcph8w" path="res://Scenes/UI/InputSettings.tscn" id="3_3i81g"]
 
 [node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider")]
