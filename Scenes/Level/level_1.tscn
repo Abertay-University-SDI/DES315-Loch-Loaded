@@ -88,8 +88,8 @@ position = Vector2(824, 727)
 position = Vector2(1259, 554)
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
-position = Vector2(757, 527)
-dialogbox = NodePath("../CanvasLayer/player_ui")
+position = Vector2(733, 527)
+dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="Robot" parent="." instance=ExtResource("8_jrwi5")]
 position = Vector2(266, 601)
@@ -107,8 +107,7 @@ position = Vector2(1129, 529)
 position = Vector2(111, 494)
 
 [node name="Line2D" parent="Zipline/Zipline_0" index="0"]
-position = Vector2(0, -20)
-points = PackedVector2Array(0, 0, 403, 83)
+points = PackedVector2Array(0, 0, 401, 81)
 
 [node name="Zipline_1" parent="Zipline" index="1"]
 position = Vector2(401, 81)
