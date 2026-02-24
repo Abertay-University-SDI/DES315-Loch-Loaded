@@ -1,8 +1,0 @@
-masterValue
-1.00
-musicValue
-1.00
-sfxValue
-1.00
-screenShake
-true

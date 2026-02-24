@@ -3,17 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bhlryqv05tx5r" path="res://Textures/Buildings/house-2.png" id="1_0wch2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wch2"]
-size = Vector2(1189.5293, 65.86519)
+size = Vector2(1189.5293, 1807.5447)
 
 [node name="House2" type="Sprite2D"]
 scale = Vector2(0.10679348, 0.10679348)
 texture = ExtResource("1_0wch2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-192.11835, -875.6807)
+position = Vector2(-192.11835, -4.841032)
 shape = SubResource("RectangleShape2D_0wch2")
-one_way_collision = true

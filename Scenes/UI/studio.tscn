@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://4wqots6lkb1s"]
 
-[ext_resource type="Script" uid="uid://durnpsq1hrblp" path="res://Code/studio_select.gd" id="1_0t5tv"]
+[ext_resource type="Script" uid="uid://durnpsq1hrblp" path="res://Code/scene_managers/studio_select.gd" id="1_0t5tv"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_cj3df"]
 [ext_resource type="Texture2D" uid="uid://6gymgacifnx" path="res://Textures/Background/studio-concept-1-final.png" id="3_mk24u"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="4_mk24u"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_135x7"]
 bg_color = Color(0, 0, 0, 0.60784316)
@@ -35,7 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_mk24u")
 expand_mode = 2
-stretch_mode = 4
 
 [node name="studio_menu" type="PanelContainer" parent="." groups=["current_ui"]]
 layout_mode = 0
@@ -69,6 +69,10 @@ text = "Level Select
 layout_mode = 2
 text = "Settings"
 
+[node name="spray_editor_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Spray Editor"
+
 [node name="main_menu_button" type="Button" parent="studio_menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Main Menu
@@ -93,5 +97,6 @@ grow_vertical = 0
 
 [connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/level_select_button" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/spray_editor_button" to="." method="_on_spray_editor_button_pressed"]
 [connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/main_menu_button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="studio_menu/MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

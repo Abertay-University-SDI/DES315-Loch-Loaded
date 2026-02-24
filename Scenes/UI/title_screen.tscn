@@ -1,14 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbw2scq626wau"]
+[gd_scene load_steps=16 format=3 uid="uid://bbw2scq626wau"]
 
-[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/title_screen.gd" id="1_824g0"]
+[ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/scene_managers/title_screen.gd" id="1_824g0"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_tjte5"]
-[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/background.gdshader" id="3_uv4ns"]
+[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/shaders/background.gdshader" id="3_uv4ns"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="4_nd20k"]
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="5_3txao"]
 [ext_resource type="PackedScene" uid="uid://c4c6kxewkr8gw" path="res://Scenes/UI/credits.tscn" id="5_tjte5"]
-[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/dynamic_text_shadow.gd" id="6_28uqs"]
+[ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/ui/dynamic_text_shadow.gd" id="6_28uqs"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="7_bvwvd"]
-[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="8_5b5vi"]
+[ext_resource type="Script" uid="uid://vohrkxsb3oih" path="res://Code/ui/grab_focus.gd" id="9_tjte5"]
+
+[sub_resource type="Gradient" id="Gradient_tjte5"]
+offsets = PackedFloat32Array(0.033333335, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.06879827, 0.06879828, 0.06879828, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uv4ns"]
+gradient = SubResource("Gradient_tjte5")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_2tc6i"]
 offsets = PackedFloat32Array(0.00952381, 0.041269843, 0.4888889, 0.51746035, 1)
@@ -43,7 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_824g0")
 
-[node name="animated_background" parent="." instance=ExtResource("2_tjte5")]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_uv4ns")
+expand_mode = 2
+
+[node name="animated_background" parent="TextureRect" instance=ExtResource("2_tjte5")]
 material = SubResource("ShaderMaterial_yjy2p")
 layout_mode = 1
 
@@ -104,12 +123,11 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer" node_paths=PackedStringArray("scene")]
+[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("7_bvwvd")
 text = "Studio"
-script = ExtResource("8_5b5vi")
-scene = NodePath("../../..")
+script = ExtResource("9_tjte5")
 
 [node name="settings_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2

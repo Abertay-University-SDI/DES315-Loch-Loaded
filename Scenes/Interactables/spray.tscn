@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dofx2hxp4x38j"]
+[gd_scene load_steps=9 format=3 uid="uid://dofx2hxp4x38j"]
 
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="3_h4u3v"]
+[ext_resource type="Script" uid="uid://bfvde5wdlsy2a" path="res://Code/interactables/spray.gd" id="3_rmh3t"]
 [ext_resource type="Texture2D" uid="uid://bvokxk83ohi37" path="res://Textures/Logos/lnl-logo.png" id="4_0cdrr"]
+
 
 [sub_resource type="Shader" id="Shader_0cdrr"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.5.1.stable.mono's ParticleProcessMaterial.
@@ -437,7 +439,7 @@ shader_parameter/velocity_pivot = Vector3(0, 0, 0)
 shader_parameter/emission_box_extents = Vector3(150, 150, 0)
 shader_parameter/color_value = Color(1, 1, 1, 1)
 shader_parameter/gravity = Vector3(0, -1e-06, 0)
-shader_parameter/sprite_scale = 0.1
+shader_parameter/sprite_scale = 0.22
 shader_parameter/sprite = ExtResource("4_0cdrr")
 
 [sub_resource type="Animation" id="Animation_h4u3v"]
@@ -506,10 +508,10 @@ _data = {
 modulate = Color(1, 1, 1, 0)
 z_index = -1
 z_as_relative = false
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("4_0cdrr")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." node_paths=PackedStringArray("spray")]
 scale = Vector2(0.99999994, 0.99999994)
 amount = 10000
 texture = ExtResource("3_h4u3v")
@@ -517,6 +519,8 @@ one_shot = true
 explosiveness = 1.0
 local_coords = true
 process_material = SubResource("ShaderMaterial_kro3a")
+script = ExtResource("3_rmh3t")
+spray = NodePath("../Spray")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Spray")

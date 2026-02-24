@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm0w3k3u3b40"]
 
-[ext_resource type="Script" uid="uid://ddlxbobj4w0db" path="res://Code/cloud.gd" id="1_xoild"]
+[ext_resource type="Script" uid="uid://ddlxbobj4w0db" path="res://Code/environment/cloud.gd" id="1_xoild"]
 [ext_resource type="Texture2D" uid="uid://bciskcj7mi4rm" path="res://Textures/Background/skybox.webp" id="2_fn2do"]
 [ext_resource type="Texture2D" uid="uid://b1ba4r4sxexsm" path="res://Textures/Background/Paralax_city_1.png" id="3_hy12d"]
 [ext_resource type="Texture2D" uid="uid://c3afndhhw4jfl" path="res://Textures/Background/Paralax_city_2.png" id="4_m5fgl"]
 [ext_resource type="Texture2D" uid="uid://c2646e6js648i" path="res://Textures/Background/Paralax_city_3.png" id="5_4srxt"]
+
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 offset = Vector2(0, 288.95)

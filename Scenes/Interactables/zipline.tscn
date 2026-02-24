@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c36yui16q7hm8"]
+
+[ext_resource type="Script" uid="uid://b0t7brcwgpyls" path="res://Code/interactables/zipline.gd" id="1_qjyrw"]
+[ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="2_ct4pe"]
+
+[node name="Zipline" type="Node2D" node_paths=PackedStringArray("point_0", "point_1", "line")]
+script = ExtResource("1_qjyrw")
+point_0 = NodePath("Zipline_0/Zippoint")
+point_1 = NodePath("Zipline_1/Zippoint")
+line = NodePath("Zipline_0/Line2D")
+
+[node name="Zipline_0" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("2_ct4pe")
+
+[node name="Line2D" type="Line2D" parent="Zipline_0"]
+
+[node name="Zippoint" type="Marker2D" parent="Zipline_0"]
+position = Vector2(0, -20)
+
+[node name="Zipline_1" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+position = Vector2(100, 0)
+texture = ExtResource("2_ct4pe")
+
+[node name="Zippoint" type="Marker2D" parent="Zipline_1"]
+position = Vector2(0, -20)

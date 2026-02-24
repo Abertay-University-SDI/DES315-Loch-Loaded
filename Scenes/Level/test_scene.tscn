@@ -1,20 +1,21 @@
 [gd_scene load_steps=20 format=3 uid="uid://bhulbkeyei13l"]
 
-[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/level.gd" id="1_bvu58"]
+[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_bvu58"]
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/Prefabs/tile_map.tscn" id="1_wqyeq"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_cunvl"]
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="2_osgbe"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="3_bvu58"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="3_cunvl"]
+[ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="4_4nr23"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="4_cunvl"]
-[ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/ColorBlind.gdshader" id="4_xq4ya"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="5_6vt6i"]
-[ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/colorBlind.gd" id="6_33tym"]
 [ext_resource type="Texture2D" uid="uid://cveptdss4aqol" path="res://Textures/Decorations/trash-bin-concept-1.png" id="9_6vt6i"]
 [ext_resource type="Texture2D" uid="uid://41q2v7d756j1" path="res://Textures/Decorations/TEMP_ASSET_TrashCap.png" id="10_aq261"]
 [ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="11_idrhf"]
 [ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="12_lvm3j"]
 [ext_resource type="PackedScene" uid="uid://nrbu06nmkajc" path="res://Scenes/Level/Prefabs/market.tscn" id="13_ncw8l"]
+[ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="14_6pdjf"]
+[ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_xq4ya"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dpgr0"]
 shader = ExtResource("4_xq4ya")
@@ -48,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("6_33tym")
+player = NodePath("../../Player")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_osgbe")]
 offset = Vector2(0, 358.69)
@@ -71,7 +72,7 @@ collision_mask = 3
 Tilemap = NodePath("../TileMap/Layer0")
 
 [node name="Spray Spot" parent="." instance=ExtResource("4_cunvl")]
-position = Vector2(2434, -23)
+position = Vector2(59, 525)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_osgbe")
@@ -188,5 +189,12 @@ position = Vector2(526, 630)
 
 [node name="TempAssetFoodStall" parent="." instance=ExtResource("13_ncw8l")]
 position = Vector2(58.000008, 647)
+
+[node name="House2" parent="." instance=ExtResource("14_6pdjf")]
+position = Vector2(1103, 593)
+
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_xq4ya")]
+position = Vector2(312, 467)
+dialogbox = NodePath("../CanvasLayer/player_ui")
 
 [editable path="TileMap"]

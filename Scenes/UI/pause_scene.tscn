@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyts38hutibwa"]
 
-[ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/pause_scene.gd" id="1_irnjd"]
+[ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/scene_managers/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
-[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/button.gd" id="3_ktoib"]
+[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_ktoib"]
+
 
 [node name="PauseScene" type="Control" node_paths=PackedStringArray("back_button")]
 process_mode = 3

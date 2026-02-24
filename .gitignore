@@ -33,4 +33,9 @@ mono_crash.*.json
 Export/
 
 # Save data
-Saves/
+Saves/Spray/saved.png
+Saves/Spray/saved.png.import
+Saves/save_data.txt
+
+/.vs
+
