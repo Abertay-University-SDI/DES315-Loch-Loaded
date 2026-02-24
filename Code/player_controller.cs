@@ -93,15 +93,15 @@ public partial class player_controller : CharacterBody2D
 		if (e.IsActionPressed("dash") && dash_timer < 0f)
 			StartDash();
 
-        if (e.IsActionPressed("yoyo") && yoyo.Visible && IsInstanceValid(yoyo_enemy))
-        {
-            GD.Print("Yoyo hit!");
-            GD.Print(yoyo_enemy);
-            Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
-            dir += Vector2.Down;
-            yoyo_enemy.TakeHit(-dir, -0.1f, 200f);
-        }
-    }
+		if (e.IsActionPressed("yoyo") && yoyo.Visible && IsInstanceValid(yoyo_enemy))
+		{
+			GD.Print("Yoyo hit!");
+			GD.Print(yoyo_enemy);
+			Vector2 dir = (yoyo_enemy.Position - Position).Normalized();
+			dir += Vector2.Down;
+			yoyo_enemy.TakeHit(-dir, -0.1f, 200f);
+		}
+	}
 
 	public override void _Process(double delta)
 	{

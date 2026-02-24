@@ -1,8 +1,8 @@
 masterValue
 1.00
 musicValue
-0.84
+1.00
 sfxValue
 1.00
 screenShake
-<null>
+true
