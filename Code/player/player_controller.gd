@@ -328,8 +328,6 @@ func _update_animation() -> void:
 		_anim.play("Jump")
 	elif punching > 0.0:
 		_anim.play("Punch")
-	elif _breaking and speed > 100.0:
-		_anim.play("Breaking")
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
