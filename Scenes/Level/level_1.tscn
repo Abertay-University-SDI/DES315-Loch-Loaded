@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=22 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="4_unuuj"]
 [ext_resource type="PackedScene" uid="uid://jb118bi61s4g" path="res://Scenes/UI/dialog_container.tscn" id="5_hnohd"]
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="5_qs4fp"]
+[ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/shaders/ColorBlind.gdshader" id="6_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
+[ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="7_unuuj"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
 [ext_resource type="PackedScene" uid="uid://b4hrx48bddmmi" path="res://Scenes/Level/Prefabs/house_3.tscn" id="8_d68a7"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
@@ -16,6 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
+shader = ExtResource("6_ia3c5")
+shader_parameter/mode = 0
 
 [sub_resource type="Environment" id="Environment_osgbe"]
 
@@ -39,6 +45,16 @@ player = NodePath("../../Player")
 
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_qs4fp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_unuuj")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
 offset = Vector2(0, 358.69)

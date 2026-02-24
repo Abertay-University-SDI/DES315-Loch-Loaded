@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=5 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/scene_managers/settings_scene.gd" id="1_j0xhm"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_1lvst"]
-
+[ext_resource type="PackedScene" uid="uid://3b2vc2rcph8w" path="res://Scenes/UI/InputSettings.tscn" id="3_3i81g"]
 
 [node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider")]
 process_mode = 3
@@ -149,24 +149,9 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="controlls_container" type="HBoxContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls"]
+[node name="InputSettingsButton" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls" instance=ExtResource("3_3i81g")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = 128.5
-offset_right = 101.0
-offset_bottom = 187.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="controlls_button" type="Button" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls/controlls_container"]
-layout_mode = 2
-text = "Controlls"
+offset_bottom = 314.5
 
 [node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -186,5 +171,4 @@ scene = NodePath("../../../..")
 [connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/soundEffect_slider" to="." method="_on_sound_effect_slider_value_changed"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container/colorBlind_list" to="." method="_on_color_blind_list_item_selected"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Video/colorBlind_container/screenShake_container/screenShake_button" to="." method="_on_screen_shake_button_toggled"]
-[connection signal="toggled" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls/controlls_container/controlls_button" to="." method="_on_controlls_button_toggled"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/back_box_container/BackButton" to="." method="_on_back_button_pressed"]
