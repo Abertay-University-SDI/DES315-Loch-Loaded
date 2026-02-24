@@ -163,9 +163,9 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Row_1" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
+position = Vector2(733, 527)
+dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="level_2" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
@@ -229,18 +229,8 @@ theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 106
 text = "LEVEL SELECT"
 
-[node name="to_studio" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -90.0
-offset_right = 191.0
-offset_bottom = -31.0
-grow_vertical = 0
-text = "TO STUDIO"
+[node name="Line2D" parent="Zipline/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 401, 81)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
