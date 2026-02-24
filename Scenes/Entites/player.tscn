@@ -1,9 +1,10 @@
-[gd_scene load_steps=76 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=77 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
 [ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
 [ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]
+[ext_resource type="AudioStream" uid="uid://eccmvo7fspb3" path="res://Sounds/YoYo.wav" id="6_82p5m"]
 [ext_resource type="AudioStream" uid="uid://nkf748y5acc4" path="res://Sounds/punch.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 
@@ -980,6 +981,10 @@ bus = &"SFX"
 [node name="punch" type="AudioStreamPlayer2D" parent="sound"]
 scale = Vector2(0.99999994, 0.99999994)
 stream = ExtResource("6_kov73")
+bus = &"SFX"
+
+[node name="YoYo" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("6_82p5m")
 bus = &"SFX"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="sound"]

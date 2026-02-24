@@ -9,6 +9,7 @@ signal health_changed(health: float)
 @export var footstep_sfx: AudioStreamPlayer2D
 @export var dash_sfx: AudioStreamPlayer2D
 @export var punch_sfx: AudioStreamPlayer2D
+@export var YoYo_sfx: AudioStreamPlayer2D
 
 @export var yoyo: Sprite2D
 @export var yoyo_string: Line2D
@@ -126,6 +127,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("yoyo") and yoyo.visible and is_instance_valid(yoyo_enemy):
 		var dir := (yoyo_enemy.position - position).normalized()
 		dir += Vector2.DOWN
+		YoYo_sfx.play()
 		yoyo_enemy.take_hit(-dir, -0.1, 100.0)
 
 	# Crouch input — only on floor and not dashing
