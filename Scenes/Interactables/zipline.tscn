@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c36yui16q7hm8"]
+[gd_scene load_steps=5 format=3 uid="uid://c36yui16q7hm8"]
 
 [ext_resource type="Script" uid="uid://b0t7brcwgpyls" path="res://Code/interactables/zipline.gd" id="1_qjyrw"]
 [ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="2_ct4pe"]
 
-[node name="Zipline" type="Node2D" node_paths=PackedStringArray("point_0", "point_1", "line")]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjyrw"]
+friction = 0.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qjyrw"]
+a = Vector2(0, -20)
+b = Vector2(100, -20)
+
+[node name="Zipline" type="Node2D" node_paths=PackedStringArray("point_0", "point_1", "line", "collision_shape")]
 script = ExtResource("1_qjyrw")
 point_0 = NodePath("Zipline_0/Zippoint")
 point_1 = NodePath("Zipline_1/Zippoint")
 line = NodePath("Zipline_0/Line2D")
+collision_shape = NodePath("Zipline_0/StaticBody2D/CollisionShape2D")
 
 [node name="Zipline_0" type="Sprite2D" parent="."]
 z_index = 1
@@ -17,7 +25,7 @@ texture = ExtResource("2_ct4pe")
 
 [node name="Line2D" type="Line2D" parent="Zipline_0"]
 position = Vector2(0, -20)
-points = PackedVector2Array(0, 0, 48.711433, 0, 100, 0)
+points = PackedVector2Array(0, 0, 100, 0)
 width = 3.0
 joint_mode = 2
 begin_cap_mode = 2
@@ -26,6 +34,14 @@ antialiased = true
 
 [node name="Zippoint" type="Marker2D" parent="Zipline_0"]
 position = Vector2(0, -20)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Zipline_0"]
+collision_layer = 4
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_qjyrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zipline_0/StaticBody2D"]
+shape = SubResource("SegmentShape2D_qjyrw")
 
 [node name="Zipline_1" type="Sprite2D" parent="."]
 z_index = 1
