@@ -55,10 +55,9 @@ horizontal_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
-current_tab = 2
+current_tab = 0
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -146,11 +145,13 @@ size_flags_horizontal = 4
 text = "Screen Shake"
 
 [node name="Controls" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="InputSettingsButton" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Controls" instance=ExtResource("3_3i81g")]
 layout_mode = 1
+offset_bottom = 314.5
 
 [node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
