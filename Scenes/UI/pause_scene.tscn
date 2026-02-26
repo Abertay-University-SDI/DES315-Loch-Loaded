@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_ktoib"]
 
-
 [node name="PauseScene" type="Control" node_paths=PackedStringArray("back_button")]
 process_mode = 3
 process_priority = 1

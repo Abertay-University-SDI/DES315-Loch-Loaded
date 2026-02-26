@@ -1012,6 +1012,7 @@ width = 3.0
 position = Vector2(0, 15)
 zoom = Vector2(2.355, 2.355)
 limit_smoothed = true
+position_smoothing_speed = 1.0
 
 [node name="Zipline_detect" type="Area2D" parent="."]
 collision_layer = 4

@@ -80,6 +80,14 @@ func set_canvas_from_path(path: String) -> void:
 
 	img = spray
 	texture = ImageTexture.create_from_image(img)
+	
+func set_canvas_from_image(path: String) -> void:
+	var spray: Image = Image.load_from_file(path)
+	spray.decompress()
+	spray.resize(spray_size.x, spray_size.y, Image.INTERPOLATE_LANCZOS)
+
+	img = spray
+	texture = ImageTexture.create_from_image(img)
 
 
 func _on_clear_button_pressed() -> void:
@@ -111,4 +119,4 @@ func show_popup(message: String) -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/studio.tscn")
+	SceneTransition.transition_to_path("res://Scenes/UI/studio.tscn")

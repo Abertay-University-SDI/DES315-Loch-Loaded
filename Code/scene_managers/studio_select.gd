@@ -10,7 +10,7 @@ func _ready() -> void:
 	button.grab_focus()
 
 func _on_level_select_button_pressed() -> void:
-	get_tree().change_scene_to_packed(LEVEL_SELECT)
+	SceneTransition.transition_to(LEVEL_SELECT)
 
 func _on_settings_button_pressed() -> void:
 	studio_ui.hide()
@@ -25,4 +25,4 @@ func _on_main_menu_button_pressed() -> void:
 
 
 func _on_spray_editor_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/UI/spray_editor.tscn")
+	SceneTransition.transition_to_path("res://Scenes/UI/spray_editor.tscn")
