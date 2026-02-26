@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd6pk3y5bbvoe"]
+[gd_scene load_steps=7 format=3 uid="uid://dd6pk3y5bbvoe"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_8kv44"]
 [ext_resource type="Script" uid="uid://cns2a70fsut21" path="res://Code/ui/paint.gd" id="1_mfdx8"]
 [ext_resource type="Texture2D" uid="uid://cf8lf28iki38v" path="res://Textures/UI/spray_studio.png" id="2_i046t"]
+[ext_resource type="Texture2D" uid="uid://rqiulshjdoig" path="res://Saves/Spray/default.png" id="4_2qhec"]
 
 [sub_resource type="Image" id="Image_i046t"]
 data = {
@@ -43,7 +44,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/SprayCanvasContainer" node_paths=PackedStringArray("brush_color", "brush_slide")]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/SprayCanvasContainer" node_paths=PackedStringArray("brush_color", "brush_slide", "default_image_texture")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,6 +57,7 @@ texture = SubResource("ImageTexture_2qhec")
 script = ExtResource("1_mfdx8")
 brush_color = NodePath("../../Panel/VBoxContainer/ColorPickerButton")
 brush_slide = NodePath("../../Panel/VBoxContainer/PanelContainer/HSlider")
+default_image_texture = NodePath("../../../Logo")
 
 [node name="Popup" type="Popup" parent="HBoxContainer/SprayCanvasContainer/TextureRect"]
 oversampling_override = 1.0
@@ -116,9 +118,13 @@ theme_override_font_sizes/font_size = 16
 text = "bursh Size:"
 
 [node name="Logo" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 362.0
+offset_top = 96.0
+offset_right = 874.0
+offset_bottom = 608.0
+texture = ExtResource("4_2qhec")
 
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/clear_button" to="HBoxContainer/SprayCanvasContainer/TextureRect" method="_on_clear_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Panel/VBoxContainer/default_button" to="HBoxContainer/SprayCanvasContainer/TextureRect" method="_on_default_button_pressed"]
