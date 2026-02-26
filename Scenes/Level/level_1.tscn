@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=23 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+[ext_resource type="PackedScene" uid="uid://bleikxem48dv8" path="res://Scenes/Interactables/crane.tscn" id="19_unuuj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
@@ -82,42 +83,12 @@ position = Vector2(1793, 377.125)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
-[node name="House2" parent="." instance=ExtResource("15_eqj4t")]
-position = Vector2(86, 623)
-
-[node name="House3" parent="." instance=ExtResource("8_d68a7")]
-position = Vector2(274, 651)
-
-[node name="House1" parent="." instance=ExtResource("13_hxng5")]
-position = Vector2(463, 661)
-
-[node name="TempAssetScaffolding" parent="." instance=ExtResource("10_jn63p")]
-position = Vector2(609, 658)
-
-[node name="House4" parent="." instance=ExtResource("15_eqj4t")]
-position = Vector2(779, 624)
-
-[node name="PrefabGallery" parent="." instance=ExtResource("13_fvaf1")]
-position = Vector2(824, 727)
-
 [node name="Spray Spot" parent="." instance=ExtResource("7_y7471")]
 position = Vector2(1259, 554)
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
 position = Vector2(733, 527)
 dialogbox = NodePath("../CanvasLayer/dialog")
-
-[node name="Robot" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(266, 601)
-
-[node name="Robot2" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(474, 609)
-
-[node name="Robot3" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(1079, 530)
-
-[node name="Robot4" parent="." instance=ExtResource("8_jrwi5")]
-position = Vector2(1129, 529)
 
 [node name="Zipline" parent="." instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
@@ -130,5 +101,44 @@ position = Vector2(-111, -494)
 
 [node name="Zipline_1" parent="Zipline" index="1"]
 position = Vector2(675, 1)
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="House2" parent="Buildings" instance=ExtResource("15_eqj4t")]
+position = Vector2(86, 623)
+
+[node name="House3" parent="Buildings" instance=ExtResource("8_d68a7")]
+position = Vector2(274, 651)
+
+[node name="House1" parent="Buildings" instance=ExtResource("13_hxng5")]
+position = Vector2(463, 661)
+
+[node name="TempAssetScaffolding" parent="Buildings" instance=ExtResource("10_jn63p")]
+position = Vector2(609, 658)
+
+[node name="House4" parent="Buildings" instance=ExtResource("15_eqj4t")]
+position = Vector2(779, 624)
+
+[node name="PrefabGallery" parent="Buildings" instance=ExtResource("13_fvaf1")]
+position = Vector2(824, 727)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Robot" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(266, 601)
+
+[node name="Robot2" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(474, 609)
+
+[node name="Robot3" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(1079, 530)
+
+[node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(1129, 529)
+
+[node name="Crane" parent="." instance=ExtResource("19_unuuj")]
+z_index = -1
+position = Vector2(1037, 523)
+scale = Vector2(0.22, 0.22)
 
 [editable path="Zipline"]

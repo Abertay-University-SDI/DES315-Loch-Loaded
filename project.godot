@@ -21,6 +21,7 @@ config/icon="uid://bvokxk83ohi37"
 
 Global="*res://Code/Global.gd"
 SceneTransition="*res://Scenes/UI/SceneTransition.tscn"
+MenuMusic="*res://Scenes/UI/menuMusic.tscn"
 
 [display]
 

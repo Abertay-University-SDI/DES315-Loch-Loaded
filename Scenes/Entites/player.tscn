@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=79 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
@@ -916,10 +916,14 @@ height = 72.49999
 [sub_resource type="CircleShape2D" id="CircleShape2D_82p5m"]
 radius = 6.0827627
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kov73"]
+radius = 138.23169
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
+crane_detector = NodePath("Crane_detect")
 footstep_sfx = NodePath("sound/footstep")
 dash_sfx = NodePath("sound/dash")
 punch_sfx = NodePath("sound/punch")
@@ -1012,7 +1016,8 @@ width = 3.0
 position = Vector2(0, 15)
 zoom = Vector2(2.355, 2.355)
 limit_smoothed = true
-position_smoothing_speed = 1.0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="Zipline_detect" type="Area2D" parent="."]
 collision_layer = 4
@@ -1022,3 +1027,11 @@ collision_mask = 4
 position = Vector2(0, -47)
 shape = SubResource("CircleShape2D_82p5m")
 debug_color = Color(0.92836297, 3.2247604e-05, 0.66692793, 0.41960785)
+
+[node name="Crane_detect" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crane_detect"]
+position = Vector2(0, -47)
+shape = SubResource("CircleShape2D_kov73")
