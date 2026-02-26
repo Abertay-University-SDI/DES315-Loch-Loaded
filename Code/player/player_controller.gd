@@ -7,6 +7,7 @@ signal health_changed(health: float)
 @export var play_area_shape: CollisionShape2D
 
 @export var zipline_detector:Area2D
+@export var crane_detector:Area2D
 
 @export var footstep_sfx: AudioStreamPlayer2D
 @export var dash_sfx: AudioStreamPlayer2D
@@ -62,8 +63,12 @@ var punching := 0.0
 var _gravity: float
 var _breaking := false
 var _on_zipline:bool
+var _on_crane:bool
+var _in_crane_area: bool
 
 var zipline_dir:Vector2
+var crane_dir:Vector2
+var crane_point:Vector2
 
 
 # --- Crouch / Slide ---
@@ -106,6 +111,8 @@ func _ready() -> void:
 	play_area.body_exited.connect(_respawn_player)
 	zipline_detector.body_entered.connect(zip_entered)
 	zipline_detector.body_exited.connect(zip_exited)
+	crane_detector.body_entered.connect(crane_entered)
+	crane_detector.body_exited.connect(crane_exited)
 
 	_setup_camera_limits()
 
@@ -133,11 +140,17 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump") and velocity.y < 0:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 
-	if event.is_action_pressed("yoyo") and yoyo.visible and is_instance_valid(yoyo_enemy):
-		var dir := (yoyo_enemy.position - position).normalized()
-		dir += Vector2.DOWN
-		YoYo_sfx.play()
-		yoyo_enemy.take_hit(-dir, -0.1, 100.0)
+	if event.is_action_pressed("yoyo") and ((yoyo.visible and is_instance_valid(yoyo_enemy)) or _in_crane_area):
+		if (yoyo.visible and is_instance_valid(yoyo_enemy)):
+			var dir := (yoyo_enemy.position - position).normalized()
+			dir += Vector2.DOWN
+			YoYo_sfx.play()
+			yoyo_enemy.take_hit(-dir, -0.1, 100.0)
+		else:
+			# crane todo
+			_on_crane = true
+			return
+
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
@@ -225,7 +238,7 @@ func _respawn_player(body: Node) -> void:
 
 
 func _apply_gravity(dt: float) -> void:
-	if not is_on_floor() and not dashing and not _on_zipline:
+	if not is_on_floor() and not dashing and not _on_zipline and not _on_crane:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
@@ -261,10 +274,18 @@ func _handle_movement(dt: float) -> void:
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
 	if dir_radial.y<=0.0 && _on_zipline && velocity.y>0:
-		velocity.x = zipline_dir.x*1000.0
-		velocity.y = zipline_dir.y*1000.0
+		velocity.x = zipline_dir.x*500.0
+		velocity.y = zipline_dir.y*500.0
 		return
 		
+	if _on_crane:
+		calculate_crane_dir()
+		velocity.x = crane_dir.x * 50.0
+		velocity.y = crane_dir.y * 50.0
+		if (global_position.distance_to(crane_point) <= 10):
+			_on_crane = false
+		# crane todo
+
 	if sliding:
 		velocity.x = move_toward(velocity.x, 0.0, SLIDE_FRICTION * dt)
 		_anim.flip_h = _slide_dir < 0
@@ -428,7 +449,17 @@ func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
 	_on_zipline = true
 func zip_exited(body:Node2D)->void:
-	_on_zipline = false
+	_on_zipline = false	
+
+func crane_entered(body:Node2D)->void:
+	crane_point = body.get_parent().get_parent().get_point()
+	_in_crane_area = true
+func crane_exited(body:Node2D)->void:
+	_in_crane_area = false
+	
+func calculate_crane_dir()->void:
+	crane_dir = crane_point - global_position
+	crane_dir.normalized()
 
 func _setup_camera_limits() -> void:
 	if play_area == null or play_area_shape == null:
