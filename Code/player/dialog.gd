@@ -54,4 +54,5 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_visibility_changed() -> void:
 	if visible:
+		show_dialog("surfer_dude_intro")
 		_play_current_line()

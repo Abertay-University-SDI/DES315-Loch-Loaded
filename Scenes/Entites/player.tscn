@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=78 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
@@ -913,9 +913,13 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 19.750004
 height = 72.49999
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_82p5m"]
+radius = 6.0827627
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
+zipline_detector = NodePath("Zipline_detect")
 footstep_sfx = NodePath("sound/footstep")
 dash_sfx = NodePath("sound/dash")
 punch_sfx = NodePath("sound/punch")
@@ -933,12 +937,8 @@ texture_filter = 1
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Crouch"
+animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.355, 2.355)
-limit_smoothed = true
 
 [node name="attack_area" type="Area2D" parent="."]
 position = Vector2(21, -25)
@@ -1007,3 +1007,17 @@ z_index = -45
 position = Vector2(0, -21)
 points = PackedVector2Array(0, 0, 53.02, 0)
 width = 3.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 15)
+zoom = Vector2(2.355, 2.355)
+limit_smoothed = true
+
+[node name="Zipline_detect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zipline_detect"]
+position = Vector2(0, -47)
+shape = SubResource("CircleShape2D_82p5m")
+debug_color = Color(0.92836297, 3.2247604e-05, 0.66692793, 0.41960785)

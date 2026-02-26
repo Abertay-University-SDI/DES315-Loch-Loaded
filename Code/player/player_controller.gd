@@ -6,6 +6,8 @@ signal health_changed(health: float)
 @export var play_area: Area2D
 @export var play_area_shape: CollisionShape2D
 
+@export var zipline_detector:Area2D
+
 @export var footstep_sfx: AudioStreamPlayer2D
 @export var dash_sfx: AudioStreamPlayer2D
 @export var punch_sfx: AudioStreamPlayer2D
@@ -59,6 +61,10 @@ var punching := 0.0
 
 var _gravity: float
 var _breaking := false
+var _on_zipline:bool
+
+var zipline_dir:Vector2
+
 
 # --- Crouch / Slide ---
 var crouching := false
@@ -98,8 +104,11 @@ func _ready() -> void:
 	_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	play_area.body_exited.connect(_respawn_player)
+	zipline_detector.body_entered.connect(zip_entered)
+	zipline_detector.body_exited.connect(zip_exited)
 
 	_setup_camera_limits()
+
 
 
 func _input(event: InputEvent) -> void:
@@ -216,7 +225,7 @@ func _respawn_player(body: Node) -> void:
 
 
 func _apply_gravity(dt: float) -> void:
-	if not is_on_floor() and not dashing:
+	if not is_on_floor() and not dashing and not _on_zipline:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
@@ -246,9 +255,16 @@ func _handle_jump() -> void:
 
 
 func _handle_movement(dt: float) -> void:
+	
+	
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
+	if dir_radial.y<=0.0 && _on_zipline && velocity.y>0:
+		velocity.x = zipline_dir.x*1000.0
+		velocity.y = zipline_dir.y*1000.0
+		return
+		
 	if sliding:
 		velocity.x = move_toward(velocity.x, 0.0, SLIDE_FRICTION * dt)
 		_anim.flip_h = _slide_dir < 0
@@ -330,8 +346,6 @@ func _update_animation() -> void:
 		_anim.play("Jump")
 	elif punching > 0.0:
 		_anim.play("Punch")
-	elif _breaking and speed > 100.0:
-		_anim.play("Breaking")
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
@@ -410,6 +424,11 @@ func _on_dash_body_hit(body: Node) -> void:
 
 	enemy.take_dash(dash_timer, 400.0)
 
+func zip_entered(body:Node2D)->void:
+	zipline_dir = body.get_parent().get_parent().get_dir()
+	_on_zipline = true
+func zip_exited(body:Node2D)->void:
+	_on_zipline = false
 
 func _setup_camera_limits() -> void:
 	if play_area == null or play_area_shape == null:

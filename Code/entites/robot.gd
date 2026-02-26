@@ -60,6 +60,7 @@ func _ready() -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "attack":
+		_attack_committed = false
 		_animation_player.play("idle")
 		_try_attack()
 	elif anim_name == "take_hit":
@@ -91,7 +92,6 @@ func _spawn_zap() -> void:
 	_zap_timer = ZAP_DURATION
 
 func _try_attack() -> void:
-	_animation_player.play("attack")
 	if (_player.global_position.distance_to(_alive.global_position) < attack_range):
 		_spawn_zap()
 		_player.velocity+= _zap_force* (_player.global_position-_alive.global_position).normalized()
@@ -201,9 +201,12 @@ func _process(delta: float) -> void:
 		_attack_timer -= delta
 		if _attack_timer <= 0.0:
 			_try_attack()
+			_attack_timer = ATTACK_DELAY
 			_attack_committed = false
 			_contact_timer = 0.0
 			_in_contact = false
+		else:
+			_animation_player.play("attack")
 
 
 func _apply_death_impulse(hit_dir: Vector2, force: float) -> void:
