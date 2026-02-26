@@ -65,6 +65,7 @@ var _breaking := false
 var _on_zipline:bool
 var _on_crane:bool
 var _in_crane_area: bool
+var zipping:bool
 
 var zipline_dir:Vector2
 var crane_dir:Vector2
@@ -238,7 +239,7 @@ func _respawn_player(body: Node) -> void:
 
 
 func _apply_gravity(dt: float) -> void:
-	if not is_on_floor() and not dashing and not _on_zipline and not _on_crane:
+	if not is_on_floor() and not dashing and not zipping:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
@@ -274,9 +275,12 @@ func _handle_movement(dt: float) -> void:
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
 	if dir_radial.y<=0.0 && _on_zipline && velocity.y>0:
+		zipping = true
 		velocity.x = zipline_dir.x*500.0
 		velocity.y = zipline_dir.y*500.0
 		return
+	zipping = false
+	
 		
 	if _on_crane:
 		calculate_crane_dir()

@@ -187,6 +187,7 @@ theme_override_constants/separation = 16
 
 [node name="level_2" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
 texture_focused = ExtResource("6_1v14q")
@@ -212,6 +213,7 @@ vertical_alignment = 1
 
 [node name="level_3" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("5_ltq1i")
 texture_hover = ExtResource("6_1v14q")
 texture_focused = ExtResource("6_1v14q")
