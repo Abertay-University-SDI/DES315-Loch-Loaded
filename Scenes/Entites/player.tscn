@@ -913,12 +913,13 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 19.750004
 height = 72.49999
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstep_sfx", "dash_sfx", "punch_sfx", "yoyo", "yoyo_string") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
 footstep_sfx = NodePath("sound/footstep")
 dash_sfx = NodePath("sound/dash")
 punch_sfx = NodePath("sound/punch")
+YoYo_sfx = NodePath("sound/YoYo")
 yoyo = NodePath("YoYo")
 yoyo_string = NodePath("YoYo/YoYoLine")
 
