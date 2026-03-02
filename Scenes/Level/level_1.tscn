@@ -62,23 +62,6 @@ script = ExtResource("7_unuuj")
 offset = Vector2(0, 358.69)
 transform = Transform2D(2, 0, 0, 2, 0, 358.69)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 1282.0
-offset_bottom = 723.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="Background" parent="SubViewportContainer" instance=ExtResource("9_qs4fp")]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 4
-
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
 z_index = 1
 position = Vector2(62, 524)
@@ -159,5 +142,29 @@ position = Vector2(1129, 529)
 z_index = -1
 position = Vector2(1037, 523)
 scale = Vector2(0.22, 0.22)
+
+[node name="Background Layer" type="CanvasLayer" parent="."]
+layer = -90
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background Layer"]
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1282.0
+offset_bottom = 723.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("player", "bounds", "bounds_shape") instance=ExtResource("9_qs4fp")]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+player = NodePath("../../../Player")
+bounds = NodePath("../../../PlayArea")
+bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
 [editable path="Zipline"]

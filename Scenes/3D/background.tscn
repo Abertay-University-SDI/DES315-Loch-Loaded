@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://2n10yfcb8tl1"]
 
+[ext_resource type="Script" uid="uid://c3rvnryrsckld" path="res://Code/environment/3d_backgtound.gd" id="1_ivimj"]
 [ext_resource type="Shader" uid="uid://d2djqdv60dlgf" path="res://Code/shaders/cellshade.gdshader" id="1_sjcpt"]
 [ext_resource type="Script" uid="uid://b78xg77sb6skr" path="res://Code/environment/CityMesh.gd" id="3_ivimj"]
 
@@ -52,27 +53,14 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="GDScript" id="GDScript_sjcpt"]
-script/source = "extends PathFollow3D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-func _physics_process(delta: float) -> void:
-	progress_ratio+= delta *0.1
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[node name="Background" type="SubViewport"]
+[node name="Background" type="SubViewport" node_paths=PackedStringArray("cam_path")]
+own_world_3d = true
 size = Vector2i(1280, 720)
+script = ExtResource("1_ivimj")
+cam_path = NodePath("Path3D/PathFollow3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.097709656, 1.9073486e-06, 0.036727905)
 mesh = SubResource("PlaneMesh_pcpqn")
 surface_material_override/0 = SubResource("StandardMaterial3D_lf27d")
 
@@ -101,7 +89,6 @@ curve = SubResource("Curve3D_i0wsv")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30, 0, 0)
-script = SubResource("GDScript_sjcpt")
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(-4.371139e-08, 0.30348435, 0.95283645, -5.551115e-16, 0.95283645, -0.30348435, -1, -1.3265723e-08, -4.1649805e-08, 18.33074, 0.51150274, 11.038414)

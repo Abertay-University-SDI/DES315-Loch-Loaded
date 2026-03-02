@@ -36,6 +36,10 @@ mouse_cursor/custom_image="uid://barah6e5b7035"
 
 project/assembly_name="Spray&Pray"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/codecapture/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
