@@ -159,11 +159,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("player", "bounds", "bounds_shape") instance=ExtResource("9_qs4fp")]
+[node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("cam", "bounds", "bounds_shape") instance=ExtResource("9_qs4fp")]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
-player = NodePath("../../../Player")
+cam = NodePath("../../../Player/Camera2D")
 bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
