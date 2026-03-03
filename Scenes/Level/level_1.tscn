@@ -137,11 +137,6 @@ position = Vector2(1079, 530)
 [node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
 position = Vector2(1129, 529)
 
-[node name="Crane" parent="." instance=ExtResource("19_unuuj")]
-z_index = -1
-position = Vector2(1037, 523)
-scale = Vector2(0.22, 0.22)
-
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
 
