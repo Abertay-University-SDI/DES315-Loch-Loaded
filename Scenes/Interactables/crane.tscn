@@ -17,7 +17,6 @@ position = Vector2(-54, -353)
 texture = ExtResource("1_4shao")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-visible = false
 collision_layer = 8
 collision_mask = 8
 
