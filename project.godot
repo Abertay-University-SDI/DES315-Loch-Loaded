@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Radical Ramapge"
 run/main_scene="uid://bbw2scq626wau"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.72671556, 0.8490468, 1)
 boot_splash/image="uid://bvokxk83ohi37"
 config/icon="uid://bvokxk83ohi37"
@@ -38,7 +38,7 @@ project/assembly_name="Spray&Pray"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/codecapture/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 

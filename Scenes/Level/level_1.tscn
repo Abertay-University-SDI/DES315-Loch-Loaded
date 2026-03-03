@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+[ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
@@ -94,14 +95,17 @@ dialogbox = NodePath("../CanvasLayer/dialog")
 [node name="Zipline" parent="." instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
 
+[node name="Zipline_0" parent="Zipline" index="0"]
+position = Vector2(824, 85)
+
 [node name="Line2D" parent="Zipline/Zipline_0" index="0"]
-points = PackedVector2Array(0, 0, 675, 1)
+points = PackedVector2Array(0, 0, 31, -9)
 
 [node name="CollisionShape2D" parent="Zipline/Zipline_0/StaticBody2D" index="0"]
-position = Vector2(-111, -494)
+position = Vector2(-935, -579)
 
 [node name="Zipline_1" parent="Zipline" index="1"]
-position = Vector2(675, 1)
+position = Vector2(855, 76)
 
 [node name="Buildings" type="Node2D" parent="."]
 
@@ -136,6 +140,9 @@ position = Vector2(1079, 530)
 
 [node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
 position = Vector2(1129, 529)
+
+[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
+position = Vector2(279, 524)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
