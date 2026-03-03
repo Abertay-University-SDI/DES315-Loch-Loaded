@@ -1,26 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://bleikxem48dv8"]
+[gd_scene load_steps=5 format=3 uid="uid://bleikxem48dv8"]
 
 [ext_resource type="Texture2D" uid="uid://dfq451sp12ueu" path="res://Textures/Buildings/TEMPcrane.png" id="1_4shao"]
 [ext_resource type="Script" uid="uid://d0awlurd8o5up" path="res://Code/interactables/crane.gd" id="2_evw0y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plspt"]
+size = Vector2(22.359999, 19.63)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evw0y"]
-size = Vector2(280, 779)
+size = Vector2(1669.0321, 56.604347)
 
 [node name="Crane" type="Node2D" node_paths=PackedStringArray("point_0")]
 script = ExtResource("2_evw0y")
 point_0 = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-54, -353)
+position = Vector2(-928, -575)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Crane" type="Sprite2D" parent="."]
 texture = ExtResource("1_4shao")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+[node name="GrappleArea" type="StaticBody2D" parent="Crane"]
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(-70, 6.5)
-shape = SubResource("RectangleShape2D_evw0y")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crane/GrappleArea"]
+position = Vector2(-965.99994, -76.749985)
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_plspt")
 debug_color = Color(0, 0.60784316, 0.65882355, 0.5137255)
+
+[node name="Floor" type="StaticBody2D" parent="Crane"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crane/Floor"]
+position = Vector2(-173.51581, -493)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_evw0y")
+one_way_collision = true

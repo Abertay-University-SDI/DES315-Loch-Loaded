@@ -276,18 +276,19 @@ func _handle_movement(dt: float) -> void:
 
 	if dir_radial.y<=0.0 && _on_zipline && velocity.y>0:
 		zipping = true
-		velocity.x = zipline_dir.x*500.0
-		velocity.y = zipline_dir.y*500.0
+		velocity.x = zipline_dir.x*400.0
+		velocity.y = zipline_dir.y*400.0
 		return
 	zipping = false
 	
 		
 	if _on_crane:
 		calculate_crane_dir()
-		velocity.x = crane_dir.x * 50.0
-		velocity.y = crane_dir.y * 50.0
-		if (global_position.distance_to(crane_point) <= 10):
+		velocity = crane_dir * 5.0
+		print_debug(global_position.distance_to(crane_point))
+		if (global_position.distance_to(crane_point) <= 50):
 			_on_crane = false
+			velocity = crane_dir * 10.0
 		# crane todo
 
 	if sliding:
@@ -451,6 +452,8 @@ func _on_dash_body_hit(body: Node) -> void:
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
+	if velocity.x < 0:
+		zipline_dir = zipline_dir * -1
 	_on_zipline = true
 func zip_exited(body:Node2D)->void:
 	_on_zipline = false	
