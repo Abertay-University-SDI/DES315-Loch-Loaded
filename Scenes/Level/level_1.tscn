@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=27 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -12,115 +12,39 @@
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="9_qs4fp"]
+[ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="10_hnohd"]
+[ext_resource type="PackedScene" uid="uid://b8226o7n8ve1f" path="res://Scenes/Level/Prefabs/house_5_0.tscn" id="13_qs4fp"]
+[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="15_uf8hr"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+[ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="16_lrh7k"]
+[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="16_y7471"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
 shader_parameter/mode = 0
 
-[sub_resource type="Environment" id="Environment_osgbe"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(4119, 683.75)
+size = Vector2(5937, 836)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(4119, 20)
+size = Vector2(5936, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qs4fp"]
+a = Vector2(966, 340)
+b = Vector2(1163, 340)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uf8hr"]
+a = Vector2(2256, 339)
+b = Vector2(2585, 443)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y7471"]
+a = Vector2(3351, 141)
+b = Vector2(3738, 339)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_50v45")
-enamies = NodePath("Enemies")
-billboards = NodePath("Interactables/Billboards")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
-visible = false
-
-[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_ia3c5")]
-visible = false
-
-[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
-mouse_filter = 2
-player = NodePath("../../Player")
-
-[node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_qs4fp")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("7_unuuj")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
-offset = Vector2(0, 358.69)
-transform = Transform2D(2, 0, 0, 2, 0, 358.69)
-
-[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
-z_index = 1
-position = Vector2(62, 524)
-collision_mask = 3
-play_area = NodePath("../PlayArea")
-play_area_shape = NodePath("../PlayArea/CollisionShape2D")
-spawn = NodePath("../PlayArea/Spawn")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_osgbe")
-
-[node name="PlayArea" type="Area2D" parent="."]
-
-[node name="Spawn" type="Marker2D" parent="PlayArea"]
-position = Vector2(62, 521)
-gizmo_extents = 28.3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(1793, 377.125)
-shape = SubResource("RectangleShape2D_4snqv")
-debug_color = Color(1, 1, 1, 0.16078432)
-
-[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
-position = Vector2(733, 527)
-dialogbox = NodePath("../CanvasLayer/dialog")
-
-[node name="Zipline" parent="." instance=ExtResource("16_50v45")]
-position = Vector2(111, 494)
-
-[node name="Zipline_0" parent="Zipline" index="0"]
-position = Vector2(824, 85)
-
-[node name="Line2D" parent="Zipline/Zipline_0" index="0"]
-points = PackedVector2Array(0, 0, 31, -9)
-
-[node name="CollisionShape2D" parent="Zipline/Zipline_0/StaticBody2D" index="0"]
-position = Vector2(-935, -579)
-
-[node name="Zipline_1" parent="Zipline" index="1"]
-position = Vector2(855, 76)
-
-[node name="Buildings" type="Node2D" parent="."]
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Robot" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(266, 601)
-
-[node name="Robot2" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(474, 609)
-
-[node name="Robot3" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(1079, 530)
-
-[node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(1129, 529)
-
-[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
-position = Vector2(279, 524)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -130,6 +54,8 @@ z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -143,10 +69,320 @@ cam = NodePath("../../../Player/Camera2D")
 bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
+visible = false
+
+[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_ia3c5")]
+visible = false
+
+[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
+visible = false
+mouse_filter = 2
+player = NodePath("../../Player")
+
+[node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_qs4fp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_unuuj")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
+offset = Vector2(0, 358.69)
+transform = Transform2D(2, 0, 0, 2, 0, 358.69)
+
+[node name="PlayArea" type="Area2D" parent="."]
+
+[node name="Spawn" type="Marker2D" parent="PlayArea"]
+position = Vector2(-213, 684)
+gizmo_extents = 28.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
+position = Vector2(2699.5, 302)
+shape = SubResource("RectangleShape2D_4snqv")
+debug_color = Color(1, 1, 1, 0.16078432)
+
+[node name="LevelIteration4WithBackground" type="Sprite2D" parent="PlayArea"]
+visible = false
+modulate = Color(1, 1, 1, 0.624)
+texture_filter = 1
+position = Vector2(2821.9507, 158.49998)
+scale = Vector2(4.277568, 4.277567)
+texture = ExtResource("10_hnohd")
+
+[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
+z_index = 1
+position = Vector2(-191, 682)
+collision_mask = 3
+play_area = NodePath("../PlayArea")
+play_area_shape = NodePath("../PlayArea/CollisionShape2D")
+spawn = NodePath("../PlayArea/Spawn")
+
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
+position = Vector2(410, 393)
+dialogbox = NodePath("../CanvasLayer/dialog")
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="House_5_1" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(742, 699)
+
+[node name="House_5_2" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(902, 699)
+
+[node name="House_5_3" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(1225, 699)
+
+[node name="House_5_4" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(1856, 697)
+
+[node name="House_5_5" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(2193, 699)
+
+[node name="House_5_6" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(2842, 699)
+
+[node name="House_5_7" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(3008, 699)
+
+[node name="House_5_8" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(3480, 699)
+
+[node name="House_5_9" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(3644, 699)
+
+[node name="House_5_10" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(3802, 699)
+
+[node name="House_5_11" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(4292, 699)
+
+[node name="House_5_12" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(5262, 699)
+
+[node name="House_4_0" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(101, 699)
+
+[node name="House_4_1" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(262, 699)
+
+[node name="House_4_2" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(742, 699)
+
+[node name="House_4_3" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(1067, 698)
+
+[node name="House_4_4" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(1697, 697)
+
+[node name="House_4_5" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(1856, 699)
+
+[node name="House_4_6" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(2193, 699)
+
+[node name="House_4_8" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(2505, 697)
+
+[node name="House_4_10" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(2676, 699)
+
+[node name="House_4_9" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(2842, 699)
+
+[node name="House_4_11" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(3174, 699)
+
+[node name="House_4_12" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(3643, 697)
+
+[node name="House_4_13" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(3973, 697)
+
+[node name="House_4_14" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(4122, 697)
+
+[node name="House_4_15" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(4295, 697)
+
+[node name="House_4_16" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(4462, 697)
+
+[node name="House_4_17" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(4945, 697)
+
+[node name="House_4_18" parent="Buildings" instance=ExtResource("16_lrh7k")]
+position = Vector2(5095, 697)
+
+[node name="Beam_0" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(110, 527)
+
+[node name="Beam_1" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(262, 460)
+
+[node name="Beam_2" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(587, 419)
+
+[node name="Beam_3" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(1367, 335)
+
+[node name="Beam_4" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(1697, 321)
+
+[node name="Beam_5" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(3240, 379)
+
+[node name="Beam_6" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(3119, 275)
+
+[node name="Beam_7" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(4147, 322)
+
+[node name="Beam_8" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(4465, 451)
+
+[node name="Beam_9" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(5306, 287)
+
+[node name="Beam_10" parent="Buildings" instance=ExtResource("15_uf8hr")]
+position = Vector2(5464, 359)
+
+[node name="Beam_1_0" parent="Buildings" instance=ExtResource("16_y7471")]
+position = Vector2(1539, 252)
+
+[node name="Beam_1_2" parent="Buildings" instance=ExtResource("16_y7471")]
+position = Vector2(3286, 199)
+
+[node name="Beam_1_3" parent="Buildings" instance=ExtResource("16_y7471")]
+position = Vector2(3986, 361)
+
+[node name="Beam_1_4" parent="Buildings" instance=ExtResource("16_y7471")]
+position = Vector2(5517, 238)
+
+[node name="Beam_1_1" parent="Buildings" instance=ExtResource("16_y7471")]
+position = Vector2(2676, 436)
+
+[node name="House_5_0" parent="Buildings" instance=ExtResource("13_qs4fp")]
+position = Vector2(417, 699)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Robot" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(241, 570)
+
+[node name="Robot2" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(256, 434)
+
+[node name="Robot3" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(733, 395)
+
+[node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(1542, 240)
+
+[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
+position = Vector2(137, 500)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1792.5, 708)
+position = Vector2(2701, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
-[editable path="Zipline"]
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -268.0
+offset_top = 698.0
+offset_right = 5658.0
+offset_bottom = 720.0
+scale = Vector2(1.0018443, 1)
+color = Color(0.288518, 0.28851798, 0.28851798, 1)
+
+[node name="Ziplines" type="Node2D" parent="."]
+
+[node name="Zipline" parent="Ziplines" instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Zipline_0" parent="Ziplines/Zipline" index="0"]
+position = Vector2(855, -134)
+
+[node name="Line2D" parent="Ziplines/Zipline/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 197, 0)
+
+[node name="CollisionShape2D" parent="Ziplines/Zipline/Zipline_0/StaticBody2D" index="0"]
+position = Vector2(-966, -360)
+shape = SubResource("SegmentShape2D_qs4fp")
+
+[node name="Zipline_1" parent="Ziplines/Zipline" index="1"]
+position = Vector2(1052, -134)
+
+[node name="Zipline2" parent="Ziplines" instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Zipline_0" parent="Ziplines/Zipline2" index="0"]
+position = Vector2(2145, -135)
+
+[node name="Line2D" parent="Ziplines/Zipline2/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 329, 104)
+
+[node name="CollisionShape2D" parent="Ziplines/Zipline2/Zipline_0/StaticBody2D" index="0"]
+position = Vector2(-2256, -359)
+shape = SubResource("SegmentShape2D_uf8hr")
+
+[node name="Zipline_1" parent="Ziplines/Zipline2" index="1"]
+position = Vector2(2474, -31)
+
+[node name="Zipline3" parent="Ziplines" instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Zipline_0" parent="Ziplines/Zipline3" index="0"]
+position = Vector2(3240, -333)
+
+[node name="Line2D" parent="Ziplines/Zipline3/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 387, 198)
+
+[node name="CollisionShape2D" parent="Ziplines/Zipline3/Zipline_0/StaticBody2D" index="0"]
+position = Vector2(-3351, -161)
+shape = SubResource("SegmentShape2D_y7471")
+
+[node name="Zipline_1" parent="Ziplines/Zipline3" index="1"]
+position = Vector2(3627, -135)
+
+[node name="Zipline4" parent="Ziplines" instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Zipline_0" parent="Ziplines/Zipline4" index="0"]
+position = Vector2(4243, -134)
+
+[node name="Line2D" parent="Ziplines/Zipline4/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 548, 102)
+
+[node name="CollisionShape2D" parent="Ziplines/Zipline4/Zipline_0/StaticBody2D" index="0"]
+position = Vector2(-4354, -360)
+
+[node name="Zipline_1" parent="Ziplines/Zipline4" index="1"]
+position = Vector2(4791, -32)
+
+[node name="Spray Spot" parent="." instance=ExtResource("7_y7471")]
+position = Vector2(5284, 333)
+
+[node name="Spray Spot2" parent="." instance=ExtResource("7_y7471")]
+position = Vector2(5516, 174)
+
+[node name="Spray Spot3" parent="." instance=ExtResource("7_y7471")]
+position = Vector2(3286, 136)
+
+[node name="Spray Spot4" parent="." instance=ExtResource("7_y7471")]
+position = Vector2(902, 331)
+
+[editable path="Ziplines/Zipline"]
+[editable path="Ziplines/Zipline2"]
+[editable path="Ziplines/Zipline3"]
+[editable path="Ziplines/Zipline4"]

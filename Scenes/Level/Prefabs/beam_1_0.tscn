@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyc12t1fc0bma"]
+
+[ext_resource type="Texture2D" uid="uid://dyw8xjl3g5b20" path="res://Textures/Temp/I-Beam-v2.png" id="1_400em"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff31m"]
+atlas = ExtResource("1_400em")
+region = Rect2(117, 376, 720, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_400em"]
+size = Vector2(299.64716, 24.291965)
+
+[node name="Beam_1_0" type="Node2D"]
+
+[node name="IBeamV2" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ff31m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IBeamV2"]
+position = Vector2(5.6872767e-07, -391.20825)
+scale = Vector2(2.32019, 2.32019)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IBeamV2/StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.42488283, 168.25748)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_400em")
+one_way_collision = true

@@ -10,10 +10,8 @@ friction = 0.0
 a = Vector2(0, -20)
 b = Vector2(100, -20)
 
-[node name="Zipline" type="Node2D" node_paths=PackedStringArray("point_0", "point_1", "line", "collision_shape")]
+[node name="Zipline" type="Node2D" node_paths=PackedStringArray("line", "collision_shape")]
 script = ExtResource("1_qjyrw")
-point_0 = NodePath("Zipline_0/Zippoint")
-point_1 = NodePath("Zipline_1/Zippoint")
 line = NodePath("Zipline_0/Line2D")
 collision_shape = NodePath("Zipline_0/StaticBody2D/CollisionShape2D")
 

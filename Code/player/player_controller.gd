@@ -27,11 +27,11 @@ var _spray_scene: PackedScene
 var _attack_area: Area2D
 var _dash_attack_area: Area2D
 
-const MAX_SPEED := 150.0
+const MAX_SPEED := 180.0
 const TIME_TO_MAX := 0.4
 const ACCEL := MAX_SPEED / TIME_TO_MAX
 const FRICTION := 600.0
-const JUMP_VELOCITY := -400.0
+const JUMP_VELOCITY := -500.0
 
 # --- Variable jump height ---
 const JUMP_CUT_MULTIPLIER := 0.4

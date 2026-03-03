@@ -1,4 +1,29 @@
-[gd_scene format=3 uid="uid://dyupga7ibsad2"]
+[gd_scene load_steps=4 format=3 uid="uid://dyupga7ibsad2"]
 
-[node name="House_3" type="Node2D"]
-position = Vector2(1, 0)
+[ext_resource type="Texture2D" uid="uid://b8h2xqfdyxw4l" path="res://Textures/Temp/Bace_shopfront_w-platform.png" id="1_c052e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ot6"]
+atlas = ExtResource("1_c052e")
+region = Rect2(251, 1404, 846, 596)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cmo8"]
+size = Vector2(300, 21)
+
+[node name="House_4_0" type="Node2D"]
+
+[node name="BaceShopfrontWPlatform" type="Sprite2D" parent="."]
+position = Vector2(-1.1920929e-07, -62)
+scale = Vector2(0.209607, 0.209607)
+texture = SubResource("AtlasTexture_f2ot6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(5.6872767e-07, -391.20825)
+scale = Vector2(2.32019, 2.32019)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaceShopfrontWPlatform/StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-2.6645353e-14, 59.63052)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_6cmo8")
+one_way_collision = true

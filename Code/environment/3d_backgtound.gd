@@ -18,7 +18,8 @@ func _process(_delta: float) -> void:
 		var range := bottom_right - top_left
 		
 		var player_prog   = (cam.get_target_position().x - top_left.x) / range.x
-		var player_height = (cam.get_target_position().y - top_left.y) / range.y
+		var player_height = 1-(cam.get_target_position().y - top_left.y) / range.y
 
-		scene_cam.global_position.y = 5.0 + player_height * 1.0
+		scene_cam.global_position.y = 5 * player_height
+		scene_cam.rotation_degrees.x = 15*(1-player_height)
 		cam_path.progress_ratio = clamp(player_prog, 0.0, 1.0)

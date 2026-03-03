@@ -12,6 +12,7 @@ func update_health(health:float)->void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = true
 	player.health_changed.connect(update_health)
 	
 
