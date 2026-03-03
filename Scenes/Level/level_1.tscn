@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=20 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -10,16 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
 [ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="7_unuuj"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
-[ext_resource type="PackedScene" uid="uid://b4hrx48bddmmi" path="res://Scenes/Level/Prefabs/house_3.tscn" id="8_d68a7"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="9_qs4fp"]
-[ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="10_jn63p"]
-[ext_resource type="PackedScene" uid="uid://dmvdtfxqjb2m1" path="res://Scenes/Level/Prefabs/prefab_gallery.tscn" id="13_fvaf1"]
-[ext_resource type="PackedScene" uid="uid://djpee6xk1fs0v" path="res://Scenes/Level/Prefabs/house_1.tscn" id="13_hxng5"]
-[ext_resource type="PackedScene" uid="uid://looqksk34cyh" path="res://Scenes/Level/Prefabs/house_2.tscn" id="15_eqj4t"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
-[ext_resource type="PackedScene" uid="uid://bleikxem48dv8" path="res://Scenes/Interactables/crane.tscn" id="20_qs4fp"]
+[ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
@@ -30,7 +25,10 @@ shader_parameter/mode = 0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
 size = Vector2(4119, 683.75)
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("enamies", "billboards")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
+size = Vector2(4119, 20)
+
+[node name="World" type="Node2D"]
 script = ExtResource("1_50v45")
 enamies = NodePath("Enemies")
 billboards = NodePath("Interactables/Billboards")
@@ -82,7 +80,6 @@ position = Vector2(62, 521)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-visible = false
 position = Vector2(1793, 377.125)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
@@ -91,25 +88,22 @@ debug_color = Color(1, 1, 1, 0.16078432)
 position = Vector2(733, 527)
 dialogbox = NodePath("../CanvasLayer/dialog")
 
+[node name="Zipline" parent="." instance=ExtResource("16_50v45")]
+position = Vector2(111, 494)
+
+[node name="Zipline_0" parent="Zipline" index="0"]
+position = Vector2(824, 85)
+
+[node name="Line2D" parent="Zipline/Zipline_0" index="0"]
+points = PackedVector2Array(0, 0, 31, -9)
+
+[node name="CollisionShape2D" parent="Zipline/Zipline_0/StaticBody2D" index="0"]
+position = Vector2(-935, -579)
+
+[node name="Zipline_1" parent="Zipline" index="1"]
+position = Vector2(855, 76)
+
 [node name="Buildings" type="Node2D" parent="."]
-
-[node name="House2" parent="Buildings" instance=ExtResource("15_eqj4t")]
-position = Vector2(86, 623)
-
-[node name="House3" parent="Buildings" instance=ExtResource("8_d68a7")]
-position = Vector2(274, 651)
-
-[node name="House1" parent="Buildings" instance=ExtResource("13_hxng5")]
-position = Vector2(463, 661)
-
-[node name="TempAssetScaffolding" parent="Buildings" instance=ExtResource("10_jn63p")]
-position = Vector2(609, 658)
-
-[node name="House4" parent="Buildings" instance=ExtResource("15_eqj4t")]
-position = Vector2(779, 624)
-
-[node name="PrefabGallery" parent="Buildings" instance=ExtResource("13_fvaf1")]
-position = Vector2(824, 727)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -125,6 +119,9 @@ position = Vector2(1079, 530)
 [node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
 position = Vector2(1129, 529)
 
+[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
+position = Vector2(279, 524)
+
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
 
@@ -133,13 +130,10 @@ z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 1282.0
-offset_bottom = 723.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("player", "bounds", "bounds_shape") instance=ExtResource("9_qs4fp")]
 transparent_bg = true
@@ -149,67 +143,10 @@ player = NodePath("../../../Player")
 bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
-[node name="Interactables" type="Node2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Zipline" parent="Interactables" instance=ExtResource("16_50v45")]
-position = Vector2(111, 494)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1792.5, 708)
+shape = SubResource("RectangleShape2D_hnohd")
 
-[node name="Line2D" parent="Interactables/Zipline/Zipline_0" index="0"]
-points = PackedVector2Array(0, 0, 675, 1)
-
-[node name="CollisionShape2D" parent="Interactables/Zipline/Zipline_0/StaticBody2D" index="0"]
-position = Vector2(-111, -494)
-
-[node name="Zipline_1" parent="Interactables/Zipline" index="1"]
-position = Vector2(675, 1)
-
-[node name="Crane" parent="Interactables" instance=ExtResource("20_qs4fp")]
-visibility_layer = 9
-z_index = -1
-position = Vector2(1047, 479.99997)
-scale = Vector2(0.23, 0.23)
-
-[node name="Billboards" type="Node2D" parent="Interactables"]
-
-[node name="Spray Spot" parent="Interactables/Billboards" instance=ExtResource("7_y7471")]
-position = Vector2(1259, 554)
-
-[node name="TutorialTexts" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MovementLable" type="Label" parent="TutorialTexts"]
-layout_mode = 0
-offset_left = 62.0
-offset_top = 145.0
-offset_right = 299.0
-offset_bottom = 168.0
-text = "Press 'W',  'A',  'S',  'D'  to move "
-
-[node name="DashLable" type="Label" parent="TutorialTexts"]
-layout_mode = 0
-offset_left = 362.0
-offset_top = 131.0
-offset_right = 599.0
-offset_bottom = 154.0
-text = "To dash press 'SHIFT'"
-
-[node name="YOYOLable" type="Label" parent="TutorialTexts"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = 214.0
-offset_right = 334.0
-offset_bottom = 237.0
-text = "To YOYO press 'R'"
-
-[node name="SprayLabel" type="Label" parent="TutorialTexts"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 225.0
-offset_right = 529.0
-offset_bottom = 248.0
-text = "To spray paint press 'F'"
-
-[editable path="Interactables/Zipline"]
+[editable path="Zipline"]
