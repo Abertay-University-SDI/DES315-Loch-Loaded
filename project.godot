@@ -38,7 +38,7 @@ project/assembly_name="Spray&Pray"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/codecapture/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
