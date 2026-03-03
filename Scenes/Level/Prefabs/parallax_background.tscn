@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c3afndhhw4jfl" path="res://Textures/Background/Paralax_city_2.png" id="4_m5fgl"]
 [ext_resource type="Texture2D" uid="uid://c2646e6js648i" path="res://Textures/Background/Paralax_city_3.png" id="5_4srxt"]
 
-
 [node name="ParallaxBackground" type="ParallaxBackground"]
 offset = Vector2(0, 288.95)
 scale = Vector2(2, 2)
@@ -25,6 +24,7 @@ scale = Vector2(0.8227023, 0.59929305)
 texture = ExtResource("2_fn2do")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.1, 0)
 motion_mirroring = Vector2(1280, 0)
 
@@ -33,6 +33,7 @@ texture_filter = 1
 texture = ExtResource("3_hy12d")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.3, 0)
 motion_mirroring = Vector2(1280, 0)
 
@@ -41,6 +42,7 @@ texture_filter = 1
 texture = ExtResource("4_m5fgl")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+visible = false
 z_index = 1
 motion_scale = Vector2(0.6, 0)
 motion_mirroring = Vector2(1280, 0)

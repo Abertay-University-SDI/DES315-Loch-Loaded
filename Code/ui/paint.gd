@@ -5,19 +5,27 @@ extends TextureRect
 @export var brush_color:ColorPickerButton
 @export var brush_slide:HSlider
 
+@export var default_image_texture:TextureRect
 
 @onready var popup:Popup = $Popup
 
-const DEFAULT_PATH := "res://Saves/Spray/default.png"
-const SAVED_PATH   := "res://Saves/Spray/saved.png"
+const SAVED_PATH   := "user://RadicalRampage/Saves/Spray/saved.png"
 
 var img: Image
 
 func _ready() -> void:
+	var dir = DirAccess.open("user://")
+	if dir:
+		var err = dir.make_dir_recursive("user://RadicalRampage/Saves/Spray/")
+		if err == OK:
+			print("Directories created successfully!")
+		else:
+			print("Failed to create directories. Error code:", err)
+			
 	if FileAccess.file_exists(SAVED_PATH):
 		set_canvas_from_path(SAVED_PATH)
 	else:
-		set_canvas_from_path(DEFAULT_PATH)
+		set_canvas_from_image()
 		
 
 func draw_at_mouse(local_pos: Vector2) -> void:
@@ -81,8 +89,8 @@ func set_canvas_from_path(path: String) -> void:
 	img = spray
 	texture = ImageTexture.create_from_image(img)
 	
-func set_canvas_from_image(path: String) -> void:
-	var spray: Image = Image.load_from_file(path)
+func set_canvas_from_image() -> void:
+	var spray: Image = default_image_texture.texture.get_image()
 	spray.decompress()
 	spray.resize(spray_size.x, spray_size.y, Image.INTERPOLATE_LANCZOS)
 
@@ -95,7 +103,7 @@ func _on_clear_button_pressed() -> void:
 
 
 func _on_default_button_pressed() -> void:
-	set_canvas_from_path(DEFAULT_PATH)
+	set_canvas_from_image()
 
 
 func _on_save_button_pressed() -> void:
