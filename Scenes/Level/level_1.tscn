@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=30 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -20,16 +20,18 @@
 [ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="16_lrh7k"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="16_y7471"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
+[ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="21_uf8hr"]
+[ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="22_y7471"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(5937, 836)
+size = Vector2(6906, 836)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(5936, 20)
+size = Vector2(6907, 20)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_qs4fp"]
 a = Vector2(966, 340)
@@ -42,6 +44,9 @@ b = Vector2(2585, 443)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_y7471"]
 a = Vector2(3351, 141)
 b = Vector2(3738, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwi5"]
+size = Vector2(24, 73)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_50v45")
@@ -103,11 +108,11 @@ transform = Transform2D(2, 0, 0, 2, 0, 358.69)
 [node name="PlayArea" type="Area2D" parent="."]
 
 [node name="Spawn" type="Marker2D" parent="PlayArea"]
-position = Vector2(-213, 684)
+position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(2699.5, 302)
+position = Vector2(2215, 302)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -121,7 +126,7 @@ texture = ExtResource("10_hnohd")
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
 z_index = 1
-position = Vector2(-191, 682)
+position = Vector2(-1199, 691)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -294,13 +299,13 @@ position = Vector2(137, 500)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2701, 708)
+position = Vector2(2215.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -268.0
+offset_left = -1238.0
 offset_top = 698.0
-offset_right = 5658.0
+offset_right = 5656.2144
 offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
@@ -370,17 +375,69 @@ position = Vector2(-4354, -360)
 [node name="Zipline_1" parent="Ziplines/Zipline4" index="1"]
 position = Vector2(4791, -32)
 
-[node name="Spray Spot" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spots" type="Node2D" parent="."]
+
+[node name="Spray Spot" parent="Spray Spots" instance=ExtResource("7_y7471")]
 position = Vector2(5284, 333)
 
-[node name="Spray Spot2" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot2" parent="Spray Spots" instance=ExtResource("7_y7471")]
 position = Vector2(5516, 174)
 
-[node name="Spray Spot3" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("7_y7471")]
 position = Vector2(3286, 136)
 
-[node name="Spray Spot4" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("7_y7471")]
 position = Vector2(902, 331)
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="Key_Show_right" parent="Instructions" instance=ExtResource("21_uf8hr")]
+offset_left = -1144.0
+offset_top = 620.0
+offset_right = -1104.0
+offset_bottom = 660.0
+action_name = "right"
+
+[node name="Key_Show_jump" parent="Instructions" instance=ExtResource("21_uf8hr")]
+offset_left = -1003.0
+offset_top = 632.0
+offset_right = -963.0
+offset_bottom = 672.0
+
+[node name="Label" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1164.0
+offset_top = 596.0
+offset_right = -1077.0
+offset_bottom = 619.0
+text = "Move Right"
+
+[node name="Label2" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1000.0
+offset_top = 595.0
+offset_right = -959.0
+offset_bottom = 619.0
+text = "Jump"
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(99, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D"]
+position = Vector2(-1012, 661.5)
+shape = SubResource("RectangleShape2D_jrwi5")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -37.5
+offset_right = 12.0
+offset_bottom = 36.5
+texture = ExtResource("22_y7471")
+expand_mode = 1
+stretch_mode = 1
 
 [editable path="Ziplines/Zipline"]
 [editable path="Ziplines/Zipline2"]

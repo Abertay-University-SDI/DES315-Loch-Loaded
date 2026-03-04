@@ -232,6 +232,7 @@ func _end_crouch() -> void:
 # ─── Core movement ───────────────────────────────────────────────────────────
 
 func _respawn_player(body: Node) -> void:
+	##SceneTransition.death_reset()
 	if body != self:
 		return
 	health_value = MAX_HEALTH

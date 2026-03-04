@@ -15,3 +15,9 @@ func transition_to_path(scene:String):
 	await anim.animation_finished
 	get_tree().change_scene_to_file(scene)
 	anim.play_backwards('transition')
+	
+func death_reset():
+	anim.play('death_trans')
+	await anim.animation_finished
+	get_tree().reload_current_scene()
+	anim.play_backwards("death_trans")
