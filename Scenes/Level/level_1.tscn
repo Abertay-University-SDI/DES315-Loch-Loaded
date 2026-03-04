@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=19 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -9,7 +9,6 @@
 [ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/shaders/ColorBlind.gdshader" id="6_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
 [ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="7_unuuj"]
-[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="9_qs4fp"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
@@ -30,8 +29,6 @@ size = Vector2(4119, 20)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_50v45")
-enamies = NodePath("Enemies")
-billboards = NodePath("Interactables/Billboards")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
