@@ -1,22 +1,17 @@
 extends Control
-@export var HealthBar:TextureProgressBar
-@export var player:Node2D
-@export var dialog:NinePatchRect
+@export var HealthBar: TextureProgressBar
+@export var player: Node2D
+@export var dialog: NinePatchRect
 
+var _target_health: float
 
+func update_health(health: float) -> void:
+	_target_health = health
 
-
-
-func update_health(health:float)->void:
-	HealthBar.value = health
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = true
+	_target_health = HealthBar.value
 	player.health_changed.connect(update_health)
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	HealthBar.value = lerpf(HealthBar.value, _target_health, delta * 10.0)
