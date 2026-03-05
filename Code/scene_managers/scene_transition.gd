@@ -19,5 +19,5 @@ func transition_to_path(scene:String):
 func death_reset():
 	anim.play('death_trans')
 	await anim.animation_finished
-	get_tree().reload_current_scene()
 	anim.play_backwards("death_trans")
+	get_tree().reload_current_scene()  # THEN reload
