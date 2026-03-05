@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/shaders/ColorBlind.gdshader" id="6_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
 [ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="7_unuuj"]
+[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="9_qs4fp"]
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="10_hnohd"]
@@ -42,8 +43,10 @@ b = Vector2(2585, 443)
 a = Vector2(3351, 141)
 b = Vector2(3738, 339)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards")]
 script = ExtResource("1_50v45")
+enemies = NodePath("Enemies")
+billBoards = NodePath("interactables/spraySpots")
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -304,84 +307,88 @@ offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
-[node name="Ziplines" type="Node2D" parent="."]
+[node name="interactables" type="Node2D" parent="."]
 
-[node name="Zipline" parent="Ziplines" instance=ExtResource("16_50v45")]
+[node name="Ziplines" type="Node2D" parent="interactables"]
+
+[node name="Zipline" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
 
-[node name="Zipline_0" parent="Ziplines/Zipline" index="0"]
+[node name="Zipline_0" parent="interactables/Ziplines/Zipline" index="0"]
 position = Vector2(855, -134)
 
-[node name="Line2D" parent="Ziplines/Zipline/Zipline_0" index="0"]
+[node name="Line2D" parent="interactables/Ziplines/Zipline/Zipline_0" index="0"]
 points = PackedVector2Array(0, 0, 197, 0)
 
-[node name="CollisionShape2D" parent="Ziplines/Zipline/Zipline_0/StaticBody2D" index="0"]
+[node name="CollisionShape2D" parent="interactables/Ziplines/Zipline/Zipline_0/StaticBody2D" index="0"]
 position = Vector2(-966, -360)
 shape = SubResource("SegmentShape2D_qs4fp")
 
-[node name="Zipline_1" parent="Ziplines/Zipline" index="1"]
+[node name="Zipline_1" parent="interactables/Ziplines/Zipline" index="1"]
 position = Vector2(1052, -134)
 
-[node name="Zipline2" parent="Ziplines" instance=ExtResource("16_50v45")]
+[node name="Zipline2" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
 
-[node name="Zipline_0" parent="Ziplines/Zipline2" index="0"]
+[node name="Zipline_0" parent="interactables/Ziplines/Zipline2" index="0"]
 position = Vector2(2145, -135)
 
-[node name="Line2D" parent="Ziplines/Zipline2/Zipline_0" index="0"]
+[node name="Line2D" parent="interactables/Ziplines/Zipline2/Zipline_0" index="0"]
 points = PackedVector2Array(0, 0, 329, 104)
 
-[node name="CollisionShape2D" parent="Ziplines/Zipline2/Zipline_0/StaticBody2D" index="0"]
+[node name="CollisionShape2D" parent="interactables/Ziplines/Zipline2/Zipline_0/StaticBody2D" index="0"]
 position = Vector2(-2256, -359)
 shape = SubResource("SegmentShape2D_uf8hr")
 
-[node name="Zipline_1" parent="Ziplines/Zipline2" index="1"]
+[node name="Zipline_1" parent="interactables/Ziplines/Zipline2" index="1"]
 position = Vector2(2474, -31)
 
-[node name="Zipline3" parent="Ziplines" instance=ExtResource("16_50v45")]
+[node name="Zipline3" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
 
-[node name="Zipline_0" parent="Ziplines/Zipline3" index="0"]
+[node name="Zipline_0" parent="interactables/Ziplines/Zipline3" index="0"]
 position = Vector2(3240, -333)
 
-[node name="Line2D" parent="Ziplines/Zipline3/Zipline_0" index="0"]
+[node name="Line2D" parent="interactables/Ziplines/Zipline3/Zipline_0" index="0"]
 points = PackedVector2Array(0, 0, 387, 198)
 
-[node name="CollisionShape2D" parent="Ziplines/Zipline3/Zipline_0/StaticBody2D" index="0"]
+[node name="CollisionShape2D" parent="interactables/Ziplines/Zipline3/Zipline_0/StaticBody2D" index="0"]
 position = Vector2(-3351, -161)
 shape = SubResource("SegmentShape2D_y7471")
 
-[node name="Zipline_1" parent="Ziplines/Zipline3" index="1"]
+[node name="Zipline_1" parent="interactables/Ziplines/Zipline3" index="1"]
 position = Vector2(3627, -135)
 
-[node name="Zipline4" parent="Ziplines" instance=ExtResource("16_50v45")]
+[node name="Zipline4" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
 position = Vector2(111, 494)
 
-[node name="Zipline_0" parent="Ziplines/Zipline4" index="0"]
+[node name="Zipline_0" parent="interactables/Ziplines/Zipline4" index="0"]
 position = Vector2(4243, -134)
 
-[node name="Line2D" parent="Ziplines/Zipline4/Zipline_0" index="0"]
+[node name="Line2D" parent="interactables/Ziplines/Zipline4/Zipline_0" index="0"]
 points = PackedVector2Array(0, 0, 548, 102)
 
-[node name="CollisionShape2D" parent="Ziplines/Zipline4/Zipline_0/StaticBody2D" index="0"]
+[node name="CollisionShape2D" parent="interactables/Ziplines/Zipline4/Zipline_0/StaticBody2D" index="0"]
 position = Vector2(-4354, -360)
 
-[node name="Zipline_1" parent="Ziplines/Zipline4" index="1"]
+[node name="Zipline_1" parent="interactables/Ziplines/Zipline4" index="1"]
 position = Vector2(4791, -32)
 
-[node name="Spray Spot" parent="." instance=ExtResource("7_y7471")]
+[node name="spraySpots" type="Node2D" parent="interactables"]
+
+[node name="Spray Spot" parent="interactables/spraySpots" instance=ExtResource("7_y7471")]
 position = Vector2(5284, 333)
 
-[node name="Spray Spot2" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot2" parent="interactables/spraySpots" instance=ExtResource("7_y7471")]
 position = Vector2(5516, 174)
 
-[node name="Spray Spot3" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot3" parent="interactables/spraySpots" instance=ExtResource("7_y7471")]
 position = Vector2(3286, 136)
 
-[node name="Spray Spot4" parent="." instance=ExtResource("7_y7471")]
+[node name="Spray Spot4" parent="interactables/spraySpots" instance=ExtResource("7_y7471")]
 position = Vector2(902, 331)
 
-[editable path="Ziplines/Zipline"]
-[editable path="Ziplines/Zipline2"]
-[editable path="Ziplines/Zipline3"]
-[editable path="Ziplines/Zipline4"]
+[editable path="interactables/Ziplines/Zipline"]
+[editable path="interactables/Ziplines/Zipline2"]
+[editable path="interactables/Ziplines/Zipline3"]
+[editable path="interactables/Ziplines/Zipline4"]

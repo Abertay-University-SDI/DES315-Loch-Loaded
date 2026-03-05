@@ -5,6 +5,7 @@ var player_in_zone := false
 var spray_scene:PackedScene
 
 var last_input_was_controller :bool= false
+var painted :bool = false
 
 func get_spray_button_text() -> String:
 	var events = InputMap.action_get_events("spray")
@@ -42,7 +43,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if player_in_zone and Input.is_action_just_pressed("spray"):
+		painted = true
 		var spray_instance:Node2D= spray_scene.instantiate()
 		add_child(spray_instance)
 		label.hide()
 		zone.monitoring = false
+
+func _get_painted() -> bool:
+	return painted

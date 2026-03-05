@@ -230,3 +230,6 @@ func _die(hit_dir: Vector2, force: float) -> void:
 	_dead.collision_mask = 1
 	_dead.set_deferred("freeze", false)
 	call_deferred("_apply_death_impulse", hit_dir, force)
+
+func _get_dead() -> bool:
+	return _is_dead
