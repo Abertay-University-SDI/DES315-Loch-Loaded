@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8226o7n8ve1f"]
+
+[ext_resource type="Texture2D" uid="uid://bjs0mxlcnl7nb" path="res://Textures/Temp/Bace_Building.png" id="1_omu0q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdj6p"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(308, 571, 727, 1429)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wgt2"]
+size = Vector2(300, 604.53046)
+
+[node name="House_5_0" type="Node2D"]
+
+[node name="BaceShopfrontWPlatform" type="Sprite2D" parent="."]
+position = Vector2(-7.1054274e-15, -150)
+scale = Vector2(0.209607, 0.209607)
+texture = SubResource("AtlasTexture_tdj6p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(5.6872767e-07, -391.20825)
+scale = Vector2(2.32019, 2.32019)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaceShopfrontWPlatform/StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-2.842171e-14, 168.61047)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_5wgt2")
