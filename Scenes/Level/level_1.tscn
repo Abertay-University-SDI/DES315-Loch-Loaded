@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=33 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -45,8 +45,17 @@ b = Vector2(2585, 443)
 a = Vector2(3351, 141)
 b = Vector2(3738, 339)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
+size = Vector2(142.5, 24.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3juip"]
+size = Vector2(23.5, 98.15625)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwi5"]
 size = Vector2(24, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn63p"]
+size = Vector2(23.5, 223.6875)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_50v45")
@@ -422,6 +431,40 @@ text = "Jump"
 
 [node name="Tutorial" type="Node2D" parent="."]
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(198, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D2"]
+position = Vector2(-958, 590)
+shape = SubResource("RectangleShape2D_y7471")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D2/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("22_y7471")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(198, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D3"]
+position = Vector2(-962, 651)
+shape = SubResource("RectangleShape2D_3juip")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D3/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.5
+offset_top = -49.1875
+offset_right = 12.0
+offset_bottom = 49.0
+texture = ExtResource("22_y7471")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Tutorial"]
 position = Vector2(99, -1)
 
@@ -435,6 +478,23 @@ offset_left = -12.0
 offset_top = -37.5
 offset_right = 12.0
 offset_bottom = 36.5
+texture = ExtResource("22_y7471")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(396, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D4"]
+position = Vector2(-1032, 563.84375)
+shape = SubResource("RectangleShape2D_jn63p")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D4/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -113.84375
+offset_right = 12.5
+offset_bottom = 111.65625
 texture = ExtResource("22_y7471")
 expand_mode = 1
 stretch_mode = 1
