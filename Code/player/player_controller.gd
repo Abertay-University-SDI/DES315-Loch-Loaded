@@ -3,21 +3,27 @@ extends CharacterBody2D
 
 signal health_changed(health: float)
 
+@export_group("World")
 @export var play_area: Area2D
 @export var play_area_shape: CollisionShape2D
+@export var spawn: Marker2D
 
+@export_group("Detectors")
 @export var zipline_detector:Area2D
 @export var crane_detector:Area2D
 
+@export_group("SFX")
 @export var footstep_sfx: AudioStreamPlayer2D
 @export var dash_sfx: AudioStreamPlayer2D
 @export var punch_sfx: AudioStreamPlayer2D
 @export var YoYo_sfx: AudioStreamPlayer2D
 
+@export_group("yoyo")
 @export var yoyo: Sprite2D
 @export var yoyo_string: Line2D
 
-@export var spawn: Marker2D
+@export_group("player_Colision")
+@export var idle_collider:CollisionShape2D
 
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
@@ -91,6 +97,7 @@ var yoyo_enemy_body: CharacterBody2D = null
 
 var dir_radial := Vector2.ZERO
 
+var is_dying :bool=false
 
 func _ready() -> void:
 	_camera = $Camera2D
@@ -210,6 +217,7 @@ func _try_start_crouch_or_slide() -> void:
 	else:
 		crouching = true
 	set_collision_mask_value(2, false)
+	idle_collider.set_deferred("disabled",true)
 
 
 func _start_slide() -> void:
@@ -227,15 +235,17 @@ func _end_crouch() -> void:
 	crouching = false
 	sliding = false
 	set_collision_mask_value(2, true)
+	idle_collider.set_deferred("disabled",false)
+
 
 
 # ─── Core movement ───────────────────────────────────────────────────────────
 
 func _respawn_player(body: Node) -> void:
-	if body != self:
+	if is_dying:
 		return
-	health_value = MAX_HEALTH
-	global_position = spawn.global_position
+	is_dying = true
+	SceneTransition.death_reset()
 
 
 func _apply_gravity(dt: float) -> void:

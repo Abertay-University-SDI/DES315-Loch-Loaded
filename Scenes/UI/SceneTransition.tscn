@@ -1,26 +1,102 @@
-[gd_scene load_steps=13 format=3 uid="uid://2eb6gia1kxwf"]
+[gd_scene load_steps=17 format=3 uid="uid://2eb6gia1kxwf"]
 
 [ext_resource type="Script" uid="uid://1ydfy0srjcuh" path="res://Code/scene_managers/scene_transition.gd" id="1_3koea"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_7fd8r"]
-[ext_resource type="Shader" uid="uid://cxlcye02eaf0l" path="res://Code/shaders/transition.gdshader" id="3_rnd7t"]
 [ext_resource type="Shader" uid="uid://dcp2yfwuexv6r" path="res://Code/shaders/blur.gdshader" id="4_e6ksq"]
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="5_7rxwd"]
 
-[sub_resource type="Gradient" id="Gradient_kscw6"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0.2842519, 0.56039214, 0.97817916, 1, 0.73123777, 0.00094105245, 0.8166161, 1, 0.09405536, 0.77361184, 0.65313405, 1)
+[sub_resource type="Shader" id="Shader_gn0bv"]
+code = "shader_type canvas_item;
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnihq"]
-gradient = SubResource("Gradient_kscw6")
+//thank Inigo Quilez for the invetion of sdfs in rendering
+
+uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
+
+uniform float aspect_ratio = 1.78;
+uniform float radius = 0.08;
+uniform float speed = 0.25;
+uniform vec2 var_pos = vec2(0.0,0.0);
+uniform vec4 color: source_color = vec4(1.0,1.0,1.0,1.0);
+uniform sampler2D gradient; 
+
+uniform int SPHERE_COUNT = 32;
+
+float sd_circle(vec2 p, vec2 c, float r) {
+	return length(p - c) - r;
+}
+
+float smin(float a, float b, float k) {
+	float h = max(k - abs(a - b), 0.0) / k;
+	return min(a, b) - h * h * k * 0.25;
+}
+
+float ping_pong(float t, float min_v, float max_v) {
+	float range = max_v - min_v;
+	return min_v + abs(mod(t, range * 2.0) - range);
+}
+
+void fragment() {
+	vec2 uv = UV - 0.5;
+	uv.x *= aspect_ratio;
+	uv.y += sin(uv.x+TIME)*0.1;
+
+	float dist = 1000.0;
+	float rim_dist = 0.04;
+	float inside_dist = 0.0;
+	
+	vec3 col = vec3(0.0);
+	float alpha = 0.0;
+
+	for (int i = 0; i < SPHERE_COUNT; i++) {
+		float fi = float(i);
+		
+		vec2 base_pos = vec2(
+			fract(sin(fi * 12.9898) * 43758.5453),
+			fract(sin(fi * 78.233) * 12345.6789)
+		);
+
+		vec2 vel = vec2(
+			sin(fi * 3.1),
+			cos(fi * 4.7)
+		) * speed;
+
+		vec2 pos;
+		pos.x = ping_pong(base_pos.x + vel.x * TIME, -0.5, 0.5);
+		pos.y = ping_pong(base_pos.y + vel.y * TIME, -0.5, 0.5);
+
+		pos.x *= aspect_ratio;
+		float r = clamp(cos(fi * 13.2)+0.2,0.2,1);
+		float d = sd_circle(uv, pos, r*radius);
+		dist = smin(dist, d, 0.12);
+		if (dist < inside_dist)
+		{
+			col.r = sin(fi*34.1)*color.r;
+			col.g = sin(fi*1.535)*color.g;
+			col.b = sin(fi*3.1)*color.b;
+			alpha = 1.0f;
+			break;
+		}
+	}
+	col += texture(gradient,vec2(uv.y,0)).rgb;
+	COLOR = vec4(col, alpha);
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_e6ksq"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0.54489404, 0.938033, 1, 1, 0.45166704, 1, 1, 0.89322484, 0.00021293045, 0.7801141, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7rxwd"]
+gradient = SubResource("Gradient_e6ksq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rnd7t"]
-shader = ExtResource("3_rnd7t")
+shader = SubResource("Shader_gn0bv")
 shader_parameter/aspect_ratio = 1.78
 shader_parameter/radius = 0.265
 shader_parameter/speed = 1.0
 shader_parameter/var_pos = Vector2(0, 0)
 shader_parameter/color = Color(0, 0.3764706, 0.3529412, 1)
-shader_parameter/gradient = SubResource("GradientTexture1D_qnihq")
+shader_parameter/gradient = SubResource("GradientTexture1D_7rxwd")
 shader_parameter/SPHERE_COUNT = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7sekb"]
@@ -65,6 +141,128 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animated_background:material")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_rnd7t")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("animated_background:material:shader_parameter/Color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("animated_background:material:shader_parameter/color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.3764706, 0.3529412, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("animated_background:material:shader_parameter/gradient")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture1D_7rxwd")]
+}
+
+[sub_resource type="Gradient" id="Gradient_7rxwd"]
+offsets = PackedFloat32Array(0.005586592, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.61055017, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7sekb"]
+gradient = SubResource("Gradient_7rxwd")
+
+[sub_resource type="Animation" id="Animation_7sekb"]
+resource_name = "death_trans"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animated_background:material:shader_parameter/SPHERE_COUNT")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 256]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animated_background:material:shader_parameter/radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.025, 0.265]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blur:material:shader_parameter/blur_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 1.0000000475, 2.000000095]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animated_background:material:shader_parameter/color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(0.45882353, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("animated_background:material:shader_parameter/gradient")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture1D_7sekb")]
+}
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gn0bv"]
+gradient = SubResource("Gradient_e6ksq")
 
 [sub_resource type="Animation" id="Animation_e6ksq"]
 resource_name = "transition"
@@ -105,17 +303,44 @@ tracks/2/keys = {
 "update": 1,
 "values": [0.0, 1.0000000475, 2.000000095]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animated_background:material:shader_parameter/color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(0, 0.3764706, 0.3529412, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("animated_background:material:shader_parameter/gradient")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture1D_gn0bv")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7sekb"]
 _data = {
 &"RESET": SubResource("Animation_7rxwd"),
+&"death_trans": SubResource("Animation_7sekb"),
 &"transition": SubResource("Animation_e6ksq")
 }
 
 [node name="scene_transition" type="CanvasLayer"]
+layer = 65321
 script = ExtResource("1_3koea")
 
 [node name="animated_background" parent="." instance=ExtResource("2_7fd8r")]
+self_modulate = Color(1, 0, 0, 1)
 z_index = 115
 material = SubResource("ShaderMaterial_rnd7t")
 mouse_filter = 2

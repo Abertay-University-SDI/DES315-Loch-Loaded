@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=80 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
+size = Vector2(20, 20.27027)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82p5m"]
+size = Vector2(20, 12.432432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwvk4"]
 atlas = ExtResource("2_pwsgj")
@@ -919,7 +923,7 @@ radius = 6.0827627
 [sub_resource type="CircleShape2D" id="CircleShape2D_kov73"]
 radius = 138.23169
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
@@ -930,18 +934,24 @@ punch_sfx = NodePath("sound/punch")
 YoYo_sfx = NodePath("sound/YoYo")
 yoyo = NodePath("YoYo")
 yoyo_string = NodePath("YoYo/YoYoLine")
+idle_collider = NodePath("Tall")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -19)
+[node name="Tall" type="CollisionShape2D" parent="."]
+position = Vector2(-4.7683716e-07, -18.75)
 scale = Vector2(1, 1.85)
 shape = SubResource("RectangleShape2D_yowjc")
+
+[node name="Crouch" type="CollisionShape2D" parent="."]
+position = Vector2(-9.536743e-07, -11.5)
+scale = Vector2(1, 1.85)
+shape = SubResource("RectangleShape2D_82p5m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Idle"
+animation = &"Crouch"
 autoplay = "Idle"
 
 [node name="attack_area" type="Area2D" parent="."]
@@ -1029,6 +1039,7 @@ shape = SubResource("CircleShape2D_82p5m")
 debug_color = Color(0.92836297, 3.2247604e-05, 0.66692793, 0.41960785)
 
 [node name="Crane_detect" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 8
 
