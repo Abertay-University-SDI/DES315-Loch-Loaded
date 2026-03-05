@@ -242,7 +242,7 @@ func _end_crouch() -> void:
 # ─── Core movement ───────────────────────────────────────────────────────────
 
 func _respawn_player(body: Node) -> void:
-	if is_dying:
+	if is_dying or body != self:
 		return
 	is_dying = true
 	SceneTransition.death_reset()
@@ -253,7 +253,7 @@ func _apply_gravity(dt: float) -> void:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
-	if is_on_wall() and not is_on_floor() and velocity.y > 0:
+	if is_on_wall() and not is_on_floor() and velocity.y > 0 and not crouching:
 		var damp := 1.2 if dir_radial.y > 0 else 0.2
 		velocity = Vector2.DOWN * _gravity * dt * damp
 		jumps_left = MAX_JUMPS

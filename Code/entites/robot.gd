@@ -205,6 +205,7 @@ func _process(delta: float) -> void:
 			_attack_committed = false
 			_contact_timer = 0.0
 			_in_contact = false
+			_animation_player.play("idle")
 		else:
 			_animation_player.play("attack")
 
