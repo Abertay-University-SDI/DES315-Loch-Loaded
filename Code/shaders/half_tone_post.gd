@@ -7,5 +7,5 @@ func _ready() -> void:
 
 
 func _process(_delta):
-	var size = get_viewport().get_visible_rect().size
-	material.set_shader_parameter("viewport_size", size)
+	var _size = get_viewport().get_visible_rect().size
+	material.set_shader_parameter("viewport_size", _size)

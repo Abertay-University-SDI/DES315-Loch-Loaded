@@ -143,6 +143,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("10_dujba")
 script = ExtResource("11_dujba")
 
@@ -324,26 +325,6 @@ position = Vector2(2676, 436)
 [node name="House_5_0" parent="Buildings" instance=ExtResource("13_qs4fp")]
 position = Vector2(417, 699)
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Robot" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(241, 570)
-
-[node name="Robot5" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(-334, 672)
-
-[node name="Robot2" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(256, 434)
-
-[node name="Robot3" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(733, 395)
-
-[node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
-position = Vector2(1542, 240)
-
-[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
-position = Vector2(137, 500)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -389,6 +370,27 @@ position = Vector2(3286, 136)
 position = Vector2(902, 331)
 
 [node name="Instructions" type="Node2D" parent="."]
+
+[node name="blackboard" type="ColorRect" parent="Instructions"]
+offset_left = -1171.0
+offset_top = 523.0
+offset_right = -929.0
+offset_bottom = 677.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard2" type="ColorRect" parent="Instructions"]
+offset_left = -777.0
+offset_top = 496.0
+offset_right = -503.0
+offset_bottom = 679.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard3" type="ColorRect" parent="Instructions"]
+offset_left = -465.0
+offset_top = 492.0
+offset_right = -191.0
+offset_bottom = 675.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Key_Show_right" parent="Instructions" instance=ExtResource("21_uf8hr")]
 offset_left = -1144.0
@@ -607,3 +609,26 @@ offset_bottom = 144.65625
 texture = ExtResource("22_y7471")
 expand_mode = 1
 stretch_mode = 1
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Robot" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(241, 570)
+
+[node name="Robot5" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(-334, 672)
+
+[node name="Robot2" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(256, 434)
+
+[node name="Robot3" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(733, 395)
+
+[node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
+position = Vector2(1542, 240)
+
+[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
+position = Vector2(137, 500)
+
+[node name="Flybot2" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(-852, 570)

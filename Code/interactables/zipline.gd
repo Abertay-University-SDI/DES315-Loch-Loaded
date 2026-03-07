@@ -7,7 +7,7 @@ extends Node2D
 
 var dir :Vector2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !point_0 or !point_1:
 		return
 	

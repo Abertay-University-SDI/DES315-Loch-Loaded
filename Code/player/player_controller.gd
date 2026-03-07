@@ -465,13 +465,13 @@ func zip_entered(body:Node2D)->void:
 	if velocity.x < 0:
 		zipline_dir = zipline_dir * -1
 	_on_zipline = true
-func zip_exited(body:Node2D)->void:
+func zip_exited(_body:Node2D)->void:
 	_on_zipline = false	
 
 func crane_entered(body:Node2D)->void:
 	crane_point = body.get_parent().get_parent().get_point()
 	_in_crane_area = true
-func crane_exited(body:Node2D)->void:
+func crane_exited(_body:Node2D)->void:
 	_in_crane_area = false
 	
 func calculate_crane_dir()->void:

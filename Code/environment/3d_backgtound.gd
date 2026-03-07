@@ -15,10 +15,10 @@ func _process(_delta: float) -> void:
 		var top_left     := center - half_size
 		var bottom_right := center + half_size
 
-		var range := bottom_right - top_left
+		var _range := bottom_right - top_left
 		
-		var player_prog   = (cam.get_target_position().x - top_left.x) / range.x
-		var player_height = 1-(cam.get_target_position().y - top_left.y) / range.y
+		var player_prog   = (cam.get_target_position().x - top_left.x) / _range.x
+		var player_height = 1-(cam.get_target_position().y - top_left.y) / _range.y
 
 		scene_cam.global_position.y = 5 * player_height
 		scene_cam.rotation_degrees.x = 15*(1-player_height)

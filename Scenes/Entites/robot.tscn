@@ -227,6 +227,7 @@ hframes = 4
 [node name="attack_area" type="Area2D" parent="alive_body"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="alive_body/attack_area"]
+z_index = 25
 position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_r7u2p")
 debug_color = Color(0.510617, 0.5784765, 0, 0.078)

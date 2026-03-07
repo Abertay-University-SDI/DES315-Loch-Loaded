@@ -93,7 +93,7 @@ func _on_back_button_pressed() -> void:
 func _on_color_blind_list_item_selected(index: int) -> void:
 	Global.setColorBlindMode(index)
 
-func _on_controlls_button_toggled(toggled_on: bool) -> void:
+func _on_controlls_button_toggled(_toggled_on: bool) -> void:
 	# show controlls, have ability to change controlls
 	return
 

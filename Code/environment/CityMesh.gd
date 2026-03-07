@@ -17,12 +17,12 @@ extends MultiMeshInstance3D
 			clear = false
 			_clear_city()
 
-@export var seed: int = 0
+@export var _seed: int = 0
 @export var randomize_seed: bool = false:
 	set(val):
 		if val:
 			randomize_seed = false
-			seed = randi()
+			_seed = randi()
 			_generate_city()
 
 @export_group("City Layout")
@@ -63,7 +63,7 @@ var _rng := RandomNumberGenerator.new()
 
 func _generate_city() -> void:
 	_clear_city()
-	_rng.seed = seed
+	_rng.seed = _seed
 
 	var half_w := grid_width * 0.5
 	var half_d := grid_depth * 0.5
