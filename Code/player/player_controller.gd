@@ -92,7 +92,7 @@ var _yoyo_returning := false
 var _yoyo_timer := 0.0
 var _yoyo_duration := 1.0
 var last_hit_position := Vector2.ZERO
-var yoyo_enemy: Robot = null
+var yoyo_enemy: Enemy = null
 var yoyo_enemy_body: CharacterBody2D = null
 
 var dir_radial := Vector2.ZERO
@@ -435,7 +435,7 @@ func _update_attack_offset() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()
-	if not enemy is Robot or not enemy.is_in_group("Enemy"):
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
@@ -444,7 +444,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()
-	if not enemy is Robot or not enemy.is_in_group("Enemy"):
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 
 	var hit := (body as Node2D).global_position
@@ -458,7 +458,7 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_timer = _yoyo_duration
 	_yoyo_returning = false
 
-	enemy.take_dash(dash_timer, 400.0)
+	enemy.take_dash(Vector2.UP,dash_timer, 400.0)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
