@@ -8,6 +8,8 @@ signal health_changed(health: float)
 @export var play_area_shape: CollisionShape2D
 @export var spawn: Marker2D
 
+@export var levelEndScene : Control
+
 @export_group("Detectors")
 @export var zipline_detector:Area2D
 @export var crane_detector:Area2D
@@ -116,7 +118,7 @@ func _ready() -> void:
 	_spray_scene = load("res://Scenes/Interactables/spray.tscn")
 	_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-	play_area.body_exited.connect(_respawn_player)
+	play_area.body_exited.connect(_end_level)
 	zipline_detector.body_entered.connect(zip_entered)
 	zipline_detector.body_exited.connect(zip_exited)
 	crane_detector.body_entered.connect(crane_entered)
@@ -506,3 +508,8 @@ func _setup_camera_limits() -> void:
 		])
 	else:
 		push_error("Play area shape is not a RectangleShape2D!")
+
+func _end_level(body :Node) -> void:
+	levelEndScene.show()
+	get_parent().endOfLevel()
+	return

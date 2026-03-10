@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=31 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="5_qs4fp"]
 [ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/shaders/ColorBlind.gdshader" id="6_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="6_uf8hr"]
+[ext_resource type="PackedScene" uid="uid://0vjv73org0lq" path="res://Scenes/UI/LevelEnd.tscn" id="7_jrwi5"]
 [ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="7_unuuj"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="7_y7471"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="8_jrwi5"]
@@ -45,10 +46,11 @@ size = Vector2(24, 73)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn63p"]
 size = Vector2(23.5, 223.6875)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
 script = ExtResource("1_50v45")
 enemies = NodePath("Enemies")
-billBoards = NodePath("interactables/spraySpots")
+billBoards = NodePath("Spray Spots")
+endScene = NodePath("CanvasLayer/LevelEndScene")
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -89,6 +91,10 @@ player = NodePath("../../Player")
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
 visible = false
 
+[node name="LevelEndScene" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("7_jrwi5")]
+visible = false
+world = NodePath("../..")
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
 material = SubResource("ShaderMaterial_qs4fp")
@@ -123,13 +129,14 @@ position = Vector2(2821.9507, 158.49998)
 scale = Vector2(4.277568, 4.277567)
 texture = ExtResource("10_hnohd")
 
-[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
+[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "levelEndScene") instance=ExtResource("6_uf8hr")]
 z_index = 1
 position = Vector2(-1199, 691)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
 spawn = NodePath("../PlayArea/Spawn")
+levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
 position = Vector2(410, 393)
