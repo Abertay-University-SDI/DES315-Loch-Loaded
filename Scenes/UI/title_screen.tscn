@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4c6kxewkr8gw" path="res://Scenes/UI/credits.tscn" id="5_tjte5"]
 [ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/ui/dynamic_text_shadow.gd" id="6_28uqs"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="7_bvwvd"]
-[ext_resource type="Script" uid="uid://vohrkxsb3oih" path="res://Code/ui/grab_focus.gd" id="9_tjte5"]
+[ext_resource type="PackedScene" uid="uid://d18qgphoxvo6p" path="res://Scenes/UI/animated_menu_button.tscn" id="8_tjte5"]
 
 [sub_resource type="Gradient" id="Gradient_tjte5"]
 offsets = PackedFloat32Array(0.033333335, 1)
@@ -123,11 +123,8 @@ grow_vertical = 2
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="studio_button" type="Button" parent="title_screen_ui/VBoxContainer"]
+[node name="studio_button" parent="title_screen_ui/VBoxContainer" instance=ExtResource("8_tjte5")]
 layout_mode = 2
-theme = ExtResource("7_bvwvd")
-text = "Studio"
-script = ExtResource("9_tjte5")
 
 [node name="settings_button" type="Button" parent="title_screen_ui/VBoxContainer"]
 layout_mode = 2

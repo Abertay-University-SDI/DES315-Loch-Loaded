@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	mode = Global.getColorBlindMode()
 	mat.set_shader_parameter("mode", mode)
 	if mat.get_shader_parameter("mode") == 0:

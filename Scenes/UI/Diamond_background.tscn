@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://boyudrsl0emk"]
+
+[ext_resource type="Shader" uid="uid://d4fftw65sco33" path="res://Code/shaders/diamond.gdshader" id="1_t0rel"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="2_8aouk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oojjo"]
+shader = ExtResource("1_t0rel")
+shader_parameter/grid_size = Vector2(6, 6)
+shader_parameter/diamond_size = 1.0
+shader_parameter/diamond_color = Color(1, 0, 0, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/pulse_speed = 5.0
+shader_parameter/pulse_amount = 0.414000019665
+shader_parameter/smin_k = 0.27100001287250003
+shader_parameter/hue_stripe_frequency = 0.3
+shader_parameter/hue_shift_amount = 1.0
+shader_parameter/hue_shift_speed = 0.5
+
+[node name="Diamond Background" type="TextureRect"]
+material = SubResource("ShaderMaterial_oojjo")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_8aouk")

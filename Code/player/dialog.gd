@@ -36,7 +36,7 @@ func show_dialog(dialog_id: String) -> void:
 func _ready() -> void:
 	show_dialog("surfer_dude_intro")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -135,3 +135,4 @@ crouch={
 [layer_names]
 
 2d_physics/layer_3="Zip"
+2d_physics/layer_10="Bullets"

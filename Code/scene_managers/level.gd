@@ -27,7 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		pause_menu.show()
 		get_tree().paused = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	return	
 
 func endOfLevel():

@@ -94,7 +94,7 @@ var _yoyo_returning := false
 var _yoyo_timer := 0.0
 var _yoyo_duration := 1.0
 var last_hit_position := Vector2.ZERO
-var yoyo_enemy: Robot = null
+var yoyo_enemy: Enemy = null
 var yoyo_enemy_body: CharacterBody2D = null
 
 var dir_radial := Vector2.ZERO
@@ -244,7 +244,7 @@ func _end_crouch() -> void:
 # ─── Core movement ───────────────────────────────────────────────────────────
 
 func _respawn_player(body: Node) -> void:
-	if is_dying:
+	if is_dying or body != self:
 		return
 	is_dying = true
 	SceneTransition.death_reset()
@@ -255,7 +255,7 @@ func _apply_gravity(dt: float) -> void:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
-	if is_on_wall() and not is_on_floor() and velocity.y > 0:
+	if is_on_wall() and not is_on_floor() and velocity.y > 0 and not crouching:
 		var damp := 1.2 if dir_radial.y > 0 else 0.2
 		velocity = Vector2.DOWN * _gravity * dt * damp
 		jumps_left = MAX_JUMPS
@@ -437,7 +437,7 @@ func _update_attack_offset() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()
-	if not enemy is Robot or not enemy.is_in_group("Enemy"):
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
@@ -446,7 +446,7 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()
-	if not enemy is Robot or not enemy.is_in_group("Enemy"):
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 
 	var hit := (body as Node2D).global_position
@@ -460,20 +460,20 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_timer = _yoyo_duration
 	_yoyo_returning = false
 
-	enemy.take_dash(dash_timer, 400.0)
+	enemy.take_dash(Vector2.UP,dash_timer, 400.0)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
 	if velocity.x < 0:
 		zipline_dir = zipline_dir * -1
 	_on_zipline = true
-func zip_exited(body:Node2D)->void:
+func zip_exited(_body:Node2D)->void:
 	_on_zipline = false	
 
 func crane_entered(body:Node2D)->void:
 	crane_point = body.get_parent().get_parent().get_point()
 	_in_crane_area = true
-func crane_exited(body:Node2D)->void:
+func crane_exited(_body:Node2D)->void:
 	_in_crane_area = false
 	
 func calculate_crane_dir()->void:

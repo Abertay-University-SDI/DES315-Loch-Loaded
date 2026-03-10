@@ -40,6 +40,6 @@ func _on_zone_body_exited(body: Node) -> void:
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_in_zone and Input.is_action_just_pressed("spray"):
 		dialogbox.show()
