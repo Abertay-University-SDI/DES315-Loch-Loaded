@@ -209,7 +209,8 @@ script = ExtResource("1_kj8xj")
 attack_area = NodePath("alive_body/attack_area")
 
 [node name="alive_body" type="CharacterBody2D" parent="."]
-collision_mask = 3
+collision_layer = 8
+collision_mask = 11
 platform_on_leave = 1
 platform_floor_layers = 4294967292
 

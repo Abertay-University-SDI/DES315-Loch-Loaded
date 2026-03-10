@@ -19,6 +19,8 @@ texture = SubResource("AtlasTexture_f2ot6")
 [node name="StaticBody2D" type="StaticBody2D" parent="BaceShopfrontWPlatform"]
 position = Vector2(5.6872767e-07, -391.20825)
 scale = Vector2(2.32019, 2.32019)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaceShopfrontWPlatform/StaticBody2D"]
 light_mask = 2

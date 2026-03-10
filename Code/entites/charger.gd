@@ -1,105 +1,91 @@
 extends Enemy
 class_name Charger
 
-@export var attack_range: float = 50.0
-@export var walk_speed: float = 40.0
+@onready var _slam_particle: GPUParticles2D = $alive_body/GPUParticles2D
+@onready var _hurt_box: Area2D              = $alive_body/Hurt_box
 
-const CONTACT_THRESHOLD  := 0.25
-const ATTACK_DELAY       := 0.25
+const JUMP_COOLDOWN := 1.2
+const MAX_CHARGE    := 5.0
+const CHARGE_RATE   := 2.0
+const BASE_LAUNCH   := 100.0
+const MAX_BOUNCES   := 3
+const HIT_COOLDOWN  := 0.5
 
-var _contact_timer:   float = 0.0
-var _attack_committed: bool = false
-var _attack_timer:    float = 0.0
-var _in_contact:       bool = false
+var _charge:        float = 0.0
+var _jump_cooldown: float = 0.0
+var _airborne:       bool = false
+var _was_on_floor:   bool = false
+var _bounces:         int = 0
+var _hit_cooldown:  float = 0.0
 
-var jump_fatigue :float= 0.0
-const  JUMP_COOLDOWN = 1.8
-var jump_force = 0.0
-var jump_inc = 0.3
-const MAX_JUMP_FORCE = 0.9
-
-@onready var alive_sprite = $alive_body/Sprite2D
-
-# ─── Setup ────────────────────────────────────────────────────────────────────
 
 func _on_ready() -> void:
 	_direction = -1
+	_hurt_box.body_entered.connect(_hurt_player)
 
 
 func _on_animation_finished(anim_name: String) -> void:
-	if anim_name == "attack":
-		_attack_committed = false
-		_animation_player.play("RESET")
-		_try_attack()
-	elif anim_name == "take_hit":
+	if anim_name in ["attack", "take_hit"]:
 		_animation_player.play("RESET")
 
 
-# ─── Attack area signals ──────────────────────────────────────────────────────
+func _hurt_player(body: Node) -> void:
+	if body is not Player or _hit_cooldown > 0.0:
+		return
+	_hit_cooldown = HIT_COOLDOWN
+	(body as Player).health_value -= 40 if _airborne else 15
 
-func _on_attack_area_body_entered(body: Node) -> void:
-	if body == _player or body.get_parent() == _player:
-		_in_contact = true
-
-
-func _on_attack_area_body_exited(body: Node) -> void:
-	if body == _player or body.get_parent() == _player:
-		_in_contact = false
-		if not _attack_committed:
-			_contact_timer = 0.0
-
-
-func _try_attack() -> void:
-	if _player.global_position.distance_to(_alive.global_position) < attack_range:
-		_player.health_value  -= 35
-
-
-# ─── Process ──────────────────────────────────────────────────────────────────
 
 func _on_process(delta: float) -> void:
-
-	# Contact → commit window
-	if _in_contact and not _attack_committed:
-		_contact_timer += delta
-		if _contact_timer >= CONTACT_THRESHOLD:
-			_attack_committed = true
-			_attack_timer     = ATTACK_DELAY
-
-	# Committed attack countdown
-	if _attack_committed:
-		_attack_timer -= delta
-		if _attack_timer <= 0.0:
-			_try_attack()
-			_attack_timer     = ATTACK_DELAY
-			_attack_committed = false
-			_contact_timer    = 0.0
-			_in_contact       = false
-			_animation_player.play("idle")
-		else:
-			_animation_player.play("attack")
+	_hit_cooldown  -= delta
+	_jump_cooldown -= delta
 
 
 func _on_physics_process(delta: float) -> void:
-	if not _alive.is_on_floor():
-		_alive.velocity += Vector2.DOWN * 1200.0 * delta
-	
-	jump_fatigue-=delta
-	
-	if _alive.is_on_floor() and jump_fatigue<0.0:
-		jump_force+=jump_inc
-		_alive.velocity += Vector2(_direction*jump_force/2,-jump_force)*100.0
+	if _alive.is_on_wall():
+		_direction *= -1
 		
-	if jump_inc > MAX_JUMP_FORCE:
-		jump_inc = 0.0
-		jump_fatigue = JUMP_COOLDOWN
-		alive_sprite.rotate(_direction*0.3)
-		
-		
+	var on_floor :bool= _alive.is_on_floor()
 
-	if not _has_ground_ahead():
-		_direction *= -1
-	if _has_wall_ahead():
-		_direction *= -1
-	
-	alive_sprite.rotate(_direction*0.3)
+	if not on_floor:
+		_alive.velocity += Vector2.DOWN * 1200.0 * delta
+
+	if on_floor and not _was_on_floor:
+		_on_land()
+	_was_on_floor = on_floor
+
+	if on_floor and not _airborne:
+		if _jump_cooldown <= 0.0:
+			_charge += CHARGE_RATE * delta
+			_charge  = minf(_charge, MAX_CHARGE)
+			_alive_sprite.rotate(_direction * 0.25 * _charge)
+			if _charge >= MAX_CHARGE:
+				_launch()
+
+
+	if _airborne:
+		_alive_sprite.rotate(_direction * 0.25)
+
 	_alive.move_and_slide()
+
+
+func _launch() -> void:
+	_alive.velocity = Vector2(_direction * _charge, -_charge) * BASE_LAUNCH
+	_airborne = true
+	_charge   = 0.0
+	_slam_particle.emitting = false
+
+
+func _on_land() -> void:
+	if not _airborne:
+		return
+	_slam_particle.emitting = true
+	_bounces += 1
+	if _bounces >= MAX_BOUNCES:
+		_direction*=-1
+		_airborne      = false
+		_bounces       = 0
+		_jump_cooldown = JUMP_COOLDOWN
+		_animation_player.play("RESET")
+	else:
+		_alive.velocity = Vector2(_direction * MAX_CHARGE, -MAX_CHARGE) * BASE_LAUNCH

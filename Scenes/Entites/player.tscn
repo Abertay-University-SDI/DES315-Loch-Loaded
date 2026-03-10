@@ -21,6 +21,7 @@ shader_parameter/rainbow = false
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_scale = 1.2
 shader_parameter/alpha = 1.0
+shader_parameter/crop_top = 193.9130092108675
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwvk4"]
 atlas = ExtResource("2_pwsgj")

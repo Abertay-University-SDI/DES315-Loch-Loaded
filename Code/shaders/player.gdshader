@@ -12,11 +12,11 @@ void fragment() {
 	float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
 	outline += texture(TEXTURE, UV + vec2(0, size.y)).a;
 	outline += texture(TEXTURE, UV + vec2(size.x, 0)).a;
-	outline += texture(TEXTURE, UV + vec2(0, -size.y)).a;
+	//outline += texture(TEXTURE, UV + vec2(0, -size.y)).a;
 	outline += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
 	outline += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
-	outline += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
-	outline += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+	//outline += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+	//outline += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
 	outline = min(outline, 1.0f);
 
 	vec4 color = texture(TEXTURE, UV);

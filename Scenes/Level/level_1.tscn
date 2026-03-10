@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=41 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
+[ext_resource type="PackedScene" uid="uid://0vjv73org0lq" path="res://Scenes/UI/LevelEnd.tscn" id="3_axxus"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="3_ia3c5"]
 [ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="4_unuuj"]
 [ext_resource type="PackedScene" uid="uid://jb118bi61s4g" path="res://Scenes/UI/dialog_container.tscn" id="5_hnohd"]
@@ -19,11 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://b8226o7n8ve1f" path="res://Scenes/Level/Prefabs/house_5_0.tscn" id="13_qs4fp"]
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="15_uf8hr"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_0emyc"]
-[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipline.tscn" id="16_50v45"]
+[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipStart.tscn" id="16_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="16_lrh7k"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="16_y7471"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="21_uf8hr"]
+[ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="22_eqj4t"]
 [ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="22_y7471"]
 [ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="23_3juip"]
 [ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="24_jn63p"]
@@ -35,14 +37,17 @@ shader_parameter/mode = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("9_nswyt")
-shader_parameter/viewport_size = Vector2(0, 0)
-shader_parameter/dot_size = 3.0
-shader_parameter/angle_r = 4.767
-shader_parameter/angle_g = 2.68
-shader_parameter/angle_b = 7.204
+shader_parameter/viewport_size = Vector2(1280, 720)
+shader_parameter/dot_size = 2.57
+shader_parameter/angle_r = 7.117
+shader_parameter/angle_g = 3.905
+shader_parameter/angle_b = 1.309
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(6824, 907)
+size = Vector2(7108, 913)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
+size = Vector2(253, 887)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(6907, 20)
@@ -62,8 +67,11 @@ size = Vector2(24, 73)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn63p"]
 size = Vector2(23.5, 287.6875)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
 script = ExtResource("1_50v45")
+enemies = NodePath("Enemies")
+billBoards = NodePath("Spray Spots")
+endScene = NodePath("CanvasLayer/LevelEndScene")
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -89,6 +97,10 @@ bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelEndScene" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("3_axxus")]
+visible = false
+world = NodePath("../..")
 
 [node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
 visible = false
@@ -137,7 +149,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(2174, 266.5)
+position = Vector2(2316, 269.5)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -149,13 +161,22 @@ position = Vector2(2821.9507, 158.49998)
 scale = Vector2(4.277568, 4.277567)
 texture = ExtResource("10_hnohd")
 
-[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn") instance=ExtResource("6_uf8hr")]
+[node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
+position = Vector2(5738.5, 254.5)
+shape = SubResource("RectangleShape2D_eqj4t")
+debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
+
+[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene") instance=ExtResource("6_uf8hr")]
 z_index = 1
 position = Vector2(-1199, 691)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
 spawn = NodePath("../PlayArea/Spawn")
+level_end_area = NodePath("../PlayArea/Level_Complete_Area")
+levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
 position = Vector2(410, 393)
@@ -302,7 +323,7 @@ position = Vector2(5517, 238)
 position = Vector2(2676, 436)
 
 [node name="House_5_0" parent="Buildings" instance=ExtResource("13_qs4fp")]
-position = Vector2(417, 699)
+position = Vector2(416, 699)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -313,7 +334,7 @@ shape = SubResource("RectangleShape2D_hnohd")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -1238.0
 offset_top = 698.0
-offset_right = 5656.2144
+offset_right = 5849.9277
 offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
@@ -322,17 +343,33 @@ color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
 [node name="Ziplines" type="Node2D" parent="interactables"]
 
-[node name="Zipline" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
-position = Vector2(289, 252)
+[node name="Zipline" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
+position = Vector2(963, 369)
+point_1 = NodePath("../Zippoint")
 
-[node name="Zipline2" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
-position = Vector2(-89, 251)
+[node name="Zipline2" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
+position = Vector2(2254, 368)
+point_1 = NodePath("../Zippoint2")
 
-[node name="Zipline3" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
-position = Vector2(32, 249)
+[node name="Zipline3" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
+position = Vector2(3351, 160)
+point_1 = NodePath("../Zippoint3")
 
-[node name="Zipline4" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
-position = Vector2(163, 249)
+[node name="Zipline4" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
+position = Vector2(4354, 367)
+point_1 = NodePath("../Zippoint4")
+
+[node name="Zippoint" parent="interactables/Ziplines" instance=ExtResource("22_eqj4t")]
+position = Vector2(1162, 348)
+
+[node name="Zippoint2" parent="interactables/Ziplines" instance=ExtResource("22_eqj4t")]
+position = Vector2(2615, 377)
+
+[node name="Zippoint3" parent="interactables/Ziplines" instance=ExtResource("22_eqj4t")]
+position = Vector2(3742, 348)
+
+[node name="Zippoint4" parent="interactables/Ziplines" instance=ExtResource("22_eqj4t")]
+position = Vector2(4884, 524)
 
 [node name="Spray Spots" type="Node2D" parent="."]
 
@@ -607,3 +644,9 @@ position = Vector2(-34, 570)
 
 [node name="Charger" parent="Enemies" instance=ExtResource("28_hxng5")]
 position = Vector2(-516, 659)
+
+[node name="Charger2" parent="Enemies" instance=ExtResource("28_hxng5")]
+position = Vector2(-200, 622)
+
+[node name="Charger3" parent="Enemies" instance=ExtResource("28_hxng5")]
+position = Vector2(-48, 662)
