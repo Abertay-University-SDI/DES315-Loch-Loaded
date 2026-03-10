@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=38 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="22_y7471"]
 [ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="23_3juip"]
 [ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="24_jn63p"]
+[ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="28_hxng5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
 shader = ExtResource("6_ia3c5")
@@ -45,28 +46,6 @@ size = Vector2(6824, 907)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(6907, 20)
-
-[sub_resource type="Shader" id="Shader_dujba"]
-code = "shader_type canvas_item;
-
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
-
-void fragment() {
-	float new_uv = mod((UV.x*3.0+UV.y)*10.0+TIME,1.0); 
-	float col = new_uv*0.5;
-	COLOR = vec4(vec3(col,col,0.0),col);
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_axxus"]
-shader = SubResource("Shader_dujba")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
 size = Vector2(142.5, 25)
@@ -440,7 +419,8 @@ texture_filter = 1
 offset_left = -763.0
 offset_top = 606.0
 offset_right = -679.0
-offset_bottom = 655.0
+offset_bottom = 641.0
+theme_override_constants/line_spacing = -17
 text = "Crouch to 
 pass down"
 
@@ -449,7 +429,8 @@ texture_filter = 1
 offset_left = -616.0
 offset_top = 595.0
 offset_right = -515.0
-offset_bottom = 670.0
+offset_bottom = 662.0
+theme_override_constants/line_spacing = -12
 text = "Crouch while
 Walking 
 to slide"
@@ -471,15 +452,6 @@ texture = ExtResource("23_3juip")
 position = Vector2(-394, 601.00006)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("24_jn63p")
-
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-z_index = -340
-material = SubResource("ShaderMaterial_axxus")
-offset_left = -1238.0
-offset_top = 381.0
-offset_right = -194.0
-offset_bottom = 698.0
-color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [node name="Tutorial" type="Node2D" parent="."]
 
@@ -627,8 +599,11 @@ position = Vector2(733, 395)
 [node name="Robot4" parent="Enemies" instance=ExtResource("8_jrwi5")]
 position = Vector2(1542, 240)
 
-[node name="Flybot" parent="Enemies" groups=["Enemy"] instance=ExtResource("19_qs4fp")]
+[node name="Flybot" parent="Enemies" instance=ExtResource("19_qs4fp")]
 position = Vector2(137, 500)
 
 [node name="Flybot2" parent="Enemies" instance=ExtResource("19_qs4fp")]
-position = Vector2(-852, 570)
+position = Vector2(-34, 570)
+
+[node name="Charger" parent="Enemies" instance=ExtResource("28_hxng5")]
+position = Vector2(-516, 659)

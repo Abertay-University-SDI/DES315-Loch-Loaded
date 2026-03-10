@@ -111,7 +111,7 @@ func take_dash(hit_dir: Vector2, hit_duration: float, force: float) -> void:
 
 func _has_ground_ahead() -> bool:
 	var origin := _alive.global_position
-	origin.x += _direction * 12.0
+	origin.x += _direction * 24.0
 	var target := origin + Vector2.DOWN * ground_check_distance
 	var query  := PhysicsRayQueryParameters2D.create(origin, target)
 	query.collision_mask = 3

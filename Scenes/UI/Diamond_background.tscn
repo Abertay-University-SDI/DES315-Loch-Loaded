@@ -18,6 +18,10 @@ shader_parameter/hue_shift_speed = 0.5
 
 [node name="Diamond Background" type="TextureRect"]
 material = SubResource("ShaderMaterial_oojjo")
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_8aouk")
+expand_mode = 2

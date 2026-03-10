@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp6m4rt1dw531"]
+[gd_scene load_steps=12 format=3 uid="uid://2kui8xij1j7s"]
 
-[ext_resource type="Script" uid="uid://dr6jw5idiyjkn" path="res://Code/entites/flybot.gd" id="1_pirrt"]
-[ext_resource type="Texture2D" uid="uid://cheyxy0eg36go" path="res://Textures/Enemies/fly-bot-sheet.png" id="2_bj2wy"]
-[ext_resource type="Texture2D" uid="uid://br0kakvsd1g8o" path="res://Textures/Enemies/cone-bot-Sheet.png" id="4_m21qo"]
-[ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="5_skdxu"]
+[ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
+[ext_resource type="Texture2D" uid="uid://bp38u32e51la6" path="res://Textures/Enemies/heavy-enemy.png" id="2_aanfd"]
+[ext_resource type="Texture2D" uid="uid://br0kakvsd1g8o" path="res://Textures/Enemies/cone-bot-Sheet.png" id="2_mmf4r"]
+[ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuei"]
-size = Vector2(13.5, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wplub"]
+radius = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u2avc"]
-radius = 18.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8n8"]
+atlas = ExtResource("2_aanfd")
+region = Rect2(3699, 1870, 2018, 2012)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_845ee"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kj8xj"]
 
 [sub_resource type="Animation" id="Animation_kj8xj"]
 length = 0.001
@@ -54,26 +55,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("alive_body/Sprite2D:position")
+tracks/3/path = NodePath("alive_body/Sprite2D:skew")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-0.75, 0)]
+"values": [0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("alive_body/Sprite2D:skew")
+tracks/4/path = NodePath("alive_body:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_r7u2p"]
@@ -93,55 +94,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("alive_body/Sprite2D:position")
+tracks/1/path = NodePath("alive_body/Sprite2D:skew")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.19, 0.31, 0.54, 0.74),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -15), Vector2(1, -14), Vector2(-1, -14.928), Vector2(0.596, -14.928), Vector2(-0.339, -14.928)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("alive_body/Sprite2D:skew")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.2617994, -0.2617994, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_1qmkp"]
-resource_name = "idle"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("alive_body/Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666664),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.023450231, 0.023450231), Vector2(0.022, 0.025)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("alive_body/Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.46666664),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-0.75, -1), Vector2(0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_rcx67"]
@@ -176,37 +136,27 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_kj8xj"),
 &"attack": SubResource("Animation_r7u2p"),
-&"idle": SubResource("Animation_1qmkp"),
 &"take_hit": SubResource("Animation_rcx67")
 }
 
-[node name="Flybot" type="Node2D" node_paths=PackedStringArray("attack_area") groups=["Enemy"]]
-script = ExtResource("1_pirrt")
-attack_area = NodePath("alive_body/attack_area")
-max_health = 2
+[node name="Charger" type="Node2D" groups=["Enemy"]]
+script = ExtResource("1_3ghnw")
+ground_check_distance = 16.0
 
 [node name="alive_body" type="CharacterBody2D" parent="."]
 collision_mask = 3
-motion_mode = 1
 platform_on_leave = 1
 platform_floor_layers = 4294967292
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="alive_body"]
-position = Vector2(0.25, 0)
-shape = SubResource("RectangleShape2D_4tuei")
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_wplub")
 
-[node name="Sprite2D" type="Sprite2D" parent="alive_body" groups=["Enemy"]]
+[node name="Sprite2D" type="Sprite2D" parent="alive_body"]
 texture_filter = 1
-position = Vector2(-0.75, 0)
+position = Vector2(0, -24)
 scale = Vector2(0.023450231, 0.023450231)
-texture = ExtResource("2_bj2wy")
-hframes = 2
-
-[node name="attack_area" type="Area2D" parent="alive_body"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="alive_body/attack_area"]
-shape = SubResource("CircleShape2D_u2avc")
-debug_color = Color(0.510617, 0.5784765, 0, 0.078)
+texture = SubResource("AtlasTexture_xn8n8")
 
 [node name="dead_body" type="RigidBody2D" parent="."]
 visible = false
@@ -215,13 +165,13 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead_body"]
 position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_845ee")
+shape = SubResource("CircleShape2D_kj8xj")
 
 [node name="Sprite2D" type="Sprite2D" parent="dead_body"]
 texture_filter = 1
 position = Vector2(-0.75, -14)
 scale = Vector2(0.023450231, 0.023450231)
-texture = ExtResource("4_m21qo")
+texture = ExtResource("2_mmf4r")
 hframes = 4
 frame = 2
 
@@ -229,7 +179,6 @@ frame = 2
 libraries = {
 &"": SubResource("AnimationLibrary_r7u2p")
 }
-autoplay = "idle"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_skdxu")
+stream = ExtResource("4_wplub")

@@ -14,7 +14,7 @@ func launch(dir: Vector2, speed: float) -> void:
 	rotation = dir.angle() + PI / 2.0
 
 func body_hit(_body:Node2D):
-	if _body.is_class("Flybot"):
+	if _body.get_parent() is Flybot:
 		return
 	
 	if _body is Player:
