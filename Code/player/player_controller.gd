@@ -235,6 +235,8 @@ func _end_slide() -> void:
 
 
 func _end_crouch() -> void:
+	if (is_on_ceiling()):
+		return
 	crouching = false
 	sliding = false
 	set_collision_mask_value(2, true)

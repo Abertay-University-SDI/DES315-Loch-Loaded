@@ -1,11 +1,15 @@
+@tool
 extends Node2D
 
 @onready var point_0: Marker2D = $Zipline_0/Zippoint
-@onready var point_1: Marker2D = $Zipline_1/Zippoint
-@export var line: Line2D
-@export var collision_shape: CollisionShape2D
+@export var point_1: Marker2D
+@onready var line: Line2D=$Zipline_0/Line2D
+@onready var collision_shape: CollisionShape2D=$Zipline_0/StaticBody2D/CollisionShape2D
 
 var dir :Vector2
+
+func _ready() -> void:
+	collision_shape.shape = collision_shape.shape.duplicate()
 
 func _process(_delta: float) -> void:
 	if !point_0 or !point_1:

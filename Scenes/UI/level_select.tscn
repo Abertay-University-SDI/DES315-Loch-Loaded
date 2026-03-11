@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dslpk2swr657b"]
+[gd_scene load_steps=14 format=3 uid="uid://dslpk2swr657b"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_2yuxf"]
 [ext_resource type="Script" uid="uid://tx1fswhxhgwv" path="res://Code/scene_managers/level_select.gd" id="1_vxe13"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qj1o1t3cla8n" path="res://Textures/UI/button_2.png" id="5_ltq1i"]
 [ext_resource type="Texture2D" uid="uid://bhubckbu5yqm1" path="res://Textures/UI/button_1.png" id="6_1v14q"]
 [ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/ui/texture_button.gd" id="6_vxe13"]
+[ext_resource type="Texture2D" uid="uid://0hjcn1wtafdw" path="res://Textures/UI/padlock.png" id="8_7vwlt"]
 
 [sub_resource type="Gradient" id="Gradient_40fl8"]
 offsets = PackedFloat32Array(0.02, 1)
@@ -137,7 +138,7 @@ layout_mode = 1
 
 [node name="Diamond Background" parent="ColorRect" instance=ExtResource("4_texu8")]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -216,6 +217,12 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Padlock" type="Sprite2D" parent="VBoxContainer/Row_1/level_2"]
+texture_filter = 1
+position = Vector2(65.00001, 74.99999)
+scale = Vector2(0.50390613, 0.50390613)
+texture = ExtResource("8_7vwlt")
+
 [node name="level_3" type="TextureButton" parent="VBoxContainer/Row_1"]
 layout_mode = 2
 disabled = true
@@ -241,6 +248,12 @@ theme_override_font_sizes/font_size = 71
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Padlock" type="Sprite2D" parent="VBoxContainer/Row_1/level_3"]
+texture_filter = 1
+position = Vector2(65.00001, 74.99999)
+scale = Vector2(0.50390613, 0.50390613)
+texture = ExtResource("8_7vwlt")
 
 [node name="Title" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)

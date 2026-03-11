@@ -88,7 +88,6 @@ func _do_lockon(delta: float) -> void:
 		_shoot_timer = shoot_cooldown
 		if _get_player_distance() <= attack_range:
 			_fire_bullet()
-			_animation_player.play("attack")
 		else:
 			# Spotted but out of range — creep toward player
 			_alive.velocity.x = _direction * patrol_speed
