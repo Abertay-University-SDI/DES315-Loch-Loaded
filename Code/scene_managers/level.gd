@@ -33,12 +33,12 @@ func _process(_delta: float) -> void:
 func endOfLevel():
 	endTime = Time.get_ticks_msec() / 1000
 	for enemy in enemies.get_children():
-		totalEnemies = 5
+		totalEnemies += 1
 		if (enemy._get_dead()):
 			deadEnemies += 1
 
 	for board in billBoards.get_children():
-		totalBoards = 4
+		totalBoards += 1
 		if (board._get_painted()):
 			paintedBoards += 1
 	

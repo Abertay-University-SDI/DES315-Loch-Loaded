@@ -169,7 +169,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(2384.5, 266.5)
+position = Vector2(2393, 279)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -364,7 +364,7 @@ color = Color(0.288518, 0.28851798, 0.28851798, 1)
 [node name="Ziplines" type="Node2D" parent="interactables"]
 
 [node name="Zipline" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
-position = Vector2(289, 252)
+position = Vector2(310, 188)
 
 [node name="Zipline2" parent="interactables/Ziplines" instance=ExtResource("16_50v45")]
 position = Vector2(-89, 251)
