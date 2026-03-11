@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://2kui8xij1j7s"]
+[gd_scene load_steps=16 format=3 uid="uid://2kui8xij1j7s"]
 
 [ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://bp38u32e51la6" path="res://Textures/Enemies/heavy-enemy.png" id="2_aanfd"]
-[ext_resource type="Texture2D" uid="uid://br0kakvsd1g8o" path="res://Textures/Enemies/cone-bot-Sheet.png" id="2_mmf4r"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_mmf4r"]
 
@@ -218,12 +217,11 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_kj8xj")
 
 [node name="Sprite2D" type="Sprite2D" parent="dead_body"]
+modulate = Color(0.5775778, 0.19641912, 0.19641912, 1)
 texture_filter = 1
-position = Vector2(-0.75, -14)
+position = Vector2(0, -24)
 scale = Vector2(0.023450231, 0.023450231)
-texture = ExtResource("2_mmf4r")
-hframes = 4
-frame = 2
+texture = SubResource("AtlasTexture_xn8n8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

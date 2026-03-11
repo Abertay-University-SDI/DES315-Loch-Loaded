@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=43 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -30,10 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="23_3juip"]
 [ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="24_jn63p"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="28_hxng5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
-shader = ExtResource("6_ia3c5")
-shader_parameter/mode = 0
+[ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_o0ro1"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="31_0emyc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("9_nswyt")
@@ -42,6 +40,10 @@ shader_parameter/dot_size = 2.57
 shader_parameter/angle_r = 7.117
 shader_parameter/angle_g = 3.905
 shader_parameter/angle_b = 1.309
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
+shader = ExtResource("6_ia3c5")
+shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
 size = Vector2(7108, 913)
@@ -53,13 +55,13 @@ size = Vector2(253, 887)
 size = Vector2(6907, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
-size = Vector2(142.5, 25)
+size = Vector2(143, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nswyt"]
 size = Vector2(30, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3juip"]
-size = Vector2(23.75, 95.078125)
+size = Vector2(24, 95.078)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwi5"]
 size = Vector2(24, 73)
@@ -72,6 +74,10 @@ script = ExtResource("1_50v45")
 enemies = NodePath("Enemies")
 billBoards = NodePath("Spray Spots")
 endScene = NodePath("CanvasLayer/LevelEndScene")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = 4096
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -108,24 +114,8 @@ visible = false
 [node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_ia3c5")]
 visible = false
 
-[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
-visible = false
-mouse_filter = 2
-player = NodePath("../../Player")
-
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
 visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_qs4fp")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("7_unuuj")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_hxng5")
@@ -137,6 +127,22 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("10_dujba")
 script = ExtResource("11_dujba")
+
+[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
+visible = false
+mouse_filter = 2
+player = NodePath("../../Player")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_qs4fp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_unuuj")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
 offset = Vector2(0, 358.69)
@@ -170,7 +176,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene") instance=ExtResource("6_uf8hr")]
 z_index = 1
-position = Vector2(-1199, 691)
+position = Vector2(-1208, 698)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -339,6 +345,56 @@ offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Lamp_0" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-1186, 701)
+
+[node name="Lamp_1" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-862, 701)
+
+[node name="Lamp_15" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-782, 580)
+
+[node name="Lamp_2" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-485, 701)
+
+[node name="Lamp_3" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-172, 701)
+
+[node name="Lamp_4" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(-1, 701)
+
+[node name="Lamp_5" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(506, 701)
+
+[node name="Lamp_6" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(637, 701)
+
+[node name="Lamp_7" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(1324, 698)
+
+[node name="Lamp_8" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(1591, 698)
+
+[node name="Lamp_9" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(1961, 698)
+
+[node name="Lamp_10" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(2303, 698)
+
+[node name="Lamp_11" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(3286, 696)
+
+[node name="Lamp_12" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(4570, 699)
+
+[node name="Lamp_13" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(4852, 700)
+
+[node name="Lamp_14" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(5374, 700)
+
 [node name="interactables" type="Node2D" parent="."]
 
 [node name="Ziplines" type="Node2D" parent="interactables"]
@@ -422,10 +478,10 @@ offset_right = -963.0
 offset_bottom = 672.0
 
 [node name="Key_Show_Crouch" parent="Instructions" instance=ExtResource("21_uf8hr")]
-offset_left = -706.0
-offset_top = 504.0
-offset_right = -666.0
-offset_bottom = 544.0
+offset_left = -699.0
+offset_top = 503.0
+offset_right = -659.0
+offset_bottom = 543.0
 action_name = "crouch"
 
 [node name="Key_Show_Crouch2" parent="Instructions" instance=ExtResource("21_uf8hr")]
@@ -490,13 +546,18 @@ position = Vector2(-394, 601.00006)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("24_jn63p")
 
+[node name="LeftStickDown" type="Sprite2D" parent="Instructions"]
+position = Vector2(-744.99994, 530)
+scale = Vector2(0.27148426, 0.27148426)
+texture = ExtResource("28_o0ro1")
+
 [node name="Tutorial" type="Node2D" parent="."]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Tutorial"]
 position = Vector2(198, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D2"]
-position = Vector2(-938, 593)
+position = Vector2(-938.375, 593)
 shape = SubResource("RectangleShape2D_y7471")
 
 [node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D2/CollisionShape2D"]
@@ -576,9 +637,9 @@ shape = SubResource("RectangleShape2D_3juip")
 
 [node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D3/CollisionShape2D"]
 texture_filter = 1
-offset_left = -12.5
+offset_left = -12.125
 offset_top = -47.539063
-offset_right = 11.204645
+offset_right = 11.579645
 offset_bottom = 49.0
 texture = ExtResource("22_y7471")
 expand_mode = 1

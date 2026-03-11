@@ -27,6 +27,9 @@ signal health_changed(health: float)
 @export_group("player_Colision")
 @export var idle_collider:CollisionShape2D
 
+@onready var top_ray:RayCast2D=$top_ray
+@onready var bottom_ray:RayCast2D=$bottom_ray
+
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
 var _dash_particles: GPUParticles2D
@@ -197,6 +200,7 @@ func _physics_process(delta: float) -> void:
 				if jumps_left == MAX_JUMPS:
 					jumps_left -= 1
 
+	_update_wall_rays()
 	_apply_gravity(delta)
 	_handle_jump()
 	_handle_movement(delta)
@@ -234,18 +238,37 @@ func _end_slide() -> void:
 	sliding = false
 
 
+func _has_headroom() -> bool:
+	var space_state = get_world_2d().direct_space_state
+
+	var params := PhysicsRayQueryParameters2D.create(
+		global_position,
+		global_position + Vector2.UP * 32
+	)
+
+	params.exclude = [self]
+
+	var result = space_state.intersect_ray(params)
+
+	return result.is_empty()
+	
 func _end_crouch() -> void:
-	if (is_on_ceiling()):
+	if not _has_headroom():
 		return
+
 	crouching = false
 	sliding = false
 	set_collision_mask_value(2, true)
-	idle_collider.set_deferred("disabled",false)
+	idle_collider.set_deferred("disabled", false)
 
 
 
 # ─── Core movement ───────────────────────────────────────────────────────────
-
+func _update_wall_rays():
+	var dir = -1 if _anim.flip_h else 1
+	top_ray.target_position.x = 11 * dir
+	bottom_ray.target_position.x = 11 * dir
+	
 func _respawn_player(body: Node) -> void:
 	if is_dying or body != self:
 		return
@@ -258,11 +281,13 @@ func _apply_gravity(dt: float) -> void:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
 
-	if is_on_wall() and not is_on_floor() and velocity.y > 0 and not crouching:
-		var damp := 1.2 if dir_radial.y > 0 else 0.2
+	if _is_touching_wall_full() and not is_on_floor() and velocity.y > 0 and not crouching:
+		var damp := 3.2 if dir_radial.y > 0 else 1.2
 		velocity = Vector2.DOWN * _gravity * dt * damp
 		jumps_left = MAX_JUMPS
 
+func _is_touching_wall_full() -> bool:
+	return top_ray.is_colliding() and bottom_ray.is_colliding()
 
 func _handle_jump() -> void:
 	if _jump_buffer_timer > 0.0:
@@ -381,7 +406,7 @@ func _update_animation() -> void:
 		_anim.play("Slide")
 	elif crouching:
 		_anim.play("Crouch")
-	elif is_on_wall() and not is_on_floor():
+	elif _is_touching_wall_full() and not is_on_floor():
 		_anim.play("Wall")
 	elif not is_on_floor():
 		_anim.play("Jump")

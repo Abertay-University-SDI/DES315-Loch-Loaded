@@ -21,7 +21,6 @@ shader_parameter/rainbow = false
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_scale = 1.2
 shader_parameter/alpha = 1.0
-shader_parameter/crop_top = 193.9130092108675
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwvk4"]
 atlas = ExtResource("2_pwsgj")
@@ -961,7 +960,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Walk"
+animation = &"Wall"
 autoplay = "Idle"
 
 [node name="attack_area" type="Area2D" parent="."]
@@ -1056,3 +1055,11 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crane_detect"]
 position = Vector2(0, -47)
 shape = SubResource("CircleShape2D_kov73")
+
+[node name="bottom_ray" type="RayCast2D" parent="."]
+position = Vector2(0, -9)
+target_position = Vector2(11, 0)
+
+[node name="top_ray" type="RayCast2D" parent="."]
+position = Vector2(0, -37)
+target_position = Vector2(11, 0)

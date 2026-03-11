@@ -18,7 +18,7 @@ var rank
 var rankParts
 
 func _ready() -> void:
-	startTime = Time.get_ticks_msec() / 1000
+	startTime = Time.get_ticks_msec() / 1000.0
 	MenuMusic.stop()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	return	
 
 func endOfLevel():
-	endTime = Time.get_ticks_msec() / 1000
+	endTime = Time.get_ticks_msec() / 1000.0
 	for enemy in enemies.get_children():
 		totalEnemies = 5
 		if (enemy._get_dead()):
