@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2lm7h5fdg3gu"]
+
+[ext_resource type="Texture2D" uid="uid://mna46v4woi2w" path="res://Textures/UI/Brushes/6_point_star_brush.png" id="1_twjqf"]
+[ext_resource type="Script" uid="uid://d2wncuoght6fw" path="res://Code/ui/brush_button.gd" id="2_jp4jo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp4jo"]
+bg_color = Color(0, 0, 0, 0.42000002)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38928655, 0.3892867, 0.38928637, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="TextureButton" type="TextureButton"]
+z_index = 765
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_twjqf")
+script = ExtResource("2_jp4jo")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jp4jo")
