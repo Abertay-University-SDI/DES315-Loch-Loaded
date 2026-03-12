@@ -70,7 +70,7 @@ func _input(event):
 				if abs(event.axis_value) < 0.5:
 					return
 			
-			InputMap.action_erase_event(action_to_remap, event)
+			InputMap.action_erase_events(action_to_remap)
 			InputMap.action_add_event(action_to_remap, event)
 			_update_action_list(remapping_button, event)
 			save_settings_to_file()

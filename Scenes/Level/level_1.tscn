@@ -715,13 +715,13 @@ position = Vector2(-200, 622)
 position = Vector2(-48, 662)
 
 [node name="Label" parent="." instance=ExtResource("33_3a08j")]
-offset_left = 495.0
-offset_top = 350.0
-offset_right = 563.0
-offset_bottom = 391.0
+offset_left = 440.0
+offset_top = 335.0
+offset_right = 500.0
+offset_bottom = 404.0
 
 [node name="Label3" parent="." instance=ExtResource("33_3a08j")]
-offset_left = 4392.0
-offset_top = 326.0
-offset_right = 4460.0
-offset_bottom = 367.0
+offset_left = 4220.0
+offset_top = 334.0
+offset_right = 4279.0
+offset_bottom = 401.0

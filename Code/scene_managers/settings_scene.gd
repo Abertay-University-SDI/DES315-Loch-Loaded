@@ -93,10 +93,11 @@ func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
 
 func _on_fim_grain_toggled(toggled_on: bool) -> void:
 	filmGrain = toggled_on
-	if (filmGrain):
-		filmGrainTextRect.show()
-	else:
-		filmGrainTextRect.hide()
+	if (filmGrainTextRect):
+		if (filmGrain):
+			filmGrainTextRect.show()
+		else:
+			filmGrainTextRect.hide()
 
 func _on_back_button_pressed() -> void:
 	save_settings_to_file()

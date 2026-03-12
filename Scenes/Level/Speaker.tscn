@@ -1,21 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd6nqucy3hgsc"]
+[gd_scene load_steps=4 format=3 uid="uid://dd6nqucy3hgsc"]
 
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_g7cm4"]
+[ext_resource type="Texture2D" uid="uid://bfutlwq28n868" path="res://Textures/Decorations/pixil-frame-0.png" id="2_hwaej"]
 [ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="2_u3g71"]
 
-[node name="Label" type="Label"]
-offset_left = 1207.0
-offset_top = 359.0
-offset_right = 1275.0
-offset_bottom = 400.0
+[node name="Label" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_g7cm4")
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
-text = "SPEAKER
-"
+texture = ExtResource("2_hwaej")
+expand_mode = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(32, 7)
+position = Vector2(31, 23)
 stream = ExtResource("2_u3g71")
 volume_db = -13.999
 autoplay = true
