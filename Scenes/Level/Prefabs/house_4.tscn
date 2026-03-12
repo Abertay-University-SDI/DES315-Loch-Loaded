@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyupga7ibsad2"]
+[gd_scene load_steps=5 format=3 uid="uid://dyupga7ibsad2"]
 
-[ext_resource type="Texture2D" uid="uid://b8h2xqfdyxw4l" path="res://Textures/Temp/Bace_shopfront_w-platform.png" id="1_c052e"]
+[ext_resource type="Texture2D" uid="uid://dt5lhuk62y0x7" path="res://Textures/Temp/Bace_building_kit_A.png" id="1_c052e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2ot6"]
 atlas = ExtResource("1_c052e")
-region = Rect2(251, 1404, 846, 596)
+region = Rect2(1150, 1413, 716, 582)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cmo8"]
 size = Vector2(300, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c052e"]
+atlas = ExtResource("1_c052e")
+region = Rect2(1762, 745, 183, 349)
 
 [node name="House_4_0" type="Node2D"]
 
@@ -29,3 +33,8 @@ position = Vector2(-2.6645353e-14, 59.63052)
 scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_6cmo8")
 one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -38)
+scale = Vector2(0.209607, 0.209607)
+texture = SubResource("AtlasTexture_c052e")
