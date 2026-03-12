@@ -1,7 +1,7 @@
 [gd_scene load_steps=82 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
-[ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
+[ext_resource type="Shader" path="res://Code/shaders/player.gdshader" id="2_kov73"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
 [ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
 [ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]

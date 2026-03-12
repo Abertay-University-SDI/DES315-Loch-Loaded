@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rtjn4x5v057u"]
 
-[ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_ee6dt"]
+[ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_ee6dt"]
 
 [node name="InputButton" type="Button"]
 custom_minimum_size = Vector2(0, 18)

@@ -16,9 +16,10 @@ var sfxValue = 1
 @export var sfx_slider:HSlider
 @export var music_slider:HSlider
 
+@export var filmGrainTextRect: TextureRect
+
 var screenShake
-
-
+var filmGrain
 
 func _ready() -> void:
 	load_settings_from_file()
@@ -48,6 +49,8 @@ func load_settings_from_file():
 			next = 3
 		if msg == "screenShake":
 			next = 4
+		if msg == "filmGrain":
+			next = 5
 		if next == 1:
 			masterValue = msg.to_float()
 		if next == 2:
@@ -56,8 +59,10 @@ func load_settings_from_file():
 			sfxValue = msg.to_float()
 		if next == 4:
 			screenShake = msg
+		if next == 5:
+			filmGrain = msg
 	return
-	
+
 func save_settings_to_file():
 	var file = FileAccess.open(SAVED_PATH, FileAccess.WRITE)
 	file.store_line("masterValue")
@@ -68,6 +73,8 @@ func save_settings_to_file():
 	file.store_line(str(sfxValue).pad_decimals(2))
 	file.store_line("screenShake")
 	file.store_line(str(screenShake))
+	file.store_line("filmGrain")
+	file.store_line(str(filmGrain))
 
 func _on_master_slider_value_changed(sliderValue: float) -> void:
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(sliderValue))
@@ -82,13 +89,19 @@ func _on_sound_effect_slider_value_changed(sliderValue: float) -> void:
 	sfxValue = sliderValue
 
 func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
-	screenShake = toggled_on;
+	screenShake = toggled_on
+
+func _on_fim_grain_toggled(toggled_on: bool) -> void:
+	filmGrain = toggled_on
+	if (filmGrain):
+		filmGrainTextRect.show()
+	else:
+		filmGrainTextRect.hide()
 
 func _on_back_button_pressed() -> void:
 	save_settings_to_file()
 	hide();
 	get_tree().get_nodes_in_group("current_ui").back().show()
-
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	Global.setColorBlindMode(index)
@@ -96,7 +109,6 @@ func _on_color_blind_list_item_selected(index: int) -> void:
 func _on_controlls_button_toggled(_toggled_on: bool) -> void:
 	# show controlls, have ability to change controlls
 	return
-
 
 func _on_visibility_changed() -> void:
 	if(visible):

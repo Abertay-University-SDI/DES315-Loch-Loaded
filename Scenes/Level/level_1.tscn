@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=44 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="28_hxng5"]
 [ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_o0ro1"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="31_0emyc"]
+[ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_3a08j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("9_nswyt")
@@ -52,7 +53,7 @@ size = Vector2(7108, 913)
 size = Vector2(253, 887)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(6907, 20)
+size = Vector2(7099, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
 size = Vector2(143, 25)
@@ -111,8 +112,9 @@ world = NodePath("../..")
 [node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
 visible = false
 
-[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("3_ia3c5")]
+[node name="SettingsScene" parent="CanvasLayer" node_paths=PackedStringArray("filmGrainTextRect") instance=ExtResource("3_ia3c5")]
 visible = false
+filmGrainTextRect = NodePath("../TextureRect")
 
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("5_hnohd")]
 visible = false
@@ -334,7 +336,7 @@ position = Vector2(416, 699)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2215.5, 708)
+position = Vector2(2311.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
@@ -711,3 +713,15 @@ position = Vector2(-200, 622)
 
 [node name="Charger3" parent="Enemies" instance=ExtResource("28_hxng5")]
 position = Vector2(-48, 662)
+
+[node name="Label" parent="." instance=ExtResource("33_3a08j")]
+offset_left = 495.0
+offset_top = 350.0
+offset_right = 563.0
+offset_bottom = 391.0
+
+[node name="Label3" parent="." instance=ExtResource("33_3a08j")]
+offset_left = 4392.0
+offset_top = 326.0
+offset_right = 4460.0
+offset_bottom = 367.0
