@@ -101,7 +101,7 @@ func load_settings_from_file():
 		if config.has_section_key("input", action):
 			var event = config.get_value("input", action)
 			if event is InputEvent:
-				InputMap.action_erase_events(action)
+				InputMap.action_erase_event(action, event)
 				InputMap.action_add_event(action, event)
 	
 func save_settings_to_file():
