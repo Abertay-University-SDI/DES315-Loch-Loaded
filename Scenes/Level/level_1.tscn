@@ -365,6 +365,9 @@ position = Vector2(-172, 701)
 [node name="Lamp_4" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(-1, 701)
 
+[node name="Lamp_21" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(326, 577)
+
 [node name="Lamp_5" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(506, 701)
 
@@ -389,11 +392,26 @@ position = Vector2(3286, 696)
 [node name="Lamp_12" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(4570, 699)
 
+[node name="Lamp_18" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(3138, 270)
+
+[node name="Lamp_19" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(809, 403)
+
+[node name="Lamp_20" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(1182, 402)
+
 [node name="Lamp_13" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(4852, 700)
 
 [node name="Lamp_14" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(5374, 700)
+
+[node name="Lamp_16" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(5352, 282)
+
+[node name="Lamp_17" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(5421, 354)
 
 [node name="interactables" type="Node2D" parent="."]
 
@@ -430,13 +448,13 @@ position = Vector2(4884, 524)
 [node name="Spray Spots" type="Node2D" parent="."]
 
 [node name="Spray Spot" parent="Spray Spots" instance=ExtResource("7_y7471")]
-position = Vector2(5284, 333)
+position = Vector2(5265, 333)
 
 [node name="Spray Spot2" parent="Spray Spots" instance=ExtResource("7_y7471")]
-position = Vector2(5516, 174)
+position = Vector2(5514, 156)
 
 [node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("7_y7471")]
-position = Vector2(3286, 136)
+position = Vector2(3287, 122)
 
 [node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("7_y7471")]
 position = Vector2(902, 331)
@@ -704,10 +722,10 @@ position = Vector2(137, 500)
 position = Vector2(-34, 570)
 
 [node name="Charger" parent="Enemies" instance=ExtResource("28_hxng5")]
-position = Vector2(-516, 659)
+position = Vector2(1543, 649)
 
 [node name="Charger2" parent="Enemies" instance=ExtResource("28_hxng5")]
-position = Vector2(-200, 622)
+position = Vector2(4680, 595)
 
 [node name="Charger3" parent="Enemies" instance=ExtResource("28_hxng5")]
-position = Vector2(-48, 662)
+position = Vector2(2547, 549)
