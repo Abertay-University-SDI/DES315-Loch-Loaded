@@ -186,7 +186,7 @@ level_end_area = NodePath("../PlayArea/Level_Complete_Area")
 levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
-position = Vector2(410, 393)
+position = Vector2(410, 405)
 dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="Buildings" type="Node2D" parent="."]
@@ -367,7 +367,7 @@ position = Vector2(-172, 701)
 position = Vector2(-1, 701)
 
 [node name="Lamp_21" parent="Lights" instance=ExtResource("31_0emyc")]
-position = Vector2(326, 577)
+position = Vector2(326, 580)
 
 [node name="Lamp_5" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(506, 701)
@@ -721,6 +721,30 @@ position = Vector2(137, 500)
 
 [node name="Flybot2" parent="Enemies" instance=ExtResource("19_qs4fp")]
 position = Vector2(-34, 570)
+
+[node name="Flybot3" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(562, 537)
+
+[node name="Flybot4" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(1066, 432)
+
+[node name="Flybot5" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(1471, 459)
+
+[node name="Flybot6" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(2014, 464)
+
+[node name="Flybot7" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(2372, 468)
+
+[node name="Flybot8" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(3179, 489)
+
+[node name="Flybot9" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(4042, 457)
+
+[node name="Flybot10" parent="Enemies" instance=ExtResource("19_qs4fp")]
+position = Vector2(4042, 457)
 
 [node name="Charger" parent="Enemies" instance=ExtResource("28_hxng5")]
 position = Vector2(1543, 649)

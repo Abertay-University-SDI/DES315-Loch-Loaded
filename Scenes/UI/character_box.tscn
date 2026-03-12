@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://btw4f17p4lc4o"]
+[gd_scene load_steps=4 format=3 uid="uid://btw4f17p4lc4o"]
 
 [ext_resource type="Texture2D" uid="uid://dhxs68arsh0a1" path="res://Textures/UI/dialog.png" id="1_55al6"]
-[ext_resource type="Texture2D" uid="uid://cwhnuegernjql" path="res://Textures/UI/surfer_dude_temp.png" id="2_pdjae"]
+[ext_resource type="Texture2D" uid="uid://jyku2cwoc3q8" path="res://Textures/Enemies/npc-yoyo3.png" id="2_55al6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdjae"]
+atlas = ExtResource("2_55al6")
+region = Rect2(2224, 1285, 552, 555)
 
 [node name="character_box" type="NinePatchRect"]
 offset_left = 6.0
@@ -26,9 +30,8 @@ theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 9
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_pdjae")
-stretch_mode = 4
+texture = SubResource("AtlasTexture_pdjae")
+expand_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
