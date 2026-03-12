@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=45 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="16_lrh7k"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="16_y7471"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
+[ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Temp/Floor_ShouldBeSeamless_Ihope.png" id="21_3a08j"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="21_uf8hr"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="22_eqj4t"]
 [ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="22_y7471"]
@@ -53,6 +54,10 @@ size = Vector2(253, 887)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(6907, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a08j"]
+atlas = ExtResource("21_3a08j")
+region = Rect2(0, 1641, 2048, 407)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
 size = Vector2(143, 25)
@@ -129,12 +134,11 @@ texture = ExtResource("10_dujba")
 script = ExtResource("11_dujba")
 
 [node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_unuuj")]
-visible = false
+z_index = 55
 mouse_filter = 2
 player = NodePath("../../Player")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_qs4fp")
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,6 +151,11 @@ script = ExtResource("7_unuuj")
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
 offset = Vector2(0, 358.69)
 transform = Transform2D(2, 0, 0, 2, 0, 358.69)
+
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
+z_index = 165
+position = Vector2(410, 405)
+dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="PlayArea" type="Area2D" parent="."]
 
@@ -183,10 +192,6 @@ play_area_shape = NodePath("../PlayArea/CollisionShape2D")
 spawn = NodePath("../PlayArea/Spawn")
 level_end_area = NodePath("../PlayArea/Level_Complete_Area")
 levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
-
-[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
-position = Vector2(410, 405)
-dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="Buildings" type="Node2D" parent="."]
 
@@ -337,13 +342,16 @@ position = Vector2(416, 699)
 position = Vector2(2215.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -1238.0
-offset_top = 698.0
-offset_right = 5849.9277
-offset_bottom = 720.0
+[node name="ColorRect" type="TextureRect" parent="StaticBody2D"]
+self_modulate = Color(4.45484, 4.45484, 4.45484, 1)
+offset_left = -1239.0
+offset_top = 690.0
+offset_right = 5404.747
+offset_bottom = 809.0
 scale = Vector2(1.0018443, 1)
-color = Color(0.288518, 0.28851798, 0.28851798, 1)
+texture = SubResource("AtlasTexture_3a08j")
+expand_mode = 2
+stretch_mode = 1
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -351,7 +359,7 @@ color = Color(0.288518, 0.28851798, 0.28851798, 1)
 position = Vector2(-1186, 701)
 
 [node name="Lamp_1" parent="Lights" instance=ExtResource("31_0emyc")]
-position = Vector2(-862, 701)
+position = Vector2(-862, 699)
 
 [node name="Lamp_15" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(-782, 580)
@@ -397,6 +405,9 @@ position = Vector2(3138, 270)
 
 [node name="Lamp_19" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(809, 403)
+
+[node name="Lamp_22" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(381, 406)
 
 [node name="Lamp_20" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(1182, 402)
