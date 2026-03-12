@@ -118,6 +118,7 @@ visible = false
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_hxng5")
 anchors_preset = 15
 anchor_right = 1.0
@@ -305,7 +306,7 @@ position = Vector2(3119, 275)
 position = Vector2(4147, 322)
 
 [node name="Beam_8" parent="Buildings" instance=ExtResource("15_uf8hr")]
-position = Vector2(4465, 451)
+position = Vector2(4469, 461)
 
 [node name="Beam_9" parent="Buildings" instance=ExtResource("15_uf8hr")]
 position = Vector2(5306, 287)
