@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=46 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -83,7 +83,7 @@ endScene = NodePath("CanvasLayer/LevelEndScene")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 z_index = 4096
-color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+color = Color(0.2520276, 0.25202766, 0.25202757, 1)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -271,22 +271,22 @@ position = Vector2(3174, 699)
 position = Vector2(3643, 697)
 
 [node name="House_4_13" parent="Buildings" instance=ExtResource("16_lrh7k")]
-position = Vector2(3973, 697)
+position = Vector2(3972, 700)
 
 [node name="House_4_14" parent="Buildings" instance=ExtResource("16_lrh7k")]
-position = Vector2(4122, 697)
+position = Vector2(4122, 703)
 
 [node name="House_4_15" parent="Buildings" instance=ExtResource("16_lrh7k")]
 position = Vector2(4295, 697)
 
 [node name="House_4_16" parent="Buildings" instance=ExtResource("16_lrh7k")]
-position = Vector2(4462, 697)
+position = Vector2(4462, 702)
 
 [node name="House_4_17" parent="Buildings" instance=ExtResource("16_lrh7k")]
-position = Vector2(4945, 697)
+position = Vector2(4944, 700)
 
 [node name="House_4_18" parent="Buildings" instance=ExtResource("16_lrh7k")]
-position = Vector2(5095, 697)
+position = Vector2(5095, 700)
 
 [node name="Beam_0" parent="Buildings" instance=ExtResource("15_uf8hr")]
 position = Vector2(110, 527)
@@ -349,7 +349,7 @@ shape = SubResource("RectangleShape2D_hnohd")
 self_modulate = Color(4.45484, 4.45484, 4.45484, 1)
 offset_left = -1239.0
 offset_top = 690.0
-offset_right = 5404.747
+offset_right = 5889.8525
 offset_bottom = 809.0
 scale = Vector2(1.0018443, 1)
 texture = SubResource("AtlasTexture_3a08j")
@@ -399,6 +399,12 @@ position = Vector2(2303, 698)
 
 [node name="Lamp_11" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(3286, 696)
+
+[node name="Lamp_23" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(2943, 407)
+
+[node name="Lamp_24" parent="Lights" instance=ExtResource("31_0emyc")]
+position = Vector2(3579, 409)
 
 [node name="Lamp_12" parent="Lights" instance=ExtResource("31_0emyc")]
 position = Vector2(4570, 699)
@@ -566,7 +572,8 @@ offset_left = -458.0
 offset_top = 548.0
 offset_right = -198.0
 offset_bottom = 602.0
-text = "You can Dash To Hurt that Enemy"
+text = "Dash To Hurt that Enemy"
+horizontal_alignment = 1
 
 [node name="LeftStickRight" type="Sprite2D" parent="Instructions"]
 position = Vector2(-1119.75, 560.25)
@@ -574,7 +581,13 @@ scale = Vector2(0.27148426, 0.27148426)
 texture = ExtResource("23_3juip")
 
 [node name="PadkeyDown" type="Sprite2D" parent="Instructions"]
-position = Vector2(-394, 601.00006)
+position = Vector2(-981.99994, 566)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("24_jn63p")
+
+[node name="PadkeyDown2" type="Sprite2D" parent="Instructions"]
+position = Vector2(-398.00006, 609.00006)
+rotation = 1.5707964
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("24_jn63p")
 
@@ -766,13 +779,14 @@ position = Vector2(1543, 649)
 position = Vector2(4680, 595)
 
 [node name="Charger3" parent="Enemies" instance=ExtResource("28_hxng5")]
-position = Vector2(-48, 662)
+position = Vector2(2547, 601)
 
 [node name="Label" parent="." instance=ExtResource("33_3a08j")]
-offset_left = 440.0
-offset_top = 335.0
-offset_right = 500.0
-offset_bottom = 404.0
+texture_filter = 1
+offset_left = 456.0
+offset_top = 367.05
+offset_right = 487.0
+offset_bottom = 402.7
 
 [node name="Label3" parent="." instance=ExtResource("33_3a08j")]
 offset_left = 4220.0
