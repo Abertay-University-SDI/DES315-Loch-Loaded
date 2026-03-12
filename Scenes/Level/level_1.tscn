@@ -197,7 +197,7 @@ position = Vector2(742, 699)
 position = Vector2(902, 699)
 
 [node name="House_5_3" parent="Buildings" instance=ExtResource("13_qs4fp")]
-position = Vector2(1225, 699)
+position = Vector2(1224, 699)
 
 [node name="House_5_4" parent="Buildings" instance=ExtResource("13_qs4fp")]
 position = Vector2(1856, 697)
@@ -326,7 +326,7 @@ position = Vector2(3986, 361)
 position = Vector2(5517, 238)
 
 [node name="Beam_1_1" parent="Buildings" instance=ExtResource("16_y7471")]
-position = Vector2(2676, 436)
+position = Vector2(2678, 436)
 
 [node name="House_5_0" parent="Buildings" instance=ExtResource("13_qs4fp")]
 position = Vector2(416, 699)

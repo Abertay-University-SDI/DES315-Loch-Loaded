@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://uhrg7odt8owd"]
 
-[ext_resource type="Texture2D" uid="uid://chuf0w3u7xkgm" path="res://Textures/Temp/I-Beam-v1.png" id="1_waq1q"]
+[ext_resource type="Texture2D" uid="uid://brnultdju01jn" path="res://Textures/Temp/Others_kit_WIP.png" id="1_waq1q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17osn"]
 atlas = ExtResource("1_waq1q")
-region = Rect2(117, 247, 526, 72)
+region = Rect2(106, 57, 530, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8p8x5"]
 size = Vector2(218.9599, 24.291965)
