@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8226o7n8ve1f"]
+[gd_scene load_steps=10 format=3 uid="uid://b8226o7n8ve1f"]
 
-[ext_resource type="Texture2D" uid="uid://dt5lhuk62y0x7" path="res://Textures/Temp/Bace_building_kit_A.png" id="1_omu0q"]
+[ext_resource type="Texture2D" uid="uid://cnoxaon20rhbf" path="res://Textures/Temp/Bace_building_kit_A.png" id="1_omu0q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdj6p"]
 atlas = ExtResource("1_omu0q")
@@ -8,6 +8,26 @@ region = Rect2(308, 571, 727, 1429)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wgt2"]
 size = Vector2(300, 604.53046)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00d6n"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(1090, 413, 66, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8dim"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(296, 248, 758, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5iph"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(1486, 150, 133, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrg0e"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(1296, 150, 133, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wgt2"]
+atlas = ExtResource("1_omu0q")
+region = Rect2(282, 378, 777, 91)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_omu0q"]
 atlas = ExtResource("1_omu0q")
@@ -31,20 +51,72 @@ position = Vector2(-2.842171e-14, 168.61047)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_5wgt2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BaceShopfrontWPlatform"]
-position = Vector2(157.52084, -69.458435)
+[node name="Sprite2D15" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(-376.89572, -455.89575)
+scale = Vector2(0.99999964, 0.99999964)
+
+[node name="Sprite2D14" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(386.43744, -455.89575)
+scale = Vector2(0.9999997, 0.9999997)
+texture = SubResource("AtlasTexture_00d6n")
+flip_h = true
+
+[node name="Sprite2D13" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(386.4375, -66.79169)
+scale = Vector2(0.9999997, 0.9999997)
+texture = SubResource("AtlasTexture_00d6n")
+flip_h = true
+
+[node name="Sprite2D12" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(-372.12488, -66.79169)
+scale = Vector2(0.9999997, 0.9999997)
+texture = SubResource("AtlasTexture_00d6n")
+
+[node name="Sprite2D11" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(-376.89578, -455.89575)
+scale = Vector2(0.9999998, 0.9999998)
+texture = SubResource("AtlasTexture_00d6n")
+
+[node name="Sprite2D10" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(3.3898804e-14, 124.041626)
+texture = SubResource("AtlasTexture_w8dim")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(152.66666, -457.99994)
+texture = SubResource("AtlasTexture_o5iph")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(-152.66666, -457.9999)
+texture = SubResource("AtlasTexture_jrg0e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(157.43745, -76.333305)
+texture = SubResource("AtlasTexture_jrg0e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(-157.43747, -76.33331)
 scale = Vector2(0.99999994, 0.99999994)
-texture = SubResource("AtlasTexture_omu0q")
+texture = SubResource("AtlasTexture_jrg0e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(3.3898804e-14, -686.9999)
+texture = SubResource("AtlasTexture_5wgt2")
 
 [node name="Sprite2D4" type="Sprite2D" parent="BaceShopfrontWPlatform"]
-position = Vector2(-147.81247, -69.45836)
+position = Vector2(-152.66666, -71.56248)
 scale = Vector2(0.99999994, 0.99999994)
-texture = SubResource("AtlasTexture_omu0q")
-
-[node name="Sprite2D" type="Sprite2D" parent="BaceShopfrontWPlatform"]
-position = Vector2(157.52083, -412.9583)
 texture = SubResource("AtlasTexture_omu0q")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BaceShopfrontWPlatform"]
-position = Vector2(-152.5833, -412.9583)
+position = Vector2(-152.5833, -455.8958)
+texture = SubResource("AtlasTexture_omu0q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(157.52081, -74.229126)
+scale = Vector2(0.9999998, 0.9999998)
+texture = SubResource("AtlasTexture_omu0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="BaceShopfrontWPlatform"]
+position = Vector2(157.52081, -455.89575)
+scale = Vector2(0.99999994, 0.99999994)
 texture = SubResource("AtlasTexture_omu0q")

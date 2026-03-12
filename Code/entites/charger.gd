@@ -33,7 +33,7 @@ func _hurt_player(body: Node) -> void:
 	if body is not Player or _hit_cooldown > 0.0:
 		return
 	_hit_cooldown = HIT_COOLDOWN
-	(body as Player).health_value -= 40 if _airborne else 15
+	(body as Player).health_value -= 25 if _airborne else 15
 
 
 func _on_process(delta: float) -> void:
