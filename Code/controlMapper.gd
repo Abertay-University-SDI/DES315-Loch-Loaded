@@ -70,7 +70,7 @@ func _input(event):
 				if abs(event.axis_value) < 0.5:
 					return
 			
-			InputMap.action_erase_events(action_to_remap)
+			InputMap.action_erase_event(action_to_remap, event)
 			InputMap.action_add_event(action_to_remap, event)
 			_update_action_list(remapping_button, event)
 			save_settings_to_file()
@@ -89,6 +89,7 @@ func _update_action_list(button, event):
 func _on_reset_button_pressed():
 	InputMap.load_from_project_settings()
 	_create_action_list()
+	save_settings_to_file()
 
 func load_settings_from_file():
 	var config = ConfigFile.new()
