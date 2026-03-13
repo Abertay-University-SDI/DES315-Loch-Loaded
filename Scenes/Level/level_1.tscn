@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=46 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -756,25 +756,19 @@ position = Vector2(3179, 489)
 [node name="Flybot9" parent="Enemies" instance=ExtResource("19_qs4fp")]
 position = Vector2(4042, 457)
 
-[node name="Flybot10" parent="Enemies" instance=ExtResource("19_qs4fp")]
-position = Vector2(4042, 457)
-
 [node name="Charger" parent="Enemies" instance=ExtResource("28_hxng5")]
 position = Vector2(1543, 649)
 
 [node name="Charger2" parent="Enemies" instance=ExtResource("28_hxng5")]
 position = Vector2(4680, 595)
 
-[node name="Charger3" parent="Enemies" instance=ExtResource("28_hxng5")]
-position = Vector2(-48, 662)
-
-[node name="Label" parent="." instance=ExtResource("33_3a08j")]
+[node name="Speaker" parent="." instance=ExtResource("33_3a08j")]
 offset_left = 440.0
 offset_top = 335.0
 offset_right = 500.0
 offset_bottom = 404.0
 
-[node name="Label3" parent="." instance=ExtResource("33_3a08j")]
+[node name="Speaker2" parent="." instance=ExtResource("33_3a08j")]
 offset_left = 4220.0
 offset_top = 334.0
 offset_right = 4279.0

@@ -168,7 +168,7 @@ func _input(event: InputEvent) -> void:
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
-		_try_start_crouch_or_slide()
+		_try_start_crouch_or_slide(event)
 
 	if event.is_action_released("crouch"):
 		_end_crouch()
@@ -217,13 +217,18 @@ func _physics_process(delta: float) -> void:
 
 # ─── Crouch / Slide helpers ──────────────────────────────────────────────────
 
-func _try_start_crouch_or_slide() -> void:
+func _try_start_crouch_or_slide(event: InputEvent) -> void:
 	var speed := absf(velocity.x)
 	if speed > 60.0:
 		_start_slide()
 	else:
 		crouching = true
-	set_collision_mask_value(2, false)
+	if (event is InputEventJoypadMotion):
+		var input_vec: Vector2 = Vector2( 
+			Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 
+			Input.get_joy_axis(0, JOY_AXIS_LEFT_Y))
+		if (rad_to_deg(input_vec.angle()) > 89 and rad_to_deg(input_vec.angle()) < 91):
+			set_collision_mask_value(2, false)
 	idle_collider.set_deferred("disabled",true)
 
 
