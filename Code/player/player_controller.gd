@@ -293,9 +293,11 @@ func _apply_gravity(dt: float) -> void:
 func _is_touching_wall_full() -> bool:
 	return top_ray.is_colliding() and bottom_ray.is_colliding()
 
+
 func _handle_jump() -> void:
 	if _jump_buffer_timer > 0.0:
 		_jump_buffer_timer -= get_physics_process_delta_time()
+
 
 	var can_jump := (is_on_floor() or _coyote_timer > 0.0) and jumps_left > 0
 	if not (_jump_buffer_timer > 0.0 and can_jump) or dashing:
@@ -366,10 +368,14 @@ func _handle_movement(dt: float) -> void:
 func _start_dash() -> void:
 	dashing = true
 	dash_timer = DASH_COOLDOWN
+	var dir = Vector2(0,0)
 
 	_end_crouch()
 
-	var dir := Vector2(-1 if _anim.flip_h else 1, 0)
+	if (velocity.x == 0 && not is_on_floor()):
+		dir = Vector2(0, -1)
+	else:
+		dir = Vector2(-1 if _anim.flip_h else 1, 0)
 	velocity = dir * 400.0
 
 	_dash_particles.emitting = true
