@@ -267,7 +267,6 @@ func _end_crouch() -> void:
 	idle_collider.set_deferred("disabled", false)
 
 
-
 # ─── Core movement ───────────────────────────────────────────────────────────
 func _update_wall_rays():
 	var dir = -1 if _anim.flip_h else 1
