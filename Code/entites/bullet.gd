@@ -6,12 +6,14 @@ extends CharacterBody2D
 @export var lifetime:float = 5.0
 @export var damage: int = 5
 
+@onready var sprite:Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	hurt_box.body_entered.connect(body_hit)
 
 func launch(dir: Vector2, speed: float) -> void:
 	velocity = dir * speed
-	rotation = dir.angle() + PI / 2.0
+	##rotation = dir.angle() + PI / 2.0
 
 func body_hit(_body:Node2D):
 	if _body.get_parent() is Flybot:
@@ -24,6 +26,9 @@ func body_hit(_body:Node2D):
 
 func _process(delta: float) -> void:
 	lifetime-=delta
+	var mat = sprite.material as ShaderMaterial
+	mat.set_shader_parameter("Velocity",velocity)
+	mat.set_shader_parameter("World Pos",global_position)
 	if lifetime < 0:
 		queue_free()
 

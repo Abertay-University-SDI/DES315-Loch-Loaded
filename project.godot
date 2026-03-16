@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Radical Ramapge"
 run/main_scene="uid://bbw2scq626wau"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.72671556, 0.8490468, 1)
 boot_splash/image="uid://bvokxk83ohi37"
 config/icon="uid://bvokxk83ohi37"
@@ -133,3 +133,7 @@ crouch={
 2d_physics/layer_3="Zip"
 2d_physics/layer_4="enemies"
 2d_physics/layer_10="Bullets"
+
+[rendering]
+
+viewport/hdr_2d=true

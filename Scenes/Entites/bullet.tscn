@@ -9,12 +9,12 @@ radius = 7.071068
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j1ced"]
 shader = ExtResource("1_g3t08")
-shader_parameter/smear_length = 1.2570000597075
-shader_parameter/smear_samples = 32.0
-shader_parameter/smear_falloff = 3.486000141835
-shader_parameter/glow_intensity = 0.7250000344375
-shader_parameter/glow_radius = 0.0
-shader_parameter/glow_color = Color(1.6978991, 1.6978991, 1.6978991, 1)
+shader_parameter/Velocity = Vector2(-1.94, -0.055)
+shader_parameter/base_radius = 0.235
+shader_parameter/wave_strength = 0.745
+shader_parameter/wave_frequency = -38.58
+shader_parameter/glow_size = 0.665
+shader_parameter/world_pos = Vector2(0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0a5a3"]
 radius = 5.0
@@ -28,11 +28,12 @@ script = ExtResource("1_0a5a3")
 shape = SubResource("CircleShape2D_rsd25")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 texture_filter = 2
 material = SubResource("ShaderMaterial_j1ced")
-position = Vector2(0, 0.20185995)
-rotation = -3.1415927
-scale = Vector2(0.12209163, 0.20396228)
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(0.17187503, 0.17187503)
 texture = ExtResource("2_0a5a3")
 
 [node name="HurtBox" type="Area2D" parent="."]

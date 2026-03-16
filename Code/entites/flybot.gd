@@ -101,7 +101,9 @@ func _fire_bullet() -> void:
 	get_tree().current_scene.add_child(b)
 	b.global_position = _alive.global_position
 
-	var dir := (_player.global_position - _alive.global_position).normalized()
+
+	var player_torso = _player.global_position + Vector2(0.0,-16.0)
+	var dir := (player_torso - _alive.global_position).normalized()
 	if b.has_method("launch"):
 		b.launch(dir, bullet_speed)
 	else:
