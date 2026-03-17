@@ -26,7 +26,7 @@ uniform float glow_size = 0.04;
 		vec2 a = -dir * 0.5;
 		vec2 b =  dir * 0.5;
 
-		float dist_to_edge = pow((1.0-length(UV-0.5)),2);
+		float dist_to_edge = smoothstep(0.35,1.0,pow((1.0-length(UV-0.5)),3));
 	
 	vec2 pixel_pos_in_world = UV*TEXTURE_PIXEL_SIZE + world_pos;
 	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfo5pysus046l"]
+[gd_scene load_steps=13 format=3 uid="uid://dfo5pysus046l"]
 
 [ext_resource type="Script" uid="uid://di5mjprixbj33" path="res://Code/entites/bullet.gd" id="1_0a5a3"]
 [ext_resource type="Shader" uid="uid://cq76lgm4fb8d7" path="res://Code/shaders/bullet_shader.gdshader" id="1_g3t08"]
 [ext_resource type="Texture2D" uid="uid://gwm8f2k8tvyu" path="res://Textures/effects/bullet.png" id="2_0a5a3"]
+[ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_uua8f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rsd25"]
 radius = 7.071068
@@ -19,7 +20,110 @@ shader_parameter/world_pos = Vector2(0, 0)
 [sub_resource type="CircleShape2D" id="CircleShape2D_0a5a3"]
 radius = 5.0
 
-[node name="RigidBody2D" type="CharacterBody2D"]
+[sub_resource type="Shader" id="Shader_rsd25"]
+code = "shader_type canvas_item;
+uniform float strength: hint_range(0.0, 0.1, 0.001) = 0.08;
+uniform vec2 center = vec2(0.5, 0.5);
+uniform float radius: hint_range(0.0, 1.0, 0.001) = 0.25;
+uniform float aberration: hint_range(0.0, 1.0, 0.001) = 0.425;
+uniform float width: hint_range(0.0, 0.1, 0.0001) = 0.04;
+uniform float feather: hint_range(0.0, 1.0, 0.001) = 0.135;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+    vec2 st = UV;
+    vec2 dist_center = st - center;
+
+    float mask = (1.0 - smoothstep(radius - feather, radius, length(dist_center)))
+               * smoothstep(radius - width - feather, radius - width, length(dist_center));
+
+    vec2 offset = normalize(dist_center) * strength * mask;
+
+    // Scale the UV-space offset into screen-space
+    vec2 screen_offset = offset * (1.0 / SCREEN_PIXEL_SIZE) * SCREEN_PIXEL_SIZE;
+    vec2 abber_vec = offset * aberration * mask;
+
+    // Use SCREEN_UV as the base, apply offsets in screen space
+    vec2 base_uv = SCREEN_UV - offset;
+    vec2 final_st = mix(SCREEN_UV, base_uv, mask);
+
+    vec4 red  = texture(SCREEN_TEXTURE, final_st + abber_vec);
+    vec4 blue = texture(SCREEN_TEXTURE, final_st - abber_vec);
+    vec4 ori  = texture(SCREEN_TEXTURE, final_st);
+
+    COLOR = vec4(red.r, ori.g, blue.b, 1.0)*3.0;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uua8f"]
+shader = SubResource("Shader_rsd25")
+shader_parameter/strength = 0.08
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.0
+shader_parameter/aberration = 0.425
+shader_parameter/width = 0.04
+shader_parameter/feather = 0.135
+
+[sub_resource type="Animation" id="Animation_j1ced"]
+resource_name = "Distort"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dist:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dist:material:shader_parameter/feather")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.135, 0.30000001425]
+}
+
+[sub_resource type="Animation" id="Animation_uua8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dist:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dist:material:shader_parameter/feather")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.135]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vl7ho"]
+_data = {
+&"Distort": SubResource("Animation_j1ced"),
+&"RESET": SubResource("Animation_uua8f")
+}
+
+[node name="Bullet" type="CharacterBody2D"]
 collision_layer = 512
 collision_mask = 512
 script = ExtResource("1_0a5a3")
@@ -41,3 +145,15 @@ texture = ExtResource("2_0a5a3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_0a5a3")
 debug_color = Color(0.9841493, 0.1169771, 0.1114401, 0.41960785)
+
+[node name="Dist" type="Sprite2D" parent="."]
+visible = false
+z_index = 221
+material = SubResource("ShaderMaterial_uua8f")
+scale = Vector2(40, 40)
+texture = ExtResource("5_uua8f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vl7ho")
+}
