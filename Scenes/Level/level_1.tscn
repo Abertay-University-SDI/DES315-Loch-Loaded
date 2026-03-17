@@ -113,6 +113,8 @@ bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 [node name="LevelEndScene" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("3_axxus")]
 visible = false
 world = NodePath("../..")
+itemText = "Yoyo unlocked"
+itemUseText = "after dashing an enemy press the yoy button to slam the enemy into the ground"
 
 [node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("2_lrh7k")]
 visible = false
@@ -188,7 +190,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene") instance=ExtResource("6_uf8hr")]
 z_index = 1
-position = Vector2(-1208, 698)
+position = Vector2(-1208, 696)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
