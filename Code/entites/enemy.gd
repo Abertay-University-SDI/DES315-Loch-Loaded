@@ -80,12 +80,12 @@ func _on_physics_process(_delta: float) -> void:
 
 # ─── Damage ───────────────────────────────────────────────────────────────────
 
-func take_hit(hit_dir: Vector2, hit_duration: float, force: float) -> void:
+func take_hit(hit_dir: Vector2, hit_duration: float, force: float, damage: int) -> void:
 	if immunity > 0.0 and not (hit_duration < 0.0):
 		return
 
 	immunity = hit_duration if hit_duration >= 0.0 else 1.0
-	_health -= 1
+	_health -= damage
 	_alive.velocity = hit_dir * force
 	_animation_player.play("take_hit")
 
@@ -93,14 +93,14 @@ func take_hit(hit_dir: Vector2, hit_duration: float, force: float) -> void:
 		_die(hit_dir, force)
 
 
-func take_dash(hit_dir: Vector2, hit_duration: float, force: float) -> void:
+func take_dash(hit_dir: Vector2, hit_duration: float, force: float, damage: int) -> void:
 	if immunity > 0.0:
 		return
 
 	immunity = hit_duration
 	_alive.collision_layer = 0
 	_alive.velocity = Vector2(0.0, -force)
-	_health -= 1
+	_health -= damage
 	_animation_player.play("take_hit")
 
 	if _health <= 0:

@@ -27,3 +27,4 @@ volume_db = -13.999
 autoplay = true
 attenuation = 2.828429
 bus = &"Music"
+parameters/looping = true

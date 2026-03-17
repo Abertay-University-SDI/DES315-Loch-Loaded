@@ -159,7 +159,7 @@ func _input(event: InputEvent) -> void:
 			var dir := (yoyo_enemy.position - position).normalized()
 			dir += Vector2.DOWN
 			YoYo_sfx.play()
-			yoyo_enemy.take_hit(-dir, -0.1, 100.0)
+			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
 		else:
 			# crane todo
 			_on_crane = true
@@ -479,7 +479,7 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
-	enemy.take_hit(dir, punching, 100.0)
+	enemy.take_hit(dir, punching, 100.0, 30)
 
 
 func _on_dash_body_hit(body: Node) -> void:
@@ -498,7 +498,7 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_timer = _yoyo_duration
 	_yoyo_returning = false
 
-	enemy.take_dash(Vector2.UP,dash_timer, 400.0)
+	enemy.take_dash(Vector2.UP,dash_timer, 400.0, 40)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
