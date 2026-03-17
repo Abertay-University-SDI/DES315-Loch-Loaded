@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://b3s5sf6ficot1"]
+[gd_scene load_steps=36 format=3 uid="uid://b3s5sf6ficot1"]
 
+[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_8ipbd"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="1_ps802"]
 [ext_resource type="PackedScene" uid="uid://0vjv73org0lq" path="res://Scenes/UI/LevelEnd.tscn" id="2_8ipbd"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="3_drrri"]
@@ -54,7 +55,11 @@ size = Vector2(7099, 20)
 atlas = ExtResource("20_wytcx")
 region = Rect2(0, 1641, 2048, 407)
 
-[node name="Level3" type="Node2D"]
+[node name="Level3" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
+script = ExtResource("1_8ipbd")
+enemies = NodePath("Enemies")
+billBoards = NodePath("Spray Spots")
+endScene = NodePath("CanvasLayer/LevelEndScene")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 z_index = 4096
@@ -79,15 +84,17 @@ size_flags_vertical = 8
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
-cam = NodePath("")
-bounds = NodePath("")
-bounds_shape = NodePath("")
+cam = NodePath("../../../Player/Camera2D")
+bounds = NodePath("../../../PlayArea")
+bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelEndScene" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("2_8ipbd")]
 visible = false
-world = NodePath("")
+world = NodePath("../..")
+itemText = "power glove ability unlocked"
+itemUseText = "TBD"
 
 [node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("3_drrri")]
 visible = false
@@ -114,7 +121,7 @@ script = ExtResource("8_2w2je")
 [node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("9_ierlt")]
 z_index = 55
 mouse_filter = 2
-player = NodePath("")
+player = NodePath("../../Player")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_xym2q")
@@ -130,10 +137,9 @@ script = ExtResource("11_vyjyd")
 offset = Vector2(0, 358.69)
 transform = Transform2D(2, 0, 0, 2, 0, 358.69)
 
-[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("13_hx2t3")]
+[node name="NPC" parent="." instance=ExtResource("13_hx2t3")]
 z_index = 165
 position = Vector2(410, 405)
-dialogbox = NodePath("")
 
 [node name="PlayArea" type="Area2D" parent="."]
 
@@ -165,11 +171,11 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 z_index = 1
 position = Vector2(-1208, 698)
 collision_mask = 3
-play_area = NodePath("")
-play_area_shape = NodePath("")
-spawn = NodePath("")
-level_end_area = NodePath("")
-levelEndScene = NodePath("")
+play_area = NodePath("../PlayArea")
+play_area_shape = NodePath("../PlayArea/CollisionShape2D")
+spawn = NodePath("../PlayArea/Spawn")
+level_end_area = NodePath("../PlayArea/Level_Complete_Area")
+levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
 
 [node name="Buildings" type="Node2D" parent="."]
 

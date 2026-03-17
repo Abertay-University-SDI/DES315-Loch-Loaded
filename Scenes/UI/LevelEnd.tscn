@@ -98,14 +98,17 @@ layout_mode = 2
 theme_override_constants/separation = -17
 
 [node name="Unlocked item" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container"]
+custom_minimum_size = Vector2(558, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 61
 text = "Mission complete"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="How to use" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container"]
+custom_minimum_size = Vector2(558, 0)
 layout_mode = 2
 size_flags_vertical = 6
 text = "enemies destroyed: xx / xx"
