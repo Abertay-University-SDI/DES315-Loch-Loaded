@@ -28,5 +28,5 @@ void fragment() {
     vec4 blue = texture(SCREEN_TEXTURE, final_st - abber_vec);
     vec4 ori  = texture(SCREEN_TEXTURE, final_st);
 
-    COLOR = vec4(red.r, ori.g, blue.b, 1.0)*3.0;
+    COLOR = vec4(red.r, ori.g, blue.b, 1.0)*2.1;
 }

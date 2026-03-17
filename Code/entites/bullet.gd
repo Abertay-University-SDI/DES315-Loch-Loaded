@@ -33,7 +33,7 @@ func body_hit(_body:Node2D):
 	if _body is Player:
 		var player_body = _body as Player
 		player_body.health_value -=damage
-		_die()
+	_die()
 
 func _process(delta: float) -> void:
 	lifetime-=delta

@@ -30,6 +30,8 @@ signal health_changed(health: float)
 @onready var top_ray:RayCast2D=$top_ray
 @onready var bottom_ray:RayCast2D=$bottom_ray
 
+@onready var anim_player:AnimationPlayer=$AnimationPlayer
+
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
 var _dash_particles: GPUParticles2D
@@ -42,7 +44,7 @@ const MAX_SPEED := 180.0
 const TIME_TO_MAX := 0.4
 const ACCEL := MAX_SPEED / TIME_TO_MAX
 const FRICTION := 600.0
-const JUMP_VELOCITY := -500.0
+const JUMP_VELOCITY := -400.0
 
 # --- Variable jump height ---
 const JUMP_CUT_MULTIPLIER := 0.4
@@ -50,11 +52,11 @@ const JUMP_CUT_MULTIPLIER := 0.4
 const MAX_HEALTH := 100.0
 var health_value := MAX_HEALTH
 
-const MAX_JUMPS := 1
+const MAX_JUMPS := 2
 var jumps_left := MAX_JUMPS
 
 # --- Coyote time ---
-const COYOTE_TIME := 0.12
+const COYOTE_TIME := 0.22
 var _coyote_timer := 0.0
 var _was_on_floor := false
 
@@ -299,7 +301,7 @@ func _handle_jump() -> void:
 		_jump_buffer_timer -= get_physics_process_delta_time()
 
 
-	var can_jump := (is_on_floor() or _coyote_timer > 0.0) and jumps_left > 0
+	var can_jump := (is_on_floor() or _coyote_timer > 0.0) or (jumps_left > 0 and jumps_left < MAX_JUMPS)
 	if not (_jump_buffer_timer > 0.0 and can_jump) or dashing:
 		return
 
@@ -410,6 +412,8 @@ func _update_animation() -> void:
 
 	var speed := absf(velocity.x)
 
+	anim_player.play("scale_normal")
+
 	if dashing:
 		_anim.play("Dash")
 	elif sliding:
@@ -425,7 +429,8 @@ func _update_animation() -> void:
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
-		_anim.play("Walk")
+		anim_player.play("scale_down")
+		_anim.play("Run")
 		if not footstep_sfx.playing and randf() < 0.2:
 			footstep_sfx.play()
 
