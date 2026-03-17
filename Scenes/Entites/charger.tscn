@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://2kui8xij1j7s"]
 
-[ext_resource type="Script" path="res://Code/entites/charger.gd" id="1_3ghnw"]
+[ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://bp38u32e51la6" path="res://Textures/Enemies/heavy-enemy.png" id="2_aanfd"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_mmf4r"]

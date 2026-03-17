@@ -27,6 +27,8 @@ var _hover_time:  float = 0.0
 # ─── Setup ────────────────────────────────────────────────────────────────────
 
 func _on_ready() -> void:
+	max_health = 70
+	_health = max_health
 	pass  # no extra signals needed for Flybot
 
 

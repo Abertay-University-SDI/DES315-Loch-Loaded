@@ -20,6 +20,8 @@ var _hit_cooldown:  float = 0.0
 
 
 func _on_ready() -> void:
+	max_health = 140
+	_health = max_health
 	_direction = -1
 	_hurt_box.body_entered.connect(_hurt_player)
 
@@ -33,7 +35,7 @@ func _hurt_player(body: Node) -> void:
 	if body is not Player or _hit_cooldown > 0.0:
 		return
 	_hit_cooldown = HIT_COOLDOWN
-	(body as Player).health_value -= 25 if _airborne else 15
+	(body as Player).health_value -= 20 if _airborne else 10
 
 
 func _on_process(delta: float) -> void:

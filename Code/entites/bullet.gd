@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var hurt_box:Area2D=$HurtBox
 
 @export var lifetime:float = 5.0
-@export var damage: int = 5
+@export var damage: int = 10
 
 @onready var sprite:Sprite2D = $Sprite2D
 
