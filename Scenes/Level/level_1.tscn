@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=47 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -34,6 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_o0ro1"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="31_0emyc"]
 [ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_3a08j"]
+
+[sub_resource type="Environment" id="Environment_kq4fe"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.71
+glow_strength = 1.3
+glow_bloom = 0.53
+glow_hdr_scale = 3.4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("9_nswyt")
@@ -81,6 +89,9 @@ enemies = NodePath("Enemies")
 billBoards = NodePath("Spray Spots")
 endScene = NodePath("CanvasLayer/LevelEndScene")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kq4fe")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 z_index = 4096
 color = Color(0.2520276, 0.25202766, 0.25202757, 1)
@@ -101,6 +112,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("cam", "bounds", "bounds_shape") instance=ExtResource("9_qs4fp")]
+own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
