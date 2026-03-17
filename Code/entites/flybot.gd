@@ -13,6 +13,8 @@ extends Enemy
 @export var shoot_cooldown: float = 0.5
 @export var bullet_speed:   float = 200.0
 
+@export var shootSound: AudioStreamPlayer2D
+
 var bullet: PackedScene = load("res://Scenes/Entites/bullet.tscn")
 
 enum State { PATROL, LOCKON }
@@ -97,6 +99,7 @@ func _fire_bullet() -> void:
 	if bullet == null or _player == null:
 		return
 
+	shootSound.play()
 	var b = bullet.instantiate()
 	get_tree().current_scene.add_child(b)
 	b.global_position = _alive.global_position
