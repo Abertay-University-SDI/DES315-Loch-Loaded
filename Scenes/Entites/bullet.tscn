@@ -51,11 +51,11 @@ void fragment() {
     vec4 blue = texture(SCREEN_TEXTURE, final_st - abber_vec);
     vec4 ori  = texture(SCREEN_TEXTURE, final_st);
 	
-	if(length(UV-0.5)>0.5)
+	if(length(UV-0.5)>clamp(radius*1.1,0,0.5))
 	{
 		discard;
 	}
-    COLOR = vec4(red.r, ori.g, blue.b, 0.9)*2.9;
+    COLOR = vec4(red.r, ori.g, blue.b, 0.8)*2.9;
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uua8f"]

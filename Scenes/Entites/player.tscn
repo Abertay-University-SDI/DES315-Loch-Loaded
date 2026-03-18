@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=85 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -18,7 +18,7 @@ size = Vector2(20, 12.432432)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g5uvi"]
 shader = ExtResource("2_kov73")
-shader_parameter/rainbow = false
+shader_parameter/taking_damage = false
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_scale = 1.2
 shader_parameter/alpha = 1.0
@@ -994,11 +994,15 @@ tracks/1/keys = {
 "values": [Vector2(1.13687e-13, -27)]
 }
 
+[sub_resource type="Animation" id="Animation_wooka"]
+resource_name = "take_damage"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wooka"]
 _data = {
 &"RESET": SubResource("Animation_7ag56"),
 &"scale_down": SubResource("Animation_g5uvi"),
-&"scale_normal": SubResource("Animation_wqwp5")
+&"scale_normal": SubResource("Animation_wqwp5"),
+&"take_damage": SubResource("Animation_wooka")
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]

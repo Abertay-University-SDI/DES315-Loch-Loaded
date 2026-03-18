@@ -32,6 +32,11 @@ signal health_changed(health: float)
 
 @onready var anim_player:AnimationPlayer=$AnimationPlayer
 
+var _prev_health := MAX_HEALTH
+var _player_material: ShaderMaterial
+var damage_effect_time:float =0.2
+var time_since_damage:float = 0.0
+
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
 var _dash_particles: GPUParticles2D
@@ -114,6 +119,8 @@ func _ready() -> void:
 	_attack_area = $attack_area
 	_dash_attack_area = $dash_attack_area
 
+	_player_material = _anim.material as ShaderMaterial
+
 	_attack_area.body_entered.connect(_on_body_entered)
 	_dash_attack_area.body_entered.connect(_on_dash_body_hit)
 
@@ -179,6 +186,18 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if health_value < 0:
 		_respawn_player(self)
+
+	# detect damage
+	if health_value < _prev_health:
+		if _player_material:
+			_player_material.set_shader_parameter("taking_damage", true)
+			time_since_damage = 0.0
+	if time_since_damage>damage_effect_time:
+		if _player_material:
+			_player_material.set_shader_parameter("taking_damage", false)
+
+	time_since_damage+= delta
+	_prev_health = health_value
 
 	emit_signal("health_changed", health_value)
 	_update_cooldowns(delta)
@@ -551,6 +570,11 @@ func _setup_camera_limits() -> void:
 		])
 	else:
 		push_error("Play area shape is not a RectangleShape2D!")
+
+func _heal_player()->void:
+	var missing_health:float = MAX_HEALTH-health_value
+	health_value +=(missing_health*0.35)+10.0
+	health_value = clamp(health_value,1,MAX_HEALTH)
 
 func _end_level(body :Node) -> void:
 	if body is not Player:

@@ -127,6 +127,9 @@ func _has_wall_ahead() -> bool:
 # ─── Death ────────────────────────────────────────────────────────────────────
 
 func _die(hit_dir: Vector2, force: float) -> void:
+	
+	_player._heal_player()
+	
 	_dead.global_position = _alive.global_position
 	_dead.rotation        = _alive.rotation
 
