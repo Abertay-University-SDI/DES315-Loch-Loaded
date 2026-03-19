@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbw2scq626wau"]
+[gd_scene load_steps=21 format=3 uid="uid://bbw2scq626wau"]
 
 [ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/scene_managers/title_screen.gd" id="1_824g0"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_tjte5"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/ui/dynamic_text_shadow.gd" id="6_28uqs"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="7_bvwvd"]
 [ext_resource type="PackedScene" uid="uid://d18qgphoxvo6p" path="res://Scenes/UI/animated_menu_button.tscn" id="8_tjte5"]
+[ext_resource type="Shader" uid="uid://jvgo0o6goxdl" path="res://Code/shaders/Glow.gdshader" id="10_nd20k"]
+[ext_resource type="Texture2D" uid="uid://c76x10pfkq4xy" path="res://Textures/characters/tiff_front_view.png" id="10_uv4ns"]
 
 [sub_resource type="Gradient" id="Gradient_tjte5"]
 offsets = PackedFloat32Array(0.033333335, 1)
@@ -42,6 +44,20 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nd20k"]
+noise_type = 2
+frequency = 0.0263
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3txao"]
+noise = SubResource("FastNoiseLite_nd20k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3txao"]
+shader = ExtResource("10_nd20k")
+shader_parameter/line_color = Color(1, 0, 0.8999996, 1)
+shader_parameter/line_scale = 2.87200013642
+shader_parameter/alpha = 1.0
+shader_parameter/noise = SubResource("NoiseTexture2D_3txao")
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -109,17 +125,12 @@ script = ExtResource("6_28uqs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="title_screen_ui"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -287.5
-offset_top = -135.0
-offset_right = 287.5
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -306.0
+offset_right = 575.0
+grow_vertical = 0
 theme_override_constants/separation = 14
 alignment = 1
 
@@ -144,6 +155,24 @@ theme = ExtResource("7_bvwvd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2tc6i")
 text = "Exit
 "
+
+[node name="Tiff" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_3txao")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -689.0
+offset_top = -634.0
+offset_right = 335.0
+offset_bottom = 214.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_uv4ns")
+expand_mode = 2
+stretch_mode = 4
 
 [connection signal="pressed" from="title_screen_ui/VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
