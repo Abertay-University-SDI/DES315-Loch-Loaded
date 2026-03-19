@@ -7,9 +7,20 @@ extends CharacterBody2D
 @export var damage: int = 10
 
 @onready var sprite:Sprite2D = $Sprite2D
+@onready var distortion:Sprite2D = $Dist
+@onready var anim:AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	hurt_box.body_entered.connect(body_hit)
+	
+
+func _die()->void:
+	velocity = Vector2.ZERO
+	anim.play("Distort")
+	sprite.hide()
+	distortion.show()
+	await anim.animation_finished
+	queue_free()
 
 func launch(dir: Vector2, speed: float) -> void:
 	velocity = dir * speed
@@ -22,7 +33,7 @@ func body_hit(_body:Node2D):
 	if _body is Player:
 		var player_body = _body as Player
 		player_body.health_value -=damage
-	queue_free()
+	_die()
 
 func _process(delta: float) -> void:
 	lifetime-=delta
@@ -30,7 +41,7 @@ func _process(delta: float) -> void:
 	mat.set_shader_parameter("Velocity",velocity)
 	mat.set_shader_parameter("World Pos",global_position)
 	if lifetime < 0:
-		queue_free()
+		_die()
 
 func _physics_process(_delta: float) -> void:
 	var _collision := move_and_slide()
