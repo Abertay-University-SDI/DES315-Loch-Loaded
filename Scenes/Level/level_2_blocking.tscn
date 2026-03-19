@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=42 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -16,14 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_c71rb"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_qwldb"]
 [ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_elsyb"]
-[ext_resource type="PackedScene" uid="uid://b8226o7n8ve1f" path="res://Scenes/Level/Prefabs/house_5_0.tscn" id="17_bb68t"]
-[ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="18_wmn1b"]
-[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="19_cw0jb"]
-[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="20_dvkcw"]
+[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Temp/Wide_building_kit_B.png" id="17_ceiy6"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Temp/Tall_building_kit_A.png" id="18_nc2ih"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_6lnp2"]
-[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zipStart.tscn" id="22_40hul"]
-[ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="23_jk1ko"]
-[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="24_svuco"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="25_jlqxu"]
 [ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="26_pr525"]
 [ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="27_r17qx"]
@@ -54,6 +49,22 @@ size = Vector2(253, 887)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(6907, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_suaas"]
+atlas = ExtResource("18_nc2ih")
+region = Rect2(52, 52, 911, 1947)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc2ih"]
+atlas = ExtResource("17_ceiy6")
+region = Rect2(118, 177, 1425, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6qp1"]
+atlas = ExtResource("17_ceiy6")
+region = Rect2(63, 1022, 1431, 978)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceiy6"]
+atlas = ExtResource("18_nc2ih")
+region = Rect2(1084, 1528.2217, 909, 467.77832)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
 size = Vector2(143, 25)
 
@@ -77,7 +88,7 @@ endScene = NodePath("CanvasLayer/LevelEndScene")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 z_index = 4096
-color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
 layer = -90
@@ -191,147 +202,6 @@ dialogbox = NodePath("../CanvasLayer/dialog")
 
 [node name="Buildings" type="Node2D" parent="."]
 
-[node name="House_5_1" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(742, 699)
-
-[node name="House_5_2" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(902, 699)
-
-[node name="House_5_3" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(1224, 699)
-
-[node name="House_5_4" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(1856, 697)
-
-[node name="House_5_5" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(2193, 699)
-
-[node name="House_5_6" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(2842, 699)
-
-[node name="House_5_7" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(3008, 699)
-
-[node name="House_5_8" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(3480, 699)
-
-[node name="House_5_9" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(3644, 699)
-
-[node name="House_5_10" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(3802, 699)
-
-[node name="House_5_11" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(4292, 699)
-
-[node name="House_5_12" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(5262, 699)
-
-[node name="House_4_0" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(101, 699)
-
-[node name="House_4_1" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(262, 699)
-
-[node name="House_4_2" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(742, 699)
-
-[node name="House_4_3" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(1067, 698)
-
-[node name="House_4_4" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(1697, 699)
-
-[node name="House_4_5" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(1856, 699)
-
-[node name="House_4_6" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(2193, 699)
-
-[node name="House_4_8" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(2561, 730)
-
-[node name="House_4_10" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(2676, 699)
-
-[node name="House_4_9" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(2842, 699)
-
-[node name="House_4_11" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(3174, 699)
-
-[node name="House_4_12" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(3643, 697)
-
-[node name="House_4_13" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(3973, 697)
-
-[node name="House_4_14" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(4122, 697)
-
-[node name="House_4_15" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(4295, 697)
-
-[node name="House_4_16" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(4462, 697)
-
-[node name="House_4_17" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(4945, 697)
-
-[node name="House_4_18" parent="Buildings" instance=ExtResource("18_wmn1b")]
-position = Vector2(5095, 697)
-
-[node name="Beam_0" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(110, 527)
-
-[node name="Beam_1" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(262, 460)
-
-[node name="Beam_2" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(587, 419)
-
-[node name="Beam_3" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(1367, 335)
-
-[node name="Beam_4" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(1740, 313)
-
-[node name="Beam_5" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(3240, 379)
-
-[node name="Beam_6" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(3119, 275)
-
-[node name="Beam_7" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(4147, 322)
-
-[node name="Beam_8" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(4469, 461)
-
-[node name="Beam_9" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(5306, 287)
-
-[node name="Beam_10" parent="Buildings" instance=ExtResource("19_cw0jb")]
-position = Vector2(5464, 359)
-
-[node name="Beam_1_0" parent="Buildings" instance=ExtResource("20_dvkcw")]
-position = Vector2(1539, 252)
-
-[node name="Beam_1_2" parent="Buildings" instance=ExtResource("20_dvkcw")]
-position = Vector2(3286, 199)
-
-[node name="Beam_1_3" parent="Buildings" instance=ExtResource("20_dvkcw")]
-position = Vector2(3986, 361)
-
-[node name="Beam_1_4" parent="Buildings" instance=ExtResource("20_dvkcw")]
-position = Vector2(5517, 238)
-
-[node name="Beam_1_1" parent="Buildings" instance=ExtResource("20_dvkcw")]
-position = Vector2(2678, 436)
-
-[node name="House_5_0" parent="Buildings" instance=ExtResource("17_bb68t")]
-position = Vector2(416, 699)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -346,119 +216,141 @@ offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
+[node name="interactables" type="Node2D" parent="."]
+
+[node name="Tall Buildings Blocking" type="Node2D" parent="."]
+
+[node name="building_tall_0" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(126.00003, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_1" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(366.00003, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_2" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(852.655, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_4" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(1449, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_5" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2128.0002, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_8" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(1830.0001, 494.00003)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_3" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(852.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_6" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2317.655, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_7" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2317.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_9" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2506.655, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_10" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2506.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_11" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2696.655, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_12" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2696.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="Wide Shop Building Blocking" type="Node2D" parent="."]
+
+[node name="building_wide_shop_0" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(1883.0001, 637.00006)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="building_wide_shop_1" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(2941, 637.00006)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="Wide Buiding Blocking" type="Node2D" parent="."]
+
+[node name="building_wide_0" type="Sprite2D" parent="Wide Buiding Blocking"]
+position = Vector2(609, 596.00006)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="building_wide_1" type="Sprite2D" parent="Wide Buiding Blocking"]
+position = Vector2(1096, 596)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="building_wide_2" type="Sprite2D" parent="Wide Buiding Blocking"]
+position = Vector2(1394, 596)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="Small Building Blocking" type="Node2D" parent="."]
+
+[node name="building_small_0" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(1638, 649)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_1" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(853, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_2" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(2317, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_3" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(2507.0002, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="Lamp_0" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-1186, 701)
+visible = false
+position = Vector2(252, 701)
 
 [node name="Lamp_1" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-862, 701)
-
-[node name="Lamp_15" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-782, 580)
+visible = false
+position = Vector2(609, 701)
 
 [node name="Lamp_2" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-485, 701)
-
-[node name="Lamp_3" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-172, 701)
-
-[node name="Lamp_4" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(-1, 701)
-
-[node name="Lamp_21" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(326, 580)
-
-[node name="Lamp_5" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(506, 701)
-
-[node name="Lamp_6" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(637, 701)
-
-[node name="Lamp_7" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(1324, 698)
-
-[node name="Lamp_8" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(1591, 698)
-
-[node name="Lamp_9" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(1961, 698)
-
-[node name="Lamp_10" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(2303, 698)
-
-[node name="Lamp_11" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(3286, 696)
-
-[node name="Lamp_12" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(4570, 699)
-
-[node name="Lamp_18" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(3138, 270)
-
-[node name="Lamp_19" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(809, 403)
-
-[node name="Lamp_20" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(1182, 402)
-
-[node name="Lamp_13" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(4852, 700)
-
-[node name="Lamp_14" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(5374, 700)
-
-[node name="Lamp_16" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(5352, 282)
-
-[node name="Lamp_17" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(5421, 354)
-
-[node name="interactables" type="Node2D" parent="."]
-
-[node name="Ziplines" type="Node2D" parent="interactables"]
-
-[node name="Zipline" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_40hul")]
-position = Vector2(963, 369)
-point_1 = NodePath("../Zippoint")
-
-[node name="Zipline2" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_40hul")]
-position = Vector2(2254, 368)
-point_1 = NodePath("../Zippoint2")
-
-[node name="Zipline3" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_40hul")]
-position = Vector2(3351, 160)
-point_1 = NodePath("../Zippoint3")
-
-[node name="Zipline4" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_40hul")]
-position = Vector2(4354, 367)
-point_1 = NodePath("../Zippoint4")
-
-[node name="Zippoint" parent="interactables/Ziplines" instance=ExtResource("23_jk1ko")]
-position = Vector2(1162, 348)
-
-[node name="Zippoint2" parent="interactables/Ziplines" instance=ExtResource("23_jk1ko")]
-position = Vector2(2615, 377)
-
-[node name="Zippoint3" parent="interactables/Ziplines" instance=ExtResource("23_jk1ko")]
-position = Vector2(3742, 348)
-
-[node name="Zippoint4" parent="interactables/Ziplines" instance=ExtResource("23_jk1ko")]
-position = Vector2(4884, 524)
+visible = false
+position = Vector2(1095, 701)
 
 [node name="Spray Spots" type="Node2D" parent="."]
-
-[node name="Spray Spot" parent="Spray Spots" instance=ExtResource("24_svuco")]
-position = Vector2(5265, 333)
-
-[node name="Spray Spot2" parent="Spray Spots" instance=ExtResource("24_svuco")]
-position = Vector2(5514, 156)
-
-[node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("24_svuco")]
-position = Vector2(3287, 122)
-
-[node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("24_svuco")]
-position = Vector2(902, 331)
 
 [node name="Instructions" type="Node2D" parent="."]
 
@@ -470,8 +362,8 @@ offset_bottom = 677.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="blackboard2" type="ColorRect" parent="Instructions"]
-offset_left = -777.0
-offset_top = 496.0
+offset_left = -617.0
+offset_top = 595.0
 offset_right = -503.0
 offset_bottom = 679.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
@@ -497,10 +389,10 @@ offset_right = -963.0
 offset_bottom = 672.0
 
 [node name="Key_Show_Crouch" parent="Instructions" instance=ExtResource("25_jlqxu")]
-offset_left = -699.0
-offset_top = 503.0
-offset_right = -659.0
-offset_bottom = 543.0
+offset_left = -789.0
+offset_top = 499.37497
+offset_right = -749.0
+offset_bottom = 539.375
 action_name = "crouch"
 
 [node name="Key_Show_Crouch2" parent="Instructions" instance=ExtResource("25_jlqxu")]
@@ -528,23 +420,22 @@ text = "Jump"
 
 [node name="Crouch" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -763.0
-offset_top = 606.0
-offset_right = -679.0
-offset_bottom = 641.0
+offset_left = -822.0
+offset_top = 542.0
+offset_right = -704.0
+offset_bottom = 577.0
 theme_override_constants/line_spacing = -17
-text = "Crouch to 
-pass down"
+text = "Crouch > Down"
 
 [node name="Crouch2" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -616.0
-offset_top = 595.0
-offset_right = -515.0
-offset_bottom = 662.0
+offset_left = -595.0
+offset_top = 572.0
+offset_right = -400.0
+offset_bottom = 639.0
 theme_override_constants/line_spacing = -12
-text = "Crouch while
-Walking 
+text = "Crouch while Walking 
+
 to slide"
 
 [node name="Dash" type="Label" parent="Instructions"]
@@ -553,7 +444,8 @@ offset_left = -458.0
 offset_top = 548.0
 offset_right = -198.0
 offset_bottom = 602.0
-text = "You can Dash To Hurt that Enemy"
+text = "Dash > Attack"
+horizontal_alignment = 1
 
 [node name="LeftStickRight" type="Sprite2D" parent="Instructions"]
 position = Vector2(-1119.75, 560.25)
@@ -566,8 +458,8 @@ scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("27_r17qx")
 
 [node name="LeftStickDown" type="Sprite2D" parent="Instructions"]
-position = Vector2(-744.99994, 530)
-scale = Vector2(0.27148426, 0.27148426)
+position = Vector2(-768, 476.37503)
+scale = Vector2(0.12792985, 0.12792985)
 texture = ExtResource("28_fqe3c")
 
 [node name="Tutorial" type="Node2D" parent="."]
@@ -702,55 +594,10 @@ stretch_mode = 1
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Robot" parent="Enemies" instance=ExtResource("30_deyre")]
-position = Vector2(241, 570)
-
-[node name="Robot5" parent="Enemies" instance=ExtResource("30_deyre")]
-position = Vector2(-334, 672)
-
-[node name="Robot2" parent="Enemies" instance=ExtResource("30_deyre")]
-position = Vector2(256, 434)
-
-[node name="Robot3" parent="Enemies" instance=ExtResource("30_deyre")]
-position = Vector2(733, 395)
-
-[node name="Robot4" parent="Enemies" instance=ExtResource("30_deyre")]
-position = Vector2(1542, 240)
+position = Vector2(-114, 697)
 
 [node name="Flybot" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(137, 500)
-
-[node name="Flybot2" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(-34, 570)
-
-[node name="Flybot3" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(562, 537)
-
-[node name="Flybot4" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(1066, 432)
-
-[node name="Flybot5" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(1471, 459)
-
-[node name="Flybot6" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(2014, 464)
-
-[node name="Flybot7" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(2372, 468)
-
-[node name="Flybot8" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(3179, 489)
-
-[node name="Flybot9" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(4042, 457)
-
-[node name="Flybot10" parent="Enemies" instance=ExtResource("31_aloh2")]
-position = Vector2(4042, 457)
+position = Vector2(-178, 630)
 
 [node name="Charger" parent="Enemies" instance=ExtResource("32_6pscn")]
-position = Vector2(1543, 649)
-
-[node name="Charger2" parent="Enemies" instance=ExtResource("32_6pscn")]
-position = Vector2(4680, 595)
-
-[node name="Charger3" parent="Enemies" instance=ExtResource("32_6pscn")]
-position = Vector2(2547, 549)
+position = Vector2(-248, 695)
