@@ -13,6 +13,7 @@ signal health_changed(health: float)
 @export_group("Detectors")
 @export var zipline_detector:Area2D
 @export var crane_detector:Area2D
+@export var yoyo_detector:Area2D
 
 @export_group("SFX")
 @export var footstep_sfx: AudioStreamPlayer2D
@@ -123,10 +124,14 @@ func _ready() -> void:
 
 	play_area.body_exited.connect(_respawn_player)
 	level_end_area.body_entered.connect(_end_level)
+	
 	zipline_detector.body_entered.connect(zip_entered)
 	zipline_detector.body_exited.connect(zip_exited)
+	
 	crane_detector.body_entered.connect(crane_entered)
 	crane_detector.body_exited.connect(crane_exited)
+	
+	yoyo_detector.body_entered.connect(yoyo_entered)
 
 	_setup_camera_limits()
 
@@ -154,15 +159,20 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump") and velocity.y < 0:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 
-	if event.is_action_pressed("yoyo") and ((yoyo.visible and is_instance_valid(yoyo_enemy)) or _in_crane_area):
+	if event.is_action_pressed("yoyo"):
 		if (yoyo.visible and is_instance_valid(yoyo_enemy)):
 			var dir := (yoyo_enemy.position - position).normalized()
-			dir += Vector2.DOWN
+			if (yoyo_enemy._alive.is_on_floor()):
+				dir *= 3
+			else:
+				dir += Vector2.DOWN * -3
 			YoYo_sfx.play()
 			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
-		else:
-			# crane todo
+		elif (_in_crane_area):
 			_on_crane = true
+		elif (yoyo.visible == false):
+			_throw_yoyo()
+		else:
 			return
 
 
@@ -429,6 +439,27 @@ func _update_animation() -> void:
 		if not footstep_sfx.playing and randf() < 0.2:
 			footstep_sfx.play()
 
+func yoyo_entered(body: Node) -> void:
+	var enemy := body.get_parent()
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
+		return
+		
+	var hit := (body as Node2D).global_position
+	hit.y -= 16
+
+	last_hit_position = hit
+	yoyo_enemy = enemy
+	yoyo_enemy_body = body as CharacterBody2D
+	yoyo.visible = true
+
+	_yoyo_timer = _yoyo_duration
+	_yoyo_returning = false
+	return
+
+func _throw_yoyo() -> void:
+	yoyo.show()
+	yoyo.global_position = global_position + Vector2(-150 if _anim.flip_h else 150, -20)
+	return
 
 func _update_yoyo() -> void:
 	if not yoyo.visible:

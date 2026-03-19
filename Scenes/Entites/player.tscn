@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=83 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -925,17 +925,21 @@ shader_parameter/gravity = Vector3(0, -1e-06, 0)
 radius = 19.750004
 height = 72.49999
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5uvi"]
+radius = 25.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_82p5m"]
 radius = 6.0827627
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kov73"]
 radius = 138.23169
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
 crane_detector = NodePath("Crane_detect")
+yoyo_detector = NodePath("YoYo/Yoyo_detect")
 footstep_sfx = NodePath("sound/footstep")
 dash_sfx = NodePath("sound/dash")
 punch_sfx = NodePath("sound/punch")
@@ -1017,7 +1021,6 @@ scale = Vector2(0.99999994, 0.99999994)
 current = true
 
 [node name="YoYo" type="Sprite2D" parent="."]
-visible = false
 top_level = true
 texture_filter = 1
 position = Vector2(52.999996, -20.999998)
@@ -1030,6 +1033,13 @@ z_index = -45
 position = Vector2(0, -21)
 points = PackedVector2Array(0, 0, 53.02, 0)
 width = 3.0
+
+[node name="Yoyo_detect" type="Area2D" parent="YoYo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YoYo/Yoyo_detect"]
+position = Vector2(6.2500305, -1.5258789e-05)
+shape = SubResource("CircleShape2D_g5uvi")
+debug_color = Color(0.61445755, 0.07647032, 1, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 15)
