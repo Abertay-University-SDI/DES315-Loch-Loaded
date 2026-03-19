@@ -41,13 +41,13 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(8338, 913)
+size = Vector2(9658, 1401)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
-size = Vector2(253, 887)
+size = Vector2(253, 1380)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(6907, 20)
+size = Vector2(9643, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suaas"]
 atlas = ExtResource("18_nc2ih")
@@ -167,7 +167,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(2930, 269.5)
+position = Vector2(3590, 25.5)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -182,7 +182,7 @@ texture = ExtResource("14_c71rb")
 [node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
-position = Vector2(6976, 254.5)
+position = Vector2(8279, 8)
 shape = SubResource("RectangleShape2D_eqj4t")
 debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
@@ -205,13 +205,13 @@ dialogbox = NodePath("../CanvasLayer/dialog")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2215.5, 708)
+position = Vector2(3583.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -1238.0
 offset_top = 698.0
-offset_right = 7083.6523
+offset_right = 8386.25
 offset_bottom = 721.79834
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
@@ -246,8 +246,8 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_8" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(1817.3275, 431.72076)
-scale = Vector2(0.27294737, 0.27294737)
+position = Vector2(1817.3275, 402.21753)
+scale = Vector2(0.27294737, 0.3032537)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_3" type="Sprite2D" parent="Tall Buildings Blocking"]
@@ -281,13 +281,13 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_20" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(3371.655, 89.435)
-scale = Vector2(0.21, 0.21)
+position = Vector2(3371.655, 65.43499)
+scale = Vector2(0.21, 0.23465331)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_15" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(4108, 494.43494)
-scale = Vector2(0.21, 0.21)
+position = Vector2(4125.7803, 456.43497)
+scale = Vector2(0.2490344, 0.24903437)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_22" type="Sprite2D" parent="Tall Buildings Blocking"]
@@ -365,8 +365,8 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="building_wide_1" type="Sprite2D" parent="Wide Buiding Blocking"]
-position = Vector2(1096, 596)
-scale = Vector2(0.21, 0.21)
+position = Vector2(1096, 573.345)
+scale = Vector2(0.21, 0.25632924)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="building_wide_2" type="Sprite2D" parent="Wide Buiding Blocking"]
@@ -377,6 +377,11 @@ texture = SubResource("AtlasTexture_l6qp1")
 [node name="building_wide_3" type="Sprite2D" parent="Wide Buiding Blocking"]
 position = Vector2(5418, 596)
 scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="carpark area" type="Sprite2D" parent="Wide Buiding Blocking"]
+position = Vector2(6159.5, 669.845)
+scale = Vector2(0.64919615, 0.05898774)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="Small Building Blocking" type="Node2D" parent="."]
@@ -412,8 +417,8 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_4" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(3184.445, 650)
-scale = Vector2(0.21, 0.21)
+position = Vector2(3184.445, 642.0175)
+scale = Vector2(0.21, 0.2441864)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_5" type="Sprite2D" parent="Small Building Blocking"]
@@ -422,8 +427,8 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_8" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(3565.445, 650)
-scale = Vector2(0.21, 0.21)
+position = Vector2(3565.445, 632.5175)
+scale = Vector2(0.21, 0.28487152)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_9" type="Sprite2D" parent="Small Building Blocking"]
@@ -432,12 +437,12 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_10" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(4598, 650.00006)
+position = Vector2(4540, 650.0001)
 scale = Vector2(0.21342103, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_11" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(4788.4453, 650)
+position = Vector2(4730.4453, 650)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
@@ -569,9 +574,9 @@ horizontal_alignment = 1
 [node name="Dash" type="Label" parent="Instructions"]
 texture_filter = 1
 offset_left = -530.0
-offset_top = 553.0
+offset_top = 554.0
 offset_right = -415.0
-offset_bottom = 577.0
+offset_bottom = 578.0
 text = "Dash > Attack"
 horizontal_alignment = 1
 
