@@ -41,7 +41,7 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(7108, 913)
+size = Vector2(8338, 913)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
 size = Vector2(253, 887)
@@ -167,7 +167,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(2316, 269.5)
+position = Vector2(2930, 269.5)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -182,7 +182,7 @@ texture = ExtResource("14_c71rb")
 [node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
-position = Vector2(5738.5, 254.5)
+position = Vector2(6976, 254.5)
 shape = SubResource("RectangleShape2D_eqj4t")
 debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
@@ -211,8 +211,8 @@ shape = SubResource("RectangleShape2D_hnohd")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -1238.0
 offset_top = 698.0
-offset_right = 5849.9277
-offset_bottom = 720.0
+offset_right = 7083.6523
+offset_bottom = 721.79834
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
@@ -236,18 +236,18 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_4" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(1449, 494.43497)
-scale = Vector2(0.21, 0.21)
+position = Vector2(1461.8275, 521.85004)
+scale = Vector2(0.18183866, 0.18183866)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_5" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(2128.0002, 494.43494)
+position = Vector2(2128.0002, 494.43497)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_8" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(1830.0001, 494.00003)
-scale = Vector2(0.21, 0.21)
+position = Vector2(1817.3275, 431.72076)
+scale = Vector2(0.27294737, 0.27294737)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_3" type="Sprite2D" parent="Tall Buildings Blocking"]
@@ -256,13 +256,48 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_6" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(2317.655, 494.43497)
+position = Vector2(2317.655, 494.43494)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_7" type="Sprite2D" parent="Tall Buildings Blocking"]
 position = Vector2(2317.655, 89.435)
 scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_13" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(3918.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_14" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(3918.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_19" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(3371.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_20" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(3371.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_15" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4108, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_22" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4775.6724, 522.91846)
+scale = Vector2(0.18074113, 0.18074113)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_21" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4914.0005, 576.00006)
+scale = Vector2(0.12657484, 0.12657484)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_9" type="Sprite2D" parent="Tall Buildings Blocking"]
@@ -285,6 +320,16 @@ position = Vector2(2696.655, 89.435)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
+[node name="building_tall_17" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2508.655, -407.565)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_18" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(2684.655, -437.4861)
+scale = Vector2(0.2407356, 0.2407356)
+texture = SubResource("AtlasTexture_suaas")
+
 [node name="Wide Shop Building Blocking" type="Node2D" parent="."]
 
 [node name="building_wide_shop_0" type="Sprite2D" parent="Wide Shop Building Blocking"]
@@ -292,9 +337,24 @@ position = Vector2(1883.0001, 637.00006)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_nc2ih")
 
-[node name="building_wide_shop_1" type="Sprite2D" parent="Wide Shop Building Blocking"]
-position = Vector2(2941, 637.00006)
+[node name="building_wide_shop_3" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(4352.0005, 637.00006)
 scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="building_wide_shop_4" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(5120, 637)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="building_wide_shop_2" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(2182.0002, 230)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="building_wide_shop_1" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(3035.1934, 598.265)
+scale = Vector2(0.34220144, 0.3422014)
 texture = SubResource("AtlasTexture_nc2ih")
 
 [node name="Wide Buiding Blocking" type="Node2D" parent="."]
@@ -310,7 +370,12 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="building_wide_2" type="Sprite2D" parent="Wide Buiding Blocking"]
-position = Vector2(1394, 596)
+position = Vector2(3677.0002, 596)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="building_wide_3" type="Sprite2D" parent="Wide Buiding Blocking"]
+position = Vector2(5418, 596)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_l6qp1")
 
@@ -331,8 +396,58 @@ position = Vector2(2317, 650)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
+[node name="building_small_6" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(2508, -164.00002)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_7" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(2698.0002, -163.00002)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
 [node name="building_small_3" type="Sprite2D" parent="Small Building Blocking"]
 position = Vector2(2507.0002, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_4" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(3184.445, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_5" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(3374.4453, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_8" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(3565.445, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_9" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(3755.4453, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_10" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(4598, 650.00006)
+scale = Vector2(0.21342103, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_11" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(4788.4453, 650)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_12" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(5365.0005, 650.00006)
+scale = Vector2(0.21342103, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_13" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(5555.4453, 650.00006)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
@@ -355,110 +470,123 @@ position = Vector2(1095, 701)
 [node name="Instructions" type="Node2D" parent="."]
 
 [node name="blackboard" type="ColorRect" parent="Instructions"]
-offset_left = -1171.0
-offset_top = 523.0
-offset_right = -929.0
-offset_bottom = 677.0
+offset_left = -939.0
+offset_top = 515.0
+offset_right = -888.0
+offset_bottom = 543.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard5" type="ColorRect" parent="Instructions"]
+offset_left = -783.0
+offset_top = 534.0
+offset_right = -654.0
+offset_bottom = 562.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard4" type="ColorRect" parent="Instructions"]
+offset_left = -1158.0
+offset_top = 600.5
+offset_right = -1062.0
+offset_bottom = 628.5
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="blackboard2" type="ColorRect" parent="Instructions"]
-offset_left = -617.0
-offset_top = 595.0
-offset_right = -503.0
-offset_bottom = 679.0
+offset_left = -746.0
+offset_top = 698.0
+offset_right = -540.0
+offset_bottom = 722.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="blackboard3" type="ColorRect" parent="Instructions"]
-offset_left = -465.0
-offset_top = 492.0
-offset_right = -191.0
-offset_bottom = 675.0
+offset_left = -533.0
+offset_top = 554.0
+offset_right = -411.0
+offset_bottom = 577.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Key_Show_right" parent="Instructions" instance=ExtResource("25_jlqxu")]
-offset_left = -1144.0
-offset_top = 620.0
-offset_right = -1104.0
-offset_bottom = 660.0
+offset_left = -1131.0
+offset_top = 555.5
+offset_right = -1091.0
+offset_bottom = 595.5
 action_name = "right"
 
 [node name="Key_Show_jump" parent="Instructions" instance=ExtResource("25_jlqxu")]
-offset_left = -1003.0
-offset_top = 632.0
-offset_right = -963.0
-offset_bottom = 672.0
+offset_left = -934.0
+offset_top = 469.0
+offset_right = -894.0
+offset_bottom = 509.0
 
 [node name="Key_Show_Crouch" parent="Instructions" instance=ExtResource("25_jlqxu")]
-offset_left = -789.0
-offset_top = 499.37497
-offset_right = -749.0
-offset_bottom = 539.375
+offset_left = -743.0
+offset_top = 490.37497
+offset_right = -703.0
+offset_bottom = 530.375
 action_name = "crouch"
 
 [node name="Key_Show_Crouch2" parent="Instructions" instance=ExtResource("25_jlqxu")]
-offset_left = -292.0
-offset_top = 587.0
-offset_right = -252.0
-offset_bottom = 627.0
+offset_left = -491.0
+offset_top = 585.0
+offset_right = -451.0
+offset_bottom = 625.0
 action_name = "dash"
 
 [node name="Move Right" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -1164.0
-offset_top = 596.0
-offset_right = -1077.0
-offset_bottom = 619.0
+offset_left = -1153.0
+offset_top = 602.5
+offset_right = -1066.0
+offset_bottom = 625.5
 text = "Move Right"
 
 [node name="Jump" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -1000.0
-offset_top = 595.0
-offset_right = -959.0
-offset_bottom = 619.0
+offset_left = -933.0
+offset_top = 515.0
+offset_right = -892.0
+offset_bottom = 539.0
 text = "Jump"
 
 [node name="Crouch" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -822.0
-offset_top = 542.0
-offset_right = -704.0
-offset_bottom = 577.0
+offset_left = -778.0
+offset_top = 536.0
+offset_right = -660.0
+offset_bottom = 559.0
 theme_override_constants/line_spacing = -17
 text = "Crouch > Down"
 
 [node name="Crouch2" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -595.0
-offset_top = 572.0
-offset_right = -400.0
-offset_bottom = 639.0
+offset_left = -741.0
+offset_top = 698.0
+offset_right = -543.0
+offset_bottom = 721.0
 theme_override_constants/line_spacing = -12
-text = "Crouch while Walking 
-
-to slide"
+text = "Crouch + Running to slide"
+horizontal_alignment = 1
 
 [node name="Dash" type="Label" parent="Instructions"]
 texture_filter = 1
-offset_left = -458.0
-offset_top = 548.0
-offset_right = -198.0
-offset_bottom = 602.0
+offset_left = -530.0
+offset_top = 553.0
+offset_right = -415.0
+offset_bottom = 577.0
 text = "Dash > Attack"
 horizontal_alignment = 1
 
 [node name="LeftStickRight" type="Sprite2D" parent="Instructions"]
-position = Vector2(-1119.75, 560.25)
-scale = Vector2(0.27148426, 0.27148426)
+position = Vector2(-1109.2501, 536.25)
+scale = Vector2(0.12304642, 0.12304642)
 texture = ExtResource("26_pr525")
 
 [node name="PadkeyDown" type="Sprite2D" parent="Instructions"]
-position = Vector2(-394, 601.00006)
+position = Vector2(-472.00003, 517)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("27_r17qx")
 
 [node name="LeftStickDown" type="Sprite2D" parent="Instructions"]
-position = Vector2(-768, 476.37503)
+position = Vector2(-722, 467.37503)
 scale = Vector2(0.12792985, 0.12792985)
 texture = ExtResource("28_fqe3c")
 
