@@ -1,6 +1,9 @@
 extends Node
 
 var colorBlindMode = 0
+var yoyoAbilityUnlocked = false
+var upwardsDashAbilityUnlocked = false
+#var powerGlovesAbilityUnlocked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -12,6 +12,6 @@ func _process(_delta: float) -> void:
 	mode = Global.getColorBlindMode()
 	mat.set_shader_parameter("mode", mode)
 	if mat.get_shader_parameter("mode") == 0:
-		hide()
-	else:
 		show()
+	else:
+		hide()

@@ -26,6 +26,8 @@ var _zap_force:       float = 400.0
 # ─── Setup ────────────────────────────────────────────────────────────────────
 
 func _on_ready() -> void:
+	max_health = 100
+	_health = max_health
 	attack_area.body_entered.connect(_on_attack_area_body_entered)
 	attack_area.body_exited.connect(_on_attack_area_body_exited)
 
@@ -74,7 +76,7 @@ func _try_attack() -> void:
 	if _player.global_position.distance_to(_alive.global_position) < attack_range:
 		_spawn_zap()
 		_player.velocity      += _zap_force * (_player.global_position - _alive.global_position).normalized()
-		_player.health_value  -= 35
+		_player.health_value  -= 20
 
 
 # ─── Process ──────────────────────────────────────────────────────────────────

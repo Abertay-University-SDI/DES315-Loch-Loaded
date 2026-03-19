@@ -89,6 +89,7 @@ func _update_action_list(button, event):
 func _on_reset_button_pressed():
 	InputMap.load_from_project_settings()
 	_create_action_list()
+	save_settings_to_file()
 
 func load_settings_from_file():
 	var config = ConfigFile.new()

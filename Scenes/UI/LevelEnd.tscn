@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_c1cwg"]
 [ext_resource type="Script" uid="uid://dv8xfbwut1li" path="res://Code/ui/level_end.gd" id="2_c1cwg"]
 
-[node name="LevelEndScene" type="Control" node_paths=PackedStringArray("enemiesLabel", "billLabel", "timeLabel", "scoreLabel")]
+[node name="LevelEndScene" type="Control" node_paths=PackedStringArray("enemiesLabel", "billLabel", "timeLabel", "scoreLabel", "item", "itemUse")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,37 +12,42 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_c1cwg")
 script = ExtResource("2_c1cwg")
-enemiesLabel = NodePath("PanelContainer/MarginContainer/main_vertical_container/Enemies")
-billLabel = NodePath("PanelContainer/MarginContainer/main_vertical_container/BillBoards")
-timeLabel = NodePath("PanelContainer/MarginContainer/main_vertical_container/Time")
-scoreLabel = NodePath("PanelContainer/MarginContainer/main_vertical_container/Score")
+enemiesLabel = NodePath("HBoxContainer/PanelContainer/MarginContainer/main_vertical_container/Enemies")
+billLabel = NodePath("HBoxContainer/PanelContainer/MarginContainer/main_vertical_container/BillBoards")
+timeLabel = NodePath("HBoxContainer/PanelContainer/MarginContainer/main_vertical_container/Time")
+scoreLabel = NodePath("HBoxContainer/PanelContainer/MarginContainer/main_vertical_container/Score")
+item = NodePath("HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container/Unlocked item")
+itemUse = NodePath("HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container/How to use")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -277.5
-offset_right = 311.0
-offset_bottom = 277.5
+offset_left = -590.0
+offset_top = -298.0
+offset_right = 590.0
+offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="main_vertical_container" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="main_vertical_container" type="VBoxContainer" parent="HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = -17
 
-[node name="Title" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="Title" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -50,28 +55,64 @@ theme_override_font_sizes/font_size = 61
 text = "Mission complete"
 horizontal_alignment = 1
 
-[node name="Enemies" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="Enemies" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "enemies destroyed: xx / xx"
 
-[node name="BillBoards" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="BillBoards" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "billboards painted: xx / xx"
 
-[node name="Time" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="Time" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "time taken: xx.xx"
 
-[node name="Score" type="Label" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="Score" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "level score: xx"
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/main_vertical_container"]
+[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 text = "return home"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/main_vertical_container/Button" to="." method="_on_button_pressed"]
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22.255, 0)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="main_vertical_container" type="VBoxContainer" parent="HBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -17
+
+[node name="Unlocked item" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container"]
+custom_minimum_size = Vector2(558, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 61
+text = "Mission complete"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="How to use" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer/main_vertical_container"]
+custom_minimum_size = Vector2(558, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "enemies destroyed: xx / xx"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container/Button" to="." method="_on_button_pressed"]

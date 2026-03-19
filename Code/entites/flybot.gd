@@ -13,6 +13,8 @@ extends Enemy
 @export var shoot_cooldown: float = 0.5
 @export var bullet_speed:   float = 200.0
 
+@export var shootSound: AudioStreamPlayer2D
+
 var bullet: PackedScene = load("res://Scenes/Entites/bullet.tscn")
 
 enum State { PATROL, LOCKON }
@@ -25,6 +27,8 @@ var _hover_time:  float = 0.0
 # ─── Setup ────────────────────────────────────────────────────────────────────
 
 func _on_ready() -> void:
+	max_health = 70
+	_health = max_health
 	pass  # no extra signals needed for Flybot
 
 
@@ -97,11 +101,14 @@ func _fire_bullet() -> void:
 	if bullet == null or _player == null:
 		return
 
+	shootSound.play()
 	var b = bullet.instantiate()
 	get_tree().current_scene.add_child(b)
 	b.global_position = _alive.global_position
 
-	var dir := (_player.global_position - _alive.global_position).normalized()
+
+	var player_torso = _player.global_position + Vector2(0.0,-16.0)
+	var dir := (player_torso - _alive.global_position).normalized()
 	if b.has_method("launch"):
 		b.launch(dir, bullet_speed)
 	else:

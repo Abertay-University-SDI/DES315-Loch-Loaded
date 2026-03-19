@@ -14,7 +14,7 @@ distance_fade_mode = 1
 
 [sub_resource type="Environment" id="Environment_77poq"]
 background_mode = 1
-background_color = Color(0.3882353, 0, 0.54509807, 0)
+background_color = Color(0.4297807, 0.0011066223, 0.60123163, 0)
 ambient_light_color = Color(0, 0, 0, 0)
 reflected_light_source = 2
 ssao_intensity = 16.0
@@ -60,7 +60,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lf27d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8179919, -0.47605217, -0.3228986, 0.40659708, -0.875578, 0.26084864, -0.40690053, 0.08208236, 0.90977716, 0, 0, 0)
+light_energy = 0.533
+light_negative = true
 shadow_enabled = true
+directional_shadow_split_3 = 0.567
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 1.0
 
@@ -72,7 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07361698, 0)
 material_override = SubResource("ShaderMaterial_qnbt3")
 multimesh = SubResource("MultiMesh_80ras")
 script = ExtResource("3_ivimj")
-seed = 1470741720
 grid_width = 40
 grid_depth = 10
 block_size = 3.0

@@ -30,6 +30,13 @@ signal health_changed(health: float)
 @onready var top_ray:RayCast2D=$top_ray
 @onready var bottom_ray:RayCast2D=$bottom_ray
 
+@onready var anim_player:AnimationPlayer=$AnimationPlayer
+
+var _prev_health := MAX_HEALTH
+var _player_material: ShaderMaterial
+var damage_effect_time:float =0.2
+var time_since_damage:float = 0.0
+
 var _camera: Camera2D
 var _anim: AnimatedSprite2D
 var _dash_particles: GPUParticles2D
@@ -42,7 +49,7 @@ const MAX_SPEED := 180.0
 const TIME_TO_MAX := 0.4
 const ACCEL := MAX_SPEED / TIME_TO_MAX
 const FRICTION := 600.0
-const JUMP_VELOCITY := -500.0
+const JUMP_VELOCITY := -400.0
 
 # --- Variable jump height ---
 const JUMP_CUT_MULTIPLIER := 0.4
@@ -50,11 +57,11 @@ const JUMP_CUT_MULTIPLIER := 0.4
 const MAX_HEALTH := 100.0
 var health_value := MAX_HEALTH
 
-const MAX_JUMPS := 1
+const MAX_JUMPS := 2
 var jumps_left := MAX_JUMPS
 
 # --- Coyote time ---
-const COYOTE_TIME := 0.12
+const COYOTE_TIME := 0.22
 var _coyote_timer := 0.0
 var _was_on_floor := false
 
@@ -112,6 +119,8 @@ func _ready() -> void:
 	_attack_area = $attack_area
 	_dash_attack_area = $dash_attack_area
 
+	_player_material = _anim.material as ShaderMaterial
+
 	_attack_area.body_entered.connect(_on_body_entered)
 	_dash_attack_area.body_entered.connect(_on_dash_body_hit)
 
@@ -159,7 +168,7 @@ func _input(event: InputEvent) -> void:
 			var dir := (yoyo_enemy.position - position).normalized()
 			dir += Vector2.DOWN
 			YoYo_sfx.play()
-			yoyo_enemy.take_hit(-dir, -0.1, 100.0)
+			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
 		else:
 			# crane todo
 			_on_crane = true
@@ -168,7 +177,7 @@ func _input(event: InputEvent) -> void:
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
-		_try_start_crouch_or_slide()
+		_try_start_crouch_or_slide(event)
 
 	if event.is_action_released("crouch"):
 		_end_crouch()
@@ -177,6 +186,18 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if health_value < 0:
 		_respawn_player(self)
+
+	# detect damage
+	if health_value < _prev_health:
+		if _player_material:
+			_player_material.set_shader_parameter("taking_damage", true)
+			time_since_damage = 0.0
+	if time_since_damage>damage_effect_time:
+		if _player_material:
+			_player_material.set_shader_parameter("taking_damage", false)
+
+	time_since_damage+= delta
+	_prev_health = health_value
 
 	emit_signal("health_changed", health_value)
 	_update_cooldowns(delta)
@@ -217,13 +238,18 @@ func _physics_process(delta: float) -> void:
 
 # ─── Crouch / Slide helpers ──────────────────────────────────────────────────
 
-func _try_start_crouch_or_slide() -> void:
+func _try_start_crouch_or_slide(event: InputEvent) -> void:
 	var speed := absf(velocity.x)
 	if speed > 60.0:
 		_start_slide()
 	else:
 		crouching = true
-	set_collision_mask_value(2, false)
+	if (event is InputEventJoypadMotion):
+		var input_vec: Vector2 = Vector2( 
+			Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 
+			Input.get_joy_axis(0, JOY_AXIS_LEFT_Y))
+		if (rad_to_deg(input_vec.angle()) > 89 and rad_to_deg(input_vec.angle()) < 91):
+			set_collision_mask_value(2, false)
 	idle_collider.set_deferred("disabled",true)
 
 
@@ -262,7 +288,6 @@ func _end_crouch() -> void:
 	idle_collider.set_deferred("disabled", false)
 
 
-
 # ─── Core movement ───────────────────────────────────────────────────────────
 func _update_wall_rays():
 	var dir = -1 if _anim.flip_h else 1
@@ -289,11 +314,13 @@ func _apply_gravity(dt: float) -> void:
 func _is_touching_wall_full() -> bool:
 	return top_ray.is_colliding() and bottom_ray.is_colliding()
 
+
 func _handle_jump() -> void:
 	if _jump_buffer_timer > 0.0:
 		_jump_buffer_timer -= get_physics_process_delta_time()
 
-	var can_jump := (is_on_floor() or _coyote_timer > 0.0) and jumps_left > 0
+
+	var can_jump := (is_on_floor() or _coyote_timer > 0.0) or (jumps_left > 0 and jumps_left < MAX_JUMPS)
 	if not (_jump_buffer_timer > 0.0 and can_jump) or dashing:
 		return
 
@@ -362,10 +389,14 @@ func _handle_movement(dt: float) -> void:
 func _start_dash() -> void:
 	dashing = true
 	dash_timer = DASH_COOLDOWN
+	var dir = Vector2(0,0)
 
 	_end_crouch()
 
-	var dir := Vector2(-1 if _anim.flip_h else 1, 0)
+	if (velocity.x == 0 && not is_on_floor()):
+		dir = Vector2(0, -1)
+	else:
+		dir = Vector2(-1 if _anim.flip_h else 1, 0)
 	velocity = dir * 400.0
 
 	_dash_particles.emitting = true
@@ -400,6 +431,8 @@ func _update_animation() -> void:
 
 	var speed := absf(velocity.x)
 
+	anim_player.play("scale_normal")
+
 	if dashing:
 		_anim.play("Dash")
 	elif sliding:
@@ -415,7 +448,8 @@ func _update_animation() -> void:
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
-		_anim.play("Walk")
+		anim_player.play("scale_down")
+		_anim.play("Run")
 		if not footstep_sfx.playing and randf() < 0.2:
 			footstep_sfx.play()
 
@@ -469,7 +503,7 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
-	enemy.take_hit(dir, punching, 100.0)
+	enemy.take_hit(dir, punching, 100.0, 30)
 
 
 func _on_dash_body_hit(body: Node) -> void:
@@ -488,7 +522,7 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_timer = _yoyo_duration
 	_yoyo_returning = false
 
-	enemy.take_dash(Vector2.UP,dash_timer, 400.0)
+	enemy.take_dash(Vector2.UP,dash_timer, 400.0, 40)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
@@ -536,6 +570,11 @@ func _setup_camera_limits() -> void:
 		])
 	else:
 		push_error("Play area shape is not a RectangleShape2D!")
+
+func _heal_player()->void:
+	var missing_health:float = MAX_HEALTH-health_value
+	health_value +=(missing_health*0.35)+10.0
+	health_value = clamp(health_value,1,MAX_HEALTH)
 
 func _end_level(body :Node) -> void:
 	if body is not Player:

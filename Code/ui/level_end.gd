@@ -6,8 +6,17 @@ extends Control
 @export var billLabel : Label
 @export var timeLabel : Label
 @export var scoreLabel : Label
+@export var item : Label
+@export var itemUse : Label
+@export var itemText : String
+@export var itemUseText : String
 
 var rankArray
+
+func _ready() -> void:
+	item.text = itemText
+	itemUse.text = itemUseText
+	return
 
 func _updateText() -> void:
 	rankArray = world.getStats()
