@@ -8,13 +8,18 @@ uniform float alpha : hint_range(0.0, 1.0) = 1.0;
 uniform sampler2D noise;
 
 void fragment() {
-	vec2 size = TEXTURE_PIXEL_SIZE * (line_scale+texture(noise,UV*sin(TIME*1.2)+0.5).r*13.0);
+	float rise_strength = pow(1.0-UV.y,2)*8.0;
+	vec2 noise_uv = UV + vec2(0.0, sin(TIME)/4.0+0.25);
+	float noise_strength = texture(noise, noise_uv).r * 10.0;
+	vec2 size = TEXTURE_PIXEL_SIZE * (line_scale+noise_strength)*rise_strength;
 
-	float dist = pow(length(UV-0.5),2.1);
-	vec4 faded_line_color = vec4(line_color.rgb,dist);
+	float d = length(UV - 0.5);
+	float dist = 1.0 - smoothstep(-1.8, 0.45, d);
+
+	vec4 faded_line_color = vec4(line_color.rgb, dist);
 
 
-	
+
 	float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
 	outline += texture(TEXTURE, UV + vec2(0, size.y)).a;
 	outline += texture(TEXTURE, UV + vec2(size.x, 0)).a;
