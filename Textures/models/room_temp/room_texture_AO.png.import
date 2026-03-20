@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmd4vksl8l6b"
-path.s3tc="res://.godot/imported/Avengers_Building_low_openPBR_shader1_Metallic.png-b34715301c146eab2cbcda1acec4c92b.s3tc.ctex"
+uid="uid://bt2jv6x43gv3f"
+path.s3tc="res://.godot/imported/room_texture_AO.png-2444c917f5eeaf29e26ccb13f35f0eaa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Models/Avengers_Building_low_openPBR_shader1_Metallic.png"
-dest_files=["res://.godot/imported/Avengers_Building_low_openPBR_shader1_Metallic.png-b34715301c146eab2cbcda1acec4c92b.s3tc.ctex"]
+source_file="res://Textures/models/room_temp/room_texture_AO.png"
+dest_files=["res://.godot/imported/room_texture_AO.png-2444c917f5eeaf29e26ccb13f35f0eaa.s3tc.ctex"]
 
 [params]
 

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmd4vksl8l6b"
-path.s3tc="res://.godot/imported/Avengers_Building_low_openPBR_shader1_Metallic.png-b34715301c146eab2cbcda1acec4c92b.s3tc.ctex"
+uid="uid://dkf4iesbrcgbo"
+path="res://.godot/imported/laurenceNPC.png-f72034b7bdea963edd49621783ca8e2d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/Avengers_Building_low_openPBR_shader1_Metallic.png"
-dest_files=["res://.godot/imported/Avengers_Building_low_openPBR_shader1_Metallic.png-b34715301c146eab2cbcda1acec4c92b.s3tc.ctex"]
+source_file="res://Textures/characters/laurenceNPC.png"
+dest_files=["res://.godot/imported/laurenceNPC.png-f72034b7bdea963edd49621783ca8e2d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

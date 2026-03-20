@@ -7,6 +7,10 @@ extends SubViewport
 @export var bounds_shape: CollisionShape2D
 
 func _process(_delta: float) -> void:
+	
+	if bounds_shape == null:
+		return
+	
 	var shape = bounds_shape.shape
 	if shape is RectangleShape2D:
 		var half_size: Vector2 = shape.size / 2.0
