@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://do55iicb26lmy" path="res://Fonts/BlueScreenPersonalUseRegular-0W1M9.ttf" id="3_p4jgp"]
 [ext_resource type="PackedScene" uid="uid://btw4f17p4lc4o" path="res://Scenes/UI/character_box.tscn" id="4_p4jgp"]
 
-
 [sub_resource type="SystemFont" id="SystemFont_lv3fa"]
 font_names = PackedStringArray("Ink Free")
 subpixel_positioning = 0
@@ -52,6 +51,7 @@ _data = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" node_paths=PackedStringArray("text_box", "anim")]
+process_mode = 3
 texture_filter = 1
 offset_right = 907.0
 offset_bottom = 196.0
@@ -83,8 +83,9 @@ theme_override_fonts/bold_font = SubResource("SystemFont_lv3fa")
 theme_override_font_sizes/normal_font_size = 25
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "[b]Surfer Dude[/b]
-Yoo, im the surfer dude yeah, wassup cuh hows it going you see that sick ahh tower over there how about making it even more sick, go get em champ"
+text = "[b]Yo Yo Dealer[/b]
+Yoo, im the Yo Yo Dealer yeah, wassup "
+visible_characters = 51
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,12 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjbqx458gfnfo"]
+[gd_scene load_steps=10 format=3 uid="uid://bjbqx458gfnfo"]
 
 [ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Fonts/Minecraft.ttf" id="1_4l3ya"]
 [ext_resource type="Script" uid="uid://bu7xmcxq8532f" path="res://Code/interactables/npc.gd" id="1_gpvyx"]
-[ext_resource type="Texture2D" uid="uid://f4lvsvfmlacx" path="res://Textures/Enemies/npc-yoyo1.png" id="3_gpvyx"]
+[ext_resource type="Texture2D" uid="uid://dryw2nc5008f0" path="res://Textures/characters/npc-yoyo-spritesheet.png" id="2_gpvyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fj317"]
-atlas = ExtResource("3_gpvyx")
-region = Rect2(1860, 1285, 1271, 2631)
+atlas = ExtResource("2_gpvyx")
+region = Rect2(0, 0, 1500, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sxms"]
+atlas = ExtResource("2_gpvyx")
+region = Rect2(1500, 0, 1500, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekkkv"]
+atlas = ExtResource("2_gpvyx")
+region = Rect2(3000, 0, 1500, 4000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8uu6"]
+atlas = ExtResource("2_gpvyx")
+region = Rect2(4500, 0, 1500, 4000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sogwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj317")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sxms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekkkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8uu6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fj317"]
 radius = 44.28318
@@ -16,16 +48,16 @@ script = ExtResource("1_gpvyx")
 zone = NodePath("Area2D")
 label = NodePath("Label")
 
-[node name="Paint_Zone" type="Sprite2D" parent="."]
-z_index = -90
-texture_filter = 1
-position = Vector2(0, -27.000002)
-scale = Vector2(0.02113591, 0.021135908)
-texture = SubResource("AtlasTexture_fj317")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(0, -45.000004)
+scale = Vector2(0.02483333, 0.024833333)
+sprite_frames = SubResource("SpriteFrames_sogwd")
+autoplay = "default"
+frame_progress = 0.10039604
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -44)

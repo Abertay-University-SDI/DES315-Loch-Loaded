@@ -6,6 +6,9 @@ var player_in_zone := false
 
 var last_input_was_controller :bool= false
 
+const COOLDOWN = 20.0
+var cooldow_timer = 0.0
+
 func get_spray_button_text() -> String:
 	var events = InputMap.action_get_events("spray")
 
@@ -41,5 +44,8 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	if player_in_zone and Input.is_action_just_pressed("spray"):
+	cooldow_timer-=_delta
+	if player_in_zone and Input.is_action_just_pressed("spray") and cooldow_timer<0.0:
+		cooldow_timer = COOLDOWN
+		get_tree().paused = true
 		dialogbox.show()
