@@ -122,7 +122,7 @@ func _on_process(_delta: float) -> void:
 
 
 func _on_physics_process(delta: float) -> void:
-	if immunity <= 0.0:
+	if immunity <= 0.0 and stun_timer<0:
 		match _state:
 			State.PATROL:
 				_do_patrol(delta)
@@ -131,5 +131,8 @@ func _on_physics_process(delta: float) -> void:
 				
 	if _alive.velocity.y < 0:
 		_alive.velocity.y /=1.1
+	
+	if stun_timer> 0.0:
+		_alive.velocity.y += 200.0*delta
 
 	_alive.move_and_slide()

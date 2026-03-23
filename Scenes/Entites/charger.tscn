@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://2kui8xij1j7s"]
+[gd_scene load_steps=19 format=3 uid="uid://2kui8xij1j7s"]
 
 [ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://bp38u32e51la6" path="res://Textures/Enemies/heavy-enemy.png" id="2_aanfd"]
+[ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_mmf4r"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_mmf4r"]
 
@@ -222,6 +223,14 @@ collision_mask = 3
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_mmf4r")
 debug_color = Color(0.99430496, 0, 0.23145723, 0.41960785)
+
+[node name="Stun_Effect" parent="alive_body" instance=ExtResource("4_mmf4r")]
+visible = false
+offset_left = -45.0
+offset_top = -85.0
+offset_right = -5.0
+offset_bottom = -45.0
+scale = Vector2(2.3199997, 2.3199997)
 
 [node name="dead_body" type="RigidBody2D" parent="."]
 visible = false

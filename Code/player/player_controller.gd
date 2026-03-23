@@ -33,6 +33,9 @@ signal health_changed(health: float)
 
 @onready var anim_player:AnimationPlayer=$AnimationPlayer
 
+@onready var stun_attack_area:Area2D=$stun_area
+const STUN_TIME:float=3.3
+
 var _prev_health := MAX_HEALTH
 var _player_material: ShaderMaterial
 var damage_effect_time:float =0.2
@@ -142,6 +145,9 @@ func _ready() -> void:
 	
 	yoyo_detector.body_entered.connect(yoyo_entered)
 
+	stun_attack_area.body_entered.connect(_on_stun_body_entered)
+	stun_attack_area.monitoring = false
+
 	_setup_camera_limits()
 
 
@@ -168,6 +174,15 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump") and velocity.y < 0:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 
+	if event.is_action_pressed("stun"):
+		stun_attack_area.monitoring = true
+		if _player_material:
+			_player_material.set_shader_parameter("stunning", true)
+		await get_tree().create_timer(0.2).timeout
+		if _player_material:
+			_player_material.set_shader_parameter("stunning", false)
+		stun_attack_area.monitoring = false
+
 	if event.is_action_pressed("yoyo"):
 		if (yoyo.visible and is_instance_valid(yoyo_enemy)):
 			var dir := (yoyo_enemy.position - position).normalized()
@@ -183,6 +198,7 @@ func _input(event: InputEvent) -> void:
 			_throw_yoyo()
 		else:
 			return
+			
 
 
 	# Crouch input — only on floor and not dashing
@@ -479,6 +495,13 @@ func yoyo_entered(body: Node) -> void:
 	_yoyo_timer = _yoyo_duration
 	_yoyo_returning = false
 	return
+
+func _on_stun_body_entered(body: Node) -> void:
+	var enemy := body.get_parent()
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
+		return
+
+	enemy.stun_timer = STUN_TIME
 
 func _throw_yoyo() -> void:
 	yoyo.show()

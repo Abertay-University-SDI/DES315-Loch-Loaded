@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp6m4rt1dw531"]
+[gd_scene load_steps=16 format=3 uid="uid://bp6m4rt1dw531"]
 
 [ext_resource type="Script" uid="uid://dr6jw5idiyjkn" path="res://Code/entites/flybot.gd" id="1_pirrt"]
 [ext_resource type="Texture2D" uid="uid://do3v8n48kox66" path="res://Textures/Enemies/flying-enemy.png" id="2_l1eq5"]
 [ext_resource type="AudioStream" uid="uid://bcrcex6oyp23m" path="res://Sounds/drone shoot.wav" id="3_l1eq5"]
+[ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="3_pirrt"]
 [ext_resource type="AudioStream" uid="uid://dpq8opplbht6b" path="res://Sounds/drone hum.wav" id="4_4tuei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuei"]
@@ -223,6 +224,13 @@ debug_color = Color(0.510617, 0.5784765, 0, 0.078)
 scale = Vector2(2.234375, 2.234375)
 color = Color(0.671777, 0.5552453, 0, 1)
 texture = SubResource("GradientTexture2D_l1eq5")
+
+[node name="Stun_Effect" parent="alive_body" instance=ExtResource("3_pirrt")]
+visible = false
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 
 [node name="dead_body" type="RigidBody2D" parent="."]
 collision_layer = 0
