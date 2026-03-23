@@ -41,13 +41,13 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(9658, 1401)
+size = Vector2(9575, 1401)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
 size = Vector2(253, 1380)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(9643, 20)
+size = Vector2(9573, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suaas"]
 atlas = ExtResource("18_nc2ih")
@@ -167,7 +167,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(3590, 25.5)
+position = Vector2(3548.5, 25.5)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -182,7 +182,7 @@ texture = ExtResource("14_c71rb")
 [node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
-position = Vector2(8279, 8)
+position = Vector2(8209, 8)
 shape = SubResource("RectangleShape2D_eqj4t")
 debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
@@ -205,14 +205,14 @@ dialogbox = NodePath("../CanvasLayer/dialog")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3583.5, 708)
+position = Vector2(3548.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -1238.0
 offset_top = 698.0
-offset_right = 8386.25
-offset_bottom = 721.79834
+offset_right = 8318.375
+offset_bottom = 723.11145
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
@@ -232,6 +232,11 @@ texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_2" type="Sprite2D" parent="Tall Buildings Blocking"]
 position = Vector2(852.655, 494.43497)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_28" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(1041.0001, 494.00003)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
@@ -275,6 +280,81 @@ position = Vector2(3918.655, 89.435)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_suaas")
 
+[node name="building_tall_15" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4107.6553, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_16" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4107.6553, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_23" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4296.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_24" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4296.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_25" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4485.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_26" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(4485.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_29" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7084.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_30" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7098.5, 59.844814)
+scale = Vector2(0.24039567, 0.24039567)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_31" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7273.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_32" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7273.655, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_33" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7577.655, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_34" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7591.5, 59.844814)
+scale = Vector2(0.24039567, 0.24039567)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_35" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7766.6543, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_36" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7766.6543, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_27" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(6897, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
 [node name="building_tall_19" type="Sprite2D" parent="Tall Buildings Blocking"]
 position = Vector2(3371.655, 494.43494)
 scale = Vector2(0.21, 0.21)
@@ -283,11 +363,6 @@ texture = SubResource("AtlasTexture_suaas")
 [node name="building_tall_20" type="Sprite2D" parent="Tall Buildings Blocking"]
 position = Vector2(3371.655, 65.43499)
 scale = Vector2(0.21, 0.23465331)
-texture = SubResource("AtlasTexture_suaas")
-
-[node name="building_tall_15" type="Sprite2D" parent="Tall Buildings Blocking"]
-position = Vector2(4125.7803, 456.43497)
-scale = Vector2(0.2490344, 0.24903437)
 texture = SubResource("AtlasTexture_suaas")
 
 [node name="building_tall_22" type="Sprite2D" parent="Tall Buildings Blocking"]
@@ -330,6 +405,21 @@ position = Vector2(2684.655, -437.4861)
 scale = Vector2(0.2407356, 0.2407356)
 texture = SubResource("AtlasTexture_suaas")
 
+[node name="building_tall_37" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7955.6553, 494.43494)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_38" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7955.6553, 89.435)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_suaas")
+
+[node name="building_tall_39" type="Sprite2D" parent="Tall Buildings Blocking"]
+position = Vector2(7955.8276, -317.31015)
+scale = Vector2(0.20818311, 0.20818311)
+texture = SubResource("AtlasTexture_suaas")
+
 [node name="Wide Shop Building Blocking" type="Node2D" parent="."]
 
 [node name="building_wide_shop_0" type="Sprite2D" parent="Wide Shop Building Blocking"]
@@ -347,8 +437,18 @@ position = Vector2(5120, 637)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_nc2ih")
 
+[node name="building_wide_shop_6" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(6753.0005, 637)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
 [node name="building_wide_shop_2" type="Sprite2D" parent="Wide Shop Building Blocking"]
 position = Vector2(2182.0002, 230)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_nc2ih")
+
+[node name="building_wide_shop_5" type="Sprite2D" parent="Wide Shop Building Blocking"]
+position = Vector2(4431.0005, -175)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_nc2ih")
 
@@ -370,7 +470,7 @@ scale = Vector2(0.21, 0.25632924)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="building_wide_2" type="Sprite2D" parent="Wide Buiding Blocking"]
-position = Vector2(3677.0002, 596)
+position = Vector2(3675.0002, 596)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_l6qp1")
 
@@ -380,8 +480,8 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="carpark area" type="Sprite2D" parent="Wide Buiding Blocking"]
-position = Vector2(6159.5, 669.845)
-scale = Vector2(0.64919615, 0.05898774)
+position = Vector2(6126, 688.845)
+scale = Vector2(0.64919615, 0.020132905)
 texture = SubResource("AtlasTexture_l6qp1")
 
 [node name="Small Building Blocking" type="Node2D" parent="."]
@@ -411,6 +511,11 @@ position = Vector2(2698.0002, -163.00002)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
+[node name="building_small_17" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(7955, -164.00002)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
 [node name="building_small_3" type="Sprite2D" parent="Small Building Blocking"]
 position = Vector2(2507.0002, 650)
 scale = Vector2(0.21, 0.21)
@@ -427,12 +532,22 @@ scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_8" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(3565.445, 632.5175)
-scale = Vector2(0.21, 0.28487152)
+position = Vector2(3562.5752, 630.5175)
+scale = Vector2(0.21631421, 0.29343694)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_9" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(3755.4453, 650)
+position = Vector2(3754.4456, 650.00006)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_15" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(7273.88, 632.5175)
+scale = Vector2(0.21000001, 0.28487152)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_16" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(7578, 649.00006)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
@@ -442,8 +557,13 @@ scale = Vector2(0.21342103, 0.21)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_11" type="Sprite2D" parent="Small Building Blocking"]
-position = Vector2(4730.4453, 650)
+position = Vector2(4730.446, 650)
 scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_ceiy6")
+
+[node name="building_small_14" type="Sprite2D" parent="Small Building Blocking"]
+position = Vector2(7591.592, -228.9825)
+scale = Vector2(0.23990364, 0.23990363)
 texture = SubResource("AtlasTexture_ceiy6")
 
 [node name="building_small_12" type="Sprite2D" parent="Small Building Blocking"]
