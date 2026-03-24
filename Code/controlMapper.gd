@@ -17,7 +17,9 @@ var input_actions = {
 	"spray": "spray",
 	"punch": "punch",
 	"dash": "dash",
-	"yoyo": "yoyo"
+	"ready yoyo": "ready yoyo",
+	"stun" : "stun",
+	"ground slam" : "ground slam"
 }
 
 enum ControllerType {

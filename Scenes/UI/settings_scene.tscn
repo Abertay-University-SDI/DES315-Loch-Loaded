@@ -57,9 +57,10 @@ horizontal_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 theme = ExtResource("3_3n1my")
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -162,7 +163,6 @@ item_2/text = "DEUTERANOPIA"
 item_3/text = "TRITANOPIA"
 
 [node name="Controls" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
