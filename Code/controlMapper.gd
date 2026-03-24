@@ -100,9 +100,20 @@ func _update_action_list(button, event):
 
 
 func _on_reset_button_pressed():
-	InputMap.load_from_project_settings()
-	_create_action_list()
-	save_settings_to_file()
+	var type = get_controller_type(0)
+	if type != ControllerType.UNKNOWN:
+		# load controller settings
+		print_debug("controller settings")
+		InputMap.load_from_project_settings()
+		_create_action_list()
+		save_settings_to_file()
+		return
+	else:
+		# load keyboard settings
+		print_debug("keybaord settings")
+		InputMap.load_from_project_settings()
+		_create_action_list()
+		save_settings_to_file()
 
 func load_settings_from_file():
 	var config = ConfigFile.new()
@@ -129,29 +140,21 @@ func save_settings_to_file():
 	config.save(SAVED_PATH)
 
 func get_controller_type(device_id: int) -> int:
-	var name = Input.get_joy_name(device_id).to_lower()
+	var controllerName = Input.get_joy_name(device_id).to_lower()
 	
-	if name.find("xbox") != -1 or name.find("microsoft") != -1:
+	if controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1:
 		return ControllerType.XBOX
 	
-	elif name.find("playstation") != -1 or name.find("dualshock") != -1 or name.find("dualsense") != -1 or name.find("ps4") != -1 or name.find("ps5") != -1:
+	elif controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1:
 		return ControllerType.PLAYSTATION
 	
-	elif name.find("switch") != -1 or name.find("nintendo") != -1 or name.find("pro controller") != -1:
+	elif controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or controllerName.find("pro controller") != -1:
 		return ControllerType.SWITCH
 	
 	return ControllerType.UNKNOWN
 
 func get_input_text(event: InputEvent) -> String:
 	var type = get_controller_type(0)
-
-	match type:
-		ControllerType.XBOX:
-			print("Xbox layout")
-		ControllerType.PLAYSTATION:
-			print("PlayStation layout")
-		ControllerType.SWITCH:
-			print("Switch layout")
 
 	if event is InputEventKey:
 		return event.as_text().trim_suffix(" (Physical)")
