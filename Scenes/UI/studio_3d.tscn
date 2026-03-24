@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=4 uid="uid://b8lw2e01iomhv"]
+
+[ext_resource type="Texture2D" uid="uid://dymxe7pwvf4sv" path="res://Textures/models/room_temp/room_texture.png" id="1_jy5jt"]
+[ext_resource type="Texture2D" uid="uid://bt2jv6x43gv3f" path="res://Textures/models/room_temp/room_texture_AO.png" id="2_ndq3k"]
+[ext_resource type="Texture2D" uid="uid://c1ndgacgoo5x" path="res://Textures/models/room_temp/room_texture_n.png" id="3_fqn74"]
+[ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="4_iq7dd"]
+[ext_resource type="Texture2D" uid="uid://c76x10pfkq4xy" path="res://Textures/characters/tiff_front_view.png" id="5_l20fj"]
+[ext_resource type="Texture2D" uid="uid://c80ifgovk8tm4" path="res://Textures/Background/TEMP_ASSET_SkyBox.png" id="6_rhyev"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4u5t"]
+resource_name = "Material.001"
+transparency = 1
+cull_mode = 1
+diffuse_mode = 1
+albedo_texture = ExtResource("1_jy5jt")
+metallic = 0.5
+normal_enabled = true
+normal_scale = 0.87
+normal_texture = ExtResource("3_fqn74")
+clearcoat_roughness = 1.0
+anisotropy = 1.0
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_ndq3k")
+stencil_flags = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o7ipo"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABAADAAEAAgAFAAAAAgADAAUABgAEAAAAAAAFAAYABwADAAQABQADAAcABgAHAAQABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/////AAAAAAAA//8AAAAA//8AAAAAAAAAAAAAAAD//wAA//8AAP////8AAAAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dkcac"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("GYAHwBiA5n8BwBXAAcDmfwHA838BwBXAGYDmfxiAFcC6//Z///+/v9G/9n8WwLG/AcDzfwHAFcAZgOZ/GIAVwOm/////f/f/DcD7v/9/+7/pv////3/3/w3A+7//f/u/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_h4u5t"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(2.00282, 2.000434, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD/////+f8AAAAA/////wAA//8AAP//AAAAAAAA//8AAP//AAD//wAAAAAAAP///////wAA/////wAAAAD///////8AAP+///8AAAAA/7//////////v///AAD///+/////////BoD//wAA//8AgAAA/////wCAAAAAAP//AID//wAAAAD/vwAAAAAAAP+///8AAP///78AAAAA////vwAA//8AAP///////wAA//8AAP//////////////////AkAFgABAAYAAQAGA/z//fw2A8f8GgPj/BoD4//9//v//fwAA8X8GAPF/BgDjfw0A/////////////////////wcADYADAAaAAwAGgAEA/n8BgP6//3//v/9//7//vwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_o7ipo")
+
+[sub_resource type="Environment" id="Environment_e5myj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tyam"]
+transparency = 1
+albedo_texture = ExtResource("5_l20fj")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+clearcoat_roughness = 1.0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_ke64t"]
+material = SubResource("StandardMaterial3D_0tyam")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jj5a"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("6_rhyev")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_mamu3"]
+material = SubResource("StandardMaterial3D_6jj5a")
+size = Vector2(200, 200)
+
+[node name="Studio" type="SubViewport"]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 0.99999994, 0, -0.99999994, 0, -4.371139e-08, -3.4308128, 8.419088, 18.366936)
+mesh = SubResource("ArrayMesh_dkcac")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.9989903, 0, 0.044927016, 0, 1, 0, -0.044927016, 0, 0.9989903, -3.0994701, 8.644371, 19.145107)
+light_energy = 1.483
+light_bake_mode = 1
+shadow_blur = 0.0
+omni_range = 73.736
+omni_attenuation = 0.076
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(0.9989903, 0, 0.044927016, 0, 1, 0, -0.044927016, 0, 0.9989903, -4.122908, 8.991127, 17.745342)
+light_color = Color(1, 0, 1, 1)
+light_energy = 4.104
+light_bake_mode = 1
+shadow_blur = 0.0
+omni_range = 1.973
+omni_attenuation = 0.076
+omni_shadow_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9845949, 0, 0.17485122, 0, 1, 0, -0.17485122, 0, 0.9845949, -2.993357, 8.1902685, 18.863304)
+environment = SubResource("Environment_e5myj")
+current = true
+fov = 80.0
+
+[node name="Background" parent="." instance=ExtResource("4_iq7dd")]
+
+[node name="Tiff" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9691675, 8.131658, 18.219564)
+mesh = SubResource("QuadMesh_ke64t")
+
+[node name="Sky" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3844776, 8.131658, -22.954517)
+mesh = SubResource("QuadMesh_mamu3")

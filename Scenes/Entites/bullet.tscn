@@ -22,40 +22,48 @@ radius = 5.0
 
 [sub_resource type="Shader" id="Shader_rsd25"]
 code = "shader_type canvas_item;
+
 uniform float strength: hint_range(0.0, 0.1, 0.001) = 0.08;
 uniform vec2 center = vec2(0.5, 0.5);
 uniform float radius: hint_range(0.0, 1.0, 0.001) = 0.25;
 uniform float aberration: hint_range(0.0, 1.0, 0.001) = 0.425;
 uniform float width: hint_range(0.0, 0.1, 0.0001) = 0.04;
 uniform float feather: hint_range(0.0, 1.0, 0.001) = 0.135;
+
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 void fragment() {
-    vec2 st = UV;
-    vec2 dist_center = st - center;
+	vec2 dist_center = UV - center;
+	float dist = length(dist_center);
 
-    float mask = (1.0 - smoothstep(radius - feather, radius, length(dist_center)))
-               * smoothstep(radius - width - feather, radius - width, length(dist_center));
+	// Circular ring mask
+	float ring_mask = (1.0 - smoothstep(radius - feather, radius, dist))
+	                * smoothstep(radius - width - feather, radius - width, dist);
 
-    vec2 offset = normalize(dist_center) * strength * mask;
+	// Enclosure mask (full circle cutoff)
+	float enclosure = 1.0 - smoothstep(radius, radius + feather, dist);
 
-    // Scale the UV-space offset into screen-space
-    vec2 screen_offset = offset * (1.0 / SCREEN_PIXEL_SIZE) * SCREEN_PIXEL_SIZE;
-    vec2 abber_vec = offset * aberration * mask;
+	float mask = ring_mask * enclosure;
 
-    // Use SCREEN_UV as the base, apply offsets in screen space
-    vec2 base_uv = SCREEN_UV - offset;
-    vec2 final_st = mix(SCREEN_UV, base_uv, mask);
-
-    vec4 red  = texture(SCREEN_TEXTURE, final_st + abber_vec);
-    vec4 blue = texture(SCREEN_TEXTURE, final_st - abber_vec);
-    vec4 ori  = texture(SCREEN_TEXTURE, final_st);
-	
-	if(length(UV-0.5)>clamp(radius*1.1,0,0.5))
-	{
+	// Fully remove pixels outside circle
+	if (length(UV-0.5)>0.5) {
 		discard;
 	}
-    COLOR = vec4(red.r, ori.g, blue.b, 0.8)*2.9;
+
+	vec2 dir = normalize(dist_center + 1e-5);
+	vec2 offset = dir * strength * mask;
+
+	vec2 distorted_uv = SCREEN_UV - offset;
+
+	vec2 abber_vec = offset * aberration * mask;
+
+	vec4 red   = texture(SCREEN_TEXTURE, distorted_uv + abber_vec);
+	vec4 green = texture(SCREEN_TEXTURE, distorted_uv);
+	vec4 blue  = texture(SCREEN_TEXTURE, distorted_uv - abber_vec);
+
+	vec3 distorted = vec3(red.r, green.g, blue.b);
+
+	COLOR = vec4(distorted, mask);
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uua8f"]
@@ -153,6 +161,7 @@ _data = {
 }
 
 [node name="Bullet" type="CharacterBody2D"]
+top_level = true
 collision_layer = 512
 collision_mask = 512
 script = ExtResource("1_0a5a3")
@@ -176,8 +185,7 @@ shape = SubResource("CircleShape2D_0a5a3")
 debug_color = Color(0.9841493, 0.1169771, 0.1114401, 0.41960785)
 
 [node name="Dist" type="Sprite2D" parent="."]
-visible = false
-z_index = 221
+z_index = 415
 material = SubResource("ShaderMaterial_uua8f")
 position = Vector2(9.536743e-07, 9.536743e-07)
 scale = Vector2(66, 66)

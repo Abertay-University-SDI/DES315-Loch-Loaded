@@ -17,10 +17,13 @@ var _dead: RigidBody2D
 var _alive_sprite: Sprite2D
 var _dead_sprite: Sprite2D
 var _animation_player: AnimationPlayer
+var _stun_effect:ColorRect
 
 var _direction: int = -1        # -1 = left, 1 = right
 var immunity: float = 0.0
 var _is_dead: bool = false
+
+var stun_timer :float= 0.0
 
 
 # ─── Lifecycle ────────────────────────────────────────────────────────────────
@@ -32,6 +35,7 @@ func _ready() -> void:
 	_alive = $alive_body
 	_dead  = $dead_body
 	_animation_player = $AnimationPlayer
+	_stun_effect = $alive_body/Stun_Effect
 	_alive_sprite = _alive.get_node("Sprite2D")
 	_dead_sprite  = _dead.get_node("Sprite2D")
 
@@ -54,12 +58,18 @@ func _on_animation_finished(_anim_name: String) -> void:
 # ─── Process hooks ────────────────────────────────────────────────────────────
 
 func _process(delta: float) -> void:
+	stun_timer -= delta
 	immunity -= delta
 	if immunity < 0.0 and not _is_dead:
 		_alive.collision_layer = 1
 
 	if _is_dead:
 		return
+
+	if stun_timer > 0:
+		_stun_effect.show()
+	else:
+		_stun_effect.hide()
 
 	_on_process(delta)
 

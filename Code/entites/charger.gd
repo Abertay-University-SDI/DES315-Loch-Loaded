@@ -46,27 +46,27 @@ func _on_process(delta: float) -> void:
 func _on_physics_process(delta: float) -> void:
 	if _alive.is_on_wall():
 		_direction *= -1
-		
-	var on_floor :bool= _alive.is_on_floor()
+	if stun_timer > 0:
+		var on_floor :bool= _alive.is_on_floor()
 
-	if not on_floor:
-		_alive.velocity += Vector2.DOWN * 1200.0 * delta
+		if not on_floor:
+			_alive.velocity += Vector2.DOWN * 1200.0 * delta
 
-	if on_floor and not _was_on_floor:
-		_on_land()
-	_was_on_floor = on_floor
+		if on_floor and not _was_on_floor:
+			_on_land()
+		_was_on_floor = on_floor
 
-	if on_floor and not _airborne:
-		if _jump_cooldown <= 0.0:
-			_charge += CHARGE_RATE * delta
-			_charge  = minf(_charge, MAX_CHARGE)
-			_alive_sprite.rotate(_direction * 0.25 * _charge)
-			if _charge >= MAX_CHARGE:
-				_launch()
+		if on_floor and not _airborne:
+			if _jump_cooldown <= 0.0:
+				_charge += CHARGE_RATE * delta
+				_charge  = minf(_charge, MAX_CHARGE)
+				_alive_sprite.rotate(_direction * 0.25 * _charge)
+				if _charge >= MAX_CHARGE:
+					_launch()
 
 
-	if _airborne:
-		_alive_sprite.rotate(_direction * 0.25)
+		if _airborne:
+			_alive_sprite.rotate(_direction * 0.25)
 
 	_alive.move_and_slide()
 

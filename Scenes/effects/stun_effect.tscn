@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://sx4sxa5pncb8"]
+
+[ext_resource type="Shader" uid="uid://bsreonxx7r8u7" path="res://Code/shaders/stun.gdshader" id="1_65i4d"]
+[ext_resource type="Texture2D" uid="uid://l5grxv22beum" path="res://Textures/UI/Brushes/5_point_star_brush.png" id="2_e50n8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e50n8"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t8j23"]
+noise = SubResource("FastNoiseLite_e50n8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwq3g"]
+shader = ExtResource("1_65i4d")
+shader_parameter/ellipse_x = 0.35
+shader_parameter/ellipse_y = 0.2
+shader_parameter/thickness = 0.0210000009975
+shader_parameter/arc_size = 3.14000010490417
+shader_parameter/speed = 3.92
+shader_parameter/glow_strength = 1.5
+shader_parameter/color = Color(1, 1, 0.2, 1)
+shader_parameter/noise_image = SubResource("NoiseTexture2D_t8j23")
+
+[sub_resource type="Gradient" id="Gradient_t8j23"]
+offsets = PackedFloat32Array(0, 0.99248123)
+colors = PackedColorArray(0.69348943, 0.673665, 0.021370053, 1, 1, 1, 0.29748532, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iwq3g"]
+gradient = SubResource("Gradient_t8j23")
+
+[sub_resource type="Curve" id="Curve_t0kns"]
+_data = [Vector2(0.51712334, 0.58181816), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_sx678"]
+curve = SubResource("Curve_t0kns")
+
+[sub_resource type="Curve" id="Curve_xwpjh"]
+_data = [Vector2(0, 0.18181813), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_topnt"]
+curve = SubResource("Curve_xwpjh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uy0sf"]
+lifetime_randomness = 0.24
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(15, 15, 1)
+angle_min = -8.9999895
+angle_max = 201.40001
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_topnt")
+color_ramp = SubResource("GradientTexture1D_iwq3g")
+emission_curve = SubResource("CurveTexture_sx678")
+
+[node name="Stun_Effect" type="ColorRect"]
+material = SubResource("ShaderMaterial_iwq3g")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(20, 21)
+amount = 10
+texture = ExtResource("2_e50n8")
+lifetime = 1.28
+process_material = SubResource("ParticleProcessMaterial_uy0sf")

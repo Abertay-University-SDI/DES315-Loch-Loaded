@@ -50,6 +50,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			if current_line < dialog_lines.size():
 				_play_current_line()
 			else:
+				get_tree().paused = false
+				
 				get_parent().hide()
 
 func _on_visibility_changed() -> void:
