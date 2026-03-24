@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=97 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://eccmvo7fspb3" path="res://Sounds/YoYo.wav" id="6_82p5m"]
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
+[ext_resource type="Shader" uid="uid://d0jmnqdfutqhs" path="res://Code/shaders/stun_aura.gdshader" id="10_wqwp5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -234,6 +235,10 @@ region = Rect2(384, 320, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kws2f"]
 atlas = ExtResource("2_pwsgj")
 region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
+atlas = ExtResource("2_pwsgj")
+region = Rect2(320, 704, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kov73"]
 atlas = ExtResource("2_pwsgj")
@@ -466,6 +471,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Sprint",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgvob")
+}],
+"loop": true,
+"name": &"Stunning",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1023,6 +1036,130 @@ _data = {
 &"take_damage": SubResource("Animation_wooka")
 }
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wqwp5"]
+noise_type = 3
+fractal_type = 2
+fractal_lacunarity = 1.93
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7ag56"]
+noise = SubResource("FastNoiseLite_wqwp5")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ag56"]
+shader = ExtResource("10_wqwp5")
+shader_parameter/noise_image = SubResource("NoiseTexture2D_7ag56")
+shader_parameter/color = Color(0.04098812, 1.2237577, 1.2237577, 1)
+shader_parameter/t = 0.0
+shader_parameter/ring_thickness = 0.00999999977648
+
+[sub_resource type="Animation" id="Animation_x6bub"]
+resource_name = "stunning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.04098812, 1.2237577, 1.2237577, 1), Color(0.57375973, 0.5893233, 1.2237577, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/t")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/ring_thickness")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.00999999977648, 0.40000001830148]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1jcqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.04098812, 1.2237577, 1.2237577, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/t")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/ring_thickness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.00999999977648]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jcqv"]
+_data = {
+&"RESET": SubResource("Animation_1jcqv"),
+&"stunning": SubResource("Animation_x6bub")
+}
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
@@ -1053,7 +1190,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Idle"
+animation = &"Stunning"
 autoplay = "Idle"
 
 [node name="attack_area" type="Area2D" parent="."]
@@ -1173,4 +1310,28 @@ target_position = Vector2(11, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_wooka")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.2055189)
+material = SubResource("ShaderMaterial_7ag56")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -90.0
+offset_right = -46.224636
+offset_bottom = -63.224636
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.5199995, 5.5199995)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="effect_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1jcqv")
 }

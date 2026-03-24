@@ -97,7 +97,13 @@ z_index = 4096
 color = Color(0.2520276, 0.25202766, 0.25202757, 1)
 
 [node name="Background Layer" type="CanvasLayer" parent="."]
+process_mode = 3
 layer = -90
+
+[node name="ParallaxBackground" parent="Background Layer" instance=ExtResource("5_qs4fp")]
+process_mode = 1
+offset = Vector2(0, 358.69)
+transform = Transform2D(2, 0, 0, 2, 0, 358.69)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Background Layer"]
 z_as_relative = false
@@ -164,10 +170,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("7_unuuj")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_qs4fp")]
-offset = Vector2(0, 358.69)
-transform = Transform2D(2, 0, 0, 2, 0, 358.69)
 
 [node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_0emyc")]
 z_index = 165

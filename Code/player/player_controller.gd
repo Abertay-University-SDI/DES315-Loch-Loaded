@@ -32,9 +32,11 @@ signal health_changed(health: float)
 @onready var bottom_ray:RayCast2D=$bottom_ray
 
 @onready var anim_player:AnimationPlayer=$AnimationPlayer
+@onready var effect_player:AnimationPlayer=$effect_player
 
 @onready var stun_attack_area:Area2D=$stun_area
 const STUN_TIME:float=3.3
+var stunning:bool= false;
 
 var _prev_health := MAX_HEALTH
 var _player_material: ShaderMaterial
@@ -163,7 +165,7 @@ func _input(event: InputEvent) -> void:
 		punch_sfx.play()
 		_attack_area.monitoring = true
 
-	if event.is_action_pressed("dash") and dash_timer < 0.0:
+	if event.is_action_pressed("dash") and dash_timer < 0.0 and not stunning:
 		_start_dash()
 
 	# Buffer jump input so pressing just before landing still jumps
@@ -178,7 +180,11 @@ func _input(event: InputEvent) -> void:
 		stun_attack_area.monitoring = true
 		if _player_material:
 			_player_material.set_shader_parameter("stunning", true)
-		await get_tree().create_timer(0.2).timeout
+		effect_player.play("stunning")
+		stunning = true
+		velocity = Vector2.UP*10.0
+		await get_tree().create_timer(1.0).timeout
+		stunning = false
 		if _player_material:
 			_player_material.set_shader_parameter("stunning", false)
 		stun_attack_area.monitoring = false
@@ -248,9 +254,10 @@ func _physics_process(delta: float) -> void:
 					jumps_left -= 1
 
 	_update_wall_rays()
-	_apply_gravity(delta)
-	_handle_jump()
-	_handle_movement(delta)
+	if(not stunning):
+		_apply_gravity(delta)
+		_handle_jump()
+		_handle_movement(delta)
 
 	_update_attack_offset()
 	_update_animation()
@@ -458,8 +465,10 @@ func _update_animation() -> void:
 	var speed := absf(velocity.x)
 
 	anim_player.play("scale_normal")
-
-	if dashing:
+	
+	if stunning:
+		_anim.play("Stunning")
+	elif dashing:
 		_anim.play("Dash")
 	elif sliding:
 		_anim.play("Slide")

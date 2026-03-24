@@ -112,11 +112,10 @@ func _on_process(delta: float) -> void:
 
 
 func _on_physics_process(delta: float) -> void:
-	if stun_timer < 0:
-		if not _alive.is_on_floor():
-			_alive.velocity += Vector2.DOWN * 1200.0 * delta
+	if not _alive.is_on_floor():
+		_alive.velocity += Vector2.DOWN * 1200.0 * delta
 
-		if immunity <= 0.0 and not _attack_committed:
+	if immunity <= 0.0 and not _attack_committed and stun_timer<0.0:
 			_alive.velocity = Vector2(_direction * walk_speed, _alive.velocity.y)
 
 	if not _has_ground_ahead():
