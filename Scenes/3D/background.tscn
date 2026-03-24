@@ -74,7 +74,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lf27d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8179919, -0.47605217, -0.3228986, 0.40659708, -0.875578, 0.26084864, -0.40690053, 0.08208236, 0.90977716, 0, 0, 0)
-light_energy = 0.533
+light_energy = 0.178
 light_negative = true
 shadow_enabled = true
 directional_shadow_split_3 = 0.567

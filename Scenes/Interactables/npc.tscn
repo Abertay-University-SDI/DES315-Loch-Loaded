@@ -44,6 +44,7 @@ animations = [{
 radius = 44.28318
 
 [node name="NPC" type="Node2D" node_paths=PackedStringArray("zone", "label")]
+process_mode = 3
 script = ExtResource("1_gpvyx")
 zone = NodePath("Area2D")
 label = NodePath("Label")
@@ -57,9 +58,10 @@ position = Vector2(0, -45.000004)
 scale = Vector2(0.02483333, 0.024833333)
 sprite_frames = SubResource("SpriteFrames_sogwd")
 autoplay = "default"
-frame_progress = 0.10039604
+frame_progress = 0.6028488
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, -44)
 shape = SubResource("CircleShape2D_fj317")
 
