@@ -254,7 +254,7 @@ func _physics_process(delta: float) -> void:
 					jumps_left -= 1
 
 	_update_wall_rays()
-	if(not stunning):
+	if not stunning:
 		_apply_gravity(delta)
 		_handle_jump()
 		_handle_movement(delta)
