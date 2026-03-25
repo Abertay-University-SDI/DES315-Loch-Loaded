@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=103 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 [ext_resource type="Shader" uid="uid://d0jmnqdfutqhs" path="res://Code/shaders/stun_aura.gdshader" id="10_wqwp5"]
+[ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="11_7ag56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -518,6 +519,9 @@ animations = [{
 "name": &"Wall",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqwp5"]
+size = Vector2(61, 25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4i3e"]
 radius = 14.779228
@@ -1102,6 +1106,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("slam:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_x6bub"]
 resource_name = "stunning"
@@ -1154,11 +1170,62 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_3vh2w"]
+resource_name = "slam"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slam:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1jcqv"]
 _data = {
 &"RESET": SubResource("Animation_1jcqv"),
+&"slam": SubResource("Animation_3vh2w"),
 &"stunning": SubResource("Animation_x6bub")
 }
+
+[sub_resource type="Gradient" id="Gradient_vi71p"]
+colors = PackedColorArray(1, 1, 0.33999997, 1, 0.45, 0.45, 0.22049999, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wplub"]
+gradient = SubResource("Gradient_vi71p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jgvob"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -6.02, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 2, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 2.0
+emission_ring_cone_angle = 49.5
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -200.0
+linear_accel_max = -2.2351742e-06
+tangential_accel_min = -2.8800023
+tangential_accel_max = 3.4599977
+color_ramp = SubResource("GradientTexture1D_wplub")
+turbulence_noise_strength = 18.6
+turbulence_noise_scale = 10.0
+turbulence_influence_min = 0.045
+turbulence_influence_max = 0.045
+turbulence_initial_displacement_min = 100.0
+turbulence_initial_displacement_max = 100.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
 collision_layer = 3
@@ -1192,6 +1259,13 @@ scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
 animation = &"Stunning"
 autoplay = "Idle"
+
+[node name="slam_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slam_area"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_wqwp5")
+debug_color = Color(0.8848519, 0.3332101, 0, 0.41960785)
 
 [node name="attack_area" type="Area2D" parent="."]
 position = Vector2(21, -25)
@@ -1335,3 +1409,13 @@ size_flags_vertical = 4
 libraries = {
 &"": SubResource("AnimationLibrary_1jcqv")
 }
+
+[node name="slam" type="GPUParticles2D" parent="."]
+position = Vector2(0, 6)
+emitting = false
+amount = 256
+texture = ExtResource("11_7ag56")
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_jgvob")
