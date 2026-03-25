@@ -112,6 +112,8 @@ var _yoyo_duration := 1.0
 var last_hit_position := Vector2.ZERO
 var yoyo_enemy: Enemy = null
 var yoyo_enemy_body: CharacterBody2D = null
+var yoyo_ready: bool = false
+var yoyo_throwing: bool = false
 
 var dir_radial := Vector2.ZERO
 
@@ -153,7 +155,6 @@ func _ready() -> void:
 	_setup_camera_limits()
 
 
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("spray"):
 		spraying = true
@@ -189,8 +190,23 @@ func _input(event: InputEvent) -> void:
 			_player_material.set_shader_parameter("stunning", false)
 		stun_attack_area.monitoring = false
 
-	if event.is_action_pressed("yoyo"):
-		if (yoyo.visible and is_instance_valid(yoyo_enemy)):
+	if event.is_action_pressed("ready yoyo"):
+		if not yoyo_throwing:
+			yoyo_ready = true
+			yoyo.global_position = global_position - Vector2(0, 10)
+			yoyo.visible = true
+		return
+
+	if event.is_action_released("ready yoyo"):
+		yoyo_ready = false
+		if not yoyo_throwing:
+			yoyo.visible = false
+		return
+
+	if event.is_action_pressed("throw yoyo"):
+		yoyo_ready = false
+		if (yoyo.visible and is_instance_valid(yoyo_enemy_body)):
+			print_debug("pull enemy")
 			var dir := (yoyo_enemy.position - position).normalized()
 			if (yoyo_enemy._alive.is_on_floor()):
 				dir *= 3
@@ -198,14 +214,19 @@ func _input(event: InputEvent) -> void:
 				dir += Vector2.DOWN * -3
 			YoYo_sfx.play()
 			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
+			yoyo_enemy = null
+			yoyo_enemy_body = null
+			_yoyo_returning = true
 		elif (_in_crane_area):
 			_on_crane = true
-		elif (yoyo.visible == false):
+		elif (yoyo.visible and not yoyo_throwing and not _yoyo_returning):
+			print_debug("throw the yoyo")
 			_throw_yoyo()
 		else:
 			return
-			
 
+	if event.is_action_pressed("ground slam"):
+		return
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
@@ -213,7 +234,6 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_released("crouch"):
 		_end_crouch()
-
 
 func _process(delta: float) -> void:
 	if health_value < 0:
@@ -234,7 +254,6 @@ func _process(delta: float) -> void:
 	emit_signal("health_changed", health_value)
 	_update_cooldowns(delta)
 	_update_yoyo()
-
 
 func _physics_process(delta: float) -> void:
 	if dash_timer < DASH_COOLDOWN - DASH_DURATION:
@@ -268,9 +287,7 @@ func _physics_process(delta: float) -> void:
 	if sliding and (absf(velocity.x) < SLIDE_MIN_SPEED or not is_on_floor()):
 		_end_slide()
 
-
 # ─── Crouch / Slide helpers ──────────────────────────────────────────────────
-
 func _try_start_crouch_or_slide(event: InputEvent) -> void:
 	var speed := absf(velocity.x)
 	if speed > 60.0:
@@ -285,17 +302,14 @@ func _try_start_crouch_or_slide(event: InputEvent) -> void:
 			set_collision_mask_value(2, false)
 	idle_collider.set_deferred("disabled",true)
 
-
 func _start_slide() -> void:
 	sliding = true
 	crouching = false
 	_slide_dir = sign(velocity.x) if velocity.x != 0.0 else (-1.0 if _anim.flip_h else 1.0)
 	velocity.x = _slide_dir * max(absf(velocity.x), SLIDE_SPEED)
 
-
 func _end_slide() -> void:
 	sliding = false
-
 
 func _has_headroom() -> bool:
 	var space_state = get_world_2d().direct_space_state
@@ -310,7 +324,7 @@ func _has_headroom() -> bool:
 	var result = space_state.intersect_ray(params)
 
 	return result.is_empty()
-	
+
 func _end_crouch() -> void:
 	if not _has_headroom():
 		return
@@ -319,7 +333,6 @@ func _end_crouch() -> void:
 	sliding = false
 	set_collision_mask_value(2, true)
 	idle_collider.set_deferred("disabled", false)
-
 
 # ─── Core movement ───────────────────────────────────────────────────────────
 func _update_wall_rays():
@@ -333,7 +346,6 @@ func _respawn_player(body: Node) -> void:
 	is_dying = true
 	SceneTransition.death_reset()
 
-
 func _apply_gravity(dt: float) -> void:
 	if not is_on_floor() and not dashing and not zipping:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
@@ -346,7 +358,6 @@ func _apply_gravity(dt: float) -> void:
 
 func _is_touching_wall_full() -> bool:
 	return top_ray.is_colliding() and bottom_ray.is_colliding()
-
 
 func _handle_jump() -> void:
 	if _jump_buffer_timer > 0.0:
@@ -367,10 +378,7 @@ func _handle_jump() -> void:
 	if is_on_wall_only():
 		velocity = (Vector2(get_wall_normal().x * 400.0, JUMP_VELOCITY / 2.0) + velocity) * 0.5
 
-
 func _handle_movement(dt: float) -> void:
-	
-	
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
@@ -418,7 +426,6 @@ func _handle_movement(dt: float) -> void:
 	elif not crouching:
 		set_collision_mask_value(2, true)
 
-
 func _start_dash() -> void:
 	dashing = true
 	dash_timer = DASH_COOLDOWN
@@ -436,7 +443,6 @@ func _start_dash() -> void:
 	_dash_attack_area.monitoring = true
 	dash_sfx.play()
 
-
 func _update_cooldowns(dt: float) -> void:
 	if punching > 0.0:
 		punching -= dt
@@ -453,7 +459,6 @@ func _update_cooldowns(dt: float) -> void:
 				mat.set_shader_parameter("fliph", _anim.flip_h)
 			_dash_attack_area.monitoring = false
 			_dash_particles.emitting = false
-
 
 func _update_animation() -> void:
 	if spraying:
@@ -513,12 +518,28 @@ func _on_stun_body_entered(body: Node) -> void:
 	enemy.stun_timer = STUN_TIME
 
 func _throw_yoyo() -> void:
-	yoyo.show()
-	yoyo.global_position = global_position + Vector2(-150 if _anim.flip_h else 150, -20)
+	yoyo_throwing = true
+	var aimDir
+	var controllerName = Input.get_joy_name(0).to_lower()
+	
+	if (controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1 or 
+	controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or 
+	controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
+	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or controllerName.find("pro controller") != -1):
+		var x = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+		var y = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+		aimDir = Vector2(x,y).normalized()
+	else:
+		aimDir = (get_global_mouse_position() - global_position).normalized()
+	yoyo.global_position = global_position + aimDir * 150
 	return
 
 func _update_yoyo() -> void:
 	if not yoyo.visible:
+		return
+
+	if yoyo.ready and not yoyo_throwing and not is_instance_valid(yoyo_enemy) and not _yoyo_returning:
+		yoyo.global_position = global_position - Vector2(0, 10)
 		return
 
 	var dt := get_process_delta_time()
@@ -540,10 +561,13 @@ func _update_yoyo() -> void:
 		yoyo.global_position = yoyo.global_position.move_toward(target, 300.0 * dt)
 
 		if yoyo.global_position.distance_to(target) < 5.0:
+			print_debug("yoyo returned")
 			yoyo.visible = false
 			_yoyo_returning = false
 			yoyo_enemy = null
 			yoyo_enemy_body = null
+			yoyo_ready = false
+			yoyo_throwing = false
 
 	var player_local := yoyo_string.to_local(global_position)
 	player_local.y -= 10
@@ -553,12 +577,10 @@ func _update_yoyo() -> void:
 	yoyo_string.set_point_position(0, player_local)
 	yoyo_string.set_point_position(1, yoyo_local)
 
-
 func _update_attack_offset() -> void:
 	var offset := _attack_area.position
 	offset.x = -absf(offset.x) if _anim.flip_h else absf(offset.x)
 	_attack_area.position = offset
-
 
 func _on_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()
@@ -567,7 +589,6 @@ func _on_body_entered(body: Node) -> void:
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
 	enemy.take_hit(dir, punching, 100.0, 30)
-
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()

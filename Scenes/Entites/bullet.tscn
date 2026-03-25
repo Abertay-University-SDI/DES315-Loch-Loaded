@@ -36,7 +36,6 @@ void fragment() {
 	vec2 dist_center = UV - center;
 	float dist = length(dist_center);
 
-	// Circular ring mask
 	float ring_mask = (1.0 - smoothstep(radius - feather, radius, dist))
 	                * smoothstep(radius - width - feather, radius - width, dist);
 
@@ -52,7 +51,6 @@ void fragment() {
 
 	vec2 dir = normalize(dist_center + 1e-5);
 	vec2 offset = dir * strength * mask;
-
 	vec2 distorted_uv = SCREEN_UV - offset;
 
 	vec2 abber_vec = offset * aberration * mask;
