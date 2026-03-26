@@ -20,6 +20,10 @@ signal health_changed(health: float)
 @export var dash_sfx: AudioStreamPlayer2D
 @export var punch_sfx: AudioStreamPlayer2D
 @export var YoYo_sfx: AudioStreamPlayer2D
+@export var stunAttack_sfx: AudioStreamPlayer2D
+@export var stunRecharge_sfx: AudioStreamPlayer2D
+@export var yoyoThrow_sfx: AudioStreamPlayer2D
+@export var jump_sfx: AudioStreamPlayer2D
 
 @export_group("yoyo")
 @export var yoyo: Sprite2D
@@ -120,6 +124,7 @@ var yoyo_enemy: Enemy = null
 var yoyo_enemy_body: CharacterBody2D = null
 var yoyo_ready: bool = false
 var yoyo_throwing: bool = false
+var yoyo_attached: bool = false
 
 var dir_radial := Vector2.ZERO
 
@@ -193,7 +198,9 @@ func _input(event: InputEvent) -> void:
 		effect_player.play("stunning")
 		stunning = true
 		velocity = Vector2.UP*10.0
+		stunAttack_sfx.play()
 		await get_tree().create_timer(1.0).timeout
+		stunRecharge_sfx.play()
 		stunning = false
 		if _player_material:
 			_player_material.set_shader_parameter("stunning", false)
@@ -215,7 +222,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("throw yoyo"):
 		yoyo_ready = false
 		if (yoyo.visible and is_instance_valid(yoyo_enemy_body)):
-			print_debug("pull enemy")
+			yoyoThrow_sfx.play()
 			var dir := (yoyo_enemy.position - position).normalized()
 			if (yoyo_enemy._alive.is_on_floor()):
 				dir *= 3
@@ -227,9 +234,13 @@ func _input(event: InputEvent) -> void:
 			yoyo_enemy_body = null
 			_yoyo_returning = true
 		elif (_in_crane_area):
+			yoyoThrow_sfx.play()
+			yoyo.global_position = crane_point
+			yoyo.visible = true
+			yoyo_attached = true
 			_on_crane = true
 		elif (yoyo.visible and not yoyo_throwing and not _yoyo_returning):
-			print_debug("throw the yoyo")
+			yoyoThrow_sfx.play()
 			_throw_yoyo()
 		else:
 			return
@@ -397,6 +408,7 @@ func _handle_jump() -> void:
 	_end_crouch()
 
 	_jump_buffer_timer = 0.0
+	jump_sfx.play()
 	velocity = Vector2(velocity.x, JUMP_VELOCITY)
 	jumps_left -= 1
 	_coyote_timer = 0.0
@@ -423,11 +435,10 @@ func _handle_movement(dt: float) -> void:
 	if _on_crane:
 		calculate_crane_dir()
 		velocity = crane_dir * 5.0
-		print_debug(global_position.distance_to(crane_point))
 		if (global_position.distance_to(crane_point) <= 50):
 			_on_crane = false
 			velocity = crane_dir * 10.0
-		# crane todo
+			yoyo_attached = false
 
 	if sliding:
 		velocity.x = move_toward(velocity.x, 0.0, SLIDE_FRICTION * dt)
@@ -578,7 +589,7 @@ func _update_yoyo() -> void:
 	if not yoyo.visible:
 		return
 
-	if yoyo.ready and not yoyo_throwing and not is_instance_valid(yoyo_enemy) and not _yoyo_returning:
+	if yoyo.ready and not yoyo_throwing and not is_instance_valid(yoyo_enemy) and not _yoyo_returning and not yoyo_attached:
 		yoyo.global_position = global_position - Vector2(0, 10)
 		return
 
@@ -601,7 +612,6 @@ func _update_yoyo() -> void:
 		yoyo.global_position = yoyo.global_position.move_toward(target, 300.0 * dt)
 
 		if yoyo.global_position.distance_to(target) < 5.0:
-			print_debug("yoyo returned")
 			yoyo.visible = false
 			_yoyo_returning = false
 			yoyo_enemy = null
@@ -666,6 +676,7 @@ func crane_entered(body:Node2D)->void:
 	crane_point = body.get_parent().get_parent().get_point()
 	_in_crane_area = true
 func crane_exited(_body:Node2D)->void:
+	yoyo_attached = false
 	_in_crane_area = false
 	
 func calculate_crane_dir()->void:

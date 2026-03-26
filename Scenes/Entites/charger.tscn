@@ -1,10 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://2kui8xij1j7s"]
+[gd_scene load_steps=22 format=3 uid="uid://2kui8xij1j7s"]
 
 [ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://djrks4pg11ij7" path="res://Textures/Enemies/wheel-enemy-spritesheet-colour.png" id="2_mmf4r"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_mmf4r"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_mmf4r"]
+[ext_resource type="AudioStream" uid="uid://ctuogv0ugknij" path="res://Sounds/tire idle.wav" id="6_wplub"]
+[ext_resource type="AudioStream" uid="uid://d2itccpo82hpr" path="res://Sounds/tire bounce.wav" id="7_xn8n8"]
+[ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="8_xn8n8"]
 
 [sub_resource type="Gradient" id="Gradient_3ghnw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -79,7 +82,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/path = NodePath("takeDamage:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -170,7 +173,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/path = NodePath("takeDamage:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -187,8 +190,11 @@ _data = {
 &"take_hit": SubResource("Animation_rcx67")
 }
 
-[node name="Charger" type="Node2D" groups=["Enemy"]]
+[node name="Charger" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx") groups=["Enemy"]]
 script = ExtResource("1_3ghnw")
+idle_sfx = NodePath("idle")
+bounce_sfx = NodePath("bonuce")
+damagePlayer_sfx = NodePath("DamagePlayer")
 ground_check_distance = 16.0
 
 [node name="alive_body" type="CharacterBody2D" parent="."]
@@ -260,5 +266,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_r7u2p")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="takeDamage" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_wplub")
+
+[node name="idle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wplub")
+autoplay = true
+
+[node name="bonuce" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xn8n8")
+
+[node name="DamagePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xn8n8")

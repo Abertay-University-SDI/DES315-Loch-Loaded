@@ -9,7 +9,11 @@
 [ext_resource type="AudioStream" uid="uid://eccmvo7fspb3" path="res://Sounds/YoYo.wav" id="6_82p5m"]
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
+[ext_resource type="AudioStream" uid="uid://b0kqvh5284igq" path="res://Sounds/AOE Attack fire.wav" id="9_wooka"]
 [ext_resource type="Shader" uid="uid://d0jmnqdfutqhs" path="res://Code/shaders/stun_aura.gdshader" id="10_wqwp5"]
+[ext_resource type="AudioStream" uid="uid://bbq8wc161a7ud" path="res://Sounds/AOE recharge.wav" id="10_x6bub"]
+[ext_resource type="AudioStream" uid="uid://dhfxinysue7ch" path="res://Sounds/yoyo sound.wav" id="11_x6bub"]
+[ext_resource type="AudioStream" uid="uid://cho05ofpqxpqy" path="res://Sounds/jump.wav" id="12_1jcqv"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="11_7ag56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
@@ -1244,6 +1248,10 @@ footstep_sfx = NodePath("sound/footstep")
 dash_sfx = NodePath("sound/dash")
 punch_sfx = NodePath("sound/punch")
 YoYo_sfx = NodePath("sound/YoYo")
+stunAttack_sfx = NodePath("sound/AOEAttack")
+stunRecharge_sfx = NodePath("sound/AOERecharge")
+yoyoThrow_sfx = NodePath("sound/yoyoThrow")
+jump_sfx = NodePath("sound/jump")
 yoyo = NodePath("YoYo")
 yoyo_string = NodePath("YoYo/YoYoLine")
 idle_collider = NodePath("Tall")
@@ -1309,6 +1317,11 @@ debug_color = Color(0.78630257, 0.8483335, 7.70092e-07, 0.41960785)
 
 [node name="sound" type="Node2D" parent="."]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="sound"]
+position = Vector2(0, -28.749994)
+scale = Vector2(0.99999994, 0.99999994)
+current = true
+
 [node name="footstep" type="AudioStreamPlayer2D" parent="sound"]
 scale = Vector2(0.99999994, 0.99999994)
 stream = ExtResource("4_nwvk4")
@@ -1329,10 +1342,19 @@ bus = &"SFX"
 stream = ExtResource("6_82p5m")
 bus = &"SFX"
 
-[node name="AudioListener2D" type="AudioListener2D" parent="sound"]
-position = Vector2(0, -28.749994)
-scale = Vector2(0.99999994, 0.99999994)
-current = true
+[node name="AOEAttack" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("9_wooka")
+
+[node name="AOERecharge" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("10_x6bub")
+
+[node name="BackgroundAmbiance" type="AudioStreamPlayer2D" parent="sound"]
+
+[node name="yoyoThrow" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("11_x6bub")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("12_1jcqv")
 
 [node name="YoYo" type="Sprite2D" parent="."]
 top_level = true
