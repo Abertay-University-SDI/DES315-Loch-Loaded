@@ -51,6 +51,7 @@ folder_colors={
 
 Enemy=""
 current_ui=""
+random_npc=""
 
 [input]
 

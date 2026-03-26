@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dsc0vr7gqde8h"]
+[gd_scene load_steps=48 format=3 uid="uid://dsc0vr7gqde8h"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_50v45"]
 [ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="2_lrh7k"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_o0ro1"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="31_0emyc"]
 [ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_3a08j"]
+[ext_resource type="PackedScene" uid="uid://vptevd4ijf1n" path="res://Scenes/Entites/random_npc.tscn" id="35_ltej3"]
 
 [sub_resource type="Environment" id="Environment_kq4fe"]
 background_mode = 3
@@ -805,3 +806,42 @@ offset_left = 4220.0
 offset_top = 334.0
 offset_right = 4279.0
 offset_bottom = 401.0
+
+[node name="NPC\'s" type="Node2D" parent="."]
+position = Vector2(-89, 557)
+
+[node name="Random_NPC_0" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(631, 110)
+
+[node name="Random_NPC_1" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(-17, 113)
+
+[node name="Random_NPC_2" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(1449, -261)
+
+[node name="Random_NPC_3" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(1758, -7)
+
+[node name="Random_NPC_4" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(2924, -183)
+
+[node name="Random_NPC_5" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(-750, 111)
+
+[node name="Random_NPC_6" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(-380, 110)
+
+[node name="Random_NPC_7" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(1188, 109)
+
+[node name="Random_NPC_8" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(1438, 107)
+
+[node name="Random_NPC_9" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(2072, 114)
+
+[node name="Random_NPC_10" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(2419, 114)
+
+[node name="Random_NPC_11" parent="NPC\'s" instance=ExtResource("35_ltej3")]
+position = Vector2(5536, -238)

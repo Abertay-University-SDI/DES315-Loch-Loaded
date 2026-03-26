@@ -46,7 +46,7 @@ func _on_process(delta: float) -> void:
 func _on_physics_process(delta: float) -> void:
 	if _alive.is_on_wall():
 		_direction *= -1
-	if stun_timer > 0:
+	if stun_timer < 0:
 		var on_floor :bool= _alive.is_on_floor()
 
 		if not on_floor:
