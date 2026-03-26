@@ -3,6 +3,9 @@ class_name Charger
 
 @onready var _slam_particle: GPUParticles2D = $alive_body/GPUParticles2D
 @onready var _hurt_box: Area2D              = $alive_body/Hurt_box
+@export var idle_sfx: AudioStreamPlayer2D
+@export var bounce_sfx: AudioStreamPlayer2D
+@export var damagePlayer_sfx: AudioStreamPlayer2D
 
 const JUMP_COOLDOWN := 1.2
 const MAX_CHARGE    := 5.0
@@ -24,6 +27,7 @@ func _on_ready() -> void:
 	_health = max_health
 	_direction = -1
 	_hurt_box.body_entered.connect(_hurt_player)
+	idle_sfx.play()
 
 
 func _on_animation_finished(anim_name: String) -> void:
@@ -35,6 +39,7 @@ func _hurt_player(body: Node) -> void:
 	if body is not Player or _hit_cooldown > 0.0:
 		return
 	_hit_cooldown = HIT_COOLDOWN
+	damagePlayer_sfx.play()
 	(body as Player).health_value -= 20 if _airborne else 10
 
 
@@ -45,6 +50,7 @@ func _on_process(delta: float) -> void:
 
 func _on_physics_process(delta: float) -> void:
 	if _alive.is_on_wall():
+		bounce_sfx.play()
 		_direction *= -1
 	if stun_timer > 0:
 		var on_floor :bool= _alive.is_on_floor()

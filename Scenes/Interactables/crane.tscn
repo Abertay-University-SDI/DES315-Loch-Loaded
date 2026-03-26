@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d0awlurd8o5up" path="res://Code/interactables/crane.gd" id="2_evw0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plspt"]
-size = Vector2(22.359999, 19.63)
+size = Vector2(22.359999, 17.439999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evw0y"]
 size = Vector2(1669.0321, 56.604347)
@@ -24,7 +24,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crane/GrappleArea"]
-position = Vector2(-965.99994, -76.749985)
+position = Vector2(-965.99994, -21.999996)
 scale = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_plspt")
 debug_color = Color(0, 0.60784316, 0.65882355, 0.5137255)

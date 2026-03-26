@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfsgc12xnqqly"
+path="res://.godot/imported/getting hit.wav-b799e224085be0151f6c8d7c1ba08772.sample"
+
+[deps]
+
+source_file="res://Sounds/getting hit.wav"
+dest_files=["res://.godot/imported/getting hit.wav-b799e224085be0151f6c8d7c1ba08772.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
