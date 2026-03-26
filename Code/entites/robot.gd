@@ -123,5 +123,5 @@ func _on_physics_process(delta: float) -> void:
 	if _has_wall_ahead():
 		_direction *= -1
 
-	_alive_sprite.frame = int(_direction > 0)
+	_alive_sprite.frame = int(_direction > 0) + int(_contact_timer>0.0)*2
 	_alive.move_and_slide()
