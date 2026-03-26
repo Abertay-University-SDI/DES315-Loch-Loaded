@@ -25,6 +25,35 @@ theme = ExtResource("3_f8ftb")
 script = ExtResource("1_irnjd")
 back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_5gd8x")
+layout_mode = 0
+offset_left = 175.99988
+offset_top = -554.0001
+offset_right = 1375.9999
+offset_bottom = 213.99988
+rotation = 1.0471976
+pivot_offset = Vector2(400, 256)
+texture = ExtResource("4_mmpk5")
+
+[node name="Gear_1" type="TextureRect" parent="TextureRect"]
+z_index = -1
+layout_mode = 0
+offset_left = 264.84494
+offset_top = 246.09566
+offset_right = 520.845
+offset_bottom = 502.09564
+texture = ExtResource("5_myk77")
+
+[node name="Gear_2" type="TextureRect" parent="TextureRect"]
+z_index = -1
+layout_mode = 0
+offset_left = 643.5353
+offset_top = 244.18478
+offset_right = 899.5353
+offset_bottom = 500.18478
+texture = ExtResource("5_myk77")
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = -148.0
@@ -91,35 +120,6 @@ process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
 text = "exit game"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("CanvasItemMaterial_5gd8x")
-layout_mode = 0
-offset_left = 175.99994
-offset_top = -554.00006
-offset_right = 1376.0
-offset_bottom = 213.99994
-rotation = 1.0471976
-pivot_offset = Vector2(400, 256)
-texture = ExtResource("4_mmpk5")
-
-[node name="Gear_1" type="TextureRect" parent="TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_left = 264.84494
-offset_top = 246.09566
-offset_right = 520.845
-offset_bottom = 502.09564
-texture = ExtResource("5_myk77")
-
-[node name="Gear_2" type="TextureRect" parent="TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_left = 643.5353
-offset_top = 244.18478
-offset_right = 899.5353
-offset_bottom = 500.18478
-texture = ExtResource("5_myk77")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_pressed"]
 [connection signal="visibility_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_visibility_changed"]

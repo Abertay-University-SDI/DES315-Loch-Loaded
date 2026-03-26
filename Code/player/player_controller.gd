@@ -531,6 +531,7 @@ func _update_animation() -> void:
 		
 	elif speed < 5.0:
 		_anim.play("Idle")
+		anim_player.play("scale_down")
 	else:
 		anim_player.play("scale_down")
 		_anim.play("Run")
