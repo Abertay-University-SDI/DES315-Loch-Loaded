@@ -1,10 +1,11 @@
-[gd_scene load_steps=110 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=109 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
 [ext_resource type="Texture2D" uid="uid://ch5b08f0lwj6h" path="res://Textures/Scrap/TheDummyAnim-SpriteSheet.png" id="2_pwsgj"]
 [ext_resource type="Texture2D" uid="uid://de7yrdqnm555w" path="res://Textures/characters/player_sprite_Sheet.png" id="4_7ag56"]
 [ext_resource type="AudioStream" uid="uid://b286yqsjnhxe1" path="res://Sounds/footstep.wav" id="4_nwvk4"]
+[ext_resource type="Texture2D" uid="uid://c0j22u1btgvfq" path="res://Textures/characters/IMG_0651.png" id="4_vi71p"]
 [ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]
 [ext_resource type="AudioStream" uid="uid://eccmvo7fspb3" path="res://Sounds/YoYo.wav" id="6_82p5m"]
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
@@ -51,21 +52,21 @@ region = Rect2(128, 448, 64, 64)
 atlas = ExtResource("2_pwsgj")
 region = Rect2(128, 320, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wd1f5"]
-atlas = ExtResource("2_pwsgj")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sumtc"]
+atlas = ExtResource("4_vi71p")
+region = Rect2(0, 750, 248, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3hd0"]
-atlas = ExtResource("2_pwsgj")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya54m"]
+atlas = ExtResource("4_vi71p")
+region = Rect2(248, 750, 248, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pv7gs"]
-atlas = ExtResource("2_pwsgj")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pr0a"]
+atlas = ExtResource("4_vi71p")
+region = Rect2(496, 750, 248, 250)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q00q0"]
-atlas = ExtResource("2_pwsgj")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu1ui"]
+atlas = ExtResource("4_vi71p")
+region = Rect2(744, 750, 248, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vi71p"]
 atlas = ExtResource("4_7ag56")
@@ -307,16 +308,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wd1f5")
+"texture": SubResource("AtlasTexture_sumtc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y3hd0")
+"texture": SubResource("AtlasTexture_ya54m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pv7gs")
+"texture": SubResource("AtlasTexture_7pr0a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q00q0")
+"texture": SubResource("AtlasTexture_cu1ui")
 }],
 "loop": true,
 "name": &"Idle",
@@ -999,7 +1000,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -15.56)]
+"values": [Vector2(0, -20.25)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1011,7 +1012,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.128, 0.128)]
+"values": [Vector2(0.183, 0.183)]
 }
 
 [sub_resource type="Animation" id="Animation_wqwp5"]
@@ -1276,7 +1277,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Punch"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="slam_area" type="Area2D" parent="."]

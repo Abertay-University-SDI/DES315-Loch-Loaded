@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bp6m4rt1dw531"]
+[gd_scene load_steps=17 format=3 uid="uid://bp6m4rt1dw531"]
 
 [ext_resource type="Script" uid="uid://dr6jw5idiyjkn" path="res://Code/entites/flybot.gd" id="1_pirrt"]
+[ext_resource type="Texture2D" uid="uid://tb0vm7vj4ysf" path="res://Textures/Enemies/flying-enemy-spritesheet-colour.png" id="2_bj2wy"]
 [ext_resource type="Texture2D" uid="uid://do3v8n48kox66" path="res://Textures/Enemies/flying-enemy.png" id="2_l1eq5"]
 [ext_resource type="AudioStream" uid="uid://bcrcex6oyp23m" path="res://Sounds/drone shoot.wav" id="3_l1eq5"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="3_pirrt"]
@@ -211,7 +212,7 @@ shape = SubResource("RectangleShape2D_4tuei")
 texture_filter = 1
 position = Vector2(-0.75, 0)
 scale = Vector2(0.023450231, 0.023450231)
-texture = ExtResource("2_l1eq5")
+texture = ExtResource("2_bj2wy")
 hframes = 2
 
 [node name="attack_area" type="Area2D" parent="alive_body"]
