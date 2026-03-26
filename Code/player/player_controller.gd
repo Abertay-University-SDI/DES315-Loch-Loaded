@@ -22,8 +22,10 @@ signal health_changed(health: float)
 @export var YoYo_sfx: AudioStreamPlayer2D
 @export var stunAttack_sfx: AudioStreamPlayer2D
 @export var stunRecharge_sfx: AudioStreamPlayer2D
+@export var backgroundAmb: AudioStreamPlayer2D
 @export var yoyoThrow_sfx: AudioStreamPlayer2D
 @export var jump_sfx: AudioStreamPlayer2D
+@export var slam_sfx: AudioStreamPlayer2D
 
 @export_group("yoyo")
 @export var yoyo: Sprite2D
@@ -131,6 +133,7 @@ var dir_radial := Vector2.ZERO
 var is_dying :bool=false
 
 func _ready() -> void:
+	backgroundAmb.play()
 	_camera = $Camera2D
 	_anim = $AnimatedSprite2D
 	_dash_particles = $dash_sfx
@@ -305,6 +308,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if slamming and is_on_floor():
+		slam_sfx.play()
 		slamming = false
 		velocity = Vector2.ZERO
 
