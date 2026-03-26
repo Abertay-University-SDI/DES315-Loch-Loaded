@@ -95,10 +95,10 @@ text = "exit game"
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_5gd8x")
 layout_mode = 0
-offset_left = 113.00006
-offset_top = -596.00006
-offset_right = 1313.0
-offset_bottom = 171.99994
+offset_left = 175.99994
+offset_top = -554.00006
+offset_right = 1376.0
+offset_bottom = 213.99994
 rotation = 1.0471976
 pivot_offset = Vector2(400, 256)
 texture = ExtResource("4_mmpk5")

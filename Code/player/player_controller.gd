@@ -513,8 +513,11 @@ func _update_animation() -> void:
 		_anim.play("Wall")
 	elif not is_on_floor():
 		_anim.play("Jump")
+		anim_player.play("scale_down")
 	elif punching > 0.0:
 		_anim.play("Punch")
+		anim_player.play("scale_down")
+		
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
