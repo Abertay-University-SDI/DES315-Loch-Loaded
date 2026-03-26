@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://qcvlstrn8xi1"]
+[gd_scene load_steps=17 format=3 uid="uid://qcvlstrn8xi1"]
 
 [ext_resource type="Script" uid="uid://bf2b5kg6sqrxu" path="res://Code/entites/robot.gd" id="1_kj8xj"]
 [ext_resource type="Texture2D" uid="uid://ck2pqkb2bj30j" path="res://Textures/Enemies/sign-enemy.png" id="2_1qmkp"]
+[ext_resource type="Texture2D" uid="uid://da4hs0uvbd5iw" path="res://Textures/Enemies/sign-enemy-spritesheet-colour.png" id="2_lqwrq"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="3_kj8xj"]
 [ext_resource type="Texture2D" uid="uid://coe0afg228ksx" path="res://Textures/effects/zap.png" id="3_r7u2p"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_1qmkp"]
@@ -236,8 +237,9 @@ shape = SubResource("CapsuleShape2D_rcx67")
 texture_filter = 1
 position = Vector2(-0.75, -14)
 scale = Vector2(0.023450231, 0.023450231)
-texture = ExtResource("2_1qmkp")
-hframes = 4
+texture = ExtResource("2_lqwrq")
+hframes = 2
+vframes = 2
 
 [node name="attack_area" type="Area2D" parent="alive_body"]
 
@@ -281,7 +283,6 @@ position = Vector2(-0.75, -14)
 scale = Vector2(0.023450231, 0.023450231)
 texture = ExtResource("2_1qmkp")
 hframes = 4
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

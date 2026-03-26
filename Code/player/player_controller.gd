@@ -39,6 +39,8 @@ signal health_changed(health: float)
 @onready var effect_player:AnimationPlayer=$effect_player
 
 @onready var stun_attack_area:Area2D=$stun_area
+@onready var slam_attack_area:Area2D=$slam_area
+
 const STUN_TIME:float=3.3
 var stunning:bool= false;
 
@@ -84,6 +86,10 @@ const DASH_DURATION := 0.2
 
 var dash_timer := 0.0
 var dashing := false
+
+var slamming := false
+const SLAM_SPEED := 900.0
+const SLAM_END_LAG := 0.15
 
 var spraying := false
 var punching := 0.0
@@ -156,6 +162,9 @@ func _ready() -> void:
 
 	stun_attack_area.body_entered.connect(_on_stun_body_entered)
 	stun_attack_area.monitoring = false
+	
+	slam_attack_area.body_entered.connect(_on_slam_body_entered)
+	slam_attack_area.monitoring = false
 
 	_setup_camera_limits()
 
@@ -237,7 +246,8 @@ func _input(event: InputEvent) -> void:
 			return
 
 	if event.is_action_pressed("ground slam"):
-		return
+		if not is_on_floor() and not dashing and not slamming and not stunning:
+			_start_ground_slam()
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
@@ -293,6 +303,18 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 
 	move_and_slide()
+	
+	if slamming and is_on_floor():
+		slamming = false
+		velocity = Vector2.ZERO
+
+		slam_attack_area.monitoring = true
+		effect_player.play("slam")
+		await get_tree().create_timer(0.1).timeout
+		slam_attack_area.monitoring = false
+
+		# Small landing delay
+		await get_tree().create_timer(SLAM_END_LAG).timeout
 
 	# End slide if nearly stopped or left the floor
 	if sliding and (absf(velocity.x) < SLIDE_MIN_SPEED or not is_on_floor()):
@@ -358,6 +380,10 @@ func _respawn_player(body: Node) -> void:
 	SceneTransition.death_reset()
 
 func _apply_gravity(dt: float) -> void:
+	if slamming:
+		velocity.y = SLAM_SPEED
+		return
+
 	if not is_on_floor() and not dashing and not zipping:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
@@ -391,6 +417,10 @@ func _handle_jump() -> void:
 		velocity = (Vector2(get_wall_normal().x * 400.0, JUMP_VELOCITY / 2.0) + velocity) * 0.5
 
 func _handle_movement(dt: float) -> void:
+	if slamming:
+		velocity.x = 0.0
+		return
+	
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
@@ -494,8 +524,11 @@ func _update_animation() -> void:
 		_anim.play("Wall")
 	elif not is_on_floor():
 		_anim.play("Jump")
+		anim_player.play("scale_down")
 	elif punching > 0.0:
 		_anim.play("Punch")
+		anim_player.play("scale_down")
+		
 	elif speed < 5.0:
 		_anim.play("Idle")
 	else:
@@ -527,6 +560,13 @@ func _on_stun_body_entered(body: Node) -> void:
 		return
 
 	enemy.stun_timer = STUN_TIME
+	
+func _on_slam_body_entered(body: Node) -> void:
+	var enemy := body.get_parent()
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
+		return
+	enemy.take_hit(Vector2.UP,-0.1, 100.0, 30)
+	enemy.stun_timer = STUN_TIME/2.0
 
 func _throw_yoyo() -> void:
 	yoyo_throwing = true
@@ -591,6 +631,12 @@ func _update_attack_offset() -> void:
 	var offset := _attack_area.position
 	offset.x = -absf(offset.x) if _anim.flip_h else absf(offset.x)
 	_attack_area.position = offset
+
+func _start_ground_slam() -> void:
+	slamming = true
+	velocity.x = 0.0
+	velocity.y = SLAM_SPEED
+
 
 func _on_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()

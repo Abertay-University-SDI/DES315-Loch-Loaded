@@ -454,7 +454,7 @@ position = Vector2(5421, 354)
 [node name="Ziplines" type="Node2D" parent="interactables"]
 
 [node name="Zipline" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
-position = Vector2(963, 369)
+position = Vector2(968, 366)
 point_1 = NodePath("../Zippoint")
 
 [node name="Zipline2" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("16_50v45")]
