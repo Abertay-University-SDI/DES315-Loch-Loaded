@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal health_changed(health: float)
+signal spray_changed(sprayValue: float)
 
 @export_group("World")
 @export var play_area: Area2D
@@ -9,6 +10,7 @@ signal health_changed(health: float)
 @export var spawn: Marker2D
 @export var level_end_area : Area2D
 @export var levelEndScene : Control
+@export var UI : Node
 
 @export_group("Detectors")
 @export var zipline_detector:Area2D
@@ -233,6 +235,7 @@ func _input(event: InputEvent) -> void:
 				dir += Vector2.DOWN * -3
 			YoYo_sfx.play()
 			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
+			emit_signal("spray_changed", 20)
 			yoyo_enemy = null
 			yoyo_enemy_body = null
 			_yoyo_returning = true
@@ -565,12 +568,13 @@ func _on_stun_body_entered(body: Node) -> void:
 		return
 
 	enemy.stun_timer = STUN_TIME
-	
+
 func _on_slam_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()
 	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 	enemy.take_hit(Vector2.UP,-0.1, 100.0, 30)
+	emit_signal("spray_changed", 20)
 	enemy.stun_timer = STUN_TIME/2.0
 
 func _throw_yoyo() -> void:
@@ -650,6 +654,7 @@ func _on_body_entered(body: Node) -> void:
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
 	enemy.take_hit(dir, punching, 100.0, 30)
+	emit_signal("spray_changed", 20)
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()
@@ -668,18 +673,21 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_returning = false
 
 	enemy.take_dash(Vector2.UP,dash_timer, 400.0, 40)
+	emit_signal("spray_changed", 20)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
 	if velocity.x < 0:
 		zipline_dir = zipline_dir * -1
 	_on_zipline = true
+	
 func zip_exited(_body:Node2D)->void:
 	_on_zipline = false	
 
 func crane_entered(body:Node2D)->void:
 	crane_point = body.get_parent().get_parent().get_point()
 	_in_crane_area = true
+	
 func crane_exited(_body:Node2D)->void:
 	yoyo_attached = false
 	_in_crane_area = false

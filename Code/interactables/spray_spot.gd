@@ -3,6 +3,7 @@ extends Node2D
 @export var label:Label
 var player_in_zone := false
 var spray_scene:PackedScene
+var playerBody:Node
 
 var last_input_was_controller :bool= false
 var painted :bool = false
@@ -28,6 +29,7 @@ func _input(event):
 func _on_zone_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_in_zone = true
+		playerBody = body
 		label.text = 'Press "%s" to paint' % get_spray_button_text()
 		label.show()
 
@@ -42,12 +44,13 @@ func _ready() -> void:
 	spray_scene = ResourceLoader.load("res://Scenes/Interactables/spray.tscn")
 
 func _process(_delta: float) -> void:
-	if player_in_zone and Input.is_action_just_pressed("spray"):
+	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() == 100:
 		painted = true
 		var spray_instance:Node2D= spray_scene.instantiate()
 		add_child(spray_instance)
 		label.hide()
 		zone.monitoring = false
+		playerBody.emit_signal("spray_changed", -100)
 
 func _get_painted() -> bool:
 	return painted
