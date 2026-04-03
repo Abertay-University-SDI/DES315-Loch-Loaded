@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp6m4rt1dw531"]
+[gd_scene load_steps=18 format=3 uid="uid://bp6m4rt1dw531"]
 
 [ext_resource type="Script" uid="uid://dr6jw5idiyjkn" path="res://Code/entites/flybot.gd" id="1_pirrt"]
 [ext_resource type="Texture2D" uid="uid://tb0vm7vj4ysf" path="res://Textures/Enemies/flying-enemy-spritesheet-colour.png" id="2_bj2wy"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bcrcex6oyp23m" path="res://Sounds/drone shoot.wav" id="3_l1eq5"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="3_pirrt"]
 [ext_resource type="AudioStream" uid="uid://dpq8opplbht6b" path="res://Sounds/drone hum.wav" id="4_4tuei"]
+[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Interactables/spray_collectable.tscn" id="7_75oqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuei"]
 size = Vector2(21, 14.5)
@@ -41,7 +42,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DroneShoot:playing")
+tracks/1/path = NodePath("Sounds/DroneShoot:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -173,7 +174,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DroneShoot:playing")
+tracks/1/path = NodePath("Sounds/DroneShoot:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -191,11 +192,12 @@ _data = {
 &"take_hit": SubResource("Animation_rcx67")
 }
 
-[node name="Flybot" type="Node2D" node_paths=PackedStringArray("attack_area", "shootSound") groups=["Enemy"]]
+[node name="Flybot" type="Node2D" node_paths=PackedStringArray("attack_area", "shootSound", "_spray_collectable") groups=["Enemy"]]
 script = ExtResource("1_pirrt")
 attack_area = NodePath("alive_body/attack_area")
-shootSound = NodePath("DroneShoot")
+shootSound = NodePath("Sounds/DroneShoot")
 max_health = 2
+_spray_collectable = NodePath("SprayCollectable")
 
 [node name="alive_body" type="CharacterBody2D" parent="."]
 collision_layer = 8
@@ -257,13 +259,18 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="DroneShoot" type="AudioStreamPlayer2D" parent="."]
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="DroneShoot" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_l1eq5")
 bus = &"SFX"
 
-[node name="IdleDrone" type="AudioStreamPlayer2D" parent="."]
+[node name="IdleDrone" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("4_4tuei")
 volume_db = -12.176
 autoplay = true
 max_distance = 500.0
 bus = &"SFX"
+
+[node name="SprayCollectable" parent="." instance=ExtResource("7_75oqf")]
+visible = false

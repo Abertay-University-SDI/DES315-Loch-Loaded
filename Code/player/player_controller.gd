@@ -235,7 +235,6 @@ func _input(event: InputEvent) -> void:
 				dir += Vector2.DOWN * -3
 			YoYo_sfx.play()
 			yoyo_enemy.take_hit(-dir, -0.1, 100.0, 30)
-			emit_signal("spray_changed", 20)
 			yoyo_enemy = null
 			yoyo_enemy_body = null
 			_yoyo_returning = true
@@ -574,7 +573,6 @@ func _on_slam_body_entered(body: Node) -> void:
 	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 	enemy.take_hit(Vector2.UP,-0.1, 100.0, 30)
-	emit_signal("spray_changed", 20)
 	enemy.stun_timer = STUN_TIME/2.0
 
 func _throw_yoyo() -> void:
@@ -654,7 +652,6 @@ func _on_body_entered(body: Node) -> void:
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
 	enemy.take_hit(dir, punching, 100.0, 30)
-	emit_signal("spray_changed", 20)
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()
@@ -673,7 +670,6 @@ func _on_dash_body_hit(body: Node) -> void:
 	_yoyo_returning = false
 
 	enemy.take_dash(Vector2.UP,dash_timer, 400.0, 40)
-	emit_signal("spray_changed", 20)
 
 func zip_entered(body:Node2D)->void:
 	zipline_dir = body.get_parent().get_parent().get_dir()
@@ -729,6 +725,10 @@ func _heal_player()->void:
 	var missing_health:float = MAX_HEALTH-health_value
 	health_value +=(missing_health*0.35)+10.0
 	health_value = clamp(health_value,1,MAX_HEALTH)
+
+func _addSpray()->void:
+	emit_signal("spray_changed", 20)
+	return
 
 func _end_level(body :Node) -> void:
 	if body is not Player:

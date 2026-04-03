@@ -8,6 +8,7 @@ extends Node2D
 
 @export var max_health: int = 3
 @export var ground_check_distance: float = 8.0
+@export var _spray_collectable: Node2D
 
 var _player: Player = null
 var _health: int
@@ -41,6 +42,7 @@ func _ready() -> void:
 
 	_dead.freeze   = true
 	_dead.visible  = false
+	_spray_collectable.visible = false
 
 	_animation_player.animation_finished.connect(_on_animation_finished)
 
@@ -147,7 +149,6 @@ func _die(hit_dir: Vector2, force: float) -> void:
 	_alive.visible          = false
 	_alive.collision_layer  = 0
 	_alive.collision_mask   = 0
-
 	_is_dead = true
 	_dead_sprite.frame     = int(_direction > 0) + 2
 	_dead.visible          = true
@@ -155,6 +156,8 @@ func _die(hit_dir: Vector2, force: float) -> void:
 	_dead.collision_mask   = 1
 	_dead.set_deferred("freeze", false)
 	call_deferred("_apply_death_impulse", hit_dir, force)
+	_spray_collectable.global_position = _alive.global_position
+	_spray_collectable.visible = true
 
 
 func _apply_death_impulse(hit_dir: Vector2, force: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://2kui8xij1j7s"]
+[gd_scene load_steps=23 format=3 uid="uid://2kui8xij1j7s"]
 
 [ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://djrks4pg11ij7" path="res://Textures/Enemies/wheel-enemy-spritesheet-colour.png" id="2_mmf4r"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ctuogv0ugknij" path="res://Sounds/tire idle.wav" id="6_wplub"]
 [ext_resource type="AudioStream" uid="uid://d2itccpo82hpr" path="res://Sounds/tire bounce.wav" id="7_xn8n8"]
 [ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="8_xn8n8"]
+[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Interactables/spray_collectable.tscn" id="9_kw1fw"]
 
 [sub_resource type="Gradient" id="Gradient_3ghnw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -82,7 +83,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("takeDamage:playing")
+tracks/1/path = NodePath("Sounds/takeDamage:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -173,7 +174,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("takeDamage:playing")
+tracks/1/path = NodePath("Sounds/takeDamage:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -190,12 +191,13 @@ _data = {
 &"take_hit": SubResource("Animation_rcx67")
 }
 
-[node name="Charger" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx") groups=["Enemy"]]
+[node name="Charger" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx", "_spray_collectable") groups=["Enemy"]]
 script = ExtResource("1_3ghnw")
-idle_sfx = NodePath("idle")
-bounce_sfx = NodePath("bonuce")
-damagePlayer_sfx = NodePath("DamagePlayer")
+idle_sfx = NodePath("Sounds/idle")
+bounce_sfx = NodePath("Sounds/bonuce")
+damagePlayer_sfx = NodePath("Sounds/DamagePlayer")
 ground_check_distance = 16.0
+_spray_collectable = NodePath("SprayCollectable")
 
 [node name="alive_body" type="CharacterBody2D" parent="."]
 collision_mask = 3
@@ -266,15 +268,20 @@ libraries = {
 &"": SubResource("AnimationLibrary_r7u2p")
 }
 
-[node name="takeDamage" type="AudioStreamPlayer2D" parent="."]
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="takeDamage" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("4_wplub")
 
-[node name="idle" type="AudioStreamPlayer2D" parent="."]
+[node name="idle" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("6_wplub")
 autoplay = true
 
-[node name="bonuce" type="AudioStreamPlayer2D" parent="."]
+[node name="bonuce" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("7_xn8n8")
 
-[node name="DamagePlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="DamagePlayer" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("8_xn8n8")
+
+[node name="SprayCollectable" parent="." instance=ExtResource("9_kw1fw")]
+visible = false
