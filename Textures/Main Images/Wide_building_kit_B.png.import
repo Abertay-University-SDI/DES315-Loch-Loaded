@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3865taa1jg6q"
-path="res://.godot/imported/Wide_building_kit_A.png-82d5b49b8723d6d54de06e48140ed3f2.ctex"
+uid="uid://cqioj1vihsxh"
+path="res://.godot/imported/Wide_building_kit_B.png-a20b4b7f1042852887b4c8d41e7279e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/Wide_building_kit_A.png"
-dest_files=["res://.godot/imported/Wide_building_kit_A.png-82d5b49b8723d6d54de06e48140ed3f2.ctex"]
+source_file="res://Textures/Main Images/Wide_building_kit_B.png"
+dest_files=["res://.godot/imported/Wide_building_kit_B.png-a20b4b7f1042852887b4c8d41e7279e0.ctex"]
 
 [params]
 

@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="16_lrh7k"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="16_y7471"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="19_qs4fp"]
-[ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Temp/Floor_ShouldBeSeamless_Ihope.png" id="21_3a08j"]
+[ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Main Images/Floor_ShouldBeSeamless_Ihope.png" id="21_3a08j"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="21_uf8hr"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="22_eqj4t"]
 [ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="22_y7471"]

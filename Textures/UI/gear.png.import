@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ltx6miqcnvd"
-path="res://.godot/imported/Tall_building_kit_A.png-ff2f2a4da9461fe2f7a6ec1cb2a77719.ctex"
+uid="uid://c412nulk7l581"
+path="res://.godot/imported/gear.png-03c086154ce293b06797b532de88ddb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/Tall_building_kit_A.png"
-dest_files=["res://.godot/imported/Tall_building_kit_A.png-ff2f2a4da9461fe2f7a6ec1cb2a77719.ctex"]
+source_file="res://Textures/UI/gear.png"
+dest_files=["res://.godot/imported/gear.png-03c086154ce293b06797b532de88ddb2.ctex"]
 
 [params]
 

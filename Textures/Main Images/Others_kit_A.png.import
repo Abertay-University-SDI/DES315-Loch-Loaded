@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbgr8l4m7lvdj"
-path="res://.godot/imported/Base_Building_v2_Concrete_Corners.png-52640103a8a26ec43bebeacf3f4285f4.ctex"
+uid="uid://d324klbheq3f6"
+path="res://.godot/imported/Others_kit_A.png-5d4e0edd4215582b58177e45d815a369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/Base_Building_v2_Concrete_Corners.png"
-dest_files=["res://.godot/imported/Base_Building_v2_Concrete_Corners.png-52640103a8a26ec43bebeacf3f4285f4.ctex"]
+source_file="res://Textures/Main Images/Others_kit_A.png"
+dest_files=["res://.godot/imported/Others_kit_A.png-5d4e0edd4215582b58177e45d815a369.ctex"]
 
 [params]
 

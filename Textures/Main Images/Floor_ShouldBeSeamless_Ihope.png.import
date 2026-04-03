@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfq451sp12ueu"
-path="res://.godot/imported/TEMPcrane.png-ebd33ffd4a9fef7f0d59beb420d84831.ctex"
+uid="uid://dfb3ppjh581t5"
+path="res://.godot/imported/Floor_ShouldBeSeamless_Ihope.png-a021d07bfdcfe8b75184840ef813784f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Buildings/TEMPcrane.png"
-dest_files=["res://.godot/imported/TEMPcrane.png-ebd33ffd4a9fef7f0d59beb420d84831.ctex"]
+source_file="res://Textures/Main Images/Floor_ShouldBeSeamless_Ihope.png"
+dest_files=["res://.godot/imported/Floor_ShouldBeSeamless_Ihope.png-a021d07bfdcfe8b75184840ef813784f.ctex"]
 
 [params]
 

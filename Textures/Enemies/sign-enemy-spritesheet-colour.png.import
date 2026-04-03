@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmdyqm0gjfuk"
-path="res://.godot/imported/Base_Building_v2_Brick_Corners.png-0250a17b59b282a23ccb2a5fb294c4c7.ctex"
+uid="uid://da4hs0uvbd5iw"
+path="res://.godot/imported/sign-enemy-spritesheet-colour.png-81fa9b7ffa902c2ac638cc46c46e8695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/Base_Building_v2_Brick_Corners.png"
-dest_files=["res://.godot/imported/Base_Building_v2_Brick_Corners.png-0250a17b59b282a23ccb2a5fb294c4c7.ctex"]
+source_file="res://Textures/Enemies/sign-enemy-spritesheet-colour.png"
+dest_files=["res://.godot/imported/sign-enemy-spritesheet-colour.png-81fa9b7ffa902c2ac638cc46c46e8695.ctex"]
 
 [params]
 

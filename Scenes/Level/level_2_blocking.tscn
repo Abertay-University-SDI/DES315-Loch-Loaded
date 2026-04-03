@@ -15,12 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="13_mbknn"]
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_c71rb"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_qwldb"]
-[ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="16_elsyb"]
-[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Temp/Wide_building_kit_B.png" id="17_ceiy6"]
+[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Main Images/Wide_building_kit_B.png" id="17_ceiy6"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="18_kc4se"]
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Temp/Tall_building_kit_A.png" id="18_nc2ih"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Main Images/Tall_building_kit_A.png" id="18_nc2ih"]
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="19_l6qp1"]
-[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Temp/Bace_building_kit_B.png" id="19_suaas"]
+[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Main Images/Bace_building_kit_B.png" id="19_suaas"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="20_suaas"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_6lnp2"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="25_jlqxu"]
@@ -29,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_fqe3c"]
 [ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="29_5txkw"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="30_deyre"]
+[ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="31_17b5f"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="31_aloh2"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="32_6pscn"]
 
@@ -203,12 +203,6 @@ play_area_shape = NodePath("../PlayArea/CollisionShape2D")
 spawn = NodePath("../PlayArea/Spawn")
 level_end_area = NodePath("../PlayArea/Level_Complete_Area")
 levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
-
-[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("16_elsyb")]
-position = Vector2(410, 405)
-dialogbox = NodePath("../CanvasLayer/dialog")
-
-[node name="Buildings" type="Node2D" parent="."]
 
 [node name="Zipline" type="Node2D" parent="."]
 position = Vector2(924, -147)
@@ -880,6 +874,8 @@ scale = Vector2(1.2400024, 1)
 position = Vector2(365, 297)
 scale = Vector2(1.2400024, 1)
 
+[node name="Spray Spots" type="Node2D" parent="."]
+
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="Lamp_0" parent="Lights" instance=ExtResource("21_6lnp2")]
@@ -893,8 +889,6 @@ position = Vector2(609, 701)
 [node name="Lamp_2" parent="Lights" instance=ExtResource("21_6lnp2")]
 visible = false
 position = Vector2(1095, 701)
-
-[node name="Spray Spots" type="Node2D" parent="."]
 
 [node name="Instructions" type="Node2D" parent="."]
 
@@ -1158,3 +1152,6 @@ position = Vector2(-178, 630)
 
 [node name="Charger" parent="Enemies" instance=ExtResource("32_6pscn")]
 position = Vector2(-248, 695)
+
+[node name="TempAssetScaffolding" parent="." instance=ExtResource("31_17b5f")]
+position = Vector2(65, 638)

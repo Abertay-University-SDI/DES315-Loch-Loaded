@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bleikxem48dv8"]
 
-[ext_resource type="Texture2D" uid="uid://dfq451sp12ueu" path="res://Textures/Buildings/TEMPcrane.png" id="1_4shao"]
+[ext_resource type="Texture2D" uid="uid://dfq451sp12ueu" path="res://Textures/Main Images/TEMPcrane.png" id="1_4shao"]
 [ext_resource type="Script" uid="uid://d0awlurd8o5up" path="res://Code/interactables/crane.gd" id="2_evw0y"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plspt"]
 size = Vector2(22.359999, 19.63)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfb3ppjh581t5"
-path="res://.godot/imported/Floor_ShouldBeSeamless_Ihope.png-93e368bbadee9c1920b6ef5f3ab4e525.ctex"
+uid="uid://djrks4pg11ij7"
+path="res://.godot/imported/wheel-enemy-spritesheet-colour.png-292e8829b6e73283fc0d0c15f8f8e788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Temp/Floor_ShouldBeSeamless_Ihope.png"
-dest_files=["res://.godot/imported/Floor_ShouldBeSeamless_Ihope.png-93e368bbadee9c1920b6ef5f3ab4e525.ctex"]
+source_file="res://Textures/Enemies/wheel-enemy-spritesheet-colour.png"
+dest_files=["res://.godot/imported/wheel-enemy-spritesheet-colour.png-292e8829b6e73283fc0d0c15f8f8e788.ctex"]
 
 [params]
 
