@@ -15,11 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="13_mbknn"]
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_c71rb"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_qwldb"]
-[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Main Images/Wide_building_kit_B.png" id="17_ceiy6"]
+[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Assets/Buildings/Wide_building_kit_B.png" id="17_ceiy6"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="18_kc4se"]
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Main Images/Tall_building_kit_A.png" id="18_nc2ih"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="18_nc2ih"]
+[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="19_1x42q"]
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="19_l6qp1"]
-[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Main Images/Bace_building_kit_B.png" id="19_suaas"]
+[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Assets/Buildings/Bace_building_kit_B.png" id="19_suaas"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="20_suaas"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_6lnp2"]
 [ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="25_jlqxu"]
@@ -228,30 +229,6 @@ position = Vector2(2873, 286)
 [node name="Zippoint6" parent="Zipline" instance=ExtResource("18_kc4se")]
 position = Vector2(478, 441)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3548.5, 708)
-shape = SubResource("RectangleShape2D_hnohd")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = -1238.0
-offset_top = 698.0
-offset_right = 8318.375
-offset_bottom = 723.11145
-scale = Vector2(1.0018443, 1)
-color = Color(0.288518, 0.28851798, 0.28851798, 1)
-
-[node name="interactables" type="Node2D" parent="."]
-
-[node name="carpark area" type="Sprite2D" parent="."]
-position = Vector2(6126, 688.845)
-scale = Vector2(0.64919615, 0.020132905)
-texture = SubResource("AtlasTexture_l6qp1")
-
-[node name="Zipline" type="Node2D" parent="."]
-position = Vector2(924, -147)
-
 [node name="Zipline [Start]" type="Node2D" parent="Zipline"]
 
 [node name="Zipline_start_0" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("19_1x42q")]
@@ -284,6 +261,30 @@ position = Vector2(736, 525)
 
 [node name="Zippoint_end_3" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
 position = Vector2(-1603, 795)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3548.5, 708)
+shape = SubResource("RectangleShape2D_hnohd")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -1238.0
+offset_top = 698.0
+offset_right = 8318.375
+offset_bottom = 723.11145
+scale = Vector2(1.0018443, 1)
+color = Color(0.288518, 0.28851798, 0.28851798, 1)
+
+[node name="interactables" type="Node2D" parent="."]
+
+[node name="carpark area" type="Sprite2D" parent="."]
+position = Vector2(6126, 688.845)
+scale = Vector2(0.64919615, 0.020132905)
+texture = SubResource("AtlasTexture_l6qp1")
+
+[node name="Zipline2" type="Node2D" parent="."]
+position = Vector2(924, -147)
 
 [node name="Tall - Buildings" type="Node2D" parent="."]
 
