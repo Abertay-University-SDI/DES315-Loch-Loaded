@@ -32,6 +32,9 @@ var _zap_force:       float = 400.0
 func _on_ready() -> void:
 	max_health = 100
 	_health = max_health
+	
+	_score_reward = 100
+	
 	attack_area.body_entered.connect(_on_attack_area_body_entered)
 	attack_area.body_exited.connect(_on_attack_area_body_exited)
 	idle_sfx.play()

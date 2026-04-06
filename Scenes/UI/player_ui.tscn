@@ -1,95 +1,848 @@
-[gd_scene load_steps=6 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=48 format=3 uid="uid://bve12h40ll6sx"]
 
-[ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
-[ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
-[ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/player/health_bar.gd" id="3_t3flm"]
-[ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
-[ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
+[ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_2fhy3"]
+[ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="2_ym5a1"]
+[ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="3_imf85"]
+[ext_resource type="PackedScene" uid="uid://0vjv73org0lq" path="res://Scenes/UI/LevelEnd.tscn" id="4_8gjc0"]
+[ext_resource type="PackedScene" uid="uid://dyts38hutibwa" path="res://Scenes/UI/pause_scene.tscn" id="5_vk2c5"]
+[ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="6_dsaln"]
+[ext_resource type="PackedScene" uid="uid://jb118bi61s4g" path="res://Scenes/UI/dialog_container.tscn" id="7_ji2ra"]
+[ext_resource type="Shader" uid="uid://h1loc7aw17qh" path="res://Code/shaders/half-tone.gdshader" id="8_jjgv3"]
+[ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="9_w7mpq"]
+[ext_resource type="Script" uid="uid://ci3wykyqftq" path="res://Code/shaders/half_tone_post.gd" id="10_ip583"]
+[ext_resource type="Shader" uid="uid://hpdfkm5qunba" path="res://Code/shaders/ColorBlind.gdshader" id="11_2rad2"]
+[ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="12_n62ni"]
+[ext_resource type="PackedScene" uid="uid://bjbqx458gfnfo" path="res://Scenes/Interactables/npc.tscn" id="13_um0w4"]
+[ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_aocwf"]
+[ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_ynbjb"]
+[ext_resource type="PackedScene" uid="uid://b8226o7n8ve1f" path="res://Scenes/Level/Prefabs/house_5_0.tscn" id="16_u17nv"]
+[ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="17_1duri"]
+[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="18_m6k8b"]
+[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="19_knj8g"]
+[ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Assets/Floor_ShouldBeSeamless_Ihope.png" id="20_sf40l"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_4qhq1"]
+[ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="22_jvxto"]
+[ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="23_hhcxr"]
+[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="24_8hmq2"]
+[ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="25_kavui"]
+[ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="26_5lvqe"]
+[ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="27_lyoxf"]
+[ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_scqdj"]
+[ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="29_dt0ul"]
+[ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="30_ukugy"]
+[ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="31_yye7d"]
+[ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="32_6k3af"]
+[ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_w7pch"]
+[ext_resource type="PackedScene" uid="uid://vptevd4ijf1n" path="res://Scenes/Entites/random_npc.tscn" id="34_y0kom"]
+[ext_resource type="PackedScene" uid="uid://bve12h40ll6sx" path="res://Scenes/UI/player_ui.tscn" id="35_xymtt"]
 
-[node name="player_ui" type="Control" node_paths=PackedStringArray("HealthBar", "sprayBar")]
-layout_mode = 3
+[sub_resource type="Environment" id="Environment_kq4fe"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.62
+glow_strength = 2.0
+glow_blend_mode = 4
+glow_hdr_scale = 3.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
+shader = ExtResource("8_jjgv3")
+shader_parameter/viewport_size = Vector2(1280, 720)
+shader_parameter/dot_size = 2.57
+shader_parameter/angle_r = 7.117
+shader_parameter/angle_g = 3.905
+shader_parameter/angle_b = 1.309
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs4fp"]
+shader = ExtResource("11_2rad2")
+shader_parameter/mode = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
+size = Vector2(7108, 913)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
+size = Vector2(253, 887)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
+size = Vector2(7099, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a08j"]
+atlas = ExtResource("20_sf40l")
+region = Rect2(0, 1641, 2048, 407)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7471"]
+size = Vector2(143, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nswyt"]
+size = Vector2(30, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3juip"]
+size = Vector2(24, 95.078)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwi5"]
+size = Vector2(24, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn63p"]
+size = Vector2(23.5, 287.6875)
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
+script = ExtResource("1_2fhy3")
+enemies = NodePath("Enemies")
+billBoards = NodePath("Spray Spots")
+endScene = NodePath("CanvasLayer/LevelEndScene")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kq4fe")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = 4096
+color = Color(0.2520276, 0.25202766, 0.25202757, 1)
+
+[node name="Background Layer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = -90
+
+[node name="ParallaxBackground" parent="Background Layer" instance=ExtResource("2_ym5a1")]
+process_mode = 1
+offset = Vector2(0, 358.69)
+transform = Transform2D(2, 0, 0, 2, 0, 358.69)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Background Layer"]
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_t3flm")
-HealthBar = NodePath("HealthBar")
-sprayBar = NodePath("SprayBar")
+size_flags_vertical = 8
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 642.0
-offset_right = 1843.0
-offset_bottom = 669.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-value = 100.0
-texture_over = ExtResource("1_7jiju")
-texture_progress = ExtResource("2_t3flm")
+[node name="Background" parent="Background Layer/SubViewportContainer" node_paths=PackedStringArray("cam", "bounds", "bounds_shape") instance=ExtResource("3_imf85")]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+cam = NodePath("../../../Player/Camera2D")
+bounds = NodePath("../../../PlayArea")
+bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
-[node name="SprayBar" type="TextureProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 962.9999
-offset_top = 640.99994
-offset_right = 2791.0
-offset_bottom = 668.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-value = 100.0
-fill_mode = 1
-texture_over = ExtResource("1_7jiju")
-texture_progress = ExtResource("2_t3flm")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Score" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1025.0
-offset_bottom = -646.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_8n2hl")
-theme_override_font_sizes/font_size = 64
-text = "12"
-horizontal_alignment = 2
-script = ExtResource("5_c4arg")
+[node name="LevelEndScene" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("4_8gjc0")]
+visible = false
+world = NodePath("../..")
+itemText = "Yoyo unlocked"
+itemUseText = "after dashing an enemy press the yoy button to slam the enemy into the ground"
 
-[node name="Added_Score" type="Label" parent="Score"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 74.0
-offset_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("4_8n2hl")
-theme_override_font_sizes/font_size = 64
-text = "+100"
-horizontal_alignment = 2
+[node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("5_vk2c5")]
+visible = false
 
-[node name="Background Score" type="Label" parent="Score"]
-layout_mode = 1
+[node name="SettingsScene" parent="CanvasLayer" node_paths=PackedStringArray("filmGrainTextRect") instance=ExtResource("6_dsaln")]
+visible = false
+filmGrainTextRect = NodePath("../TextureRect")
+
+[node name="dialog" parent="CanvasLayer" instance=ExtResource("7_ji2ra")]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_hxng5")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
-theme_override_fonts/font = ExtResource("4_8n2hl")
-theme_override_font_sizes/font_size = 64
-text = "000000"
+mouse_filter = 2
+texture = ExtResource("9_w7mpq")
+script = ExtResource("10_ip583")
+
+[node name="player_ui" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("35_xymtt")]
+z_index = 55
+mouse_filter = 2
+player = NodePath("../../Player")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_qs4fp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_n62ni")
+
+[node name="NPC" parent="." node_paths=PackedStringArray("dialogbox") instance=ExtResource("13_um0w4")]
+z_index = 165
+position = Vector2(410, 405)
+dialogbox = NodePath("../CanvasLayer/dialog")
+
+[node name="PlayArea" type="Area2D" parent="."]
+
+[node name="Spawn" type="Marker2D" parent="PlayArea"]
+position = Vector2(-1208, 696)
+gizmo_extents = 28.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
+position = Vector2(2316, 269.5)
+shape = SubResource("RectangleShape2D_4snqv")
+debug_color = Color(1, 1, 1, 0.16078432)
+
+[node name="LevelIteration4WithBackground" type="Sprite2D" parent="PlayArea"]
+visible = false
+modulate = Color(1, 1, 1, 0.624)
+texture_filter = 1
+position = Vector2(2821.9507, 158.49998)
+scale = Vector2(4.277568, 4.277567)
+texture = ExtResource("14_aocwf")
+
+[node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
+position = Vector2(5738.5, 254.5)
+shape = SubResource("RectangleShape2D_eqj4t")
+debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
+
+[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_ynbjb")]
+z_index = 1
+position = Vector2(-1208, 696)
+collision_mask = 3
+play_area = NodePath("../PlayArea")
+play_area_shape = NodePath("../PlayArea/CollisionShape2D")
+spawn = NodePath("../PlayArea/Spawn")
+level_end_area = NodePath("../PlayArea/Level_Complete_Area")
+levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
+UI = NodePath("../CanvasLayer/player_ui")
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="House_5_1" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(742, 699)
+
+[node name="House_5_2" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(902, 699)
+
+[node name="House_5_3" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(1224, 699)
+
+[node name="House_5_4" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(1856, 697)
+
+[node name="House_5_5" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(2193, 699)
+
+[node name="House_5_6" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(2842, 699)
+
+[node name="House_5_7" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(3008, 699)
+
+[node name="House_5_8" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(3480, 699)
+
+[node name="House_5_9" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(3644, 699)
+
+[node name="House_5_10" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(3802, 699)
+
+[node name="House_5_11" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(4292, 699)
+
+[node name="House_5_12" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(5262, 699)
+
+[node name="House_4_0" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(101, 699)
+
+[node name="House_4_1" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(262, 699)
+
+[node name="House_4_2" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(742, 699)
+
+[node name="House_4_3" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(1067, 698)
+
+[node name="House_4_4" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(1697, 699)
+
+[node name="House_4_5" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(1856, 699)
+
+[node name="House_4_6" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(2193, 699)
+
+[node name="House_4_8" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(2561, 730)
+
+[node name="House_4_10" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(2676, 699)
+
+[node name="House_4_9" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(2842, 699)
+
+[node name="House_4_11" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(3174, 699)
+
+[node name="House_4_12" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(3643, 697)
+
+[node name="House_4_13" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(3972, 700)
+
+[node name="House_4_14" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(4122, 703)
+
+[node name="House_4_15" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(4295, 697)
+
+[node name="House_4_16" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(4462, 702)
+
+[node name="House_4_17" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(4944, 700)
+
+[node name="House_4_18" parent="Buildings" instance=ExtResource("17_1duri")]
+position = Vector2(5095, 700)
+
+[node name="Beam_0" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(110, 527)
+
+[node name="Beam_1" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(262, 460)
+
+[node name="Beam_2" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(587, 419)
+
+[node name="Beam_3" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(1367, 335)
+
+[node name="Beam_4" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(1740, 313)
+
+[node name="Beam_5" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(3240, 379)
+
+[node name="Beam_6" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(3119, 275)
+
+[node name="Beam_7" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(4147, 322)
+
+[node name="Beam_8" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(4469, 461)
+
+[node name="Beam_9" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(5306, 287)
+
+[node name="Beam_10" parent="Buildings" instance=ExtResource("18_m6k8b")]
+position = Vector2(5464, 359)
+
+[node name="Beam_1_0" parent="Buildings" instance=ExtResource("19_knj8g")]
+position = Vector2(1539, 252)
+
+[node name="Beam_1_2" parent="Buildings" instance=ExtResource("19_knj8g")]
+position = Vector2(3286, 199)
+
+[node name="Beam_1_3" parent="Buildings" instance=ExtResource("19_knj8g")]
+position = Vector2(3986, 361)
+
+[node name="Beam_1_4" parent="Buildings" instance=ExtResource("19_knj8g")]
+position = Vector2(5517, 238)
+
+[node name="Beam_1_1" parent="Buildings" instance=ExtResource("19_knj8g")]
+position = Vector2(2678, 436)
+
+[node name="House_5_0" parent="Buildings" instance=ExtResource("16_u17nv")]
+position = Vector2(416, 699)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2311.5, 708)
+shape = SubResource("RectangleShape2D_hnohd")
+
+[node name="ColorRect" type="TextureRect" parent="StaticBody2D"]
+self_modulate = Color(4.45484, 4.45484, 4.45484, 1)
+offset_left = -1239.0
+offset_top = 690.0
+offset_right = 5889.8525
+offset_bottom = 809.0
+scale = Vector2(1.0018443, 1)
+texture = SubResource("AtlasTexture_3a08j")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Lamp_0" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-1186, 701)
+
+[node name="Lamp_1" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-862, 699)
+
+[node name="Lamp_15" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-782, 580)
+
+[node name="Lamp_2" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-485, 701)
+
+[node name="Lamp_3" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-172, 701)
+
+[node name="Lamp_4" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(-1, 701)
+
+[node name="Lamp_21" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(326, 580)
+
+[node name="Lamp_5" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(506, 701)
+
+[node name="Lamp_6" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(637, 701)
+
+[node name="Lamp_7" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(1324, 698)
+
+[node name="Lamp_8" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(1591, 698)
+
+[node name="Lamp_9" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(1961, 698)
+
+[node name="Lamp_10" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(2303, 698)
+
+[node name="Lamp_11" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(3286, 696)
+
+[node name="Lamp_23" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(2943, 407)
+
+[node name="Lamp_24" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(3579, 409)
+
+[node name="Lamp_12" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(4570, 699)
+
+[node name="Lamp_18" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(3138, 270)
+
+[node name="Lamp_19" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(809, 403)
+
+[node name="Lamp_22" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(381, 406)
+
+[node name="Lamp_20" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(1182, 402)
+
+[node name="Lamp_13" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(4852, 700)
+
+[node name="Lamp_14" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(5374, 700)
+
+[node name="Lamp_16" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(5352, 282)
+
+[node name="Lamp_17" parent="Lights" instance=ExtResource("21_4qhq1")]
+position = Vector2(5421, 354)
+
+[node name="interactables" type="Node2D" parent="."]
+
+[node name="Ziplines" type="Node2D" parent="interactables"]
+
+[node name="Zipline" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_jvxto")]
+position = Vector2(968, 366)
+point_1 = NodePath("../Zippoint")
+
+[node name="Zipline2" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_jvxto")]
+position = Vector2(2254, 368)
+point_1 = NodePath("../Zippoint2")
+
+[node name="Zipline3" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_jvxto")]
+position = Vector2(3351, 160)
+point_1 = NodePath("../Zippoint3")
+
+[node name="Zipline4" parent="interactables/Ziplines" node_paths=PackedStringArray("point_1") instance=ExtResource("22_jvxto")]
+position = Vector2(4354, 367)
+point_1 = NodePath("../Zippoint4")
+
+[node name="Zippoint" parent="interactables/Ziplines" instance=ExtResource("23_hhcxr")]
+position = Vector2(1162, 348)
+
+[node name="Zippoint2" parent="interactables/Ziplines" instance=ExtResource("23_hhcxr")]
+position = Vector2(2615, 377)
+
+[node name="Zippoint3" parent="interactables/Ziplines" instance=ExtResource("23_hhcxr")]
+position = Vector2(3742, 348)
+
+[node name="Zippoint4" parent="interactables/Ziplines" instance=ExtResource("23_hhcxr")]
+position = Vector2(4884, 524)
+
+[node name="Spray Spots" type="Node2D" parent="."]
+
+[node name="Spray Spot" parent="Spray Spots" instance=ExtResource("24_8hmq2")]
+position = Vector2(5265, 333)
+
+[node name="Spray Spot2" parent="Spray Spots" instance=ExtResource("24_8hmq2")]
+position = Vector2(5514, 156)
+
+[node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("24_8hmq2")]
+position = Vector2(3287, 122)
+
+[node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("24_8hmq2")]
+position = Vector2(902, 331)
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="blackboard" type="ColorRect" parent="Instructions"]
+offset_left = -1171.0
+offset_top = 523.0
+offset_right = -929.0
+offset_bottom = 677.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard2" type="ColorRect" parent="Instructions"]
+offset_left = -777.0
+offset_top = 496.0
+offset_right = -503.0
+offset_bottom = 679.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard3" type="ColorRect" parent="Instructions"]
+offset_left = -465.0
+offset_top = 492.0
+offset_right = -191.0
+offset_bottom = 675.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="Key_Show_right" parent="Instructions" instance=ExtResource("25_kavui")]
+offset_left = -1144.0
+offset_top = 620.0
+offset_right = -1104.0
+offset_bottom = 660.0
+action_name = "right"
+
+[node name="Key_Show_jump" parent="Instructions" instance=ExtResource("25_kavui")]
+offset_left = -1003.0
+offset_top = 632.0
+offset_right = -963.0
+offset_bottom = 672.0
+
+[node name="Key_Show_Crouch" parent="Instructions" instance=ExtResource("25_kavui")]
+offset_left = -699.0
+offset_top = 503.0
+offset_right = -659.0
+offset_bottom = 543.0
+action_name = "crouch"
+
+[node name="Key_Show_Crouch2" parent="Instructions" instance=ExtResource("25_kavui")]
+offset_left = -292.0
+offset_top = 587.0
+offset_right = -252.0
+offset_bottom = 627.0
+action_name = "dash"
+
+[node name="Move Right" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1164.0
+offset_top = 596.0
+offset_right = -1077.0
+offset_bottom = 619.0
+text = "Move Right"
+
+[node name="Jump" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1000.0
+offset_top = 595.0
+offset_right = -959.0
+offset_bottom = 619.0
+text = "Jump"
+
+[node name="Crouch" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -763.0
+offset_top = 606.0
+offset_right = -679.0
+offset_bottom = 641.0
+theme_override_constants/line_spacing = -17
+text = "Crouch to 
+pass down"
+
+[node name="Crouch2" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -616.0
+offset_top = 595.0
+offset_right = -515.0
+offset_bottom = 662.0
+theme_override_constants/line_spacing = -12
+text = "Crouch while
+Walking 
+to slide"
+
+[node name="Dash" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -458.0
+offset_top = 548.0
+offset_right = -198.0
+offset_bottom = 602.0
+text = "Dash To Hurt that Enemy"
+horizontal_alignment = 1
+
+[node name="LeftStickRight" type="Sprite2D" parent="Instructions"]
+position = Vector2(-1119.75, 560.25)
+scale = Vector2(0.27148426, 0.27148426)
+texture = ExtResource("26_5lvqe")
+
+[node name="PadkeyDown" type="Sprite2D" parent="Instructions"]
+position = Vector2(-981.99994, 566)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("27_lyoxf")
+
+[node name="PadkeyDown2" type="Sprite2D" parent="Instructions"]
+position = Vector2(-398.00006, 609.00006)
+rotation = 1.5707964
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("27_lyoxf")
+
+[node name="LeftStickDown" type="Sprite2D" parent="Instructions"]
+position = Vector2(-744.99994, 530)
+scale = Vector2(0.27148426, 0.27148426)
+texture = ExtResource("28_scqdj")
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(198, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D2"]
+position = Vector2(-938.375, 593)
+shape = SubResource("RectangleShape2D_y7471")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D2/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Pass" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(257, 46)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Pass"]
+position = Vector2(-911, 545)
+shape = SubResource("RectangleShape2D_nswyt")
+one_way_collision = true
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/Pass/CollisionShape2D"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+texture_filter = 1
+offset_left = -14.0
+offset_top = -12.0
+offset_right = 16.0
+offset_bottom = 12.5
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+flip_h = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(246, -194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D5"]
+position = Vector2(-958, 590)
+shape = SubResource("RectangleShape2D_y7471")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D5/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(629, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D6"]
+position = Vector2(-958, 590)
+shape = SubResource("RectangleShape2D_y7471")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D6/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(162, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D3"]
+position = Vector2(-961.875, 652.53906)
+shape = SubResource("RectangleShape2D_3juip")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D3/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.125
+offset_top = -47.539063
+offset_right = 11.579645
+offset_bottom = 49.0
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(99, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D"]
+position = Vector2(-1012, 661.5)
+shape = SubResource("RectangleShape2D_jrwi5")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -37.5
+offset_right = 12.0
+offset_bottom = 36.5
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(404, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D4"]
+position = Vector2(-1032, 531.84375)
+shape = SubResource("RectangleShape2D_jn63p")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D4/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -143.84375
+offset_right = 12.0
+offset_bottom = 144.65625
+texture = ExtResource("29_dt0ul")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Robot" parent="Enemies" instance=ExtResource("30_ukugy")]
+position = Vector2(241, 570)
+
+[node name="Robot5" parent="Enemies" instance=ExtResource("30_ukugy")]
+position = Vector2(-334, 672)
+
+[node name="Robot2" parent="Enemies" instance=ExtResource("30_ukugy")]
+position = Vector2(256, 434)
+
+[node name="Robot3" parent="Enemies" instance=ExtResource("30_ukugy")]
+position = Vector2(733, 395)
+
+[node name="Robot4" parent="Enemies" instance=ExtResource("30_ukugy")]
+position = Vector2(1542, 240)
+
+[node name="Flybot" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(137, 500)
+
+[node name="Flybot2" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(-952, 670)
+
+[node name="Flybot3" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(562, 537)
+
+[node name="Flybot4" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(1066, 432)
+
+[node name="Flybot5" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(1471, 459)
+
+[node name="Flybot6" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(2014, 464)
+
+[node name="Flybot7" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(2372, 468)
+
+[node name="Flybot8" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(3179, 489)
+
+[node name="Flybot9" parent="Enemies" instance=ExtResource("31_yye7d")]
+position = Vector2(4042, 457)
+
+[node name="Charger" parent="Enemies" instance=ExtResource("32_6k3af")]
+position = Vector2(1543, 649)
+
+[node name="Charger2" parent="Enemies" instance=ExtResource("32_6k3af")]
+position = Vector2(4680, 595)
+
+[node name="Charger3" parent="Enemies" instance=ExtResource("32_6k3af")]
+position = Vector2(2547, 601)
+
+[node name="Speaker" parent="." instance=ExtResource("33_w7pch")]
+offset_left = 440.0
+offset_top = 335.0
+offset_right = 500.0
+offset_bottom = 404.0
+
+[node name="Speaker2" parent="." instance=ExtResource("33_w7pch")]
+offset_left = 4220.0
+offset_top = 334.0
+offset_right = 4279.0
+offset_bottom = 401.0
+
+[node name="NPC\'s" type="Node2D" parent="."]
+position = Vector2(-89, 557)
+
+[node name="Random_NPC_0" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(631, 110)
+
+[node name="Random_NPC_1" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(-17, 113)
+
+[node name="Random_NPC_2" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(1449, -261)
+
+[node name="Random_NPC_3" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(1758, -7)
+
+[node name="Random_NPC_4" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(2924, -183)
+
+[node name="Random_NPC_5" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(-750, 111)
+
+[node name="Random_NPC_6" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(-380, 110)
+
+[node name="Random_NPC_7" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(1188, 109)
+
+[node name="Random_NPC_8" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(1438, 107)
+
+[node name="Random_NPC_9" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(2072, 114)
+
+[node name="Random_NPC_10" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(2419, 114)
+
+[node name="Random_NPC_11" parent="NPC\'s" instance=ExtResource("34_y0kom")]
+position = Vector2(5536, -238)
