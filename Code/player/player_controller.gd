@@ -11,6 +11,7 @@ signal spray_changed(sprayValue: float)
 @export var level_end_area : Area2D
 @export var levelEndScene : Control
 @export var UI : Node
+@export var score:int=0
 
 @export_group("Detectors")
 @export var zipline_detector:Area2D
@@ -722,6 +723,7 @@ func _setup_camera_limits() -> void:
 		push_error("Play area shape is not a RectangleShape2D!")
 
 func _heal_player()->void:
+	score+=100
 	var missing_health:float = MAX_HEALTH-health_value
 	health_value +=(missing_health*0.35)+10.0
 	health_value = clamp(health_value,1,MAX_HEALTH)
