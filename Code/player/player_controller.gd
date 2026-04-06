@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal health_changed(health: float)
+signal spray_changed(sprayValue: float)
 
 @export_group("World")
 @export var play_area: Area2D
@@ -9,6 +10,7 @@ signal health_changed(health: float)
 @export var spawn: Marker2D
 @export var level_end_area : Area2D
 @export var levelEndScene : Control
+@export var UI : Node
 
 @export_group("Detectors")
 @export var zipline_detector:Area2D
@@ -20,6 +22,12 @@ signal health_changed(health: float)
 @export var dash_sfx: AudioStreamPlayer2D
 @export var punch_sfx: AudioStreamPlayer2D
 @export var YoYo_sfx: AudioStreamPlayer2D
+@export var stunAttack_sfx: AudioStreamPlayer2D
+@export var stunRecharge_sfx: AudioStreamPlayer2D
+@export var backgroundAmb: AudioStreamPlayer2D
+@export var yoyoThrow_sfx: AudioStreamPlayer2D
+@export var jump_sfx: AudioStreamPlayer2D
+@export var slam_sfx: AudioStreamPlayer2D
 
 @export_group("yoyo")
 @export var yoyo: Sprite2D
@@ -35,6 +43,8 @@ signal health_changed(health: float)
 @onready var effect_player:AnimationPlayer=$effect_player
 
 @onready var stun_attack_area:Area2D=$stun_area
+@onready var slam_attack_area:Area2D=$slam_area
+
 const STUN_TIME:float=3.3
 var stunning:bool= false;
 
@@ -81,6 +91,10 @@ const DASH_DURATION := 0.2
 var dash_timer := 0.0
 var dashing := false
 
+var slamming := false
+const SLAM_SPEED := 900.0
+const SLAM_END_LAG := 0.15
+
 var spraying := false
 var punching := 0.0
 
@@ -114,12 +128,14 @@ var yoyo_enemy: Enemy = null
 var yoyo_enemy_body: CharacterBody2D = null
 var yoyo_ready: bool = false
 var yoyo_throwing: bool = false
+var yoyo_attached: bool = false
 
 var dir_radial := Vector2.ZERO
 
 var is_dying :bool=false
 
 func _ready() -> void:
+	backgroundAmb.play()
 	_camera = $Camera2D
 	_anim = $AnimatedSprite2D
 	_dash_particles = $dash_sfx
@@ -151,6 +167,9 @@ func _ready() -> void:
 
 	stun_attack_area.body_entered.connect(_on_stun_body_entered)
 	stun_attack_area.monitoring = false
+	
+	slam_attack_area.body_entered.connect(_on_slam_body_entered)
+	slam_attack_area.monitoring = false
 
 	_setup_camera_limits()
 
@@ -184,7 +203,9 @@ func _input(event: InputEvent) -> void:
 		effect_player.play("stunning")
 		stunning = true
 		velocity = Vector2.UP*10.0
+		stunAttack_sfx.play()
 		await get_tree().create_timer(1.0).timeout
+		stunRecharge_sfx.play()
 		stunning = false
 		if _player_material:
 			_player_material.set_shader_parameter("stunning", false)
@@ -206,7 +227,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("throw yoyo"):
 		yoyo_ready = false
 		if (yoyo.visible and is_instance_valid(yoyo_enemy_body)):
-			print_debug("pull enemy")
+			yoyoThrow_sfx.play()
 			var dir := (yoyo_enemy.position - position).normalized()
 			if (yoyo_enemy._alive.is_on_floor()):
 				dir *= 3
@@ -218,15 +239,20 @@ func _input(event: InputEvent) -> void:
 			yoyo_enemy_body = null
 			_yoyo_returning = true
 		elif (_in_crane_area):
+			yoyoThrow_sfx.play()
+			yoyo.global_position = crane_point
+			yoyo.visible = true
+			yoyo_attached = true
 			_on_crane = true
 		elif (yoyo.visible and not yoyo_throwing and not _yoyo_returning):
-			print_debug("throw the yoyo")
+			yoyoThrow_sfx.play()
 			_throw_yoyo()
 		else:
 			return
 
 	if event.is_action_pressed("ground slam"):
-		return
+		if not is_on_floor() and not dashing and not slamming and not stunning:
+			_start_ground_slam()
 
 	# Crouch input — only on floor and not dashing
 	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
@@ -282,6 +308,19 @@ func _physics_process(delta: float) -> void:
 	_update_animation()
 
 	move_and_slide()
+	
+	if slamming and is_on_floor():
+		slam_sfx.play()
+		slamming = false
+		velocity = Vector2.ZERO
+
+		slam_attack_area.monitoring = true
+		effect_player.play("slam")
+		await get_tree().create_timer(0.1).timeout
+		slam_attack_area.monitoring = false
+
+		# Small landing delay
+		await get_tree().create_timer(SLAM_END_LAG).timeout
 
 	# End slide if nearly stopped or left the floor
 	if sliding and (absf(velocity.x) < SLIDE_MIN_SPEED or not is_on_floor()):
@@ -347,6 +386,10 @@ func _respawn_player(body: Node) -> void:
 	SceneTransition.death_reset()
 
 func _apply_gravity(dt: float) -> void:
+	if slamming:
+		velocity.y = SLAM_SPEED
+		return
+
 	if not is_on_floor() and not dashing and not zipping:
 		var grav_mult := 1.5 if velocity.y > 0 else 1.0
 		velocity += Vector2.DOWN * _gravity * grav_mult * dt
@@ -371,6 +414,7 @@ func _handle_jump() -> void:
 	_end_crouch()
 
 	_jump_buffer_timer = 0.0
+	jump_sfx.play()
 	velocity = Vector2(velocity.x, JUMP_VELOCITY)
 	jumps_left -= 1
 	_coyote_timer = 0.0
@@ -379,6 +423,10 @@ func _handle_jump() -> void:
 		velocity = (Vector2(get_wall_normal().x * 400.0, JUMP_VELOCITY / 2.0) + velocity) * 0.5
 
 func _handle_movement(dt: float) -> void:
+	if slamming:
+		velocity.x = 0.0
+		return
+	
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
@@ -393,11 +441,10 @@ func _handle_movement(dt: float) -> void:
 	if _on_crane:
 		calculate_crane_dir()
 		velocity = crane_dir * 5.0
-		print_debug(global_position.distance_to(crane_point))
 		if (global_position.distance_to(crane_point) <= 50):
 			_on_crane = false
 			velocity = crane_dir * 10.0
-		# crane todo
+			yoyo_attached = false
 
 	if sliding:
 		velocity.x = move_toward(velocity.x, 0.0, SLIDE_FRICTION * dt)
@@ -483,10 +530,14 @@ func _update_animation() -> void:
 		_anim.play("Wall")
 	elif not is_on_floor():
 		_anim.play("Jump")
+		anim_player.play("scale_down")
 	elif punching > 0.0:
 		_anim.play("Punch")
+		anim_player.play("scale_down")
+		
 	elif speed < 5.0:
 		_anim.play("Idle")
+		anim_player.play("scale_down")
 	else:
 		anim_player.play("scale_down")
 		_anim.play("Run")
@@ -517,6 +568,13 @@ func _on_stun_body_entered(body: Node) -> void:
 
 	enemy.stun_timer = STUN_TIME
 
+func _on_slam_body_entered(body: Node) -> void:
+	var enemy := body.get_parent()
+	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
+		return
+	enemy.take_hit(Vector2.UP,-0.1, 100.0, 30)
+	enemy.stun_timer = STUN_TIME/2.0
+
 func _throw_yoyo() -> void:
 	yoyo_throwing = true
 	var aimDir
@@ -538,7 +596,7 @@ func _update_yoyo() -> void:
 	if not yoyo.visible:
 		return
 
-	if yoyo.ready and not yoyo_throwing and not is_instance_valid(yoyo_enemy) and not _yoyo_returning:
+	if yoyo.ready and not yoyo_throwing and not is_instance_valid(yoyo_enemy) and not _yoyo_returning and not yoyo_attached:
 		yoyo.global_position = global_position - Vector2(0, 10)
 		return
 
@@ -561,7 +619,6 @@ func _update_yoyo() -> void:
 		yoyo.global_position = yoyo.global_position.move_toward(target, 300.0 * dt)
 
 		if yoyo.global_position.distance_to(target) < 5.0:
-			print_debug("yoyo returned")
 			yoyo.visible = false
 			_yoyo_returning = false
 			yoyo_enemy = null
@@ -581,6 +638,12 @@ func _update_attack_offset() -> void:
 	var offset := _attack_area.position
 	offset.x = -absf(offset.x) if _anim.flip_h else absf(offset.x)
 	_attack_area.position = offset
+
+func _start_ground_slam() -> void:
+	slamming = true
+	velocity.x = 0.0
+	velocity.y = SLAM_SPEED
+
 
 func _on_body_entered(body: Node) -> void:
 	var enemy := body.get_parent()
@@ -613,13 +676,16 @@ func zip_entered(body:Node2D)->void:
 	if velocity.x < 0:
 		zipline_dir = zipline_dir * -1
 	_on_zipline = true
+	
 func zip_exited(_body:Node2D)->void:
 	_on_zipline = false	
 
 func crane_entered(body:Node2D)->void:
 	crane_point = body.get_parent().get_parent().get_point()
 	_in_crane_area = true
+	
 func crane_exited(_body:Node2D)->void:
+	yoyo_attached = false
 	_in_crane_area = false
 	
 func calculate_crane_dir()->void:
@@ -659,6 +725,10 @@ func _heal_player()->void:
 	var missing_health:float = MAX_HEALTH-health_value
 	health_value +=(missing_health*0.35)+10.0
 	health_value = clamp(health_value,1,MAX_HEALTH)
+
+func _addSpray()->void:
+	emit_signal("spray_changed", 20)
+	return
 
 func _end_level(body :Node) -> void:
 	if body is not Player:

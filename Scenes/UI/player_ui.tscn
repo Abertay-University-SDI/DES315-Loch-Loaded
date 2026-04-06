@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
 [ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/player/health_bar.gd" id="3_t3flm"]
 
-[node name="player_ui" type="Control" node_paths=PackedStringArray("HealthBar")]
+[node name="player_ui" type="Control" node_paths=PackedStringArray("HealthBar", "sprayBar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,9 +14,10 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("3_t3flm")
-HealthBar = NodePath("TextureProgressBar")
+HealthBar = NodePath("HealthBar")
+sprayBar = NodePath("SprayBar")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,6 +30,23 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 value = 100.0
+texture_over = ExtResource("1_7jiju")
+texture_progress = ExtResource("2_t3flm")
+
+[node name="SprayBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 962.9999
+offset_top = 640.99994
+offset_right = 2791.0
+offset_bottom = 668.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+value = 100.0
+fill_mode = 1
 texture_over = ExtResource("1_7jiju")
 texture_progress = ExtResource("2_t3flm")
 

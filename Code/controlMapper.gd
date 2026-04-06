@@ -18,6 +18,7 @@ var input_actions = {
 	"punch": "punch",
 	"dash": "dash",
 	"ready yoyo": "ready yoyo",
+	"throw yoyo": "throw yoyo",
 	"stun" : "stun",
 	"ground slam" : "ground slam"
 }

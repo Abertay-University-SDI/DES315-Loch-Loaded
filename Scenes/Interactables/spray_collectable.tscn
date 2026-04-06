@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfyv8qml70oci"]
+
+[ext_resource type="Texture2D" uid="uid://barah6e5b7035" path="res://Textures/UI/spray-cursor.png" id="1_6w1bd"]
+[ext_resource type="Script" uid="uid://ek2tmlt353uv" path="res://Code/interactables/spray_collectable.gd" id="1_uwtve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtve"]
+size = Vector2(20, 28)
+
+[node name="SprayCollectable" type="Node2D" node_paths=PackedStringArray("node", "area")]
+script = ExtResource("1_uwtve")
+node = NodePath(".")
+area = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+rotation = 0.7853982
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_6w1bd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_uwtve")
+debug_color = Color(0.99352473, 0, 0.2431364, 0.41960785)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

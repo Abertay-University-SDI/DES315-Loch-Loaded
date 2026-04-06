@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyts38hutibwa"]
+[gd_scene load_steps=7 format=3 uid="uid://dyts38hutibwa"]
 
 [ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/scene_managers/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_ktoib"]
+[ext_resource type="Texture2D" uid="uid://csk4t6ogrop0g" path="res://Textures/UI/Cassete.png" id="4_mmpk5"]
+[ext_resource type="Texture2D" uid="uid://c412nulk7l581" path="res://Textures/UI/gear.png" id="5_myk77"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5gd8x"]
 
 [node name="PauseScene" type="Control" node_paths=PackedStringArray("back_button")]
 process_mode = 3
@@ -20,6 +24,35 @@ size_flags_vertical = 4
 theme = ExtResource("3_f8ftb")
 script = ExtResource("1_irnjd")
 back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_5gd8x")
+layout_mode = 0
+offset_left = 175.99988
+offset_top = -554.0001
+offset_right = 1375.9999
+offset_bottom = 213.99988
+rotation = 1.0471976
+pivot_offset = Vector2(400, 256)
+texture = ExtResource("4_mmpk5")
+
+[node name="Gear_1" type="TextureRect" parent="TextureRect"]
+z_index = -1
+layout_mode = 0
+offset_left = 264.84494
+offset_top = 246.09566
+offset_right = 520.845
+offset_bottom = 502.09564
+texture = ExtResource("5_myk77")
+
+[node name="Gear_2" type="TextureRect" parent="TextureRect"]
+z_index = -1
+layout_mode = 0
+offset_left = 643.5353
+offset_top = 244.18478
+offset_right = 899.5353
+offset_bottom = 500.18478
+texture = ExtResource("5_myk77")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

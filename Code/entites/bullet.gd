@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var lifetime:float = 5.0
 @export var damage: int = 10
 
+@export var damagePlayer_sfx: AudioStreamPlayer2D
+
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var distortion:Sprite2D = $Dist
 @onready var anim:AnimationPlayer = $AnimationPlayer
@@ -32,6 +34,7 @@ func body_hit(_body:Node2D):
 	
 	if _body is Player:
 		var player_body = _body as Player
+		damagePlayer_sfx.play()
 		player_body.health_value -=damage
 	_die()
 

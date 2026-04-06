@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhfxinysue7ch"
+path="res://.godot/imported/yoyo sound.wav-fd5e423712f33eb97072dee5daa3de52.sample"
+
+[deps]
+
+source_file="res://Sounds/yoyo sound.wav"
+dest_files=["res://.godot/imported/yoyo sound.wav-fd5e423712f33eb97072dee5daa3de52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

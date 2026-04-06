@@ -9,6 +9,10 @@ extends Enemy
 @export var attack_range: float = 50.0
 @export var walk_speed: float = 40.0
 
+@export var damagePlayer_sfx: AudioStreamPlayer2D
+@export var idle_sfx: AudioStreamPlayer2D
+
+
 @onready var _zap_line: Line2D = $alive_body/ZapAttackLine
 
 const ZAP_DURATION       := 0.1
@@ -30,7 +34,7 @@ func _on_ready() -> void:
 	_health = max_health
 	attack_area.body_entered.connect(_on_attack_area_body_entered)
 	attack_area.body_exited.connect(_on_attack_area_body_exited)
-
+	idle_sfx.play()
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "attack":
@@ -75,6 +79,7 @@ func _spawn_zap() -> void:
 func _try_attack() -> void:
 	if _player.global_position.distance_to(_alive.global_position) < attack_range:
 		_spawn_zap()
+		damagePlayer_sfx.play()
 		_player.velocity      += _zap_force * (_player.global_position - _alive.global_position).normalized()
 		_player.health_value  -= 20
 
@@ -123,5 +128,5 @@ func _on_physics_process(delta: float) -> void:
 	if _has_wall_ahead():
 		_direction *= -1
 
-	_alive_sprite.frame = int(_direction > 0)
+	_alive_sprite.frame = int(_direction > 0) + int(_contact_timer>0.0)*2
 	_alive.move_and_slide()
