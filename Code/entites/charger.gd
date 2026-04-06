@@ -25,6 +25,7 @@ var _hit_cooldown:  float = 0.0
 func _on_ready() -> void:
 	max_health = 140
 	_health = max_health
+	_score_reward = 250
 	_direction = -1
 	_hurt_box.body_entered.connect(_hurt_player)
 	idle_sfx.play()

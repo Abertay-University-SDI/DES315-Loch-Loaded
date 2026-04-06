@@ -1,6 +1,6 @@
 extends Control
-@export var HealthBar: TextureProgressBar
-@export var sprayBar: TextureProgressBar
+@onready var HealthBar: TextureProgressBar = $HealthBar
+@onready var sprayBar: TextureProgressBar =$SprayBar
 @export var player: Node2D
 @export var dialog: NinePatchRect
 

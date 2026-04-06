@@ -764,7 +764,7 @@ position = Vector2(1542, 240)
 position = Vector2(137, 500)
 
 [node name="Flybot2" parent="Enemies" instance=ExtResource("19_qs4fp")]
-position = Vector2(-947, 555)
+position = Vector2(-952, 670)
 
 [node name="Flybot3" parent="Enemies" instance=ExtResource("19_qs4fp")]
 position = Vector2(562, 537)

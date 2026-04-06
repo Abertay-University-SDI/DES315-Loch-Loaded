@@ -1,27 +1,28 @@
 extends Control
 @onready var settings = $"../SettingsScene"
 @onready var pause_ui = $"."
-@export var back_button:Button
+@onready var back_button:TextureButton = $TextureRect/Exit
+@onready var anim = $CasseteAnim
 
-func _on_back_game_button_pressed() -> void:
+func _on_resume_pressed() -> void:
 	get_tree().paused = false
+	get_tree().get_nodes_in_group("current_ui").back().show()
 	hide()
 
 
-func _on_back_studio_button_pressed() -> void:
+func _on_exit_pressed() -> void:
 	get_tree().paused = false
 	SceneTransition.transition_to_path("res://Scenes/UI/studio.tscn")
 
 
-func _on_settings_button_pressed() -> void:
+func _on_settings_pressed() -> void:
 	pause_ui.hide()
 	settings.show()
 
 
-func _on_exit_button_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_back_game_button_visibility_changed() -> void:
+func _on_resume_visibility_changed() -> void:
 	if visible:
+		anim.play("Slide")
 		back_button.grab_focus()
+		await anim.animation_finished
+		anim.play("idle")

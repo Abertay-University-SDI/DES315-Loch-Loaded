@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var pause_menu = $CanvasLayer/PauseScene
-@onready var resume_button = $CanvasLayer/PauseScene/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton
+@onready var resume_button = $CanvasLayer/PauseScene/TextureRect/Resume
 @export var enemies : Node2D
 @export var billBoards : Node2D
 @export var endScene : Control

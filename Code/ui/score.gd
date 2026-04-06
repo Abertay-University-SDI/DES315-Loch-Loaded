@@ -4,32 +4,45 @@ extends Label
 @onready var added_score = $Added_Score
 @onready var player: Player = get_parent().get("player")
 
-var displayed_score: float = 0
-var target_score: float = 0
+var displayed_score: float = 0      # what is currently shown
+var target_score: float = 0          # total score to reach
 
-var added_value: float = 0  # this will lerp down
+# Added score motion
+var added_velocity: Vector2 = Vector2.ZERO
+var flying: bool = false
+var added_amount: int = 0
 
-var lerp_speed: float = 1.0
-var added_lerp_speed: float = 1.0
+# Score lerp timing
+var score_lerp_speed: float = 6.0   # higher = faster
+
+# Tuning
+var move_speed: float = 8.0
+var slam_threshold: float = 5.0
+
 
 func add_score(amount: int) -> void:
-	target_score += amount
-	added_value += amount  # accumulate if multiple hits
+	added_amount += amount
+	added_score.text = "+" + str(added_amount)
+
+	# Start position (slightly above the main score)
+	added_score.position = Vector2(0, 64)
+
+	# Reset motion
+	added_velocity = Vector2.ZERO
+	flying = true
 
 
 func update_score_display() -> void:
-	text = str(int(displayed_score))
-	if displayed_score == 0:
+	# Display main score
+	if displayed_score <= 0:
 		text = ""
-	
+	else:
+		text = str(int(displayed_score))
+
 	background_score.visible_characters = background_score.text.length() - text.length()
 
-	# Update added score label
-	if added_value > 0.1:
-		added_score.text = "+" + str(int(added_value))
-		added_score.visible = true
-	else:
-		added_score.visible = false
+	# Display added score if there’s value
+	added_score.visible = added_amount > 0 && flying
 
 
 func _ready() -> void:
@@ -40,20 +53,38 @@ func _process(delta: float) -> void:
 	# Sync with player score
 	if target_score < player.score:
 		add_score(player.score - target_score)
+		target_score = player.score
 
-	# Lerp main score
-	displayed_score = lerp(displayed_score, target_score, delta * lerp_speed)
+	# ===== MOVE ADDED SCORE =====
+	if flying:
+		var target_pos = Vector2.ZERO  # main label position
+		var dir = (target_pos - added_score.position)
 
-	# Lerp added score DOWN to 0
-	added_value = lerp(added_value, 0.0, delta * added_lerp_speed)
+		# Accelerate toward target
+		added_velocity += dir * move_speed * delta
+		added_score.position += added_velocity * delta
 
-	# Snap to avoid jitter
-	if abs(displayed_score - target_score) < 0.1:
-		displayed_score = target_score
+		# Slam detection
+		if dir.length() < slam_threshold:
+			flying = false
+			added_velocity = Vector2.ZERO
 
-	if abs(added_value) < 0.1:
-		added_value = 0
+			# Pop effect
+			scale = Vector2(1.2, 1.2)
 
-	added_score.visible = added_value > 0
+	# ===== LERP MAIN SCORE AFTER SLAM =====
+	# Only start lerping once the +X has finished flying
+	if added_amount > 0 and flying == false:
+		# Smoothly lerp displayed_score toward target_score
+		displayed_score = lerp(displayed_score, target_score, delta * score_lerp_speed)
+
+		# Snap if very close
+		if abs(displayed_score - target_score) < 0.1:
+			displayed_score = target_score
+			# Only remove added_amount when main score finishes lerping
+			added_amount = 0
+
+	# Smoothly return scale to normal after pop
+	scale = scale.lerp(Vector2.ONE, delta * 10.0)
 
 	update_score_display()
