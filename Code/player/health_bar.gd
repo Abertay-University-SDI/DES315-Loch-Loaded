@@ -11,10 +11,11 @@ func update_health(health: float) -> void:
 	_target_health = health
 
 func update_spray(spray:float) -> void:
-	_target_spray = sprayBar.value + spray
+	_target_spray += spray
 
 func getSprayValue() -> int:
-	return sprayBar.value
+	print_debug(sprayBar.value)
+	return _target_spray
 
 func _ready() -> void:
 	visible = true

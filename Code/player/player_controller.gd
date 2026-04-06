@@ -729,7 +729,7 @@ func _heal_player()->void:
 	health_value = clamp(health_value,1,MAX_HEALTH)
 
 func _addSpray()->void:
-	emit_signal("spray_changed", 20)
+	emit_signal("spray_changed", 21)
 	return
 
 func _end_level(body :Node) -> void:
