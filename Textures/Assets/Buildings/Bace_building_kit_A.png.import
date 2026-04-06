@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d324klbheq3f6"
-path="res://.godot/imported/Others_kit_A.png-5d4e0edd4215582b58177e45d815a369.ctex"
+uid="uid://cnoxaon20rhbf"
+path="res://.godot/imported/Bace_building_kit_A.png-f4f316ce763acc692d58509582059f06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Main Images/Others_kit_A.png"
-dest_files=["res://.godot/imported/Others_kit_A.png-5d4e0edd4215582b58177e45d815a369.ctex"]
+source_file="res://Textures/Assets/Buildings/Bace_building_kit_A.png"
+dest_files=["res://.godot/imported/Bace_building_kit_A.png-f4f316ce763acc692d58509582059f06.ctex"]
 
 [params]
 

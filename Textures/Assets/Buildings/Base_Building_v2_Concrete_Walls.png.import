@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0acrd0e10ytu"
-path="res://.godot/imported/Wip_lamps.png-63f5ec30baa25e666e58fd1f215f509a.ctex"
+uid="uid://bgadw4obw4q0u"
+path="res://.godot/imported/Base_Building_v2_Concrete_Walls.png-3c5db965f25e193c1c0409679c59dfd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Main Images/Wip_lamps.png"
-dest_files=["res://.godot/imported/Wip_lamps.png-63f5ec30baa25e666e58fd1f215f509a.ctex"]
+source_file="res://Textures/Assets/Buildings/Base_Building_v2_Concrete_Walls.png"
+dest_files=["res://.godot/imported/Base_Building_v2_Concrete_Walls.png-3c5db965f25e193c1c0409679c59dfd1.ctex"]
 
 [params]
 

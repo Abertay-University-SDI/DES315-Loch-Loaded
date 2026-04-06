@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqioj1vihsxh"
-path="res://.godot/imported/Wide_building_kit_B.png-a20b4b7f1042852887b4c8d41e7279e0.ctex"
+uid="uid://xmdyqm0gjfuk"
+path="res://.godot/imported/Base_Building_v2_Brick_Corners.png-47b4745924492bf1b066c89233e98ff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Main Images/Wide_building_kit_B.png"
-dest_files=["res://.godot/imported/Wide_building_kit_B.png-a20b4b7f1042852887b4c8d41e7279e0.ctex"]
+source_file="res://Textures/Assets/Buildings/Base_Building_v2_Brick_Corners.png"
+dest_files=["res://.godot/imported/Base_Building_v2_Brick_Corners.png-47b4745924492bf1b066c89233e98ff5.ctex"]
 
 [params]
 

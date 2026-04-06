@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://u20ievdr005p"]
 
-[ext_resource type="Texture2D" uid="uid://b0acrd0e10ytu" path="res://Textures/Main Images/Wip_lamps.png" id="1_pujnx"]
+[ext_resource type="Texture2D" uid="uid://b0acrd0e10ytu" path="res://Textures/Assets/Wip_lamps.png" id="1_pujnx"]
 
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m72g6"]

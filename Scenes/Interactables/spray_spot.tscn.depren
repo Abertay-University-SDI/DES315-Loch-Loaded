@@ -1,0 +1,4 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1cteboldo51h"]
+
+[ext_resource type="Script" uid="uid://ck678mustwn72" path="res://Code/interactables/spray_spot.gd" id="1_rvb18"]
+[ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Fonts/Minecraft.ttf" id="2_mkaox"]

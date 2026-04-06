@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnoxaon20rhbf"
-path="res://.godot/imported/Bace_building_kit_A.png-26066dfdcbb8c57588324ac25eeb9878.ctex"
+uid="uid://dfq451sp12ueu"
+path="res://.godot/imported/TEMPcrane.png-d8abeee1fe59907a26b91ff95024917a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Main Images/Bace_building_kit_A.png"
-dest_files=["res://.godot/imported/Bace_building_kit_A.png-26066dfdcbb8c57588324ac25eeb9878.ctex"]
+source_file="res://Textures/Assets/TEMPcrane.png"
+dest_files=["res://.godot/imported/TEMPcrane.png-d8abeee1fe59907a26b91ff95024917a.ctex"]
 
 [params]
 

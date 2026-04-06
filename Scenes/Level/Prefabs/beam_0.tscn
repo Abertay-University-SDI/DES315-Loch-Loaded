@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://uhrg7odt8owd"]
 
-[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Main Images/Others_kit_A.png" id="1_waq1q"]
+[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_waq1q"]
 
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17osn"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgadw4obw4q0u"
-path="res://.godot/imported/Base_Building_v2_Concrete_Walls.png-71b8b9f4f86645138e6db43ae2289235.ctex"
+uid="uid://cqioj1vihsxh"
+path="res://.godot/imported/Wide_building_kit_B.png-a7d9011443be60c233e46578db825034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Main Images/Base_Building_v2_Concrete_Walls.png"
-dest_files=["res://.godot/imported/Base_Building_v2_Concrete_Walls.png-71b8b9f4f86645138e6db43ae2289235.ctex"]
+source_file="res://Textures/Assets/Buildings/Wide_building_kit_B.png"
+dest_files=["res://.godot/imported/Wide_building_kit_B.png-a7d9011443be60c233e46578db825034.ctex"]
 
 [params]
 
