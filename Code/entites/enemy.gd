@@ -12,6 +12,7 @@ extends Node2D
 
 var _player: Player = null
 var _health: int
+var _score_reward:int
 
 var _alive: CharacterBody2D
 var _dead: RigidBody2D
@@ -141,6 +142,7 @@ func _has_wall_ahead() -> bool:
 func _die(hit_dir: Vector2, force: float) -> void:
 	
 	_player._heal_player()
+	_player.score += _score_reward
 	
 	_dead.global_position = _alive.global_position
 	_dead.rotation        = _alive.rotation

@@ -3,12 +3,13 @@ extends TextureButton
 
 @export var label_text:String
 
-@onready var label = $Label
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
-	label.text = label_text
+	var label = get_node_or_null("Label")
+	if label != null:
+		label.text = label_text
 	focus_mode = Control.FOCUS_ALL
 	
 	connect("mouse_entered", Callable(self, "_on_hover_start"))

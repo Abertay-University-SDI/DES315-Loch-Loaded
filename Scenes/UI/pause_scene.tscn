@@ -1,14 +1,117 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyts38hutibwa"]
+[gd_scene load_steps=15 format=3 uid="uid://dyts38hutibwa"]
 
 [ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/scene_managers/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
-[ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_ktoib"]
 [ext_resource type="Texture2D" uid="uid://csk4t6ogrop0g" path="res://Textures/UI/Cassete.png" id="4_mmpk5"]
+[ext_resource type="PackedScene" uid="uid://cj3kwert7blyw" path="res://Scenes/UI/Cassete_button.tscn" id="5_5gd8x"]
 [ext_resource type="Texture2D" uid="uid://c412nulk7l581" path="res://Textures/UI/gear.png" id="5_myk77"]
+[ext_resource type="Texture2D" uid="uid://d3nf1toru3eio" path="res://Textures/UI/buttons/cassete_buttons.png" id="6_5n2i0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5gd8x"]
 
-[node name="PauseScene" type="Control" node_paths=PackedStringArray("back_button")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxg4q"]
+atlas = ExtResource("6_5n2i0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ecd14"]
+load_path = "res://.godot/imported/cassete_buttons.png-aa98ecfcaabec7bc4a5656302376d60f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgecj"]
+atlas = SubResource("CompressedTexture2D_ecd14")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="Animation" id="Animation_mmpk5"]
+resource_name = "Slide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(727, 288), Vector2(175.99988, -554.0001)]
+}
+
+[sub_resource type="Animation" id="Animation_myk77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(175.99988, -554.0001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Gear_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect/Gear_2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5gd8x"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/Gear_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Gear_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5n2i0"]
+_data = {
+&"RESET": SubResource("Animation_myk77"),
+&"Slide": SubResource("Animation_mmpk5"),
+&"idle": SubResource("Animation_5gd8x")
+}
+
+[node name="PauseScene" type="Control"]
 process_mode = 3
 process_priority = 1
 layout_mode = 3
@@ -23,7 +126,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_f8ftb")
 script = ExtResource("1_irnjd")
-back_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_5gd8x")
@@ -31,7 +133,7 @@ layout_mode = 0
 offset_left = 175.99988
 offset_top = -554.0001
 offset_right = 1375.9999
-offset_bottom = 213.99988
+offset_bottom = 214.0
 rotation = 1.0471976
 pivot_offset = Vector2(400, 256)
 texture = ExtResource("4_mmpk5")
@@ -43,6 +145,7 @@ offset_left = 264.84494
 offset_top = 246.09566
 offset_right = 520.845
 offset_bottom = 502.09564
+pivot_offset = Vector2(128, 128)
 texture = ExtResource("5_myk77")
 
 [node name="Gear_2" type="TextureRect" parent="TextureRect"]
@@ -52,77 +155,59 @@ offset_left = 643.5353
 offset_top = 244.18478
 offset_right = 899.5353
 offset_bottom = 500.18478
+pivot_offset = Vector2(128, 128)
 texture = ExtResource("5_myk77")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Settings" parent="TextureRect" instance=ExtResource("5_5gd8x")]
 layout_mode = 0
-offset_left = -148.0
-offset_top = -172.0
-offset_right = 140.0
-offset_bottom = 156.0
-theme = ExtResource("3_f8ftb")
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 219.60277
+offset_top = 768.45746
+offset_right = 347.60278
+offset_bottom = 875.45746
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Exit" parent="TextureRect" instance=ExtResource("5_5gd8x")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 360.75784
+offset_top = 767.9697
+offset_right = 488.75784
+offset_bottom = 874.9697
+grow_horizontal = 1
+grow_vertical = 1
+texture_normal = SubResource("AtlasTexture_oxg4q")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Resume" parent="TextureRect" instance=ExtResource("5_5gd8x")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 86.143776
+offset_top = 767.6152
+offset_right = 214.14377
+offset_bottom = 874.6152
+grow_horizontal = 1
+grow_vertical = 1
+texture_normal = SubResource("AtlasTexture_wgecj")
 
-[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Paused"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="CasseteAnim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5n2i0")
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="BackGameButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("scene")]
-process_mode = 3
-layout_mode = 2
-size_flags_vertical = 4
-theme = ExtResource("3_f8ftb")
-text = "back to game"
-script = ExtResource("3_ktoib")
-scene = NodePath("../../../../..")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="BackStudioButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-process_mode = 3
-layout_mode = 2
-size_flags_vertical = 4
-text = "back to studio"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="SettingsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-process_mode = 3
-layout_mode = 2
-size_flags_vertical = 4
-text = "settings"
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="ExitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-process_mode = 3
-layout_mode = 2
-size_flags_vertical = 4
-text = "exit game"
-
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_pressed"]
-[connection signal="visibility_changed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackGameButton" to="." method="_on_back_game_button_visibility_changed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BackStudioButton" to="." method="_on_back_studio_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureRect/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="TextureRect/Resume" to="." method="_on_resume_pressed"]
+[connection signal="visibility_changed" from="TextureRect/Resume" to="." method="_on_resume_visibility_changed"]

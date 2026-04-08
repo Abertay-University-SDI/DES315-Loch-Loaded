@@ -36,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_3a08j"]
 [ext_resource type="PackedScene" uid="uid://vptevd4ijf1n" path="res://Scenes/Entites/random_npc.tscn" id="35_ltej3"]
 
-
 [sub_resource type="Environment" id="Environment_kq4fe"]
 background_mode = 3
 glow_enabled = true
@@ -765,7 +764,7 @@ position = Vector2(1542, 240)
 position = Vector2(137, 500)
 
 [node name="Flybot2" parent="Enemies" instance=ExtResource("19_qs4fp")]
-position = Vector2(-947, 555)
+position = Vector2(-952, 670)
 
 [node name="Flybot3" parent="Enemies" instance=ExtResource("19_qs4fp")]
 position = Vector2(562, 537)

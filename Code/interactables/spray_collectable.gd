@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	pass
 
 func pickUp(body:Node2D) -> void:
-	if (body.is_in_group("player")):
+	if (body.is_in_group("player") and node.visible):
 		_player._addSpray()
 		node.visible = false
 	return
