@@ -214,18 +214,6 @@ position = Vector2(-2, -20)
 [node name="Zippoint7" parent="Zipline" instance=ExtResource("18_kc4se")]
 position = Vector2(1855, -576)
 
-[node name="Zippoint9" parent="Zipline" instance=ExtResource("18_kc4se")]
-position = Vector2(2108, -355)
-
-[node name="Zippoint10" parent="Zipline" instance=ExtResource("18_kc4se")]
-position = Vector2(2155, -355)
-
-[node name="Zippoint8" parent="Zipline" instance=ExtResource("18_kc4se")]
-position = Vector2(2527, -68)
-
-[node name="Zippoint11" parent="Zipline" instance=ExtResource("18_kc4se")]
-position = Vector2(2873, 286)
-
 [node name="Zippoint6" parent="Zipline" instance=ExtResource("18_kc4se")]
 position = Vector2(478, 441)
 
@@ -248,19 +236,19 @@ position = Vector2(6, 0)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_3")
 
 [node name="Zipline [End]" type="Node2D" parent="Zipline"]
-position = Vector2(2108, -355)
+position = Vector2(2132, -335)
 
 [node name="Zippoint_end_0" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
-position = Vector2(-44, 10)
+position = Vector2(-69, -10)
 
 [node name="Zippoint_end_1" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
-position = Vector2(266, 288)
+position = Vector2(235, 267)
 
 [node name="Zippoint_end_2" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
-position = Vector2(736, 525)
+position = Vector2(750, 505)
 
 [node name="Zippoint_end_3" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
-position = Vector2(-1603, 795)
+position = Vector2(-1642, 774)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
