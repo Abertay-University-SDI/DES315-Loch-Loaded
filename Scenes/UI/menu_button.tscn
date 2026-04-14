@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://btav3q4xobqyh"]
+[gd_scene load_steps=12 format=3 uid="uid://btav3q4xobqyh"]
 
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_56pne"]
 [ext_resource type="Texture2D" uid="uid://bymppv8b6lxca" path="res://Textures/UI/buttons/tab_bar.png" id="2_ujyj2"]
 [ext_resource type="Texture2D" uid="uid://cbx0mecweq07q" path="res://Textures/UI/buttons/tab_bar_selected.png" id="3_nqedb"]
 [ext_resource type="Script" uid="uid://dv1kgm37k5f4e" path="res://Code/ui/menu_button.gd" id="4_fttth"]
+[ext_resource type="AudioStream" uid="uid://dqyaps5cwev5u" path="res://Sounds/Tape recorder button press.wav" id="5_nqedb"]
+[ext_resource type="AudioStream" uid="uid://c5tv74yhe75uh" path="res://Sounds/Tape recorder button press 2.wav" id="6_fttth"]
 
 [sub_resource type="Animation" id="Animation_j0fq8"]
 length = 0.001
@@ -231,7 +233,7 @@ _data = {
 &"idle": SubResource("Animation_hhl1l")
 }
 
-[node name="Menu_button" type="TextureButton"]
+[node name="Menu_button" type="TextureButton" node_paths=PackedStringArray("buttonHover", "buttonPress")]
 custom_minimum_size = Vector2(512, 0)
 offset_right = 512.0
 offset_bottom = 64.0
@@ -239,6 +241,8 @@ theme = ExtResource("1_56pne")
 texture_normal = ExtResource("2_ujyj2")
 script = ExtResource("4_fttth")
 label_text = "Default"
+buttonHover = NodePath("AudioStreamPlayer2D")
+buttonPress = NodePath("AudioStreamPlayer2D2")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -257,3 +261,9 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_te7a4")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_nqedb")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fttth")

@@ -43,16 +43,27 @@ func _create_action_list():
 	for action in input_actions:
 		var button = input_button_scene.instantiate()
 		var action_label = button.find_child("LabelAction")
-		var input_label = button.find_child("LabelInput")
+		var keyboard_input_label = button.find_child("LabelKeyboard")
+		var controller_input_label = button.find_child("LabelController")
 		
 		action_label.text = input_actions[action]
 		
 		var events = InputMap.action_get_events(action)
-		if events.size() > 0:
-			input_label.text = get_input_text(events[0])
-		else:
-			input_label.text = ""
-			
+
+		var keyboard_text = ""
+		var controller_text = ""
+
+		for event in events:
+			if event is InputEventKey or event is InputEventMouseButton:
+				keyboard_text = get_input_text(event)
+			elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+				controller_text = get_input_text(event)
+			else:
+				keyboard_text.text = ""
+				controller_text.text = ""
+
+		keyboard_input_label.text = keyboard_text
+		controller_input_label.text = controller_text
 		action_list.add_child(button)
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
 
@@ -86,7 +97,18 @@ func _input(event):
 				if abs(event.axis_value) < 0.5:
 					return
 			
-			InputMap.action_erase_events(action_to_remap)
+			var existing_events = InputMap.action_get_events(action_to_remap)
+
+			# Remove only same type
+			for e in existing_events:
+				if (
+				(event is InputEventKey and e is InputEventKey) or
+				(event is InputEventMouseButton and e is InputEventMouseButton) or
+				(event is InputEventJoypadButton and e is InputEventJoypadButton) or
+				(event is InputEventJoypadMotion and e is InputEventJoypadMotion)):
+					InputMap.action_erase_event(action_to_remap, e)
+
+			# Add new event
 			InputMap.action_add_event(action_to_remap, event)
 			_update_action_list(remapping_button, event)
 			save_settings_to_file()
@@ -126,19 +148,42 @@ func load_settings_from_file():
 		return
 	
 	for action in input_actions:
-		if config.has_section_key("input", action):
-			var event = config.get_value("input", action)
-			if event is InputEvent:
-				InputMap.action_erase_events(action)
-				InputMap.action_add_event(action, event)
+		InputMap.action_erase_events(action)
+		
+		# Load keyboard
+		if config.has_section_key("keyboard", action):
+			var events = config.get_value("keyboard", action)
+			for event in events:
+				if event is InputEvent:
+					InputMap.action_add_event(action, event)
+		
+		# Load controller
+		if config.has_section_key("controller", action):
+			var events = config.get_value("controller", action)
+			for event in events:
+				if event is InputEvent:
+					InputMap.action_add_event(action, event)
 	
 func save_settings_to_file():
 	var config = ConfigFile.new()
 	
 	for action in input_actions:
 		var events = InputMap.action_get_events(action)
-		if events.size() > 0:
-			config.set_value("input", action, events[0])
+		
+		var keyboard_events = []
+		var controller_events = []
+		
+		for event in events:
+			if event is InputEventKey or event is InputEventMouseButton:
+				keyboard_events.append(event)
+			elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+				controller_events.append(event)
+		
+		if keyboard_events.size() > 0:
+			config.set_value("keyboard", action, keyboard_events)
+		
+		if controller_events.size() > 0:
+			config.set_value("controller", action, controller_events)
 	
 	config.save(SAVED_PATH)
 

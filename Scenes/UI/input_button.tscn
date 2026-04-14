@@ -25,22 +25,30 @@ theme_override_constants/margin_right = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_font_sizes/font_size = 21
 text = "ActionName"
 vertical_alignment = 1
 
-[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+[node name="LabelKeyboard" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
+theme_override_font_sizes/font_size = 21
+text = "Input Keyboard"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="LabelController" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_font_sizes/font_size = 21
-text = "Input Key"
+text = "Input Controller"
+horizontal_alignment = 2
 vertical_alignment = 1
