@@ -73,7 +73,11 @@ func _on_input_button_pressed(button, action):
 		is_remapping = true
 		action_to_remap = action
 		remapping_button = button
-		button.find_child("LabelInput").text = "Press any key (ESC to cancel)"
+		var type = get_controller_type(0)
+		if type != ControllerType.UNKNOWN:
+			button.find_child("LabelController").text = "Press any key (ESC to cancel)"
+		else:
+			button.find_child("LabelKeyboard").text = "Press any key (ESC to cancel)"
 
 
 func _input(event):
@@ -121,7 +125,10 @@ func _input(event):
 
 
 func _update_action_list(button, event):
-	button.find_child("LabelInput").text = get_input_text(event)
+	if (event is InputEventKey or event is InputEventMouseButton):
+		button.find_child("LabelKeyboard").text = get_input_text(event)
+	else:
+		button.find_child("LabelController").text = get_input_text(event)
 
 
 func _on_reset_button_pressed():
