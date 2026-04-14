@@ -13,8 +13,7 @@ func update_health(health: float) -> void:
 func update_spray(spray:float) -> void:
 	_target_spray += spray
 
-func getSprayValue() -> int:
-	print_debug(sprayBar.value)
+func getSprayValue() -> float:
 	return _target_spray
 
 func _ready() -> void:

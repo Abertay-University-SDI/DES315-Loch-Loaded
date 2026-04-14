@@ -3,6 +3,9 @@ extends TextureButton
 
 @export var label_text:String
 
+@export var buttonHover:AudioStreamPlayer2D
+@export var buttonPress:AudioStreamPlayer2D
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
@@ -18,7 +21,12 @@ func _ready() -> void:
 	connect("focus_exited", Callable(self, "_on_hover_end"))
 
 func _on_hover_start() -> void:
+	buttonHover.play()
 	anim.play("hover")
 
 func _on_hover_end() -> void:
 	anim.play("hover_end")
+
+
+func _on_pressed() -> void:
+	buttonPress.play()
