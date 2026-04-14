@@ -652,7 +652,7 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	var dir: Vector2 = (enemy.global_position - global_position).normalized()
-	enemy.take_hit(dir, punching, 100.0, 30)
+	enemy.take_hit(dir, punching, 150.0, 30)
 
 func _on_dash_body_hit(body: Node) -> void:
 	var enemy := body.get_parent()
