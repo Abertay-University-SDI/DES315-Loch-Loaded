@@ -10,7 +10,6 @@ offset_left = 2.0
 offset_right = 2.0
 offset_bottom = 535.0
 grow_horizontal = 2
-focus_mode = 0
 theme = ExtResource("1_ee6dt")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

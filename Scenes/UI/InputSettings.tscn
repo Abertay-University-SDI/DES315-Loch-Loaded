@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_m1060"]
 [ext_resource type="PackedScene" uid="uid://rtjn4x5v057u" path="res://Scenes/UI/input_button.tscn" id="2_m1060"]
 
-[node name="InputSettingsButton" type="Control"]
+[node name="InputSettingsButton" type="Control" node_paths=PackedStringArray("scrollContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_m1060")
 script = ExtResource("1_cwwao")
+scrollContainer = NodePath("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -65,7 +66,6 @@ layout_mode = 2
 
 [node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
 text = "Reset to default"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

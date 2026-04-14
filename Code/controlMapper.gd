@@ -1,5 +1,7 @@
 extends Control
 
+@export var scrollContainer:ScrollContainer
+
 @onready var input_button_scene = preload("res://Scenes/UI/input_button.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 
@@ -8,6 +10,7 @@ var SAVED_PATH = "user://input_data.cfg"
 var is_remapping = false
 var action_to_remap = null
 var remapping_button = null
+var remap_type = null
 
 var input_actions = {
 	"jump": "jump",
@@ -32,6 +35,7 @@ enum ControllerType {
 
 
 func _ready():
+	scrollContainer.follow_focus = true
 	load_settings_from_file()
 	_create_action_list()
 	
@@ -76,9 +80,10 @@ func _on_input_button_pressed(button, action):
 		var type = get_controller_type(0)
 		if type != ControllerType.UNKNOWN:
 			button.find_child("LabelController").text = "Press any key (ESC to cancel)"
+			remap_type = "controller"
 		else:
 			button.find_child("LabelKeyboard").text = "Press any key (ESC to cancel)"
-
+			remap_type = "keyboard"
 
 func _input(event):
 	if is_remapping:
@@ -88,12 +93,8 @@ func _input(event):
 			remapping_button = null
 			_create_action_list()
 			return
-		if (
-			event is InputEventKey ||
-			(event is InputEventMouseButton && event.pressed) ||
-			(event is InputEventJoypadButton && event.pressed) ||
-			(event is InputEventJoypadMotion)
-		):
+		if (((event is InputEventKey || (event is InputEventMouseButton && event.pressed)) && remap_type == "keyboard") ||
+			(((event is InputEventJoypadButton && event.pressed) || (event is InputEventJoypadMotion)) && remap_type == "controller")):
 			if event is InputEventMouseButton && event.double_click:
 				event.double_click = false
 				
@@ -123,6 +124,8 @@ func _input(event):
 			
 			accept_event()
 
+	elif (event is InputEventJoypadMotion):
+		return
 
 func _update_action_list(button, event):
 	if (event is InputEventKey or event is InputEventMouseButton):
