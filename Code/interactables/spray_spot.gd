@@ -44,7 +44,7 @@ func _ready() -> void:
 	spray_scene = ResourceLoader.load("res://Scenes/Interactables/spray.tscn")
 
 func _process(_delta: float) -> void:
-	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() == 100:
+	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= 100:
 		painted = true
 		playerBody.score+=1000
 		var spray_instance:Node2D= spray_scene.instantiate()
