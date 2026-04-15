@@ -256,10 +256,10 @@ func _input(event: InputEvent) -> void:
 			_start_ground_slam()
 
 	# Crouch input — only on floor and not dashing
-	if event.is_action_pressed("crouch") and is_on_floor() and not dashing:
+	if event.is_action_pressed("down") and is_on_floor() and not dashing:
 		_try_start_crouch_or_slide(event)
 
-	if event.is_action_released("crouch"):
+	if event.is_action_released("down"):
 		_end_crouch()
 
 func _process(delta: float) -> void:
