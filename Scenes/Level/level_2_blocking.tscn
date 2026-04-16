@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=89 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -19,17 +19,43 @@
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="18_kc4se"]
 [ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="18_nc2ih"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="19_1x42q"]
-[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="19_l6qp1"]
+[ext_resource type="PackedScene" uid="uid://b4pmys5yonau3" path="res://Scenes/Tall Building Prefabs V1/Tall Building.tscn" id="19_kc4se"]
+[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="19_l6qp1"]
 [ext_resource type="Texture2D" uid="uid://csd28ksnc81co" path="res://Textures/Assets/Buildings/Base_Building_v2_Brick_Walls.png" id="20_17b5f"]
-[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="20_suaas"]
+[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="20_suaas"]
 [ext_resource type="Texture2D" uid="uid://xmdyqm0gjfuk" path="res://Textures/Assets/Buildings/Base_Building_v2_Brick_Corners.png" id="21_1x42q"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_6lnp2"]
 [ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="22_kc4se"]
-[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="26_suaas"]
+[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="27_17b5f"]
 [ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="29_kc4se"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="30_deyre"]
+[ext_resource type="PackedScene" uid="uid://bwyy4fxpf6gnp" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window.tscn" id="31_17b5f"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="31_aloh2"]
+[ext_resource type="PackedScene" uid="uid://c8qnvgi5p76e4" path="res://Scenes/Tall Building Prefabs V1/Tall Building Cornice.tscn" id="32_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="32_6pscn"]
+[ext_resource type="PackedScene" uid="uid://5fthyclquva8" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Blocked.tscn" id="34_no21u"]
+[ext_resource type="PackedScene" uid="uid://be6lrsdkkyja7" path="res://Scenes/Tall Building Prefabs V1/Tall Building Door.tscn" id="35_8jj66"]
+[ext_resource type="PackedScene" uid="uid://rvc2gu72xxvu" path="res://Scenes/Tall Building Prefabs V1/Tall Building Door Blocked.tscn" id="36_kmvub"]
+[ext_resource type="PackedScene" uid="uid://caoy4ajy6epuf" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin.tscn" id="37_xp4le"]
+[ext_resource type="PackedScene" uid="uid://c0n5an2b1iuj0" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin Blocked.tscn" id="38_qganl"]
+[ext_resource type="PackedScene" uid="uid://biu0st6vbvxo1" path="res://Scenes/Small Building Prefabs/Small Building Top.tscn" id="39_g6igw"]
+[ext_resource type="PackedScene" uid="uid://4v74661t43qi" path="res://Scenes/Small Building Prefabs/Small Building.tscn" id="40_m2dxl"]
+[ext_resource type="PackedScene" uid="uid://cyehxqtcrdykw" path="res://Scenes/Small Building Prefabs/Small Building Window Long.tscn" id="41_bchf7"]
+[ext_resource type="PackedScene" uid="uid://bavswfeos6bi5" path="res://Scenes/Small Building Prefabs/Small Building Window Thin.tscn" id="42_unrsh"]
+[ext_resource type="PackedScene" uid="uid://bmai0pder60ra" path="res://Scenes/Small Building Prefabs/Small Building Door.tscn" id="43_nf775"]
+[ext_resource type="PackedScene" uid="uid://c8iq7grgsb10m" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building V1.tscn" id="44_mbknn"]
+[ext_resource type="PackedScene" uid="uid://c8w6of38kugm0" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building Top V1.tscn" id="45_c71rb"]
+[ext_resource type="PackedScene" uid="uid://j6m1r2arqx6o" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building V2.tscn" id="46_qwldb"]
+[ext_resource type="PackedScene" uid="uid://bequyq1spylus" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building Top V2.tscn" id="47_elsyb"]
+[ext_resource type="PackedScene" uid="uid://d1h6eehvsuvmu" path="res://Scenes/Small Building Prefabs/Small Building Door Blocked.tscn" id="48_bb68t"]
+[ext_resource type="PackedScene" uid="uid://bhea40qx7hxy6" path="res://Scenes/Small Building Prefabs/Small Building Window Thin Blocked.tscn" id="49_wmn1b"]
+[ext_resource type="PackedScene" uid="uid://5sdcp1qcnw6c" path="res://Scenes/Small Building Prefabs/Small Building Window Long Blocked.tscn" id="50_cw0jb"]
+[ext_resource type="PackedScene" uid="uid://ckmmao7tuaxk4" path="res://Scenes/Wide Building Prefabs/Wide Building V1.tscn" id="51_dvkcw"]
+[ext_resource type="PackedScene" uid="uid://dqkgqtw28xdo8" path="res://Scenes/Wide Building Prefabs/Wide Building Top V1.tscn" id="52_6lnp2"]
+[ext_resource type="PackedScene" uid="uid://cxloyqxvndlii" path="res://Scenes/Wide Building Prefabs/Wide Building Bottom V1.tscn" id="53_40hul"]
+[ext_resource type="PackedScene" uid="uid://d2b0xsskcdjsc" path="res://Scenes/Wide Building Prefabs/Wide Building Top V2.tscn" id="54_jk1ko"]
+[ext_resource type="PackedScene" uid="uid://bpu0ota0mswin" path="res://Scenes/Wide Building Prefabs/Wide Building V2.tscn" id="55_jlqxu"]
+[ext_resource type="PackedScene" uid="uid://ccsnc7ln6r423" path="res://Scenes/Wide Building Prefabs/Wide Building Bottom V2.tscn" id="55_svuco"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_qganl")
@@ -44,7 +70,7 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(9673.5, 1506)
+size = Vector2(9673.5, 2003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
 size = Vector2(253, 1480)
@@ -156,9 +182,8 @@ region = Rect2(1022, 115, 979, 72)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(9573, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_40hul"]
-atlas = ExtResource("26_suaas")
-region = Rect2(109, 1432, 546, 538)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suaas"]
+size = Vector2(557, 400)
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
 script = ExtResource("1_1x42q")
@@ -247,7 +272,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(3606, -26)
+position = Vector2(3606, -274.5)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -294,7 +319,7 @@ position = Vector2(2522, -48)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_2")
 
 [node name="Zipline_start_3" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("19_1x42q")]
-position = Vector2(6, 0)
+position = Vector2(11, 0)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_3")
 
 [node name="Zipline [End]" type="Node2D" parent="Zipline"]
@@ -310,7 +335,7 @@ position = Vector2(291, 172)
 position = Vector2(750, 505)
 
 [node name="Zippoint_end_3" parent="Zipline/Zipline [End]" instance=ExtResource("18_kc4se")]
-position = Vector2(-1642, 774)
+position = Vector2(-1629, 775)
 
 [node name="Tall - Buildings" type="Node2D" parent="."]
 
@@ -460,6 +485,9 @@ texture = SubResource("AtlasTexture_suaas")
 position = Vector2(7955.8276, -317.31015)
 scale = Vector2(0.20818311, 0.20818311)
 texture = SubResource("AtlasTexture_suaas")
+
+[node name="Tall Building" parent="Tall - Buildings/Tall - Buildings [Active]" instance=ExtResource("19_kc4se")]
+position = Vector2(336, 1092)
 
 [node name="Tall - Buildings [Not Active]" type="Node2D" parent="Tall - Buildings"]
 
@@ -709,11 +737,6 @@ texture = SubResource("AtlasTexture_mbknn")
 
 [node name="Tall_Building_Glass_Window_243" type="Sprite2D" parent="Tall - Buildings/Tall - Buildings [Active Windows]/Tall - Buildings [Glass]"]
 position = Vector2(4912.5005, 531.4999)
-scale = Vector2(0.11386103, 0.19927524)
-texture = SubResource("AtlasTexture_mbknn")
-
-[node name="Tall_Building_Glass_Window_244" type="Sprite2D" parent="Tall - Buildings/Tall - Buildings [Active Windows]/Tall - Buildings [Glass]"]
-position = Vector2(4912.5005, 629.50006)
 scale = Vector2(0.11386103, 0.19927524)
 texture = SubResource("AtlasTexture_mbknn")
 
@@ -2111,11 +2134,6 @@ texture = SubResource("AtlasTexture_nf775")
 
 [node name="Tall_Building_Outlines_Window_243" type="Sprite2D" parent="Tall - Buildings/Tall - Buildings [Active Windows]/Tall - Buildings [Outlines]"]
 position = Vector2(4912.7495, 527.5075)
-scale = Vector2(0.18499993, 0.18371722)
-texture = SubResource("AtlasTexture_nf775")
-
-[node name="Tall_Building_Outlines_Window_244" type="Sprite2D" parent="Tall - Buildings/Tall - Buildings [Active Windows]/Tall - Buildings [Outlines]"]
-position = Vector2(4912.7495, 625.50757)
 scale = Vector2(0.18499993, 0.18371722)
 texture = SubResource("AtlasTexture_nf775")
 
@@ -6002,22 +6020,22 @@ scale = Vector2(0.23454416, 0.24367678)
 texture = SubResource("AtlasTexture_no21u")
 
 [node name="Bushes_16" type="Sprite2D" parent="Bushes [Harming]"]
-position = Vector2(5509.8164, 450.31256)
+position = Vector2(5526.5205, 450.31256)
 scale = Vector2(0.23750912, 0.21254842)
 texture = SubResource("AtlasTexture_no21u")
 
 [node name="Bushes_17" type="Sprite2D" parent="Bushes [Harming]"]
-position = Vector2(5439, 446.31247)
+position = Vector2(5495, 446.31247)
 scale = Vector2(0.23454416, 0.24367678)
 texture = SubResource("AtlasTexture_no21u")
 
 [node name="Bushes_19" type="Sprite2D" parent="Bushes [Harming]"]
-position = Vector2(5333, 446.31247)
+position = Vector2(5309.704, 446.31247)
 scale = Vector2(0.23454416, 0.24367678)
 texture = SubResource("AtlasTexture_no21u")
 
 [node name="Bushes_18" type="Sprite2D" parent="Bushes [Harming]"]
-position = Vector2(5372.852, 450.81247)
+position = Vector2(5349.556, 450.81247)
 scale = Vector2(0.18885145, 0.2086573)
 texture = SubResource("AtlasTexture_no21u")
 
@@ -6047,7 +6065,7 @@ scale = Vector2(0.17453864, 0.20750242)
 texture = SubResource("AtlasTexture_no21u")
 
 [node name="Bushes_12" type="Sprite2D" parent="Bushes [Harming]"]
-position = Vector2(2686.1208, -691.9999)
+position = Vector2(2618, -691.9999)
 scale = Vector2(0.16471988, 0.16597751)
 texture = SubResource("AtlasTexture_no21u")
 
@@ -6353,48 +6371,34 @@ position = Vector2(99, -1)
 position = Vector2(404, -4)
 
 [node name="Spray Spots" type="Node2D" parent="."]
+z_index = 100
 
-[node name="Spray_spots_example_0" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(850.99994, -199.99998)
-scale = Vector2(0.32156134, 0.32156134)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(838, -197)
 
-[node name="Spray_spots_example_1" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(2508.9998, 213)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot2" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(2688, -753)
 
-[node name="Spray_spots_example_2" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(3651, 177)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(3654, 170)
 
-[node name="Spray_spots_example_7" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(2681, -744)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(5420, 395)
 
-[node name="Spray_spots_example_3" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(5426, 406)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot5" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(6711, -199)
 
-[node name="Spray_spots_example_4" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(6713, -189)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot6" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(7961, -600)
 
-[node name="Spray_spots_example_5" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(7961, 208)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot7" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(7961, 200)
 
-[node name="Spray_spots_example_6" type="Sprite2D" parent="Spray Spots"]
-position = Vector2(7958.9995, -595)
-scale = Vector2(0.2741636, 0.2741636)
-texture = SubResource("AtlasTexture_40hul")
+[node name="Spray Spot8" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+position = Vector2(2505, 204)
 
 [node name="Lights" type="Node2D" parent="."]
+visible = false
 
 [node name="Lamp_0" parent="Lights" instance=ExtResource("21_6lnp2")]
 position = Vector2(7, 701)
@@ -6448,6 +6452,42 @@ position = Vector2(7091, 701)
 
 [node name="Scaffolding Kit" type="Node2D" parent="."]
 
+[node name="No Access Zones" type="Node2D" parent="."]
+
+[node name="No Access Static" type="StaticBody2D" parent="No Access Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(2510, 502)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(4298, 502)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(4299, -309)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(2318, 502)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(4106, 502)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(4107, -309)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(7087.5, 497)
+shape = SubResource("RectangleShape2D_suaas")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="No Access Zones/No Access Static"]
+position = Vector2(7764, 497)
+shape = SubResource("RectangleShape2D_suaas")
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Robot" parent="Enemies" instance=ExtResource("30_deyre")]
@@ -6463,3 +6503,92 @@ position = Vector2(-248, 695)
 position = Vector2(2470, 41.000004)
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_qganl")
+
+[node name="Prefabs Showcase" type="Label" parent="."]
+offset_right = 116.0
+offset_bottom = 71.0
+
+[node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("31_17b5f")]
+position = Vector2(83, 996)
+
+[node name="Tall_Building_Cornice_0" parent="Prefabs Showcase" instance=ExtResource("32_1x42q")]
+position = Vector2(124, 897)
+
+[node name="Tall_Building_Window_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("34_no21u")]
+position = Vector2(174, 1000)
+
+[node name="Tall_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("35_8jj66")]
+position = Vector2(78, 1254)
+
+[node name="Tall_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("36_kmvub")]
+position = Vector2(173, 1254)
+
+[node name="Tall_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("37_xp4le")]
+position = Vector2(79, 1127)
+rotation = 3.1415925
+
+[node name="Tall_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("38_qganl")]
+position = Vector2(170, 1127)
+
+[node name="Small_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("39_g6igw")]
+position = Vector2(814, 1173)
+
+[node name="Small_Building_0" parent="Prefabs Showcase" instance=ExtResource("40_m2dxl")]
+position = Vector2(814, 1246)
+
+[node name="Small_Building_Window_Long_0" parent="Prefabs Showcase" instance=ExtResource("41_bchf7")]
+position = Vector2(635.00006, 1110)
+
+[node name="Small_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("42_unrsh")]
+position = Vector2(634.00006, 1183.0001)
+
+[node name="Small_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("43_nf775")]
+position = Vector2(633, 1261)
+
+[node name="Shopping_Building_0" parent="Prefabs Showcase" instance=ExtResource("44_mbknn")]
+position = Vector2(1105, 1233)
+
+[node name="Shopping_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("45_c71rb")]
+position = Vector2(1105, 1147.0001)
+
+[node name="Shopping_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("46_qwldb")]
+position = Vector2(1105, 1031)
+
+[node name="Shopping_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("47_elsyb")]
+position = Vector2(1107, 946)
+
+[node name="Small_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("48_bb68t")]
+position = Vector2(521, 1262)
+
+[node name="Small_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("49_wmn1b")]
+position = Vector2(518, 1183.0001)
+
+[node name="Small_Building_Window_Long_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("50_cw0jb")]
+position = Vector2(520, 1110)
+
+[node name="Beam_1_0" parent="Prefabs Showcase" instance=ExtResource("20_suaas")]
+position = Vector2(816, 1069)
+
+[node name="Beam_0" parent="Prefabs Showcase" instance=ExtResource("19_l6qp1")]
+position = Vector2(817, 999)
+
+[node name="Wide_Building_Top_V2_0" parent="." instance=ExtResource("54_jk1ko")]
+position = Vector2(1783.0002, 1027.0001)
+
+[node name="Wide_Building_Bottom_V2_0" parent="." instance=ExtResource("55_svuco")]
+position = Vector2(1781.0002, 1278.0001)
+
+[node name="Wide_Building_V2_0" parent="." instance=ExtResource("55_jlqxu")]
+position = Vector2(1783.0002, 1150.0001)
+
+[node name="Wide_Building_Bottom_V1_0" parent="." instance=ExtResource("53_40hul")]
+position = Vector2(1437.0001, 1278)
+
+[node name="Wide_Building_V1_0" parent="." instance=ExtResource("51_dvkcw")]
+position = Vector2(1440.0001, 1151)
+
+[node name="Wide_Building_Top_V1_0" parent="." instance=ExtResource("52_6lnp2")]
+position = Vector2(1441.0001, 1028)
+
+[node name="Spray Spot" parent="." instance=ExtResource("27_17b5f")]
+position = Vector2(2051, 1207)

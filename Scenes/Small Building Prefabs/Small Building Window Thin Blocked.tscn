@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhea40qx7hxy6"]
+
+[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_74nxg"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_aofj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wg7a"]
+atlas = ExtResource("1_74nxg")
+region = Rect2(1571, 939, 455, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7oyg"]
+atlas = ExtResource("2_aofj7")
+region = Rect2(1585, 259, 152, 219)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxf4n"]
+atlas = ExtResource("1_74nxg")
+region = Rect2(1554, 1079, 482, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myr78"]
+size = Vector2(476.1905, 29.047619)
+
+[node name="Small_Building_Window_Thin_Blocked_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2wg7a")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(0.19422911, 6.3051205)
+rotation = 1.5707964
+scale = Vector2(0.9024609, 2.055212)
+texture = SubResource("AtlasTexture_p7oyg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 66.666664)
+texture = SubResource("AtlasTexture_lxf4n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9.0826115e-06, 66.42857)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_myr78")

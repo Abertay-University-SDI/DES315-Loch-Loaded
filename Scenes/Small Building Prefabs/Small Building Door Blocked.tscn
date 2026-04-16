@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1h6eehvsuvmu"]
+
+[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_giwj3"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_geegs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ced8r"]
+atlas = ExtResource("1_giwj3")
+region = Rect2(1605, 218, 262, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcr8k"]
+atlas = ExtResource("1_giwj3")
+region = Rect2(1554, 1079, 482, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcr8k"]
+size = Vector2(482.00006, 28.571426)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ucql"]
+atlas = ExtResource("2_geegs")
+region = Rect2(1747, 589, 242, 276)
+
+[node name="Small_Building_Door_Blocked_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ced8r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -166.66667)
+scale = Vector2(0.61252713, 1)
+texture = SubResource("AtlasTexture_gcr8k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(-7.4140494e-06, 0)
+shape = SubResource("RectangleShape2D_gcr8k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-2.3809438, 2.3809738)
+scale = Vector2(0.92483276, 1.1214633)
+texture = SubResource("AtlasTexture_6ucql")

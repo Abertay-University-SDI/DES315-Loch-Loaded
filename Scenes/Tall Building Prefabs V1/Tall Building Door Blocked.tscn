@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://rvc2gu72xxvu"]
+
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_2vnw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sf4w"]
+atlas = ExtResource("1_2vnw1")
+region = Rect2(1551, 898, 140, 322)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vnw1"]
+atlas = ExtResource("1_2vnw1")
+region = Rect2(1317, 843, 209, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fohi"]
+atlas = ExtResource("1_2vnw1")
+region = Rect2(1553, 564, 141, 323)
+
+[node name="Tall_Building_Door_Blocked_0" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-0.99999994, 4.9999995)
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_4sf4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_2vnw1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-0.40250102, 5.4575)
+scale = Vector2(0.20429076, 0.21335915)
+texture = SubResource("AtlasTexture_5fohi")
