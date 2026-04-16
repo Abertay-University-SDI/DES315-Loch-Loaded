@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=110 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -47,10 +47,6 @@ shader_parameter/noise = SubResource("NoiseTexture2D_wqwp5")
 [sub_resource type="AtlasTexture" id="AtlasTexture_nwvk4"]
 atlas = ExtResource("2_pwsgj")
 region = Rect2(128, 448, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwsf1"]
-atlas = ExtResource("2_pwsgj")
-region = Rect2(128, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sumtc"]
 atlas = ExtResource("4_vi71p")
@@ -298,10 +294,7 @@ animations = [{
 "name": &"Crouch",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwsf1")
-}],
+"frames": [],
 "loop": true,
 "name": &"Dash",
 "speed": 5.0
@@ -1277,7 +1270,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(1.13687e-13, -27)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Idle"
+animation = &"Dash"
 autoplay = "Idle"
 
 [node name="slam_area" type="Area2D" parent="."]
