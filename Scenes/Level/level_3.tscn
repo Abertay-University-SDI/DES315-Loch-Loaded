@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="18_fsw83"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="19_fwstm"]
 [ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Assets/Floor_ShouldBeSeamless_Ihope.png" id="20_wytcx"]
-[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_tkb5o"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/[Extras] Lights/Lamp.tscn" id="21_tkb5o"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="22_x0bw1"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="23_wjjx7"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="24_rxhe8"]

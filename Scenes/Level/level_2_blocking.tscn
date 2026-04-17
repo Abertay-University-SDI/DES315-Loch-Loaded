@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=148 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://xtqvjdyoxk7s" path="res://Scenes/[Extras] Scene Assets/Crane.tscn" id="20_pr525"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="20_suaas"]
 [ext_resource type="Texture2D" uid="uid://xmdyqm0gjfuk" path="res://Textures/Assets/Buildings/Base_Building_v2_Brick_Corners.png" id="21_1x42q"]
-[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_6lnp2"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/[Extras] Lights/Lamp.tscn" id="21_6lnp2"]
 [ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="22_kc4se"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="27_17b5f"]
 [ext_resource type="PackedScene" uid="uid://h18l1cpds7yr" path="res://Scenes/Scaffolding/Scaffolding Metal 1.tscn" id="28_aoenw"]
@@ -92,6 +92,29 @@
 [ext_resource type="PackedScene" uid="uid://ct513xydwyb2i" path="res://Scenes/[Extras] Bushes/Bush Short Part 3.tscn" id="90_2kscy"]
 [ext_resource type="PackedScene" uid="uid://celigfpfkchy5" path="res://Scenes/[Extras] Bushes/Bush Short Pot.tscn" id="91_2kscy"]
 [ext_resource type="PackedScene" uid="uid://ddwvc8c3tqbse" path="res://Scenes/[Extras] Bushes/Bush Long Pot.tscn" id="92_y5sd4"]
+[ext_resource type="PackedScene" uid="uid://d3i7k2dk8h5io" path="res://Scenes/[Extras] Lights/Lamp Light.tscn" id="93_f0at2"]
+[ext_resource type="PackedScene" uid="uid://28r1yarm57wi" path="res://Scenes/[Extras] Lights/Lamp Semi Circle.tscn" id="94_ep8kx"]
+[ext_resource type="PackedScene" uid="uid://buxyil7oce40p" path="res://Scenes/[Extras] Clothes/Clothing 1.tscn" id="95_1q4m4"]
+[ext_resource type="PackedScene" uid="uid://cak7spf7vt6ua" path="res://Scenes/[Extras] Clothes/Clothing 2.tscn" id="96_yeghr"]
+[ext_resource type="PackedScene" uid="uid://bujanmsy6qfa" path="res://Scenes/[Extras] Clothes/Clothing 3.tscn" id="97_ly78x"]
+[ext_resource type="PackedScene" uid="uid://cuedqnejwcll2" path="res://Scenes/[Extras] Clothes/Clothing 4.tscn" id="98_i6led"]
+[ext_resource type="PackedScene" uid="uid://pl4mkxerok2n" path="res://Scenes/[Extras] Clothes/Clothing 5.tscn" id="99_vcbqc"]
+[ext_resource type="PackedScene" uid="uid://da8kcwjli3vpc" path="res://Scenes/[Extras] Clothes/Clothing 6.tscn" id="100_llm5s"]
+[ext_resource type="PackedScene" uid="uid://dixd5574vrtqj" path="res://Scenes/[Extras] Clothes/Clothing 7.tscn" id="101_llm5s"]
+[ext_resource type="PackedScene" uid="uid://clovwfxhwllar" path="res://Scenes/[Extras] Clothes/Clothing 8.tscn" id="102_i53k8"]
+[ext_resource type="PackedScene" uid="uid://742w3ltadpr8" path="res://Scenes/[Extras] Clothes/Clothing 9.tscn" id="103_rameg"]
+[ext_resource type="PackedScene" uid="uid://dhfeckg48l2yp" path="res://Scenes/[Extras] Clothes/Clothing 10.tscn" id="104_pka7c"]
+[ext_resource type="PackedScene" uid="uid://llg6gh2dpi02" path="res://Scenes/Ziplines/Zipline Pole.tscn" id="105_rhy2s"]
+[ext_resource type="PackedScene" uid="uid://br0rfut4bjm06" path="res://Scenes/[Extras] Scene Assets/Electric Box.tscn" id="106_eihnq"]
+[ext_resource type="PackedScene" uid="uid://cibjs2m03bvqp" path="res://Scenes/[Extras] Scene Assets/Birds Nest Empty.tscn" id="107_bkg0u"]
+[ext_resource type="PackedScene" uid="uid://celt6ymfobfjt" path="res://Scenes/[Extras] Scene Assets/Birds Nest Full.tscn" id="108_8ert1"]
+[ext_resource type="PackedScene" uid="uid://bsdjwnqrlcx7k" path="res://Scenes/[Extras] Scene Assets/Bird 1.tscn" id="109_jsbdo"]
+[ext_resource type="PackedScene" uid="uid://myrgldisyoul" path="res://Scenes/[Extras] Scene Assets/Bird 2.tscn" id="110_e04h6"]
+[ext_resource type="PackedScene" uid="uid://dexoratjuv12a" path="res://Scenes/[Extras] Scene Assets/Bird 3.tscn" id="111_efbno"]
+[ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/[Extras] Scene Assets/Vent.tscn" id="112_efbno"]
+[ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/[Extras] Scene Assets/Sandbags.tscn" id="113_brvaf"]
+[ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/[Extras] Scene Assets/Trash 1.tscn" id="114_ub1qj"]
+[ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/[Extras] Scene Assets/Trash 2.tscn" id="115_creey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_qganl")
@@ -6436,10 +6459,9 @@ position = Vector2(7961, 200)
 position = Vector2(2505, 204)
 
 [node name="Lights" type="Node2D" parent="."]
-visible = false
 
 [node name="Lamp_0" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(7, 701)
+position = Vector2(542, 1062)
 
 [node name="Lamp_1" parent="Lights" instance=ExtResource("21_6lnp2")]
 position = Vector2(609, 701)
@@ -6715,35 +6737,104 @@ position = Vector2(626, 1430)
 [node name="No_Entry_Sign_0" parent="Prefabs Showcase" instance=ExtResource("81_dih3e")]
 position = Vector2(353.00003, 1463)
 
-[node name="Boombox_v1_0" parent="." instance=ExtResource("82_xtyvb")]
+[node name="Boombox_v1_0" parent="Prefabs Showcase" instance=ExtResource("82_xtyvb")]
 position = Vector2(749.0001, 1465)
 
-[node name="Boombox_v2_0" parent="." instance=ExtResource("83_xqx06")]
+[node name="Boombox_v2_0" parent="Prefabs Showcase" instance=ExtResource("83_xqx06")]
 position = Vector2(803.99994, 1465)
 
-[node name="Fence_0" parent="." instance=ExtResource("84_xqx06")]
+[node name="Fence_0" parent="Prefabs Showcase" instance=ExtResource("84_xqx06")]
 position = Vector2(902, 1431)
 
-[node name="Bush_Long_Part1_0" parent="." instance=ExtResource("85_gf3mk")]
+[node name="Bush_Long_Part1_0" parent="Prefabs Showcase" instance=ExtResource("85_gf3mk")]
 position = Vector2(83.00006, 1541)
 
-[node name="Bush_Long_Part1_1" parent="." instance=ExtResource("86_j47ef")]
+[node name="Bush_Long_Part1_1" parent="Prefabs Showcase" instance=ExtResource("86_j47ef")]
 position = Vector2(85.00018, 1602)
 
-[node name="Bush_Long_Part3_0" parent="." instance=ExtResource("87_2pg13")]
+[node name="Bush_Long_Part3_0" parent="Prefabs Showcase" instance=ExtResource("87_2pg13")]
 position = Vector2(85.00018, 1657)
 
-[node name="Bush_Short_Part1_0" parent="." instance=ExtResource("88_mer4s")]
+[node name="Bush_Short_Part1_0" parent="Prefabs Showcase" instance=ExtResource("88_mer4s")]
 position = Vector2(172.00018, 1542)
 
-[node name="Bush_Short_Part2_0" parent="." instance=ExtResource("89_flx4h")]
+[node name="Bush_Short_Part2_0" parent="Prefabs Showcase" instance=ExtResource("89_flx4h")]
 position = Vector2(172.00018, 1601)
 
-[node name="Bush_Short_Part3_0" parent="." instance=ExtResource("90_2kscy")]
+[node name="Bush_Short_Part3_0" parent="Prefabs Showcase" instance=ExtResource("90_2kscy")]
 position = Vector2(173.00006, 1656)
 
-[node name="Bush_Short_Pot_0" parent="." instance=ExtResource("91_2kscy")]
+[node name="Bush_Short_Pot_0" parent="Prefabs Showcase" instance=ExtResource("91_2kscy")]
 position = Vector2(173.00006, 1695)
 
-[node name="Bush_Long_Pot_0" parent="." instance=ExtResource("92_y5sd4")]
+[node name="Bush_Long_Pot_0" parent="Prefabs Showcase" instance=ExtResource("92_y5sd4")]
 position = Vector2(84.00018, 1695)
+
+[node name="Lamp_Light_0" parent="Prefabs Showcase" instance=ExtResource("93_f0at2")]
+position = Vector2(624.0001, 970.0001)
+
+[node name="Lamp_Semi_Circle_0" parent="Prefabs Showcase" instance=ExtResource("94_ep8kx")]
+position = Vector2(623.0001, 1024.0001)
+
+[node name="Clothing_1_0" parent="Prefabs Showcase" instance=ExtResource("95_1q4m4")]
+position = Vector2(250, 1532.0001)
+
+[node name="Clothing_2_0" parent="Prefabs Showcase" instance=ExtResource("96_yeghr")]
+position = Vector2(286.99994, 1532.0001)
+
+[node name="Clothing_3_0" parent="Prefabs Showcase" instance=ExtResource("97_ly78x")]
+position = Vector2(250, 1564.0001)
+
+[node name="Clothing_4_0" parent="Prefabs Showcase" instance=ExtResource("98_i6led")]
+position = Vector2(287.00003, 1564)
+
+[node name="Clothing_5_0" parent="Prefabs Showcase" instance=ExtResource("99_vcbqc")]
+position = Vector2(239, 1595)
+
+[node name="Clothing_6_0" parent="Prefabs Showcase" instance=ExtResource("100_llm5s")]
+position = Vector2(255, 1595)
+
+[node name="Clothing_7_0" parent="Prefabs Showcase" instance=ExtResource("101_llm5s")]
+position = Vector2(278, 1595)
+
+[node name="Clothing_8_0" parent="Prefabs Showcase" instance=ExtResource("102_i53k8")]
+position = Vector2(293, 1595)
+
+[node name="Clothing_9_0" parent="Prefabs Showcase" instance=ExtResource("103_rameg")]
+position = Vector2(320, 1538.0001)
+
+[node name="Clothing_10_0" parent="Prefabs Showcase" instance=ExtResource("104_pka7c")]
+position = Vector2(319, 1583.0001)
+
+[node name="Zipline_Pole_0" parent="Prefabs Showcase" instance=ExtResource("105_rhy2s")]
+position = Vector2(998, 1410.0001)
+
+[node name="Electric_Box_0" parent="." instance=ExtResource("106_eihnq")]
+position = Vector2(1042, 1362.0001)
+
+[node name="Birds_Nest_Empty_0" parent="." instance=ExtResource("107_bkg0u")]
+position = Vector2(1043.9999, 1394.0001)
+
+[node name="Birds_Nest_Full_0" parent="." instance=ExtResource("108_8ert1")]
+position = Vector2(1043.9999, 1428.0001)
+
+[node name="Bird_1_0" parent="." instance=ExtResource("109_jsbdo")]
+position = Vector2(1083, 1358)
+
+[node name="Bird_2_0" parent="." instance=ExtResource("110_e04h6")]
+position = Vector2(1083, 1393)
+
+[node name="Bird_3_0" parent="." instance=ExtResource("111_efbno")]
+position = Vector2(1084, 1426)
+
+[node name="Vent_0" parent="." instance=ExtResource("112_efbno")]
+position = Vector2(471, 1473)
+
+[node name="Sandbags" parent="." instance=ExtResource("113_brvaf")]
+position = Vector2(1061.0001, 1463.0001)
+
+[node name="Trash 1" parent="." instance=ExtResource("114_ub1qj")]
+position = Vector2(256.00003, 1622)
+
+[node name="Trash 2" parent="." instance=ExtResource("115_creey")]
+position = Vector2(266, 1648.0001)

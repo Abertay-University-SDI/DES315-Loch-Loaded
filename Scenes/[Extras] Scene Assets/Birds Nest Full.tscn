@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://celt6ymfobfjt"]
+
+[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_ygphg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tackj"]
+atlas = ExtResource("1_ygphg")
+region = Rect2(1258, 1386, 113, 64)
+
+[node name="Birds_Nest_Full_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_tackj")
