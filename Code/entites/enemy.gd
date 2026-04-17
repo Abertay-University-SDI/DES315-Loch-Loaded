@@ -152,7 +152,11 @@ func _die(hit_dir: Vector2, force: float) -> void:
 	_alive.collision_layer  = 0
 	_alive.collision_mask   = 0
 	_is_dead = true
-	_dead_sprite.frame     = int(_direction > 0) + 2
+	_dead_sprite.frame     = int(_direction > 0)
+	if (_dead.get_parent().name.find("Robot") == 0):
+		_dead_sprite.frame += 2
+	if (_dead.get_parent().name.find("Charger") == 0):
+		_dead_sprite.frame = 0
 	_dead.visible          = true
 	_dead.collision_layer  = 0
 	_dead.collision_mask   = 1
