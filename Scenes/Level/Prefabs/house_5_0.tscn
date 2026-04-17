@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cnoxaon20rhbf" path="res://Textures/Assets/Buildings/Bace_building_kit_A.png" id="1_omu0q"]
 
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdj6p"]
 atlas = ExtResource("1_omu0q")
 region = Rect2(308, 571, 727, 1429)

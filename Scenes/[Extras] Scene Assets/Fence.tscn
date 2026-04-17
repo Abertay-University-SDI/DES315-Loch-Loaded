@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://iyw8xoyh0vir"]
+
+[ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_v0yuv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s0wt"]
+atlas = ExtResource("1_v0yuv")
+region = Rect2(118, 1549, 499, 451)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0yuv"]
+atlas = ExtResource("1_v0yuv")
+region = Rect2(651, 1550, 27, 450)
+
+[node name="Fence_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_0s0wt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(252.38062, 0)
+texture = SubResource("AtlasTexture_v0yuv")

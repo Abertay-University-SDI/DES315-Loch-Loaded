@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dqyaps5cwev5u" path="res://Sounds/Tape recorder button press.wav" id="5_nqedb"]
 [ext_resource type="AudioStream" uid="uid://c5tv74yhe75uh" path="res://Sounds/Tape recorder button press 2.wav" id="6_fttth"]
 
+
 [sub_resource type="Animation" id="Animation_j0fq8"]
 length = 0.001
 tracks/0/type = "value"

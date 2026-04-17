@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsqqq1wprmrmi" path="res://Textures/Buildings/house-3.png" id="1_5lc2k"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lc2k"]
 size = Vector2(1790.7837, 64.437836)
 

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7xwbcq7b64yg" path="res://Textures/UI/play_button.png" id="1_adwq2"]
 [ext_resource type="Script" uid="uid://bilv6tcjlrrp0" path="res://Code/ui/Menu_animated_button.gd" id="2_ag3ph"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_adwq2"]
 atlas = ExtResource("1_adwq2")
 region = Rect2(9, 71, 229, 117)

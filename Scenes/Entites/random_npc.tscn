@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://vptevd4ijf1n"]
 
-[ext_resource type="Script" uid="uid://dv2vwsdtpcaw2" path="res://Code/entites/random_npc.gd" id="1_li2uw"]
+[ext_resource type="Script" path="res://Code/entites/random_npc.gd" id="1_li2uw"]
 [ext_resource type="Texture2D" uid="uid://c52udcc2s0h74" path="res://Textures/characters/all_the_npc_onesheet.png" id="1_xgybx"]
+
 
 [node name="Random_NPC" type="Node2D"]
 script = ExtResource("1_li2uw")

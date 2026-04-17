@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://d2x25ccv81ult" path="res://Code/ui/texture_button.gd" id="6_vxe13"]
 [ext_resource type="Texture2D" uid="uid://0hjcn1wtafdw" path="res://Textures/UI/padlock.png" id="8_7vwlt"]
 
+
 [sub_resource type="Gradient" id="Gradient_40fl8"]
 offsets = PackedFloat32Array(0.02, 1)
 colors = PackedColorArray(0, 1, 1, 1, 0, 0, 1, 1)

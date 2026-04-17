@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bu7xmcxq8532f" path="res://Code/interactables/npc.gd" id="1_gpvyx"]
 [ext_resource type="Texture2D" uid="uid://dryw2nc5008f0" path="res://Textures/characters/npc-yoyo-spritesheet.png" id="2_gpvyx"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fj317"]
 atlas = ExtResource("2_gpvyx")
 region = Rect2(0, 0, 1500, 4000)

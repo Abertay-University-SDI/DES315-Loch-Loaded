@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xtqvjdyoxk7s"]
+
+[ext_resource type="Texture2D" uid="uid://dfq451sp12ueu" path="res://Textures/Assets/TEMPcrane.png" id="1_bgtbs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_120o2"]
+atlas = ExtResource("1_bgtbs")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgtbs"]
+size = Vector2(1638, 16)
+
+[node name="Crane_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_120o2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-172, -499)
+shape = SubResource("RectangleShape2D_bgtbs")

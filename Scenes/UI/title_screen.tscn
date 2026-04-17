@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://jvgo0o6goxdl" path="res://Code/shaders/Glow.gdshader" id="10_nd20k"]
 [ext_resource type="Texture2D" uid="uid://c76x10pfkq4xy" path="res://Textures/characters/tiff_front_view.png" id="10_uv4ns"]
 
+
 [sub_resource type="Gradient" id="Gradient_tjte5"]
 offsets = PackedFloat32Array(0.033333335, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.06879827, 0.06879828, 0.06879828, 1)

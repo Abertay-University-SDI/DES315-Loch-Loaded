@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://d4fftw65sco33" path="res://Code/shaders/diamond.gdshader" id="1_t0rel"]
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="2_8aouk"]
 
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oojjo"]
 shader = ExtResource("1_t0rel")
 shader_parameter/grid_size = Vector2(6, 6)

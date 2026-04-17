@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfutlwq28n868" path="res://Textures/Decorations/pixil-frame-0.png" id="2_hwaej"]
 [ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="2_u3g71"]
 
+
 [node name="Label" type="TextureRect"]
 anchors_preset = 8
 anchor_left = 0.5

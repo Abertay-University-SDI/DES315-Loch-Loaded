@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvokxk83ohi37" path="res://Textures/Logos/lnl-logo.png" id="4_0cdrr"]
 [ext_resource type="Texture2D" uid="uid://rqiulshjdoig" path="res://Saves/Spray/default.png" id="4_1h3re"]
 
+
 [sub_resource type="Shader" id="Shader_0cdrr"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.5.1.stable.mono's ParticleProcessMaterial.
 

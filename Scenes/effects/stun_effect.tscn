@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://bsreonxx7r8u7" path="res://Code/shaders/stun.gdshader" id="1_65i4d"]
 [ext_resource type="Texture2D" uid="uid://l5grxv22beum" path="res://Textures/UI/Brushes/5_point_star_brush.png" id="2_e50n8"]
 
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e50n8"]
 noise_type = 2
 

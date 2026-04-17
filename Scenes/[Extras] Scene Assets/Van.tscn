@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxnrwvl6bq3ov"]
+
+[ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_iiava"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8p2s"]
+atlas = ExtResource("1_iiava")
+region = Rect2(918, 142, 520, 486)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiava"]
+size = Vector2(400.00006, 447.61908)
+
+[node name="Van_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_y8p2s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 14.285689)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_iiava")

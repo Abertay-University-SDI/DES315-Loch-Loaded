@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0acrd0e10ytu" path="res://Textures/Assets/Wip_lamps.png" id="1_pujnx"]
 
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m72g6"]
 atlas = ExtResource("1_pujnx")
 region = Rect2(447, 230, 87, 527)
