@@ -152,7 +152,7 @@ func _ready() -> void:
 	_attack_area.monitoring = false
 	_dash_attack_area.monitoring = false
 
-	_spray_scene = load("res://Scenes/Interactables/spray.tscn")
+	_spray_scene = load("res://Scenes/Spray Spots/spray.tscn")
 	_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	play_area.body_exited.connect(_respawn_player)

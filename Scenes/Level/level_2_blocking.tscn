@@ -350,7 +350,7 @@ position = Vector2(8209, -42)
 shape = SubResource("RectangleShape2D_eqj4t")
 debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
-[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene") instance=ExtResource("15_qwldb")]
+[node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
 position = Vector2(-1208, 698)
 collision_mask = 3
@@ -359,6 +359,7 @@ play_area_shape = NodePath("../PlayArea/CollisionShape2D")
 spawn = NodePath("../PlayArea/Spawn")
 level_end_area = NodePath("../PlayArea/Level_Complete_Area")
 levelEndScene = NodePath("../CanvasLayer/LevelEndScene")
+UI = NodePath("../CanvasLayer/player_ui")
 
 [node name="Zipline" type="Node2D" parent="."]
 position = Vector2(924, -147)
