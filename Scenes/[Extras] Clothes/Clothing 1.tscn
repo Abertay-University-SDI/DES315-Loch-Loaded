@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://buxyil7oce40p"]
+
+[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_qh4ll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyhw3"]
+atlas = ExtResource("1_qh4ll")
+region = Rect2(152, 614, 118, 104)
+
+[node name="Clothing_1_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_pyhw3")

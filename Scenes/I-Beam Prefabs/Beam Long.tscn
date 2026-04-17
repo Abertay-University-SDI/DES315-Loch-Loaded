@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_400em"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ff31m"]
 atlas = ExtResource("1_400em")
 region = Rect2(104, 184, 725, 71)

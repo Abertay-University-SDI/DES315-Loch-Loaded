@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bcrcex6oyp23m" path="res://Sounds/drone shoot.wav" id="3_l1eq5"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="3_pirrt"]
 [ext_resource type="AudioStream" uid="uid://dpq8opplbht6b" path="res://Sounds/drone hum.wav" id="4_4tuei"]
-[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Interactables/spray_collectable.tscn" id="7_75oqf"]
+[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="7_75oqf"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuei"]
 size = Vector2(21, 14.5)
@@ -240,8 +241,6 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="dead_body" groups=["Enemy"]]
-visible = false
-modulate = Color(0.9938894, 0.38958418, 0.5537335, 1)
 texture_filter = 1
 position = Vector2(-0.75, -10)
 scale = Vector2(0.023450231, 0.023450231)

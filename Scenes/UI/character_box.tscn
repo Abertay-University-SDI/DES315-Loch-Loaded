@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dhxs68arsh0a1" path="res://Textures/UI/dialog.png" id="1_55al6"]
 [ext_resource type="Texture2D" uid="uid://dryw2nc5008f0" path="res://Textures/characters/npc-yoyo-spritesheet.png" id="2_55al6"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdjae"]
 atlas = ExtResource("2_55al6")
 region = Rect2(484, 1279, 561, 495)

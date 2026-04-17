@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cik2601e5tcef"]
+
+[ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_epmr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyhj0"]
+atlas = ExtResource("1_epmr1")
+region = Rect2(1521, 361, 406, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epmr1"]
+size = Vector2(390.47626, 257.26196)
+
+[node name="Car_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_fyhj0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.676632e-07, 4.8214293)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_epmr1")

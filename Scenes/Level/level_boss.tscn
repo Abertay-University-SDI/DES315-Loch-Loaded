@@ -17,17 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_sva2b"]
 [ext_resource type="PackedScene" uid="uid://b8226o7n8ve1f" path="res://Scenes/Level/Prefabs/house_5_0.tscn" id="16_xb63p"]
 [ext_resource type="PackedScene" uid="uid://dyupga7ibsad2" path="res://Scenes/Level/Prefabs/house_4.tscn" id="17_grw2v"]
-[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/Level/Prefabs/beam_0.tscn" id="18_yrfab"]
-[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/Level/Prefabs/beam_1_0.tscn" id="19_xroap"]
+[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="18_yrfab"]
+[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="19_xroap"]
 [ext_resource type="Texture2D" uid="uid://dfb3ppjh581t5" path="res://Textures/Assets/Floor_ShouldBeSeamless_Ihope.png" id="20_86l87"]
-[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Interactables/lamp.tscn" id="21_pcsh1"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/[Extras] Lights/Lamp.tscn" id="21_pcsh1"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="22_t327g"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="23_sgt5u"]
-[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="24_v60yi"]
+[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="24_v60yi"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="25_s6uqe"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="26_k2fou"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="27_4ohai"]
 [ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="28_pn66i"]
+
 
 
 

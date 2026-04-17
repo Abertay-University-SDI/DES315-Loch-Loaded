@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dqyaps5cwev5u" path="res://Sounds/Tape recorder button press.wav" id="3_ea7lj"]
 [ext_resource type="AudioStream" uid="uid://c5tv74yhe75uh" path="res://Sounds/Tape recorder button press 2.wav" id="4_nuq8i"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4so"]
 atlas = ExtResource("1_y8xr3")
 region = Rect2(256, 0, 128, 128)

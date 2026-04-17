@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byod54gf341i4" path="res://Textures/Buildings/TEMP_ASSET_FoodStall.png" id="1_5bd6g"]
 
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bd6g"]
 bounce = 1.0
 

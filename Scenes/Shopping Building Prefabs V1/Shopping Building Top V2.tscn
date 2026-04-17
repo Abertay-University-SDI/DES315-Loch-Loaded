@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bequyq1spylus"]
+
+[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Assets/Buildings/Wide_building_kit_B.png" id="1_3i4r6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byf6m"]
+atlas = ExtResource("1_3i4r6")
+region = Rect2(44, 17, 1566, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i4r6"]
+size = Vector2(1361.4286, 49)
+
+[node name="Shopping_Building_Top_V2_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_byf6m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.23810577, -5.261883)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_3i4r6")

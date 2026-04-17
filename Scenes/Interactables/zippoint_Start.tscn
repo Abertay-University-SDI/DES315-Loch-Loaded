@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0t7brcwgpyls" path="res://Code/interactables/zipline.gd" id="1_b5ro4"]
 [ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="2_nx0lh"]
 
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjyrw"]
 friction = 0.0
 

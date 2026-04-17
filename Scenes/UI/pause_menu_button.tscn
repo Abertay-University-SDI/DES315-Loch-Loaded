@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3nf1toru3eio" path="res://Textures/UI/buttons/cassete_buttons.png" id="2_ntn45"]
 [ext_resource type="Script" uid="uid://dv1kgm37k5f4e" path="res://Code/ui/menu_button.gd" id="3_aygfk"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_he4mg"]
 atlas = ExtResource("2_ntn45")
 region = Rect2(0, 0, 128, 128)

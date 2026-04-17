@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c55ydpe4shf2n" path="res://Code/environment/background.gd" id="3_pu2ig"]
 
 
+
 [sub_resource type="Gradient" id="Gradient_kscw6"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
 

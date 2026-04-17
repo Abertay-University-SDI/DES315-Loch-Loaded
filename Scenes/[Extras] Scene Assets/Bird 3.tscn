@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dexoratjuv12a"]
+
+[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_ag872"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihoji"]
+atlas = ExtResource("1_ag872")
+region = Rect2(1441, 1573, 57, 67)
+
+[node name="Bird_3_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ihoji")

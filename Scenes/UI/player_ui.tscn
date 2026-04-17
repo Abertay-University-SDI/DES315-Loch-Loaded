@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
 
+
 [node name="player_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15

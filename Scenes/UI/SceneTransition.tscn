@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://dcp2yfwuexv6r" path="res://Code/shaders/blur.gdshader" id="4_e6ksq"]
 [ext_resource type="Texture2D" uid="uid://bq007qej5va2" path="res://Textures/Scrap/studio_temp.png" id="5_7rxwd"]
 
+
 [sub_resource type="Shader" id="Shader_gn0bv"]
 code = "shader_type canvas_item;
 

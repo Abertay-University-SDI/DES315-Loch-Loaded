@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://do55iicb26lmy" path="res://Fonts/BlueScreenPersonalUseRegular-0W1M9.ttf" id="3_p4jgp"]
 [ext_resource type="PackedScene" uid="uid://btw4f17p4lc4o" path="res://Scenes/UI/character_box.tscn" id="4_p4jgp"]
 
+
 [sub_resource type="SystemFont" id="SystemFont_lv3fa"]
 font_names = PackedStringArray("Ink Free")
 subpixel_positioning = 0

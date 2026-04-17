@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="4_xl08g"]
 [ext_resource type="Script" uid="uid://d366u8cuox8dy" path="res://Code/accessibility/colorBlind.gd" id="5_4nr23"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="5_iptam"]
-[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Interactables/spray_spot.tscn" id="6_j3dgg"]
+[ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="6_j3dgg"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="7_ymbdn"]
 [ext_resource type="PackedScene" uid="uid://j54wcm5k8p5a" path="res://Scenes/Level/Prefabs/tile_map.tscn" id="8_172v4"]
 [ext_resource type="PackedScene" uid="uid://c3johr7vw3myf" path="res://Scenes/Level/Prefabs/scaffolding.tscn" id="9_k0b3f"]

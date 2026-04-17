@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_1qmkp"]
 [ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="6_lqwrq"]
 [ext_resource type="AudioStream" uid="uid://7tcvkcsqm0b3" path="res://Sounds/moving cone guy sound.wav" id="7_cmsui"]
-[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Interactables/spray_collectable.tscn" id="9_6shah"]
+[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="9_6shah"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rcx67"]
 height = 24.0

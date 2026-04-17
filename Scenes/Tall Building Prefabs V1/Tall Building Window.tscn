@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwyy4fxpf6gnp"]
+
+[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_um78p"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_06w57"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75cey"]
+atlas = ExtResource("1_um78p")
+region = Rect2(1595, 577, 404, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m57s"]
+atlas = ExtResource("2_06w57")
+region = Rect2(1719, 881, 300, 343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v353g"]
+size = Vector2(45.533203, 299.63397)
+
+[node name="Tall_Building_Window_0" type="Node2D"]
+
+[node name="Glass" type="Sprite2D" parent="."]
+position = Vector2(0.4923749, 4.080101)
+rotation = 1.5707964
+scale = Vector2(0.19765791, 0.19356951)
+texture = SubResource("AtlasTexture_75cey")
+
+[node name="Ledge Rim" type="Sprite2D" parent="."]
+position = Vector2(0, 3.9999993)
+rotation = 3.1415925
+scale = Vector2(0.21, 0.23100002)
+texture = SubResource("AtlasTexture_6m57s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1.5076251, 4.080101)
+rotation = 1.5707964
+scale = Vector2(0.19765791, 0.19356951)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(174.13873, -7.788567)
+shape = SubResource("RectangleShape2D_v353g")

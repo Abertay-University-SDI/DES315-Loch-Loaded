@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmd5jimvs2mla"]
+
+[ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_dtlhd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca5ru"]
+atlas = ExtResource("1_dtlhd")
+region = Rect2(430, 694, 462, 295)
+
+[node name="Bush_Long_Part2_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ca5ru")

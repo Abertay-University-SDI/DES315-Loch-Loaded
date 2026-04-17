@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="1_nhg8e"]
 
+
 [node name="Zippoint" type="Marker2D"]
 
 [node name="Zipline_0" type="Sprite2D" parent="."]

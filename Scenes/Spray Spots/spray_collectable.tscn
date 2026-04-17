@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://barah6e5b7035" path="res://Textures/UI/spray-cursor.png" id="1_6w1bd"]
 [ext_resource type="Script" uid="uid://ek2tmlt353uv" path="res://Code/interactables/spray_collectable.gd" id="1_uwtve"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtve"]
 size = Vector2(20, 28)
 

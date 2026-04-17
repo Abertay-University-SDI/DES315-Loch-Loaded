@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://caoy4ajy6epuf"]
+
+[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_eqykh"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_u1vpi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rixnq"]
+atlas = ExtResource("1_eqykh")
+region = Rect2(1595, 577, 404, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqykh"]
+atlas = ExtResource("1_u1vpi")
+region = Rect2(1831, 226, 184, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqykh"]
+size = Vector2(34.5, 6)
+
+[node name="Tall_Building_Window_Thin_0" type="Node2D"]
+rotation = -3.1415927
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-0.2953325, 1.9592743)
+rotation = 1.5707964
+scale = Vector2(0.120246895, 0.1181362)
+texture = SubResource("AtlasTexture_rixnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_eqykh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.25, -23)
+shape = SubResource("RectangleShape2D_eqykh")

@@ -5,6 +5,7 @@
 
 
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plspt"]
 size = Vector2(22.359999, 17.439999)
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2b0xsskcdjsc"]
+
+[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Assets/Buildings/Wide_building_kit_B.png" id="1_g3ii7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psx6i"]
+atlas = ExtResource("1_g3ii7")
+region = Rect2(59, 787, 1496, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksnvc"]
+size = Vector2(1485.7146, 66.66668)
+
+[node name="Wide_Building_Top_V2_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_psx6i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.3841858e-05, -5.676632e-07)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_ksnvc")
