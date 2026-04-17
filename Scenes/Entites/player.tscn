@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://cho05ofpqxpqy" path="res://Sounds/jump.wav" id="12_1jcqv"]
 [ext_resource type="AudioStream" uid="uid://d0adt7j721bgb" path="res://Sounds/ground slam.wav" id="14_jgvob"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
 
