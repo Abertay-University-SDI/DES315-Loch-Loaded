@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://qyb4pnrt8tux"]
+
+[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="1_wwhpb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pygu"]
+atlas = ExtResource("1_wwhpb")
+region = Rect2(1317, 843, 209, 378)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1h3y"]
+atlas = ExtResource("1_wwhpb")
+region = Rect2(1551, 898, 140, 322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwhpb"]
+size = Vector2(200.00003, 42.857124)
+
+[node name="Tall_Building_Door_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_4pygu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 23.809517)
+texture = SubResource("AtlasTexture_h1h3y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6.528128e-06, -164.28569)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_wwhpb")

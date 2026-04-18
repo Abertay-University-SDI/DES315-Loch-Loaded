@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk5pp3eavfgwb"]
+
+[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="1_44g5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3yol"]
+atlas = ExtResource("1_44g5x")
+region = Rect2(1022, 115, 979, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxqrm"]
+size = Vector2(974, 60)
+
+[node name="Tall_Building_Cornice_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_f3yol")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_lxqrm")

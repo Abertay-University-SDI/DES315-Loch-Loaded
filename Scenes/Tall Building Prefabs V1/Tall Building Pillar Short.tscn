@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm77x27v5b4on"]
+
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_onsus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7x5c"]
+atlas = ExtResource("1_onsus")
+region = Rect2(1219, 377, 70, 521)
+
+[node name="Tall_Building_Pillar_Short_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_x7x5c")

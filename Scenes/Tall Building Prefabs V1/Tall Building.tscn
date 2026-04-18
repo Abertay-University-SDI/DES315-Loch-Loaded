@@ -4,9 +4,9 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cv3j"]
 atlas = ExtResource("1_h6kgh")
-region = Rect2(64.02367, 64.62778, 883.3417, 1921.3301)
+region = Rect2(64.02367, 64.62778, 879.9763, 1921.3301)
 
-[node name="Tall Building" type="Node2D"]
+[node name="Tall_Building_0" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.21, 0.21)

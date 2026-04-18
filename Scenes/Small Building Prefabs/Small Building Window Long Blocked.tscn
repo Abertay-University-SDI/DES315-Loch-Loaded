@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5sdcp1qcnw6c"]
+[gd_scene load_steps=6 format=3 uid="uid://5sdcp1qcnw6c"]
 
 [ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_xajug"]
 [ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_gn08c"]
@@ -14,9 +14,6 @@ region = Rect2(1585, 259, 152, 219)
 [sub_resource type="AtlasTexture" id="AtlasTexture_c158l"]
 atlas = ExtResource("1_xajug")
 region = Rect2(1554, 1079, 482, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c158l"]
-size = Vector2(454, 29)
 
 [node name="Small_Building_Window_Long_Blocked_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
@@ -34,9 +31,3 @@ texture = SubResource("AtlasTexture_hnr01")
 position = Vector2(-5.722046e-06, 137)
 scale = Vector2(0.9585062, 1)
 texture = SubResource("AtlasTexture_c158l")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 136.5)
-shape = SubResource("RectangleShape2D_c158l")

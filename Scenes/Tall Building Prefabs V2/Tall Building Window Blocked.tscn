@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://3hg6wjqwvtuh"]
+
+[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_pri30"]
+[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="2_6tuyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akei7"]
+atlas = ExtResource("1_pri30")
+region = Rect2(1595, 577, 404, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bpr6"]
+atlas = ExtResource("2_6tuyl")
+region = Rect2(1719, 881, 300, 343)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pri30"]
+atlas = ExtResource("2_6tuyl")
+region = Rect2(1747, 589, 242, 276)
+
+[node name="Tall_Building_Window_Blocked_0" type="Node2D"]
+
+[node name="Glass" type="Sprite2D" parent="."]
+position = Vector2(0, 1.0000002)
+rotation = -1.5707963
+scale = Vector2(0.198, 0.194)
+texture = SubResource("AtlasTexture_akei7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.21, 0.231)
+texture = SubResource("AtlasTexture_1bpr6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -6.000004)
+scale = Vector2(0.21, 0.23188403)
+texture = SubResource("AtlasTexture_pri30")

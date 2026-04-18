@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://vbwy313awfue"]
+
+[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="1_rqal1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfuld"]
+atlas = ExtResource("1_rqal1")
+region = Rect2(1208, 917, 88, 62)
+
+[node name="Tall_Building_Pillar_End_Top_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.1415927
+texture = SubResource("AtlasTexture_cfuld")

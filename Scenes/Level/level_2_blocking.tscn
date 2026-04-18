@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=166 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -50,10 +50,10 @@
 [ext_resource type="PackedScene" uid="uid://cyehxqtcrdykw" path="res://Scenes/Small Building Prefabs/Small Building Window Long.tscn" id="41_bchf7"]
 [ext_resource type="PackedScene" uid="uid://bavswfeos6bi5" path="res://Scenes/Small Building Prefabs/Small Building Window Thin.tscn" id="42_unrsh"]
 [ext_resource type="PackedScene" uid="uid://bmai0pder60ra" path="res://Scenes/Small Building Prefabs/Small Building Door.tscn" id="43_nf775"]
-[ext_resource type="PackedScene" uid="uid://c8iq7grgsb10m" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building V1.tscn" id="44_mbknn"]
-[ext_resource type="PackedScene" uid="uid://c8w6of38kugm0" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building Top V1.tscn" id="45_c71rb"]
-[ext_resource type="PackedScene" uid="uid://j6m1r2arqx6o" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building V2.tscn" id="46_qwldb"]
-[ext_resource type="PackedScene" uid="uid://bequyq1spylus" path="res://Scenes/Shopping Building Prefabs V1/Shopping Building Top V2.tscn" id="47_elsyb"]
+[ext_resource type="PackedScene" uid="uid://c8iq7grgsb10m" path="res://Scenes/Shopping Building Prefabs/Shopping Building V1.tscn" id="44_mbknn"]
+[ext_resource type="PackedScene" uid="uid://c8w6of38kugm0" path="res://Scenes/Shopping Building Prefabs/Shopping Building Top V1.tscn" id="45_c71rb"]
+[ext_resource type="PackedScene" uid="uid://j6m1r2arqx6o" path="res://Scenes/Shopping Building Prefabs/Shopping Building V2.tscn" id="46_qwldb"]
+[ext_resource type="PackedScene" uid="uid://bequyq1spylus" path="res://Scenes/Shopping Building Prefabs/Shopping Building Top V2.tscn" id="47_elsyb"]
 [ext_resource type="PackedScene" uid="uid://d1h6eehvsuvmu" path="res://Scenes/Small Building Prefabs/Small Building Door Blocked.tscn" id="48_bb68t"]
 [ext_resource type="PackedScene" uid="uid://bhea40qx7hxy6" path="res://Scenes/Small Building Prefabs/Small Building Window Thin Blocked.tscn" id="49_wmn1b"]
 [ext_resource type="PackedScene" uid="uid://5sdcp1qcnw6c" path="res://Scenes/Small Building Prefabs/Small Building Window Long Blocked.tscn" id="50_cw0jb"]
@@ -114,7 +114,25 @@
 [ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/[Extras] Scene Assets/Vent.tscn" id="112_efbno"]
 [ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/[Extras] Scene Assets/Sandbags.tscn" id="113_brvaf"]
 [ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/[Extras] Scene Assets/Trash 1.tscn" id="114_ub1qj"]
+[ext_resource type="PackedScene" uid="uid://bjxb5mc0mgn46" path="res://Scenes/Tall Building Prefabs V2/Tall Building.tscn" id="115_6lsp7"]
 [ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/[Extras] Scene Assets/Trash 2.tscn" id="115_creey"]
+[ext_resource type="PackedScene" uid="uid://dm77x27v5b4on" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar Short.tscn" id="116_ecke6"]
+[ext_resource type="PackedScene" uid="uid://bk5pp3eavfgwb" path="res://Scenes/Tall Building Prefabs V2/Tall Building Cornice.tscn" id="117_0lt4l"]
+[ext_resource type="PackedScene" uid="uid://bceodkf22llmv" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar Long.tscn" id="117_3rcg4"]
+[ext_resource type="PackedScene" uid="uid://b166ecqf6ink8" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window.tscn" id="118_q144a"]
+[ext_resource type="PackedScene" uid="uid://lb1666ad8n5c" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar End Top.tscn" id="118_rh5i4"]
+[ext_resource type="PackedScene" uid="uid://3hg6wjqwvtuh" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Blocked.tscn" id="119_62x15"]
+[ext_resource type="PackedScene" uid="uid://bqpse8lc81jf0" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar End Bottom.tscn" id="119_feva1"]
+[ext_resource type="PackedScene" uid="uid://sjwy30s52jrq" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin.tscn" id="120_iws2b"]
+[ext_resource type="PackedScene" uid="uid://bgj01q3t0hje2" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin Blocked.tscn" id="121_gk352"]
+[ext_resource type="PackedScene" uid="uid://qyb4pnrt8tux" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door.tscn" id="122_ky6tu"]
+[ext_resource type="PackedScene" uid="uid://27bbawtcn8ng" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Side.tscn" id="123_c2qv6"]
+[ext_resource type="PackedScene" uid="uid://dhwqqm34s7408" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Side.tscn" id="124_6wmmw"]
+[ext_resource type="PackedScene" uid="uid://v1yyd7y6ad4p" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door Blocked.tscn" id="127_jyfoe"]
+[ext_resource type="PackedScene" uid="uid://dcxqi0rgt8m2c" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar Short.tscn" id="128_rluqg"]
+[ext_resource type="PackedScene" uid="uid://vutonm5rsjse" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar Long.tscn" id="129_q8pe8"]
+[ext_resource type="PackedScene" uid="uid://bsa0duqyhr1uk" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar End Bottom.tscn" id="130_xqiqi"]
+[ext_resource type="PackedScene" uid="uid://vbwy313awfue" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar End Top.tscn" id="131_35i2m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_qganl")
@@ -6461,7 +6479,7 @@ position = Vector2(2505, 204)
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="Lamp_0" parent="Lights" instance=ExtResource("21_6lnp2")]
-position = Vector2(542, 1062)
+position = Vector2(960, 1061.9999)
 
 [node name="Lamp_1" parent="Lights" instance=ExtResource("21_6lnp2")]
 position = Vector2(609, 701)
@@ -6573,97 +6591,94 @@ offset_right = 116.0
 offset_bottom = 71.0
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("31_17b5f")]
-position = Vector2(83, 1027)
+position = Vector2(64, 1027)
 
 [node name="Tall_Building_Cornice_0" parent="Prefabs Showcase" instance=ExtResource("32_1x42q")]
 position = Vector2(124, 928)
 
 [node name="Tall_Building_Window_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("34_no21u")]
-position = Vector2(174, 1031)
+position = Vector2(147, 1031)
 
 [node name="Tall_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("35_8jj66")]
-position = Vector2(78, 1285)
+position = Vector2(60, 1285)
 
 [node name="Tall_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("36_kmvub")]
-position = Vector2(171, 1285)
+position = Vector2(143, 1285)
 
 [node name="Tall_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("37_xp4le")]
-position = Vector2(79, 1158)
+position = Vector2(49, 1158)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("38_qganl")]
-position = Vector2(170, 1158)
+position = Vector2(156.00002, 1158.0001)
 
 [node name="Small_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("39_g6igw")]
-position = Vector2(814, 1204)
+position = Vector2(1238, 1193.9999)
 
 [node name="Small_Building_0" parent="Prefabs Showcase" instance=ExtResource("40_m2dxl")]
-position = Vector2(814, 1277)
+position = Vector2(1238, 1276)
 
 [node name="Small_Building_Window_Long_0" parent="Prefabs Showcase" instance=ExtResource("41_bchf7")]
-position = Vector2(635.00006, 1141)
+position = Vector2(1053, 1140.9999)
 
 [node name="Small_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("42_unrsh")]
-position = Vector2(634.00006, 1214.0001)
+position = Vector2(1052, 1214)
 
 [node name="Small_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("43_nf775")]
-position = Vector2(633, 1292)
+position = Vector2(1051, 1291.9999)
 
 [node name="Shopping_Building_0" parent="Prefabs Showcase" instance=ExtResource("44_mbknn")]
-position = Vector2(1105, 1264)
+position = Vector2(1529.0001, 1263.0001)
 
 [node name="Shopping_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("45_c71rb")]
-position = Vector2(1105, 1178.0001)
+position = Vector2(1529.0001, 1168)
 
 [node name="Shopping_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("46_qwldb")]
-position = Vector2(1105, 1065)
+position = Vector2(1529, 1064.9999)
 
 [node name="Shopping_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("47_elsyb")]
-position = Vector2(1107, 977)
+position = Vector2(1531, 976.9999)
 
 [node name="Small_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("48_bb68t")]
-position = Vector2(521, 1293)
+position = Vector2(939, 1292.9999)
 
 [node name="Small_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("49_wmn1b")]
-position = Vector2(518, 1214.0001)
+position = Vector2(936, 1214)
 
 [node name="Small_Building_Window_Long_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("50_cw0jb")]
-position = Vector2(520, 1141)
+position = Vector2(938, 1140.9999)
 
 [node name="Beam_1_0" parent="Prefabs Showcase" instance=ExtResource("20_suaas")]
-position = Vector2(816, 1100)
+position = Vector2(1240, 1099.9999)
 
 [node name="Beam_0" parent="Prefabs Showcase" instance=ExtResource("19_l6qp1")]
-position = Vector2(817, 1030)
+position = Vector2(1241, 1029.9999)
 
 [node name="Crane_0" parent="Prefabs Showcase" instance=ExtResource("20_pr525")]
-position = Vector2(2206, 1111.0004)
+position = Vector2(2594, 1108.0002)
 
 [node name="Wide_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("54_jk1ko")]
-position = Vector2(1783.0002, 1058.0001)
+position = Vector2(2207.0002, 1058)
 
 [node name="Wide_Building_Bottom_V2_0" parent="Prefabs Showcase" instance=ExtResource("55_svuco")]
-position = Vector2(1781.0002, 1309.0001)
+position = Vector2(2205.0002, 1309)
 rotation = -3.1415925
 
 [node name="Wide_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("55_jlqxu")]
-position = Vector2(1783.0002, 1181.0001)
+position = Vector2(2207.0002, 1181)
 
 [node name="Wide_Building_Bottom_V1_0" parent="Prefabs Showcase" instance=ExtResource("53_40hul")]
-position = Vector2(1437.0001, 1309)
+position = Vector2(1861.0001, 1308.9999)
 rotation = -3.1415925
 
 [node name="Wide_Building_V1_0" parent="Prefabs Showcase" instance=ExtResource("51_dvkcw")]
-position = Vector2(1440.0001, 1182)
+position = Vector2(1864.0001, 1181.9999)
 
 [node name="Wide_Building_Top_V1_0" parent="Prefabs Showcase" instance=ExtResource("52_6lnp2")]
-position = Vector2(1441.0001, 1059)
+position = Vector2(1865.0001, 1058.9999)
 
 [node name="Spray Spot" parent="Prefabs Showcase" instance=ExtResource("27_17b5f")]
-position = Vector2(2051, 1238)
-
-[node name="Tall Building" parent="Prefabs Showcase" instance=ExtResource("19_kc4se")]
-position = Vector2(336, 1123)
+position = Vector2(2475, 1237.9999)
 
 [node name="Scaff_Metal_1_0" parent="Prefabs Showcase" instance=ExtResource("28_aoenw")]
 position = Vector2(522, 1387)
@@ -6747,94 +6762,151 @@ position = Vector2(803.99994, 1465)
 position = Vector2(902, 1431)
 
 [node name="Bush_Long_Part1_0" parent="Prefabs Showcase" instance=ExtResource("85_gf3mk")]
-position = Vector2(83.00006, 1541)
+position = Vector2(1186, 1366.9999)
 
 [node name="Bush_Long_Part1_1" parent="Prefabs Showcase" instance=ExtResource("86_j47ef")]
-position = Vector2(85.00018, 1602)
+position = Vector2(1188.0001, 1425.9998)
 
 [node name="Bush_Long_Part3_0" parent="Prefabs Showcase" instance=ExtResource("87_2pg13")]
-position = Vector2(85.00018, 1657)
+position = Vector2(1188.0001, 1476.9998)
 
 [node name="Bush_Short_Part1_0" parent="Prefabs Showcase" instance=ExtResource("88_mer4s")]
-position = Vector2(172.00018, 1542)
+position = Vector2(1275, 1368.9999)
 
 [node name="Bush_Short_Part2_0" parent="Prefabs Showcase" instance=ExtResource("89_flx4h")]
-position = Vector2(172.00018, 1601)
+position = Vector2(1275, 1422.9998)
 
 [node name="Bush_Short_Part3_0" parent="Prefabs Showcase" instance=ExtResource("90_2kscy")]
-position = Vector2(173.00006, 1656)
+position = Vector2(1276, 1476.9998)
 
 [node name="Bush_Short_Pot_0" parent="Prefabs Showcase" instance=ExtResource("91_2kscy")]
-position = Vector2(173.00006, 1695)
+position = Vector2(1276, 1504.9999)
 
 [node name="Bush_Long_Pot_0" parent="Prefabs Showcase" instance=ExtResource("92_y5sd4")]
-position = Vector2(84.00018, 1695)
+position = Vector2(1187, 1506.9998)
 
 [node name="Lamp_Light_0" parent="Prefabs Showcase" instance=ExtResource("93_f0at2")]
-position = Vector2(624.0001, 970.0001)
+position = Vector2(1042.0001, 970)
 
 [node name="Lamp_Semi_Circle_0" parent="Prefabs Showcase" instance=ExtResource("94_ep8kx")]
-position = Vector2(623.0001, 1024.0001)
+position = Vector2(1041.0001, 1024)
 
 [node name="Clothing_1_0" parent="Prefabs Showcase" instance=ExtResource("95_1q4m4")]
-position = Vector2(250, 1532.0001)
+position = Vector2(1352.9999, 1359)
 
 [node name="Clothing_2_0" parent="Prefabs Showcase" instance=ExtResource("96_yeghr")]
-position = Vector2(286.99994, 1532.0001)
+position = Vector2(1389.9998, 1359)
 
 [node name="Clothing_3_0" parent="Prefabs Showcase" instance=ExtResource("97_ly78x")]
-position = Vector2(250, 1564.0001)
+position = Vector2(1352.9999, 1391)
 
 [node name="Clothing_4_0" parent="Prefabs Showcase" instance=ExtResource("98_i6led")]
-position = Vector2(287.00003, 1564)
+position = Vector2(1389.9999, 1390.9999)
 
 [node name="Clothing_5_0" parent="Prefabs Showcase" instance=ExtResource("99_vcbqc")]
-position = Vector2(239, 1595)
+position = Vector2(1341.9999, 1421.9999)
 
 [node name="Clothing_6_0" parent="Prefabs Showcase" instance=ExtResource("100_llm5s")]
-position = Vector2(255, 1595)
+position = Vector2(1357.9999, 1421.9999)
 
 [node name="Clothing_7_0" parent="Prefabs Showcase" instance=ExtResource("101_llm5s")]
-position = Vector2(278, 1595)
+position = Vector2(1380.9999, 1421.9999)
 
 [node name="Clothing_8_0" parent="Prefabs Showcase" instance=ExtResource("102_i53k8")]
-position = Vector2(293, 1595)
+position = Vector2(1395.9999, 1421.9999)
 
 [node name="Clothing_9_0" parent="Prefabs Showcase" instance=ExtResource("103_rameg")]
-position = Vector2(320, 1538.0001)
+position = Vector2(1422.9999, 1365)
 
 [node name="Clothing_10_0" parent="Prefabs Showcase" instance=ExtResource("104_pka7c")]
-position = Vector2(319, 1583.0001)
+position = Vector2(1421.9999, 1410)
 
 [node name="Zipline_Pole_0" parent="Prefabs Showcase" instance=ExtResource("105_rhy2s")]
 position = Vector2(998, 1410.0001)
 
-[node name="Electric_Box_0" parent="." instance=ExtResource("106_eihnq")]
+[node name="Electric_Box_0" parent="Prefabs Showcase" instance=ExtResource("106_eihnq")]
 position = Vector2(1042, 1362.0001)
 
-[node name="Birds_Nest_Empty_0" parent="." instance=ExtResource("107_bkg0u")]
+[node name="Birds_Nest_Empty_0" parent="Prefabs Showcase" instance=ExtResource("107_bkg0u")]
 position = Vector2(1043.9999, 1394.0001)
 
-[node name="Birds_Nest_Full_0" parent="." instance=ExtResource("108_8ert1")]
+[node name="Birds_Nest_Full_0" parent="Prefabs Showcase" instance=ExtResource("108_8ert1")]
 position = Vector2(1043.9999, 1428.0001)
 
-[node name="Bird_1_0" parent="." instance=ExtResource("109_jsbdo")]
+[node name="Bird_1_0" parent="Prefabs Showcase" instance=ExtResource("109_jsbdo")]
 position = Vector2(1083, 1358)
 
-[node name="Bird_2_0" parent="." instance=ExtResource("110_e04h6")]
+[node name="Bird_2_0" parent="Prefabs Showcase" instance=ExtResource("110_e04h6")]
 position = Vector2(1083, 1393)
 
-[node name="Bird_3_0" parent="." instance=ExtResource("111_efbno")]
+[node name="Bird_3_0" parent="Prefabs Showcase" instance=ExtResource("111_efbno")]
 position = Vector2(1084, 1426)
 
-[node name="Vent_0" parent="." instance=ExtResource("112_efbno")]
+[node name="Vent_0" parent="Prefabs Showcase" instance=ExtResource("112_efbno")]
 position = Vector2(471, 1473)
 
-[node name="Sandbags" parent="." instance=ExtResource("113_brvaf")]
+[node name="Sandbags" parent="Prefabs Showcase" instance=ExtResource("113_brvaf")]
 position = Vector2(1061.0001, 1463.0001)
 
-[node name="Trash 1" parent="." instance=ExtResource("114_ub1qj")]
-position = Vector2(256.00003, 1622)
+[node name="Trash 1" parent="Prefabs Showcase" instance=ExtResource("114_ub1qj")]
+position = Vector2(1358.9999, 1448.9999)
 
-[node name="Trash 2" parent="." instance=ExtResource("115_creey")]
-position = Vector2(266, 1648.0001)
+[node name="Trash 2" parent="Prefabs Showcase" instance=ExtResource("115_creey")]
+position = Vector2(1368.9999, 1475)
+
+[node name="Tall_Building_0" parent="Prefabs Showcase" instance=ExtResource("115_6lsp7")]
+position = Vector2(781, 1122.0001)
+
+[node name="Tall_Building_1" parent="Prefabs Showcase" instance=ExtResource("19_kc4se")]
+position = Vector2(336, 1123)
+
+[node name="Tall_Building_Cornice_1" parent="Prefabs Showcase" instance=ExtResource("117_0lt4l")]
+position = Vector2(562, 927.00006)
+
+[node name="Tall_Building_Window_1" parent="Prefabs Showcase" instance=ExtResource("118_q144a")]
+position = Vector2(505, 1030)
+
+[node name="Tall_Building_Window_2" parent="Prefabs Showcase" instance=ExtResource("119_62x15")]
+position = Vector2(590, 1030)
+
+[node name="Tall_Building_Window_Thin_1" parent="Prefabs Showcase" instance=ExtResource("120_iws2b")]
+position = Vector2(494, 1158)
+
+[node name="Tall_Building_Window_Thin_2" parent="Prefabs Showcase" instance=ExtResource("121_gk352")]
+position = Vector2(595, 1158)
+
+[node name="Tall_Building_Door_1" parent="Prefabs Showcase" instance=ExtResource("122_ky6tu")]
+position = Vector2(505.00003, 1285)
+
+[node name="Tall_Building_Window_Side_0" parent="Prefabs Showcase" instance=ExtResource("123_c2qv6")]
+position = Vector2(545, 1159)
+
+[node name="Tall_Building_Window_Side_1" parent="Prefabs Showcase" instance=ExtResource("124_6wmmw")]
+position = Vector2(103, 1158.0001)
+
+[node name="Tall_Building_Pillar_Short_0" parent="." instance=ExtResource("116_ecke6")]
+position = Vector2(212.00002, 1050)
+
+[node name="Tall_Building_Pillar_Long_0" parent="." instance=ExtResource("117_3rcg4")]
+position = Vector2(212.00002, 1206)
+
+[node name="Tall_Building_Pillar_End_Top_0" parent="." instance=ExtResource("118_rh5i4")]
+position = Vector2(212.00002, 967)
+
+[node name="Tall_Building_Pillar_End_Bottom_0" parent="." instance=ExtResource("119_feva1")]
+position = Vector2(212.00002, 1311)
+
+[node name="Tall_Building_Door_Blocked_0" parent="." instance=ExtResource("127_jyfoe")]
+position = Vector2(589, 1285)
+
+[node name="Tall_Building_Pillar_Short_1" parent="." instance=ExtResource("128_rluqg")]
+position = Vector2(654, 1050)
+
+[node name="Tall_Building_Pillar_Long_1" parent="." instance=ExtResource("129_q8pe8")]
+position = Vector2(654, 1206.0001)
+
+[node name="Tall_Building_Pillar_End_Bottom_1" parent="." instance=ExtResource("130_xqiqi")]
+position = Vector2(654, 1311)
+
+[node name="Tall_Building_Pillar_End_Top_1" parent="." instance=ExtResource("131_35i2m")]
+position = Vector2(654, 967.00006)
