@@ -37,6 +37,10 @@ signal spray_changed(sprayValue: float)
 @export_group("player_Colision")
 @export var idle_collider:CollisionShape2D
 
+@export_group("Screen shake")
+@export var random_shake_strength: float = 10.0
+@export var shake_decay_rate: float = 5.0
+
 @onready var top_ray:RayCast2D=$top_ray
 @onready var bottom_ray:RayCast2D=$bottom_ray
 
@@ -135,6 +139,10 @@ var dir_radial := Vector2.ZERO
 
 var is_dying :bool=false
 
+# --- screenShake ---
+@onready var rand = RandomNumberGenerator.new()
+var shake_strength: float = 0.0
+
 func _ready() -> void:
 	backgroundAmb.play()
 	_camera = $Camera2D
@@ -152,7 +160,7 @@ func _ready() -> void:
 	_attack_area.monitoring = false
 	_dash_attack_area.monitoring = false
 
-	_spray_scene = load("res://Scenes/Interactables/spray.tscn")
+	_spray_scene = load("res://Scenes/Spray Spots/spray.tscn")
 	_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	play_area.body_exited.connect(_respawn_player)
@@ -263,6 +271,8 @@ func _input(event: InputEvent) -> void:
 		_end_crouch()
 
 func _process(delta: float) -> void:
+	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
+	_camera.offset = get_random_offset()
 	if health_value < 0:
 		_respawn_player(self)
 
@@ -312,6 +322,7 @@ func _physics_process(delta: float) -> void:
 	
 	if slamming and is_on_floor():
 		slam_sfx.play()
+		apply_shake()
 		slamming = false
 		velocity = Vector2.ZERO
 
@@ -736,3 +747,12 @@ func _end_level(body :Node) -> void:
 		return
 	levelEndScene.show()
 	get_parent().endOfLevel()
+
+func apply_shake()->void:
+	shake_strength = random_shake_strength
+
+func get_random_offset()->Vector2:
+	return Vector2(
+		rand.randf_range(-shake_strength, shake_strength),
+		rand.randf_range(-shake_strength, shake_strength)
+	)
