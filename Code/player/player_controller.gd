@@ -44,7 +44,6 @@ signal spray_changed(sprayValue: float)
 @onready var top_ray:RayCast2D=$top_ray
 @onready var bottom_ray:RayCast2D=$bottom_ray
 
-@onready var anim_player:AnimationPlayer=$AnimationPlayer
 @onready var effect_player:AnimationPlayer=$effect_player
 
 @onready var stun_attack_area:Area2D=$stun_area
@@ -528,9 +527,10 @@ func _update_animation() -> void:
 
 	var speed := absf(velocity.x)
 
-	anim_player.play("scale_normal")
 	
-	if stunning:
+	if _on_zipline:
+		_anim.play("Zipping")
+	elif stunning:
 		_anim.play("Stunning")
 	elif dashing:
 		_anim.play("Dash")
@@ -542,16 +542,12 @@ func _update_animation() -> void:
 		_anim.play("Wall")
 	elif not is_on_floor():
 		_anim.play("Jump")
-		anim_player.play("scale_down")
 	elif punching > 0.0:
 		_anim.play("Punch")
-		anim_player.play("scale_down")
 		
 	elif speed < 5.0:
 		_anim.play("Idle")
-		anim_player.play("scale_down")
 	else:
-		anim_player.play("scale_down")
 		_anim.play("Run")
 		if not footstep_sfx.playing and randf() < 0.2:
 			footstep_sfx.play()
