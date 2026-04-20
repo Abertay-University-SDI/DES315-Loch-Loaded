@@ -27,4 +27,4 @@ func _updateText() -> void:
 
 
 func _on_button_pressed() -> void:
-	SceneTransition.transition_to_path("res://Scenes/UI/studio.tscn")
+	SceneTransition.transition_to_path("res://Scenes/UI/title_screen.tscn")

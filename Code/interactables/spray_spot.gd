@@ -44,14 +44,14 @@ func _ready() -> void:
 	spray_scene = ResourceLoader.load("res://Scenes/Spray Spots/spray.tscn")
 
 func _process(_delta: float) -> void:
-	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= 100:
+	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= 4:
 		painted = true
 		playerBody.score+=1000
 		var spray_instance:Node2D= spray_scene.instantiate()
 		add_child(spray_instance)
 		label.hide()
 		zone.monitoring = false
-		playerBody.emit_signal("spray_changed", -100)
+		playerBody.emit_signal("spray_changed", -4)
 
 func _get_painted() -> bool:
 	return painted

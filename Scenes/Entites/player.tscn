@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=81 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dhfxinysue7ch" path="res://Sounds/yoyo sound.wav" id="11_x6bub"]
 [ext_resource type="AudioStream" uid="uid://cho05ofpqxpqy" path="res://Sounds/jump.wav" id="12_1jcqv"]
 [ext_resource type="AudioStream" uid="uid://d0adt7j721bgb" path="res://Sounds/ground slam.wav" id="14_jgvob"]
+[ext_resource type="Texture2D" uid="uid://cdlr4yt5k7hlw" path="res://Textures/effects/ring.png" id="15_jgvob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -972,7 +973,7 @@ turbulence_influence_max = 0.045
 turbulence_initial_displacement_min = 100.0
 turbulence_initial_displacement_max = 100.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "stunAttack_sfx", "stunRecharge_sfx", "backgroundAmb", "yoyoThrow_sfx", "jump_sfx", "slam_sfx", "yoyo", "yoyo_string", "idle_collider") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "stunAttack_sfx", "stunRecharge_sfx", "backgroundAmb", "yoyoThrow_sfx", "jump_sfx", "slam_sfx", "yoyo", "yoyo_string", "ring", "idle_collider") groups=["player"]]
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
@@ -990,6 +991,7 @@ jump_sfx = NodePath("sound/jump")
 slam_sfx = NodePath("sound/slam")
 yoyo = NodePath("YoYo")
 yoyo_string = NodePath("YoYo/YoYoLine")
+ring = NodePath("Ring")
 idle_collider = NodePath("Tall")
 
 [node name="Tall" type="CollisionShape2D" parent="."]
@@ -1186,3 +1188,10 @@ lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_jgvob")
+
+[node name="Ring" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.36078432)
+position = Vector2(0, -18.9)
+scale = Vector2(2.502, 2.502)
+texture = ExtResource("15_jgvob")

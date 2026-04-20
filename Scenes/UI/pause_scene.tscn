@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c412nulk7l581" path="res://Textures/UI/gear.png" id="5_myk77"]
 [ext_resource type="Texture2D" uid="uid://d3nf1toru3eio" path="res://Textures/UI/buttons/cassete_buttons.png" id="6_5n2i0"]
 
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5gd8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxg4q"]

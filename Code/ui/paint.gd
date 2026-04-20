@@ -26,9 +26,12 @@ var current_color:Color
 const ERASER_COLOR:Color=Color(0,0,0,0)
 
 
+var updated_brush:bool = false
+
 func _on_brush_selected(tex: Texture2D):
 	brush_texture = tex
 	brush_img = tex.get_image()
+	updated_brush = true
 
 func _ready() -> void:
 	var first = brush_grid.get_child(0)
@@ -109,9 +112,12 @@ func rebuild_stamp():
 
 	if cached_stamp \
 	and size == cached_size \
-	and cached_color == current_color:
+	and cached_color == current_color\
+	and updated_brush == false:
 		return
 
+
+	updated_brush = false
 	cached_size = size
 	cached_color = current_color
 
@@ -211,4 +217,4 @@ func show_popup(message: String) -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	SceneTransition.transition_to_path("res://Scenes/UI/studio.tscn")
+	SceneTransition.transition_to_path("res://Scenes/UI/title_screen.tscn")
