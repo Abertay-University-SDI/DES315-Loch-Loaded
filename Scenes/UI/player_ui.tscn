@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=7 format=3 uid="uid://bve12h40ll6sx"]
 
 [ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
 [ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/player/health_bar.gd" id="3_t3flm"]
 [ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
+[ext_resource type="Texture2D" uid="uid://barah6e5b7035" path="res://Textures/UI/spray-cursor.png" id="6_deklj"]
 
-
-[node name="player_ui" type="Control"]
+[node name="player_ui" type="Control" node_paths=PackedStringArray("sprayLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("3_t3flm")
+sprayLabel = NodePath("TextureRect/Label")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
@@ -31,23 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 value = 100.0
-texture_over = ExtResource("1_7jiju")
-texture_progress = ExtResource("2_t3flm")
-
-[node name="SprayBar" type="TextureProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 962.9999
-offset_top = 640.99994
-offset_right = 2791.0
-offset_bottom = 668.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-value = 100.0
-fill_mode = 1
 texture_over = ExtResource("1_7jiju")
 texture_progress = ExtResource("2_t3flm")
 
@@ -92,3 +76,34 @@ theme_override_colors/font_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
 theme_override_fonts/font = ExtResource("4_8n2hl")
 theme_override_font_sizes/font_size = 64
 text = "000000"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.99988
+offset_top = -110.99994
+offset_right = -111.99988
+offset_bottom = -46.99994
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.7853982
+scale = Vector2(1.395, 1.395)
+texture = ExtResource("6_deklj")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.658298
+offset_top = -60.89253
+offset_right = 131.6583
+offset_bottom = 32.107468
+grow_vertical = 2
+rotation = -0.7853982
+theme_override_font_sizes/font_size = 68
+text = "X0"

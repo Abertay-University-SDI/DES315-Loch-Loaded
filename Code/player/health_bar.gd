@@ -1,17 +1,18 @@
 extends Control
 @onready var HealthBar: TextureProgressBar = $HealthBar
-@onready var sprayBar: TextureProgressBar =$SprayBar
 @export var player: Node2D
 @export var dialog: NinePatchRect
+@export var sprayLabel: Label
 
 var _target_health: float
-var _target_spray: float
+var _target_spray: int
 
 func update_health(health: float) -> void:
 	_target_health = health
 
-func update_spray(spray:float) -> void:
+func update_spray(spray:int) -> void:
 	_target_spray += spray
+	sprayLabel.text = "X" + str(_target_spray)
 
 func getSprayValue() -> float:
 	return _target_spray
@@ -25,4 +26,3 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	HealthBar.value = lerpf(HealthBar.value, _target_health, delta * 10.0)
-	sprayBar.value = lerpf(sprayBar.value, _target_spray, delta * 10.0)

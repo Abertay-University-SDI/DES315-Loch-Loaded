@@ -33,6 +33,7 @@ signal spray_changed(sprayValue: float)
 @export_group("yoyo")
 @export var yoyo: Sprite2D
 @export var yoyo_string: Line2D
+@export var ring: Sprite2D
 
 @export_group("player_Colision")
 @export var idle_collider:CollisionShape2D
@@ -223,17 +224,20 @@ func _input(event: InputEvent) -> void:
 		if not yoyo_throwing:
 			yoyo_ready = true
 			yoyo.global_position = global_position - Vector2(0, 10)
+			ring.visible = true
 			yoyo.visible = true
 		return
 
 	if event.is_action_released("ready yoyo"):
 		yoyo_ready = false
 		if not yoyo_throwing:
+			ring.visible = false
 			yoyo.visible = false
 		return
 
 	if event.is_action_pressed("throw yoyo"):
 		yoyo_ready = false
+		ring.visible = false
 		if (yoyo.visible and is_instance_valid(yoyo_enemy_body)):
 			yoyoThrow_sfx.play()
 			var dir := (yoyo_enemy.position - position).normalized()
@@ -735,7 +739,7 @@ func _heal_player()->void:
 	health_value = clamp(health_value,1,MAX_HEALTH)
 
 func _addSpray()->void:
-	emit_signal("spray_changed", 21)
+	emit_signal("spray_changed", 1)
 	return
 
 func _end_level(body :Node) -> void:
