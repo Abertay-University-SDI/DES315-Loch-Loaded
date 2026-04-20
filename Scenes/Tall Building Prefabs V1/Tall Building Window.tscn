@@ -12,7 +12,7 @@ atlas = ExtResource("2_06w57")
 region = Rect2(1719, 881, 300, 343)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v353g"]
-size = Vector2(45.533203, 299.63397)
+size = Vector2(299.63397, 40.473953)
 
 [node name="Tall_Building_Window_0" type="Node2D"]
 
@@ -29,10 +29,18 @@ scale = Vector2(0.21, 0.23100002)
 texture = SubResource("AtlasTexture_6m57s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(-1.5076251, 4.080101)
 rotation = 1.5707964
 scale = Vector2(0.19765791, 0.19356951)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(174.13873, -7.788567)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(171.6091, -7.788561)
+rotation = -1.5707964
 shape = SubResource("RectangleShape2D_v353g")
+one_way_collision = true
