@@ -11,7 +11,6 @@
 [ext_resource type="Shader" uid="uid://jvgo0o6goxdl" path="res://Code/shaders/Glow.gdshader" id="10_nd20k"]
 [ext_resource type="Texture2D" uid="uid://c76x10pfkq4xy" path="res://Textures/characters/tiff_front_view.png" id="10_uv4ns"]
 
-
 [sub_resource type="Gradient" id="Gradient_tjte5"]
 offsets = PackedFloat32Array(0.033333335, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.06879827, 0.06879828, 0.06879828, 1)
@@ -140,6 +139,10 @@ alignment = 1
 layout_mode = 2
 label_text = "Play"
 
+[node name="spray_editor_button" parent="title_screen_ui/Buttons/VBoxContainer" instance=ExtResource("8_uv4ns")]
+layout_mode = 2
+label_text = "Spray Editor"
+
 [node name="settings_button" parent="title_screen_ui/Buttons/VBoxContainer" instance=ExtResource("8_uv4ns")]
 layout_mode = 2
 label_text = "Settings"
@@ -171,6 +174,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/spray_editor_button" to="." method="_on_spray_editor_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

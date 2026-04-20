@@ -217,4 +217,4 @@ func show_popup(message: String) -> void:
 
 
 func _on_exit_button_pressed() -> void:
-	SceneTransition.transition_to_path("res://Scenes/UI/studio.tscn")
+	SceneTransition.transition_to_path("res://Scenes/UI/title_screen.tscn")

@@ -18,7 +18,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_studio_button_pressed() -> void:
-	SceneTransition.transition_to(studio)
+	SceneTransition.transition_to_path("res://Scenes/Level/level_1.tscn")
+
+
+func _on_spray_editor_button_pressed() -> void:
+	SceneTransition.transition_to_path("res://Scenes/UI/spray_editor.tscn")
 
 
 func _on_settings_button_pressed() -> void:
