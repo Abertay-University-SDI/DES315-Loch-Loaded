@@ -25,7 +25,14 @@ scale = Vector2(0.61252713, 1)
 texture = SubResource("AtlasTexture_gcr8k")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(-7.4140494e-06, 0)
 shape = SubResource("RectangleShape2D_gcr8k")
+one_way_collision = true
