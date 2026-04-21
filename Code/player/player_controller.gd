@@ -161,10 +161,8 @@ func _ready() -> void:
 
 	_player_material = _anim.material as ShaderMaterial
 
-	_attack_area.body_entered.connect(_on_body_entered)
 	_dash_attack_area.body_entered.connect(_on_dash_body_hit)
 
-	_attack_area.monitoring = false
 	_dash_attack_area.monitoring = false
 
 	_spray_scene = load("res://Scenes/Spray Spots/spray.tscn")
@@ -199,7 +197,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("punch"):
 		punching = 0.4
 		punch_sfx.play()
-		_attack_area.monitoring = true
+
+		for body in _attack_area.get_overlapping_bodies():
+			_on_body_entered(body)
 
 	if event.is_action_pressed("dash") and dash_timer < 0.0 and not stunning:
 		_start_dash()
@@ -518,8 +518,6 @@ func _start_dash() -> void:
 func _update_cooldowns(dt: float) -> void:
 	if punching > 0.0:
 		punching -= dt
-		if punching <= 0.0:
-			_attack_area.monitoring = false
 
 	if dash_timer >= 0.0:
 		dash_timer -= dt
@@ -681,7 +679,7 @@ func _on_body_entered(body: Node) -> void:
 	if not enemy is Enemy or not enemy.is_in_group("Enemy"):
 		return
 
-	var dir: Vector2 = (enemy.global_position - global_position).normalized()
+	var dir: Vector2 = (enemy.global_position - global_position).normalized()+ Vector2.UP
 	enemy.take_hit(dir, punching, 150.0, 30)
 
 func _on_dash_body_hit(body: Node) -> void:

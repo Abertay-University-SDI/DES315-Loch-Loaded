@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://7tcvkcsqm0b3" path="res://Sounds/moving cone guy sound.wav" id="7_cmsui"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="9_6shah"]
 
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rcx67"]
 height = 24.0
 

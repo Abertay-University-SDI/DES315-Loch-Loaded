@@ -53,11 +53,12 @@ func _on_physics_process(delta: float) -> void:
 	if _alive.is_on_wall():
 		bounce_sfx.play()
 		_direction *= -1
-	if stun_timer < 0:
-		var on_floor :bool= _alive.is_on_floor()
+	var on_floor :bool= _alive.is_on_floor()
 
-		if not on_floor:
-			_alive.velocity += Vector2.DOWN * 1200.0 * delta
+	if not on_floor:
+		_alive.velocity += Vector2.DOWN * 1200.0 * delta
+		
+	if stun_timer < 0:
 
 		if on_floor and not _was_on_floor:
 			_on_land()
