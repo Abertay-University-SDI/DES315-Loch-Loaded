@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ds2ow13iq11ml"]
+[gd_scene load_steps=4 format=3 uid="uid://ds2ow13iq11ml"]
 
 [ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_umkjl"]
+[ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="2_d0j7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0j7o"]
 atlas = ExtResource("1_umkjl")
@@ -11,3 +12,13 @@ scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_d0j7o")
+
+[node name="music" type="AudioStreamPlayer2D" parent="Sprite2D"]
+position = Vector2(30.999998, 23)
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("2_d0j7o")
+volume_db = -13.999
+autoplay = true
+attenuation = 2.828429
+bus = &"Music"
+parameters/looping = true
