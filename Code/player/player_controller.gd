@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 signal health_changed(health: float)
 signal spray_changed(sprayValue: float)
+signal cooldowns(dash_cooldown_map:float,slam_cooldown_map:float,shock_cooldown_map:float)
 
 @export_group("World")
 @export var play_area: Area2D
@@ -52,6 +53,9 @@ signal spray_changed(sprayValue: float)
 
 const STUN_TIME:float=3.3
 var stunning:bool= false;
+
+var stun_timer = 0.0
+var STUN_COOLDOWN = 3.0
 
 var _prev_health := MAX_HEALTH
 var _player_material: ShaderMaterial
@@ -205,7 +209,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("jump") and velocity.y < 0:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 
-	if event.is_action_pressed("stun"):
+	if event.is_action_pressed("stun") and stun_timer <0.0:
+		stun_timer = STUN_COOLDOWN
 		stun_attack_area.monitoring = true
 		if _player_material:
 			_player_material.set_shader_parameter("stunning", true)
@@ -514,6 +519,9 @@ func _update_cooldowns(dt: float) -> void:
 
 	if dash_timer >= 0.0:
 		dash_timer -= dt
+		
+	if stun_timer >=0.0:
+		stun_timer -= dt
 
 		if dash_timer < DASH_COOLDOWN - DASH_DURATION:
 			dashing = false
@@ -522,6 +530,8 @@ func _update_cooldowns(dt: float) -> void:
 				mat.set_shader_parameter("fliph", _anim.flip_h)
 			_dash_attack_area.monitoring = false
 			_dash_particles.emitting = false
+	
+	emit_signal("cooldowns",1-(dash_timer/DASH_COOLDOWN),0.5,1-(stun_timer/STUN_COOLDOWN))
 
 func _update_animation() -> void:
 	if spraying:

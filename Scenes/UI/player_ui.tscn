@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=12 format=3 uid="uid://bve12h40ll6sx"]
 
 [ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
@@ -6,6 +6,26 @@
 [ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
 [ext_resource type="Texture2D" uid="uid://ceomji24jqk64" path="res://Textures/Decorations/TEMP_ASSET_SprayPaint.png" id="6_deklj"]
+[ext_resource type="Shader" uid="uid://cpfxv51nerr7f" path="res://Code/shaders/cooldown.gdshader" id="7_6nfne"]
+[ext_resource type="Texture2D" uid="uid://dwplm6b560urr" path="res://Textures/UI/dash_temp.png" id="8_21gwg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcbsq"]
+shader = ExtResource("7_6nfne")
+shader_parameter/cooldown = 0.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 8.00000038
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21gwg"]
+shader = ExtResource("7_6nfne")
+shader_parameter/cooldown = 0.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 8.00000038
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_axtvl"]
+shader = ExtResource("7_6nfne")
+shader_parameter/cooldown = 0.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_scale = 8.00000038
 
 [node name="player_ui" type="Control" node_paths=PackedStringArray("sprayLabel")]
 layout_mode = 3
@@ -111,3 +131,26 @@ vertical_alignment = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 68
 text = "0/4"
+
+[node name="Cooldowns" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 570.0
+offset_right = 829.0
+offset_bottom = 826.0
+scale = Vector2(0.27999878, 0.27999878)
+
+[node name="Dash" type="TextureRect" parent="Cooldowns"]
+material = SubResource("ShaderMaterial_jcbsq")
+layout_mode = 2
+texture = ExtResource("8_21gwg")
+
+[node name="Slam" type="TextureRect" parent="Cooldowns"]
+material = SubResource("ShaderMaterial_21gwg")
+layout_mode = 2
+texture = ExtResource("8_21gwg")
+
+[node name="Shock" type="TextureRect" parent="Cooldowns"]
+material = SubResource("ShaderMaterial_axtvl")
+layout_mode = 2
+texture = ExtResource("8_21gwg")

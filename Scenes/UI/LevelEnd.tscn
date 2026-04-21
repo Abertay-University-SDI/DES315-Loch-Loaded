@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0vjv73org0lq"]
+[gd_scene load_steps=4 format=3 uid="uid://0vjv73org0lq"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_c1cwg"]
 [ext_resource type="Script" uid="uid://dv8xfbwut1li" path="res://Code/ui/level_end.gd" id="2_c1cwg"]
+[ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="3_26dt3"]
 
 [node name="LevelEndScene" type="Control" node_paths=PackedStringArray("enemiesLabel", "billLabel", "timeLabel", "scoreLabel", "item", "itemUse")]
 layout_mode = 3
@@ -59,25 +60,30 @@ horizontal_alignment = 1
 [node name="Enemies" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_26dt3")
 text = "enemies destroyed: xx / xx"
 
 [node name="BillBoards" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_26dt3")
 text = "billboards painted: xx / xx"
 
 [node name="Time" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_26dt3")
 text = "time taken: xx.xx"
 
 [node name="Score" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_26dt3")
 text = "level score: xx"
 
 [node name="Button" type="Button" parent="HBoxContainer/PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
+theme = ExtResource("3_26dt3")
 text = "return home"
 
 [node name="Spacer" type="Control" parent="HBoxContainer"]
