@@ -26,6 +26,7 @@ var immunity: float = 0.0
 var _is_dead: bool = false
 
 var stun_timer :float= 0.0
+var despawnTimer: float = 0.0
 
 
 # ─── Lifecycle ────────────────────────────────────────────────────────────────
@@ -67,6 +68,12 @@ func _process(delta: float) -> void:
 		_alive.collision_layer = 1
 
 	if _is_dead:
+		despawnTimer += delta
+		if (despawnTimer >= 5):
+			_dead.set_physics_process(false)
+			_dead.visible = false
+			_dead.collision_layer = 0
+			_dead.collision_mask = 0
 		return
 
 	if stun_timer > 0:
@@ -78,8 +85,7 @@ func _process(delta: float) -> void:
 
 
 func _on_process(_delta: float) -> void:
-	pass  # override in child
-
+	return
 
 func _physics_process(delta: float) -> void:
 	if not _alive.visible:
