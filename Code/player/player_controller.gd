@@ -55,7 +55,7 @@ const STUN_TIME:float=3.3
 var stunning:bool= false;
 
 var stun_timer = 0.0
-var STUN_COOLDOWN = 3.0
+const STUN_COOLDOWN = 5.0
 
 var _prev_health := MAX_HEALTH
 var _player_material: ShaderMaterial
@@ -103,6 +103,9 @@ var dashing := false
 var slamming := false
 const SLAM_SPEED := 900.0
 const SLAM_END_LAG := 0.15
+
+const SLAM_COOLDOWN = 3.0
+var slam_timer = 0.0
 
 var spraying := false
 var punching := 0.0
@@ -268,7 +271,8 @@ func _input(event: InputEvent) -> void:
 			return
 
 	if event.is_action_pressed("ground slam"):
-		if not is_on_floor() and not dashing and not slamming and not stunning:
+		if not is_on_floor() and not dashing and not slamming and not stunning and slam_timer<=0:
+			slam_timer = SLAM_COOLDOWN
 			_start_ground_slam()
 
 	# Crouch input — only on floor and not dashing
@@ -519,19 +523,23 @@ func _update_cooldowns(dt: float) -> void:
 
 	if dash_timer >= 0.0:
 		dash_timer -= dt
+	
+	if slam_timer >= 0.0:
+		slam_timer -= dt
 		
 	if stun_timer >=0.0:
 		stun_timer -= dt
 
-		if dash_timer < DASH_COOLDOWN - DASH_DURATION:
-			dashing = false
-			var mat := _dash_particles.process_material as ShaderMaterial
-			if mat:
-				mat.set_shader_parameter("fliph", _anim.flip_h)
-			_dash_attack_area.monitoring = false
-			_dash_particles.emitting = false
+	if dash_timer < DASH_COOLDOWN - DASH_DURATION:
+		dashing = false
+		var mat := _dash_particles.process_material as ShaderMaterial
+		if mat:
+			mat.set_shader_parameter("fliph", _anim.flip_h)
+		_dash_attack_area.monitoring = false
+		_dash_particles.emitting = false
 	
-	emit_signal("cooldowns",1-(dash_timer/DASH_COOLDOWN),0.5,1-(stun_timer/STUN_COOLDOWN))
+	
+	emit_signal("cooldowns",1-(dash_timer/DASH_COOLDOWN),1-(slam_timer/SLAM_COOLDOWN),1-(stun_timer/STUN_COOLDOWN))
 
 func _update_animation() -> void:
 	if spraying:
