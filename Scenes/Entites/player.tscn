@@ -1101,6 +1101,7 @@ pitch_scale = 2.5
 stream = ExtResource("14_jgvob")
 
 [node name="YoYo" type="Sprite2D" parent="."]
+visible = false
 top_level = true
 z_index = 1
 texture_filter = 1
