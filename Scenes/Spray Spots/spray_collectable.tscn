@@ -13,6 +13,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_x4xn6")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9061033, 0.12910798)
 
 [node name="SprayCollectable" type="Node2D" node_paths=PackedStringArray("node", "area")]
 script = ExtResource("1_uwtve")

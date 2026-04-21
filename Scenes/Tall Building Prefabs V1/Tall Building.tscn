@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4pmys5yonau3"]
 
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_h6kgh"]
+[ext_resource type="Texture2D" uid="uid://cnoxaon20rhbf" path="res://Textures/Assets/Buildings/Bace_building_kit_A.png" id="1_jn5nq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cv3j"]
-atlas = ExtResource("1_h6kgh")
-region = Rect2(64.02367, 64.62778, 879.9763, 1921.3301)
+atlas = ExtResource("1_jn5nq")
+region = Rect2(302, 571, 737, 1429)
 
 [node name="Tall_Building_0" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.21, 0.21)
+scale = Vector2(0.28, 0.28)
 texture = SubResource("AtlasTexture_0cv3j")

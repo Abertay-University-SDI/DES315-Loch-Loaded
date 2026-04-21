@@ -265,7 +265,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(5694.625, -274.49994)
+position = Vector2(5803, -234)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -286,7 +286,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
-position = Vector2(-1160, 669)
+position = Vector2(-914, 601)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -348,10 +348,10 @@ position = Vector2(830.00006, 94)
 rotation = -3.1415927
 
 [node name="Tall_Building_20" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("115_6lsp7")]
-position = Vector2(2144.0002, 93.0001)
+position = Vector2(2139, 99)
 
 [node name="Tall_Building_21" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("115_6lsp7")]
-position = Vector2(2298.9998, 35.99999)
+position = Vector2(2296, 43)
 scale = Vector2(0.29, 0.29)
 
 [node name="Tall_Building_22" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("19_kc4se")]
@@ -4827,23 +4827,80 @@ shape = SubResource("RectangleShape2D_hnohd")
 offset_left = -1238.0
 offset_top = 698.0
 offset_right = 12589.498
-offset_bottom = 723.11145
+offset_bottom = 765.0
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Robot" parent="Enemies" instance=ExtResource("30_deyre")]
+[node name="Robots" type="Node2D" parent="Enemies"]
+
+[node name="Robot" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
 position = Vector2(-538, 684)
 
-[node name="Robot2" parent="Enemies" instance=ExtResource("30_deyre")]
+[node name="Robot2" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
 position = Vector2(-403, 276)
 
-[node name="Flybot" parent="Enemies" instance=ExtResource("31_aloh2")]
+[node name="Robot3" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(-15, 683)
+
+[node name="Robot4" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(167, 260)
+
+[node name="Robot5" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(778, 271)
+
+[node name="Robot6" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(549, 469)
+
+[node name="Robot7" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(820, 683)
+
+[node name="Robot8" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2011, 330)
+
+[node name="Robot9" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(1690, 544)
+
+[node name="Robot10" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2334, 270)
+
+[node name="Robot11" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2324, -125)
+
+[node name="Robot12" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(1398, 686)
+
+[node name="FlyBots" type="Node2D" parent="Enemies"]
+
+[node name="Flybot" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
 position = Vector2(-542, 417)
 
-[node name="Charger" parent="Enemies" instance=ExtResource("32_6pscn")]
-position = Vector2(-256, 579)
+[node name="Flybot2" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(1495, 236)
+
+[node name="Flybot3" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(1961, 71)
+
+[node name="Flybot4" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(2496, -425)
+
+[node name="Chargers" type="Node2D" parent="Enemies"]
+
+[node name="Charger" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(3712, 513)
+
+[node name="Charger2" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(2652, 123)
+
+[node name="Charger3" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(5971, 675)
+
+[node name="Charger4" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(7036, 667)
+
+[node name="Charger5" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(4494, 674)
 
 [node name="No Access Zones" type="Node2D" parent="."]
 
