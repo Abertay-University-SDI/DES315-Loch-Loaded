@@ -4833,17 +4833,74 @@ color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Robot" parent="Enemies" instance=ExtResource("30_deyre")]
+[node name="Robots" type="Node2D" parent="Enemies"]
+
+[node name="Robot" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
 position = Vector2(-538, 684)
 
-[node name="Robot2" parent="Enemies" instance=ExtResource("30_deyre")]
+[node name="Robot2" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
 position = Vector2(-403, 276)
 
-[node name="Flybot" parent="Enemies" instance=ExtResource("31_aloh2")]
+[node name="Robot3" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(-15, 683)
+
+[node name="Robot4" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(167, 260)
+
+[node name="Robot5" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(778, 271)
+
+[node name="Robot6" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(549, 469)
+
+[node name="Robot7" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(820, 683)
+
+[node name="Robot8" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2011, 330)
+
+[node name="Robot9" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(1690, 544)
+
+[node name="Robot10" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2334, 270)
+
+[node name="Robot11" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2324, -125)
+
+[node name="Robot12" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(1398, 686)
+
+[node name="FlyBots" type="Node2D" parent="Enemies"]
+
+[node name="Flybot" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
 position = Vector2(-542, 417)
 
-[node name="Charger" parent="Enemies" instance=ExtResource("32_6pscn")]
-position = Vector2(-256, 579)
+[node name="Flybot2" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(1495, 236)
+
+[node name="Flybot3" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(1961, 71)
+
+[node name="Flybot4" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(2496, -425)
+
+[node name="Chargers" type="Node2D" parent="Enemies"]
+
+[node name="Charger" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(3712, 513)
+
+[node name="Charger2" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(2652, 123)
+
+[node name="Charger3" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(5971, 675)
+
+[node name="Charger4" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(7036, 667)
+
+[node name="Charger5" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
+position = Vector2(4494, 674)
 
 [node name="No Access Zones" type="Node2D" parent="."]
 

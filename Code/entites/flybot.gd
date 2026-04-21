@@ -22,6 +22,7 @@ var _state: State = State.PATROL
 
 var _shoot_timer: float = 0.0
 var _hover_time:  float = 0.0
+var _move_time: float = 0.0
 
 
 # ─── Setup ────────────────────────────────────────────────────────────────────
@@ -62,10 +63,12 @@ func _update_state() -> void:
 # ─── Patrol ───────────────────────────────────────────────────────────────────
 
 func _do_patrol(delta: float) -> void:
-	if _has_wall_ahead():
+	if _has_wall_ahead() || _move_time >= 5:
+		_move_time = 0.0
 		_direction *= -1
 
 	_hover_time += delta
+	_move_time += delta
 	var hover_y := sin(_hover_time * 2.0) * hover_speed
 
 	_alive.velocity     = Vector2(_direction * patrol_speed, hover_y)
