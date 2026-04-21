@@ -18,9 +18,9 @@ region = Rect2(1747, 589, 242, 276)
 [node name="Tall_Building_Window_Blocked_0" type="Node2D"]
 
 [node name="Glass" type="Sprite2D" parent="."]
-position = Vector2(0, 1.0000002)
+position = Vector2(9.052657e-08, -0.19906056)
 rotation = -1.5707963
-scale = Vector2(0.198, 0.194)
+scale = Vector2(0.19206406, 0.194)
 texture = SubResource("AtlasTexture_akei7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
