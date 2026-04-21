@@ -20,7 +20,8 @@ func getSprayValue() -> float:
 func _ready() -> void:
 	visible = true
 	_target_health = HealthBar.value
-	_target_spray = 0
+	_target_spray = 3
+	update_spray(0)
 	player.health_changed.connect(update_health)
 	player.spray_changed.connect(update_spray)
 
