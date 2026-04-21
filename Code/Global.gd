@@ -1,6 +1,7 @@
 extends Node
 
 var colorBlindMode = 0
+var screenShake = true
 var yoyoAbilityUnlocked = false
 var upwardsDashAbilityUnlocked = false
 #var powerGlovesAbilityUnlocked = false
@@ -20,3 +21,9 @@ func getColorBlindMode() -> int:
 
 func setColorBlindMode(newMode: int) -> void:
 	colorBlindMode = newMode
+
+func getScreenShakeMode() -> bool:
+	return screenShake
+
+func setScreenShakeMode(newMode: bool) -> void:
+	screenShake = newMode

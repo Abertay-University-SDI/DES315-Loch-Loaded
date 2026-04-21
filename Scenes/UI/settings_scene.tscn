@@ -57,6 +57,7 @@ horizontal_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/main_vertical_container"]
 layout_mode = 2
 theme = ExtResource("3_3n1my")
+tab_alignment = 1
 current_tab = 0
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]

@@ -325,7 +325,8 @@ func _physics_process(delta: float) -> void:
 	
 	if slamming and is_on_floor():
 		slam_sfx.play()
-		apply_shake()
+		if (Global.getScreenShakeMode()):
+			apply_shake()
 		slamming = false
 		velocity = Vector2.ZERO
 

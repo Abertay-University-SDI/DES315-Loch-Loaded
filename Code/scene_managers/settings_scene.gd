@@ -89,6 +89,7 @@ func _on_sound_effect_slider_value_changed(sliderValue: float) -> void:
 	sfxValue = sliderValue
 
 func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
+	Global.setScreenShakeMode(toggled_on)
 	screenShake = toggled_on
 
 func _on_fim_grain_toggled(toggled_on: bool) -> void:
@@ -106,10 +107,6 @@ func _on_back_button_pressed() -> void:
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	Global.setColorBlindMode(index)
-
-func _on_controlls_button_toggled(_toggled_on: bool) -> void:
-	# show controlls, have ability to change controlls
-	return
 
 func _on_visibility_changed() -> void:
 	if(visible):
