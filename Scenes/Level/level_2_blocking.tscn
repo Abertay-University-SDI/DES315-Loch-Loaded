@@ -265,7 +265,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(5693, -244)
+position = Vector2(5803, -234)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -348,10 +348,10 @@ position = Vector2(830.00006, 94)
 rotation = -3.1415927
 
 [node name="Tall_Building_20" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("115_6lsp7")]
-position = Vector2(2144.0002, 93.0001)
+position = Vector2(2139, 99)
 
 [node name="Tall_Building_21" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("115_6lsp7")]
-position = Vector2(2298.9998, 35.99999)
+position = Vector2(2296, 43)
 scale = Vector2(0.29, 0.29)
 
 [node name="Tall_Building_22" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("19_kc4se")]

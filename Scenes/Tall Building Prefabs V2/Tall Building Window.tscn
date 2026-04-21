@@ -17,6 +17,7 @@ size = Vector2(58.500015, 8.833334)
 [node name="Tall_Building_Window_0" type="Node2D"]
 
 [node name="Glass" type="Sprite2D" parent="."]
+self_modulate = Color(0.39668277, 1.2237577, 1.2237577, 1)
 position = Vector2(1.0346653e-07, -0.3704555)
 rotation = -1.5707963
 scale = Vector2(0.19121554, 0.194)
