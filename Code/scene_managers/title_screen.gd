@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_studio_button_pressed() -> void:
-	SceneTransition.transition_to_path("res://Scenes/Level/level_1.tscn")
+	SceneTransition.transition_to_path("res://Scenes/Level/level_2_blocking.tscn")
 
 
 func _on_spray_editor_button_pressed() -> void:

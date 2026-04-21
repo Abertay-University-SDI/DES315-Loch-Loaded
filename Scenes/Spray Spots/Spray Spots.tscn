@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1cteboldo51h"]
+[gd_scene load_steps=8 format=3 uid="uid://c1cteboldo51h"]
 
 [ext_resource type="Script" uid="uid://ck678mustwn72" path="res://Code/interactables/spray_spot.gd" id="1_rvb18"]
 [ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Fonts/Minecraft.ttf" id="2_mkaox"]
 [ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="3_umyj0"]
 [ext_resource type="Texture2D" uid="uid://ds1bcdey0tmv1" path="res://Textures/Logos/INFERNO_BILLBOARD.png" id="4_bvqrg"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_poiec"]
 radius = 94.00532
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4com"]
+size = Vector2(1944.3041, 40.573303)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvqrg"]
 atlas = ExtResource("3_umyj0")
@@ -42,6 +44,21 @@ size_flags_horizontal = 4
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_mkaox")
 text = "Press \"Spray\" to paint"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(6.6420444e-07, -10.125004)
+scale = Vector2(0.08229165, 0.098124996)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-4.6459765e-05, 704.5541)
+shape = SubResource("RectangleShape2D_w4com")
+one_way_collision = true
 
 [node name="Paint_Zone" type="Sprite2D" parent="."]
 z_index = -90
