@@ -458,10 +458,10 @@ func _handle_movement(dt: float) -> void:
 	dir_radial = Vector2(Input.get_axis("left", "right"), Input.get_axis("jump", "down"))
 	_breaking = sign(dir_radial.x) != sign(velocity.x) and dir_radial.x != 0
 
-	if dir_radial.y<=0.0 && _on_zipline && velocity.y>0:
+	if dir_radial.y < 1.0 && _on_zipline:
 		zipping = true
-		velocity.x = zipline_dir.x*400.0
-		velocity.y = zipline_dir.y*400.0
+		velocity.x = zipline_dir.x * 400.0
+		velocity.y = zipline_dir.y * 400.0
 		return
 	zipping = false
 	

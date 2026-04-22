@@ -11,8 +11,6 @@ region = Rect2(2081.477, 3167.8186, 560.52295, 650.8252)
 friction = 0.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sjg2l"]
-a = Vector2(4354, 347)
-b = Vector2(4884, 524)
 
 [node name="Zipline_start" type="Node2D"]
 script = ExtResource("1_b5ro4")

@@ -1,13 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci2ek4dc48ji4"]
+[gd_scene load_steps=3 format=3 uid="uid://ci2ek4dc48ji4"]
 
-[ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="1_nhg8e"]
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_nhg8e"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s6ty"]
+atlas = ExtResource("1_nhg8e")
+region = Rect2(2081.477, 3167.8186, 560.52295, 650.8252)
 
 [node name="Zippoint" type="Marker2D"]
 
-[node name="Zipline_0" type="Sprite2D" parent="."]
+[node name="Zipline_1" type="Sprite2D" parent="."]
 z_index = 1
 z_as_relative = false
 texture_filter = 1
-position = Vector2(0, 20)
-texture = ExtResource("1_nhg8e")
+position = Vector2(0, 10)
+scale = Vector2(0.13357143, 0.13357143)
+texture = SubResource("AtlasTexture_5s6ty")
