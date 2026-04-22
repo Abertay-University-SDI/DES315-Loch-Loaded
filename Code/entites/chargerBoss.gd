@@ -1,5 +1,5 @@
 extends Enemy
-class_name ChargerBoss
+class_name chargerBoss
 
 @onready var _slam_particle: GPUParticles2D = $alive_body/GPUParticles2D
 @onready var _hurt_box: Area2D              = $alive_body/Hurt_box
