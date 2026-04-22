@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="8_xn8n8"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="9_kw1fw"]
 
-
 [sub_resource type="Gradient" id="Gradient_3ghnw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -275,8 +274,10 @@ libraries = {
 stream = ExtResource("4_wplub")
 
 [node name="idle" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(191, 58)
 stream = ExtResource("6_wplub")
 autoplay = true
+max_distance = 700.0
 
 [node name="bonuce" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("7_xn8n8")

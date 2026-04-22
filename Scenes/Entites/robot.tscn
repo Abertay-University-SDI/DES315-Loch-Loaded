@@ -302,7 +302,7 @@ stream = ExtResource("6_lqwrq")
 
 [node name="idle" type="AudioStreamPlayer2D" parent="sounds"]
 stream = ExtResource("7_cmsui")
-volume_db = -10.0
+volume_db = -20.097
 max_distance = 500.0
 
 [node name="SprayCollectable" parent="." instance=ExtResource("9_6shah")]

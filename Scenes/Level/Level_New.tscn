@@ -213,9 +213,8 @@ size = Vector2(186, 731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4m6l"]
 size = Vector2(196, 492)
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("billBoards", "endScene")]
 script = ExtResource("1_vhcrl")
-enemies = NodePath("Enemies")
 billBoards = NodePath("Spray Spots")
 endScene = NodePath("CanvasLayer/LevelEndScene")
 
@@ -5409,13 +5408,13 @@ offset_bottom = 71.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Robot2" parent="Prefabs Showcase" instance=ExtResource("75_gc2cb")]
-position = Vector2(-842, 1043)
+position = Vector2(-906, 1280)
 
 [node name="Flybot2" parent="Prefabs Showcase" instance=ExtResource("76_5u5ki")]
-position = Vector2(-842, 1086)
+position = Vector2(-858, 1326)
 
 [node name="Charger2" parent="Prefabs Showcase" instance=ExtResource("77_r8i2c")]
-position = Vector2(-839, 987)
+position = Vector2(-955, 1341)
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("18_6xp25")]
 position = Vector2(64, 1027)
