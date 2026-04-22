@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvh3up8p206ki"]
+
+[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Assets/Buildings/Bace_building_kit_B.png" id="1_amitu"]
+[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_ctw2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xntbw"]
+atlas = ExtResource("1_amitu")
+region = Rect2(1237, 735, 247, 365)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qwfa"]
+atlas = ExtResource("2_ctw2i")
+region = Rect2(1553, 564, 141, 323)
+
+[node name="Small_Building_Door_Blocked_V2_0" type="Node2D"]
+modulate = Color(0.601223, 0.601223, 0.60122293, 1)
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_xntbw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(2.380949, 7.1428547)
+scale = Vector2(1.3171227, 1.017249)
+texture = SubResource("AtlasTexture_6qwfa")

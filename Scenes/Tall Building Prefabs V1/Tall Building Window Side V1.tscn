@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhwqqm34s7408"]
 
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_hj4md"]
+[ext_resource type="Texture2D" uid="uid://cnoxaon20rhbf" path="res://Textures/Assets/Buildings/Bace_building_kit_A.png" id="1_hj4md"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_283u7"]
 atlas = ExtResource("1_hj4md")
-region = Rect2(1751, 234, 41, 251)
+region = Rect2(1090, 413, 66, 311)
 margin = Rect2(-3.795, 0, 0, 0)
 
 [node name="Tall_Building_Window_Side_0" type="Node2D"]

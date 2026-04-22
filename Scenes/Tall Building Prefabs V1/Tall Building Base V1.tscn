@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4pmys5yonau3"]
+
+[ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_50oce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cv3j"]
+atlas = ExtResource("1_50oce")
+region = Rect2(309.6491, 582.0287, 726.5378, 1416.1743)
+
+[node name="Tall_Building_Base_V1_0" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.0900011, 2.9700098)
+scale = Vector2(0.269, 0.284)
+texture = SubResource("AtlasTexture_0cv3j")

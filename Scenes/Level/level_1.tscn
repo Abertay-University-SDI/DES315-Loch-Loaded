@@ -32,9 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="24_jn63p"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="28_hxng5"]
 [ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="28_o0ro1"]
-[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/[Extras] Lights/Lamp.tscn" id="31_0emyc"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Scene [Assets]/Lights [Assets]/Lamp.tscn" id="31_0emyc"]
 [ext_resource type="PackedScene" uid="uid://dd6nqucy3hgsc" path="res://Scenes/Level/Speaker.tscn" id="33_3a08j"]
 [ext_resource type="PackedScene" uid="uid://vptevd4ijf1n" path="res://Scenes/Entites/random_npc.tscn" id="35_ltej3"]
+
 
 [sub_resource type="Environment" id="Environment_kq4fe"]
 background_mode = 3

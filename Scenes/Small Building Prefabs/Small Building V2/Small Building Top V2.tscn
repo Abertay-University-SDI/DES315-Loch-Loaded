@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxnfgg37f7rii"]
+
+[ext_resource type="Texture2D" uid="uid://cnoxaon20rhbf" path="res://Textures/Assets/Buildings/Bace_building_kit_A.png" id="1_j6njl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3q72"]
+atlas = ExtResource("1_j6njl")
+region = Rect2(1149, 1227, 719, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6njl"]
+size = Vector2(709.5239, 61.904762)
+
+[node name="Small_Building_Top_V2_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_j3q72")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-2.3809202, 7.1428537)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_j6njl")

@@ -10,7 +10,7 @@ region = Rect2(2081.477, 3167.8186, 560.52295, 650.8252)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjyrw"]
 friction = 0.0
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ix715"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sjg2l"]
 a = Vector2(4354, 347)
 b = Vector2(4884, 524)
 
@@ -43,4 +43,4 @@ collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_qjyrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zipline_0/StaticBody2D"]
-shape = SubResource("SegmentShape2D_ix715")
+shape = SubResource("SegmentShape2D_sjg2l")

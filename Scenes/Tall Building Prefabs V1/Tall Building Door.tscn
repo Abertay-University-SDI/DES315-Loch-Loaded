@@ -1,38 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://be6lrsdkkyja7"]
+[gd_scene load_steps=3 format=3 uid="uid://be6lrsdkkyja7"]
 
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_v70md"]
+[ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_h65d8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_heh6i"]
-atlas = ExtResource("1_v70md")
-region = Rect2(1551, 898, 140, 322)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v70md"]
-atlas = ExtResource("1_v70md")
-region = Rect2(1317, 843, 209, 378)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v70md"]
-size = Vector2(40, 9)
+[sub_resource type="AtlasTexture" id="AtlasTexture_14tvq"]
+atlas = ExtResource("1_h65d8")
+region = Rect2(1237, 735, 247, 365)
 
 [node name="Tall_Building_Door_0" type="Node2D"]
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-0.9999999, 4.999999)
 scale = Vector2(0.21, 0.21)
-texture = SubResource("AtlasTexture_heh6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.21, 0.21)
-texture = SubResource("AtlasTexture_v70md")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-light_mask = 2
-visibility_layer = 2
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(0, -34.5)
-shape = SubResource("RectangleShape2D_v70md")
-one_way_collision = true
+texture = SubResource("AtlasTexture_14tvq")

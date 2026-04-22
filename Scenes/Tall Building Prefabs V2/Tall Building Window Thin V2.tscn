@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://sjwy30s52jrq"]
+[gd_scene load_steps=6 format=3 uid="uid://sjwy30s52jrq"]
 
 [ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_8agfp"]
+[ext_resource type="Texture2D" uid="uid://bi20e0xn68kxv" path="res://Textures/Assets/Buildings/Bace_building_kit_B.png" id="2_8agfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ieyw"]
 atlas = ExtResource("1_8agfp")
 region = Rect2(1296, 150, 133, 196)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8agfp"]
-atlas = ExtResource("1_8agfp")
+atlas = ExtResource("2_8agfp")
 region = Rect2(1269, 410, 191, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s30us"]

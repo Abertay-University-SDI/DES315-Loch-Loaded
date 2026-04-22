@@ -1,4 +1,4 @@
-[gd_scene load_steps=179 format=3 uid="uid://bjm403u0ioh2n"]
+[gd_scene load_steps=187 format=3 uid="uid://bjm403u0ioh2n"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_vhcrl"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_pdr46"]
@@ -15,18 +15,18 @@
 [ext_resource type="PackedScene" uid="uid://bm0w3k3u3b40" path="res://Scenes/Level/Prefabs/parallax_background.tscn" id="13_7g7yg"]
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_t4m6r"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_wskma"]
-[ext_resource type="PackedScene" uid="uid://bjxb5mc0mgn46" path="res://Scenes/Tall Building Prefabs V2/Tall Building.tscn" id="16_iw5hc"]
-[ext_resource type="PackedScene" uid="uid://b4pmys5yonau3" path="res://Scenes/Tall Building Prefabs V1/Tall Building.tscn" id="17_vqj0q"]
+[ext_resource type="PackedScene" uid="uid://bjxb5mc0mgn46" path="res://Scenes/Tall Building Prefabs V3/Tall Building Base V3.tscn" id="16_iw5hc"]
+[ext_resource type="PackedScene" uid="uid://b4pmys5yonau3" path="res://Scenes/Tall Building Prefabs V1/Tall Building Base V1.tscn" id="17_vqj0q"]
 [ext_resource type="PackedScene" uid="uid://c8pf0ekkr3l2h" path="res://Scenes/Buildings - Tiled/Buildings - Tiled Pink.tscn" id="18_0v8tn"]
-[ext_resource type="PackedScene" uid="uid://bwyy4fxpf6gnp" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window.tscn" id="18_6xp25"]
+[ext_resource type="PackedScene" uid="uid://bwyy4fxpf6gnp" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window V1.tscn" id="18_6xp25"]
 [ext_resource type="PackedScene" uid="uid://4fklrhsiwkl2" path="res://Scenes/Buildings - Tiled/Buildings - Tiled Blue.tscn" id="19_33uny"]
-[ext_resource type="PackedScene" uid="uid://caoy4ajy6epuf" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin.tscn" id="19_c26s7"]
-[ext_resource type="PackedScene" uid="uid://b166ecqf6ink8" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window.tscn" id="20_uybqv"]
-[ext_resource type="PackedScene" uid="uid://bgj01q3t0hje2" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin Blocked.tscn" id="21_ytc1r"]
-[ext_resource type="PackedScene" uid="uid://5fthyclquva8" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Blocked.tscn" id="22_b11gm"]
-[ext_resource type="PackedScene" uid="uid://3hg6wjqwvtuh" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Blocked.tscn" id="23_n04tk"]
-[ext_resource type="PackedScene" uid="uid://c0n5an2b1iuj0" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin Blocked.tscn" id="24_8yqyp"]
-[ext_resource type="PackedScene" uid="uid://27bbawtcn8ng" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Side.tscn" id="25_eahgy"]
+[ext_resource type="PackedScene" uid="uid://caoy4ajy6epuf" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin V1.tscn" id="19_c26s7"]
+[ext_resource type="PackedScene" uid="uid://b166ecqf6ink8" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window V2.tscn" id="20_uybqv"]
+[ext_resource type="PackedScene" uid="uid://bgj01q3t0hje2" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin Blocked V2.tscn" id="21_ytc1r"]
+[ext_resource type="PackedScene" uid="uid://5fthyclquva8" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Blocked V1.tscn" id="22_b11gm"]
+[ext_resource type="PackedScene" uid="uid://3hg6wjqwvtuh" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Blocked V2.tscn" id="23_n04tk"]
+[ext_resource type="PackedScene" uid="uid://c0n5an2b1iuj0" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Thin Blocked V1.tscn" id="24_8yqyp"]
+[ext_resource type="PackedScene" uid="uid://27bbawtcn8ng" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Side V2.tscn" id="25_eahgy"]
 [ext_resource type="PackedScene" uid="uid://dm77x27v5b4on" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar Short.tscn" id="26_omqis"]
 [ext_resource type="PackedScene" uid="uid://bceodkf22llmv" path="res://Scenes/Tall Building Prefabs V1/Tall Building Pillar Long.tscn" id="27_pm01k"]
 [ext_resource type="PackedScene" uid="uid://dcxqi0rgt8m2c" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar Short.tscn" id="28_sckhg"]
@@ -46,114 +46,114 @@
 [ext_resource type="PackedScene" uid="uid://d2b0xsskcdjsc" path="res://Scenes/Wide Building Prefabs/Wide Building Top V2.tscn" id="42_7s8qi"]
 [ext_resource type="PackedScene" uid="uid://cxloyqxvndlii" path="res://Scenes/Wide Building Prefabs/Wide Building Bottom V1.tscn" id="43_3ed3m"]
 [ext_resource type="PackedScene" uid="uid://ccsnc7ln6r423" path="res://Scenes/Wide Building Prefabs/Wide Building Bottom V2.tscn" id="44_22gk8"]
-[ext_resource type="PackedScene" uid="uid://cyehxqtcrdykw" path="res://Scenes/Small Building Prefabs/Small Building Window Long.tscn" id="45_rgkkn"]
-[ext_resource type="PackedScene" uid="uid://bavswfeos6bi5" path="res://Scenes/Small Building Prefabs/Small Building Window Thin.tscn" id="46_odlkj"]
-[ext_resource type="PackedScene" uid="uid://4v74661t43qi" path="res://Scenes/Small Building Prefabs/Small Building.tscn" id="47_nb077"]
-[ext_resource type="PackedScene" uid="uid://biu0st6vbvxo1" path="res://Scenes/Small Building Prefabs/Small Building Top.tscn" id="48_jshup"]
+[ext_resource type="PackedScene" uid="uid://cyehxqtcrdykw" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Window Long.tscn" id="45_rgkkn"]
+[ext_resource type="PackedScene" uid="uid://bavswfeos6bi5" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Window Thin.tscn" id="46_odlkj"]
+[ext_resource type="PackedScene" uid="uid://4v74661t43qi" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building.tscn" id="47_nb077"]
+[ext_resource type="PackedScene" uid="uid://biu0st6vbvxo1" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Top.tscn" id="48_jshup"]
 [ext_resource type="PackedScene" uid="uid://c8iq7grgsb10m" path="res://Scenes/Shopping Building Prefabs/Shopping Building V1.tscn" id="49_axbwd"]
 [ext_resource type="PackedScene" uid="uid://j6m1r2arqx6o" path="res://Scenes/Shopping Building Prefabs/Shopping Building V2.tscn" id="50_uky0i"]
-[ext_resource type="PackedScene" uid="uid://5sdcp1qcnw6c" path="res://Scenes/Small Building Prefabs/Small Building Window Long Blocked.tscn" id="51_1a62m"]
-[ext_resource type="PackedScene" uid="uid://bhea40qx7hxy6" path="res://Scenes/Small Building Prefabs/Small Building Window Thin Blocked.tscn" id="52_krmhy"]
+[ext_resource type="PackedScene" uid="uid://5sdcp1qcnw6c" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Window Long Blocked.tscn" id="51_1a62m"]
+[ext_resource type="PackedScene" uid="uid://bhea40qx7hxy6" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Window Thin Blocked.tscn" id="52_krmhy"]
 [ext_resource type="PackedScene" uid="uid://bequyq1spylus" path="res://Scenes/Shopping Building Prefabs/Shopping Building Top V2.tscn" id="53_nxwpr"]
 [ext_resource type="PackedScene" uid="uid://c8w6of38kugm0" path="res://Scenes/Shopping Building Prefabs/Shopping Building Top V1.tscn" id="54_3k8go"]
-[ext_resource type="PackedScene" uid="uid://bmai0pder60ra" path="res://Scenes/Small Building Prefabs/Small Building Door.tscn" id="55_xa8om"]
-[ext_resource type="PackedScene" uid="uid://d1h6eehvsuvmu" path="res://Scenes/Small Building Prefabs/Small Building Door Blocked.tscn" id="56_t3ehe"]
+[ext_resource type="PackedScene" uid="uid://bmai0pder60ra" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Door.tscn" id="55_xa8om"]
+[ext_resource type="PackedScene" uid="uid://d1h6eehvsuvmu" path="res://Scenes/Small Building Prefabs/Small Building V1/Small Building Door Blocked.tscn" id="56_t3ehe"]
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="57_cy0mj"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="58_ecku6"]
-[ext_resource type="PackedScene" uid="uid://ce2vjieudw7uw" path="res://Scenes/Scaffolding/Scaffolding Metal Pole 2.tscn" id="59_i5r38"]
+[ext_resource type="PackedScene" uid="uid://ce2vjieudw7uw" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 2.tscn" id="59_i5r38"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="60_ahvck"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="61_n5g12"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="62_13iuh"]
-[ext_resource type="PackedScene" uid="uid://cd50hb4nvhsbi" path="res://Scenes/[Extras] Bushes/Bush Long Part 1.tscn" id="63_tljw7"]
-[ext_resource type="PackedScene" uid="uid://3bwnw61tuv0" path="res://Scenes/[Extras] Bushes/Bush Short Part 1.tscn" id="64_wtp0y"]
-[ext_resource type="PackedScene" uid="uid://c5qkc73w6nmut" path="res://Scenes/[Extras] Bushes/Bush Long Part 3.tscn" id="65_kkscb"]
-[ext_resource type="PackedScene" uid="uid://celigfpfkchy5" path="res://Scenes/[Extras] Bushes/Bush Short Pot.tscn" id="66_ame7c"]
-[ext_resource type="PackedScene" uid="uid://dbqlicadqibya" path="res://Scenes/Scaffolding/Scaff Ladder.tscn" id="67_8sysc"]
-[ext_resource type="PackedScene" uid="uid://iyw8xoyh0vir" path="res://Scenes/[Extras] Scene Assets/Fence.tscn" id="68_ahqyk"]
-[ext_resource type="PackedScene" uid="uid://cibjs2m03bvqp" path="res://Scenes/[Extras] Scene Assets/Birds Nest Empty.tscn" id="69_esleu"]
-[ext_resource type="PackedScene" uid="uid://d3i7k2dk8h5io" path="res://Scenes/[Extras] Lights/Lamp Light.tscn" id="70_ffvt3"]
-[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/[Extras] Lights/Lamp.tscn" id="71_oiisd"]
-[ext_resource type="PackedScene" uid="uid://xtqvjdyoxk7s" path="res://Scenes/[Extras] Scene Assets/Crane.tscn" id="72_l1jnm"]
-[ext_resource type="PackedScene" uid="uid://dxnrwvl6bq3ov" path="res://Scenes/[Extras] Scene Assets/Van.tscn" id="73_eitwc"]
-[ext_resource type="PackedScene" uid="uid://cik2601e5tcef" path="res://Scenes/[Extras] Scene Assets/Car.tscn" id="74_bseu6"]
+[ext_resource type="PackedScene" uid="uid://cd50hb4nvhsbi" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Long Part 1.tscn" id="63_tljw7"]
+[ext_resource type="PackedScene" uid="uid://3bwnw61tuv0" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Short Part 1.tscn" id="64_wtp0y"]
+[ext_resource type="PackedScene" uid="uid://c5qkc73w6nmut" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Long Part 3.tscn" id="65_kkscb"]
+[ext_resource type="PackedScene" uid="uid://celigfpfkchy5" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Short Pot.tscn" id="66_ame7c"]
+[ext_resource type="PackedScene" uid="uid://dbqlicadqibya" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaff Ladder.tscn" id="67_8sysc"]
+[ext_resource type="PackedScene" uid="uid://iyw8xoyh0vir" path="res://Scenes/Scene [Assets]/Fence.tscn" id="68_ahqyk"]
+[ext_resource type="PackedScene" uid="uid://cibjs2m03bvqp" path="res://Scenes/Scene [Assets]/Birds Nest Empty.tscn" id="69_esleu"]
+[ext_resource type="PackedScene" uid="uid://d3i7k2dk8h5io" path="res://Scenes/Scene [Assets]/Lights [Assets]/Lamp Light.tscn" id="70_ffvt3"]
+[ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Scene [Assets]/Lights [Assets]/Lamp.tscn" id="71_oiisd"]
+[ext_resource type="PackedScene" uid="uid://xtqvjdyoxk7s" path="res://Scenes/Scene [Assets]/Crane.tscn" id="72_l1jnm"]
+[ext_resource type="PackedScene" uid="uid://dxnrwvl6bq3ov" path="res://Scenes/Scene [Assets]/Van.tscn" id="73_eitwc"]
+[ext_resource type="PackedScene" uid="uid://cik2601e5tcef" path="res://Scenes/Scene [Assets]/Car.tscn" id="74_bseu6"]
 [ext_resource type="PackedScene" uid="uid://qcvlstrn8xi1" path="res://Scenes/Entites/robot.tscn" id="75_gc2cb"]
 [ext_resource type="PackedScene" uid="uid://bp6m4rt1dw531" path="res://Scenes/Entites/flybot.tscn" id="76_5u5ki"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="77_r8i2c"]
-[ext_resource type="PackedScene" uid="uid://6ovdql3xmk0u" path="res://Scenes/Scaffolding/Area Blockers/Blocker v1.tscn" id="78_8emiy"]
-[ext_resource type="PackedScene" uid="uid://h18l1cpds7yr" path="res://Scenes/Scaffolding/Scaffolding Metal 1.tscn" id="79_cggi3"]
-[ext_resource type="PackedScene" uid="uid://da7yk7j65t6e4" path="res://Scenes/Scaffolding/Scaffolding Metal 2.tscn" id="80_fq1k5"]
-[ext_resource type="PackedScene" uid="uid://b7x4ex7icv8qo" path="res://Scenes/Scaffolding/Scaffolding Metal 3.tscn" id="81_0371t"]
-[ext_resource type="PackedScene" uid="uid://b6yesg5fb2s8p" path="res://Scenes/Scaffolding/Scaffolding Wood 1.tscn" id="82_1jrxm"]
-[ext_resource type="PackedScene" uid="uid://btus2jooupwb" path="res://Scenes/Scaffolding/Scaffolding Wood 2.tscn" id="83_oroxp"]
-[ext_resource type="PackedScene" uid="uid://bhip6vxwhag6q" path="res://Scenes/[Extras] Signs/Signs V1/Sign 1 v1.tscn" id="84_ckrxn"]
-[ext_resource type="PackedScene" uid="uid://bujecgaj84ky7" path="res://Scenes/[Extras] Signs/Signs V1/Sign 2 v1.tscn" id="85_b1v0n"]
-[ext_resource type="PackedScene" uid="uid://c24rbhti4q8nh" path="res://Scenes/[Extras] Signs/Signs V1/Sign 3 v1.tscn" id="86_oqu8g"]
-[ext_resource type="PackedScene" uid="uid://cvo3qa61se5v0" path="res://Scenes/[Extras] Signs/Signs V1/Sign 4 v1.tscn" id="87_kdnrx"]
-[ext_resource type="PackedScene" uid="uid://buyjmy7iv65b1" path="res://Scenes/[Extras] Signs/Signs V2/Sign 1 v2.tscn" id="88_yjprc"]
-[ext_resource type="PackedScene" uid="uid://bo25sen3t6qug" path="res://Scenes/[Extras] Signs/Signs V2/Sign 2 v2.tscn" id="89_pi8cj"]
-[ext_resource type="PackedScene" uid="uid://dowofstdnoxyg" path="res://Scenes/[Extras] Signs/Signs V2/Sign 3 v2.tscn" id="90_ur50h"]
-[ext_resource type="PackedScene" uid="uid://b2mgqfy1ycxwh" path="res://Scenes/[Extras] Signs/Signs V2/Sign 4 v2.tscn" id="91_21tgt"]
-[ext_resource type="PackedScene" uid="uid://dhuvs4liuxdji" path="res://Scenes/Scaffolding/Scaffolding Wood 3.tscn" id="92_u1u2i"]
-[ext_resource type="PackedScene" uid="uid://cdpjth3144usn" path="res://Scenes/Scaffolding/Scaffolding Metal Pole 1.tscn" id="93_xkguv"]
-[ext_resource type="PackedScene" uid="uid://d2oavyo4e0tva" path="res://Scenes/Scaffolding/Scaffolding Metal Pole 3.tscn" id="94_u3hci"]
-[ext_resource type="PackedScene" uid="uid://dypfvv2no7o7w" path="res://Scenes/Scaffolding/Scaffolding Metal Pole End.tscn" id="95_s5cxg"]
-[ext_resource type="PackedScene" uid="uid://cgy5b5jmcavlf" path="res://Scenes/Scaffolding/Scaffolding Metal X 1.tscn" id="96_1om63"]
-[ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scaffolding/Scaffolding Metal X 2.tscn" id="97_bdfrl"]
-[ext_resource type="PackedScene" uid="uid://djwl4mwi1rngr" path="res://Scenes/[Extras] Signs/Warning Signs/No Enty Sign.tscn" id="98_s2txx"]
-[ext_resource type="PackedScene" uid="uid://be5vh3p3fxbbq" path="res://Scenes/[Extras] Scene Assets/Boombox V1.tscn" id="99_jdqfk"]
-[ext_resource type="PackedScene" uid="uid://ds2ow13iq11ml" path="res://Scenes/[Extras] Scene Assets/Boombox V2.tscn" id="100_yh4aw"]
-[ext_resource type="PackedScene" uid="uid://bmd5jimvs2mla" path="res://Scenes/[Extras] Bushes/Bush Long Part 2.tscn" id="101_8kc1e"]
-[ext_resource type="PackedScene" uid="uid://t1rj4tlljiuh" path="res://Scenes/[Extras] Bushes/Bush Short Part 2.tscn" id="102_ug6eo"]
-[ext_resource type="PackedScene" uid="uid://ct513xydwyb2i" path="res://Scenes/[Extras] Bushes/Bush Short Part 3.tscn" id="103_5gnxo"]
-[ext_resource type="PackedScene" uid="uid://ddwvc8c3tqbse" path="res://Scenes/[Extras] Bushes/Bush Long Pot.tscn" id="104_vj1f0"]
-[ext_resource type="PackedScene" uid="uid://28r1yarm57wi" path="res://Scenes/[Extras] Lights/Lamp Semi Circle.tscn" id="105_xpl6d"]
-[ext_resource type="PackedScene" uid="uid://buxyil7oce40p" path="res://Scenes/[Extras] Clothes/Clothing 1.tscn" id="106_nibpp"]
-[ext_resource type="PackedScene" uid="uid://cak7spf7vt6ua" path="res://Scenes/[Extras] Clothes/Clothing 2.tscn" id="107_m8c7o"]
-[ext_resource type="PackedScene" uid="uid://bujanmsy6qfa" path="res://Scenes/[Extras] Clothes/Clothing 3.tscn" id="108_0xnuk"]
-[ext_resource type="PackedScene" uid="uid://cuedqnejwcll2" path="res://Scenes/[Extras] Clothes/Clothing 4.tscn" id="109_eqtpp"]
-[ext_resource type="PackedScene" uid="uid://pl4mkxerok2n" path="res://Scenes/[Extras] Clothes/Clothing 5.tscn" id="110_tk8ex"]
-[ext_resource type="PackedScene" uid="uid://da8kcwjli3vpc" path="res://Scenes/[Extras] Clothes/Clothing 6.tscn" id="111_12vk6"]
-[ext_resource type="PackedScene" uid="uid://dixd5574vrtqj" path="res://Scenes/[Extras] Clothes/Clothing 7.tscn" id="112_giv25"]
-[ext_resource type="PackedScene" uid="uid://clovwfxhwllar" path="res://Scenes/[Extras] Clothes/Clothing 8.tscn" id="113_hacbl"]
-[ext_resource type="PackedScene" uid="uid://742w3ltadpr8" path="res://Scenes/[Extras] Clothes/Clothing 9.tscn" id="114_de325"]
-[ext_resource type="PackedScene" uid="uid://dhfeckg48l2yp" path="res://Scenes/[Extras] Clothes/Clothing 10.tscn" id="115_vnmw2"]
+[ext_resource type="PackedScene" uid="uid://6ovdql3xmk0u" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Area Blockers/Blocker v1.tscn" id="78_8emiy"]
+[ext_resource type="PackedScene" uid="uid://h18l1cpds7yr" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal 1.tscn" id="79_cggi3"]
+[ext_resource type="PackedScene" uid="uid://da7yk7j65t6e4" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal 2.tscn" id="80_fq1k5"]
+[ext_resource type="PackedScene" uid="uid://b7x4ex7icv8qo" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal 3.tscn" id="81_0371t"]
+[ext_resource type="PackedScene" uid="uid://b6yesg5fb2s8p" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Wood 1.tscn" id="82_1jrxm"]
+[ext_resource type="PackedScene" uid="uid://btus2jooupwb" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Wood 2.tscn" id="83_oroxp"]
+[ext_resource type="PackedScene" uid="uid://bhip6vxwhag6q" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V1/Sign 1 v1.tscn" id="84_ckrxn"]
+[ext_resource type="PackedScene" uid="uid://bujecgaj84ky7" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V1/Sign 2 v1.tscn" id="85_b1v0n"]
+[ext_resource type="PackedScene" uid="uid://c24rbhti4q8nh" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V1/Sign 3 v1.tscn" id="86_oqu8g"]
+[ext_resource type="PackedScene" uid="uid://cvo3qa61se5v0" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V1/Sign 4 v1.tscn" id="87_kdnrx"]
+[ext_resource type="PackedScene" uid="uid://buyjmy7iv65b1" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V2/Sign 1 v2.tscn" id="88_yjprc"]
+[ext_resource type="PackedScene" uid="uid://bo25sen3t6qug" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V2/Sign 2 v2.tscn" id="89_pi8cj"]
+[ext_resource type="PackedScene" uid="uid://dowofstdnoxyg" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V2/Sign 3 v2.tscn" id="90_ur50h"]
+[ext_resource type="PackedScene" uid="uid://b2mgqfy1ycxwh" path="res://Scenes/Scene [Assets]/Signs [Assets]/Signs V2/Sign 4 v2.tscn" id="91_21tgt"]
+[ext_resource type="PackedScene" uid="uid://dhuvs4liuxdji" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Wood 3.tscn" id="92_u1u2i"]
+[ext_resource type="PackedScene" uid="uid://cdpjth3144usn" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 1.tscn" id="93_xkguv"]
+[ext_resource type="PackedScene" uid="uid://d2oavyo4e0tva" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 3.tscn" id="94_u3hci"]
+[ext_resource type="PackedScene" uid="uid://dypfvv2no7o7w" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole End.tscn" id="95_s5cxg"]
+[ext_resource type="PackedScene" uid="uid://cgy5b5jmcavlf" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 1.tscn" id="96_1om63"]
+[ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 2.tscn" id="97_bdfrl"]
+[ext_resource type="PackedScene" uid="uid://djwl4mwi1rngr" path="res://Scenes/Scene [Assets]/Signs [Assets]/Warning Signs/No Enty Sign.tscn" id="98_s2txx"]
+[ext_resource type="PackedScene" uid="uid://be5vh3p3fxbbq" path="res://Scenes/Scene [Assets]/Boombox V1.tscn" id="99_jdqfk"]
+[ext_resource type="PackedScene" uid="uid://ds2ow13iq11ml" path="res://Scenes/Scene [Assets]/Boombox V2.tscn" id="100_yh4aw"]
+[ext_resource type="PackedScene" uid="uid://bmd5jimvs2mla" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Long Part 2.tscn" id="101_8kc1e"]
+[ext_resource type="PackedScene" uid="uid://t1rj4tlljiuh" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Short Part 2.tscn" id="102_ug6eo"]
+[ext_resource type="PackedScene" uid="uid://ct513xydwyb2i" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Short Part 3.tscn" id="103_5gnxo"]
+[ext_resource type="PackedScene" uid="uid://ddwvc8c3tqbse" path="res://Scenes/Scene [Assets]/Bushes [Assets]/Bush Long Pot.tscn" id="104_vj1f0"]
+[ext_resource type="PackedScene" uid="uid://28r1yarm57wi" path="res://Scenes/Scene [Assets]/Lights [Assets]/Lamp Semi Circle.tscn" id="105_xpl6d"]
+[ext_resource type="PackedScene" uid="uid://buxyil7oce40p" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 1.tscn" id="106_nibpp"]
+[ext_resource type="PackedScene" uid="uid://cak7spf7vt6ua" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 2.tscn" id="107_m8c7o"]
+[ext_resource type="PackedScene" uid="uid://bujanmsy6qfa" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 3.tscn" id="108_0xnuk"]
+[ext_resource type="PackedScene" uid="uid://cuedqnejwcll2" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 4.tscn" id="109_eqtpp"]
+[ext_resource type="PackedScene" uid="uid://pl4mkxerok2n" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 5.tscn" id="110_tk8ex"]
+[ext_resource type="PackedScene" uid="uid://da8kcwjli3vpc" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 6.tscn" id="111_12vk6"]
+[ext_resource type="PackedScene" uid="uid://dixd5574vrtqj" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 7.tscn" id="112_giv25"]
+[ext_resource type="PackedScene" uid="uid://clovwfxhwllar" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 8.tscn" id="113_hacbl"]
+[ext_resource type="PackedScene" uid="uid://742w3ltadpr8" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 9.tscn" id="114_de325"]
+[ext_resource type="PackedScene" uid="uid://dhfeckg48l2yp" path="res://Scenes/Scene [Assets]/Clothes [Assets]/Clothing 10.tscn" id="115_vnmw2"]
 [ext_resource type="PackedScene" uid="uid://llg6gh2dpi02" path="res://Scenes/Ziplines/Zipline Pole.tscn" id="116_iau1m"]
-[ext_resource type="PackedScene" uid="uid://br0rfut4bjm06" path="res://Scenes/[Extras] Scene Assets/Electric Box.tscn" id="117_ica3b"]
-[ext_resource type="PackedScene" uid="uid://celt6ymfobfjt" path="res://Scenes/[Extras] Scene Assets/Birds Nest Full.tscn" id="118_egcb7"]
-[ext_resource type="PackedScene" uid="uid://bsdjwnqrlcx7k" path="res://Scenes/[Extras] Scene Assets/Bird 1.tscn" id="119_rfexx"]
-[ext_resource type="PackedScene" uid="uid://myrgldisyoul" path="res://Scenes/[Extras] Scene Assets/Bird 2.tscn" id="120_2gbtp"]
-[ext_resource type="PackedScene" uid="uid://dexoratjuv12a" path="res://Scenes/[Extras] Scene Assets/Bird 3.tscn" id="121_p6iva"]
-[ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/[Extras] Scene Assets/Ground Vent.tscn" id="122_bengk"]
-[ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/[Extras] Scene Assets/Sandbags.tscn" id="123_kbl27"]
-[ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/[Extras] Scene Assets/Trash 1.tscn" id="124_hc8d4"]
-[ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/[Extras] Scene Assets/Trash 2.tscn" id="125_vhwvb"]
-[ext_resource type="PackedScene" uid="uid://sjwy30s52jrq" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin.tscn" id="126_k66q0"]
+[ext_resource type="PackedScene" uid="uid://br0rfut4bjm06" path="res://Scenes/Scene [Assets]/Electric Box.tscn" id="117_ica3b"]
+[ext_resource type="PackedScene" uid="uid://celt6ymfobfjt" path="res://Scenes/Scene [Assets]/Birds Nest Full.tscn" id="118_egcb7"]
+[ext_resource type="PackedScene" uid="uid://bsdjwnqrlcx7k" path="res://Scenes/Scene [Assets]/Bird 1.tscn" id="119_rfexx"]
+[ext_resource type="PackedScene" uid="uid://myrgldisyoul" path="res://Scenes/Scene [Assets]/Bird 2.tscn" id="120_2gbtp"]
+[ext_resource type="PackedScene" uid="uid://dexoratjuv12a" path="res://Scenes/Scene [Assets]/Bird 3.tscn" id="121_p6iva"]
+[ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/Scene [Assets]/Ground Vent.tscn" id="122_bengk"]
+[ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/Scene [Assets]/Sandbags.tscn" id="123_kbl27"]
+[ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/Scene [Assets]/Trash 1.tscn" id="124_hc8d4"]
+[ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/Scene [Assets]/Trash 2.tscn" id="125_vhwvb"]
+[ext_resource type="PackedScene" uid="uid://sjwy30s52jrq" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin V2.tscn" id="126_k66q0"]
 [ext_resource type="PackedScene" uid="uid://qyb4pnrt8tux" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door.tscn" id="127_0yqpa"]
-[ext_resource type="PackedScene" uid="uid://dhwqqm34s7408" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Side.tscn" id="128_iyyjn"]
+[ext_resource type="PackedScene" uid="uid://dhwqqm34s7408" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Side V1.tscn" id="128_iyyjn"]
 [ext_resource type="PackedScene" uid="uid://cpgiq83pu65gy" path="res://Scenes/Buildings - [Decoration]/Building - Pharmacy.tscn" id="129_pdr46"]
 [ext_resource type="PackedScene" uid="uid://c32nkgsh7y26l" path="res://Scenes/Buildings - [Decoration]/Building - Music Man Shop.tscn" id="130_t78ir"]
 [ext_resource type="PackedScene" uid="uid://udl8wi6vleuc" path="res://Scenes/Buildings - [Decoration]/Building - Detailed.tscn" id="131_ihm66"]
 [ext_resource type="PackedScene" uid="uid://6j26bjxqtjiq" path="res://Scenes/Buildings - [Decoration]/Building - Detailed Closed Shop.tscn" id="132_wpnwi"]
 [ext_resource type="PackedScene" uid="uid://fc7en1tsjjuy" path="res://Scenes/Buildings - Tiled/Buildings - Tiled Purple.tscn" id="135_prksl"]
 [ext_resource type="PackedScene" uid="uid://7cw8edkn522s" path="res://Scenes/Buildings - Tiled/Buildings - Tiled Beige.tscn" id="136_h60cb"]
-[ext_resource type="PackedScene" uid="uid://d33f8v4jwx2ie" path="res://Scenes/[Extras] Scene Assets/Hot Dag Stand.tscn" id="137_h60cb"]
-[ext_resource type="PackedScene" uid="uid://dv4xm7r6qdtc3" path="res://Scenes/[Extras] Scene Assets/TicketBooth.tscn" id="138_d1f1k"]
+[ext_resource type="PackedScene" uid="uid://d33f8v4jwx2ie" path="res://Scenes/Scene [Assets]/Hot Dag Stand.tscn" id="137_h60cb"]
+[ext_resource type="PackedScene" uid="uid://dv4xm7r6qdtc3" path="res://Scenes/Scene [Assets]/TicketBooth.tscn" id="138_d1f1k"]
 [ext_resource type="PackedScene" uid="uid://bjn7duif8f1gn" path="res://Scenes/Buildings - [Decoration]/Building - Detailed Sides.tscn" id="139_6xp25"]
-[ext_resource type="PackedScene" uid="uid://52ccp1tsl41r" path="res://Scenes/[Extras] Scene Assets/Water Tower.tscn" id="139_xw6jh"]
+[ext_resource type="PackedScene" uid="uid://52ccp1tsl41r" path="res://Scenes/Scene [Assets]/Water Tower.tscn" id="139_xw6jh"]
 [ext_resource type="PackedScene" uid="uid://duydkqvlq8pmr" path="res://Scenes/Buildings - [Decoration]/Building - Balcony.tscn" id="140_7g7yg"]
-[ext_resource type="PackedScene" uid="uid://bhx77ml58x1cd" path="res://Scenes/[Extras] Scene Assets/Pipe Assets/Pipe Long Tube.tscn" id="140_c26s7"]
+[ext_resource type="PackedScene" uid="uid://bhx77ml58x1cd" path="res://Scenes/Scene [Assets]/Pipe Assets [Assets]/Pipe Long Tube.tscn" id="140_c26s7"]
 [ext_resource type="PackedScene" uid="uid://qluv0eau2vsj" path="res://Scenes/Buildings - [Decoration]/Building - Balcony Ladders.tscn" id="141_t4m6r"]
-[ext_resource type="PackedScene" uid="uid://buh483b8kovl2" path="res://Scenes/[Extras] Scene Assets/Pipe Assets/Pipe Curved Tube.tscn" id="141_uybqv"]
+[ext_resource type="PackedScene" uid="uid://buh483b8kovl2" path="res://Scenes/Scene [Assets]/Pipe Assets [Assets]/Pipe Curved Tube.tscn" id="141_uybqv"]
 [ext_resource type="PackedScene" uid="uid://qq1scjlthcgy" path="res://Scenes/Buildings - [Decoration]/Building - Balcony Ladders Angle.tscn" id="142_wskma"]
-[ext_resource type="PackedScene" uid="uid://hx5qldt8di34" path="res://Scenes/[Extras] Scene Assets/Surfboards Assets/Surfboard V1.tscn" id="143_iw5hc"]
-[ext_resource type="PackedScene" uid="uid://cq5luhrtbfuxm" path="res://Scenes/[Extras] Scene Assets/Surfboards Assets/Surfboard V2.tscn" id="144_vqj0q"]
-[ext_resource type="PackedScene" uid="uid://b8b4dvqrkiofw" path="res://Scenes/[Extras] Scene Assets/Vine Lights.tscn" id="148_b11gm"]
-[ext_resource type="PackedScene" uid="uid://bc0bt0okhbbxg" path="res://Scenes/[Extras] Scene Assets/Pipe Assets/Pipe Top Tube.tscn" id="148_ytc1r"]
-[ext_resource type="PackedScene" uid="uid://d0fd5nriwy7hw" path="res://Scenes/[Extras] Window Blockers/Window Blockers - Wooden Cross.tscn" id="150_n04tk"]
-[ext_resource type="PackedScene" uid="uid://5g23nfescfot" path="res://Scenes/[Extras] Window Blockers/Window Blockers - Small Wooden Plank.tscn" id="151_8yqyp"]
-[ext_resource type="PackedScene" uid="uid://bi70lrtvyvvfa" path="res://Scenes/[Extras] Window Blockers/Window Blockers - Medium Wooden Plank.tscn" id="152_eahgy"]
-[ext_resource type="PackedScene" uid="uid://cbromls1ukqu8" path="res://Scenes/[Extras] Window Blockers/Window Blockers - Large Wooden Plank.tscn" id="153_omqis"]
-[ext_resource type="PackedScene" uid="uid://ya6ehjqmos5d" path="res://Scenes/[Extras] Window Blockers/Window Blockers - Covered Wooden Plank.tscn" id="154_pm01k"]
+[ext_resource type="PackedScene" uid="uid://hx5qldt8di34" path="res://Scenes/Scene [Assets]/Surfboards [Assets]/Surfboard V1.tscn" id="143_iw5hc"]
+[ext_resource type="PackedScene" uid="uid://cq5luhrtbfuxm" path="res://Scenes/Scene [Assets]/Surfboards [Assets]/Surfboard V2.tscn" id="144_vqj0q"]
+[ext_resource type="PackedScene" uid="uid://b8b4dvqrkiofw" path="res://Scenes/Scene [Assets]/Vine Lights.tscn" id="148_b11gm"]
+[ext_resource type="PackedScene" uid="uid://bc0bt0okhbbxg" path="res://Scenes/Scene [Assets]/Pipe Assets [Assets]/Pipe Top Tube.tscn" id="148_ytc1r"]
+[ext_resource type="PackedScene" uid="uid://d0fd5nriwy7hw" path="res://Scenes/Scene [Assets]/Window Blockers [Assets]/Window Blockers - Wooden Cross.tscn" id="150_n04tk"]
+[ext_resource type="PackedScene" uid="uid://5g23nfescfot" path="res://Scenes/Scene [Assets]/Window Blockers [Assets]/Window Blockers - Small Wooden Plank.tscn" id="151_8yqyp"]
+[ext_resource type="PackedScene" uid="uid://bi70lrtvyvvfa" path="res://Scenes/Scene [Assets]/Window Blockers [Assets]/Window Blockers - Medium Wooden Plank.tscn" id="152_eahgy"]
+[ext_resource type="PackedScene" uid="uid://cbromls1ukqu8" path="res://Scenes/Scene [Assets]/Window Blockers [Assets]/Window Blockers - Large Wooden Plank.tscn" id="153_omqis"]
+[ext_resource type="PackedScene" uid="uid://ya6ehjqmos5d" path="res://Scenes/Scene [Assets]/Window Blockers [Assets]/Window Blockers - Covered Wooden Plank.tscn" id="154_pm01k"]
 [ext_resource type="PackedScene" uid="uid://b3usmwoo63oti" path="res://Scenes/Buildings - [Decoration]/Building - Brick Decals/Building - Brick Decals V1.tscn" id="155_i2soc"]
 [ext_resource type="PackedScene" uid="uid://drkvrlj5ax3ab" path="res://Scenes/Buildings - [Decoration]/Building - Brick Decals/Building - Brick Decals V2.tscn" id="156_7tngc"]
 [ext_resource type="PackedScene" uid="uid://p6ysu5rbn222" path="res://Scenes/Buildings - [Decoration]/Building - Brick Decals/Building - Brick Decals V3.tscn" id="157_fgmr8"]
@@ -163,7 +163,15 @@
 [ext_resource type="PackedScene" uid="uid://u86spob5f518" path="res://Scenes/Buildings - [Decoration]/Antenna.tscn" id="161_fgmr8"]
 [ext_resource type="PackedScene" uid="uid://bt4dm4lpbspgg" path="res://Scenes/Buildings - [Decoration]/Splash Signs.tscn" id="161_vlhij"]
 [ext_resource type="PackedScene" uid="uid://huskgma8iwvy" path="res://Scenes/Buildings - [Decoration]/Building - Vent.tscn" id="162_fknxu"]
-[ext_resource type="PackedScene" uid="uid://288gk86idviu" path="res://Scenes/[Extras] Scene Assets/Cats/Cat.tscn" id="164_72vky"]
+[ext_resource type="PackedScene" uid="uid://4hm7n1bshcct" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building V2.tscn" id="162_wqpdw"]
+[ext_resource type="PackedScene" uid="uid://cxnfgg37f7rii" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building Top V2.tscn" id="163_503b0"]
+[ext_resource type="PackedScene" uid="uid://288gk86idviu" path="res://Scenes/Scene [Assets]/Cats [Assets]/Cat.tscn" id="164_72vky"]
+[ext_resource type="PackedScene" uid="uid://bvh3up8p206ki" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building Door Blocked V2.tscn" id="164_rgkkn"]
+[ext_resource type="PackedScene" uid="uid://c7tvh520i01gl" path="res://Scenes/Tall Building Prefabs V2/Tall Building Base V2.tscn" id="165_ertjo"]
+[ext_resource type="PackedScene" uid="uid://8tvra1cloak2" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building Top Sign V2.tscn" id="168_i2tgb"]
+[ext_resource type="PackedScene" uid="uid://bnbel277tojy0" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building Door V2.tscn" id="169_7s8qi"]
+[ext_resource type="PackedScene" uid="uid://5fycv8j2scet" path="res://Scenes/Small Building Prefabs/Small Building V3/Small Building Door V3.tscn" id="170_3ed3m"]
+[ext_resource type="PackedScene" uid="uid://fpmwrv5bygov" path="res://Scenes/Small Building Prefabs/Small Building V4/Small Building Door V4.tscn" id="171_22gk8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_33uny")
@@ -213,9 +221,8 @@ size = Vector2(186, 731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4m6l"]
 size = Vector2(196, 492)
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("billBoards", "endScene")]
 script = ExtResource("1_vhcrl")
-enemies = NodePath("Enemies")
 billBoards = NodePath("Spray Spots")
 endScene = NodePath("CanvasLayer/LevelEndScene")
 
@@ -336,242 +343,247 @@ visible = false
 
 [node name="Tall Buildings" type="Node2D" parent="."]
 
-[node name="Tall - Buildings" type="Node2D" parent="Tall Buildings"]
+[node name="Tall - Buildings V1" type="Node2D" parent="Tall Buildings"]
 
-[node name="Tall_Building_2" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_2" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(-413.99985, 497.00006)
 
-[node name="Tall_Building_3" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_3" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(-657, 497)
 
-[node name="Tall_Building_4" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_4" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(94, 497.00006)
 
-[node name="Tall_Building_10" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_10" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(278, 497.00006)
 rotation = -3.1415927
 
-[node name="Tall_Building_5" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_5" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(-91, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_9" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_9" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(276, 85)
 rotation = 3.1415927
 scale = Vector2(1.05, 1.05)
 
-[node name="Tall_Building_13" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_13" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(829.9999, 497.00006)
 
-[node name="Tall_Building_31" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_31" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(4778, 497.00006)
 
-[node name="Tall_Building_39" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_39" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7287, 497.00006)
 
-[node name="Tall_Building_15" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_15" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(830.00006, 94)
 rotation = -3.1415927
 
-[node name="Tall_Building_20" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_20" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2139, 99)
 
-[node name="Tall_Building_21" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_21" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2296, 43)
 scale = Vector2(0.29, 0.29)
 
-[node name="Tall_Building_22" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_22" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(2512, 93)
 rotation = -3.1415927
 
-[node name="Tall_Building_28" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_28" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2297, -455.9999)
 
-[node name="Tall_Building_29" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_29" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(2491, -354)
 rotation = -3.1415927
 scale = Vector2(1.2345692, 1.2088886)
 
-[node name="Tall_Building_30" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_30" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(2697, -349)
 rotation = -3.1415927
 
-[node name="Tall_Building_27" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_27" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(3735, 496)
 rotation = -3.1415927
 
-[node name="Tall_Building_24" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_24" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(3920, 497.00003)
 
-[node name="Tall_Building_25" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_25" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(4104, 90.00003)
 
-[node name="Tall_Building_26" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_26" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(4288, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_33" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_33" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(3920.0002, 94.00007)
 
-[node name="Tall_Building_34" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_34" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(4101, 463)
 scale = Vector2(0.215, 0.245)
 
-[node name="Tall_Building_35" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_35" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(4288, 94)
 rotation = -3.1415927
 
-[node name="Tall_Building_36" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_36" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(4022, -310)
 rotation = -3.1415927
 
-[node name="Tall_Building_37" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_37" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(4207, -308.9999)
 
-[node name="Tall_Building_38" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_38" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(4391, -308.9999)
 
-[node name="Tall_Building_16" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_16" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2327.9998, 497)
 
-[node name="Tall_Building_17" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_17" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(2144, 496)
 rotation = 3.1415927
 
-[node name="Tall_Building_18" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_18" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2511.9995, 497)
 
-[node name="Tall_Building_19" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_19" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(2696, 496)
 rotation = -3.1415927
 
-[node name="Tall_Building_11" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
-position = Vector2(462, 488)
-scale = Vector2(1, 1.1599951)
-
-[node name="Tall_Building_12" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_12" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(646, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_23" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_23" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(1392, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_32" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_32" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(7125, 551.00006)
 rotation = -3.1415927
 scale = Vector2(0.755, 0.755)
 
-[node name="Tall_Building_46" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_46" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(8801.001, 497.00003)
 scale = Vector2(0.28, 0.225)
 
-[node name="Tall_Building_47" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_47" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(8569, 100)
 rotation = -3.1415927
 
-[node name="Tall_Building_52" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_52" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(9451.999, 439)
 scale = Vector2(0.285, 0.285)
 
-[node name="Tall_Building_59" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_59" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(9635.999, 497.00006)
 
-[node name="Tall_Building_53" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_53" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(9268.999, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_60" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_60" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(9819.999, 184)
 rotation = -3.1415927
 
-[node name="Tall_Building_61" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_61" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(10170, 457.00006)
 scale = Vector2(0.21, 0.255)
 
-[node name="Tall_Building_62" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_62" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(10354, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_63" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_63" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(10354.001, 95.0001)
 
-[node name="Tall_Building_64" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_64" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(10538.001, -49)
 rotation = -3.1415927
 
-[node name="Tall_Building_66" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_66" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(10775, 386.99997)
 scale = Vector2(0.33, 0.33)
 
-[node name="Tall_Building_67" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_67" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(10566, 431.99994)
 rotation = -3.1415927
 scale = Vector2(1.32, 1.32)
 
-[node name="Tall_Building_65" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_65" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(9819.999, 488)
 rotation = -3.1415927
 scale = Vector2(1.0822754, 1.055973)
 
-[node name="Tall_Building_48" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_48" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(8743, 61)
 scale = Vector2(0.23, 0.23)
 
-[node name="Tall_Building_49" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_49" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(8568, 463)
 rotation = -3.1415927
 scale = Vector2(1.22, 1.16)
 
-[node name="Tall_Building_51" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_51" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7668, -68.99989)
 
-[node name="Tall_Building_54" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_54" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7843, -764)
 
-[node name="Tall_Building_58" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_58" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7912.0005, -422.0001)
 
-[node name="Tall_Building_55" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_55" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(7750, -469)
 rotation = -3.1415927
 
-[node name="Tall_Building_56" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_56" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(8012, -153)
 rotation = -3.1415927
 
-[node name="Tall_Building_57" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_57" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(7847, -105)
 rotation = -6.2831855
 
-[node name="Tall_Building_50" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_50" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(8385, 94)
 
-[node name="Tall_Building_40" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_40" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7654.0005, 497.00003)
 
-[node name="Tall_Building_43" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_43" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7838, 497.00003)
 
-[node name="Tall_Building_41" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_41" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(7471, 497)
 rotation = -3.1415927
 
-[node name="Tall_Building_42" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_42" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(8021.0005, 497.00003)
 
-[node name="Tall_Building_44" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("16_iw5hc")]
+[node name="Tall_Building_44" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(8388, 497.00003)
 
-[node name="Tall_Building_45" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("17_vqj0q")]
+[node name="Tall_Building_45" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
 position = Vector2(8205, 497)
 rotation = -3.1415927
 
-[node name="tiled_pink_0" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("18_0v8tn")]
-position = Vector2(1057, 1133)
+[node name="tiled_pink_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("18_0v8tn")]
+position = Vector2(1763, 1107)
 
-[node name="tiled_blue_0" parent="Tall Buildings/Tall - Buildings" instance=ExtResource("19_33uny")]
-position = Vector2(1638, 1131.0001)
+[node name="tiled_blue_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("19_33uny")]
+position = Vector2(1763, 1478.0001)
+
+[node name="Tall_Building_Base_V1_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
+position = Vector2(354, 1126)
+
+[node name="Tall - Buildings V2" type="Node2D" parent="Tall Buildings"]
+
+[node name="Tall_Building_Base_V2_1" parent="Tall Buildings/Tall - Buildings V2" instance=ExtResource("165_ertjo")]
+position = Vector2(463.00003, 459.00018)
+scale = Vector2(0.274, 0.284)
 
 [node name="Tall - Buildings [Windows]" type="Node2D" parent="Tall Buildings"]
 
@@ -3255,15 +3267,15 @@ scale = Vector2(0.295, 0.335)
 
 [node name="Tall_Building_Cornice_9" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(278, 290)
-scale = Vector2(0.27, 0.25)
+scale = Vector2(0.21, 0.25)
 
 [node name="Tall_Building_Cornice_10" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(458.99997, 253)
-scale = Vector2(0.275, 0.26)
+scale = Vector2(0.21, 0.26)
 
 [node name="Tall_Building_Cornice_11" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(637, 295)
-scale = Vector2(0.25, 0.35)
+position = Vector2(648, 295)
+scale = Vector2(0.21, 0.35)
 
 [node name="Tall_Building_Cornice_15" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(1393, 295)
@@ -3291,7 +3303,7 @@ scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_14" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(93, 293)
-scale = Vector2(0.25, 0.35)
+scale = Vector2(0.21000001, 0.35)
 
 [node name="Tall_Building_Cornice_3" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
 position = Vector2(-418, 293.00003)
@@ -4607,7 +4619,7 @@ position = Vector2(1398, 18)
 scale = Vector2(0.26, 0.26)
 
 [node name="Crane_3" parent="Decoration/Cranes" instance=ExtResource("72_l1jnm")]
-position = Vector2(4054.9998, 1135)
+position = Vector2(4206, 1135)
 scale = Vector2(0.26, 0.26)
 
 [node name="Crane_1" parent="Decoration/Cranes" instance=ExtResource("72_l1jnm")]
@@ -5418,13 +5430,13 @@ position = Vector2(-842, 1086)
 position = Vector2(-839, 987)
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("18_6xp25")]
-position = Vector2(64, 1027)
+position = Vector2(64, 1023)
 
 [node name="Tall_Building_Cornice_0" parent="Prefabs Showcase" instance=ExtResource("34_fgmr8")]
 position = Vector2(124, 928)
 
 [node name="Tall_Building_Window_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("22_b11gm")]
-position = Vector2(147, 1031)
+position = Vector2(147, 1027)
 
 [node name="Tall_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("36_vlhij")]
 position = Vector2(60, 1285)
@@ -5440,272 +5452,269 @@ rotation = 3.1415925
 position = Vector2(150.00002, 1158.0001)
 
 [node name="Small_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("48_jshup")]
-position = Vector2(2440.9998, 1161)
+position = Vector2(2591.9995, 1161)
 
 [node name="Small_Building_0" parent="Prefabs Showcase" instance=ExtResource("47_nb077")]
-position = Vector2(2440.9998, 1243)
+position = Vector2(2591.9995, 1243)
 
 [node name="Small_Building_Window_Long_0" parent="Prefabs Showcase" instance=ExtResource("45_rgkkn")]
-position = Vector2(2256, 1108)
+position = Vector2(1399, 1105)
 
 [node name="Small_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("46_odlkj")]
-position = Vector2(2255, 1181)
+position = Vector2(1398, 1178)
 
 [node name="Small_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("55_xa8om")]
-position = Vector2(2254, 1259)
+position = Vector2(1397, 1256)
 
 [node name="Shopping_Building_V1_0" parent="Prefabs Showcase" instance=ExtResource("49_axbwd")]
-position = Vector2(2732, 1230.0002)
+position = Vector2(2882.9998, 1230.0002)
 
 [node name="Shopping_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("54_3k8go")]
-position = Vector2(2732, 1135)
+position = Vector2(2882.9998, 1135)
 
 [node name="Shopping_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("50_uky0i")]
-position = Vector2(2732, 1032)
+position = Vector2(2882.9998, 1032)
 
 [node name="Shopping_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("53_nxwpr")]
-position = Vector2(2734, 944)
+position = Vector2(2884.9998, 944)
 
 [node name="Small_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("56_t3ehe")]
-position = Vector2(2142, 1260)
+position = Vector2(1523, 1257)
 
 [node name="Small_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("52_krmhy")]
-position = Vector2(2139, 1181)
+position = Vector2(1520, 1178)
 
 [node name="Small_Building_Window_Long_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("51_1a62m")]
-position = Vector2(2141, 1108)
+position = Vector2(1522, 1105)
 
 [node name="Beam_1_0" parent="Prefabs Showcase" instance=ExtResource("58_ecku6")]
-position = Vector2(2442.9998, 1067)
+position = Vector2(2593.9995, 1067)
 
 [node name="Beam_0" parent="Prefabs Showcase" instance=ExtResource("57_cy0mj")]
-position = Vector2(2443.9998, 996.99994)
+position = Vector2(2594.9995, 996.99994)
 
 [node name="Wide_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("42_7s8qi")]
-position = Vector2(3410, 1025)
+position = Vector2(3560.9998, 1025)
 
 [node name="Wide_Building_Bottom_V2_0" parent="Prefabs Showcase" instance=ExtResource("44_22gk8")]
-position = Vector2(3408, 1276)
+position = Vector2(3558.9998, 1276)
 rotation = -3.1415925
 
 [node name="Wide_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("40_503b0")]
-position = Vector2(3410, 1148)
+position = Vector2(3560.9998, 1148)
 
 [node name="Wide_Building_Bottom_V1_0" parent="Prefabs Showcase" instance=ExtResource("43_3ed3m")]
-position = Vector2(3064, 1276)
+position = Vector2(3214.9998, 1276)
 rotation = -3.1415925
 
 [node name="Wide_Building_V1_0" parent="Prefabs Showcase" instance=ExtResource("39_wqpdw")]
-position = Vector2(3067, 1149)
+position = Vector2(3217.9998, 1149)
 
 [node name="Wide_Building_Top_V1_0" parent="Prefabs Showcase" instance=ExtResource("41_i2tgb")]
-position = Vector2(3068, 1026)
+position = Vector2(3218.9998, 1026)
 
 [node name="Spray Spot" parent="Prefabs Showcase" instance=ExtResource("62_13iuh")]
-position = Vector2(3677.9998, 1205)
+position = Vector2(3828.9998, 1205)
 
 [node name="Scaff_Metal_1_0" parent="Prefabs Showcase" instance=ExtResource("79_cggi3")]
-position = Vector2(-483.99988, 1422)
+position = Vector2(-419.99988, 1499)
 
 [node name="Scaff_Metal_2_0" parent="Prefabs Showcase" instance=ExtResource("80_fq1k5")]
-position = Vector2(-473.99988, 1438)
+position = Vector2(-409.99988, 1515)
 
 [node name="Scaff_Metal_3_0" parent="Prefabs Showcase" instance=ExtResource("81_0371t")]
-position = Vector2(-446.99988, 1454.0001)
+position = Vector2(-382.99988, 1531.0001)
 
 [node name="Scaff_Wood_1_0" parent="Prefabs Showcase" instance=ExtResource("82_1jrxm")]
-position = Vector2(-483.99988, 1471.0001)
+position = Vector2(-419.99988, 1548.0001)
 
 [node name="Scaff_Wood_2_0" parent="Prefabs Showcase" instance=ExtResource("83_oroxp")]
-position = Vector2(-472.99988, 1488.0001)
+position = Vector2(-408.99988, 1565.0001)
 
 [node name="Van_0" parent="Prefabs Showcase" instance=ExtResource("73_eitwc")]
-position = Vector2(3857.999, 1240)
+position = Vector2(4008.9988, 1240)
 
 [node name="Car_0" parent="Prefabs Showcase" instance=ExtResource("74_bseu6")]
-position = Vector2(3983.999, 1261)
+position = Vector2(4134.999, 1261)
 
 [node name="Sign_1_0" parent="Prefabs Showcase" instance=ExtResource("84_ckrxn")]
-position = Vector2(-79.000015, 1459)
+position = Vector2(-15.000023, 1536)
 
 [node name="Sign_2_0" parent="Prefabs Showcase" instance=ExtResource("85_b1v0n")]
-position = Vector2(-40.000015, 1460)
+position = Vector2(23.999977, 1537)
 
 [node name="Sign_3_0" parent="Prefabs Showcase" instance=ExtResource("86_oqu8g")]
-position = Vector2(-3.0000153, 1459)
+position = Vector2(60.999977, 1536)
 
 [node name="Sign_4_0" parent="Prefabs Showcase" instance=ExtResource("87_kdnrx")]
-position = Vector2(28.999985, 1459)
+position = Vector2(92.99998, 1536)
 
 [node name="Sign_1_1" parent="Prefabs Showcase" instance=ExtResource("88_yjprc")]
-position = Vector2(-79.000015, 1496)
+position = Vector2(-15.000023, 1573)
 
 [node name="Sign_2_1" parent="Prefabs Showcase" instance=ExtResource("89_pi8cj")]
-position = Vector2(-41.000015, 1496)
+position = Vector2(22.999977, 1573)
 
 [node name="Sign_3_1" parent="Prefabs Showcase" instance=ExtResource("90_ur50h")]
-position = Vector2(-4.0000153, 1496)
+position = Vector2(59.999977, 1573)
 
 [node name="Sign_4_1" parent="Prefabs Showcase" instance=ExtResource("91_21tgt")]
-position = Vector2(28.999985, 1496)
+position = Vector2(92.99998, 1573)
 
 [node name="Scaff_Wood_3_0" parent="Prefabs Showcase" instance=ExtResource("92_u1u2i")]
-position = Vector2(-446.99994, 1504)
+position = Vector2(-382.99994, 1581)
 
 [node name="Scaff_Metal_Pole_1_0" parent="Prefabs Showcase" instance=ExtResource("93_xkguv")]
-position = Vector2(-347.99985, 1463)
+position = Vector2(-283.99985, 1540)
 
 [node name="Scaff_Metal_Pole_2_0" parent="Prefabs Showcase" instance=ExtResource("59_i5r38")]
-position = Vector2(-328.9999, 1463.0001)
+position = Vector2(-264.9999, 1540.0001)
 
 [node name="Scaff_Metal_Pole_3_0" parent="Prefabs Showcase" instance=ExtResource("94_u3hci")]
-position = Vector2(-309.9999, 1494.0001)
+position = Vector2(-245.99991, 1571.0001)
 
 [node name="Scaff_Metal_Pole_End_0" parent="Prefabs Showcase" instance=ExtResource("95_s5cxg")]
-position = Vector2(-309.99985, 1461)
+position = Vector2(-245.99985, 1538)
 
 [node name="Scaff_Metal_X_1_0" parent="Prefabs Showcase" instance=ExtResource("96_1om63")]
-position = Vector2(-635, 1441.0001)
+position = Vector2(-571, 1518.0001)
 
 [node name="Scaff_Metal_X_2_0" parent="Prefabs Showcase" instance=ExtResource("97_bdfrl")]
-position = Vector2(-634.99994, 1483)
+position = Vector2(-570.99994, 1560)
 
 [node name="Scaff_Ladder_0" parent="Prefabs Showcase" instance=ExtResource("67_8sysc")]
-position = Vector2(-379.9999, 1465)
+position = Vector2(-315.9999, 1542)
 
 [node name="No_Entry_Sign_0" parent="Prefabs Showcase" instance=ExtResource("98_s2txx")]
-position = Vector2(-21.000015, 1534)
+position = Vector2(42.999977, 1611)
 
 [node name="Boombox_v1_0" parent="Prefabs Showcase" instance=ExtResource("99_jdqfk")]
-position = Vector2(94.000015, 1530)
+position = Vector2(158, 1607)
 
 [node name="Boombox_v2_0" parent="Prefabs Showcase" instance=ExtResource("100_yh4aw")]
-position = Vector2(148.99983, 1530)
+position = Vector2(212.99982, 1607)
 
 [node name="Fence_0" parent="Prefabs Showcase" instance=ExtResource("68_ahqyk")]
-position = Vector2(246.9999, 1496)
+position = Vector2(310.99988, 1573)
 
 [node name="Bush_Long_Part1_0" parent="Prefabs Showcase" instance=ExtResource("63_tljw7")]
-position = Vector2(-230.99992, 1400)
+position = Vector2(-166.99994, 1477)
 
 [node name="Bush_Long_Part1_1" parent="Prefabs Showcase" instance=ExtResource("101_8kc1e")]
-position = Vector2(-228.9998, 1458.9999)
+position = Vector2(-164.99982, 1535.9999)
 
 [node name="Bush_Long_Part3_0" parent="Prefabs Showcase" instance=ExtResource("65_kkscb")]
-position = Vector2(-228.9998, 1509.9999)
+position = Vector2(-164.99982, 1586.9999)
 
 [node name="Bush_Short_Part1_0" parent="Prefabs Showcase" instance=ExtResource("64_wtp0y")]
-position = Vector2(-141.99992, 1402)
+position = Vector2(-77.99993, 1479)
 
 [node name="Bush_Short_Part2_0" parent="Prefabs Showcase" instance=ExtResource("102_ug6eo")]
-position = Vector2(-141.99992, 1455.9999)
+position = Vector2(-77.99993, 1532.9999)
 
 [node name="Bush_Short_Part3_0" parent="Prefabs Showcase" instance=ExtResource("103_5gnxo")]
-position = Vector2(-140.99992, 1509.9999)
+position = Vector2(-76.99993, 1586.9999)
 
 [node name="Bush_Short_Pot_0" parent="Prefabs Showcase" instance=ExtResource("66_ame7c")]
-position = Vector2(-140.99992, 1538)
+position = Vector2(-76.99993, 1615)
 
 [node name="Bush_Long_Pot_0" parent="Prefabs Showcase" instance=ExtResource("104_vj1f0")]
-position = Vector2(-229.99992, 1539.9999)
+position = Vector2(-165.99994, 1616.9999)
 
 [node name="Lamp_Light_0" parent="Prefabs Showcase" instance=ExtResource("70_ffvt3")]
-position = Vector2(93.000015, 1473.0001)
+position = Vector2(157, 1550.0001)
 
 [node name="Lamp_Semi_Circle_0" parent="Prefabs Showcase" instance=ExtResource("105_xpl6d")]
-position = Vector2(154.00002, 1472.0001)
+position = Vector2(218, 1549.0001)
 
 [node name="Clothing_1_0" parent="Prefabs Showcase" instance=ExtResource("106_nibpp")]
-position = Vector2(343.99994, 1421)
+position = Vector2(407.99994, 1498)
 
 [node name="Clothing_2_0" parent="Prefabs Showcase" instance=ExtResource("107_m8c7o")]
-position = Vector2(380.9997, 1421)
+position = Vector2(444.9997, 1498)
 
 [node name="Clothing_3_0" parent="Prefabs Showcase" instance=ExtResource("108_0xnuk")]
-position = Vector2(343.99994, 1453)
+position = Vector2(407.99994, 1530)
 
 [node name="Clothing_4_0" parent="Prefabs Showcase" instance=ExtResource("109_eqtpp")]
-position = Vector2(380.99994, 1453)
+position = Vector2(444.99994, 1530)
 
 [node name="Clothing_5_0" parent="Prefabs Showcase" instance=ExtResource("110_tk8ex")]
-position = Vector2(332.99994, 1484)
+position = Vector2(396.99994, 1561)
 
 [node name="Clothing_6_0" parent="Prefabs Showcase" instance=ExtResource("111_12vk6")]
-position = Vector2(348.99994, 1484)
+position = Vector2(412.99994, 1561)
 
 [node name="Clothing_7_0" parent="Prefabs Showcase" instance=ExtResource("112_giv25")]
-position = Vector2(371.99994, 1484)
+position = Vector2(435.99994, 1561)
 
 [node name="Clothing_8_0" parent="Prefabs Showcase" instance=ExtResource("113_hacbl")]
-position = Vector2(386.99994, 1484)
+position = Vector2(450.99994, 1561)
 
 [node name="Clothing_9_0" parent="Prefabs Showcase" instance=ExtResource("114_de325")]
-position = Vector2(413.99994, 1427)
+position = Vector2(477.99994, 1504)
 
 [node name="Clothing_10_0" parent="Prefabs Showcase" instance=ExtResource("115_vnmw2")]
-position = Vector2(412.99994, 1472)
+position = Vector2(476.99994, 1549)
 
 [node name="Zipline_Pole_0" parent="Prefabs Showcase" instance=ExtResource("116_iau1m")]
-position = Vector2(4674, 1219.0001)
+position = Vector2(2312.0002, 1408.0001)
 
 [node name="Electric_Box_0" parent="Prefabs Showcase" instance=ExtResource("117_ica3b")]
-position = Vector2(453.99994, 1416)
+position = Vector2(517.99994, 1493)
 
 [node name="Birds_Nest_Empty_0" parent="Prefabs Showcase" instance=ExtResource("69_esleu")]
-position = Vector2(455.99994, 1448)
+position = Vector2(519.99994, 1525)
 
 [node name="Birds_Nest_Full_0" parent="Prefabs Showcase" instance=ExtResource("118_egcb7")]
-position = Vector2(455.99994, 1482)
+position = Vector2(519.99994, 1559)
 
 [node name="Bird_1_0" parent="Prefabs Showcase" instance=ExtResource("119_rfexx")]
-position = Vector2(494.99994, 1412)
+position = Vector2(558.99994, 1489)
 
 [node name="Bird_2_0" parent="Prefabs Showcase" instance=ExtResource("120_2gbtp")]
-position = Vector2(494.99994, 1447)
+position = Vector2(558.99994, 1524)
 
 [node name="Bird_3_0" parent="Prefabs Showcase" instance=ExtResource("121_p6iva")]
-position = Vector2(495.99994, 1480)
+position = Vector2(559.99994, 1557)
 
 [node name="Vent_0" parent="Prefabs Showcase" instance=ExtResource("122_bengk")]
-position = Vector2(-534.9999, 1508)
+position = Vector2(-470.99988, 1585)
 
 [node name="Sandbags" parent="Prefabs Showcase" instance=ExtResource("123_kbl27")]
-position = Vector2(462.00018, 1528)
+position = Vector2(526.0002, 1605)
 
 [node name="Trash 1" parent="Prefabs Showcase" instance=ExtResource("124_hc8d4")]
-position = Vector2(416.00018, 1512)
+position = Vector2(480.00018, 1589)
 
 [node name="Trash 2" parent="Prefabs Showcase" instance=ExtResource("125_vhwvb")]
-position = Vector2(364.99994, 1538)
+position = Vector2(428.99994, 1615)
 
 [node name="Tall_Building_0" parent="Prefabs Showcase" instance=ExtResource("16_iw5hc")]
-position = Vector2(779, 1126.0001)
-
-[node name="Tall_Building_1" parent="Prefabs Showcase" instance=ExtResource("17_vqj0q")]
-position = Vector2(341, 1127)
+position = Vector2(1195, 1126.0001)
 
 [node name="Tall_Building_Cornice_1" parent="Prefabs Showcase" instance=ExtResource("35_fknxu")]
-position = Vector2(562, 927.00006)
+position = Vector2(978, 927.00006)
 
 [node name="Tall_Building_Window_1" parent="Prefabs Showcase" instance=ExtResource("20_uybqv")]
-position = Vector2(505, 1030)
+position = Vector2(511, 1030)
 
 [node name="Tall_Building_Window_2" parent="Prefabs Showcase" instance=ExtResource("23_n04tk")]
-position = Vector2(590, 1030)
+position = Vector2(596, 1030)
 
 [node name="Tall_Building_Window_Thin_1" parent="Prefabs Showcase" instance=ExtResource("126_k66q0")]
-position = Vector2(504.00003, 1158)
+position = Vector2(510, 1158)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_2" parent="Prefabs Showcase" instance=ExtResource("21_ytc1r")]
-position = Vector2(591, 1158)
+position = Vector2(597, 1158)
 rotation = 3.1415925
 
 [node name="Tall_Building_Door_1" parent="Prefabs Showcase" instance=ExtResource("127_0yqpa")]
-position = Vector2(505.00003, 1285)
+position = Vector2(913.00006, 1285.0001)
 
 [node name="Tall_Building_Window_Side_0" parent="Prefabs Showcase" instance=ExtResource("25_eahgy")]
-position = Vector2(546, 1157)
+position = Vector2(552, 1157)
 
 [node name="Tall_Building_Window_Side_1" parent="Prefabs Showcase" instance=ExtResource("128_iyyjn")]
 position = Vector2(105.00001, 1158)
@@ -5723,19 +5732,19 @@ position = Vector2(212.00002, 967)
 position = Vector2(212.00002, 1311)
 
 [node name="Tall_Building_Door_Blocked_1" parent="Prefabs Showcase" instance=ExtResource("37_72vky")]
-position = Vector2(591, 1285.0001)
+position = Vector2(995.00006, 1285.0001)
 
 [node name="Tall_Building_Pillar_Short_1" parent="Prefabs Showcase" instance=ExtResource("28_sckhg")]
-position = Vector2(654, 1050)
+position = Vector2(1070, 1050)
 
 [node name="Tall_Building_Pillar_Long_1" parent="Prefabs Showcase" instance=ExtResource("29_dwj0v")]
-position = Vector2(654, 1206.0001)
+position = Vector2(1070, 1206.0001)
 
 [node name="Tall_Building_Pillar_End_Bottom_1" parent="Prefabs Showcase" instance=ExtResource("32_i2soc")]
-position = Vector2(654, 1311)
+position = Vector2(1070, 1311)
 
 [node name="Tall_Building_Pillar_End_Top_1" parent="Prefabs Showcase" instance=ExtResource("33_7tngc")]
-position = Vector2(654, 967.00006)
+position = Vector2(1070, 967.00006)
 
 [node name="Lamp_0" parent="Prefabs Showcase" instance=ExtResource("71_oiisd")]
 visible = false
@@ -5754,16 +5763,16 @@ position = Vector2(-476.99982, 1019.0002)
 position = Vector2(-476, 1226.0001)
 
 [node name="tiled_purple_0" parent="Prefabs Showcase" instance=ExtResource("135_prksl")]
-position = Vector2(1922, 1131)
+position = Vector2(2047, 1478)
 
 [node name="tiled_beige_0" parent="Prefabs Showcase" instance=ExtResource("136_h60cb")]
-position = Vector2(1348.0001, 1132)
+position = Vector2(2054.0002, 1106)
 
 [node name="hot_dog_stand_0" parent="Prefabs Showcase" instance=ExtResource("137_h60cb")]
-position = Vector2(4262, 1206.0001)
+position = Vector2(1088.0001, 1537)
 
 [node name="ticketbooth_0" parent="Prefabs Showcase" instance=ExtResource("138_d1f1k")]
-position = Vector2(4414.0005, 1219)
+position = Vector2(1240.0006, 1549.9999)
 
 [node name="Building_Detailed_Sides_0" parent="Prefabs Showcase" instance=ExtResource("139_6xp25")]
 position = Vector2(-638.00006, 1017)
@@ -5775,73 +5784,97 @@ position = Vector2(-669.00006, 1013.00006)
 position = Vector2(-672.00006, 1106)
 
 [node name="water_tower_0" parent="Prefabs Showcase" instance=ExtResource("139_xw6jh")]
-position = Vector2(4567.0005, 1176.0001)
-
-[node name="buildings_balcony_0" parent="Prefabs Showcase" instance=ExtResource("140_7g7yg")]
-position = Vector2(2164.0002, 1027.0001)
+position = Vector2(1393.0006, 1507)
 
 [node name="balcony_ladders_0" parent="Prefabs Showcase" instance=ExtResource("141_t4m6r")]
-position = Vector2(2318.0002, 994)
+position = Vector2(1567, 991)
 
 [node name="balcony_ladders_angle_0" parent="Prefabs Showcase" instance=ExtResource("142_wskma")]
-position = Vector2(2256, 996)
+position = Vector2(1505, 993)
 
 [node name="Zipline_start" parent="Prefabs Showcase" instance=ExtResource("60_ahvck")]
-position = Vector2(4754.0005, 1218)
+position = Vector2(2392, 1407)
 
 [node name="surfboard_v1_0" parent="Prefabs Showcase" instance=ExtResource("143_iw5hc")]
-position = Vector2(597.00006, 1417.0001)
+position = Vector2(661.00006, 1494.0001)
 
 [node name="surfboard_v2_0" parent="Prefabs Showcase" instance=ExtResource("144_vqj0q")]
-position = Vector2(667.00006, 1416.0001)
+position = Vector2(731.00006, 1493.0001)
 
 [node name="vine_lights_0" parent="Prefabs Showcase" instance=ExtResource("148_b11gm")]
-position = Vector2(-22.999985, 1404)
+position = Vector2(41.000008, 1481)
 
 [node name="pipe_top_tube_0" parent="Prefabs Showcase" instance=ExtResource("148_ytc1r")]
 position = Vector2(-669.00006, 927.00006)
 
 [node name="wooden_cross_0" parent="Prefabs Showcase" instance=ExtResource("150_n04tk")]
-position = Vector2(907, 1512.0001)
+position = Vector2(971, 1589.0001)
 
 [node name="small_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("151_8yqyp")]
-position = Vector2(783, 1501)
+position = Vector2(847, 1578)
 
 [node name="medium_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("152_eahgy")]
-position = Vector2(795.0001, 1522)
+position = Vector2(859.0001, 1599)
 
 [node name="large_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("153_omqis")]
-position = Vector2(805.0001, 1545)
+position = Vector2(869.0001, 1622)
 
 [node name="covered_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("154_pm01k")]
-position = Vector2(859, 1511)
+position = Vector2(923, 1588)
 
 [node name="brick_decals_v1_0" parent="Prefabs Showcase" instance=ExtResource("155_i2soc")]
-position = Vector2(815, 1392)
+position = Vector2(879, 1469)
 
 [node name="brick_decals_v2_0" parent="Prefabs Showcase" instance=ExtResource("156_7tngc")]
-position = Vector2(850, 1439.0001)
+position = Vector2(914, 1516.0001)
 
 [node name="brick_decals_v3_0" parent="Prefabs Showcase" instance=ExtResource("157_fgmr8")]
-position = Vector2(794, 1459)
+position = Vector2(858, 1536)
 
 [node name="brick_decals_v4_0" parent="Prefabs Showcase" instance=ExtResource("158_fknxu")]
-position = Vector2(902.0001, 1459.0001)
+position = Vector2(966.0001, 1536.0001)
 
 [node name="brick_decals_v5_0" parent="Prefabs Showcase" instance=ExtResource("159_vlhij")]
-position = Vector2(888, 1389)
+position = Vector2(952, 1466)
 
 [node name="satellite_dish_0" parent="Prefabs Showcase" instance=ExtResource("160_7tngc")]
-position = Vector2(92.000015, 1413)
+position = Vector2(156, 1490)
 
 [node name="splash_signs_0" parent="Prefabs Showcase" instance=ExtResource("161_vlhij")]
-position = Vector2(629, 1522)
+position = Vector2(693, 1599)
+
+[node name="Small_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("162_wqpdw")]
+position = Vector2(2363, 1232.0001)
+
+[node name="Small_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("163_503b0")]
+position = Vector2(2363.9998, 1147)
+
+[node name="Small_Building_Door_Blocked_V2_0" parent="Prefabs Showcase" instance=ExtResource("164_rgkkn")]
+position = Vector2(592.00006, 1286)
 
 [node name="antenna_0" parent="." instance=ExtResource("161_fgmr8")]
-position = Vector2(154.00002, 1407.0001)
+position = Vector2(218, 1484.0001)
 
 [node name="building_vent_0" parent="." instance=ExtResource("162_fknxu")]
-position = Vector2(248.99995, 1410)
+position = Vector2(312.99994, 1487)
 
 [node name="Node2D" parent="." instance=ExtResource("164_72vky")]
-position = Vector2(415, 1378)
+position = Vector2(479, 1455)
+
+[node name="Tall_Building_Base_V2_0" parent="." instance=ExtResource("165_ertjo")]
+position = Vector2(756.00006, 1128)
+
+[node name="buildings_balcony_platform_0" parent="." instance=ExtResource("140_7g7yg")]
+position = Vector2(1403, 1004.00006)
+
+[node name="Small_Building_Top_Sign_V2_0" parent="." instance=ExtResource("168_i2tgb")]
+position = Vector2(2364, 1112)
+
+[node name="Small_Building_Door_V2_0" parent="." instance=ExtResource("169_7s8qi")]
+position = Vector2(515.0001, 1286)
+
+[node name="Small_Building_Door_V3_0" parent="." instance=ExtResource("170_3ed3m")]
+position = Vector2(913, 1180.9999)
+
+[node name="Small_Building_Door_V4_0" parent="." instance=ExtResource("171_22gk8")]
+position = Vector2(996, 1180)

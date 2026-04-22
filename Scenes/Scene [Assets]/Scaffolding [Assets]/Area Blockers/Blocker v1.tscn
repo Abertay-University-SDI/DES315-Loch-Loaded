@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://6ovdql3xmk0u"]
 
-[ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scaffolding/Scaffolding Metal X 2.tscn" id="1_cwu6c"]
-[ext_resource type="PackedScene" uid="uid://d2oavyo4e0tva" path="res://Scenes/Scaffolding/Scaffolding Metal Pole 3.tscn" id="2_ds6tg"]
-[ext_resource type="PackedScene" uid="uid://cdpjth3144usn" path="res://Scenes/Scaffolding/Scaffolding Metal Pole 1.tscn" id="3_1rl6f"]
+[ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 2.tscn" id="1_cwu6c"]
+[ext_resource type="PackedScene" uid="uid://d2oavyo4e0tva" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 3.tscn" id="2_ds6tg"]
+[ext_resource type="PackedScene" uid="uid://cdpjth3144usn" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 1.tscn" id="3_1rl6f"]
+
 
 [node name="Blocker_V1_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)

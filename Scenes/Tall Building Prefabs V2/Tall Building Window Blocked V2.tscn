@@ -18,7 +18,7 @@ region = Rect2(1747, 589, 242, 276)
 [node name="Tall_Building_Window_Blocked_0" type="Node2D"]
 
 [node name="Glass" type="Sprite2D" parent="."]
-modulate = Color(0.19976571, 0.19976571, 0.19976571, 1)
+modulate = Color(0.37791896, 0.37791884, 0.37791884, 1)
 position = Vector2(9.052657e-08, -0.19906056)
 rotation = -1.5707963
 scale = Vector2(0.19206406, 0.194)

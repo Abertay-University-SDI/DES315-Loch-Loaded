@@ -6,7 +6,7 @@
 atlas = ExtResource("1_4vl48")
 region = Rect2(66, 65, 878, 1919)
 
-[node name="Tall_Building_0" type="Node2D"]
+[node name="Tall_Building_Base_V3_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
