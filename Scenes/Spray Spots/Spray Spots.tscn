@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1cteboldo51h"]
+[gd_scene load_steps=9 format=3 uid="uid://c1cteboldo51h"]
 
 [ext_resource type="Script" uid="uid://ck678mustwn72" path="res://Code/interactables/spray_spot.gd" id="1_rvb18"]
 [ext_resource type="FontFile" uid="uid://lx81kwofmroo" path="res://Fonts/Minecraft.ttf" id="2_mkaox"]
 [ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="3_umyj0"]
 [ext_resource type="Texture2D" uid="uid://ds1bcdey0tmv1" path="res://Textures/Logos/INFERNO_BILLBOARD.png" id="4_bvqrg"]
+[ext_resource type="AudioStream" uid="uid://c4u2hsr5c1r0o" path="res://Sounds/PaintSpray.wav" id="5_yxt55"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_poiec"]
 radius = 94.00532
@@ -15,10 +16,11 @@ size = Vector2(1944.3041, 40.573303)
 atlas = ExtResource("3_umyj0")
 region = Rect2(109, 1432, 546, 538)
 
-[node name="Spray Spot" type="Node2D" node_paths=PackedStringArray("zone", "label")]
+[node name="Spray Spot" type="Node2D" node_paths=PackedStringArray("zone", "label", "spraySound")]
 script = ExtResource("1_rvb18")
 zone = NodePath("Area2D")
 label = NodePath("Label")
+spraySound = NodePath("AudioStreamPlayer2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -70,6 +72,9 @@ texture = SubResource("AtlasTexture_bvqrg")
 position = Vector2(1.1444092e-05, -32.869225)
 scale = Vector2(0.2671468, 0.3185473)
 texture = ExtResource("4_bvqrg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_yxt55")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_zone_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_zone_body_exited"]

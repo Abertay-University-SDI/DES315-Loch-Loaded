@@ -3,6 +3,8 @@ extends Node
 @export var node: Node2D
 @export var area: Area2D
 
+@export var pickUpSound: AudioStreamPlayer2D
+
 var _player: Player = null
 var startPos
 var targetPos
@@ -27,6 +29,7 @@ func _process(delta: float) -> void:
 func pickUp(body:Node2D) -> void:
 	if (body.is_in_group("player") and node.visible):
 		_player._addSpray()
+		pickUpSound.play()
 		node.visible = false
 	return
 
