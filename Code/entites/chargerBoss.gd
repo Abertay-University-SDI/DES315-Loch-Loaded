@@ -23,7 +23,7 @@ var _hit_cooldown:  float = 0.0
 
 
 func _on_ready() -> void:
-	max_health = 140
+	max_health = 200
 	_health = max_health
 	_score_reward = 500
 	_direction = -1
