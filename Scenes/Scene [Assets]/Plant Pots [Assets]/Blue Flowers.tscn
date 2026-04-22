@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvk3g3wfrpef5"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_3q3tk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpp3h"]
+atlas = ExtResource("1_3q3tk")
+region = Rect2(1947, 519, 182, 106)
+
+[node name="blue_flowers_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_qpp3h")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://bjm403u0ioh2n"]
+[gd_scene load_steps=194 format=3 uid="uid://bjm403u0ioh2n"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_vhcrl"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_pdr46"]
@@ -125,8 +125,8 @@
 [ext_resource type="PackedScene" uid="uid://dexoratjuv12a" path="res://Scenes/Scene [Assets]/Bird 3.tscn" id="121_p6iva"]
 [ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/Scene [Assets]/Ground Vent.tscn" id="122_bengk"]
 [ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/Scene [Assets]/Sandbags.tscn" id="123_kbl27"]
-[ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/Scene [Assets]/Trash 1.tscn" id="124_hc8d4"]
-[ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/Scene [Assets]/Trash 2.tscn" id="125_vhwvb"]
+[ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/Scene [Assets]/Trash [Assets]/Trash 1.tscn" id="124_hc8d4"]
+[ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/Scene [Assets]/Trash [Assets]/Trash 2.tscn" id="125_vhwvb"]
 [ext_resource type="PackedScene" uid="uid://sjwy30s52jrq" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin V2.tscn" id="126_k66q0"]
 [ext_resource type="PackedScene" uid="uid://qyb4pnrt8tux" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door.tscn" id="127_0yqpa"]
 [ext_resource type="PackedScene" uid="uid://dhwqqm34s7408" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Side V1.tscn" id="128_iyyjn"]
@@ -172,6 +172,13 @@
 [ext_resource type="PackedScene" uid="uid://bnbel277tojy0" path="res://Scenes/Small Building Prefabs/Small Building V2/Small Building Door V2.tscn" id="169_7s8qi"]
 [ext_resource type="PackedScene" uid="uid://5fycv8j2scet" path="res://Scenes/Small Building Prefabs/Small Building V3/Small Building Door V3.tscn" id="170_3ed3m"]
 [ext_resource type="PackedScene" uid="uid://fpmwrv5bygov" path="res://Scenes/Small Building Prefabs/Small Building V4/Small Building Door V4.tscn" id="171_22gk8"]
+[ext_resource type="PackedScene" uid="uid://74qlk65eao3s" path="res://Scenes/Scene [Assets]/Trash [Assets]/Trash Can Bottom.tscn" id="173_odlkj"]
+[ext_resource type="PackedScene" uid="uid://dus44r1ppx5ay" path="res://Scenes/Scene [Assets]/Trash [Assets]/Trash Can Top.tscn" id="174_nb077"]
+[ext_resource type="PackedScene" uid="uid://41v4jb24hdu3" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Plant Pot.tscn" id="175_jshup"]
+[ext_resource type="PackedScene" uid="uid://cvk3g3wfrpef5" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Blue Flowers.tscn" id="176_axbwd"]
+[ext_resource type="PackedScene" uid="uid://n7lbfaml7rh8" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Green Bush.tscn" id="177_uky0i"]
+[ext_resource type="PackedScene" uid="uid://divk4lmp1np8n" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/White Flowers.tscn" id="178_krmhy"]
+[ext_resource type="PackedScene" uid="uid://l7olfms0crm" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Blue Pink Flowers.tscn" id="179_nxwpr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_33uny")
@@ -5855,29 +5862,50 @@ position = Vector2(2363.9998, 1147)
 [node name="Small_Building_Door_Blocked_V2_0" parent="Prefabs Showcase" instance=ExtResource("164_rgkkn")]
 position = Vector2(592.00006, 1286)
 
-[node name="antenna_0" parent="." instance=ExtResource("161_fgmr8")]
+[node name="antenna_0" parent="Prefabs Showcase" instance=ExtResource("161_fgmr8")]
 position = Vector2(218, 1484.0001)
 
-[node name="building_vent_0" parent="." instance=ExtResource("162_fknxu")]
+[node name="building_vent_0" parent="Prefabs Showcase" instance=ExtResource("162_fknxu")]
 position = Vector2(312.99994, 1487)
 
-[node name="Node2D" parent="." instance=ExtResource("164_72vky")]
+[node name="Node2D" parent="Prefabs Showcase" instance=ExtResource("164_72vky")]
 position = Vector2(479, 1455)
 
-[node name="Tall_Building_Base_V2_0" parent="." instance=ExtResource("165_ertjo")]
+[node name="Tall_Building_Base_V2_0" parent="Prefabs Showcase" instance=ExtResource("165_ertjo")]
 position = Vector2(756.00006, 1128)
 
-[node name="buildings_balcony_platform_0" parent="." instance=ExtResource("140_7g7yg")]
+[node name="buildings_balcony_platform_0" parent="Prefabs Showcase" instance=ExtResource("140_7g7yg")]
 position = Vector2(1403, 1004.00006)
 
-[node name="Small_Building_Top_Sign_V2_0" parent="." instance=ExtResource("168_i2tgb")]
+[node name="Small_Building_Top_Sign_V2_0" parent="Prefabs Showcase" instance=ExtResource("168_i2tgb")]
 position = Vector2(2364, 1112)
 
-[node name="Small_Building_Door_V2_0" parent="." instance=ExtResource("169_7s8qi")]
+[node name="Small_Building_Door_V2_0" parent="Prefabs Showcase" instance=ExtResource("169_7s8qi")]
 position = Vector2(515.0001, 1286)
 
-[node name="Small_Building_Door_V3_0" parent="." instance=ExtResource("170_3ed3m")]
+[node name="Small_Building_Door_V3_0" parent="Prefabs Showcase" instance=ExtResource("170_3ed3m")]
 position = Vector2(913, 1180.9999)
 
-[node name="Small_Building_Door_V4_0" parent="." instance=ExtResource("171_22gk8")]
+[node name="Small_Building_Door_V4_0" parent="Prefabs Showcase" instance=ExtResource("171_22gk8")]
 position = Vector2(996, 1180)
+
+[node name="trash_can_top_0" parent="Prefabs Showcase" instance=ExtResource("174_nb077")]
+position = Vector2(-191.99988, 1662)
+
+[node name="trash_can_bottom" parent="Prefabs Showcase" instance=ExtResource("173_odlkj")]
+position = Vector2(-192, 1692)
+
+[node name="plant_pot_0" parent="." instance=ExtResource("175_jshup")]
+position = Vector2(-133, 1699)
+
+[node name="blue_flowers_0" parent="." instance=ExtResource("176_axbwd")]
+position = Vector2(-131.99998, 1665.0001)
+
+[node name="Green_bush_0" parent="." instance=ExtResource("177_uky0i")]
+position = Vector2(-75.99997, 1702)
+
+[node name="white_flowers_0" parent="." instance=ExtResource("178_krmhy")]
+position = Vector2(-76, 1651)
+
+[node name="blue_pink_flowers_0" parent="." instance=ExtResource("179_nxwpr")]
+position = Vector2(-74.99997, 1675.0001)
