@@ -28,6 +28,8 @@ var _is_dead: bool = false
 var stun_timer :float= 0.0
 var despawnTimer: float = 0.0
 
+var knockback_timer = 0.0
+
 
 # ─── Lifecycle ────────────────────────────────────────────────────────────────
 
@@ -104,6 +106,9 @@ func take_hit(hit_dir: Vector2, hit_duration: float, force: float, damage: int) 
 		return
 
 	immunity = hit_duration if hit_duration >= 0.0 else 1.0
+	
+	knockback_timer = 0.3
+	
 	_health -= damage
 	_alive.velocity = hit_dir * force
 	_animation_player.play("take_hit")

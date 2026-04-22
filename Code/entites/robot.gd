@@ -120,6 +120,12 @@ func _on_process(delta: float) -> void:
 
 
 func _on_physics_process(delta: float) -> void:
+	
+	if knockback_timer > 0.0:
+		knockback_timer -= delta
+		_alive.move_and_slide()
+		return
+	
 	if not _alive.is_on_floor():
 		_alive.velocity += Vector2.DOWN * 1200.0 * delta
 
