@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8iq7grgsb10m"]
 
-[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_jsjf3"]
+[ext_resource type="Texture2D" uid="uid://csqm475dcphcj" path="res://Textures/Wide_building_kit_C.png" id="1_nkewl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjeh1"]
-atlas = ExtResource("1_jsjf3")
+atlas = ExtResource("1_nkewl")
 region = Rect2(118, 177, 1425, 586)
 
 [node name="Shopping_Building_V1_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.8784314, 1, 1)
 texture = SubResource("AtlasTexture_tjeh1")

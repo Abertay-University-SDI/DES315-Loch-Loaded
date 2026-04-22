@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpgiq83pu65gy"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_oxofu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neyg2"]
+atlas = ExtResource("1_oxofu")
+region = Rect2(2692, 117, 1281, 910)
+
+[node name="Pharmacy_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_neyg2")

@@ -9,5 +9,6 @@ region = Rect2(302, 571, 737, 1429)
 [node name="Tall_Building_0" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.28, 0.28)
+position = Vector2(-1.0900011, 2.9700098)
+scale = Vector2(0.26890096, 0.28415677)
 texture = SubResource("AtlasTexture_0cv3j")

@@ -1,15 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://caoy4ajy6epuf"]
+[gd_scene load_steps=5 format=3 uid="uid://caoy4ajy6epuf"]
 
-[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_eqykh"]
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_u1vpi"]
+[ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_1qb18"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rixnq"]
-atlas = ExtResource("1_eqykh")
-region = Rect2(1595, 577, 404, 276)
+atlas = ExtResource("1_1qb18")
+region = Rect2(1296, 150, 133, 196)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqykh"]
-atlas = ExtResource("1_u1vpi")
-region = Rect2(1831, 226, 184, 258)
+atlas = ExtResource("1_1qb18")
+region = Rect2(1269, 410, 191, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqykh"]
 size = Vector2(34.5, 6)
@@ -18,12 +17,14 @@ size = Vector2(34.5, 6)
 rotation = -3.1415927
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-0.2953325, 1.9592743)
-rotation = 1.5707964
-scale = Vector2(0.120246895, 0.1181362)
+modulate = Color(0.6666667, 1, 1, 1)
+position = Vector2(-0.29533243, 2.9592762)
+rotation = 3.1415927
+scale = Vector2(0.25, 0.246)
 texture = SubResource("AtlasTexture_rixnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.1415927
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_eqykh")
 

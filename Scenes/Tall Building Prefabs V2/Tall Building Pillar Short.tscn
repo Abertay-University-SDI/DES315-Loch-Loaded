@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcxqi0rgt8m2c"]
 
-[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="1_i5sws"]
+[ext_resource type="Texture2D" uid="uid://cqn2baucrwulg" path="res://Textures/Tall_building_kit_C.png" id="1_i5sws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41g4f"]
 atlas = ExtResource("1_i5sws")
-region = Rect2(1219, 377, 70, 521)
+region = Rect2(1219, 483, 70, 521)
 
 [node name="Tall_Building_Pillar_Short_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)

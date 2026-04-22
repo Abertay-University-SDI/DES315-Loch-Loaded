@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://288gk86idviu"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_btran"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btran"]
+atlas = ExtResource("1_btran")
+region = Rect2(620, 3887, 233, 184)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_btran")

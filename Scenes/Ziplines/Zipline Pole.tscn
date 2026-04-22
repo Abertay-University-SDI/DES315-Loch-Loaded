@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://llg6gh2dpi02"]
 
-[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_wqsww"]
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_wqsww"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1rt1"]
 atlas = ExtResource("1_wqsww")
-region = Rect2(1147, 828, 80, 651)
+region = Rect2(1982.1786, 3152.237, 82.522095, 651.7942)
 
 [node name="Zipline_Pole_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)

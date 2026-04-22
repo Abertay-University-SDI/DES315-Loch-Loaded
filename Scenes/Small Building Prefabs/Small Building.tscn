@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://4v74661t43qi"]
 
-[ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="1_f1gfc"]
+[ext_resource type="Texture2D" uid="uid://cqn2baucrwulg" path="res://Textures/Tall_building_kit_C.png" id="1_et1s0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ein8s"]
-atlas = ExtResource("1_f1gfc")
+atlas = ExtResource("1_et1s0")
 region = Rect2(1087, 1536, 905, 458)
 
 [node name="Small_Building_0" type="Node2D"]

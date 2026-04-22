@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c36yui16q7hm8"]
+[gd_scene load_steps=6 format=3 uid="uid://c36yui16q7hm8"]
 
 [ext_resource type="Script" uid="uid://b0t7brcwgpyls" path="res://Code/interactables/zipline.gd" id="1_b5ro4"]
-[ext_resource type="Texture2D" uid="uid://djcy74yyj8nsn" path="res://Textures/Foreground/zipline.png" id="2_nx0lh"]
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="2_sjg2l"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn3rl"]
+atlas = ExtResource("2_sjg2l")
+region = Rect2(2081.477, 3167.8186, 560.52295, 650.8252)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qjyrw"]
 friction = 0.0
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_b5ro4"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ix715"]
 a = Vector2(4354, 347)
 b = Vector2(4884, 524)
 
@@ -18,10 +21,12 @@ script = ExtResource("1_b5ro4")
 z_index = 1
 z_as_relative = false
 texture_filter = 1
-texture = ExtResource("2_nx0lh")
+scale = Vector2(0.21, 0.21)
+texture = SubResource("AtlasTexture_rn3rl")
 
 [node name="Line2D" type="Line2D" parent="Zipline_0"]
 position = Vector2(0, -20)
+scale = Vector2(5, 5)
 points = PackedVector2Array(0, 0, 100, 0)
 width = 3.0
 joint_mode = 2
@@ -38,4 +43,4 @@ collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_qjyrw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zipline_0/StaticBody2D"]
-shape = SubResource("SegmentShape2D_b5ro4")
+shape = SubResource("SegmentShape2D_ix715")

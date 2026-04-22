@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ahgognu3fir"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_mpcmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1wxx"]
+atlas = ExtResource("1_mpcmu")
+region = Rect2(986.0726, 2439.4548, 279.6823, 203.14087)
+
+[node name="brick_decals_v5_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_o1wxx")

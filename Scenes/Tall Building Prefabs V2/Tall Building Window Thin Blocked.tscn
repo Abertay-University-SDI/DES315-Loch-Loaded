@@ -1,33 +1,37 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgj01q3t0hje2"]
 
-[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_ofxt4"]
+[ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_ofxt4"]
 [ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="2_3bsi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ieyw"]
 atlas = ExtResource("1_ofxt4")
-region = Rect2(1595, 577, 404, 276)
+region = Rect2(1486, 150, 133, 196)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8agfp"]
-atlas = ExtResource("2_3bsi1")
-region = Rect2(1831, 226, 184, 258)
+atlas = ExtResource("1_ofxt4")
+region = Rect2(1269, 410, 191, 300)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ofxt4"]
 atlas = ExtResource("2_3bsi1")
 region = Rect2(1585, 259, 152, 219)
 
 [node name="Tall_Building_Window_Thin_0" type="Node2D"]
+modulate = Color(0.5449743, 0.54497427, 0.54497427, 1)
 rotation = -3.1415927
 scale = Vector2(0.21, 0.21)
 
 [node name="Glass" type="Sprite2D" parent="."]
 position = Vector2(-1.7726746, 13.730985)
-rotation = -1.5707963
-scale = Vector2(0.5721591, 0.5641817)
+rotation = -3.1415927
+scale = Vector2(1.077, 1.062)
 texture = SubResource("AtlasTexture_2ieyw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.325969e-07, 9.523811)
+rotation = -3.1415927
 texture = SubResource("AtlasTexture_8agfp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-1.2488968e-06, 14.285713)
+position = Vector2(-1.9073486e-06, 19.794867)
+scale = Vector2(1, 0.9628078)
 texture = SubResource("AtlasTexture_ofxt4")
