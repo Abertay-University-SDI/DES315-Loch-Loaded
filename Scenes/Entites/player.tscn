@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
-[ext_resource type="Texture2D" uid="uid://fy418a4pr6ur" path="res://Textures/characters/tiff_spritesheet.png" id="3_4m0w1"]
 [ext_resource type="Texture2D" uid="uid://fy418a4pr6ur" path="res://Textures/characters/tiff_spritesheet.png" id="3_jgvob"]
 [ext_resource type="AudioStream" uid="uid://by6sutamhkqxe" path="res://Sounds/footstepsV3.wav" id="5_4m0w1"]
 [ext_resource type="AudioStream" uid="uid://ff5ycqdy7t3v" path="res://Sounds/dash.wav" id="5_82p5m"]
@@ -18,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://bglckwf6huoj0" path="res://Sounds/JumpV2.wav" id="13_4m0w1"]
 [ext_resource type="AudioStream" uid="uid://d0adt7j721bgb" path="res://Sounds/ground slam.wav" id="14_jgvob"]
 [ext_resource type="Texture2D" uid="uid://cdlr4yt5k7hlw" path="res://Textures/effects/ring.png" id="15_jgvob"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -1078,6 +1076,8 @@ bus = &"SFX"
 [node name="punch" type="AudioStreamPlayer2D" parent="sound"]
 scale = Vector2(0.99999994, 0.99999994)
 stream = ExtResource("6_kov73")
+volume_db = -6.058
+pitch_scale = 0.57
 bus = &"SFX"
 
 [node name="YoYo" type="AudioStreamPlayer2D" parent="sound"]
