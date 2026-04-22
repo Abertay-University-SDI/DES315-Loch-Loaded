@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbw2scq626wau"]
+[gd_scene load_steps=22 format=3 uid="uid://bbw2scq626wau"]
 
 [ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/scene_managers/title_screen.gd" id="1_824g0"]
 [ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_tjte5"]
@@ -53,7 +53,16 @@ shader_parameter/line_scale = 3.8590001833025
 shader_parameter/alpha = 1.0
 shader_parameter/noise = SubResource("NoiseTexture2D_3txao")
 
-[node name="title_screen" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv4ns"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd20k"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3txao"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="title_screen" type="Control" node_paths=PackedStringArray("GMButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +70,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_824g0")
+GMButton = NodePath("title_screen_ui/mode_button")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -173,8 +183,21 @@ texture = ExtResource("10_uv4ns")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="mode_button" type="Button" parent="title_screen_ui"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 263.0
+offset_right = 516.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_uv4ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nd20k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3txao")
+text = "EASY MODE"
+
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/spray_editor_button" to="." method="_on_spray_editor_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/mode_button" to="." method="_on_mode_button_pressed"]

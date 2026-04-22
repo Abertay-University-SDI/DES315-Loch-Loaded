@@ -4979,18 +4979,23 @@ position = Vector2(10673, 328)
 
 [node name="Charger" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(3712, 513)
+max_health = null
 
 [node name="Charger2" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(2652, 123)
+max_health = null
 
 [node name="Charger3" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(5971, 675)
+max_health = null
 
 [node name="Charger4" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(7036, 667)
+max_health = null
 
 [node name="Charger5" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(4494, 674)
+max_health = null
 
 [node name="No Access Zones" type="Node2D" parent="."]
 
@@ -5675,6 +5680,7 @@ position = Vector2(-79, 1056)
 
 [node name="Charger2" parent="Prefabs Showcase" instance=ExtResource("32_6pscn")]
 position = Vector2(-76, 957)
+max_health = null
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("31_17b5f")]
 position = Vector2(64, 1027)

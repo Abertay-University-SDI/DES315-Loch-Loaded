@@ -32,6 +32,9 @@ func getSprayValue() -> float:
 	return _target_spray
 
 func _ready() -> void:
+	if (Global.getGameModeEasy()):
+		HealthBar.max_value = 200
+		HealthBar.value = 200
 	visible = true
 	_target_health = HealthBar.value
 	_target_spray = 3
