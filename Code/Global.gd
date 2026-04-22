@@ -2,6 +2,7 @@ extends Node
 
 var colorBlindMode = 0
 var screenShake = true
+var gameModeEasy = true
 var yoyoAbilityUnlocked = false
 var upwardsDashAbilityUnlocked = false
 #var powerGlovesAbilityUnlocked = false
@@ -27,3 +28,9 @@ func getScreenShakeMode() -> bool:
 
 func setScreenShakeMode(newMode: bool) -> void:
 	screenShake = newMode
+
+func getGameModeEasy() -> bool:
+	return gameModeEasy
+
+func setGameModeEasy(newMode: bool) -> void:
+	gameModeEasy = newMode
