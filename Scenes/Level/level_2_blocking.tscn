@@ -177,9 +177,11 @@ size = Vector2(186, 731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4m6l"]
 size = Vector2(196, 492)
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("enemies", "billBoards", "endScene")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("robots", "flybots", "chargers", "billBoards", "endScene")]
 script = ExtResource("1_1x42q")
-enemies = NodePath("Enemies")
+robots = NodePath("Enemies/Robots")
+flybots = NodePath("Enemies/FlyBots")
+chargers = NodePath("Enemies/Chargers")
 billBoards = NodePath("Spray Spots")
 endScene = NodePath("CanvasLayer/LevelEndScene")
 
@@ -4575,6 +4577,7 @@ position = Vector2(6753, 233)
 position = Vector2(7846, -1059)
 
 [node name="Spray Spot7" parent="Spray Spots" instance=ExtResource("27_17b5f")]
+z_index = 90
 position = Vector2(8019, -37)
 
 [node name="Spray Spot10" parent="Spray Spots" instance=ExtResource("27_17b5f")]
@@ -4585,6 +4588,9 @@ position = Vector2(2713, 208)
 
 [node name="Spray Spot9" parent="Spray Spots" instance=ExtResource("27_17b5f")]
 position = Vector2(3709, 201)
+
+[node name="Flybot" parent="Spray Spots" instance=ExtResource("31_aloh2")]
+position = Vector2(7847, -220)
 
 [node name="Decoration" type="Node2D" parent="."]
 
@@ -4871,6 +4877,72 @@ position = Vector2(2324, -125)
 [node name="Robot12" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
 position = Vector2(1398, 686)
 
+[node name="Robot13" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(4982, 680)
+
+[node name="Robot14" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(5582, 680)
+
+[node name="Robot15" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(6153, 679)
+
+[node name="Robot16" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(7667, 54)
+
+[node name="Robot17" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(7188, 684)
+
+[node name="Robot18" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(7524, 265)
+
+[node name="Robot19" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(8061, 247)
+
+[node name="Robot20" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2691, -353)
+
+[node name="Robot21" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(2838, 470)
+
+[node name="Robot22" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(3256, 504)
+
+[node name="Robot23" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(3487, 503)
+
+[node name="Robot24" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(3891, 264)
+
+[node name="Robot25" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(4259, 261)
+
+[node name="Robot26" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(7848, -450)
+
+[node name="Robot27" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(8570, -132)
+
+[node name="Robot28" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(9281, 275)
+
+[node name="Robot29" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(9648, 263)
+
+[node name="Robot30" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(9825, -149)
+
+[node name="Robot31" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(10513, 140)
+
+[node name="Robot32" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(10710, 38)
+
+[node name="Robot33" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(10363, -125)
+
+[node name="Robot34" parent="Enemies/Robots" instance=ExtResource("30_deyre")]
+position = Vector2(10350, 270)
+
 [node name="FlyBots" type="Node2D" parent="Enemies"]
 
 [node name="Flybot" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
@@ -4884,6 +4956,24 @@ position = Vector2(1961, 71)
 
 [node name="Flybot4" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
 position = Vector2(2496, -425)
+
+[node name="Flybot5" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(5200, 152)
+
+[node name="Flybot6" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(5570, 66)
+
+[node name="Flybot7" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(6272, -59)
+
+[node name="Flybot8" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(9456, 217)
+
+[node name="Flybot9" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(10313, 104)
+
+[node name="Flybot10" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(10673, 328)
 
 [node name="Chargers" type="Node2D" parent="Enemies"]
 
