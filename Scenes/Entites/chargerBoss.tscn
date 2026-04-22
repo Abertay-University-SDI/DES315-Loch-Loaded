@@ -287,3 +287,4 @@ stream = ExtResource("8_7whsn")
 
 [node name="SprayCollectable" parent="." instance=ExtResource("9_lyahr")]
 visible = false
+scale = Vector2(0.5, 0.5)
