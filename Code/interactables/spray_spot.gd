@@ -1,6 +1,10 @@
 extends Node2D
+
 @export var zone:Area2D
 @export var label:Label
+
+@export var spraySound:AudioStreamPlayer2D
+
 var player_in_zone := false
 var spray_scene:PackedScene
 var playerBody:Player
@@ -46,6 +50,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= 4:
 		painted = true
+		spraySound.play()
 		playerBody.score+=1000
 		var spray_instance:Node2D= spray_scene.instantiate()
 		add_child(spray_instance)

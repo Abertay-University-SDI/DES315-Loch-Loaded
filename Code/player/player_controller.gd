@@ -79,7 +79,7 @@ const JUMP_VELOCITY := -400.0
 # --- Variable jump height ---
 const JUMP_CUT_MULTIPLIER := 0.4
 
-const MAX_HEALTH := 100.0
+var MAX_HEALTH := 100.0
 var health_value := MAX_HEALTH
 
 const MAX_JUMPS := 2
@@ -151,6 +151,9 @@ var is_dying :bool=false
 var shake_strength: float = 0.0
 
 func _ready() -> void:
+	if (Global.getGameModeEasy()):
+		MAX_HEALTH *= 2
+		health_value = MAX_HEALTH
 	backgroundAmb.play()
 	_camera = $Camera2D
 	_anim = $AnimatedSprite2D

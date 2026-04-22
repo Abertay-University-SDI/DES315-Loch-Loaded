@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://i7lln5j4f5j0" path="res://Code/entites/charger.gd" id="1_3ghnw"]
 [ext_resource type="Texture2D" uid="uid://djrks4pg11ij7" path="res://Textures/Enemies/wheel-enemy-spritesheet-colour.png" id="2_mmf4r"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_mmf4r"]
-[ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="4_wplub"]
+[ext_resource type="AudioStream" uid="uid://3cplmlxowlyq" path="res://Sounds/enemy_hit1.wav" id="5_kw1fw"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="5_mmf4r"]
 [ext_resource type="AudioStream" uid="uid://ctuogv0ugknij" path="res://Sounds/tire idle.wav" id="6_wplub"]
 [ext_resource type="AudioStream" uid="uid://d2itccpo82hpr" path="res://Sounds/tire bounce.wav" id="7_xn8n8"]
 [ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="8_xn8n8"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="9_kw1fw"]
-
 
 [sub_resource type="Gradient" id="Gradient_3ghnw"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -272,11 +271,13 @@ libraries = {
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="takeDamage" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("4_wplub")
+stream = ExtResource("5_kw1fw")
 
 [node name="idle" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(191, 58)
 stream = ExtResource("6_wplub")
 autoplay = true
+max_distance = 700.0
 
 [node name="bonuce" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("7_xn8n8")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://u3ems3ebvg4l"]
+
+[ext_resource type="Script" uid="uid://dc2y7fp37gvci" path="res://Code/interactables/condition_wall.gd" id="1_myww6"]
+[ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="1_nfecm"]
+[ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="2_ybglt"]
+
+[node name="ConditionWall" type="Node2D" node_paths=PackedStringArray("thisNode")]
+script = ExtResource("1_myww6")
+thisNode = NodePath(".")
+
+[node name="Beam_1_0" parent="." instance=ExtResource("1_nfecm")]
+position = Vector2(99, 0)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Beam_0" parent="." instance=ExtResource("2_ybglt")]
+position = Vector2(3, -138)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 72.0
+offset_bottom = -11.0
+text = "To continue defeat 
+the charger boss "
