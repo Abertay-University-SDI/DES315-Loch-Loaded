@@ -127,10 +127,9 @@
 [ext_resource type="PackedScene" uid="uid://v1yyd7y6ad4p" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door Blocked.tscn" id="127_jyfoe"]
 [ext_resource type="PackedScene" uid="uid://dcxqi0rgt8m2c" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar Short.tscn" id="128_rluqg"]
 [ext_resource type="PackedScene" uid="uid://vutonm5rsjse" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar Long.tscn" id="129_q8pe8"]
+[ext_resource type="PackedScene" uid="uid://cnr7an3etpis5" path="res://Scenes/Entites/chargerBoss.tscn" id="130_35i2m"]
 [ext_resource type="PackedScene" uid="uid://bsa0duqyhr1uk" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar End Bottom.tscn" id="130_xqiqi"]
 [ext_resource type="PackedScene" uid="uid://vbwy313awfue" path="res://Scenes/Tall Building Prefabs V2/Tall Building Pillar End Top.tscn" id="131_35i2m"]
-
-
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_qganl")
@@ -291,7 +290,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
-position = Vector2(5670, -880)
+position = Vector2(-1144, 542)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -4980,9 +4979,6 @@ position = Vector2(10673, 328)
 
 [node name="Chargers" type="Node2D" parent="Enemies"]
 
-[node name="ChargerBoss" parent="Enemies/Chargers" instance=ExtResource("78_q8pe8")]
-position = Vector2(5863, 678)
-
 [node name="Charger" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(3712, 513)
 
@@ -4997,6 +4993,9 @@ position = Vector2(7036, 667)
 
 [node name="Charger5" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(4494, 674)
+
+[node name="chargerBoss" parent="Enemies/Chargers" instance=ExtResource("130_35i2m")]
+position = Vector2(5795, 667)
 
 [node name="No Access Zones" type="Node2D" parent="."]
 
@@ -6008,4 +6007,4 @@ position = Vector2(958, 1060)
 
 [node name="ConditionWall" parent="." node_paths=PackedStringArray("enemyToDie") instance=ExtResource("15_xqiqi")]
 position = Vector2(7391, 136)
-enemyToDie = NodePath("../Enemies/Chargers/ChargerBoss")
+enemyToDie = NodePath("../Enemies/Chargers/chargerBoss")

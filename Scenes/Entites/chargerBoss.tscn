@@ -191,7 +191,7 @@ _data = {
 &"take_hit": SubResource("Animation_rcx67")
 }
 
-[node name="ChargerBoss" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx", "_spray_collectable") groups=["Enemy"]]
+[node name="chargerBoss" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx", "_spray_collectable") groups=["Enemy"]]
 modulate = Color(1, 0.3372549, 0, 1)
 scale = Vector2(2, 2)
 script = ExtResource("1_pokri")

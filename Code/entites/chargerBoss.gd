@@ -1,5 +1,5 @@
 extends Enemy
-class_name ChargerBoss
+class_name chargerBoss
 
 @onready var _slam_particle: GPUParticles2D = $alive_body/GPUParticles2D
 @onready var _hurt_box: Area2D              = $alive_body/Hurt_box
@@ -23,7 +23,7 @@ var _hit_cooldown:  float = 0.0
 
 
 func _on_ready() -> void:
-	max_health = 200
+	max_health = 300
 	_health = max_health
 	_score_reward = 500
 	_direction = -1
