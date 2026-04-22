@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qq1scjlthcgy"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_bv6uw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grpbx"]
+atlas = ExtResource("1_bv6uw")
+region = Rect2(1856.749, 1134.8584, 386.1858, 523.0707)
+
+[node name="balcony_ladders_angle_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_grpbx")

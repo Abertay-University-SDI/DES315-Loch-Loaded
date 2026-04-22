@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://duydkqvlq8pmr"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_l4fd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrnv0"]
+atlas = ExtResource("1_l4fd2")
+region = Rect2(1588, 1956, 706, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4fd2"]
+size = Vector2(704.762, 33.33332)
+
+[node name="buildings_balcony_platform_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_yrnv0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-1.7029897e-06, 88.09524)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_l4fd2")

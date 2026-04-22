@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://6j26bjxqtjiq"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_ge1kk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6cvb"]
+atlas = ExtResource("1_ge1kk")
+region = Rect2(2694, 3123, 1314, 869)
+
+[node name="detailed_closed_shop_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_m6cvb")

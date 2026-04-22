@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4fklrhsiwkl2"]
+
+[ext_resource type="Texture2D" uid="uid://dsfuouu37diqg" path="res://Textures/Temp/Buildings_v3.png" id="1_u7lye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcq75"]
+atlas = ExtResource("1_u7lye")
+region = Rect2(116, 2290, 1275, 1700)
+
+[node name="tiled_blue_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gcq75")

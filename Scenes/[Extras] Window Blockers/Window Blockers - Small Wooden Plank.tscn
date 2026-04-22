@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5g23nfescfot"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_gnb3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnb3q"]
+atlas = ExtResource("1_gnb3q")
+region = Rect2(1227, 217, 197, 68)
+
+[node name="small_wooden_plank_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gnb3q")

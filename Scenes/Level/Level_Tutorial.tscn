@@ -121,13 +121,14 @@
 [ext_resource type="PackedScene" uid="uid://bsdjwnqrlcx7k" path="res://Scenes/[Extras] Scene Assets/Bird 1.tscn" id="119_sg70d"]
 [ext_resource type="PackedScene" uid="uid://myrgldisyoul" path="res://Scenes/[Extras] Scene Assets/Bird 2.tscn" id="120_68ywn"]
 [ext_resource type="PackedScene" uid="uid://dexoratjuv12a" path="res://Scenes/[Extras] Scene Assets/Bird 3.tscn" id="121_anxyv"]
-[ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/[Extras] Scene Assets/Vent.tscn" id="122_8q1yb"]
+[ext_resource type="PackedScene" uid="uid://yntnb7ylgkcx" path="res://Scenes/[Extras] Scene Assets/Ground Vent.tscn" id="122_8q1yb"]
 [ext_resource type="PackedScene" uid="uid://chvaupjflwun5" path="res://Scenes/[Extras] Scene Assets/Sandbags.tscn" id="123_k5328"]
 [ext_resource type="PackedScene" uid="uid://bn618enbbgvy1" path="res://Scenes/[Extras] Scene Assets/Trash 1.tscn" id="124_rwqpo"]
 [ext_resource type="PackedScene" uid="uid://ceu6ivecpdp3m" path="res://Scenes/[Extras] Scene Assets/Trash 2.tscn" id="125_pqg8k"]
 [ext_resource type="PackedScene" uid="uid://sjwy30s52jrq" path="res://Scenes/Tall Building Prefabs V2/Tall Building Window Thin.tscn" id="126_4nhur"]
 [ext_resource type="PackedScene" uid="uid://qyb4pnrt8tux" path="res://Scenes/Tall Building Prefabs V2/Tall Building Door.tscn" id="127_csb8y"]
 [ext_resource type="PackedScene" uid="uid://dhwqqm34s7408" path="res://Scenes/Tall Building Prefabs V1/Tall Building Window Side.tscn" id="128_ygqmt"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_hrw8l")

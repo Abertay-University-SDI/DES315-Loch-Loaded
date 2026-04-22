@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://52ccp1tsl41r"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_tsy0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ylg"]
+atlas = ExtResource("1_tsy0t")
+region = Rect2(1337, 3013.4478, 570.3302, 1082.5522)
+
+[node name="water_tower_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_73ylg")

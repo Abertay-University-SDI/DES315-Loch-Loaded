@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyehxqtcrdykw"]
 
-[ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_c158l"]
+[ext_resource type="Texture2D" uid="uid://csqm475dcphcj" path="res://Textures/Wide_building_kit_C.png" id="1_wwkuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoqb3"]
-atlas = ExtResource("1_c158l")
+atlas = ExtResource("1_wwkuk")
 region = Rect2(1595, 577, 404, 276)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c158l"]
-atlas = ExtResource("1_c158l")
+atlas = ExtResource("1_wwkuk")
 region = Rect2(1554, 1079, 482, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c158l"]

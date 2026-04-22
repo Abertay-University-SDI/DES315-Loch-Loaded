@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5sdcp1qcnw6c"]
+[gd_scene load_steps=7 format=3 uid="uid://5sdcp1qcnw6c"]
 
+[ext_resource type="Texture2D" uid="uid://csqm475dcphcj" path="res://Textures/Wide_building_kit_C.png" id="1_hnr01"]
 [ext_resource type="Texture2D" uid="uid://c3865taa1jg6q" path="res://Textures/Assets/Buildings/Wide_building_kit_A.png" id="1_xajug"]
 [ext_resource type="Texture2D" uid="uid://b7ltx6miqcnvd" path="res://Textures/Assets/Buildings/Tall_building_kit_A.png" id="2_gn08c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoqb3"]
-atlas = ExtResource("1_xajug")
+atlas = ExtResource("1_hnr01")
 region = Rect2(1595, 577, 404, 276)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnr01"]
@@ -16,6 +17,7 @@ atlas = ExtResource("1_xajug")
 region = Rect2(1554, 1079, 482, 36)
 
 [node name="Small_Building_Window_Long_Blocked_0" type="Node2D"]
+modulate = Color(0.422371, 0.422371, 0.422371, 1)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

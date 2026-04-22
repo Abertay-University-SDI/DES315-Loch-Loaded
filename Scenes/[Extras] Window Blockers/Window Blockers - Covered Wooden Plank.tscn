@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ya6ehjqmos5d"]
+
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_hllev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dedqt"]
+atlas = ExtResource("1_hllev")
+region = Rect2(1641, 230, 208, 203)
+
+[node name="covered_wooden_plank_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_dedqt")

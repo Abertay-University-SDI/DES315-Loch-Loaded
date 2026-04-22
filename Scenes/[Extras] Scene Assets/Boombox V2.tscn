@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_umkjl"]
 [ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="2_d0j7o"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0j7o"]
 atlas = ExtResource("1_umkjl")
 region = Rect2(890, 1538, 210, 123)

@@ -2,7 +2,9 @@ extends Node2D
 
 @onready var pause_menu = $CanvasLayer/PauseScene
 @onready var resume_button = $CanvasLayer/PauseScene/TextureRect/Resume
-@export var enemies : Node2D
+@export var robots : Node2D
+@export var flybots : Node2D
+@export var chargers : Node2D
 @export var billBoards : Node2D
 @export var endScene : Control
 
@@ -32,9 +34,17 @@ func _process(_delta: float) -> void:
 
 func endOfLevel():
 	endTime = Time.get_ticks_msec() / 1000.0
-	for enemy in enemies.get_children():
+	for robot in robots.get_children():
 		totalEnemies += 1
-		if (enemy._get_dead()):
+		if (robot._get_dead()):
+			deadEnemies += 1
+	for flybot in flybots.get_children():
+		totalEnemies += 1
+		if (flybot._get_dead()):
+			deadEnemies += 1
+	for charger in chargers.get_children():
+		totalEnemies += 1
+		if (charger._get_dead()):
 			deadEnemies += 1
 
 	for board in billBoards.get_children():

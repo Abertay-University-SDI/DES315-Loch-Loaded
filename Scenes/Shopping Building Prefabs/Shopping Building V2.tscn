@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://j6m1r2arqx6o"]
 
-[ext_resource type="Texture2D" uid="uid://cqioj1vihsxh" path="res://Textures/Assets/Buildings/Wide_building_kit_B.png" id="1_u00b0"]
+[ext_resource type="Texture2D" uid="uid://csqm475dcphcj" path="res://Textures/Wide_building_kit_C.png" id="1_1vg20"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuoal"]
-atlas = ExtResource("1_u00b0")
+atlas = ExtResource("1_1vg20")
 region = Rect2(118, 177, 1425, 586)
 
 [node name="Shopping_Building_V2_0" type="Node2D"]
