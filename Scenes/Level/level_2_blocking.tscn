@@ -4994,6 +4994,9 @@ position = Vector2(7036, 667)
 [node name="Charger5" parent="Enemies/Chargers" instance=ExtResource("32_6pscn")]
 position = Vector2(4494, 674)
 
+[node name="chargerBoss" parent="Enemies/Chargers" instance=ExtResource("130_35i2m")]
+position = Vector2(5795, 667)
+
 [node name="No Access Zones" type="Node2D" parent="."]
 
 [node name="No Access Static" type="StaticBody2D" parent="No Access Zones"]
@@ -6002,8 +6005,6 @@ position = Vector2(654, 967.00006)
 visible = false
 position = Vector2(958, 1060)
 
-[node name="ConditionWall" parent="." instance=ExtResource("15_xqiqi")]
+[node name="ConditionWall" parent="." node_paths=PackedStringArray("enemyToDie") instance=ExtResource("15_xqiqi")]
 position = Vector2(7391, 136)
-
-[node name="chargerBoss" parent="." instance=ExtResource("130_35i2m")]
-position = Vector2(5795, 667)
+enemyToDie = NodePath("../Enemies/Chargers/chargerBoss")
