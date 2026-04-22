@@ -52,7 +52,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Sync with player score
 	if target_score < player.score:
-		add_score(player.score - target_score)
+		add_score(player.score - int(target_score))
 		target_score = player.score
 
 	# ===== MOVE ADDED SCORE =====

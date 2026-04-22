@@ -183,9 +183,9 @@ region = Rect2(1332, 2664, 666, 666)
 atlas = ExtResource("3_jgvob")
 region = Rect2(1998, 2664, 666, 666)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_38e31"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(1734, 6013, 867, 859)
+region = Rect2(0, 3330, 666, 666)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhq4x"]
 atlas = ExtResource("3_jgvob")
@@ -345,7 +345,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_38e31")
+"texture": SubResource("AtlasTexture_jgvob")
 }],
 "loop": true,
 "name": &"Wall",
@@ -1011,7 +1011,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(2.3841858e-07, -21.000002)
 scale = Vector2(0.07323495, 0.07323494)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Jump"
+animation = &"Wall"
 autoplay = "Idle"
 
 [node name="slam_area" type="Area2D" parent="."]
