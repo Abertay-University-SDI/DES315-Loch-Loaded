@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=82 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bglckwf6huoj0" path="res://Sounds/JumpV2.wav" id="13_4m0w1"]
 [ext_resource type="AudioStream" uid="uid://d0adt7j721bgb" path="res://Sounds/ground slam.wav" id="14_jgvob"]
 [ext_resource type="Texture2D" uid="uid://cdlr4yt5k7hlw" path="res://Textures/effects/ring.png" id="15_jgvob"]
+[ext_resource type="Texture2D" uid="uid://kucml8n16xlt" path="res://Textures/effects/arrowV2.png" id="18_4m0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -974,6 +975,7 @@ turbulence_initial_displacement_min = 100.0
 turbulence_initial_displacement_max = 100.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "stunAttack_sfx", "stunRecharge_sfx", "backgroundAmb", "yoyoThrow_sfx", "jump_sfx", "slam_sfx", "yoyo", "yoyo_string", "ring", "idle_collider") groups=["player"]]
+z_index = 30
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
@@ -1114,8 +1116,7 @@ scale = Vector2(0.16, 0.16)
 texture = ExtResource("7_82p5m")
 
 [node name="YoYoLine" type="Line2D" parent="YoYo"]
-top_level = true
-z_index = -45
+z_index = 1
 position = Vector2(0, -21)
 points = PackedVector2Array(0, 0, 53.02, 0)
 width = 3.0
@@ -1197,6 +1198,13 @@ process_material = SubResource("ParticleProcessMaterial_jgvob")
 [node name="Ring" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.36078432)
-position = Vector2(0, -18.9)
+texture_filter = 1
+position = Vector2(0, -10)
 scale = Vector2(2.502, 2.502)
 texture = ExtResource("15_jgvob")
+
+[node name="arrow" type="Sprite2D" parent="Ring"]
+modulate = Color(2.8215237, 2.8215237, 2.8215237, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_4m0w1")
+offset = Vector2(50, 0)

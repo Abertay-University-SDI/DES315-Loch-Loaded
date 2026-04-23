@@ -286,6 +286,8 @@ func _input(event: InputEvent) -> void:
 		_end_crouch()
 
 func _process(delta: float) -> void:
+	if (ring.visible):
+		calculate_arrow_angle()
 	shake_strength = lerp(shake_strength, 0.0, shake_decay_rate * delta)
 	_camera.offset = get_random_offset()
 	if health_value < 0:
@@ -776,3 +778,19 @@ func get_random_offset()->Vector2:
 		rand.randf_range(-shake_strength, shake_strength),
 		rand.randf_range(-shake_strength, shake_strength)
 	)
+
+func calculate_arrow_angle() -> void:
+	var aimDir: Vector2
+	var controllerName = Input.get_joy_name(0).to_lower()
+	
+	if (controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1 or 
+	controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or 
+	controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
+	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or controllerName.find("pro controller") != -1):
+		var x = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
+		var y = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+		aimDir = Vector2(x,y).normalized()
+	else:
+		aimDir = (get_global_mouse_position() - yoyo.global_position)
+	ring.rotation = aimDir.angle()
+	return
