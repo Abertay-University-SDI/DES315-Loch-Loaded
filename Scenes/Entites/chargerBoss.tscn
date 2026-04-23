@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="3_rutpe"]
 [ext_resource type="PackedScene" uid="uid://sx4sxa5pncb8" path="res://Scenes/effects/stun_effect.tscn" id="4_llr4c"]
 [ext_resource type="AudioStream" uid="uid://bkbb0y3onrj5o" path="res://Sounds/retro_punch.wav" id="5_iyiyg"]
-[ext_resource type="AudioStream" uid="uid://ctuogv0ugknij" path="res://Sounds/tire idle.wav" id="6_3h3my"]
+[ext_resource type="AudioStream" uid="uid://bnvxju4r5d8bn" path="res://Sounds/BossRev.wav" id="6_pokri"]
 [ext_resource type="AudioStream" uid="uid://d2itccpo82hpr" path="res://Sounds/tire bounce.wav" id="7_wg1ia"]
 [ext_resource type="AudioStream" uid="uid://bfsgc12xnqqly" path="res://Sounds/getting hit.wav" id="8_7whsn"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="9_lyahr"]
@@ -276,7 +276,8 @@ libraries = {
 stream = ExtResource("5_iyiyg")
 
 [node name="idle" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("6_3h3my")
+stream = ExtResource("6_pokri")
+volume_db = -17.0
 autoplay = true
 
 [node name="bonuce" type="AudioStreamPlayer2D" parent="Sounds"]
