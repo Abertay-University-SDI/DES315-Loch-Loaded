@@ -310,7 +310,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
-position = Vector2(-1937, 691)
+position = Vector2(11268, 536)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -4859,9 +4859,6 @@ position = Vector2(2713, 208)
 [node name="Spray Spot9" parent="Spray Spots" instance=ExtResource("27_17b5f")]
 position = Vector2(3709, 201)
 
-[node name="Flybot" parent="Spray Spots" instance=ExtResource("31_aloh2")]
-position = Vector2(7847, -220)
-
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="Bushes" type="Node2D" parent="Decoration"]
@@ -5244,6 +5241,9 @@ position = Vector2(10313, 104)
 
 [node name="Flybot10" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
 position = Vector2(10673, 328)
+
+[node name="Flybot11" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(7847, -220)
 
 [node name="Chargers" type="Node2D" parent="Enemies"]
 
