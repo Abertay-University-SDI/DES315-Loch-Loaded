@@ -975,6 +975,7 @@ turbulence_initial_displacement_min = 100.0
 turbulence_initial_displacement_max = 100.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "stunAttack_sfx", "stunRecharge_sfx", "backgroundAmb", "yoyoThrow_sfx", "jump_sfx", "slam_sfx", "yoyo", "yoyo_string", "ring", "idle_collider") groups=["player"]]
+z_index = 30
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
@@ -1115,8 +1116,7 @@ scale = Vector2(0.16, 0.16)
 texture = ExtResource("7_82p5m")
 
 [node name="YoYoLine" type="Line2D" parent="YoYo"]
-top_level = true
-z_index = -45
+z_index = 1
 position = Vector2(0, -21)
 points = PackedVector2Array(0, 0, 53.02, 0)
 width = 3.0
