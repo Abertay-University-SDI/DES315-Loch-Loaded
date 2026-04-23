@@ -383,7 +383,7 @@ position = Vector2(-91, 502)
 rotation = -3.1415927
 
 [node name="Tall_Building_13" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_akct4")]
-position = Vector2(831.00006, 508.00003)
+position = Vector2(831.00006, 505)
 scale = Vector2(0.195, 0.21)
 
 [node name="Tall_Building_31" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_akct4")]
@@ -3867,7 +3867,7 @@ position = Vector2(789, 713)
 position = Vector2(4149, 713)
 
 [node name="Zippoint_end_3" parent="Zipline/Zipline [End]" instance=ExtResource("64_vtjuf")]
-position = Vector2(-1705, 716)
+position = Vector2(-1705, 667)
 
 [node name="Spray Spots" type="Node2D" parent="."]
 
@@ -4129,20 +4129,20 @@ color = Color(0.288518, 0.28851798, 0.28851798, 1)
 [node name="Robots" type="Node2D" parent="Enemies"]
 
 [node name="Robot" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
-position = Vector2(-502, 796)
+position = Vector2(-585, 656)
 
 [node name="Robot2" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
 position = Vector2(-403, 196)
 
 [node name="Robot3" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
-position = Vector2(212, 783)
+position = Vector2(637, 638)
 
 [node name="Robot5" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
 z_index = 9
 position = Vector2(130, 488)
 
 [node name="Robot6" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
-position = Vector2(608, 789)
+position = Vector2(2307, -318)
 
 [node name="Robot7" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
 position = Vector2(37, 665)
@@ -4168,13 +4168,19 @@ position = Vector2(1015, 662)
 position = Vector2(-592, 138)
 
 [node name="Flybot2" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
-position = Vector2(1400, 133)
+position = Vector2(102, 144)
 
 [node name="Flybot5" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
 position = Vector2(728, 102)
 
 [node name="Flybot3" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
 position = Vector2(1961, 71)
+
+[node name="Flybot4" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(2274, -49)
+
+[node name="Flybot6" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(2495, 79)
 
 [node name="Chargers" type="Node2D" parent="Enemies"]
 
@@ -4712,15 +4718,6 @@ offset_right = 116.0
 offset_bottom = 71.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Robot2" parent="Prefabs Showcase" instance=ExtResource("74_00bmj")]
-position = Vector2(-827, 1354)
-
-[node name="Flybot2" parent="Prefabs Showcase" instance=ExtResource("75_mqr7x")]
-position = Vector2(-829, 1230)
-
-[node name="Charger2" parent="Prefabs Showcase" instance=ExtResource("76_biuao")]
-position = Vector2(-832, 1486)
-
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("22_xsyjq")]
 position = Vector2(64, 1322)
 
@@ -5184,6 +5181,10 @@ position = Vector2(2312.0002, 1792)
 
 [node name="Zipline_Pole_1" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
 position = Vector2(903, 226.00002)
+scale = Vector2(0.15, 0.15)
+
+[node name="Zipline_Pole_2" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
+position = Vector2(1351, 239)
 scale = Vector2(0.15, 0.15)
 
 [node name="Electric_Box_0" parent="Prefabs Showcase" instance=ExtResource("120_xw8it")]
@@ -5710,15 +5711,6 @@ rotation = 2.2092738
 [node name="large_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("153_h0l4s")]
 z_index = 1
 position = Vector2(869.0001, 2005.9999)
-
-[node name="large_wooden_plank_1" parent="Prefabs Showcase" instance=ExtResource("153_h0l4s")]
-position = Vector2(-301.00003, 293.00003)
-
-[node name="large_wooden_plank_2" parent="Prefabs Showcase" instance=ExtResource("153_h0l4s")]
-position = Vector2(-231.00003, 292.00003)
-
-[node name="large_wooden_plank_3" parent="Prefabs Showcase" instance=ExtResource("153_h0l4s")]
-position = Vector2(-273, 400)
 
 [node name="covered_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("154_3w4pt")]
 z_index = 1
