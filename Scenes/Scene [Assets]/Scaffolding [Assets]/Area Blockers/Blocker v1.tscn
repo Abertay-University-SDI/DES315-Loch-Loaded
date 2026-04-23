@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ovdql3xmk0u"]
+[gd_scene load_steps=5 format=3 uid="uid://6ovdql3xmk0u"]
 
 [ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 2.tscn" id="1_cwu6c"]
 [ext_resource type="PackedScene" uid="uid://d2oavyo4e0tva" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 3.tscn" id="2_ds6tg"]
 [ext_resource type="PackedScene" uid="uid://cdpjth3144usn" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal Pole 1.tscn" id="3_1rl6f"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g3u"]
+size = Vector2(504.7619, 433.33337)
 
 [node name="Blocker_V1_0" type="Node2D"]
-scale = Vector2(0.21, 0.21)
+z_index = 1
+scale = Vector2(0.245, 0.21)
 
 [node name="Scaff_Metal_X_2_0" parent="." instance=ExtResource("1_cwu6c")]
 position = Vector2(0, -104.76189)
@@ -41,3 +44,10 @@ scale = Vector2(1, 1)
 position = Vector2(0, 214.28575)
 rotation = 1.5707964
 scale = Vector2(1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.8165223e-05, 11.904747)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_x7g3u")

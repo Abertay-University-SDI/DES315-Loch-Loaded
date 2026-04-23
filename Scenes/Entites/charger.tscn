@@ -192,6 +192,7 @@ _data = {
 }
 
 [node name="Charger" type="Node2D" node_paths=PackedStringArray("idle_sfx", "bounce_sfx", "damagePlayer_sfx", "_spray_collectable") groups=["Enemy"]]
+z_index = 5
 script = ExtResource("1_3ghnw")
 idle_sfx = NodePath("Sounds/idle")
 bounce_sfx = NodePath("Sounds/bonuce")

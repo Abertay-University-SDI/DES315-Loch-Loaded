@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://6u5aabm33bbc"]
+
+[ext_resource type="Texture2D" uid="uid://sio5jcnco0k0" path="res://Textures/Temp/Scaff&escape_kit.png" id="1_o0rr5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ua7f"]
+atlas = ExtResource("1_o0rr5")
+region = Rect2(1857, 1412, 28, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_johkb"]
+atlas = ExtResource("1_o0rr5")
+region = Rect2(1281, 1165, 711, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0rr5"]
+atlas = ExtResource("1_o0rr5")
+region = Rect2(1324, 1771, 499, 151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmyh3"]
+atlas = ExtResource("1_o0rr5")
+region = Rect2(1986, 1659, 41, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0rr5"]
+size = Vector2(662.8575, 580.9525)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ua7f"]
+size = Vector2(708.57153, 38.09524)
+
+[node name="Scaffolding_Structure_Bounds_0" type="Node2D"]
+scale = Vector2(0.175, 0.21)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-314.2857, 266.66666)
+scale = Vector2(1.4099998, 1.15)
+texture = SubResource("AtlasTexture_7ua7f")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(314.286, 266.66663)
+scale = Vector2(1.4099998, 1.15)
+texture = SubResource("AtlasTexture_7ua7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_johkb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 123.809525)
+scale = Vector2(1.41, 1.41)
+texture = SubResource("AtlasTexture_o0rr5")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(0, 357.14285)
+scale = Vector2(1.41, 1.41)
+texture = SubResource("AtlasTexture_o0rr5")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-314.28577, -42.857147)
+scale = Vector2(1.482, 0.97)
+texture = SubResource("AtlasTexture_tmyh3")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(314.28564, -42.857147)
+scale = Vector2(1.482, 0.97)
+texture = SubResource("AtlasTexture_tmyh3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.8269626e-05, 285.7143)
+scale = Vector2(0.99999917, 0.99999976)
+shape = SubResource("RectangleShape2D_o0rr5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, -5.6766334e-07)
+shape = SubResource("RectangleShape2D_7ua7f")

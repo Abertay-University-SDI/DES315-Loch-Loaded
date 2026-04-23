@@ -10,7 +10,7 @@ region = Rect2(296, 138, 754, 54)
 size = Vector2(786.4657, 57.14286)
 
 [node name="Tall_Building_Cornice_0" type="Node2D"]
-scale = Vector2(0.16, 0.21)
+scale = Vector2(0.095, 0.21)
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(1.3228903, 1.1920929e-07)
