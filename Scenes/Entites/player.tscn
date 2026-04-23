@@ -53,19 +53,19 @@ region = Rect2(666, 1332, 666, 666)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea3er"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(0, 2664, 666, 666)
+region = Rect2(0, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn845"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(666, 2664, 666, 666)
+region = Rect2(666, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pti4w"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(1332, 2664, 666, 666)
+region = Rect2(1332, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_412y3"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(1998, 2664, 666, 666)
+region = Rect2(1998, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5ub6"]
 atlas = ExtResource("3_jgvob")
@@ -115,13 +115,13 @@ region = Rect2(1332, 1998, 666, 666)
 atlas = ExtResource("3_jgvob")
 region = Rect2(1998, 1998, 666, 666)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6j8qn"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(2664, 1998, 666, 666)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iam2j"]
 atlas = ExtResource("3_jgvob")
 region = Rect2(3330, 1998, 666, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j8qn"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(2664, 1998, 666, 666)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4scx"]
 atlas = ExtResource("3_jgvob")
@@ -167,25 +167,25 @@ region = Rect2(5994, 0, 666, 666)
 atlas = ExtResource("3_jgvob")
 region = Rect2(0, 666, 666, 666)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(0, 2680, 666, 670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m0w1"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(666, 2680, 666, 670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f87an"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(1332, 2680, 666, 670)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cikgl"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(0, 2664, 666, 666)
+region = Rect2(1998, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6djl"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(666, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u35lf"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(1332, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujsxc"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(1998, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(0, 3330, 666, 666)
+region = Rect2(0, 3350, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhq4x"]
 atlas = ExtResource("3_jgvob")
@@ -274,10 +274,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_pvfmx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6j8qn")
+"texture": SubResource("AtlasTexture_iam2j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iam2j")
+"texture": SubResource("AtlasTexture_6j8qn")
 }],
 "loop": true,
 "name": &"Punch",
@@ -328,16 +328,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jgvob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m0w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f87an")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cikgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e6djl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u35lf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujsxc")
 }],
 "loop": true,
 "name": &"Stunning",
@@ -345,7 +345,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgvob")
+"texture": SubResource("AtlasTexture_e6djl")
 }],
 "loop": true,
 "name": &"Wall",
@@ -1011,7 +1011,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(2.3841858e-07, -21.000002)
 scale = Vector2(0.07323495, 0.07323494)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Wall"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="slam_area" type="Area2D" parent="."]
