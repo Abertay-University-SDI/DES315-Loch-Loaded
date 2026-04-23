@@ -27,7 +27,7 @@ void fragment() {
 	{
 	COLOR.rgb *= saturation*0.1;
 	}
-	if(cooldown > 1.0)
+	if(cooldown > 0.9)
 	{
 	vec4 color = texture(TEXTURE, UV);
 	COLOR = mix(color, line_color , outline - color.a);	

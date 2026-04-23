@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj1gitmh46t8k"]
+
+[ext_resource type="PackedScene" uid="uid://vmg0gc3rnvia" path="res://Models/Water_Tower/Water_tower.fbx" id="1_ql4ct"]
+[ext_resource type="Texture2D" uid="uid://myctim3njehv" path="res://Models/Water_Tower/Water_tower_Water_Tower_BaseColor.png" id="2_lub8u"]
+[ext_resource type="Texture2D" uid="uid://ccb78lryxuj4u" path="res://Models/Water_Tower/Water_tower_Water_Tower_Emissive.png" id="3_yxqd4"]
+[ext_resource type="Texture2D" uid="uid://dqcpwx5auxtic" path="res://Models/Water_Tower/Water_tower_Water_Tower_Metallic.png" id="4_kam08"]
+[ext_resource type="Texture2D" uid="uid://biopyp0v3q24y" path="res://Models/Water_Tower/Water_tower_Water_Tower_Normal.png" id="5_iogvt"]
+[ext_resource type="Texture2D" uid="uid://b4jjod1wf6ofg" path="res://Models/Water_Tower/Water_tower_Water_Tower_Roughness.png" id="6_teprv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuh0h"]
+albedo_texture = ExtResource("2_lub8u")
+metallic = 1.0
+metallic_texture = ExtResource("4_kam08")
+roughness_texture = ExtResource("6_teprv")
+emission_enabled = true
+emission_texture = ExtResource("3_yxqd4")
+normal_enabled = true
+normal_texture = ExtResource("5_iogvt")
+
+[node name="Water_tower" instance=ExtResource("1_ql4ct")]
+
+[node name="Water_tower" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.2587384, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_fuh0h")

@@ -369,7 +369,7 @@ position = Vector2(278, 497.00006)
 rotation = -3.1415927
 
 [node name="Tall_Building_5" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(-91, 497)
+position = Vector2(-91, 502)
 rotation = -3.1415927
 
 [node name="Tall_Building_9" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
@@ -387,8 +387,9 @@ position = Vector2(4778, 497.00006)
 position = Vector2(7287, 497.00006)
 
 [node name="Tall_Building_15" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(830.00006, 94)
+position = Vector2(829.00006, 94)
 rotation = -3.1415927
+scale = Vector2(1.045, 1)
 
 [node name="Tall_Building_20" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(2139, 99)
@@ -491,7 +492,7 @@ scale = Vector2(0.285, 0.285)
 position = Vector2(9635.999, 497.00006)
 
 [node name="Tall_Building_53" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(9268.999, 497)
+position = Vector2(9268.999, 502)
 rotation = -3.1415927
 
 [node name="Tall_Building_60" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
@@ -503,14 +504,14 @@ position = Vector2(10170, 457.00006)
 scale = Vector2(0.21, 0.255)
 
 [node name="Tall_Building_62" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(10354, 497)
+position = Vector2(10354, 505.00003)
 rotation = -3.1415927
 
 [node name="Tall_Building_63" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(10354.001, 95.0001)
 
 [node name="Tall_Building_64" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(10538.001, -49)
+position = Vector2(10538.001, -45)
 rotation = -3.1415927
 
 [node name="Tall_Building_66" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
@@ -518,7 +519,7 @@ position = Vector2(10775, 386.99997)
 scale = Vector2(0.33, 0.33)
 
 [node name="Tall_Building_67" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(10566, 431.99994)
+position = Vector2(10566.001, 439.99994)
 rotation = -3.1415927
 scale = Vector2(1.32, 1.32)
 
@@ -532,9 +533,9 @@ position = Vector2(8743, 61)
 scale = Vector2(0.23, 0.23)
 
 [node name="Tall_Building_49" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("17_vqj0q")]
-position = Vector2(8568, 463)
+position = Vector2(8568, 466.99997)
 rotation = -3.1415927
-scale = Vector2(1.22, 1.16)
+scale = Vector2(1.22, 1.2)
 
 [node name="Tall_Building_51" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("16_iw5hc")]
 position = Vector2(7668, -68.99989)
@@ -1479,7 +1480,7 @@ position = Vector2(8803, -43.000004)
 [node name="Tall - Buildings [Side Windows]" type="Node2D" parent="Tall Buildings"]
 
 [node name="Tall_Building_Window_Side_2" parent="Tall Buildings/Tall - Buildings [Side Windows]" instance=ExtResource("25_eahgy")]
-position = Vector2(-558.99994, 474)
+position = Vector2(-554.99994, 474)
 rotation = -3.1415925
 
 [node name="Tall_Building_Window_Side_4" parent="Tall Buildings/Tall - Buildings [Side Windows]" instance=ExtResource("25_eahgy")]
@@ -1488,9 +1489,8 @@ rotation = -3.1415925
 scale = Vector2(0.21, 0.29)
 
 [node name="Tall_Building_Window_Side_3" parent="Tall Buildings/Tall - Buildings [Side Windows]" instance=ExtResource("25_eahgy")]
-position = Vector2(-559, 568)
-rotation = -3.1415925
-scale = Vector2(0.21, 0.29000002)
+position = Vector2(-523.00006, 568)
+scale = Vector2(0.145, 0.2)
 
 [node name="Tall - Buildings [Pillars]" type="Node2D" parent="Tall Buildings"]
 
@@ -1528,7 +1528,7 @@ position = Vector2(-510.99988, 498.00015)
 position = Vector2(-324.9999, 364)
 
 [node name="Tall_Building_Pillar_Long_4" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(-324.9999, 499)
+position = Vector2(-324.00003, 501)
 
 [node name="Tall_Building_Pillar_Short_10" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(-179.00002, 634)
@@ -1569,6 +1569,9 @@ position = Vector2(2382, -554)
 [node name="Tall_Building_Pillar_Long_17" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
 position = Vector2(376.00003, 81.00001)
 
+[node name="Tall_Building_Pillar_Long_18" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
+position = Vector2(376.00003, 170)
+
 [node name="Tall_Building_Pillar_Short_14" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(183, 633)
 
@@ -1582,10 +1585,10 @@ position = Vector2(183, 498.00015)
 position = Vector2(2603, -196)
 
 [node name="Tall_Building_Pillar_Short_49" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(2603, -475.00003)
+position = Vector2(2607, -475.00006)
 
 [node name="Tall_Building_Pillar_Long_28" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
-position = Vector2(2603, -332.99988)
+position = Vector2(2607, -332.99988)
 
 [node name="Tall_Building_Pillar_Short_94" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(7581, 12.000001)
@@ -1594,7 +1597,7 @@ position = Vector2(7581, 12.000001)
 position = Vector2(7581, -199.99997)
 
 [node name="Tall_Building_Pillar_Short_109" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
-position = Vector2(7664.0005, -323)
+position = Vector2(7659.0005, -323)
 
 [node name="Tall_Building_Pillar_Short_110" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(7934.001, -900)
@@ -1675,7 +1678,7 @@ position = Vector2(925, 224.99997)
 position = Vector2(734.9999, 88.00001)
 
 [node name="Tall_Building_Pillar_Short_64" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
-position = Vector2(4374, 218.99994)
+position = Vector2(4380, 218.99994)
 
 [node name="Tall_Building_Pillar_Short_66" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(4692, 375.00003)
@@ -1686,10 +1689,10 @@ position = Vector2(4865.0005, 375.00003)
 scale = Vector2(0.21, 0.24)
 
 [node name="Tall_Building_Pillar_Short_65" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(4374, -39.00003)
+position = Vector2(4380, -39.00003)
 
 [node name="Tall_Building_Pillar_Long_39" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
-position = Vector2(4374, 86.999985)
+position = Vector2(4380, 86.999985)
 
 [node name="Tall_Building_Pillar_Short_122" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(8683, 632.99976)
@@ -1761,10 +1764,10 @@ position = Vector2(4194.0005, 606)
 position = Vector2(4009, 606)
 
 [node name="Tall_Building_Pillar_Short_32" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
-position = Vector2(1479, 364)
+position = Vector2(1485.9999, 364)
 
 [node name="Tall_Building_Pillar_Long_19" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(1479, 502)
+position = Vector2(1485.9999, 502)
 
 [node name="Tall_Building_Pillar_Short_36" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(2174.9998, -37.99997)
@@ -1854,10 +1857,10 @@ position = Vector2(3825, 507)
 position = Vector2(3834.0002, -33.00006)
 
 [node name="Tall_Building_Pillar_Short_39" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(2056, -35.00003)
+position = Vector2(2052, -35.00003)
 
 [node name="Tall_Building_Pillar_Short_40" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(2056, 216.99998)
+position = Vector2(2052, 216.99998)
 
 [node name="Tall_Building_Pillar_Short_38" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(3834.0002, 229.99991)
@@ -1869,10 +1872,10 @@ position = Vector2(4009, 304)
 position = Vector2(3834.0002, 98.99997)
 
 [node name="Tall_Building_Pillar_Short_102" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(10625, -178.99997)
+position = Vector2(10630, -178.99997)
 
 [node name="Tall_Building_Pillar_Short_145" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(10451.001, -178)
+position = Vector2(10448, -178)
 
 [node name="Tall_Building_Pillar_Short_148" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(10689, 644)
@@ -2010,7 +2013,7 @@ position = Vector2(8920, 492)
 position = Vector2(10263, 633.00006)
 
 [node name="Tall_Building_Pillar_Short_138" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
-position = Vector2(10444.001, 633.00006)
+position = Vector2(10446, 633.00006)
 
 [node name="Tall_Building_Pillar_Short_137" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(10263, 347)
@@ -2019,7 +2022,7 @@ position = Vector2(10263, 347)
 position = Vector2(10263, 258.00003)
 
 [node name="Tall_Building_Pillar_Short_139" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(10444.001, 347)
+position = Vector2(10446, 347)
 
 [node name="Tall_Building_Pillar_Long_81" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
 position = Vector2(10263, 492)
@@ -2034,10 +2037,10 @@ position = Vector2(10264, -7.0000024)
 position = Vector2(8683.001, 337)
 
 [node name="Tall_Building_Pillar_Short_108" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(7664, -594)
+position = Vector2(7659, -594)
 
 [node name="Tall_Building_Pillar_Long_58" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(7664, -462)
+position = Vector2(7659, -462)
 
 [node name="Tall_Building_Pillar_Short_107" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(7846, -567)
@@ -2055,7 +2058,7 @@ position = Vector2(4380, 639.9999)
 position = Vector2(4380, 508.99997)
 
 [node name="Tall_Building_Pillar_Short_56" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(4194.0005, 167.99994)
+position = Vector2(4194.0005, 207)
 
 [node name="Tall_Building_Pillar_Short_57" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(4194.0005, -30.999985)
@@ -2064,7 +2067,7 @@ position = Vector2(4194.0005, -30.999985)
 position = Vector2(4194.0005, 69.00001)
 
 [node name="Tall_Building_Pillar_Short_60" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(4009.0002, 167.99994)
+position = Vector2(4009.0002, 199)
 
 [node name="Tall_Building_Pillar_Long_35" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
 position = Vector2(4009.0002, 69.00001)
@@ -2085,10 +2088,10 @@ position = Vector2(8100.0005, -151)
 position = Vector2(10689, 364)
 
 [node name="Tall_Building_Pillar_Long_89" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(10625.001, -65.00001)
+position = Vector2(10630.001, -65.00001)
 
 [node name="Tall_Building_Pillar_Long_90" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
-position = Vector2(10625, 56.999996)
+position = Vector2(10630, 60.999996)
 
 [node name="Tall_Building_Pillar_Long_84" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
 position = Vector2(10084, 617)
@@ -2097,7 +2100,7 @@ position = Vector2(10084, 617)
 position = Vector2(10084, 466.00003)
 
 [node name="Tall_Building_Pillar_Long_82" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
-position = Vector2(10444.001, 491.00003)
+position = Vector2(10446, 491.00003)
 
 [node name="Tall_Building_Pillar_Long_79" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("29_dwj0v")]
 position = Vector2(9918, 367.00003)
@@ -2121,13 +2124,13 @@ position = Vector2(7755.001, -818.00006)
 position = Vector2(8100.0005, -286.0001)
 
 [node name="Tall_Building_Pillar_Short_50" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
-position = Vector2(2785.0002, -474.00006)
+position = Vector2(2790.0002, -474.00006)
 
 [node name="Tall_Building_Pillar_Short_51" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(2785.0002, -209.00006)
 
 [node name="Tall_Building_Pillar_Long_29" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(2785.0002, -342.00003)
+position = Vector2(2790.0002, -342.00006)
 
 [node name="Tall_Building_Pillar_Short_72" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("28_sckhg")]
 position = Vector2(2609.0002, 370.99985)
@@ -2178,7 +2181,7 @@ position = Vector2(4300, -179.00006)
 position = Vector2(4300, -311.99994)
 
 [node name="Tall_Building_Pillar_Long_23" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("27_pm01k")]
-position = Vector2(2056, 103.99997)
+position = Vector2(2052, 103.99997)
 
 [node name="Tall_Building_Pillar_Short_18" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("26_omqis")]
 position = Vector2(366.00006, 356)
@@ -2267,6 +2270,9 @@ position = Vector2(376.00003, -114.00001)
 [node name="Tall_Building_Pillar_End_Bottom_21" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
 position = Vector2(376.00003, 7.6293945e-06)
 
+[node name="Tall_Building_Pillar_End_Bottom_27" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
+position = Vector2(376.00003, 89.99999)
+
 [node name="Tall_Building_Pillar_End_Bottom_32" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(376.00003, 162)
 
@@ -2341,7 +2347,7 @@ position = Vector2(1306.0001, 579)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Top_35" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(1478.0001, 579.00006)
+position = Vector2(1485, 579.00006)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Top_27" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2357,7 +2363,7 @@ position = Vector2(-510.99994, 417)
 position = Vector2(182.99994, 417)
 
 [node name="Tall_Building_Pillar_End_Top_52" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(2603, -534)
+position = Vector2(2607, -534)
 
 [node name="Tall_Building_Pillar_End_Bottom_46" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(2603, -251.00002)
@@ -2367,7 +2373,7 @@ position = Vector2(2603, -136.99988)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Bottom_48" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(2603, -417)
+position = Vector2(2607, -417)
 
 [node name="Tall_Building_Pillar_End_Top_103" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(7754.0005, -255)
@@ -2402,11 +2408,11 @@ position = Vector2(7939.0005, -298)
 position = Vector2(7755.0005, -298)
 
 [node name="Tall_Building_Pillar_End_Top_115" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(7755.0005, -288.00003)
+position = Vector2(7755.0005, -286)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_123" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(7664, -288)
+position = Vector2(7659, -286)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_120" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
@@ -2518,12 +2524,6 @@ position = Vector2(917, 312)
 [node name="Tall_Building_Pillar_End_Bottom_25" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
 position = Vector2(917, 420)
 
-[node name="Tall_Building_Pillar_End_Top_62" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(4194.0005, 246.00008)
-
-[node name="Tall_Building_Pillar_End_Top_63" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(4009, 246.00008)
-
 [node name="Tall_Building_Pillar_End_Top_68" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(4194, 691)
 rotation = -3.1415927
@@ -2536,10 +2536,10 @@ rotation = -3.1415927
 position = Vector2(4009, 354.00006)
 
 [node name="Tall_Building_Pillar_End_Top_32" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(1479, 312)
+position = Vector2(1485.9999, 312)
 
 [node name="Tall_Building_Pillar_End_Bottom_34" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
-position = Vector2(1479, 420)
+position = Vector2(1485.9999, 420)
 
 [node name="Tall_Building_Pillar_End_Top_37" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
 position = Vector2(2175.0002, 276.00003)
@@ -2630,7 +2630,7 @@ position = Vector2(3834.0002, 278)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Top_65" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(4009, -90)
+position = Vector2(4009, -91)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Top_45" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2650,11 +2650,7 @@ position = Vector2(2376, -229)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Top_40" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(3834.0002, -91.00004)
-
-[node name="Tall_Building_Pillar_End_Top_60" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(4194.0005, 213)
-rotation = 3.1415927
+position = Vector2(3834.0002, -92.00003)
 
 [node name="Tall_Building_Pillar_End_Top_61" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(4194.0005, -90)
@@ -2682,13 +2678,13 @@ position = Vector2(4380, 310.99997)
 position = Vector2(4380, 426.99997)
 
 [node name="Tall_Building_Pillar_End_Bottom_40" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
-position = Vector2(2056, 22.99997)
+position = Vector2(2052, 22.99997)
 
 [node name="Tall_Building_Pillar_End_Top_41" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(2056, -93)
+position = Vector2(2052, -93)
 
 [node name="Tall_Building_Pillar_End_Top_42" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(2056.0002, 276.00003)
+position = Vector2(2052.0002, 276.00003)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_25" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2702,13 +2698,13 @@ position = Vector2(917, 583.9999)
 position = Vector2(734.9999, 9)
 
 [node name="Tall_Building_Pillar_End_Top_70" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(4374.0005, -91)
+position = Vector2(4380.0005, -91)
 
 [node name="Tall_Building_Pillar_End_Bottom_65" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(4374, 164)
+position = Vector2(4380, 166)
 
 [node name="Tall_Building_Pillar_End_Top_71" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(4374, 278.00006)
+position = Vector2(4380, 278.00006)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Top_74" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2720,7 +2716,7 @@ position = Vector2(4692, 436)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Bottom_66" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(4374, 7.999977)
+position = Vector2(4380, 7.999977)
 
 [node name="Tall_Building_Pillar_End_Top_141" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(8683, 286)
@@ -2805,7 +2801,7 @@ position = Vector2(10084.001, 692.00006)
 rotation = -9.424778
 
 [node name="Tall_Building_Pillar_End_Top_164" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(10444.001, 311.00003)
+position = Vector2(10446, 311.00003)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Top_165" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2853,7 +2849,7 @@ position = Vector2(9905.999, 244.99998)
 rotation = -9.424778
 
 [node name="Tall_Building_Pillar_End_Top_137" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(8482.001, 238.00002)
+position = Vector2(8482.001, 237.00002)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Top_138" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
@@ -2902,14 +2898,14 @@ position = Vector2(10689, 692.00006)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_173" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("33_7tngc")]
-position = Vector2(10451.001, -238.00002)
+position = Vector2(10448, -238.00002)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Top_174" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(10625, -238.00002)
+position = Vector2(10630, -238.00002)
 
 [node name="Tall_Building_Pillar_End_Top_175" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(10625, 144)
+position = Vector2(10630, 146)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_176" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
@@ -2917,7 +2913,7 @@ position = Vector2(10449.001, 144)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_178" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(10451.001, -121.99998)
+position = Vector2(10448, -121.99998)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_167" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
@@ -2936,7 +2932,7 @@ position = Vector2(9733, 246.00002)
 rotation = 3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_139" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(8678, 238.99995)
+position = Vector2(8678, 235.99994)
 
 [node name="Tall_Building_Pillar_End_Top_140" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(8678, 249)
@@ -3027,10 +3023,10 @@ position = Vector2(10689, 604.00006)
 position = Vector2(10689, 283.00003)
 
 [node name="Tall_Building_Pillar_End_Bottom_145" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(10625, -23.999977)
+position = Vector2(10630, -23.999977)
 
 [node name="Tall_Building_Pillar_End_Bottom_146" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(10625, -147)
+position = Vector2(10630, -147)
 
 [node name="Tall_Building_Pillar_End_Bottom_142" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(10920.001, 412.99994)
@@ -3045,7 +3041,7 @@ position = Vector2(10084.001, 385.00003)
 position = Vector2(10084.001, 546)
 
 [node name="Tall_Building_Pillar_End_Bottom_138" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(10444.001, 405.00003)
+position = Vector2(10446, 405.00003)
 
 [node name="Tall_Building_Pillar_End_Bottom_124" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(9180, 427.99997)
@@ -3129,11 +3125,11 @@ rotation = -3.1415927
 position = Vector2(10264, 78.99998)
 
 [node name="Tall_Building_Pillar_End_Top_163" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(10444.001, 693.00006)
+position = Vector2(10446, 693.00006)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Bottom_137" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(10444.001, 575.00006)
+position = Vector2(10446, 575.00006)
 
 [node name="Tall_Building_Pillar_End_Bottom_108" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(7934, -889)
@@ -3142,13 +3138,13 @@ position = Vector2(7934, -889)
 position = Vector2(7755.0005, -738)
 
 [node name="Tall_Building_Pillar_End_Top_122" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(7664, -652)
+position = Vector2(7659, -652)
 
 [node name="Tall_Building_Pillar_End_Bottom_104" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
-position = Vector2(7664, -544)
+position = Vector2(7659, -544)
 
 [node name="Tall_Building_Pillar_End_Bottom_105" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(7664, -379)
+position = Vector2(7659, -379)
 
 [node name="Tall_Building_Pillar_End_Bottom_101" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(8003.0005, -457.00003)
@@ -3171,12 +3167,14 @@ position = Vector2(4380, 592)
 [node name="Tall_Building_Pillar_End_Bottom_56" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(4194.0005, -10.9999695)
 
-[node name="Tall_Building_Pillar_End_Top_64" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(4009.0002, 213)
-rotation = 3.1415927
-
 [node name="Tall_Building_Pillar_End_Bottom_59" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(4009.0002, 151.99991)
+
+[node name="Tall_Building_Pillar_End_Bottom_99" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
+position = Vector2(4194.0005, 262)
+
+[node name="Tall_Building_Pillar_End_Bottom_100" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
+position = Vector2(4009.0002, 262)
 
 [node name="Tall_Building_Pillar_End_Bottom_60" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(4009.0002, -10.9999695)
@@ -3186,10 +3184,10 @@ position = Vector2(2786, -147.00009)
 rotation = -3.403392
 
 [node name="Tall_Building_Pillar_End_Top_55" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
-position = Vector2(2785, -534)
+position = Vector2(2790.0002, -534.00006)
 
 [node name="Tall_Building_Pillar_End_Bottom_49" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("31_k5xtv")]
-position = Vector2(2785.0002, -424.00003)
+position = Vector2(2790.0002, -424)
 
 [node name="Tall_Building_Pillar_End_Bottom_50" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
 position = Vector2(2785.0002, -258.0001)
@@ -3257,7 +3255,7 @@ position = Vector2(4300, -393.99994)
 position = Vector2(4300, -228.00006)
 
 [node name="Tall_Building_Pillar_End_Bottom_41" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("32_i2soc")]
-position = Vector2(2056, 188.99998)
+position = Vector2(2052, 188.99998)
 
 [node name="Tall_Building_Pillar_End_Top_33" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("30_mwxyo")]
 position = Vector2(1306.0001, 310.99994)
@@ -3269,43 +3267,43 @@ position = Vector2(1306.0001, 419.99997)
 
 [node name="Tall_Building_Cornice_2" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(-659, 293)
-scale = Vector2(0.27, 0.25)
+scale = Vector2(0.205, 0.25)
 
 [node name="Tall_Building_Cornice_5" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(278, -130.99998)
-scale = Vector2(0.295, 0.335)
+position = Vector2(278, -127)
+scale = Vector2(0.24, 0.335)
 
 [node name="Tall_Building_Cornice_9" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(278, 290)
-scale = Vector2(0.21, 0.25)
+scale = Vector2(0.205, 0.25)
 
 [node name="Tall_Building_Cornice_10" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(458.99997, 253)
-scale = Vector2(0.21, 0.26)
+position = Vector2(461, 253)
+scale = Vector2(0.215, 0.335)
 
 [node name="Tall_Building_Cornice_11" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(648, 295)
 scale = Vector2(0.21, 0.35)
 
 [node name="Tall_Building_Cornice_15" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(1393, 295)
-scale = Vector2(0.25, 0.35)
+position = Vector2(1394.0001, 297.00003)
+scale = Vector2(0.22, 0.351)
 
 [node name="Tall_Building_Cornice_16" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(2145, -108)
+position = Vector2(2166, -108)
 scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_65" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(2274, -245.99998)
-scale = Vector2(0.295, 0.35)
+position = Vector2(2274, -242)
+scale = Vector2(0.235, 0.35)
 
 [node name="Tall_Building_Cornice_18" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(2693, -551)
-scale = Vector2(0.25, 0.35)
+position = Vector2(2699.0002, -548)
+scale = Vector2(0.21, 0.35)
 
 [node name="Tall_Building_Cornice_17" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(2510, -122)
-scale = Vector2(0.275, 0.35)
+position = Vector2(2494, -114)
+scale = Vector2(0.24, 0.35)
 
 [node name="Tall_Building_Cornice_21" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(2510, 292)
@@ -3313,7 +3311,7 @@ scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_14" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(93, 293)
-scale = Vector2(0.21000001, 0.35)
+scale = Vector2(0.205, 0.35)
 
 [node name="Tall_Building_Cornice_3" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
 position = Vector2(-418, 293.00003)
@@ -3347,13 +3345,9 @@ scale = Vector2(0.203, 0.35)
 position = Vector2(2296, -108.00001)
 scale = Vector2(0.283, 0.345)
 
-[node name="Tall_Building_Cornice_25" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(4102, 229)
-scale = Vector2(0.275, 0.35)
-
 [node name="Tall_Building_Cornice_32" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(4777, 296)
-scale = Vector2(0.26, 0.28)
+position = Vector2(4777, 299)
+scale = Vector2(0.205, 0.28)
 
 [node name="Tall_Building_Cornice_28" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(4099, -107)
@@ -3361,7 +3355,7 @@ scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_29" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(3919, -107)
-scale = Vector2(0.25, 0.35)
+scale = Vector2(0.21, 0.35)
 
 [node name="Tall_Building_Cornice_26" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
 position = Vector2(3728, 294)
@@ -3376,11 +3370,11 @@ position = Vector2(4194, -521)
 scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_66" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(4020, -521)
+position = Vector2(4054, -521)
 scale = Vector2(0.28, 0.35)
 
 [node name="Tall_Building_Cornice_67" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
-position = Vector2(4391, -521)
+position = Vector2(4391, -519)
 scale = Vector2(0.215, 0.35)
 
 [node name="Tall_Building_Cornice_31" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
@@ -3404,7 +3398,7 @@ position = Vector2(7468, 294)
 scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_39" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(7284, 294)
+position = Vector2(7313, 294)
 scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_34" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
@@ -3420,28 +3414,28 @@ position = Vector2(9819.999, -16.000008)
 scale = Vector2(0.25, 0.35)
 
 [node name="Tall_Building_Cornice_62" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(10359, -106)
-scale = Vector2(0.28, 0.35)
+position = Vector2(10355, -105)
+scale = Vector2(0.215, 0.43)
 
 [node name="Tall_Building_Cornice_63" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(10353, 294)
-scale = Vector2(0.28, 0.35)
+scale = Vector2(0.22, 0.35)
 
 [node name="Tall_Building_Cornice_59" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(10564, 163.00002)
-scale = Vector2(0.345, 0.42)
+position = Vector2(10567, 165.00002)
+scale = Vector2(0.265, 0.475)
 
 [node name="Tall_Building_Cornice_60" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(10775, 66.00001)
-scale = Vector2(0.415, 0.42)
+scale = Vector2(0.325, 0.42)
 
 [node name="Tall_Building_Cornice_57" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(8581, 221.00002)
-scale = Vector2(0.275, 0.375)
+scale = Vector2(0.23, 0.375)
 
 [node name="Tall_Building_Cornice_53" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(9449.999, 158)
-scale = Vector2(0.345, 0.465)
+position = Vector2(9450.999, 163)
+scale = Vector2(0.275, 0.465)
 
 [node name="Tall_Building_Cornice_56" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(9821, 263)
@@ -3449,23 +3443,23 @@ scale = Vector2(0.29, 0.39)
 
 [node name="Tall_Building_Cornice_52" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
 position = Vector2(8463.001, -111.99999)
-scale = Vector2(0.465, 0.35)
+scale = Vector2(0.345, 0.3578228)
 
 [node name="Tall_Building_Cornice_51" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(8744, -167)
-scale = Vector2(0.3, 0.35)
+position = Vector2(8744, -164)
+scale = Vector2(0.23, 0.335)
 
 [node name="Tall_Building_Cornice_44" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(7666, -272)
-scale = Vector2(0.25, 0.35)
+position = Vector2(7666, -270)
+scale = Vector2(0.205, 0.395)
 
 [node name="Tall_Building_Cornice_45" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(7925, -626.00006)
-scale = Vector2(0.235, 0.31)
+position = Vector2(7925, -626)
+scale = Vector2(0.18, 0.375)
 
 [node name="Tall_Building_Cornice_46" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("34_fgmr8")]
-position = Vector2(7844, -966.99994)
-scale = Vector2(0.27, 0.31)
+position = Vector2(7842.9995, -966.99994)
+scale = Vector2(0.22, 0.38)
 
 [node name="Tall_Building_Cornice_43" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
 position = Vector2(8802, 267.00003)
@@ -3480,8 +3474,8 @@ position = Vector2(10173, 216)
 scale = Vector2(0.218, 0.41)
 
 [node name="Tall_Building_Cornice_61" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
-position = Vector2(10538, -255)
-scale = Vector2(0.203, 0.35)
+position = Vector2(10539, -255)
+scale = Vector2(0.228, 0.35)
 
 [node name="Tall_Building_Cornice_55" parent="Tall Buildings/Tall - Buildings [Cornice]" instance=ExtResource("35_fknxu")]
 position = Vector2(9635, 286)
@@ -3518,37 +3512,34 @@ scale = Vector2(0.253, 0.405)
 [node name="Tall - Buildings [Door]" type="Node2D" parent="Tall Buildings"]
 
 [node name="Tall_Building_Door_2" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(-656, 659)
+position = Vector2(-656, 662.00006)
 
 [node name="Tall_Building_Door_3" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(-463, 659)
+position = Vector2(-463, 662.00006)
 
 [node name="Tall_Building_Door_4" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(-84, 659)
+position = Vector2(-84, 662.00006)
 
 [node name="Tall_Building_Door_23" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(10356, 659)
-
-[node name="Tall_Building_Door_9" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(4289, 245)
+position = Vector2(10356.001, 662.00006)
 
 [node name="Tall_Building_Door_22" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(10541.999, 111)
+position = Vector2(10541.999, 115)
 
 [node name="Tall_Building_Door_5" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
 position = Vector2(46, 659)
 
 [node name="Tall_Building_Door_6" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(277, 659)
+position = Vector2(277, 662.00006)
 
 [node name="Tall_Building_Door_13" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(8789, 215)
+position = Vector2(8789.001, 217.00002)
 
 [node name="Tall_Building_Door_15" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(8560, 170)
+position = Vector2(8560.001, 178)
 
 [node name="Tall_Building_Door_14" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(8764, 512)
+position = Vector2(8764.001, 515)
 
 [node name="Tall_Building_Door_Blocked_0" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("37_72vky")]
 position = Vector2(-369.9999, 659)
@@ -3562,32 +3553,23 @@ position = Vector2(10400.001, 244.00003)
 [node name="Tall_Building_Door_Blocked_1" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("37_72vky")]
 position = Vector2(128.99992, 659)
 
-[node name="Tall_Building_Door_Blocked_3" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(2495, -172)
-
 [node name="Tall_Building_Door_Blocked_9" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(8585, 658)
+position = Vector2(8585, 660)
 
 [node name="Tall_Building_Door_Blocked_10" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(8847, 513)
-
-[node name="Tall_Building_Door_Blocked_5" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(3923, 243)
-
-[node name="Tall_Building_Door_Blocked_4" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(2298, 242)
+position = Vector2(8847.001, 516)
 
 [node name="Tall_Building_Door_25" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
 position = Vector2(10871, 658)
 
 [node name="Tall_Building_Door_19" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(9235, 659)
+position = Vector2(9235.001, 662.00006)
 
 [node name="Tall_Building_Door_21" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(9302, 659)
+position = Vector2(9302.001, 662.00006)
 
 [node name="Tall_Building_Door_20" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(9424, 659)
+position = Vector2(9424, 662.00006)
 
 [node name="Tall_Building_Door_18" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
 position = Vector2(7324, 658)
@@ -3595,35 +3577,20 @@ position = Vector2(7324, 658)
 [node name="Tall_Building_Door_17" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
 position = Vector2(7127, 658)
 
-[node name="Tall_Building_Door_16" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(7891, -674)
-
-[node name="Tall_Building_Door_11" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(7625, 32)
-
-[node name="Tall_Building_Door_12" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("36_vlhij")]
-position = Vector2(7712, 32)
-
 [node name="Tall_Building_Door_Blocked_16" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(10569, 658)
+position = Vector2(10569.001, 661.00006)
 
 [node name="Tall_Building_Door_Blocked_12" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(9496, 659)
+position = Vector2(9496, 662.00006)
 
 [node name="Tall_Building_Door_Blocked_13" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(9668, 659)
+position = Vector2(9668.001, 662.00006)
 
 [node name="Tall_Building_Door_Blocked_14" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(9606, 659)
+position = Vector2(9606.001, 662.00006)
 
 [node name="Tall_Building_Door_Blocked_11" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
 position = Vector2(7250, 659)
-
-[node name="Tall_Building_Door_Blocked_7" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(7792, 32)
-
-[node name="Tall_Building_Door_Blocked_8" parent="Tall Buildings/Tall - Buildings [Door]" instance=ExtResource("38_ertjo")]
-position = Vector2(7972, -405)
 
 [node name="Wide Buildings" type="Node2D" parent="."]
 
@@ -3686,11 +3653,6 @@ position = Vector2(521.9995, 687)
 rotation = -3.1415925
 scale = Vector2(0.22, 0.21)
 
-[node name="Wide_Building_Bottom_V1_2" parent="Wide Buildings/Wide - Buildings [Bottom]" instance=ExtResource("43_3ed3m")]
-position = Vector2(7974, 270.00003)
-rotation = -3.1415925
-scale = Vector2(0.22, 0.24)
-
 [node name="Wide_Building_Bottom_V1_3" parent="Wide Buildings/Wide - Buildings [Bottom]" instance=ExtResource("43_3ed3m")]
 position = Vector2(8386.005, -132.99992)
 rotation = -3.1415925
@@ -3724,7 +3686,7 @@ position = Vector2(9458, 316)
 position = Vector2(9675, 528)
 
 [node name="Tall_Building_Window_63" parent="Wide Buildings/Wide - Buildings [Windows]" instance=ExtResource("20_uybqv")]
-position = Vector2(7892, 121)
+position = Vector2(7892, 134)
 
 [node name="Tall_Building_Window_Blocked_11" parent="Wide Buildings/Wide - Buildings [Windows]" instance=ExtResource("22_b11gm")]
 position = Vector2(10568, 233)
@@ -3742,10 +3704,10 @@ position = Vector2(9391, 230)
 position = Vector2(7332, 438)
 
 [node name="Tall_Building_Window_Blocked_6" parent="Wide Buildings/Wide - Buildings [Windows]" instance=ExtResource("22_b11gm")]
-position = Vector2(7978, 121)
+position = Vector2(7978, 134)
 
 [node name="Tall_Building_Window_Blocked_7" parent="Wide Buildings/Wide - Buildings [Windows]" instance=ExtResource("22_b11gm")]
-position = Vector2(8064, 121)
+position = Vector2(8064, 134)
 
 [node name="Small_Building_Window_Long_12" parent="Wide Buildings/Wide - Buildings [Windows]" instance=ExtResource("45_rgkkn")]
 position = Vector2(7783, 143)
@@ -3774,9 +3736,6 @@ scale = Vector2(0.20999998, 0.20999998)
 [node name="Small_Building_1" parent="Small Buildings/Small - Buildings" instance=ExtResource("47_nb077")]
 position = Vector2(1390, 650)
 
-[node name="Small_Building_3" parent="Small Buildings/Small - Buildings" instance=ExtResource("47_nb077")]
-position = Vector2(2294, -304)
-
 [node name="Small_Building_4" parent="Small Buildings/Small - Buildings" instance=ExtResource("47_nb077")]
 position = Vector2(4778, 505)
 
@@ -3799,9 +3758,6 @@ position = Vector2(2693, -609)
 
 [node name="Small_Building_Top_1" parent="Small Buildings/Small - Buildings [Top]" instance=ExtResource("48_jshup")]
 position = Vector2(1391, 595)
-
-[node name="Small_Building_Top_3" parent="Small Buildings/Small - Buildings [Top]" instance=ExtResource("48_jshup")]
-position = Vector2(2293, -351)
 
 [node name="Small_Building_Top_4" parent="Small Buildings/Small - Buildings [Top]" instance=ExtResource("48_jshup")]
 position = Vector2(4777, 450)
@@ -3983,16 +3939,8 @@ scale = Vector2(0.18, 0.31)
 position = Vector2(1814, 544.00006)
 scale = Vector2(0.18, 0.31)
 
-[node name="Small_Building_Window_Thin_Blocked_5" parent="Wide Shop/Wide Shop Buildings - [Blocked Windows]" instance=ExtResource("52_krmhy")]
-position = Vector2(2355.0002, -296.00003)
-scale = Vector2(0.112, 0.232)
-
 [node name="Small_Building_Window_Thin_Blocked_7" parent="Wide Shop/Wide Shop Buildings - [Blocked Windows]" instance=ExtResource("52_krmhy")]
 position = Vector2(2755, -604.00006)
-scale = Vector2(0.112, 0.232)
-
-[node name="Small_Building_Window_Thin_Blocked_6" parent="Wide Shop/Wide Shop Buildings - [Blocked Windows]" instance=ExtResource("52_krmhy")]
-position = Vector2(2234.0002, -296.00003)
 scale = Vector2(0.112, 0.232)
 
 [node name="Small_Building_Window_Thin_Blocked_8" parent="Wide Shop/Wide Shop Buildings - [Blocked Windows]" instance=ExtResource("52_krmhy")]
@@ -4059,10 +4007,6 @@ scale = Vector2(0.99999994, 0.99999994)
 position = Vector2(19995.242, -2961.9063)
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="Small_Building_Door_4" parent="Wide Shop/Wide Shop Buildings - [Doors]" instance=ExtResource("55_xa8om")]
-position = Vector2(-20895.266, -4433.334)
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="Small_Building_Door_5" parent="Wide Shop/Wide Shop Buildings - [Doors]" instance=ExtResource("55_xa8om")]
 position = Vector2(-9057.172, -585.71484)
 scale = Vector2(0.99999994, 0.99999994)
@@ -4084,7 +4028,7 @@ position = Vector2(4728.571, -1866.667)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Small_Building_Door_10" parent="Wide Shop/Wide Shop Buildings - [Doors]" instance=ExtResource("55_xa8om")]
-position = Vector2(6166.66, -1990.4766)
+position = Vector2(6166.66, -1866.667)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Small_Building_Door_2" parent="Wide Shop/Wide Shop Buildings - [Doors]" instance=ExtResource("55_xa8om")]
@@ -4103,10 +4047,10 @@ position = Vector2(4685, 664.00006)
 position = Vector2(8940.001, 664.00006)
 
 [node name="Small_Building_Door_Blocked_8" parent="Wide Shop/Wide Shop Buildings - [Blocked Doors]" instance=ExtResource("56_t3ehe")]
-position = Vector2(7892, 223.99997)
+position = Vector2(7892.0005, 249.99995)
 
 [node name="Small_Building_Door_Blocked_9" parent="Wide Shop/Wide Shop Buildings - [Blocked Doors]" instance=ExtResource("56_t3ehe")]
-position = Vector2(8064.0005, 223.99997)
+position = Vector2(8064.0005, 249.99995)
 
 [node name="Small_Building_Door_Blocked_4" parent="Wide Shop/Wide Shop Buildings - [Blocked Doors]" instance=ExtResource("56_t3ehe")]
 position = Vector2(1815.0001, 456.00006)
@@ -4129,22 +4073,22 @@ position = Vector2(1957, 139)
 
 [node name="Beam_6" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
 position = Vector2(3055, -513)
-scale = Vector2(0.285, 1)
+scale = Vector2(0.12499023, 1)
 
 [node name="Beam_7" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
 position = Vector2(3094, -384)
-scale = Vector2(0.285, 1)
+scale = Vector2(0.12499023, 1)
 
 [node name="Beam_8" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
 position = Vector2(3442, -162)
-scale = Vector2(0.285, 1)
+scale = Vector2(0.12499023, 1)
 
 [node name="Beam_9" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
 position = Vector2(3446, -336)
-scale = Vector2(0.285, 1)
+scale = Vector2(0.12499023, 1)
 
 [node name="Beam_3" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
-position = Vector2(3363, -432)
+position = Vector2(3316, -466)
 scale = Vector2(1.78, 1)
 
 [node name="Beam_4" parent="Beams/Beams [Short]" instance=ExtResource("57_cy0mj")]
@@ -4178,27 +4122,18 @@ position = Vector2(5202, 223)
 position = Vector2(5570, 131)
 
 [node name="Beam_1_5" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
-position = Vector2(9452.999, -19)
+position = Vector2(9453, -31)
 scale = Vector2(1.135, 1)
 
 [node name="Beam_1_7" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
-position = Vector2(6280, -2)
-
-[node name="Beam_1_10" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
-position = Vector2(6236, -216)
-
-[node name="Beam_1_11" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
-position = Vector2(6345, -271)
-scale = Vector2(0.44, 1)
-
-[node name="Beam_1_8" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
-position = Vector2(5985, -120)
+position = Vector2(6406, -41)
 
 [node name="Beam_1_9" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
 position = Vector2(6751, 323)
 
 [node name="Beam_1_4" parent="Beams/Beams [Long]" instance=ExtResource("58_ecku6")]
 position = Vector2(5987, 51)
+scale = Vector2(1.2568347, 1)
 
 [node name="Scaffolding" type="Node2D" parent="."]
 position = Vector2(924, -147)
@@ -4246,22 +4181,22 @@ rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_17" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(2399, -548.0001)
+position = Vector2(2352, -634.0001)
 rotation = 0.19198622
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_18" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(2440.0002, -702)
+position = Vector2(2393.0005, -788)
 rotation = 1.5707964
 scale = Vector2(0.21, 0.062)
 
 [node name="Scaff_Metal_Pole_2_19" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(2440, -814)
+position = Vector2(2393, -944)
 rotation = 3.1415927
-scale = Vector2(0.21, 0.412)
+scale = Vector2(0.21, 0.57199514)
 
 [node name="Scaff_Metal_Pole_2_20" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(2482.0007, -549.00024)
+position = Vector2(2435.0007, -635.00024)
 rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
@@ -4311,34 +4246,34 @@ rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_13" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5272, -226.00006)
+position = Vector2(8485, -45.000015)
 rotation = 0.19198622
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_14" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5313.0005, -380)
+position = Vector2(8526.001, -199)
 rotation = 1.5707964
 scale = Vector2(0.21, 0.062)
 
 [node name="Scaff_Metal_Pole_2_15" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5313, -492)
+position = Vector2(8526, -310.99988)
 rotation = 3.1415927
 scale = Vector2(0.21, 0.412)
 
 [node name="Scaff_Metal_Pole_2_16" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5355.0005, -227)
+position = Vector2(8568, -45.99994)
 rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_23" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5788, 296.99994)
+position = Vector2(5797, 225)
 rotation = 0.19198622
-scale = Vector2(0.21, 0.58214843)
+scale = Vector2(0.21, 0.315)
 
 [node name="Scaff_Metal_Pole_2_24" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
 position = Vector2(5829.0005, 142.99994)
 rotation = 1.5707964
-scale = Vector2(0.21, 0.062)
+scale = Vector2(0.21, 0.072)
 
 [node name="Scaff_Metal_Pole_2_28" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
 position = Vector2(5829, 89)
@@ -4346,9 +4281,9 @@ rotation = 3.1415927
 scale = Vector2(0.21, 0.202)
 
 [node name="Scaff_Metal_Pole_2_29" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("59_i5r38")]
-position = Vector2(5871.0005, 296)
+position = Vector2(5862, 226)
 rotation = -0.1924947
-scale = Vector2(0.21, 0.58214843)
+scale = Vector2(0.21, 0.315)
 
 [node name="Zipline" type="Node2D" parent="."]
 position = Vector2(924, -147)
@@ -4356,34 +4291,30 @@ position = Vector2(924, -147)
 [node name="Zipline [Start]" type="Node2D" parent="Zipline"]
 
 [node name="Zipline_start_0" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(1851, -556)
+position = Vector2(1851, -568)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_0")
 
 [node name="Zipline_start_1" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(2131.0005, -405)
+position = Vector2(2131.0005, -416)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_1")
 
 [node name="Zipline_start_2" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(2522.0002, -228)
+position = Vector2(2522, -239)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_2")
 
 [node name="Zipline_start_4" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(5418, 106)
+position = Vector2(5546, 56)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_4")
 
-[node name="Zipline_start_5" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(5439.0005, -163)
-point_1 = NodePath("../../Zipline [End]/Zippoint_end_5")
-
 [node name="Zipline_start_3" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("60_ahvck")]
-position = Vector2(1, -42)
+position = Vector2(1, -17)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_3")
 
 [node name="Zipline [End]" type="Node2D" parent="Zipline"]
 position = Vector2(2132, -335)
 
 [node name="Zippoint_end_0" parent="Zipline/Zipline [End]" instance=ExtResource("61_n5g12")]
-position = Vector2(38, 39)
+position = Vector2(38, 38)
 
 [node name="Zippoint_end_1" parent="Zipline/Zipline [End]" instance=ExtResource("61_n5g12")]
 position = Vector2(386, 261)
@@ -4393,9 +4324,6 @@ position = Vector2(963, 648)
 
 [node name="Zippoint_end_4" parent="Zipline/Zipline [End]" instance=ExtResource("61_n5g12")]
 position = Vector2(4149, 713)
-
-[node name="Zippoint_end_5" parent="Zipline/Zipline [End]" instance=ExtResource("61_n5g12")]
-position = Vector2(3721, 315)
 
 [node name="Zippoint_end_3" parent="Zipline/Zipline [End]" instance=ExtResource("61_n5g12")]
 position = Vector2(-1662, 715)
@@ -4412,13 +4340,13 @@ position = Vector2(1141, 278)
 position = Vector2(2398, -1001)
 
 [node name="Spray Spot3" parent="Spray Spots" instance=ExtResource("62_13iuh")]
-position = Vector2(3364, -521)
+position = Vector2(3317, -555)
 
 [node name="Spray Spot4" parent="Spray Spots" instance=ExtResource("62_13iuh")]
-position = Vector2(4778.9995, 205)
+position = Vector2(4778.9995, 209)
 
 [node name="Spray Spot5" parent="Spray Spots" instance=ExtResource("62_13iuh")]
-position = Vector2(5987, -40)
+position = Vector2(5985, -37)
 
 [node name="Spray Spot11" parent="Spray Spots" instance=ExtResource("62_13iuh")]
 position = Vector2(6753, 233)
@@ -4430,7 +4358,7 @@ position = Vector2(7846, -1059)
 position = Vector2(8019, -37)
 
 [node name="Spray Spot10" parent="Spray Spots" instance=ExtResource("62_13iuh")]
-position = Vector2(9452.999, 62)
+position = Vector2(9452.999, 72)
 
 [node name="Spray Spot8" parent="Spray Spots" instance=ExtResource("62_13iuh")]
 position = Vector2(2713, 208)
@@ -4698,7 +4626,7 @@ position = Vector2(-538, 684)
 position = Vector2(-403, 276)
 
 [node name="Robot3" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
-position = Vector2(-15, 683)
+position = Vector2(-15, 686)
 
 [node name="Robot5" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
 position = Vector2(536, 199)
@@ -4710,13 +4638,13 @@ position = Vector2(549, 469)
 position = Vector2(820, 683)
 
 [node name="Robot8" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
-position = Vector2(2011, 330)
+position = Vector2(1937, 316)
 
 [node name="Robot9" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
 position = Vector2(1690, 544)
 
 [node name="Robot10" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
-position = Vector2(2334, 270)
+position = Vector2(2303, 249)
 
 [node name="Robot11" parent="Enemies/Robots" instance=ExtResource("75_gc2cb")]
 position = Vector2(2324, -125)
@@ -4727,7 +4655,7 @@ position = Vector2(1398, 686)
 [node name="FlyBots" type="Node2D" parent="Enemies"]
 
 [node name="Flybot" parent="Enemies/FlyBots" instance=ExtResource("76_5u5ki")]
-position = Vector2(-542, 417)
+position = Vector2(-536, 355)
 
 [node name="Flybot2" parent="Enemies/FlyBots" instance=ExtResource("76_5u5ki")]
 position = Vector2(1495, 236)
@@ -5431,13 +5359,13 @@ offset_bottom = 71.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Robot2" parent="Prefabs Showcase" instance=ExtResource("75_gc2cb")]
-position = Vector2(-915, 1272)
+position = Vector2(-827, 1055)
 
 [node name="Flybot2" parent="Prefabs Showcase" instance=ExtResource("76_5u5ki")]
-position = Vector2(-858, 1326)
+position = Vector2(-829, 931)
 
 [node name="Charger2" parent="Prefabs Showcase" instance=ExtResource("77_r8i2c")]
-position = Vector2(-955, 1341)
+position = Vector2(-1169, 1206)
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("18_6xp25")]
 position = Vector2(64, 1023)
@@ -5857,7 +5785,7 @@ position = Vector2(693, 1599)
 position = Vector2(2363, 1232.0001)
 
 [node name="Small_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("163_503b0")]
-position = Vector2(2363.9998, 1147)
+position = Vector2(2363.9998, 1115.0001)
 
 [node name="Small_Building_Door_Blocked_V2_0" parent="Prefabs Showcase" instance=ExtResource("164_rgkkn")]
 position = Vector2(592.00006, 1286)
@@ -5878,7 +5806,7 @@ position = Vector2(756.00006, 1128)
 position = Vector2(1403, 1004.00006)
 
 [node name="Small_Building_Top_Sign_V2_0" parent="Prefabs Showcase" instance=ExtResource("168_i2tgb")]
-position = Vector2(2364, 1112)
+position = Vector2(2364, 1051.0001)
 
 [node name="Small_Building_Door_V2_0" parent="Prefabs Showcase" instance=ExtResource("169_7s8qi")]
 position = Vector2(515.0001, 1286)

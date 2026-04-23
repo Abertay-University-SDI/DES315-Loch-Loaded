@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://bi678lh8cx2xd"]
+
+[ext_resource type="PackedScene" uid="uid://clsv0vgomr2hm" path="res://Models/Remote_Building/Remote_Building.fbx" id="1_rd422"]
+[ext_resource type="Texture2D" uid="uid://oydot556v77k" path="res://Models/Remote_Building/Remote_Building_Base_color.png" id="2_1qyd6"]
+[ext_resource type="Texture2D" uid="uid://cqdk10p5tjtjl" path="res://Models/Remote_Building/Remote_Building_Mixed_AO.png" id="3_j1ns8"]
+[ext_resource type="Texture2D" uid="uid://j2jxjo86tjb5" path="res://Models/Remote_Building/Remote_Building_Height.png" id="4_7eueg"]
+[ext_resource type="Texture2D" uid="uid://usj6s3j48hpj" path="res://Models/Remote_Building/Remote_Building_Metallic.png" id="5_p3xgw"]
+[ext_resource type="Texture2D" uid="uid://ddbvq2hkoadty" path="res://Models/Remote_Building/Remote_Building_Normal_DirectX.png" id="6_a8cbq"]
+[ext_resource type="Texture2D" uid="uid://bciqlunee1xow" path="res://Models/Remote_Building/Remote_Building_Roughness.png" id="7_0sw02"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sjb0"]
+albedo_texture = ExtResource("2_1qyd6")
+metallic = 1.0
+metallic_texture = ExtResource("5_p3xgw")
+roughness_texture = ExtResource("7_0sw02")
+normal_enabled = true
+normal_texture = ExtResource("6_a8cbq")
+ao_enabled = true
+ao_texture = ExtResource("3_j1ns8")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_7eueg")
+
+[node name="Remote_Building" instance=ExtResource("1_rd422")]
+
+[node name="Remote_Building_Lp" parent="." index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.026869792, 0.24668655, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_5sjb0")

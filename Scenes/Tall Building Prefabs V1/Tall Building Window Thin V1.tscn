@@ -15,15 +15,17 @@ size = Vector2(34.5, 6)
 
 [node name="Tall_Building_Window_Thin_0" type="Node2D"]
 rotation = -3.1415927
+scale = Vector2(1.24, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-modulate = Color(0.6666667, 1, 1, 1)
+modulate = Color(0.7707562, 1.2363764, 1.2363764, 1)
 position = Vector2(-0.29533243, 2.9592762)
 rotation = 3.1415927
 scale = Vector2(0.25, 0.246)
 texture = SubResource("AtlasTexture_rixnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 rotation = 3.1415927
 scale = Vector2(0.21, 0.21)
 texture = SubResource("AtlasTexture_eqykh")

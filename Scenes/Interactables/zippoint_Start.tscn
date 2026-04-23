@@ -19,7 +19,7 @@ script = ExtResource("1_b5ro4")
 z_index = 1
 z_as_relative = false
 texture_filter = 1
-scale = Vector2(0.21, 0.21)
+scale = Vector2(0.134, 0.134)
 texture = SubResource("AtlasTexture_rn3rl")
 
 [node name="Line2D" type="Line2D" parent="Zipline_0"]

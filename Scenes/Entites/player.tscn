@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://x178r7x56d5w"]
+[gd_scene load_steps=82 format=3 uid="uid://x178r7x56d5w"]
 
 [ext_resource type="Script" uid="uid://dsmqvvgx2j4yf" path="res://Code/player/player_controller.gd" id="1_82p5m"]
 [ext_resource type="Shader" uid="uid://mmk35aupltsu" path="res://Code/shaders/player.gdshader" id="2_kov73"]
@@ -9,14 +9,15 @@
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 [ext_resource type="AudioStream" uid="uid://b0kqvh5284igq" path="res://Sounds/AOE Attack fire.wav" id="9_wooka"]
+[ext_resource type="AudioStream" uid="uid://devfv2oyn6y7f" path="res://Sounds/SoundtrackFinal.wav" id="10_4m0w1"]
 [ext_resource type="Shader" uid="uid://d0jmnqdfutqhs" path="res://Code/shaders/stun_aura.gdshader" id="10_wqwp5"]
 [ext_resource type="AudioStream" uid="uid://bbq8wc161a7ud" path="res://Sounds/AOE recharge.wav" id="10_x6bub"]
-[ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="11_4m0w1"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="11_7ag56"]
 [ext_resource type="AudioStream" uid="uid://dhfxinysue7ch" path="res://Sounds/yoyo sound.wav" id="11_x6bub"]
 [ext_resource type="AudioStream" uid="uid://bglckwf6huoj0" path="res://Sounds/JumpV2.wav" id="13_4m0w1"]
 [ext_resource type="AudioStream" uid="uid://d0adt7j721bgb" path="res://Sounds/ground slam.wav" id="14_jgvob"]
 [ext_resource type="Texture2D" uid="uid://cdlr4yt5k7hlw" path="res://Textures/effects/ring.png" id="15_jgvob"]
+[ext_resource type="Texture2D" uid="uid://kucml8n16xlt" path="res://Textures/effects/arrowV2.png" id="18_4m0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
 size = Vector2(20, 20.27027)
@@ -53,19 +54,19 @@ region = Rect2(666, 1332, 666, 666)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea3er"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(0, 2664, 666, 666)
+region = Rect2(0, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn845"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(666, 2664, 666, 666)
+region = Rect2(666, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pti4w"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(1332, 2664, 666, 666)
+region = Rect2(1332, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_412y3"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(1998, 2664, 666, 666)
+region = Rect2(1998, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5ub6"]
 atlas = ExtResource("3_jgvob")
@@ -115,13 +116,13 @@ region = Rect2(1332, 1998, 666, 666)
 atlas = ExtResource("3_jgvob")
 region = Rect2(1998, 1998, 666, 666)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6j8qn"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(2664, 1998, 666, 666)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_iam2j"]
 atlas = ExtResource("3_jgvob")
 region = Rect2(3330, 1998, 666, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j8qn"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(2664, 1998, 666, 666)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4scx"]
 atlas = ExtResource("3_jgvob")
@@ -167,25 +168,25 @@ region = Rect2(5994, 0, 666, 666)
 atlas = ExtResource("3_jgvob")
 region = Rect2(0, 666, 666, 666)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(0, 2680, 666, 670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m0w1"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(666, 2680, 666, 670)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f87an"]
+atlas = ExtResource("3_jgvob")
+region = Rect2(1332, 2680, 666, 670)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cikgl"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(0, 2664, 666, 666)
+region = Rect2(1998, 2680, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6djl"]
 atlas = ExtResource("3_jgvob")
-region = Rect2(666, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u35lf"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(1332, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujsxc"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(1998, 2664, 666, 666)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgvob"]
-atlas = ExtResource("3_jgvob")
-region = Rect2(0, 3330, 666, 666)
+region = Rect2(0, 3350, 666, 670)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhq4x"]
 atlas = ExtResource("3_jgvob")
@@ -274,10 +275,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_pvfmx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6j8qn")
+"texture": SubResource("AtlasTexture_iam2j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iam2j")
+"texture": SubResource("AtlasTexture_6j8qn")
 }],
 "loop": true,
 "name": &"Punch",
@@ -328,16 +329,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jgvob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m0w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f87an")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cikgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e6djl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u35lf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujsxc")
 }],
 "loop": true,
 "name": &"Stunning",
@@ -345,7 +346,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jgvob")
+"texture": SubResource("AtlasTexture_e6djl")
 }],
 "loop": true,
 "name": &"Wall",
@@ -974,6 +975,7 @@ turbulence_initial_displacement_min = 100.0
 turbulence_initial_displacement_max = 100.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("zipline_detector", "crane_detector", "yoyo_detector", "footstep_sfx", "dash_sfx", "punch_sfx", "YoYo_sfx", "stunAttack_sfx", "stunRecharge_sfx", "backgroundAmb", "yoyoThrow_sfx", "jump_sfx", "slam_sfx", "yoyo", "yoyo_string", "ring", "idle_collider") groups=["player"]]
+z_index = 30
 collision_layer = 3
 script = ExtResource("1_82p5m")
 zipline_detector = NodePath("Zipline_detect")
@@ -1011,7 +1013,7 @@ material = SubResource("ShaderMaterial_g5uvi")
 position = Vector2(2.3841858e-07, -21.000002)
 scale = Vector2(0.07323495, 0.07323494)
 sprite_frames = SubResource("SpriteFrames_jxq14")
-animation = &"Wall"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="slam_area" type="Area2D" parent="."]
@@ -1091,7 +1093,7 @@ stream = ExtResource("9_wooka")
 stream = ExtResource("10_x6bub")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="sound"]
-stream = ExtResource("11_4m0w1")
+stream = ExtResource("10_4m0w1")
 volume_db = -13.029
 
 [node name="yoyoThrow" type="AudioStreamPlayer2D" parent="sound"]
@@ -1114,8 +1116,7 @@ scale = Vector2(0.16, 0.16)
 texture = ExtResource("7_82p5m")
 
 [node name="YoYoLine" type="Line2D" parent="YoYo"]
-top_level = true
-z_index = -45
+z_index = -1
 position = Vector2(0, -21)
 points = PackedVector2Array(0, 0, 53.02, 0)
 width = 3.0
@@ -1197,6 +1198,13 @@ process_material = SubResource("ParticleProcessMaterial_jgvob")
 [node name="Ring" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.36078432)
-position = Vector2(0, -18.9)
+texture_filter = 1
+position = Vector2(0, -10)
 scale = Vector2(2.502, 2.502)
 texture = ExtResource("15_jgvob")
+
+[node name="arrow" type="Sprite2D" parent="Ring"]
+modulate = Color(2.8215237, 2.8215237, 2.8215237, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_4m0w1")
+offset = Vector2(50, 0)
