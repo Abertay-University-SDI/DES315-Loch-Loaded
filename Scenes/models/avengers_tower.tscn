@@ -59,7 +59,7 @@ shadow_mesh = SubResource("ArrayMesh_usg2k")
 [node name="Avengers_tower" type="Node3D"]
 
 [node name="Avengers_Building_lp" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.42353117, 0)
 mesh = SubResource("ArrayMesh_10a8w")
 skeleton = NodePath("")
 
