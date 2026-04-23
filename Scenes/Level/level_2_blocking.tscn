@@ -310,7 +310,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
-position = Vector2(11268, 536)
+position = Vector2(-1934, 693)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
