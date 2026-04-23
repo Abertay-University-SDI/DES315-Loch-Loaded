@@ -17,6 +17,7 @@ var sfxValue = 1
 @export var music_slider:HSlider
 
 @export var filmGrainTextRect: TextureRect
+@export var GMButton: Button
 
 var screenShake
 var filmGrain
@@ -111,3 +112,26 @@ func _on_color_blind_list_item_selected(index: int) -> void:
 func _on_visibility_changed() -> void:
 	if(visible):
 		back_button.grab_focus()
+
+func _on_mode_button_pressed() -> void:
+	var styleboxN: StyleBox = GMButton.get_theme_stylebox("normal")
+	var styleboxP: StyleBox = GMButton.get_theme_stylebox("pressed")
+	var styleboxH: StyleBox = GMButton.get_theme_stylebox("hover")
+	if (GMButton.text == "ASSIST MODE"):
+		Global.setGameModeEasy(false)
+		GMButton.text = "REGULAR MODE"
+		styleboxN.bg_color = "1b7aff"
+		styleboxP.bg_color = "1b7aff"
+		styleboxH.bg_color = "1b7aff"
+		GMButton.add_theme_stylebox_override("normal", styleboxN)
+		GMButton.add_theme_stylebox_override("pressed", styleboxP)
+		GMButton.add_theme_stylebox_override("hover", styleboxH)
+	else:
+		Global.setGameModeEasy(true)
+		GMButton.text = "ASSIST MODE"
+		styleboxN.bg_color = "00ff00"
+		styleboxP.bg_color = "00ff00"
+		styleboxH.bg_color = "00ff00"
+		GMButton.add_theme_stylebox_override("normal", styleboxN)
+		GMButton.add_theme_stylebox_override("pressed", styleboxP)
+		GMButton.add_theme_stylebox_override("hover", styleboxH)
