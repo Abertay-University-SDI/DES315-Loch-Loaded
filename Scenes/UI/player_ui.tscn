@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=14 format=3 uid="uid://bve12h40ll6sx"]
 
 [ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
 [ext_resource type="Texture2D" uid="uid://ceomji24jqk64" path="res://Textures/Decorations/TEMP_ASSET_SprayPaint.png" id="6_deklj"]
 [ext_resource type="Shader" uid="uid://cpfxv51nerr7f" path="res://Code/shaders/cooldown.gdshader" id="7_6nfne"]
-[ext_resource type="Texture2D" uid="uid://dwplm6b560urr" path="res://Textures/UI/dash_temp.png" id="8_21gwg"]
+[ext_resource type="Texture2D" uid="uid://dxgf5y3ykpruq" path="res://Textures/UI/dash.png" id="8_jcbsq"]
+[ext_resource type="Texture2D" uid="uid://bb4ejwnk0pa1j" path="res://Textures/UI/ground slam.png" id="9_axtvl"]
+[ext_resource type="Texture2D" uid="uid://jypbbqmr6yy6" path="res://Textures/UI/sound stun.png" id="10_onufr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jcbsq"]
 shader = ExtResource("7_6nfne")
@@ -133,24 +135,29 @@ theme_override_font_sizes/font_size = 68
 text = "0/4"
 
 [node name="Cooldowns" type="HBoxContainer" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 53.0
-offset_top = 570.0
-offset_right = 829.0
-offset_bottom = 826.0
-scale = Vector2(0.27999878, 0.27999878)
+offset_left = -58.0
+offset_top = 504.0
+offset_right = 2455.5017
+offset_bottom = 1604.0007
+scale = Vector2(0.19999878, 0.19999878)
+theme_override_constants/separation = -500
 
 [node name="Dash" type="TextureRect" parent="Cooldowns"]
 material = SubResource("ShaderMaterial_jcbsq")
 layout_mode = 2
-texture = ExtResource("8_21gwg")
+texture = ExtResource("8_jcbsq")
+expand_mode = 2
 
 [node name="Slam" type="TextureRect" parent="Cooldowns"]
 material = SubResource("ShaderMaterial_21gwg")
 layout_mode = 2
-texture = ExtResource("8_21gwg")
+texture = ExtResource("9_axtvl")
+expand_mode = 2
 
 [node name="Shock" type="TextureRect" parent="Cooldowns"]
 material = SubResource("ShaderMaterial_axtvl")
 layout_mode = 2
-texture = ExtResource("8_21gwg")
+texture = ExtResource("10_onufr")
+expand_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=155 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -16,11 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://b5vjh4to5cv6s" path="res://Textures/Designs/Level_Iteration_4_-_with_background.png" id="14_c71rb"]
 [ext_resource type="PackedScene" uid="uid://x178r7x56d5w" path="res://Scenes/Entites/player.tscn" id="15_qwldb"]
 [ext_resource type="PackedScene" uid="uid://u3ems3ebvg4l" path="res://Scenes/Interactables/conditionWall.tscn" id="15_xqiqi"]
+[ext_resource type="PackedScene" uid="uid://b4euddxhiwgh2" path="res://Scenes/UI/key_show.tscn" id="16_eox1e"]
+[ext_resource type="Texture2D" uid="uid://cebyhaf1hknrg" path="res://Textures/UI/Left_stick_right.png" id="17_rffg8"]
 [ext_resource type="PackedScene" uid="uid://ci2ek4dc48ji4" path="res://Scenes/Interactables/zippoint_end.tscn" id="18_kc4se"]
+[ext_resource type="Texture2D" uid="uid://hxja2rsil4l1" path="res://Textures/UI/padkey_down.png" id="18_y1k6p"]
 [ext_resource type="PackedScene" uid="uid://c36yui16q7hm8" path="res://Scenes/Interactables/zippoint_Start.tscn" id="19_1x42q"]
 [ext_resource type="PackedScene" uid="uid://b4pmys5yonau3" path="res://Scenes/Tall Building Prefabs V1/Tall Building Base V1.tscn" id="19_kc4se"]
 [ext_resource type="PackedScene" uid="uid://uhrg7odt8owd" path="res://Scenes/I-Beam Prefabs/Beam Short.tscn" id="19_l6qp1"]
+[ext_resource type="Texture2D" uid="uid://d14nmpf8uduas" path="res://Textures/UI/Left_stick_down.png" id="19_yqi7y"]
 [ext_resource type="PackedScene" uid="uid://xtqvjdyoxk7s" path="res://Scenes/Scene [Assets]/Crane.tscn" id="20_pr525"]
+[ext_resource type="Texture2D" uid="uid://blodrot3fqdxr" path="res://Textures/Scrap/Contruction_Tile.png" id="20_srf5c"]
 [ext_resource type="PackedScene" uid="uid://dyc12t1fc0bma" path="res://Scenes/I-Beam Prefabs/Beam Long.tscn" id="20_suaas"]
 [ext_resource type="PackedScene" uid="uid://u20ievdr005p" path="res://Scenes/Scene [Assets]/Lights [Assets]/Lamp.tscn" id="21_6lnp2"]
 [ext_resource type="PackedScene" uid="uid://c1cteboldo51h" path="res://Scenes/Spray Spots/Spray Spots.tscn" id="27_17b5f"]
@@ -144,13 +149,28 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(13950, 1956.5)
+size = Vector2(14758, 1954.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
 size = Vector2(250.5, 1972)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c3wc"]
+size = Vector2(143, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6euf"]
+size = Vector2(30, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2md6b"]
+size = Vector2(24, 95.078)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fblji"]
+size = Vector2(24, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5lv3"]
+size = Vector2(23.5, 287.6875)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(13847, 20)
+size = Vector2(14655, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suaas"]
 size = Vector2(557, 410.62817)
@@ -248,6 +268,7 @@ mouse_filter = 2
 player = NodePath("../../Player")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+process_mode = 3
 visible = false
 material = SubResource("ShaderMaterial_qs4fp")
 anchors_preset = 15
@@ -269,7 +290,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(5741, -257.25)
+position = Vector2(5337, -258.25)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -290,7 +311,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_qwldb")]
 z_index = 1
-position = Vector2(862, -129)
+position = Vector2(-1928, 683)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -301,6 +322,254 @@ UI = NodePath("../CanvasLayer/player_ui")
 
 [node name="====================================" type="Node2D" parent="."]
 visible = false
+
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2(-866, -6)
+
+[node name="blackboard" type="ColorRect" parent="Instructions"]
+offset_left = -1171.0
+offset_top = 523.0
+offset_right = -929.0
+offset_bottom = 677.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard2" type="ColorRect" parent="Instructions"]
+offset_left = -777.0
+offset_top = 496.0
+offset_right = -503.0
+offset_bottom = 679.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="blackboard3" type="ColorRect" parent="Instructions"]
+offset_left = -465.0
+offset_top = 492.0
+offset_right = -191.0
+offset_bottom = 675.0
+color = Color(0.05, 0.05, 0.05, 0.85490197)
+
+[node name="Key_Show_right" parent="Instructions" instance=ExtResource("16_eox1e")]
+offset_left = -1144.0
+offset_top = 620.0
+offset_right = -1104.0
+offset_bottom = 660.0
+action_name = "right"
+
+[node name="Key_Show_jump" parent="Instructions" instance=ExtResource("16_eox1e")]
+offset_left = -1003.0
+offset_top = 632.0
+offset_right = -963.0
+offset_bottom = 672.0
+
+[node name="Key_Show_Crouch" parent="Instructions" instance=ExtResource("16_eox1e")]
+offset_left = -699.0
+offset_top = 503.0
+offset_right = -659.0
+offset_bottom = 543.0
+action_name = "crouch"
+
+[node name="Key_Show_Crouch2" parent="Instructions" instance=ExtResource("16_eox1e")]
+offset_left = -292.0
+offset_top = 587.0
+offset_right = -252.0
+offset_bottom = 627.0
+action_name = "dash"
+
+[node name="Move Right" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1164.0
+offset_top = 596.0
+offset_right = -1077.0
+offset_bottom = 619.0
+text = "Move Right"
+
+[node name="Jump" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -1000.0
+offset_top = 595.0
+offset_right = -959.0
+offset_bottom = 619.0
+text = "Jump"
+
+[node name="Crouch" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -763.0
+offset_top = 606.0
+offset_right = -679.0
+offset_bottom = 641.0
+theme_override_constants/line_spacing = -17
+text = "Crouch to 
+pass down"
+
+[node name="Crouch2" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -616.0
+offset_top = 595.0
+offset_right = -515.0
+offset_bottom = 662.0
+theme_override_constants/line_spacing = -12
+text = "Crouch while
+Walking 
+to slide"
+
+[node name="Dash" type="Label" parent="Instructions"]
+texture_filter = 1
+offset_left = -458.0
+offset_top = 548.0
+offset_right = -198.0
+offset_bottom = 602.0
+text = "Dash To Hurt that Enemy"
+horizontal_alignment = 1
+
+[node name="LeftStickRight" type="Sprite2D" parent="Instructions"]
+position = Vector2(-1119.75, 560.25)
+scale = Vector2(0.27148426, 0.27148426)
+texture = ExtResource("17_rffg8")
+
+[node name="PadkeyDown" type="Sprite2D" parent="Instructions"]
+position = Vector2(-981.99994, 566)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("18_y1k6p")
+
+[node name="PadkeyDown2" type="Sprite2D" parent="Instructions"]
+position = Vector2(-398.00006, 609.00006)
+rotation = 1.5707964
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("18_y1k6p")
+
+[node name="LeftStickDown" type="Sprite2D" parent="Instructions"]
+position = Vector2(-744.99994, 530)
+scale = Vector2(0.27148426, 0.27148426)
+texture = ExtResource("19_yqi7y")
+
+[node name="Tutorial" type="Node2D" parent="."]
+position = Vector2(-862, -4)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(198, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D2"]
+position = Vector2(-938.375, 593)
+shape = SubResource("RectangleShape2D_5c3wc")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D2/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Pass" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(257, 46)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Pass"]
+position = Vector2(-911, 545)
+shape = SubResource("RectangleShape2D_o6euf")
+one_way_collision = true
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/Pass/CollisionShape2D"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+texture_filter = 1
+offset_left = -14.0
+offset_top = -12.0
+offset_right = 16.0
+offset_bottom = 12.5
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+flip_h = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(246, -194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D5"]
+position = Vector2(-958, 590)
+shape = SubResource("RectangleShape2D_5c3wc")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D5/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(629, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D6"]
+position = Vector2(-958, 590)
+shape = SubResource("RectangleShape2D_5c3wc")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D6/CollisionShape2D"]
+texture_filter = 1
+offset_left = -72.0
+offset_top = -12.0
+offset_right = 72.0
+offset_bottom = 12.0
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(162, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D3"]
+position = Vector2(-961.875, 652.53906)
+shape = SubResource("RectangleShape2D_2md6b")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D3/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.125
+offset_top = -47.539063
+offset_right = 11.579645
+offset_bottom = 49.0
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(99, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D"]
+position = Vector2(-1012, 661.5)
+shape = SubResource("RectangleShape2D_fblji")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -37.5
+offset_right = 12.0
+offset_bottom = 36.5
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Tutorial"]
+position = Vector2(404, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/StaticBody2D4"]
+position = Vector2(-1032, 531.84375)
+shape = SubResource("RectangleShape2D_n5lv3")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/StaticBody2D4/CollisionShape2D"]
+texture_filter = 1
+offset_left = -12.0
+offset_top = -143.84375
+offset_right = 12.0
+offset_bottom = 144.65625
+texture = ExtResource("20_srf5c")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Tall Buildings" type="Node2D" parent="."]
 
@@ -4591,9 +4860,6 @@ position = Vector2(2713, 208)
 [node name="Spray Spot9" parent="Spray Spots" instance=ExtResource("27_17b5f")]
 position = Vector2(3709, 201)
 
-[node name="Flybot" parent="Spray Spots" instance=ExtResource("31_aloh2")]
-position = Vector2(7847, -220)
-
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="Bushes" type="Node2D" parent="Decoration"]
@@ -4828,14 +5094,14 @@ position = Vector2(6386, 675.0002)
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="Ground Collision" type="CollisionShape2D" parent="Ground"]
-position = Vector2(5685.5, 708)
+position = Vector2(5281.5, 708)
 shape = SubResource("RectangleShape2D_hnohd")
 
 [node name="Ground Image Colour" type="ColorRect" parent="Ground"]
-offset_left = -1238.0
+offset_left = -2047.0
 offset_top = 698.0
-offset_right = 12589.498
-offset_bottom = 765.0
+offset_right = 12588.009
+offset_bottom = 767.64325
 scale = Vector2(1.0018443, 1)
 color = Color(0.288518, 0.28851798, 0.28851798, 1)
 
@@ -4976,6 +5242,9 @@ position = Vector2(10313, 104)
 
 [node name="Flybot10" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
 position = Vector2(10673, 328)
+
+[node name="Flybot11" parent="Enemies/FlyBots" instance=ExtResource("31_aloh2")]
+position = Vector2(7847, -220)
 
 [node name="Chargers" type="Node2D" parent="Enemies"]
 

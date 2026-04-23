@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://7qw1uye7xvsp"]
+
+[ext_resource type="PackedScene" uid="uid://bi0vk42igqb3f" path="res://Models/Gumball_Building/Gumball_Building.fbx" id="1_men4n"]
+[ext_resource type="Texture2D" uid="uid://duh738ivbsqgd" path="res://Models/Gumball_Building/Gumball_lp_Gumball_Building_BaseColor.png" id="2_080de"]
+[ext_resource type="Texture2D" uid="uid://0vdrjnphhy6k" path="res://Models/Gumball_Building/Gumball_lp_Gumball_Building_Metallic.png" id="3_br2cv"]
+[ext_resource type="Texture2D" uid="uid://btvdngp15lkhs" path="res://Models/Gumball_Building/Gumball_lp_Gumball_Building_Normal.png" id="4_pgro8"]
+[ext_resource type="Texture2D" uid="uid://oys5shqhhoum" path="res://Models/Gumball_Building/Gumball_lp_Gumball_Building_Roughness.png" id="5_dygnb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex3t0"]
+albedo_texture = ExtResource("2_080de")
+metallic = 1.0
+metallic_texture = ExtResource("3_br2cv")
+roughness_texture = ExtResource("5_dygnb")
+normal_enabled = true
+normal_texture = ExtResource("4_pgro8")
+
+[node name="Gumball_Building" instance=ExtResource("1_men4n")]
+
+[node name="Gumball_lp" parent="." index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.19483642, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ex3t0")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://bv2c7gsw6pfq7"]
+
+[ext_resource type="PackedScene" uid="uid://cefvifrqeqclr" path="res://Models/Seattle_Building/Seattle_Building.fbx" id="1_p143h"]
+[ext_resource type="Texture2D" uid="uid://bs28hbrus55qq" path="res://Models/Seattle_Building/Seattle_Building_Low_Seattle_Building_BaseColor.png" id="2_84j20"]
+[ext_resource type="Texture2D" uid="uid://bybnjvk4kls4c" path="res://Models/Seattle_Building/Seattle_Building_Low_Seattle_Building_Height.png" id="3_kuuh6"]
+[ext_resource type="Texture2D" uid="uid://bsxtbjco2u7mo" path="res://Models/Seattle_Building/Seattle_Building_Low_Seattle_Building_Metallic.png" id="4_aeexm"]
+[ext_resource type="Texture2D" uid="uid://d766b45o8pvq" path="res://Models/Seattle_Building/Seattle_Building_Low_Seattle_Building_Normal.png" id="5_y65p2"]
+[ext_resource type="Texture2D" uid="uid://cicnkaoj3w8w5" path="res://Models/Seattle_Building/Seattle_Building_Low_Seattle_Building_Roughness.png" id="6_uktg7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsa3m"]
+albedo_texture = ExtResource("2_84j20")
+metallic = 1.0
+metallic_texture = ExtResource("4_aeexm")
+roughness_texture = ExtResource("6_uktg7")
+normal_enabled = true
+normal_texture = ExtResource("5_y65p2")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("3_kuuh6")
+
+[node name="Seattle_Building" instance=ExtResource("1_p143h")]
+
+[node name="Seattle_Building" parent="." index="7"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.745129e-09, 0.41991362, -2.9085483e-09)
+surface_material_override/0 = SubResource("StandardMaterial3D_nsa3m")

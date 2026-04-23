@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://cddqubjcy5ae"]
+
+[ext_resource type="PackedScene" uid="uid://bloj5vl0s26id" path="res://Models/Singa_Building/Singa_Building.fbx" id="1_0bnx1"]
+[ext_resource type="Texture2D" uid="uid://cx01lqjomd4ml" path="res://Models/Singa_Building/Singa_Building_Singa_Building_BaseColor.png" id="2_3mog6"]
+[ext_resource type="Texture2D" uid="uid://dhn8sp1j7v5ic" path="res://Models/Singa_Building/Singa_Building_Singa_Building_Height.png" id="3_yjhvr"]
+[ext_resource type="Texture2D" uid="uid://b2rlnke4jxh00" path="res://Models/Singa_Building/Singa_Building_Singa_Building_Metallic.png" id="4_ps3as"]
+[ext_resource type="Texture2D" uid="uid://dc7wp02teos1d" path="res://Models/Singa_Building/Singa_Building_Singa_Building_Normal.png" id="5_r85t1"]
+[ext_resource type="Texture2D" uid="uid://bsbu0gi86rdoi" path="res://Models/Singa_Building/Singa_Building_Singa_Building_Roughness.png" id="6_sp75n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqstl"]
+diffuse_mode = 3
+albedo_texture = ExtResource("2_3mog6")
+metallic = 1.0
+metallic_texture = ExtResource("4_ps3as")
+roughness_texture = ExtResource("6_sp75n")
+normal_enabled = true
+normal_texture = ExtResource("5_r85t1")
+heightmap_texture = ExtResource("3_yjhvr")
+subsurf_scatter_texture = ExtResource("3_yjhvr")
+
+[node name="Singa_Building" instance=ExtResource("1_0bnx1")]
+
+[node name="Singa_Building" parent="." index="2"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.6363321e-09, 0.31538537, 1.7340009e-09)
+surface_material_override/0 = SubResource("StandardMaterial3D_xqstl")
