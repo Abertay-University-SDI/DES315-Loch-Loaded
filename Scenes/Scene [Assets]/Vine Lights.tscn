@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pm5tb"]
 atlas = ExtResource("1_4tnby")
-region = Rect2(1634, 755, 685, 272)
+region = Rect2(1634, 755, 685, 207.69739)
 
 [node name="vine_lights_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)

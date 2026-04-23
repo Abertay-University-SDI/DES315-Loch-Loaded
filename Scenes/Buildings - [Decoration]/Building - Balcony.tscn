@@ -13,12 +13,15 @@ size = Vector2(704.762, 33.33332)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1.2762059, 1.4687854, 1.4687854, 1)
+z_index = 100
 texture = SubResource("AtlasTexture_yrnv0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(-1.7029897e-06, 88.09524)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_l4fd2")
+one_way_collision = true

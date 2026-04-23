@@ -219,6 +219,7 @@ _data = {
 }
 
 [node name="Robot" type="Node2D" node_paths=PackedStringArray("attack_area", "damagePlayer_sfx", "idle_sfx", "_spray_collectable") groups=["Enemy"]]
+z_index = 1
 script = ExtResource("1_kj8xj")
 attack_area = NodePath("alive_body/attack_area")
 damagePlayer_sfx = NodePath("sounds/DamagePlayer")

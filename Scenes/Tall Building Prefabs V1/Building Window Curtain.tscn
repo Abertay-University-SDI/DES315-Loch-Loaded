@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddwj6cux7qpnh"]
+
+[ext_resource type="Texture2D" uid="uid://dgn7iuws8amky" path="res://Textures/Bace_building_kit_C.png" id="1_bdvv2"]
+[ext_resource type="Texture2D" uid="uid://cskxv4wdghgbf" path="res://Textures/Assets/Buildings/Tall_building_kit_B.png" id="2_bdvv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hv48"]
+atlas = ExtResource("1_bdvv2")
+region = Rect2(1486, 150, 133, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yda6"]
+atlas = ExtResource("2_bdvv2")
+region = Rect2(1719, 881, 300, 343)
+
+[node name="building_window_curtain_0" type="Node2D"]
+scale = Vector2(0.21, 0.21)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.9073486e-06, -18.67168)
+scale = Vector2(1.7901896, 1.5996622)
+texture = SubResource("AtlasTexture_6hv48")
+
+[node name="Ledge Rim" type="Sprite2D" parent="."]
+modulate = Color(0.6955032, 0.6955031, 0.6955031, 1)
+position = Vector2(0, 3.999999)
+rotation = 3.1415925
+scale = Vector2(0.99999994, 1.0999999)
+texture = SubResource("AtlasTexture_7yda6")
