@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpdg27qdap30n"]
+
+[ext_resource type="PackedScene" uid="uid://d2yjdyayvbo48" path="res://Scenes/models/avengers_tower.tscn" id="1_go16i"]
+[ext_resource type="PackedScene" uid="uid://7qw1uye7xvsp" path="res://Scenes/models/gumball_building.tscn" id="2_fvani"]
+[ext_resource type="PackedScene" uid="uid://stchxh4yvobu" path="res://Scenes/models/oil_tower_single.tscn" id="3_kbe84"]
+[ext_resource type="PackedScene" uid="uid://bi678lh8cx2xd" path="res://Scenes/models/remote_building.tscn" id="4_7aid5"]
+[ext_resource type="PackedScene" uid="uid://bv2c7gsw6pfq7" path="res://Scenes/models/seattle_building.tscn" id="5_qmw2y"]
+[ext_resource type="PackedScene" uid="uid://ltkmdsnu6e02" path="res://Scenes/models/simple_buildings_6_in_1.tscn" id="6_cetio"]
+[ext_resource type="PackedScene" uid="uid://cddqubjcy5ae" path="res://Scenes/models/singa_building.tscn" id="7_hanji"]
+[ext_resource type="PackedScene" uid="uid://cj1gitmh46t8k" path="res://Scenes/models/water_tower.tscn" id="8_u8604"]
+
+[node name="Building Collection" type="Node3D"]
+
+[node name="Avengers_tower" parent="." instance=ExtResource("1_go16i")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Gumball_Building" parent="." instance=ExtResource("2_fvani")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Oil_tower_single" parent="." instance=ExtResource("3_kbe84")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Remote_Building" parent="." instance=ExtResource("4_7aid5")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Seattle_Building" parent="." instance=ExtResource("5_qmw2y")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Simple_Buildings_6in1" parent="." instance=ExtResource("6_cetio")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Singa_Building" parent="." instance=ExtResource("7_hanji")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)
+
+[node name="Water_tower" parent="." instance=ExtResource("8_u8604")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0)

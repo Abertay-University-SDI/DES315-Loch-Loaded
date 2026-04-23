@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://stchxh4yvobu"]
+
+[ext_resource type="PackedScene" uid="uid://bpk7sfqf25cfu" path="res://Models/Oil_Tower/Oil_tower_single.fbx" id="1_gxeko"]
+[ext_resource type="Texture2D" uid="uid://ckjnqjbwegw28" path="res://Models/Oil_Tower/Oil_tower_single_Oil_tower_BaseColor.png" id="2_ocpua"]
+[ext_resource type="Texture2D" uid="uid://dr2sauk874gxg" path="res://Models/Oil_Tower/Oil_tower_single_Oil_tower_Height.png" id="3_60moj"]
+[ext_resource type="Texture2D" uid="uid://xsurgcmouvn4" path="res://Models/Oil_Tower/Oil_tower_single_Oil_tower_Metallic.png" id="4_sljf5"]
+[ext_resource type="Texture2D" uid="uid://bghfxlo7yw4yp" path="res://Models/Oil_Tower/Oil_tower_single_Oil_tower_Normal.png" id="5_0tebe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nov5q"]
+albedo_texture = ExtResource("2_ocpua")
+metallic = 1.0
+metallic_texture = ExtResource("4_sljf5")
+normal_enabled = true
+normal_texture = ExtResource("5_0tebe")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_60moj")
+
+[node name="Oil_tower_single" instance=ExtResource("1_gxeko")]
+
+[node name="Oil_tower_Lp" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.28827697, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_nov5q")
