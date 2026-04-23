@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://dpq8opplbht6b" path="res://Sounds/drone hum.wav" id="4_4tuei"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="7_75oqf"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tuei"]
 size = Vector2(21, 14.5)
 
@@ -194,6 +193,7 @@ _data = {
 }
 
 [node name="Flybot" type="Node2D" node_paths=PackedStringArray("attack_area", "shootSound", "_spray_collectable") groups=["Enemy"]]
+z_index = 5
 script = ExtResource("1_pirrt")
 attack_area = NodePath("alive_body/attack_area")
 shootSound = NodePath("Sounds/DroneShoot")
