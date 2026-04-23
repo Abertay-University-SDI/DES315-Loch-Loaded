@@ -28,7 +28,6 @@ func _on_ready() -> void:
 	_score_reward = 500
 	_direction = -1
 	_hurt_box.body_entered.connect(_hurt_player)
-	idle_sfx.play()
 
 
 func _on_animation_finished(anim_name: String) -> void:
@@ -97,5 +96,6 @@ func _on_land() -> void:
 		_bounces       = 0
 		_jump_cooldown = JUMP_COOLDOWN
 		_animation_player.play("RESET")
+		idle_sfx.play()
 	else:
 		_alive.velocity = Vector2(_direction * MAX_CHARGE, -MAX_CHARGE) * BASE_LAUNCH
