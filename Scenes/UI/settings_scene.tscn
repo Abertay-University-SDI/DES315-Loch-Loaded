@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=18 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/scene_managers/settings_scene.gd" id="1_j0xhm"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_1lvst"]
 [ext_resource type="PackedScene" uid="uid://3b2vc2rcph8w" path="res://Scenes/UI/InputSettings.tscn" id="3_3i81g"]
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="3_3n1my"]
+[ext_resource type="Texture2D" uid="uid://bcxb4ed2vlaik" path="res://Textures/UI/settings-overlay.png" id="3_mheei"]
 [ext_resource type="Texture2D" uid="uid://cash5oqempumh" path="res://Textures/UI/settings-cassette-alll.png" id="6_rm1r3"]
 [ext_resource type="Texture2D" uid="uid://dyw8v1cgx2hdi" path="res://Textures/UI/settings-cassette-left-select.png" id="7_gd5x8"]
 [ext_resource type="BitMap" uid="uid://piho1k2p10xl" path="res://Textures/UI/clicked_mask_left.png" id="8_l7e57"]
@@ -12,6 +13,10 @@
 [ext_resource type="BitMap" uid="uid://cdm2lfpg3uimx" path="res://Textures/UI/clicked_mask_middle.png" id="11_p7gpx"]
 [ext_resource type="Texture2D" uid="uid://ctwp7orfvba8" path="res://Textures/UI/settings-cassette-right-select.png" id="13_a6akk"]
 [ext_resource type="BitMap" uid="uid://djuvos1hc2185" path="res://Textures/UI/clicked_mask_right.png" id="14_xk5o7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haq8y"]
+atlas = ExtResource("3_mheei")
+region = Rect2(448, 61, 969, 915)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n1my"]
 bg_color = Color(0.105882354, 0.47843137, 1, 1)
@@ -38,22 +43,77 @@ sfx_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/Ta
 music_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/music_slider")
 GMButton = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer/MarginContainer/mode_button")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_rm1r3")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -277.5
-offset_right = 311.0
-offset_bottom = 277.5
+offset_left = -365.54935
+offset_top = 99.0
+offset_right = -205.54935
+offset_bottom = 178.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.13962634
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+text = "Sound"
+
+[node name="Label2" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 273.0
+offset_right = 765.0
+offset_bottom = 322.0
+theme_override_constants/outline_size = 4
+text = "Accessibility"
+
+[node name="Label3" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 844.00006
+offset_top = 496.0
+offset_right = 1085.0
+offset_bottom = 575.0
+rotation = 0.14048807
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.75
+offset_right = 371.75
+offset_bottom = 872.5
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_haq8y")
+expand_mode = 4
+stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
@@ -75,10 +135,9 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("3_3n1my")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -131,6 +190,7 @@ step = 0.01
 value = 1.0
 
 [node name="Acessability" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -203,8 +263,7 @@ offset_bottom = 314.5
 
 [node name="back_box_container" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_vertical = 4
 
 [node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/back_box_container" node_paths=PackedStringArray("scene")]
 layout_mode = 2
@@ -213,7 +272,8 @@ text = "back"
 script = ExtResource("3_1lvst")
 scene = NodePath("../../../..")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Main_Menu_Settings" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -223,7 +283,7 @@ grow_vertical = 2
 texture = ExtResource("6_rm1r3")
 expand_mode = 2
 
-[node name="Sound" type="TextureButton" parent="."]
+[node name="Sound" type="TextureButton" parent="Main_Menu_Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -236,7 +296,7 @@ texture_click_mask = ExtResource("8_l7e57")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Sound"]
+[node name="Label" type="Label" parent="Main_Menu_Settings/Sound"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -254,7 +314,7 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 50
 text = "Sound"
 
-[node name="Accessibility" type="TextureButton" parent="."]
+[node name="Accessibility" type="TextureButton" parent="Main_Menu_Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -267,7 +327,7 @@ texture_click_mask = ExtResource("11_p7gpx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Accessibility"]
+[node name="Label" type="Label" parent="Main_Menu_Settings/Accessibility"]
 layout_mode = 0
 offset_left = 550.1105
 offset_top = 273.0
@@ -276,7 +336,7 @@ offset_bottom = 322.0
 theme_override_constants/outline_size = 4
 text = "Accessibility"
 
-[node name="Controls" type="TextureButton" parent="."]
+[node name="Controls" type="TextureButton" parent="Main_Menu_Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -289,7 +349,7 @@ texture_click_mask = ExtResource("14_xk5o7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Controls"]
+[node name="Label" type="Label" parent="Main_Menu_Settings/Controls"]
 layout_mode = 0
 offset_left = 842.6376
 offset_top = 496.0
@@ -311,3 +371,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer/MarginContainer/mode_button" to="." method="_on_mode_button_pressed"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/colorBlind_container/colorBlind_list" to="." method="_on_color_blind_list_item_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/back_box_container/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Main_Menu_Settings/Sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="Main_Menu_Settings/Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="pressed" from="Main_Menu_Settings/Controls" to="." method="_on_controls_pressed"]

@@ -1,6 +1,15 @@
 extends Control
 
+@onready var tab_container: TabContainer = $PanelContainer/MarginContainer/main_vertical_container/TabContainer
+
+@onready var main_menu_settings: TextureRect = $Main_Menu_Settings
+@onready var background: TextureRect = $Background
+
+
+
 @export var back_button:Button
+
+@export var main_menu:bool = false
 
 var SAVED_PATH = "res://Saves/save_data.txt"
 
@@ -102,9 +111,14 @@ func _on_fim_grain_toggled(toggled_on: bool) -> void:
 			filmGrainTextRect.hide()
 
 func _on_back_button_pressed() -> void:
+	
 	save_settings_to_file()
-	hide();
-	get_tree().get_nodes_in_group("current_ui").back().show()
+	
+	if(main_menu):
+		main_menu_settings.show()
+	else:
+		hide()
+		get_tree().get_nodes_in_group("current_ui").back().show()
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	Global.setColorBlindMode(index)
@@ -135,3 +149,21 @@ func _on_mode_button_pressed() -> void:
 		GMButton.add_theme_stylebox_override("normal", styleboxN)
 		GMButton.add_theme_stylebox_override("pressed", styleboxP)
 		GMButton.add_theme_stylebox_override("hover", styleboxH)
+
+
+func _on_sound_pressed() -> void:
+	tab_container.current_tab = 0
+	background.show()
+	main_menu_settings.hide()
+
+
+func _on_accessibility_pressed() -> void:
+	tab_container.current_tab = 1
+	background.show()
+	main_menu_settings.hide()
+
+
+func _on_controls_pressed() -> void:
+	tab_container.current_tab = 2
+	background.show()
+	main_menu_settings.hide()

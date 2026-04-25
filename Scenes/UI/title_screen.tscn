@@ -79,6 +79,10 @@ layout_mode = 1
 [node name="SettingsScene" parent="." instance=ExtResource("4_nd20k")]
 visible = false
 layout_mode = 1
+main_menu = true
+
+[node name="Main_Menu_Settings" parent="SettingsScene" index="1"]
+visible = true
 
 [node name="credits_screen" parent="." instance=ExtResource("5_tjte5")]
 visible = false
@@ -178,3 +182,5 @@ stretch_mode = 4
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+
+[editable path="SettingsScene"]
