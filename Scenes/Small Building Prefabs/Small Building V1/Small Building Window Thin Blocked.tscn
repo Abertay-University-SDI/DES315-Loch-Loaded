@@ -17,6 +17,7 @@ atlas = ExtResource("1_74nxg")
 region = Rect2(1554, 1079, 482, 36)
 
 [node name="Small_Building_Window_Thin_Blocked_0" type="Node2D"]
+modulate = Color(0.4045111, 0.40451115, 0.4045111, 1)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

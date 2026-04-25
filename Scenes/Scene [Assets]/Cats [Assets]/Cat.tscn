@@ -6,7 +6,7 @@
 atlas = ExtResource("1_btran")
 region = Rect2(620, 3887, 233, 184)
 
-[node name="Node2D" type="Node2D"]
+[node name="Cat_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
