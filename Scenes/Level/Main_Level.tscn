@@ -2184,7 +2184,7 @@ position = Vector2(5202, 223)
 position = Vector2(5570, 131)
 
 [node name="Beam_1_7" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(6625, -145)
+position = Vector2(6625, -14)
 
 [node name="Beam_1_11" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
 position = Vector2(6324, -60)
@@ -2197,6 +2197,9 @@ position = Vector2(8213, -353)
 
 [node name="Beam_1_14" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
 position = Vector2(8476, -404)
+
+[node name="Beam_1_15" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
+position = Vector2(9129, -230)
 
 [node name="Beam_1_12" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
 position = Vector2(8790, -338)
@@ -2335,22 +2338,22 @@ rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_17" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
-position = Vector2(5659, -158.99994)
+position = Vector2(5659, -27.999939)
 rotation = 0.19198622
 scale = Vector2(0.21, 0.58214843)
 
 [node name="Scaff_Metal_Pole_2_18" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
-position = Vector2(5700, -312.99994)
+position = Vector2(5700, -181.99995)
 rotation = 1.5707964
 scale = Vector2(0.21, 0.062)
 
 [node name="Scaff_Metal_Pole_2_19" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
-position = Vector2(5700, -425)
+position = Vector2(5700, -294)
 rotation = 3.1415927
 scale = Vector2(0.21, 0.412)
 
 [node name="Scaff_Metal_Pole_2_51" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
-position = Vector2(5742.0005, -159.99988)
+position = Vector2(5742.0005, -28.999878)
 rotation = -0.1924947
 scale = Vector2(0.21, 0.58214843)
 
@@ -2454,6 +2457,26 @@ position = Vector2(7586.0005, -349)
 rotation = -0.1924947
 scale = Vector2(0.21, 0.315)
 
+[node name="Scaff_Metal_Pole_2_52" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
+position = Vector2(8174, -175.99998)
+rotation = 0.19198622
+scale = Vector2(0.21, 0.315)
+
+[node name="Scaff_Metal_Pole_2_53" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
+position = Vector2(8206, -258)
+rotation = 1.5707964
+scale = Vector2(0.21, 0.072)
+
+[node name="Scaff_Metal_Pole_2_54" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
+position = Vector2(8206, -445)
+rotation = 3.1415927
+scale = Vector2(0.21, 0.702)
+
+[node name="Scaff_Metal_Pole_2_55" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
+position = Vector2(8239, -174.99998)
+rotation = -0.1924947
+scale = Vector2(0.21, 0.315)
+
 [node name="Scaff_Metal_Pole_2_47" parent="Scaffolding/Scaffolding - [Crane Wires]" instance=ExtResource("62_a6obv")]
 position = Vector2(7843, -431)
 rotation = 0.19198622
@@ -2492,7 +2515,7 @@ position = Vector2(3560, 1030)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_2")
 
 [node name="Zipline_start_4" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("63_uf8m2")]
-position = Vector2(5765, -48)
+position = Vector2(5765, 83)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_4")
 
 [node name="Zipline_start_3" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("63_uf8m2")]
