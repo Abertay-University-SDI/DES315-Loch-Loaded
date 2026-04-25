@@ -48,7 +48,7 @@ func _ready() -> void:
 	spray_scene = ResourceLoader.load("res://Scenes/Spray Spots/spray.tscn")
 
 func _process(_delta: float) -> void:
-	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= 4:
+	if player_in_zone and Input.is_action_just_pressed("spray") and playerBody.UI.getSprayValue() >= Global.spray_cans_needed:
 		painted = true
 		spraySound.play()
 		playerBody.score+=1000

@@ -1,15 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://bve12h40ll6sx"]
+[gd_scene load_steps=16 format=3 uid="uid://bve12h40ll6sx"]
 
 [ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
 [ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
 [ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/player/health_bar.gd" id="3_t3flm"]
 [ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
-[ext_resource type="Texture2D" uid="uid://ceomji24jqk64" path="res://Textures/Decorations/TEMP_ASSET_SprayPaint.png" id="6_deklj"]
+[ext_resource type="Texture2D" uid="uid://bracdemle6g3p" path="res://Textures/UI/spraycan-icon.png" id="6_jcbsq"]
 [ext_resource type="Shader" uid="uid://cpfxv51nerr7f" path="res://Code/shaders/cooldown.gdshader" id="7_6nfne"]
 [ext_resource type="Texture2D" uid="uid://dxgf5y3ykpruq" path="res://Textures/UI/dash.png" id="8_jcbsq"]
 [ext_resource type="Texture2D" uid="uid://bb4ejwnk0pa1j" path="res://Textures/UI/ground slam.png" id="9_axtvl"]
 [ext_resource type="Texture2D" uid="uid://jypbbqmr6yy6" path="res://Textures/UI/sound stun.png" id="10_onufr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axtvl"]
+atlas = ExtResource("6_jcbsq")
+region = Rect2(412, 244, 183, 416)
+
+[sub_resource type="SystemFont" id="SystemFont_jcbsq"]
+font_names = PackedStringArray("Consolas")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jcbsq"]
 shader = ExtResource("7_6nfne")
@@ -29,7 +36,7 @@ shader_parameter/cooldown = 0.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_scale = 8.00000038
 
-[node name="player_ui" type="Control" node_paths=PackedStringArray("sprayLabel")]
+[node name="player_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +46,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("3_t3flm")
-sprayLabel = NodePath("HBoxContainer/Label")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
@@ -118,21 +124,54 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("6_deklj")
+texture = SubResource("AtlasTexture_axtvl")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="LabelX" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(0, 1.795)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 30
-text = "X"
+theme_override_fonts/font = SubResource("SystemFont_jcbsq")
+theme_override_font_sizes/font_size = 50
+text = "
+X"
 vertical_alignment = 2
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Fraction" type="GridContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 68
-text = "0/4"
+theme_override_constants/h_separation = -75
+theme_override_constants/v_separation = -17
+columns = 2
+
+[node name="Numerator" type="Label" parent="HBoxContainer/Fraction"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_jcbsq")
+theme_override_font_sizes/font_size = 76
+text = "0"
+
+[node name="Empty" type="Label" parent="HBoxContainer/Fraction"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_jcbsq")
+theme_override_font_sizes/font_size = 76
+text = "/"
+horizontal_alignment = 1
+
+[node name="Empty2" type="Label" parent="HBoxContainer/Fraction"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_jcbsq")
+theme_override_font_sizes/font_size = 76
+text = "/"
+horizontal_alignment = 1
+
+[node name="Denominator" type="Label" parent="HBoxContainer/Fraction"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_jcbsq")
+theme_override_font_sizes/font_size = 76
+text = "3"
+horizontal_alignment = 2
 
 [node name="Cooldowns" type="HBoxContainer" parent="."]
 texture_filter = 1
