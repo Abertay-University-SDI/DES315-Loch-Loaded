@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_1lvst"]
 [ext_resource type="PackedScene" uid="uid://3b2vc2rcph8w" path="res://Scenes/UI/InputSettings.tscn" id="3_3i81g"]
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="3_3n1my"]
-[ext_resource type="Texture2D" uid="uid://deeumnw7rec1l" path="res://Textures/UI/settings-ui-full.png" id="6_nvq4g"]
+[ext_resource type="Texture2D" uid="uid://cash5oqempumh" path="res://Textures/UI/settings-cassette-alll.png" id="6_rm1r3"]
 [ext_resource type="Texture2D" uid="uid://dyw8v1cgx2hdi" path="res://Textures/UI/settings-cassette-left-select.png" id="7_gd5x8"]
 [ext_resource type="BitMap" uid="uid://piho1k2p10xl" path="res://Textures/UI/clicked_mask_left.png" id="8_l7e57"]
 [ext_resource type="Texture2D" uid="uid://b7ob5ad86ys1i" path="res://Textures/UI/settings-cassette-mid-select.png" id="10_nvq4g"]
@@ -220,7 +220,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_nvq4g")
+texture = ExtResource("6_rm1r3")
 expand_mode = 2
 
 [node name="Sound" type="TextureButton" parent="."]
