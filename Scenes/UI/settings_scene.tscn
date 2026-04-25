@@ -1,10 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=16 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/scene_managers/settings_scene.gd" id="1_j0xhm"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_1lvst"]
 [ext_resource type="PackedScene" uid="uid://3b2vc2rcph8w" path="res://Scenes/UI/InputSettings.tscn" id="3_3i81g"]
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="3_3n1my"]
+[ext_resource type="Texture2D" uid="uid://deeumnw7rec1l" path="res://Textures/UI/settings-ui-full.png" id="6_nvq4g"]
+[ext_resource type="Texture2D" uid="uid://dyw8v1cgx2hdi" path="res://Textures/UI/settings-cassette-left-select.png" id="7_gd5x8"]
+[ext_resource type="BitMap" uid="uid://piho1k2p10xl" path="res://Textures/UI/clicked_mask_left.png" id="8_l7e57"]
+[ext_resource type="Texture2D" uid="uid://b7ob5ad86ys1i" path="res://Textures/UI/settings-cassette-mid-select.png" id="10_nvq4g"]
+[ext_resource type="BitMap" uid="uid://cdm2lfpg3uimx" path="res://Textures/UI/clicked_mask_middle.png" id="11_p7gpx"]
+[ext_resource type="Texture2D" uid="uid://ctwp7orfvba8" path="res://Textures/UI/settings-cassette-right-select.png" id="13_a6akk"]
+[ext_resource type="BitMap" uid="uid://djuvos1hc2185" path="res://Textures/UI/clicked_mask_right.png" id="14_xk5o7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n1my"]
 bg_color = Color(0.105882354, 0.47843137, 1, 1)
@@ -205,6 +212,95 @@ size_flags_vertical = 4
 text = "back"
 script = ExtResource("3_1lvst")
 scene = NodePath("../../../..")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_nvq4g")
+expand_mode = 2
+
+[node name="Sound" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.001617, 1)
+texture_hover = ExtResource("7_gd5x8")
+texture_click_mask = ExtResource("8_l7e57")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Sound"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.4924
+offset_top = 113.99997
+offset_right = -236.4924
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.13962634
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+text = "Sound"
+
+[node name="Accessibility" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.001617, 1)
+texture_hover = ExtResource("10_nvq4g")
+texture_click_mask = ExtResource("11_p7gpx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Accessibility"]
+layout_mode = 0
+offset_left = 550.1105
+offset_top = 273.0
+offset_right = 764.1105
+offset_bottom = 322.0
+theme_override_constants/outline_size = 4
+text = "Accessibility"
+
+[node name="Controls" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.001617, 1)
+texture_hover = ExtResource("13_a6akk")
+texture_click_mask = ExtResource("14_xk5o7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 0
+offset_left = 842.6376
+offset_top = 496.0
+offset_right = 1070.8678
+offset_bottom = 564.8314
+rotation = 0.14048807
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
