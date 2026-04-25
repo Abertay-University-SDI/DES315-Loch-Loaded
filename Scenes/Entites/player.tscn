@@ -20,10 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://kucml8n16xlt" path="res://Textures/effects/arrowV2.png" id="18_4m0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yowjc"]
-size = Vector2(20, 20.27027)
+size = Vector2(23.999998, 24.864864)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82p5m"]
-size = Vector2(20, 12.432432)
+size = Vector2(23.999998, 12.432432)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_g5uvi"]
 noise_type = 3
@@ -782,7 +782,7 @@ height = 72.49999
 radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_82p5m"]
-radius = 9.055386
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kov73"]
 radius = 138.23169
@@ -997,12 +997,12 @@ ring = NodePath("Ring")
 idle_collider = NodePath("Tall")
 
 [node name="Tall" type="CollisionShape2D" parent="."]
-position = Vector2(-4.7683716e-07, -18.75)
+position = Vector2(0, -23)
 scale = Vector2(1, 1.85)
 shape = SubResource("RectangleShape2D_yowjc")
 
 [node name="Crouch" type="CollisionShape2D" parent="."]
-position = Vector2(-9.536743e-07, -11.5)
+position = Vector2(0, -11.5)
 scale = Vector2(1, 1.85)
 shape = SubResource("RectangleShape2D_82p5m")
 
@@ -1010,8 +1010,8 @@ shape = SubResource("RectangleShape2D_82p5m")
 z_index = 40
 texture_filter = 2
 material = SubResource("ShaderMaterial_g5uvi")
-position = Vector2(2.3841858e-07, -21.000002)
-scale = Vector2(0.07323495, 0.07323494)
+position = Vector2(0, -24)
+scale = Vector2(0.08316402, 0.08316401)
 sprite_frames = SubResource("SpriteFrames_jxq14")
 animation = &"Idle"
 autoplay = "Idle"
@@ -1140,7 +1140,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zipline_detect"]
-position = Vector2(0, -47)
+position = Vector2(0, -55)
 shape = SubResource("CircleShape2D_82p5m")
 debug_color = Color(0.92836297, 3.2247604e-05, 0.66692793, 0.41960785)
 
@@ -1155,11 +1155,13 @@ shape = SubResource("CircleShape2D_kov73")
 
 [node name="bottom_ray" type="RayCast2D" parent="."]
 position = Vector2(0, -9)
-target_position = Vector2(11, 0)
+scale = Vector2(1.2400001, 1)
+target_position = Vector2(13, 0)
 
 [node name="top_ray" type="RayCast2D" parent="."]
 position = Vector2(0, -37)
-target_position = Vector2(11, 0)
+scale = Vector2(1.2400001, 1)
+target_position = Vector2(13, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

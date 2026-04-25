@@ -6,6 +6,7 @@ var gameModeEasy = false
 var yoyoAbilityUnlocked = false
 var upwardsDashAbilityUnlocked = false
 #var powerGlovesAbilityUnlocked = false
+const spray_cans_needed = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

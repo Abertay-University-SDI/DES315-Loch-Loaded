@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://piho1k2p10xl"
+path="res://.godot/imported/clicked_mask_left.png-65f172b62931ba1a9c148b87b45199b5.res"
+
+[deps]
+
+source_file="res://Textures/UI/clicked_mask_left.png"
+dest_files=["res://.godot/imported/clicked_mask_left.png-65f172b62931ba1a9c148b87b45199b5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

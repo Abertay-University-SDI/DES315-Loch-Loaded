@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://djuvos1hc2185"
+path="res://.godot/imported/clicked_mask_right.png-41583c45a19ef56495805a4a98e2c8b9.res"
+
+[deps]
+
+source_file="res://Textures/UI/clicked_mask_right.png"
+dest_files=["res://.godot/imported/clicked_mask_right.png-41583c45a19ef56495805a4a98e2c8b9.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

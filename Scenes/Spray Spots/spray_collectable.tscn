@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bfyv8qml70oci"]
 
 [ext_resource type="Script" uid="uid://ek2tmlt353uv" path="res://Code/interactables/spray_collectable.gd" id="1_uwtve"]
-[ext_resource type="Texture2D" uid="uid://ceomji24jqk64" path="res://Textures/Decorations/TEMP_ASSET_SprayPaint.png" id="2_wmnl1"]
+[ext_resource type="Texture2D" uid="uid://bracdemle6g3p" path="res://Textures/UI/spraycan-icon.png" id="2_x4xn6"]
 [ext_resource type="AudioStream" uid="uid://djfs3hga2bm50" path="res://Sounds/pickup.wav" id="3_x4xn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtve"]
@@ -23,9 +23,9 @@ area = NodePath("Area2D")
 pickUpSound = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, -16)
-scale = Vector2(0.013742182, 0.013742182)
-texture = ExtResource("2_wmnl1")
+position = Vector2(0, -12)
+scale = Vector2(0.06387109, 0.06387109)
+texture = ExtResource("2_x4xn6")
 
 [node name="Area2D" type="Area2D" parent="."]
 

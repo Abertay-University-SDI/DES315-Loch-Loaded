@@ -182,6 +182,7 @@
 [ext_resource type="PackedScene" uid="uid://n7lbfaml7rh8" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Green Bush.tscn" id="180_oo8hu"]
 [ext_resource type="PackedScene" uid="uid://divk4lmp1np8n" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/White Flowers.tscn" id="181_4yvpm"]
 [ext_resource type="PackedScene" uid="uid://l7olfms0crm" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Blue Pink Flowers.tscn" id="182_qser8"]
+[ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="183_x41ir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -316,7 +317,7 @@ debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
 [node name="Player" parent="." node_paths=PackedStringArray("play_area", "play_area_shape", "spawn", "level_end_area", "levelEndScene", "UI") instance=ExtResource("15_yemep")]
 z_index = 1
-position = Vector2(-914, 601)
+position = Vector2(-1183, 684)
 collision_mask = 3
 play_area = NodePath("../PlayArea")
 play_area_shape = NodePath("../PlayArea/CollisionShape2D")
@@ -6653,3 +6654,12 @@ position = Vector2(-76, 2034.9999)
 [node name="blue_pink_flowers_0" parent="." instance=ExtResource("182_qser8")]
 z_index = 1
 position = Vector2(-74.99997, 2059)
+
+[node name="SprayCollectable" parent="." instance=ExtResource("183_x41ir")]
+position = Vector2(-1059, 694)
+
+[node name="SprayCollectable2" parent="." instance=ExtResource("183_x41ir")]
+position = Vector2(-1013, 695)
+
+[node name="SprayCollectable3" parent="." instance=ExtResource("183_x41ir")]
+position = Vector2(-960, 697)

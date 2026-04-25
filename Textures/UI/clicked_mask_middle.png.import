@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cdm2lfpg3uimx"
+path="res://.godot/imported/clicked_mask_middle.png-4908ae6352c818064ba8387c4411f758.res"
+
+[deps]
+
+source_file="res://Textures/UI/clicked_mask_middle.png"
+dest_files=["res://.godot/imported/clicked_mask_middle.png-4908ae6352c818064ba8387c4411f758.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
