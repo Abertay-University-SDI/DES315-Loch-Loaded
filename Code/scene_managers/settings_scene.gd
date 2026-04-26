@@ -4,6 +4,7 @@ extends Control
 
 @onready var main_menu_settings: TextureRect = $Main_Menu_Settings
 @onready var background: TextureRect = $Background
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 
@@ -125,6 +126,8 @@ func _on_color_blind_list_item_selected(index: int) -> void:
 
 func _on_visibility_changed() -> void:
 	if(visible):
+		if animation_player!= null:
+			animation_player.play("enter")
 		back_button.grab_focus()
 
 func _on_mode_button_pressed() -> void:
@@ -151,19 +154,22 @@ func _on_mode_button_pressed() -> void:
 		GMButton.add_theme_stylebox_override("hover", styleboxH)
 
 
-func _on_sound_pressed() -> void:
-	tab_container.current_tab = 0
+func main_menu_appear()-> void:
+	animation_player.play("enter")
 	background.show()
 	main_menu_settings.hide()
+
+func _on_sound_pressed() -> void:
+	tab_container.current_tab = 0
+	main_menu_appear()
+
 
 
 func _on_accessibility_pressed() -> void:
 	tab_container.current_tab = 1
-	background.show()
-	main_menu_settings.hide()
+	main_menu_appear()
 
 
 func _on_controls_pressed() -> void:
 	tab_container.current_tab = 2
-	background.show()
-	main_menu_settings.hide()
+	main_menu_appear()

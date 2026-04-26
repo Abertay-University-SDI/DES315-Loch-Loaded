@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ci1im0k5mjoxu"]
+[gd_scene load_steps=22 format=3 uid="uid://ci1im0k5mjoxu"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_1lvst"]
 [ext_resource type="Script" uid="uid://cuklfsxahrmjs" path="res://Code/scene_managers/settings_scene.gd" id="1_j0xhm"]
@@ -26,6 +26,60 @@ bg_color = Color(0.105882354, 0.47843137, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gd5x8"]
 bg_color = Color(0.105882354, 0.47843137, 1, 1)
+
+[sub_resource type="Animation" id="Animation_mheei"]
+resource_name = "enter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(268.25, -900), Vector2(268.25, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_haq8y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(268.25, -900)]
+}
+
+[sub_resource type="Animation" id="Animation_nvq4g"]
+resource_name = "exit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(268.25, 0), Vector2(268.25, -900)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7gpx"]
+_data = {
+&"RESET": SubResource("Animation_haq8y"),
+&"enter": SubResource("Animation_mheei"),
+&"exit": SubResource("Animation_nvq4g")
+}
 
 [node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider", "GMButton")]
 process_mode = 3
@@ -100,8 +154,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -371.75
+offset_top = -900.0
 offset_right = 371.75
-offset_bottom = 872.5
+offset_bottom = -27.5
 grow_horizontal = 2
 texture = SubResource("AtlasTexture_haq8y")
 expand_mode = 4
@@ -361,6 +416,11 @@ theme_override_font_sizes/font_size = 50
 text = "Controls"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p7gpx")
+}
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider" to="." method="_on_master_slider_value_changed"]
