@@ -8,7 +8,7 @@ extends Control
 
 
 
-@export var back_button:Button
+@export var back_button:Control
 
 @export var main_menu:bool = false
 
@@ -115,7 +115,7 @@ func _on_back_button_pressed() -> void:
 	
 	save_settings_to_file()
 	
-	if(main_menu):
+	if(main_menu and not main_menu_settings.visible):
 		main_menu_settings.show()
 	else:
 		hide()
