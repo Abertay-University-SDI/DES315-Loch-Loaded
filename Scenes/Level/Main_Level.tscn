@@ -6634,16 +6634,10 @@ position = Vector2(7349, 1206)
 [node name="Lamp_11" parent="Prefabs Showcase" instance=ExtResource("70_uesxb")]
 position = Vector2(6387, 701)
 
-<<<<<<< HEAD
-[node name="AndrewNpc" type="Sprite2D" parent="Prefabs Showcase"]
-position = Vector2(9623.75, 829.3334)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("178_1h8s1")
 
 [node name="plant_pot_0" parent="Prefabs Showcase" instance=ExtResource("178_5ummm")]
-=======
+
 [node name="plant_pot_0" parent="." instance=ExtResource("178_5ummm")]
->>>>>>> 2d8307f2fd8923fdcad12c2668bffbae7eebf198
 z_index = 1
 position = Vector2(-133, 2082.9998)
 
