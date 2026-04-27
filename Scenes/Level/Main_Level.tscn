@@ -5800,10 +5800,6 @@ z_index = -1
 position = Vector2(2168, -293.00003)
 rotation = -0.06156504
 
-[node name="antenna_2" parent="Prefabs Showcase" instance=ExtResource("165_gphas")]
-z_index = 1
-position = Vector2(2135, 18.000061)
-
 [node name="antenna_3" parent="Prefabs Showcase" instance=ExtResource("165_gphas")]
 z_index = 1
 position = Vector2(2594.0002, -169.99998)
