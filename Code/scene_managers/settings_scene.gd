@@ -116,7 +116,14 @@ func _on_back_button_pressed() -> void:
 	save_settings_to_file()
 	
 	if(main_menu and not main_menu_settings.visible):
+		animation_player.play("exit")
+		await animation_player.animation_finished
 		main_menu_settings.show()
+	elif(not main_menu):
+		animation_player.play("exit")
+		await animation_player.animation_finished
+		hide()
+		get_tree().get_nodes_in_group("current_ui").back().show()
 	else:
 		hide()
 		get_tree().get_nodes_in_group("current_ui").back().show()

@@ -247,9 +247,6 @@ bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 visible = false
 world = NodePath("../..")
 
-[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("5_7cgn1")]
-visible = false
-
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("6_1h8s1")]
 visible = false
 
@@ -271,6 +268,9 @@ mouse_filter = 2
 player = NodePath("../../Player")
 
 [node name="PauseScene" parent="CanvasLayer" groups=["current_ui"] instance=ExtResource("4_uvsmn")]
+visible = false
+
+[node name="SettingsScene" parent="CanvasLayer" instance=ExtResource("5_7cgn1")]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]

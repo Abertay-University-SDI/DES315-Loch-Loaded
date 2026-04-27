@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 		add_child(spray_instance)
 		label.hide()
 		zone.monitoring = false
-		playerBody.emit_signal("spray_changed", -4)
+		playerBody.emit_signal("spray_changed", -Global.spray_cans_needed)
 
 func _get_painted() -> bool:
 	return painted

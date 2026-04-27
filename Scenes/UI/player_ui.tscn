@@ -151,6 +151,8 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_jcbsq")
 theme_override_font_sizes/font_size = 76
 text = "0"
+clip_text = true
+visible_characters = 1
 
 [node name="Empty" type="Label" parent="HBoxContainer/Fraction"]
 layout_mode = 2
