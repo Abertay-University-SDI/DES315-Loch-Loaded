@@ -10,8 +10,8 @@ class_name chargerBoss
 const JUMP_COOLDOWN := 0.6
 const MAX_CHARGE    := 4.0
 const CHARGE_RATE   := 2.0
-const BASE_LAUNCH   := 100.0
-const MAX_BOUNCES   := 5
+const BASE_LAUNCH   := 125.0
+const MAX_BOUNCES   := 6
 const HIT_COOLDOWN  := 0.5
 
 var _charge:        float = 0.0
@@ -40,7 +40,7 @@ func _hurt_player(body: Node) -> void:
 		return
 	_hit_cooldown = HIT_COOLDOWN
 	damagePlayer_sfx.play()
-	(body as Player).health_value -= 20 if _airborne else 10
+	(body as Player).health_value -= 30 if _airborne else 15
 
 
 func _on_process(delta: float) -> void:

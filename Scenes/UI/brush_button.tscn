@@ -3,22 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://mna46v4woi2w" path="res://Textures/UI/Brushes/6_point_star_brush.png" id="1_twjqf"]
 [ext_resource type="Script" uid="uid://d2wncuoght6fw" path="res://Code/ui/brush_button.gd" id="2_jp4jo"]
 
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp4jo"]
-bg_color = Color(0, 0, 0, 0.42000002)
+bg_color = Color(0, 0, 0, 0)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.38928655, 0.3892867, 0.38928637, 1)
+border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="TextureButton" type="TextureButton"]
+self_modulate = Color(1, 1, 1, 0)
 z_index = 765
-texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_twjqf")

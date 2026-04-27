@@ -7,6 +7,7 @@ atlas = ExtResource("1_uq50n")
 region = Rect2(1431, 2295, 563, 676)
 
 [node name="ticketbooth_0" type="Node2D"]
+z_index = -20
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
