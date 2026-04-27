@@ -6787,11 +6787,6 @@ position = Vector2(7349, 1206)
 [node name="Lamp_11" parent="Prefabs Showcase" instance=ExtResource("70_uesxb")]
 position = Vector2(6387, 701)
 
-[node name="AndrewNpc" type="Sprite2D" parent="Prefabs Showcase"]
-position = Vector2(3670.25, 894.3334)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("178_1h8s1")
-
 [node name="plant_pot_0" parent="." instance=ExtResource("178_5ummm")]
 z_index = 1
 position = Vector2(-133, 1917.9998)
@@ -6894,38 +6889,3 @@ position = Vector2(-1013, 695)
 
 [node name="SprayCollectable3" parent="." instance=ExtResource("183_x41ir")]
 position = Vector2(-960, 697)
-
-[node name="CallyNpc" type="Sprite2D" parent="."]
-position = Vector2(3628, 885)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("185_o2rjp")
-
-[node name="CarahNpc" type="Sprite2D" parent="."]
-position = Vector2(3587, 920)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("186_yra66")
-
-[node name="KrisNpc" type="Sprite2D" parent="."]
-position = Vector2(3518.5, 904)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("187_jtu4w")
-
-[node name="LaurenceNpc" type="Sprite2D" parent="."]
-position = Vector2(3446.5, 900)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("188_sp6sw")
-
-[node name="LeeNpc" type="Sprite2D" parent="."]
-position = Vector2(3378.5, 897)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("189_02r0p")
-
-[node name="LucyNpc" type="Sprite2D" parent="."]
-position = Vector2(3306.5, 898)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("190_r0lxt")
-
-[node name="PeterNpc" type="Sprite2D" parent="."]
-position = Vector2(3250.5, 895)
-scale = Vector2(0.041, 0.041)
-texture = ExtResource("191_puqqb")
