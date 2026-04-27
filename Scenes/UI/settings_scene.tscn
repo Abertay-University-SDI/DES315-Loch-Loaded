@@ -68,10 +68,9 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("3_3n1my")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -124,6 +123,7 @@ step = 0.01
 value = 1.0
 
 [node name="Acessability" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
