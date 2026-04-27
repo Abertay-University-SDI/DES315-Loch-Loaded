@@ -208,7 +208,7 @@ shader_parameter/mode = 0
 size = Vector2(10868, 1961.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
-size = Vector2(366.25, 1972)
+size = Vector2(366.25, 1933)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
 size = Vector2(10875, 33)
@@ -318,7 +318,7 @@ texture = ExtResource("14_lj8o0")
 [node name="Level_Complete_Area" type="Area2D" parent="PlayArea"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Level_Complete_Area"]
-position = Vector2(9453, -289)
+position = Vector2(9453, -269.5)
 shape = SubResource("RectangleShape2D_eqj4t")
 debug_color = Color(0.63, 0.42000002, 0, 0.63529414)
 
@@ -456,10 +456,10 @@ rotation = -3.1415927
 scale = Vector2(1.04, 1)
 
 [node name="tiled_pink_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("19_ro26n")]
-position = Vector2(1763, 1406)
+position = Vector2(1763, 1241)
 
 [node name="tiled_blue_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("20_4thva")]
-position = Vector2(1763, 1862)
+position = Vector2(1763, 1697)
 
 [node name="tiled_blue_1" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("20_4thva")]
 position = Vector2(7285.0005, 480)
@@ -478,7 +478,7 @@ position = Vector2(1396, 483.00003)
 scale = Vector2(0.145, 0.21)
 
 [node name="Tall_Building_Base_V1_0" parent="Tall Buildings/Tall - Buildings V1" instance=ExtResource("18_32skg")]
-position = Vector2(354, 1425)
+position = Vector2(354, 1260)
 
 [node name="Tall - Buildings V2" type="Node2D" parent="Tall Buildings"]
 
@@ -591,9 +591,6 @@ scale = Vector2(1.545, 1)
 
 [node name="Tall_Building_Window_98" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
 position = Vector2(2480, 207)
-
-[node name="Tall_Building_Window_113" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
-position = Vector2(8163, 923)
 
 [node name="Tall_Building_Window_125" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
 position = Vector2(8169, 546)
@@ -846,13 +843,13 @@ position = Vector2(2174.9998, -178.99997)
 position = Vector2(2420, -178.99997)
 
 [node name="Tall_Building_Pillar_Short_40" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("30_o4lve")]
-position = Vector2(219, 1290.9999)
+position = Vector2(219, 1125.9999)
 
 [node name="Tall_Building_Pillar_Short_43" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("30_o4lve")]
-position = Vector2(219, 1566.9999)
+position = Vector2(219, 1401.9999)
 
 [node name="Tall_Building_Pillar_Long_23" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("31_wi58n")]
-position = Vector2(219, 1428.9999)
+position = Vector2(219, 1263.9999)
 
 [node name="Tall_Building_Pillar_Short_88" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("32_qdbbu")]
 position = Vector2(7923.0005, 631.9999)
@@ -945,13 +942,13 @@ position = Vector2(2607.9998, -60.99997)
 position = Vector2(2608, 216.99998)
 
 [node name="Tall_Building_Pillar_Long_25" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("33_2ca1g")]
-position = Vector2(1062.9998, 1427.9999)
+position = Vector2(1062.9998, 1262.9999)
 
 [node name="Tall_Building_Pillar_Short_44" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("32_qdbbu")]
-position = Vector2(1062, 1307.9999)
+position = Vector2(1062, 1142.9999)
 
 [node name="Tall_Building_Pillar_Short_45" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("32_qdbbu")]
-position = Vector2(1063, 1559.9998)
+position = Vector2(1063, 1394.9998)
 
 [node name="Tall_Building_Pillar_Short_38" parent="Tall Buildings/Tall - Buildings [Pillars]" instance=ExtResource("32_qdbbu")]
 position = Vector2(3834.0002, 229.99991)
@@ -1620,16 +1617,16 @@ position = Vector2(2175, 276.00003)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_41" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("34_ybrv5")]
-position = Vector2(219, 1237.9999)
+position = Vector2(219, 1072.9999)
 
 [node name="Tall_Building_Pillar_End_Bottom_41" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("35_yfx3i")]
-position = Vector2(219, 1346.9999)
+position = Vector2(219, 1181.9999)
 
 [node name="Tall_Building_Pillar_End_Bottom_44" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("35_yfx3i")]
-position = Vector2(219, 1510.9999)
+position = Vector2(219, 1345.9999)
 
 [node name="Tall_Building_Pillar_End_Top_48" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("34_ybrv5")]
-position = Vector2(219.00024, 1604.9999)
+position = Vector2(219.00024, 1439.9999)
 rotation = -3.1415927
 
 [node name="Tall_Building_Pillar_End_Top_70" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("34_ybrv5")]
@@ -1787,18 +1784,18 @@ rotation = -6.2831855
 position = Vector2(2607.9998, 15.999978)
 
 [node name="Tall_Building_Pillar_End_Bottom_45" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("37_vbocv")]
-position = Vector2(1062.9998, 1504.9999)
+position = Vector2(1062.9998, 1339.9999)
 
 [node name="Tall_Building_Pillar_End_Top_49" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("36_bq82h")]
-position = Vector2(1062.9998, 1618.9999)
+position = Vector2(1062.9998, 1453.9999)
 rotation = -3.1415925
 
 [node name="Tall_Building_Pillar_End_Top_50" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("36_bq82h")]
-position = Vector2(1063, 1250.9999)
+position = Vector2(1063, 1085.9999)
 rotation = -6.2831855
 
 [node name="Tall_Building_Pillar_End_Bottom_46" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("37_vbocv")]
-position = Vector2(1062.9998, 1358.9999)
+position = Vector2(1062.9998, 1193.9999)
 
 [node name="Tall_Building_Pillar_End_Bottom_39" parent="Tall Buildings/Tall - Buildings [Pillars Ends]" instance=ExtResource("37_vbocv")]
 position = Vector2(3834.0002, 176.99988)
@@ -2146,15 +2143,15 @@ position = Vector2(1394.0009, 664.00006)
 position = Vector2(1957, 139)
 
 [node name="Beam_6" parent="Beams/Beams [Short]" instance=ExtResource("60_uw5ib")]
-position = Vector2(4426, 1193)
+position = Vector2(2944.0012, 1581)
 scale = Vector2(0.12499023, 1)
 
 [node name="Beam_8" parent="Beams/Beams [Short]" instance=ExtResource("60_uw5ib")]
-position = Vector2(4940, 1519)
+position = Vector2(3458.0012, 1907)
 scale = Vector2(0.12499023, 1)
 
 [node name="Beam_9" parent="Beams/Beams [Short]" instance=ExtResource("60_uw5ib")]
-position = Vector2(4788, 1215)
+position = Vector2(3306.0012, 1603)
 scale = Vector2(0.4, 1)
 
 [node name="Beam_3" parent="Beams/Beams [Short]" instance=ExtResource("60_uw5ib")]
@@ -2515,11 +2512,11 @@ position = Vector2(1575, -546)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_0")
 
 [node name="Zipline_start_1" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("63_uf8m2")]
-position = Vector2(3502.0005, 1290)
+position = Vector2(2020.0017, 1678)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_1")
 
 [node name="Zipline_start_2" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("63_uf8m2")]
-position = Vector2(3864, 1312)
+position = Vector2(2382.0012, 1700)
 point_1 = NodePath("../../Zipline [End]/Zippoint_end_2")
 
 [node name="Zipline_start_4" parent="Zipline/Zipline [Start]" node_paths=PackedStringArray("point_1") instance=ExtResource("63_uf8m2")]
@@ -2537,10 +2534,10 @@ position = Vector2(2132, -335)
 position = Vector2(777, 626)
 
 [node name="Zippoint_end_1" parent="Zipline/Zipline [End]" instance=ExtResource("64_vtjuf")]
-position = Vector2(1884, 1942)
+position = Vector2(402.00122, 2330)
 
 [node name="Zippoint_end_2" parent="Zipline/Zipline [End]" instance=ExtResource("64_vtjuf")]
-position = Vector2(2368, 2024)
+position = Vector2(886.0012, 2412)
 
 [node name="Zippoint_end_4" parent="Zipline/Zipline [End]" instance=ExtResource("64_vtjuf")]
 position = Vector2(4178, 616)
@@ -2773,7 +2770,7 @@ position = Vector2(-515.9999, 278)
 scale = Vector2(0.21, 0.21)
 
 [node name="Lamp_0" parent="Decoration/Lamp Collection" instance=ExtResource("70_uesxb")]
-position = Vector2(7028.5713, 3733.3325)
+position = Vector2(13480.952, 6752.3813)
 scale = Vector2(4.7619047, 4.7619047)
 
 [node name="Lamp_2" parent="Decoration/Lamp Collection" instance=ExtResource("70_uesxb")]
@@ -2811,7 +2808,7 @@ visible = false
 [node name="Cranes" type="Node2D" parent="Decoration"]
 
 [node name="Crane_3" parent="Decoration/Cranes" instance=ExtResource("71_oeivc")]
-position = Vector2(4206, 1434)
+position = Vector2(2724.0012, 1822)
 scale = Vector2(0.26, 0.26)
 
 [node name="Crane_1" parent="Decoration/Cranes" instance=ExtResource("71_oeivc")]
@@ -3078,20 +3075,8 @@ scale = Vector2(0.22, 0.25)
 position = Vector2(8523, 541.0001)
 scale = Vector2(0.22, 0.25)
 
-[node name="Blocker_V1_157" parent="No Access Zones" instance=ExtResource("77_bm2qs")]
-position = Vector2(8638, 1197)
-scale = Vector2(0.22, 0.25)
-
-[node name="Blocker_V1_158" parent="No Access Zones" instance=ExtResource("77_bm2qs")]
-position = Vector2(8658, 1094)
-scale = Vector2(0.22, 0.25)
-
-[node name="Blocker_V1_159" parent="No Access Zones" instance=ExtResource("77_bm2qs")]
-position = Vector2(8528, 1197)
-scale = Vector2(0.22, 0.25)
-
 [node name="Blocker_V1_160" parent="No Access Zones" instance=ExtResource("77_bm2qs")]
-position = Vector2(8548, 1094)
+position = Vector2(2979.0012, 2041)
 scale = Vector2(0.22, 0.25)
 
 [node name="Blocker_V1_75" parent="No Access Zones" instance=ExtResource("77_bm2qs")]
@@ -3121,16 +3106,16 @@ offset_bottom = 71.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Tall_Building_Window_0" parent="Prefabs Showcase" instance=ExtResource("22_xsyjq")]
-position = Vector2(64, 1322)
+position = Vector2(64, 1157)
 
 [node name="Tall_Building_Cornice_0" parent="Prefabs Showcase" instance=ExtResource("38_oyb82")]
-position = Vector2(124, 1227)
+position = Vector2(124, 1062)
 
 [node name="Tall_Building_Window_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("26_0dq5h")]
-position = Vector2(147, 1326)
+position = Vector2(147, 1161)
 
 [node name="Tall_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("40_1kyuf")]
-position = Vector2(60, 1583.9999)
+position = Vector2(60, 1418.9999)
 
 [node name="Tall_Building_Door_4" parent="Prefabs Showcase" instance=ExtResource("40_1kyuf")]
 position = Vector2(8210, 661.0001)
@@ -3142,10 +3127,10 @@ position = Vector2(-403.00003, 661.00006)
 position = Vector2(298, 661.00006)
 
 [node name="Tall_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("42_sk3xo")]
-position = Vector2(150, 1583.9999)
+position = Vector2(150, 1418.9999)
 
 [node name="Tall_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("23_v43sp")]
-position = Vector2(60, 1457)
+position = Vector2(60, 1292)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_3" parent="Prefabs Showcase" instance=ExtResource("23_v43sp")]
@@ -3161,20 +3146,20 @@ position = Vector2(2370, 168)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("28_3y5ps")]
-position = Vector2(150.00002, 1457)
+position = Vector2(150.00002, 1292)
 
 [node name="Tall_Building_Window_Thin_Blocked_1" parent="Prefabs Showcase" instance=ExtResource("28_3y5ps")]
 position = Vector2(-610.99994, 578.00006)
 
 [node name="Small_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("52_qr0kq")]
-position = Vector2(2591.9995, 1460)
+position = Vector2(2591.9995, 1295)
 
 [node name="Small_Building_Top_1" parent="Prefabs Showcase" instance=ExtResource("52_qr0kq")]
 z_index = 1
 position = Vector2(7294, 549)
 
 [node name="Small_Building_0" parent="Prefabs Showcase" instance=ExtResource("51_33pa2")]
-position = Vector2(2591.9995, 1542)
+position = Vector2(2591.9995, 1377)
 
 [node name="Small_Building_Top_2" parent="Prefabs Showcase" instance=ExtResource("52_qr0kq")]
 z_index = 1
@@ -3185,10 +3170,10 @@ position = Vector2(4104, 648)
 scale = Vector2(1, 1.045)
 
 [node name="Small_Building_Window_Long_0" parent="Prefabs Showcase" instance=ExtResource("49_64sst")]
-position = Vector2(1399, 1403.9999)
+position = Vector2(1399, 1238.9999)
 
 [node name="Small_Building_Window_Thin_0" parent="Prefabs Showcase" instance=ExtResource("50_b58ou")]
-position = Vector2(1398, 1476.9999)
+position = Vector2(1398, 1311.9999)
 
 [node name="Small_Building_Window_Thin_2" parent="Prefabs Showcase" instance=ExtResource("50_b58ou")]
 position = Vector2(4140, 646.00006)
@@ -3197,25 +3182,25 @@ position = Vector2(4140, 646.00006)
 position = Vector2(462.00003, 295.0001)
 
 [node name="Small_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("58_1qj3n")]
-position = Vector2(1397, 1554.9999)
+position = Vector2(1397, 1389.9999)
 
 [node name="Small_Building_Door_1" parent="Prefabs Showcase" instance=ExtResource("58_1qj3n")]
 position = Vector2(2988.0002, 641)
 
 [node name="Shopping_Building_V1_0" parent="Prefabs Showcase" instance=ExtResource("53_apx38")]
-position = Vector2(2882.9998, 1529.0001)
+position = Vector2(2882.9998, 1364.0001)
 
 [node name="Shopping_Building_Top_0" parent="Prefabs Showcase" instance=ExtResource("57_dnuiu")]
-position = Vector2(2882.9998, 1433.9999)
+position = Vector2(2882.9998, 1268.9999)
 
 [node name="Shopping_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("54_t7nw6")]
-position = Vector2(2882.9998, 1330.9999)
+position = Vector2(2882.9998, 1165.9999)
 
 [node name="Shopping_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("56_m8rpv")]
-position = Vector2(2884.9998, 1233)
+position = Vector2(2884.9998, 1068)
 
 [node name="Small_Building_Door_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("59_lfmr7")]
-position = Vector2(1523, 1555.9999)
+position = Vector2(1523, 1390.9999)
 
 [node name="Small_Building_Door_Blocked_2" parent="Prefabs Showcase" instance=ExtResource("59_lfmr7")]
 position = Vector2(3609, 642.00006)
@@ -3224,7 +3209,7 @@ position = Vector2(3609, 642.00006)
 position = Vector2(4055.0002, 664)
 
 [node name="Small_Building_Window_Thin_Blocked_0" parent="Prefabs Showcase" instance=ExtResource("55_sah44")]
-position = Vector2(1520, 1476.9999)
+position = Vector2(1520, 1311.9999)
 
 [node name="Small_Building_Window_Thin_Blocked_1" parent="Prefabs Showcase" instance=ExtResource("55_sah44")]
 position = Vector2(1604.0001, 662)
@@ -3243,23 +3228,23 @@ position = Vector2(2873, 638.00006)
 position = Vector2(3430.0002, 611)
 
 [node name="Beam_1_0" parent="Prefabs Showcase" instance=ExtResource("61_bgf2m")]
-position = Vector2(2593.9995, 1366)
+position = Vector2(2593.9995, 1201)
 
 [node name="Beam_0" parent="Prefabs Showcase" instance=ExtResource("60_uw5ib")]
-position = Vector2(2594.9995, 1295.9999)
+position = Vector2(2594.9995, 1130.9999)
 
 [node name="Wide_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("46_6u7qw")]
-position = Vector2(3560.9998, 1323.9999)
+position = Vector2(3560.9998, 1158.9999)
 
 [node name="Wide_Building_Bottom_V2_0" parent="Prefabs Showcase" instance=ExtResource("48_o1o5v")]
-position = Vector2(3558.9998, 1574.9999)
+position = Vector2(3558.9998, 1409.9999)
 rotation = -3.1415925
 
 [node name="Wide_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("44_20rrj")]
-position = Vector2(3560.9998, 1446.9999)
+position = Vector2(3560.9998, 1281.9999)
 
 [node name="Wide_Building_Bottom_V1_0" parent="Prefabs Showcase" instance=ExtResource("47_611s5")]
-position = Vector2(3214.9998, 1574.9999)
+position = Vector2(3214.9998, 1409.9999)
 rotation = -3.1415925
 
 [node name="Wide_Building_Bottom_V1_1" parent="Prefabs Showcase" instance=ExtResource("47_611s5")]
@@ -3267,39 +3252,39 @@ position = Vector2(3495, 686.00006)
 rotation = -3.1415925
 
 [node name="Wide_Building_V1_0" parent="Prefabs Showcase" instance=ExtResource("43_kpok0")]
-position = Vector2(3217.9998, 1447.9999)
+position = Vector2(3217.9998, 1282.9999)
 
 [node name="Wide_Building_Top_V1_0" parent="Prefabs Showcase" instance=ExtResource("45_1fhge")]
-position = Vector2(3218.9998, 1324.9999)
+position = Vector2(3218.9998, 1159.9999)
 
 [node name="Spray Spot" parent="Prefabs Showcase" instance=ExtResource("65_vnxxd")]
-position = Vector2(3828.9998, 1504)
+position = Vector2(3828.9998, 1339)
 
 [node name="Scaff_Metal_1_0" parent="Prefabs Showcase" instance=ExtResource("79_qg3tn")]
 z_index = 1
-position = Vector2(-419.99988, 1882.9999)
+position = Vector2(-419.99988, 1717.9999)
 
 [node name="Scaff_Metal_2_0" parent="Prefabs Showcase" instance=ExtResource("80_3mu25")]
 z_index = 1
-position = Vector2(-409.99988, 1898.9999)
+position = Vector2(-409.99988, 1733.9999)
 
 [node name="Scaff_Metal_3_0" parent="Prefabs Showcase" instance=ExtResource("81_ggxqd")]
 z_index = 1
-position = Vector2(-382.99988, 1915)
+position = Vector2(-382.99988, 1750)
 
 [node name="Scaff_Wood_1_0" parent="Prefabs Showcase" instance=ExtResource("82_rlwmn")]
 z_index = 1
-position = Vector2(-419.99988, 1932)
+position = Vector2(-419.99988, 1767)
 
 [node name="Scaff_Wood_2_0" parent="Prefabs Showcase" instance=ExtResource("83_n46yn")]
 z_index = 1
-position = Vector2(-408.99988, 1949)
+position = Vector2(-408.99988, 1784)
 
 [node name="Van_0" parent="Prefabs Showcase" instance=ExtResource("72_nmbt0")]
-position = Vector2(4008.9988, 1538.9999)
+position = Vector2(2527, 1926.9998)
 
 [node name="Car_0" parent="Prefabs Showcase" instance=ExtResource("73_8ntis")]
-position = Vector2(4134.999, 1559.9999)
+position = Vector2(2653.0005, 1947.9998)
 
 [node name="Van_1" parent="Prefabs Showcase" instance=ExtResource("72_nmbt0")]
 position = Vector2(8937.001, 651.00006)
@@ -3309,7 +3294,7 @@ position = Vector2(9063.001, 672.00006)
 
 [node name="Sign_1_0" parent="Prefabs Showcase" instance=ExtResource("84_nbep1")]
 z_index = 1
-position = Vector2(-15.000023, 1919.9999)
+position = Vector2(-15.000023, 1754.9999)
 
 [node name="Sign_1_2" parent="Prefabs Showcase" instance=ExtResource("84_nbep1")]
 z_index = 10
@@ -3325,11 +3310,11 @@ scale = Vector2(0.22, 0.22)
 
 [node name="Sign_2_0" parent="Prefabs Showcase" instance=ExtResource("85_5ki2a")]
 z_index = 1
-position = Vector2(23.999977, 1920.9999)
+position = Vector2(23.999977, 1755.9999)
 
 [node name="Sign_3_0" parent="Prefabs Showcase" instance=ExtResource("86_3176p")]
 z_index = 1
-position = Vector2(60.999977, 1919.9999)
+position = Vector2(60.999977, 1754.9999)
 
 [node name="Sign_3_2" parent="Prefabs Showcase" instance=ExtResource("86_3176p")]
 z_index = 1
@@ -3339,7 +3324,7 @@ scale = Vector2(0.26, 0.26)
 
 [node name="Sign_4_0" parent="Prefabs Showcase" instance=ExtResource("87_mlp25")]
 z_index = 1
-position = Vector2(92.99998, 1919.9999)
+position = Vector2(92.99998, 1754.9999)
 
 [node name="Sign_4_3" parent="Prefabs Showcase" instance=ExtResource("87_mlp25")]
 z_index = 1
@@ -3352,11 +3337,11 @@ position = Vector2(-460.00003, 639.00006)
 
 [node name="Sign_1_1" parent="Prefabs Showcase" instance=ExtResource("88_45ppu")]
 z_index = 1
-position = Vector2(-15.000023, 1956.9999)
+position = Vector2(-15.000023, 1791.9999)
 
 [node name="Sign_2_1" parent="Prefabs Showcase" instance=ExtResource("89_8imj5")]
 z_index = 1
-position = Vector2(22.999977, 1956.9999)
+position = Vector2(22.999977, 1791.9999)
 
 [node name="Sign_2_2" parent="Prefabs Showcase" instance=ExtResource("89_8imj5")]
 z_index = 2
@@ -3366,7 +3351,7 @@ scale = Vector2(0.26, 0.26)
 
 [node name="Sign_3_1" parent="Prefabs Showcase" instance=ExtResource("90_h07dx")]
 z_index = 1
-position = Vector2(59.999977, 1956.9999)
+position = Vector2(59.999977, 1791.9999)
 
 [node name="Sign_3_3" parent="Prefabs Showcase" instance=ExtResource("90_h07dx")]
 z_index = 1
@@ -3376,21 +3361,13 @@ scale = Vector2(0.285, 0.285)
 
 [node name="Sign_4_1" parent="Prefabs Showcase" instance=ExtResource("91_452as")]
 z_index = 1
-position = Vector2(92.99998, 1956.9999)
-
-[node name="Sign_1_4" parent="Prefabs Showcase" instance=ExtResource("84_nbep1")]
-z_index = 1
-position = Vector2(7939, 991)
+position = Vector2(92.99998, 1791.9999)
 
 [node name="Sign_2_3" parent="Prefabs Showcase" instance=ExtResource("85_5ki2a")]
 z_index = 1
 position = Vector2(6589.0005, 534)
 rotation = -0.14162455
 scale = Vector2(0.22, 0.22)
-
-[node name="Sign_3_4" parent="Prefabs Showcase" instance=ExtResource("86_3176p")]
-z_index = 1
-position = Vector2(8015, 991)
 
 [node name="Sign_3_6" parent="Prefabs Showcase" instance=ExtResource("86_3176p")]
 z_index = 1
@@ -3404,22 +3381,10 @@ position = Vector2(8451, 578.00006)
 rotation = 0.22130494
 scale = Vector2(0.22684912, 0.22684912)
 
-[node name="Sign_1_5" parent="Prefabs Showcase" instance=ExtResource("88_45ppu")]
-z_index = 1
-position = Vector2(7939, 1028)
-
-[node name="Sign_2_4" parent="Prefabs Showcase" instance=ExtResource("89_8imj5")]
-z_index = 1
-position = Vector2(7977, 1028)
-
 [node name="Sign_2_5" parent="Prefabs Showcase" instance=ExtResource("89_8imj5")]
 z_index = 2
 position = Vector2(8336.001, -187.00002)
 rotation = -0.26101148
-
-[node name="Sign_3_5" parent="Prefabs Showcase" instance=ExtResource("90_h07dx")]
-z_index = 1
-position = Vector2(8014, 1028)
 
 [node name="Sign_4_6" parent="Prefabs Showcase" instance=ExtResource("91_452as")]
 z_index = 1
@@ -3435,35 +3400,35 @@ scale = Vector2(0.235, 0.235)
 
 [node name="Scaff_Wood_3_0" parent="Prefabs Showcase" instance=ExtResource("92_csuif")]
 z_index = 1
-position = Vector2(-382.99994, 1964.9999)
+position = Vector2(-382.99994, 1799.9999)
 
 [node name="Scaff_Metal_Pole_1_0" parent="Prefabs Showcase" instance=ExtResource("93_k0u01")]
 z_index = 1
-position = Vector2(-283.99985, 1923.9999)
+position = Vector2(-283.99985, 1758.9999)
 
 [node name="Scaff_Metal_Pole_2_0" parent="Prefabs Showcase" instance=ExtResource("62_a6obv")]
 z_index = 1
-position = Vector2(-264.9999, 1924)
+position = Vector2(-264.9999, 1759)
 
 [node name="Scaff_Metal_Pole_3_0" parent="Prefabs Showcase" instance=ExtResource("94_r540e")]
 z_index = 1
-position = Vector2(-245.99991, 1955)
+position = Vector2(-245.99991, 1790)
 
 [node name="Scaff_Metal_Pole_End_0" parent="Prefabs Showcase" instance=ExtResource("95_l0h6d")]
 z_index = 1
-position = Vector2(-245.99985, 1921.9999)
+position = Vector2(-245.99985, 1756.9999)
 
 [node name="Scaff_Metal_X_1_0" parent="Prefabs Showcase" instance=ExtResource("96_5bmie")]
 z_index = 1
-position = Vector2(-571, 1902)
+position = Vector2(-571, 1737)
 
 [node name="Scaff_Metal_X_2_0" parent="Prefabs Showcase" instance=ExtResource("97_xv7p1")]
 z_index = 1
-position = Vector2(-570.99994, 1943.9999)
+position = Vector2(-570.99994, 1778.9999)
 
 [node name="Scaff_Ladder_0" parent="Prefabs Showcase" instance=ExtResource("98_fcajd")]
 z_index = 1
-position = Vector2(-315.9999, 1925.9999)
+position = Vector2(-315.9999, 1760.9999)
 
 [node name="Scaff_Ladder_1" parent="Prefabs Showcase" instance=ExtResource("98_fcajd")]
 z_index = 1
@@ -3479,7 +3444,7 @@ position = Vector2(893.00006, 230)
 
 [node name="No_Entry_Sign_0" parent="Prefabs Showcase" instance=ExtResource("99_uknlx")]
 z_index = 1
-position = Vector2(42.999977, 1994.9999)
+position = Vector2(42.999977, 1829.9999)
 
 [node name="No_Entry_Sign_2" parent="Prefabs Showcase" instance=ExtResource("99_uknlx")]
 z_index = 70
@@ -3498,7 +3463,7 @@ position = Vector2(854, 393.00003)
 
 [node name="Boombox_v1_0" parent="Prefabs Showcase" instance=ExtResource("100_0nktr")]
 z_index = 1
-position = Vector2(158, 1990.9999)
+position = Vector2(158, 1825.9999)
 
 [node name="Boombox_v1_1" parent="Prefabs Showcase" instance=ExtResource("100_0nktr")]
 z_index = 50
@@ -3522,7 +3487,7 @@ scale = Vector2(0.165, 0.165)
 
 [node name="Boombox_v2_0" parent="Prefabs Showcase" instance=ExtResource("101_4d06a")]
 z_index = 1
-position = Vector2(212.99982, 1990.9999)
+position = Vector2(212.99982, 1825.9999)
 
 [node name="Boombox_v2_1" parent="Prefabs Showcase" instance=ExtResource("101_4d06a")]
 z_index = 2
@@ -3530,7 +3495,7 @@ position = Vector2(1617, 388)
 
 [node name="Fence_0" parent="Prefabs Showcase" instance=ExtResource("16_8lmdk")]
 z_index = 1
-position = Vector2(318.00003, 1967.9999)
+position = Vector2(318.00003, 1802.9999)
 
 [node name="Fence_14" parent="Prefabs Showcase" instance=ExtResource("16_8lmdk")]
 position = Vector2(-252, 651.00006)
@@ -3594,7 +3559,7 @@ position = Vector2(4312, -162)
 
 [node name="Bush_Long_Part1_0" parent="Prefabs Showcase" instance=ExtResource("102_s52ah")]
 z_index = 1
-position = Vector2(-166.99994, 1860.9999)
+position = Vector2(-166.99994, 1695.9999)
 
 [node name="Bush_Long_Part1_2" parent="Prefabs Showcase" instance=ExtResource("102_s52ah")]
 position = Vector2(-29, 252.00002)
@@ -3627,30 +3592,30 @@ position = Vector2(873.00006, 251)
 
 [node name="Bush_Long_Part1_1" parent="Prefabs Showcase" instance=ExtResource("103_0lkdb")]
 z_index = 1
-position = Vector2(-164.99982, 1919.9998)
+position = Vector2(-164.99982, 1754.9998)
 
 [node name="Bush_Long_Part3_0" parent="Prefabs Showcase" instance=ExtResource("104_ef2kw")]
 z_index = 1
-position = Vector2(-164.99982, 1970.9998)
+position = Vector2(-164.99982, 1805.9998)
 
 [node name="Bush_Short_Part1_0" parent="Prefabs Showcase" instance=ExtResource("66_wfdwx")]
 z_index = 1
-position = Vector2(-77.99993, 1862.9999)
+position = Vector2(-77.99993, 1697.9999)
 
 [node name="Bush_Short_Part1_4" parent="Prefabs Showcase" instance=ExtResource("66_wfdwx")]
 position = Vector2(-536, 672.00006)
 
 [node name="Bush_Short_Part2_0" parent="Prefabs Showcase" instance=ExtResource("105_hljj0")]
 z_index = 1
-position = Vector2(-77.99993, 1916.9998)
+position = Vector2(-77.99993, 1751.9998)
 
 [node name="Bush_Short_Part3_0" parent="Prefabs Showcase" instance=ExtResource("106_7hhak")]
 z_index = 1
-position = Vector2(-76.99993, 1970.9998)
+position = Vector2(-76.99993, 1805.9998)
 
 [node name="Bush_Short_Pot_0" parent="Prefabs Showcase" instance=ExtResource("67_botqm")]
 z_index = 1
-position = Vector2(-76.99993, 1998.9999)
+position = Vector2(-76.99993, 1833.9999)
 
 [node name="Bush_Short_Part1_14" parent="Prefabs Showcase" instance=ExtResource("66_wfdwx")]
 z_index = 1
@@ -3797,7 +3762,7 @@ position = Vector2(1595, 284.00006)
 
 [node name="Bush_Long_Pot_0" parent="Prefabs Showcase" instance=ExtResource("107_37l64")]
 z_index = 1
-position = Vector2(-165.99994, 2000.9998)
+position = Vector2(-165.99994, 1835.9998)
 
 [node name="Bush_Long_Part1_13" parent="Prefabs Showcase" instance=ExtResource("102_s52ah")]
 z_index = 1
@@ -3951,47 +3916,47 @@ position = Vector2(882.00006, 280.00003)
 
 [node name="Lamp_Light_0" parent="Prefabs Showcase" instance=ExtResource("69_wanuv")]
 z_index = 1
-position = Vector2(157, 1934)
+position = Vector2(157, 1769)
 
 [node name="Lamp_Semi_Circle_0" parent="Prefabs Showcase" instance=ExtResource("108_daiml")]
 z_index = 1
-position = Vector2(218, 1933)
+position = Vector2(218, 1768)
 
 [node name="Clothing_1_0" parent="Prefabs Showcase" instance=ExtResource("109_poaa4")]
 z_index = 1
-position = Vector2(407.99994, 1881.9999)
+position = Vector2(407.99994, 1716.9999)
 
 [node name="Clothing_2_0" parent="Prefabs Showcase" instance=ExtResource("110_alje6")]
 z_index = 1
-position = Vector2(444.9997, 1881.9999)
+position = Vector2(444.9997, 1716.9999)
 
 [node name="Clothing_3_0" parent="Prefabs Showcase" instance=ExtResource("111_f11ye")]
 z_index = 1
-position = Vector2(407.99994, 1913.9999)
+position = Vector2(407.99994, 1748.9999)
 
 [node name="Clothing_4_0" parent="Prefabs Showcase" instance=ExtResource("112_2x34l")]
 z_index = 1
-position = Vector2(444.99994, 1913.9999)
+position = Vector2(444.99994, 1748.9999)
 
 [node name="Clothing_5_0" parent="Prefabs Showcase" instance=ExtResource("113_5oaui")]
 z_index = 1
-position = Vector2(396.99994, 1944.9999)
+position = Vector2(396.99994, 1779.9999)
 
 [node name="Clothing_6_0" parent="Prefabs Showcase" instance=ExtResource("114_624ia")]
 z_index = 1
-position = Vector2(412.99994, 1944.9999)
+position = Vector2(412.99994, 1779.9999)
 
 [node name="Clothing_7_0" parent="Prefabs Showcase" instance=ExtResource("115_pglb3")]
 z_index = 1
-position = Vector2(435.99994, 1944.9999)
+position = Vector2(435.99994, 1779.9999)
 
 [node name="Clothing_8_0" parent="Prefabs Showcase" instance=ExtResource("116_vxl0p")]
 z_index = 1
-position = Vector2(450.99994, 1944.9999)
+position = Vector2(450.99994, 1779.9999)
 
 [node name="Clothing_9_0" parent="Prefabs Showcase" instance=ExtResource("117_k5nax")]
 z_index = 1
-position = Vector2(477.99994, 1887.9999)
+position = Vector2(477.99994, 1722.9999)
 
 [node name="Clothing_1_1" parent="Prefabs Showcase" instance=ExtResource("109_poaa4")]
 z_index = 1
@@ -4007,11 +3972,11 @@ position = Vector2(1211.0001, 182)
 
 [node name="Clothing_10_0" parent="Prefabs Showcase" instance=ExtResource("118_y6yqs")]
 z_index = 1
-position = Vector2(476.99994, 1932.9999)
+position = Vector2(476.99994, 1767.9999)
 
 [node name="Clothing_1_2" parent="Prefabs Showcase" instance=ExtResource("109_poaa4")]
 z_index = 1
-position = Vector2(5036, 1322)
+position = Vector2(3554.0015, 1710)
 rotation = 0.33470628
 
 [node name="Clothing_1_3" parent="Prefabs Showcase" instance=ExtResource("109_poaa4")]
@@ -4026,7 +3991,7 @@ rotation = 0.21172918
 
 [node name="Clothing_2_2" parent="Prefabs Showcase" instance=ExtResource("110_alje6")]
 z_index = 1
-position = Vector2(5085, 1348.9999)
+position = Vector2(3603.0015, 1736.9998)
 
 [node name="Clothing_3_1" parent="Prefabs Showcase" instance=ExtResource("111_f11ye")]
 z_index = 1
@@ -4035,12 +4000,12 @@ rotation = 0.22330436
 
 [node name="Clothing_3_2" parent="Prefabs Showcase" instance=ExtResource("111_f11ye")]
 z_index = 1
-position = Vector2(4712, 1326)
+position = Vector2(3230.0012, 1714)
 rotation = 0.22330436
 
 [node name="Clothing_4_1" parent="Prefabs Showcase" instance=ExtResource("112_2x34l")]
 z_index = 1
-position = Vector2(5308.001, 1481.9999)
+position = Vector2(3826.0024, 1869.9998)
 rotation = 0.20251927
 
 [node name="Clothing_2_3" parent="Prefabs Showcase" instance=ExtResource("110_alje6")]
@@ -4071,19 +4036,19 @@ position = Vector2(2693, -566.00006)
 
 [node name="Clothing_8_1" parent="Prefabs Showcase" instance=ExtResource("116_vxl0p")]
 z_index = 1
-position = Vector2(4750, 1346.9999)
+position = Vector2(3268.0015, 1734.9998)
 
 [node name="Clothing_7_2" parent="Prefabs Showcase" instance=ExtResource("115_pglb3")]
 z_index = 1
-position = Vector2(4503, 1192.9999)
+position = Vector2(3021.0015, 1580.9998)
 
 [node name="Clothing_8_2" parent="Prefabs Showcase" instance=ExtResource("116_vxl0p")]
 z_index = 1
-position = Vector2(4541, 1214.9999)
+position = Vector2(3059.0015, 1602.9998)
 
 [node name="Clothing_9_2" parent="Prefabs Showcase" instance=ExtResource("117_k5nax")]
 z_index = 1
-position = Vector2(4668, 1305.9999)
+position = Vector2(3186.0015, 1693.9998)
 rotation = 0.00069339573
 
 [node name="Clothing_3_3" parent="Prefabs Showcase" instance=ExtResource("111_f11ye")]
@@ -4115,10 +4080,10 @@ rotation = 0.00069339573
 
 [node name="Clothing_10_1" parent="Prefabs Showcase" instance=ExtResource("118_y6yqs")]
 z_index = 1
-position = Vector2(4890, 1239.9999)
+position = Vector2(3408.0015, 1627.9998)
 
 [node name="Zipline_Pole_0" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
-position = Vector2(2312.0002, 1792)
+position = Vector2(2280, 1896)
 
 [node name="Zipline_Pole_5" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
 position = Vector2(3833, 241)
@@ -4129,7 +4094,7 @@ position = Vector2(903, 226.00002)
 scale = Vector2(0.15, 0.15)
 
 [node name="Zipline_Pole_3" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
-position = Vector2(5424, 1644)
+position = Vector2(3942.0012, 2032)
 scale = Vector2(0.15, 0.15)
 
 [node name="Zipline_Pole_4" parent="Prefabs Showcase" instance=ExtResource("119_31ald")]
@@ -4142,7 +4107,7 @@ scale = Vector2(0.15, 0.15)
 
 [node name="Electric_Box_0" parent="Prefabs Showcase" instance=ExtResource("120_xw8it")]
 z_index = 1
-position = Vector2(517.99994, 1876.9999)
+position = Vector2(517.99994, 1711.9999)
 
 [node name="Electric_Box_2" parent="Prefabs Showcase" instance=ExtResource("120_xw8it")]
 z_index = 1
@@ -4185,7 +4150,7 @@ position = Vector2(130.00002, 655)
 
 [node name="Birds_Nest_Empty_0" parent="Prefabs Showcase" instance=ExtResource("68_0q7pt")]
 z_index = 1
-position = Vector2(519.99994, 1908.9999)
+position = Vector2(519.99994, 1743.9999)
 
 [node name="Birds_Nest_Empty_1" parent="Prefabs Showcase" instance=ExtResource("68_0q7pt")]
 z_index = 1
@@ -4193,7 +4158,7 @@ position = Vector2(4399.0005, 52)
 
 [node name="Birds_Nest_Full_0" parent="Prefabs Showcase" instance=ExtResource("121_mffc7")]
 z_index = 1
-position = Vector2(519.99994, 1942.9999)
+position = Vector2(519.99994, 1777.9999)
 
 [node name="Birds_Nest_Full_1" parent="Prefabs Showcase" instance=ExtResource("121_mffc7")]
 z_index = 50
@@ -4201,11 +4166,11 @@ position = Vector2(-139.00002, 582.00006)
 
 [node name="Bird_1_0" parent="Prefabs Showcase" instance=ExtResource("122_r8nb7")]
 z_index = 1
-position = Vector2(558.99994, 1872.9999)
+position = Vector2(558.99994, 1707.9999)
 
 [node name="Bird_2_0" parent="Prefabs Showcase" instance=ExtResource("123_hgtf2")]
 z_index = 1
-position = Vector2(558.99994, 1907.9999)
+position = Vector2(558.99994, 1742.9999)
 
 [node name="Bird_1_1" parent="Prefabs Showcase" instance=ExtResource("122_r8nb7")]
 z_index = 1
@@ -4217,7 +4182,7 @@ position = Vector2(4394.0005, 44.999992)
 
 [node name="Bird_3_0" parent="Prefabs Showcase" instance=ExtResource("124_4x4lc")]
 z_index = 1
-position = Vector2(559.99994, 1940.9999)
+position = Vector2(559.99994, 1775.9999)
 
 [node name="Birds_Nest_Full_2" parent="Prefabs Showcase" instance=ExtResource("121_mffc7")]
 z_index = 2
@@ -4229,7 +4194,7 @@ position = Vector2(2534.0002, -726)
 
 [node name="Vent_0" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
 z_index = 1
-position = Vector2(-470.99988, 1968.9999)
+position = Vector2(-470.99988, 1803.9999)
 
 [node name="Vent_1" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
 z_index = 1
@@ -4241,7 +4206,7 @@ position = Vector2(1564.0001, 708)
 
 [node name="Sandbags" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
 z_index = 1
-position = Vector2(526.0002, 1988.9999)
+position = Vector2(526.0002, 1823.9999)
 
 [node name="Sandbags3" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
 z_index = 1
@@ -4257,7 +4222,7 @@ position = Vector2(2970, 662.00006)
 
 [node name="Trash 1" parent="Prefabs Showcase" instance=ExtResource("127_d1pp3")]
 z_index = 1
-position = Vector2(480.00018, 1972.9999)
+position = Vector2(480.00018, 1807.9999)
 
 [node name="Trash 3" parent="Prefabs Showcase" instance=ExtResource("127_d1pp3")]
 z_index = 1
@@ -4265,7 +4230,7 @@ position = Vector2(-44, 584)
 
 [node name="Trash 2" parent="Prefabs Showcase" instance=ExtResource("128_ah4ep")]
 z_index = 1
-position = Vector2(428.99994, 1998.9999)
+position = Vector2(428.99994, 1833.9999)
 
 [node name="Sandbags6" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
 z_index = 1
@@ -4300,16 +4265,16 @@ z_index = 1
 position = Vector2(2091, 698)
 
 [node name="Tall_Building_0" parent="Prefabs Showcase" instance=ExtResource("17_akct4")]
-position = Vector2(1195, 1425)
+position = Vector2(1195, 1260)
 
 [node name="Tall_Building_Cornice_1" parent="Prefabs Showcase" instance=ExtResource("39_ryldl")]
-position = Vector2(978, 1226)
+position = Vector2(978, 1061)
 
 [node name="Tall_Building_Window_1" parent="Prefabs Showcase" instance=ExtResource("24_v5g1a")]
-position = Vector2(511, 1329)
+position = Vector2(511, 1164)
 
 [node name="Tall_Building_Window_2" parent="Prefabs Showcase" instance=ExtResource("27_o200r")]
-position = Vector2(596, 1329)
+position = Vector2(596, 1164)
 
 [node name="Tall_Building_Window_14" parent="Prefabs Showcase" instance=ExtResource("27_o200r")]
 position = Vector2(3532, 622)
@@ -4322,10 +4287,6 @@ position = Vector2(867, 467)
 
 [node name="Tall_Building_Window_5" parent="Prefabs Showcase" instance=ExtResource("27_o200r")]
 position = Vector2(2558, 208)
-
-[node name="Tall_Building_Window_Thin_6" parent="Prefabs Showcase" instance=ExtResource("23_v43sp")]
-position = Vector2(8446, 921)
-rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_22" parent="Prefabs Showcase" instance=ExtResource("23_v43sp")]
 position = Vector2(8630, 518)
@@ -4350,9 +4311,6 @@ rotation = 3.1415925
 [node name="Tall_Building_Window_Thin_17" parent="Prefabs Showcase" instance=ExtResource("23_v43sp")]
 position = Vector2(7873, 370)
 rotation = 3.1415925
-
-[node name="Tall_Building_Window_7" parent="Prefabs Showcase" instance=ExtResource("27_o200r")]
-position = Vector2(8244, 923)
 
 [node name="Tall_Building_Window_21" parent="Prefabs Showcase" instance=ExtResource("27_o200r")]
 position = Vector2(8250, 546)
@@ -4411,15 +4369,11 @@ z_index = 1
 position = Vector2(2352, -43)
 
 [node name="Tall_Building_Window_Thin_1" parent="Prefabs Showcase" instance=ExtResource("129_5b6g0")]
-position = Vector2(510, 1456.9999)
+position = Vector2(510, 1291.9999)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_2" parent="Prefabs Showcase" instance=ExtResource("25_x54xp")]
-position = Vector2(597, 1456.9999)
-rotation = 3.1415925
-
-[node name="Tall_Building_Window_Thin_7" parent="Prefabs Showcase" instance=ExtResource("25_x54xp")]
-position = Vector2(8390, 924.00006)
+position = Vector2(597, 1291.9999)
 rotation = 3.1415925
 
 [node name="Tall_Building_Window_Thin_30" parent="Prefabs Showcase" instance=ExtResource("25_x54xp")]
@@ -4489,13 +4443,13 @@ position = Vector2(4264, 657.00006)
 rotation = 3.1415925
 
 [node name="Tall_Building_Door_1" parent="Prefabs Showcase" instance=ExtResource("130_nbjqp")]
-position = Vector2(913.00006, 1584)
+position = Vector2(955, 1160)
 
 [node name="Tall_Building_Window_Side_0" parent="Prefabs Showcase" instance=ExtResource("29_kfg4g")]
-position = Vector2(552, 1455.9999)
+position = Vector2(552, 1290.9999)
 
 [node name="Tall_Building_Window_Side_1" parent="Prefabs Showcase" instance=ExtResource("131_abma5")]
-position = Vector2(105.00001, 1456.9999)
+position = Vector2(105.00001, 1291.9999)
 
 [node name="Tall_Building_Door_Blocked_1" parent="Prefabs Showcase" instance=ExtResource("41_bkqfe")]
 position = Vector2(4329.0005, 659)
@@ -4508,7 +4462,7 @@ visible = false
 position = Vector2(-670, 1193)
 
 [node name="Pharmacy_0" parent="Prefabs Showcase" instance=ExtResource("132_ku8tm")]
-position = Vector2(-174.99997, 1316.0001)
+position = Vector2(-174.99997, 1151.0001)
 
 [node name="Pharmacy_2" parent="Prefabs Showcase" instance=ExtResource("132_ku8tm")]
 position = Vector2(2693.0002, 637)
@@ -4519,7 +4473,7 @@ position = Vector2(7290.999, 632.99994)
 scale = Vector2(0.145, 0.145)
 
 [node name="music_man_shop_0" parent="Prefabs Showcase" instance=ExtResource("133_dxdxg")]
-position = Vector2(-169, 1547)
+position = Vector2(-169, 1382)
 
 [node name="music_man_shop_1" parent="Prefabs Showcase" instance=ExtResource("133_dxdxg")]
 position = Vector2(4780.001, 637)
@@ -4530,7 +4484,7 @@ position = Vector2(8024, 636.99994)
 scale = Vector2(0.145, 0.145)
 
 [node name="Building_Detailed_0" parent="Prefabs Showcase" instance=ExtResource("134_w5bca")]
-position = Vector2(-464, 1325.9999)
+position = Vector2(-464, 1160.9999)
 
 [node name="Building_Detailed_1" parent="Prefabs Showcase" instance=ExtResource("134_w5bca")]
 z_index = 1
@@ -4538,7 +4492,7 @@ position = Vector2(7839, 636.99994)
 scale = Vector2(0.145, 0.145)
 
 [node name="detailed_closed_shop_0" parent="Prefabs Showcase" instance=ExtResource("135_g6emq")]
-position = Vector2(-476, 1525)
+position = Vector2(-476, 1360)
 
 [node name="detailed_closed_shop_3" parent="Prefabs Showcase" instance=ExtResource("135_g6emq")]
 position = Vector2(7659, 636)
@@ -4561,7 +4515,7 @@ position = Vector2(3300.9998, 638.00006)
 scale = Vector2(0.14, 0.14)
 
 [node name="tiled_purple_0" parent="Prefabs Showcase" instance=ExtResource("136_1w3ws")]
-position = Vector2(2047, 1861.9999)
+position = Vector2(2047, 1696.9999)
 
 [node name="tiled_purple_1" parent="Prefabs Showcase" instance=ExtResource("136_1w3ws")]
 z_index = -2
@@ -4569,11 +4523,11 @@ position = Vector2(830, 448.00003)
 scale = Vector2(0.135, 0.18)
 
 [node name="tiled_beige_0" parent="Prefabs Showcase" instance=ExtResource("137_q72hl")]
-position = Vector2(2054.0002, 1404.9999)
+position = Vector2(2054.0002, 1239.9999)
 
 [node name="hot_dog_stand_0" parent="Prefabs Showcase" instance=ExtResource("138_wtmfc")]
 z_index = 1
-position = Vector2(1088.0001, 1920.9999)
+position = Vector2(1088.0001, 1755.9999)
 
 [node name="hot_dog_stand_2" parent="Prefabs Showcase" instance=ExtResource("138_wtmfc")]
 z_index = 1
@@ -4588,7 +4542,7 @@ position = Vector2(1744.0001, 616)
 
 [node name="ticketbooth_0" parent="Prefabs Showcase" instance=ExtResource("139_xp3e1")]
 z_index = 1
-position = Vector2(1240.0006, 1933.9998)
+position = Vector2(1240.0006, 1768.9998)
 
 [node name="ticketbooth_2" parent="Prefabs Showcase" instance=ExtResource("139_xp3e1")]
 z_index = 1
@@ -4603,7 +4557,7 @@ z_index = 1
 position = Vector2(4451, 627.00006)
 
 [node name="Building_Detailed_Sides_0" parent="Prefabs Showcase" instance=ExtResource("140_8fit7")]
-position = Vector2(-638.00006, 1315.9999)
+position = Vector2(-638.00006, 1150.9999)
 
 [node name="Building_Detailed_Sides_3" parent="Prefabs Showcase" instance=ExtResource("140_8fit7")]
 position = Vector2(7197, 626.00006)
@@ -4666,7 +4620,7 @@ position = Vector2(3389.9998, 634.99994)
 scale = Vector2(0.145, 0.145)
 
 [node name="pipe_long_tube_0" parent="Prefabs Showcase" instance=ExtResource("141_bsqlq")]
-position = Vector2(-669.00006, 1312)
+position = Vector2(-669.00006, 1147)
 
 [node name="pipe_long_tube_16" parent="Prefabs Showcase" instance=ExtResource("141_bsqlq")]
 position = Vector2(-490.00003, 621.00006)
@@ -4723,7 +4677,7 @@ rotation = -3.1511388
 scale = Vector2(0.21, 0.19)
 
 [node name="pipe_curved_tube_0" parent="Prefabs Showcase" instance=ExtResource("142_t4y7d")]
-position = Vector2(-672.00006, 1404.9999)
+position = Vector2(-672.00006, 1239.9999)
 
 [node name="pipe_curved_tube_17" parent="Prefabs Showcase" instance=ExtResource("142_t4y7d")]
 position = Vector2(-492.00003, 379)
@@ -5314,7 +5268,7 @@ rotation = -1.5707964
 
 [node name="water_tower_0" parent="Prefabs Showcase" instance=ExtResource("143_c5f3a")]
 z_index = 1
-position = Vector2(1393.0006, 1890.9999)
+position = Vector2(1393.0006, 1725.9999)
 
 [node name="water_tower_4" parent="Prefabs Showcase" instance=ExtResource("143_c5f3a")]
 z_index = 1
@@ -5333,7 +5287,7 @@ position = Vector2(2521.0002, -260)
 position = Vector2(-412.00003, 172)
 
 [node name="balcony_ladders_0" parent="Prefabs Showcase" instance=ExtResource("144_vddtd")]
-position = Vector2(1567, 1289.9999)
+position = Vector2(1567, 1124.9999)
 
 [node name="balcony_ladders_10" parent="Prefabs Showcase" instance=ExtResource("144_vddtd")]
 position = Vector2(3067, 557)
@@ -5345,7 +5299,7 @@ position = Vector2(250.00006, 432.00003)
 position = Vector2(250.00002, 431.00006)
 
 [node name="balcony_ladders_angle_0" parent="Prefabs Showcase" instance=ExtResource("145_t617l")]
-position = Vector2(1505, 1291.9999)
+position = Vector2(1505, 1126.9999)
 
 [node name="balcony_ladders_3" parent="Prefabs Showcase" instance=ExtResource("144_vddtd")]
 z_index = 10
@@ -5400,11 +5354,11 @@ z_index = 10
 position = Vector2(2686, 474.0001)
 
 [node name="Zipline_start" parent="Prefabs Showcase" instance=ExtResource("63_uf8m2")]
-position = Vector2(2392, 1790.9999)
+position = Vector2(2359.9998, 1895)
 
 [node name="surfboard_v1_0" parent="Prefabs Showcase" instance=ExtResource("146_op5pi")]
 z_index = 1
-position = Vector2(661.00006, 1878)
+position = Vector2(661.00006, 1713)
 
 [node name="surfboard_v1_1" parent="Prefabs Showcase" instance=ExtResource("146_op5pi")]
 z_index = 1
@@ -5414,7 +5368,7 @@ scale = Vector2(0.165, 0.165)
 
 [node name="surfboard_v2_0" parent="Prefabs Showcase" instance=ExtResource("147_arumc")]
 z_index = 1
-position = Vector2(731.00006, 1877)
+position = Vector2(731.00006, 1712)
 
 [node name="surfboard_v2_2" parent="Prefabs Showcase" instance=ExtResource("147_arumc")]
 z_index = 1
@@ -5429,7 +5383,7 @@ scale = Vector2(0.11792878, 0.11529284)
 
 [node name="vine_lights_0" parent="Prefabs Showcase" instance=ExtResource("148_8qeq8")]
 z_index = 1
-position = Vector2(46.000004, 1865)
+position = Vector2(46.000004, 1700)
 
 [node name="vine_lights_6" parent="Prefabs Showcase" instance=ExtResource("148_8qeq8")]
 z_index = 1
@@ -5481,11 +5435,11 @@ position = Vector2(2702, 388)
 scale = Vector2(0.2, 0.18)
 
 [node name="pipe_top_tube_0" parent="Prefabs Showcase" instance=ExtResource("149_jcsr4")]
-position = Vector2(-669.00006, 1226)
+position = Vector2(-669.00006, 1061)
 
 [node name="wooden_cross_0" parent="Prefabs Showcase" instance=ExtResource("150_pvwnl")]
 z_index = 1
-position = Vector2(971, 1973)
+position = Vector2(971, 1808)
 
 [node name="wooden_cross_2" parent="Prefabs Showcase" instance=ExtResource("150_pvwnl")]
 z_index = 1
@@ -5500,11 +5454,11 @@ scale = Vector2(0.325, 0.325)
 
 [node name="small_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("151_fuqgy")]
 z_index = 1
-position = Vector2(847, 1961.9999)
+position = Vector2(847, 1796.9999)
 
 [node name="medium_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("152_ab1gc")]
 z_index = 1
-position = Vector2(859.0001, 1982.9999)
+position = Vector2(859.0001, 1817.9999)
 
 [node name="medium_wooden_plank_1" parent="Prefabs Showcase" instance=ExtResource("152_ab1gc")]
 z_index = 1
@@ -5528,11 +5482,11 @@ rotation = 2.2092738
 
 [node name="large_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("153_h0l4s")]
 z_index = 1
-position = Vector2(869.0001, 2005.9999)
+position = Vector2(869.0001, 1840.9999)
 
 [node name="covered_wooden_plank_0" parent="Prefabs Showcase" instance=ExtResource("154_3w4pt")]
 z_index = 1
-position = Vector2(923, 1971.9999)
+position = Vector2(923, 1806.9999)
 
 [node name="medium_wooden_plank_7" parent="Prefabs Showcase" instance=ExtResource("152_ab1gc")]
 z_index = 1
@@ -5599,7 +5553,7 @@ scale = Vector2(0.258194, 0.258194)
 
 [node name="brick_decals_v1_0" parent="Prefabs Showcase" instance=ExtResource("155_3n36l")]
 z_index = 1
-position = Vector2(879, 1852.9999)
+position = Vector2(879, 1687.9999)
 
 [node name="brick_decals_v1_2" parent="Prefabs Showcase" instance=ExtResource("155_3n36l")]
 z_index = 1
@@ -5617,7 +5571,7 @@ position = Vector2(125, 466)
 
 [node name="brick_decals_v2_0" parent="Prefabs Showcase" instance=ExtResource("156_b6jew")]
 z_index = 1
-position = Vector2(914, 1900)
+position = Vector2(914, 1735)
 
 [node name="brick_decals_v2_4" parent="Prefabs Showcase" instance=ExtResource("156_b6jew")]
 z_index = 1
@@ -5673,19 +5627,19 @@ scale = Vector2(0.165, 0.165)
 
 [node name="brick_decals_v3_0" parent="Prefabs Showcase" instance=ExtResource("157_teol4")]
 z_index = 1
-position = Vector2(858, 1919.9999)
+position = Vector2(858, 1754.9999)
 
 [node name="brick_decals_v4_0" parent="Prefabs Showcase" instance=ExtResource("158_d2bye")]
 z_index = 1
-position = Vector2(966.0001, 1920)
+position = Vector2(966.0001, 1755)
 
 [node name="brick_decals_v5_0" parent="Prefabs Showcase" instance=ExtResource("159_2ypj0")]
 z_index = 1
-position = Vector2(952, 1849.9999)
+position = Vector2(952, 1684.9999)
 
 [node name="satellite_dish_0" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
 z_index = 1
-position = Vector2(156, 1873.9999)
+position = Vector2(156, 1708.9999)
 
 [node name="satellite_dish_2" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
 position = Vector2(1615, 271.00003)
@@ -5697,7 +5651,7 @@ rotation = 1.4925666
 
 [node name="splash_signs_0" parent="Prefabs Showcase" instance=ExtResource("161_hsexk")]
 z_index = 1
-position = Vector2(693, 1982.9999)
+position = Vector2(693, 1817.9999)
 
 [node name="splash_signs_1" parent="Prefabs Showcase" instance=ExtResource("161_hsexk")]
 z_index = 100
@@ -5711,17 +5665,17 @@ rotation = 0.12106614
 scale = Vector2(0.17, 0.17)
 
 [node name="Small_Building_V2_0" parent="Prefabs Showcase" instance=ExtResource("162_mo85u")]
-position = Vector2(2363, 1531)
+position = Vector2(2363, 1366)
 
 [node name="Small_Building_Top_V2_0" parent="Prefabs Showcase" instance=ExtResource("163_t7wx4")]
-position = Vector2(2363.9998, 1414)
+position = Vector2(2363.9998, 1249)
 
 [node name="Small_Building_Door_Blocked_V2_0" parent="Prefabs Showcase" instance=ExtResource("164_uxccv")]
-position = Vector2(592.00006, 1584.9999)
+position = Vector2(592.00006, 1419.9999)
 
 [node name="antenna_0" parent="Prefabs Showcase" instance=ExtResource("165_gphas")]
 z_index = 1
-position = Vector2(218, 1868)
+position = Vector2(218, 1703)
 
 [node name="Lamp_Light_3" parent="Prefabs Showcase" instance=ExtResource("69_wanuv")]
 z_index = 1
@@ -5809,7 +5763,7 @@ position = Vector2(-174, 258)
 
 [node name="building_vent_0" parent="Prefabs Showcase" instance=ExtResource("166_5w6ji")]
 z_index = 1
-position = Vector2(312.99994, 1870.9999)
+position = Vector2(312.99994, 1705.9999)
 
 [node name="satellite_dish_3" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
 z_index = 1
@@ -5885,7 +5839,7 @@ position = Vector2(-626, 336.00003)
 
 [node name="Cat_0" parent="Prefabs Showcase" instance=ExtResource("167_cv3sq")]
 z_index = 1
-position = Vector2(472, 1837)
+position = Vector2(472, 1672)
 scale = Vector2(0.11, 0.11)
 
 [node name="Cat_3" parent="Prefabs Showcase" instance=ExtResource("167_cv3sq")]
@@ -5914,10 +5868,10 @@ position = Vector2(662, 552)
 scale = Vector2(0.11, 0.11)
 
 [node name="Tall_Building_Base_V2_0" parent="Prefabs Showcase" instance=ExtResource("21_lp3vp")]
-position = Vector2(756.00006, 1426.9999)
+position = Vector2(756.00006, 1261.9999)
 
 [node name="buildings_balcony_platform_0" parent="Prefabs Showcase" instance=ExtResource("168_s1gyq")]
-position = Vector2(1403, 1303)
+position = Vector2(1403, 1138)
 
 [node name="buildings_balcony_platform_4" parent="Prefabs Showcase" instance=ExtResource("168_s1gyq")]
 z_index = 10
@@ -6096,7 +6050,7 @@ position = Vector2(276.00006, 363.00003)
 
 [node name="buildings_balcony_platform_1" parent="Prefabs Showcase" instance=ExtResource("168_s1gyq")]
 z_index = 1
-position = Vector2(356, 1767)
+position = Vector2(356, 1602)
 
 [node name="buildings_balcony_platform_18" parent="Prefabs Showcase" instance=ExtResource("168_s1gyq")]
 z_index = 1
@@ -6214,7 +6168,7 @@ z_index = 1
 position = Vector2(7292.0005, 391)
 
 [node name="Small_Building_Top_Sign_V2_0" parent="Prefabs Showcase" instance=ExtResource("169_1ghb2")]
-position = Vector2(2364, 1350)
+position = Vector2(2364, 1185)
 
 [node name="Small_Building_V2_1" parent="Prefabs Showcase" instance=ExtResource("162_mo85u")]
 position = Vector2(7119, 637.0002)
@@ -6237,7 +6191,7 @@ position = Vector2(7120, 573)
 scale = Vector2(0.22, 0.22)
 
 [node name="Small_Building_Door_V2_0" parent="Prefabs Showcase" instance=ExtResource("170_lgu0i")]
-position = Vector2(515.0001, 1584.9999)
+position = Vector2(515.0001, 1419.9999)
 
 [node name="Small_Building_Door_Blocked_V2_1" parent="Prefabs Showcase" instance=ExtResource("164_uxccv")]
 position = Vector2(3923, 660.00006)
@@ -6249,7 +6203,7 @@ position = Vector2(3743.0002, 661.00006)
 position = Vector2(-613, 660.00006)
 
 [node name="Small_Building_Door_V3_0" parent="Prefabs Showcase" instance=ExtResource("171_s0ma2")]
-position = Vector2(913, 1479.9998)
+position = Vector2(954, 1293)
 
 [node name="Small_Building_Door_V3_4" parent="Prefabs Showcase" instance=ExtResource("171_s0ma2")]
 position = Vector2(8391.001, 662.00006)
@@ -6264,7 +6218,7 @@ position = Vector2(461.00003, 662.00006)
 position = Vector2(1526.0001, 662.00006)
 
 [node name="Small_Building_Door_V4_0" parent="Prefabs Showcase" instance=ExtResource("172_tbue6")]
-position = Vector2(996, 1478.9999)
+position = Vector2(954, 1422)
 
 [node name="Small_Building_Door_V3_3" parent="Prefabs Showcase" instance=ExtResource("171_s0ma2")]
 position = Vector2(2109, 662.00006)
@@ -6277,47 +6231,15 @@ position = Vector2(651.00006, 660.00006)
 
 [node name="trash_can_top_0" parent="Prefabs Showcase" instance=ExtResource("173_op4r7")]
 z_index = 1
-position = Vector2(-191.99988, 2045.9999)
+position = Vector2(-191.99988, 1880.9999)
 
 [node name="trash_can_bottom" parent="Prefabs Showcase" instance=ExtResource("174_dk66i")]
 z_index = 1
-position = Vector2(-192, 2075.9998)
-
-[node name="Boombox_v2_2" parent="Prefabs Showcase" instance=ExtResource("101_4d06a")]
-z_index = 1
-position = Vector2(7792.999, 1164)
+position = Vector2(-192, 1910.9998)
 
 [node name="Boombox_v2_8" parent="Prefabs Showcase" instance=ExtResource("101_4d06a")]
 z_index = 1
 position = Vector2(8617, -21.99988)
-
-[node name="Bush_Long_Part1_25" parent="Prefabs Showcase" instance=ExtResource("102_s52ah")]
-z_index = 1
-position = Vector2(7413, 1034)
-
-[node name="Bush_Long_Part1_26" parent="Prefabs Showcase" instance=ExtResource("103_0lkdb")]
-z_index = 1
-position = Vector2(7415, 1092.9999)
-
-[node name="Bush_Long_Part3_3" parent="Prefabs Showcase" instance=ExtResource("104_ef2kw")]
-z_index = 1
-position = Vector2(7415, 1143.9999)
-
-[node name="Bush_Short_Part1_18" parent="Prefabs Showcase" instance=ExtResource("66_wfdwx")]
-z_index = 1
-position = Vector2(7502, 1036)
-
-[node name="Bush_Short_Part2_3" parent="Prefabs Showcase" instance=ExtResource("105_hljj0")]
-z_index = 1
-position = Vector2(7502, 1089.9999)
-
-[node name="Bush_Short_Part3_3" parent="Prefabs Showcase" instance=ExtResource("106_7hhak")]
-z_index = 1
-position = Vector2(7503, 1143.9999)
-
-[node name="Bush_Short_Pot_19" parent="Prefabs Showcase" instance=ExtResource("67_botqm")]
-z_index = 1
-position = Vector2(7503, 1172)
 
 [node name="Bush_Short_Part1_19" parent="Prefabs Showcase" instance=ExtResource("66_wfdwx")]
 z_index = 1
@@ -6342,10 +6264,6 @@ position = Vector2(7383, 258)
 [node name="Bush_Short_Pot_22" parent="Prefabs Showcase" instance=ExtResource("67_botqm")]
 z_index = 1
 position = Vector2(7384, 282.00006)
-
-[node name="Bush_Long_Pot_21" parent="Prefabs Showcase" instance=ExtResource("107_37l64")]
-z_index = 1
-position = Vector2(7414, 1173.9999)
 
 [node name="Bush_Long_Part1_30" parent="Prefabs Showcase" instance=ExtResource("102_s52ah")]
 z_index = 1
@@ -6383,10 +6301,6 @@ z_index = 1
 position = Vector2(9580, 693.9999)
 scale = Vector2(0.17, 0.17)
 
-[node name="Lamp_Light_4" parent="Prefabs Showcase" instance=ExtResource("69_wanuv")]
-z_index = 1
-position = Vector2(7737, 1107.0001)
-
 [node name="Lamp_Light_5" parent="Prefabs Showcase" instance=ExtResource("69_wanuv")]
 z_index = 1
 position = Vector2(8855, 276.00006)
@@ -6394,10 +6308,6 @@ position = Vector2(8855, 276.00006)
 [node name="Lamp_Light_6" parent="Prefabs Showcase" instance=ExtResource("69_wanuv")]
 z_index = 1
 position = Vector2(8828.001, 276.00006)
-
-[node name="Lamp_Semi_Circle_5" parent="Prefabs Showcase" instance=ExtResource("108_daiml")]
-z_index = 1
-position = Vector2(7798, 1106.0001)
 
 [node name="Lamp_Semi_Circle_7" parent="Prefabs Showcase" instance=ExtResource("108_daiml")]
 z_index = 1
@@ -6415,10 +6325,6 @@ position = Vector2(8353, 122.99999)
 z_index = 1
 position = Vector2(8389.001, 528.9999)
 
-[node name="Electric_Box_11" parent="Prefabs Showcase" instance=ExtResource("120_xw8it")]
-z_index = 1
-position = Vector2(8098, 1050)
-
 [node name="Electric_Box_12" parent="Prefabs Showcase" instance=ExtResource("120_xw8it")]
 z_index = 1
 position = Vector2(8691, -43.99999)
@@ -6431,29 +6337,9 @@ position = Vector2(7588, 209.99995)
 z_index = 1
 position = Vector2(8880, 490.00003)
 
-[node name="Birds_Nest_Empty_2" parent="Prefabs Showcase" instance=ExtResource("68_0q7pt")]
-z_index = 1
-position = Vector2(8100, 1082)
-
 [node name="Birds_Nest_Empty_3" parent="Prefabs Showcase" instance=ExtResource("68_0q7pt")]
 z_index = 1
 position = Vector2(8226, 444.00003)
-
-[node name="Birds_Nest_Full_3" parent="Prefabs Showcase" instance=ExtResource("121_mffc7")]
-z_index = 1
-position = Vector2(8100, 1116)
-
-[node name="Bird_1_2" parent="Prefabs Showcase" instance=ExtResource("122_r8nb7")]
-z_index = 1
-position = Vector2(8139, 1046)
-
-[node name="Bird_2_2" parent="Prefabs Showcase" instance=ExtResource("123_hgtf2")]
-z_index = 1
-position = Vector2(8139, 1081)
-
-[node name="Bird_3_2" parent="Prefabs Showcase" instance=ExtResource("124_4x4lc")]
-z_index = 1
-position = Vector2(8140, 1114)
 
 [node name="Bird_2_3" parent="Prefabs Showcase" instance=ExtResource("123_hgtf2")]
 z_index = 1
@@ -6463,10 +6349,6 @@ position = Vector2(5604.0005, 117.99999)
 z_index = 1
 position = Vector2(6266, -72)
 
-[node name="Sandbags7" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
-z_index = 1
-position = Vector2(8106, 1162)
-
 [node name="Sandbags9" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
 z_index = 1
 position = Vector2(8157, 690.0001)
@@ -6475,21 +6357,9 @@ position = Vector2(8157, 690.0001)
 z_index = 1
 position = Vector2(6657, -32.99991)
 
-[node name="Trash 10" parent="Prefabs Showcase" instance=ExtResource("127_d1pp3")]
-z_index = 1
-position = Vector2(8060, 1146)
-
 [node name="Trash 12" parent="Prefabs Showcase" instance=ExtResource("127_d1pp3")]
 z_index = 1
 position = Vector2(6370, -70.00001)
-
-[node name="Trash 11" parent="Prefabs Showcase" instance=ExtResource("128_ah4ep")]
-z_index = 1
-position = Vector2(8009, 1172)
-
-[node name="Trash 13" parent="Prefabs Showcase" instance=ExtResource("128_ah4ep")]
-z_index = 1
-position = Vector2(8009, 1172)
 
 [node name="Trash 14" parent="Prefabs Showcase" instance=ExtResource("128_ah4ep")]
 z_index = 1
@@ -6498,14 +6368,6 @@ position = Vector2(8266, 698)
 [node name="Trash 15" parent="Prefabs Showcase" instance=ExtResource("128_ah4ep")]
 z_index = 1
 position = Vector2(8249.001, 580)
-
-[node name="surfboard_v1_2" parent="Prefabs Showcase" instance=ExtResource("146_op5pi")]
-z_index = 1
-position = Vector2(8241, 1051.0001)
-
-[node name="surfboard_v2_3" parent="Prefabs Showcase" instance=ExtResource("147_arumc")]
-z_index = 1
-position = Vector2(8311, 1050.0001)
 
 [node name="surfboard_v2_5" parent="Prefabs Showcase" instance=ExtResource("147_arumc")]
 z_index = 1
@@ -6521,10 +6383,6 @@ rotation = -0.2617994
 z_index = 1
 position = Vector2(7801, 69.999985)
 rotation = 0.21449584
-
-[node name="vine_lights_11" parent="Prefabs Showcase" instance=ExtResource("148_8qeq8")]
-z_index = 1
-position = Vector2(7626, 1038.0001)
 
 [node name="vine_lights_12" parent="Prefabs Showcase" instance=ExtResource("148_8qeq8")]
 z_index = 132
@@ -6550,18 +6408,10 @@ position = Vector2(8777, 582.00006)
 z_index = 132
 position = Vector2(8022, 422)
 
-[node name="satellite_dish_5" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
-z_index = 1
-position = Vector2(7736, 1047)
-
 [node name="satellite_dish_8" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
 z_index = 1
 position = Vector2(7925.0005, 266.99997)
 rotation = -0.08935063
-
-[node name="antenna_7" parent="Prefabs Showcase" instance=ExtResource("165_gphas")]
-z_index = 1
-position = Vector2(7798, 1041.0001)
 
 [node name="satellite_dish_7" parent="Prefabs Showcase" instance=ExtResource("160_lmgw3")]
 z_index = 1
@@ -6571,14 +6421,6 @@ position = Vector2(7570, -133)
 z_index = 1
 position = Vector2(7589.999, -147.00024)
 rotation = 0.34343
-
-[node name="trash_can_top_1" parent="Prefabs Showcase" instance=ExtResource("173_op4r7")]
-z_index = 1
-position = Vector2(7388, 1219)
-
-[node name="trash_can_bottom3" parent="Prefabs Showcase" instance=ExtResource("174_dk66i")]
-z_index = 1
-position = Vector2(7388, 1248.9999)
 
 [node name="trash_can_top_2" parent="Prefabs Showcase" instance=ExtResource("173_op4r7")]
 z_index = 1
@@ -6688,9 +6530,6 @@ scale = Vector2(0.27, 0.27)
 
 [node name="building_window_curtain_40" parent="Prefabs Showcase" instance=ExtResource("175_427ln")]
 position = Vector2(7699.001, 373.0001)
-
-[node name="building_window_curtain_48" parent="Prefabs Showcase" instance=ExtResource("175_427ln")]
-position = Vector2(8321, 923)
 
 [node name="building_window_curtain_44" parent="Prefabs Showcase" instance=ExtResource("175_427ln")]
 position = Vector2(7808, 204.00003)
@@ -6842,12 +6681,8 @@ scale = Vector2(0.17, 0.21)
 position = Vector2(8524, 375)
 scale = Vector2(0.17, 0.21)
 
-[node name="Scaffolding_Structure_Bounds_36" parent="Prefabs Showcase" instance=ExtResource("177_d4fqk")]
-position = Vector2(8658, 928)
-scale = Vector2(0.17, 0.21)
-
 [node name="Scaffolding_Structure_Bounds_41" parent="Prefabs Showcase" instance=ExtResource("177_d4fqk")]
-position = Vector2(8549, 928)
+position = Vector2(2980.0012, 1841)
 scale = Vector2(0.17, 0.21)
 
 [node name="Scaffolding_Structure_Bounds_2" parent="Prefabs Showcase" instance=ExtResource("177_d4fqk")]
@@ -6973,17 +6808,17 @@ position = Vector2(5468, 700)
 position = Vector2(6387, 701)
 
 [node name="AndrewNpc" type="Sprite2D" parent="Prefabs Showcase"]
-position = Vector2(9623.75, 829.3334)
+position = Vector2(3670.25, 894.3334)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("178_1h8s1")
 
 [node name="plant_pot_0" parent="." instance=ExtResource("178_5ummm")]
 z_index = 1
-position = Vector2(-133, 2082.9998)
+position = Vector2(-133, 1917.9998)
 
 [node name="blue_flowers_0" parent="." instance=ExtResource("179_m3o72")]
 z_index = 1
-position = Vector2(-131.99998, 2049)
+position = Vector2(-131.99998, 1884)
 
 [node name="plant_pot_1" parent="." instance=ExtResource("178_5ummm")]
 position = Vector2(791, 407)
@@ -7023,7 +6858,7 @@ scale = Vector2(0.27, 0.27)
 
 [node name="Green_bush_0" parent="." instance=ExtResource("180_oo8hu")]
 z_index = 1
-position = Vector2(-75.99997, 2085.9998)
+position = Vector2(-75.99997, 1920.9998)
 
 [node name="Green_bush_1" parent="." instance=ExtResource("180_oo8hu")]
 position = Vector2(1357.0001, 395)
@@ -7065,31 +6900,11 @@ scale = Vector2(0.27, 0.27)
 
 [node name="white_flowers_0" parent="." instance=ExtResource("181_4yvpm")]
 z_index = 1
-position = Vector2(-76, 2034.9999)
+position = Vector2(-76, 1869.9999)
 
 [node name="blue_pink_flowers_0" parent="." instance=ExtResource("182_qser8")]
 z_index = 1
-position = Vector2(-74.99997, 2059)
-
-[node name="plant_pot_10" parent="." instance=ExtResource("178_5ummm")]
-z_index = 1
-position = Vector2(7447, 1255.9999)
-
-[node name="blue_flowers_5" parent="." instance=ExtResource("179_m3o72")]
-z_index = 1
-position = Vector2(7448, 1222.0001)
-
-[node name="Green_bush_6" parent="." instance=ExtResource("180_oo8hu")]
-z_index = 1
-position = Vector2(7504, 1258.9999)
-
-[node name="white_flowers_1" parent="." instance=ExtResource("181_4yvpm")]
-z_index = 1
-position = Vector2(7504, 1208)
-
-[node name="blue_pink_flowers_1" parent="." instance=ExtResource("182_qser8")]
-z_index = 1
-position = Vector2(7505, 1232.0001)
+position = Vector2(-74.99997, 1894)
 
 [node name="SprayCollectable" parent="." instance=ExtResource("183_x41ir")]
 position = Vector2(-1059, 694)
@@ -7101,36 +6916,36 @@ position = Vector2(-1013, 695)
 position = Vector2(-960, 697)
 
 [node name="CallyNpc" type="Sprite2D" parent="."]
-position = Vector2(9581.5, 820)
+position = Vector2(3628, 885)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("185_o2rjp")
 
 [node name="CarahNpc" type="Sprite2D" parent="."]
-position = Vector2(9540.5, 855)
+position = Vector2(3587, 920)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("186_yra66")
 
 [node name="KrisNpc" type="Sprite2D" parent="."]
-position = Vector2(9472, 839)
+position = Vector2(3518.5, 904)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("187_jtu4w")
 
 [node name="LaurenceNpc" type="Sprite2D" parent="."]
-position = Vector2(9400, 835)
+position = Vector2(3446.5, 900)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("188_sp6sw")
 
 [node name="LeeNpc" type="Sprite2D" parent="."]
-position = Vector2(9332, 832)
+position = Vector2(3378.5, 897)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("189_02r0p")
 
 [node name="LucyNpc" type="Sprite2D" parent="."]
-position = Vector2(9260, 833)
+position = Vector2(3306.5, 898)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("190_r0lxt")
 
 [node name="PeterNpc" type="Sprite2D" parent="."]
-position = Vector2(9204, 830)
+position = Vector2(3250.5, 895)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("191_puqqb")
