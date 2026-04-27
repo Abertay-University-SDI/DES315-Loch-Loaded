@@ -337,6 +337,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Main_Menu_Settings" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bve12h40ll6sx"]
 
-[ext_resource type="Texture2D" uid="uid://dewnbosdkqdat" path="res://Textures/UI/health_outside.png" id="1_7jiju"]
-[ext_resource type="Texture2D" uid="uid://cagaxj5udf8j5" path="res://Textures/UI/health_inside.png" id="2_t3flm"]
+[ext_resource type="Texture2D" uid="uid://bi8fohnmc5lib" path="res://Textures/UI/healthbar.png" id="2_jcbsq"]
+[ext_resource type="Texture2D" uid="uid://b5hmh8fl487t0" path="res://Textures/UI/healthbar-inside.png" id="3_axtvl"]
 [ext_resource type="Script" uid="uid://ddulml4re16wa" path="res://Code/player/health_bar.gd" id="3_t3flm"]
 [ext_resource type="FontFile" uid="uid://b84jjj7jtokti" path="res://Textures/UI/score_font.png" id="4_8n2hl"]
 [ext_resource type="Script" uid="uid://b5j5mx6kkhyrl" path="res://Code/ui/score.gd" id="5_c4arg"]
@@ -17,6 +17,7 @@ region = Rect2(412, 244, 183, 416)
 
 [sub_resource type="SystemFont" id="SystemFont_jcbsq"]
 font_names = PackedStringArray("Consolas")
+subpixel_positioning = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jcbsq"]
 shader = ExtResource("7_6nfne")
@@ -52,16 +53,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 642.0
-offset_right = 1843.0
-offset_bottom = 669.0
+offset_left = 3.0
+offset_top = 558.0
+offset_right = -677.0
+offset_bottom = 338.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.5, 0.5)
 value = 100.0
-texture_over = ExtResource("1_7jiju")
-texture_progress = ExtResource("2_t3flm")
+texture_under = ExtResource("2_jcbsq")
+texture_progress = ExtResource("3_axtvl")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
@@ -178,9 +179,9 @@ texture_filter = 1
 layout_mode = 0
 offset_left = -58.0
 offset_top = 504.0
-offset_right = 2455.5017
-offset_bottom = 1604.0007
-scale = Vector2(0.19999878, 0.19999878)
+offset_right = 2374.412
+offset_bottom = 1604.001
+scale = Vector2(0.2, 0.2)
 theme_override_constants/separation = -500
 
 [node name="Dash" type="TextureRect" parent="Cooldowns"]
