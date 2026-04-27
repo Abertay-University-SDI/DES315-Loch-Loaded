@@ -2,11 +2,20 @@ extends Control
 @onready var HealthBar: TextureProgressBar = $HealthBar
 @export var player: Node2D
 @export var dialog: NinePatchRect
-@export var sprayLabel: Label
+
+@onready var numerator: Label = $HBoxContainer/Fraction/Numerator
+@onready var denominator: Label = $HBoxContainer/Fraction/Denominator
+@onready var fraction: GridContainer = $HBoxContainer/Fraction
+
+
 
 @onready var dash: TextureRect = $Cooldowns/Dash
 @onready var slam: TextureRect = $Cooldowns/Slam
 @onready var shock: TextureRect = $Cooldowns/Shock
+
+
+@export var Enough_Cans_color :Color=Color.LIME
+@export var not_Enough_Cans_color:Color= Color.RED
 
 
 var _target_health: float
@@ -25,8 +34,21 @@ func update_cooldowns(dashcd,slamcd,shockcd)->void:
 	
 
 func update_spray(spray:int) -> void:
+	var Spray_max = Global.spray_cans_needed
+	var color = Color.WHITE
 	_target_spray += spray
-	sprayLabel.text = str(_target_spray) + "/4"
+	numerator.text = str(_target_spray)
+	denominator.text = str(Spray_max)
+	
+	if Spray_max <= _target_spray:
+		color = Enough_Cans_color
+	else:
+		color = not_Enough_Cans_color
+		
+	for label in fraction.get_children():
+		label.add_theme_color_override("font_color",color)
+
+	
 
 func getSprayValue() -> float:
 	return _target_spray
@@ -37,7 +59,7 @@ func _ready() -> void:
 		HealthBar.value = 200
 	visible = true
 	_target_health = HealthBar.value
-	_target_spray = 3
+	_target_spray = 0
 	update_spray(0)
 	player.health_changed.connect(update_health)
 	player.spray_changed.connect(update_spray)

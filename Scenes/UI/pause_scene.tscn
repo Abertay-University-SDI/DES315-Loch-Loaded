@@ -1,24 +1,33 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyts38hutibwa"]
+[gd_scene load_steps=19 format=3 uid="uid://dyts38hutibwa"]
 
 [ext_resource type="Script" uid="uid://k77rav7u18ju" path="res://Code/scene_managers/pause_scene.gd" id="1_irnjd"]
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="3_f8ftb"]
-[ext_resource type="Texture2D" uid="uid://csk4t6ogrop0g" path="res://Textures/UI/Cassete.png" id="4_mmpk5"]
+[ext_resource type="Texture2D" uid="uid://rg21wnxwxuuj" path="res://Textures/UI/walkman2-sideways.png" id="3_oxg4q"]
 [ext_resource type="PackedScene" uid="uid://cj3kwert7blyw" path="res://Scenes/UI/Cassete_button.tscn" id="5_5gd8x"]
-[ext_resource type="Texture2D" uid="uid://c412nulk7l581" path="res://Textures/UI/gear.png" id="5_myk77"]
-[ext_resource type="Texture2D" uid="uid://d3nf1toru3eio" path="res://Textures/UI/buttons/cassete_buttons.png" id="6_5n2i0"]
+[ext_resource type="Texture2D" uid="uid://cyao78plg6wvw" path="res://Textures/UI/buttons/settings-button.png" id="6_sqe71"]
+[ext_resource type="Texture2D" uid="uid://c3tqm131u2u3q" path="res://Textures/UI/buttons/settings-button-paint.png" id="7_ye00l"]
+[ext_resource type="Texture2D" uid="uid://qkweku52gii5" path="res://Textures/UI/buttons/play-button.png" id="10_v4abw"]
+[ext_resource type="Texture2D" uid="uid://dqimxfatt43ft" path="res://Textures/UI/buttons/play-button-paint.png" id="11_3t3iu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5gd8x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oxg4q"]
-atlas = ExtResource("6_5n2i0")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecd14"]
+atlas = ExtResource("6_sqe71")
+region = Rect2(150, 141, 105, 117)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ecd14"]
-load_path = "res://.godot/imported/cassete_buttons.png-aa98ecfcaabec7bc4a5656302376d60f.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxg4q"]
+atlas = ExtResource("7_ye00l")
+region = Rect2(150, 137, 105, 117)
+margin = Rect2(32, 0, 32, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgecj"]
-atlas = SubResource("CompressedTexture2D_ecd14")
-region = Rect2(128, 0, 128, 128)
+atlas = ExtResource("10_v4abw")
+region = Rect2(150, 141, 105, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqe71"]
+atlas = ExtResource("11_3t3iu")
+region = Rect2(172, 160, 103, 115)
+margin = Rect2(32, 0, 32, 0)
 
 [sub_resource type="Animation" id="Animation_myk77"]
 length = 0.001
@@ -34,30 +43,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(175.99988, -554.0001)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect/Gear_1:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect/Gear_2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_mmpk5"]
 resource_name = "Slide"
@@ -72,42 +57,35 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(727, 288), Vector2(175.99988, -554.0001)]
+"values": [Vector2(727, 288), Vector2(176, -831)]
 }
 
 [sub_resource type="Animation" id="Animation_5gd8x"]
 resource_name = "idle"
 length = 0.6
 loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_oxg4q"]
+resource_name = "Slide_out"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect/Gear_1:rotation")
+tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.2831855]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect/Gear_2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.2831855]
+"values": [Vector2(176, -831), Vector2(727, 288)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5n2i0"]
 _data = {
 &"RESET": SubResource("Animation_myk77"),
 &"Slide": SubResource("Animation_mmpk5"),
+&"Slide_out": SubResource("Animation_oxg4q"),
 &"idle": SubResource("Animation_5gd8x")
 }
 
@@ -130,33 +108,13 @@ script = ExtResource("1_irnjd")
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_5gd8x")
 layout_mode = 0
-offset_left = 175.99988
-offset_top = -554.0001
-offset_right = 1375.9999
-offset_bottom = 214.0
+offset_left = 176.0
+offset_top = -831.0
+offset_right = 2096.0005
+offset_bottom = 249.0
 rotation = 1.0471976
 pivot_offset = Vector2(400, 256)
-texture = ExtResource("4_mmpk5")
-
-[node name="Gear_1" type="TextureRect" parent="TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_left = 264.84494
-offset_top = 246.09566
-offset_right = 520.845
-offset_bottom = 502.09564
-pivot_offset = Vector2(128, 128)
-texture = ExtResource("5_myk77")
-
-[node name="Gear_2" type="TextureRect" parent="TextureRect"]
-z_index = -1
-layout_mode = 0
-offset_left = 643.5353
-offset_top = 244.18478
-offset_right = 899.5353
-offset_bottom = 500.18478
-pivot_offset = Vector2(128, 128)
-texture = ExtResource("5_myk77")
+texture = ExtResource("3_oxg4q")
 
 [node name="Settings" parent="TextureRect" instance=ExtResource("5_5gd8x")]
 layout_mode = 0
@@ -165,12 +123,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 219.60277
-offset_top = 768.45746
-offset_right = 347.60278
-offset_bottom = 875.45746
+offset_left = 594.76154
+offset_top = 846.66327
+offset_right = 722.76154
+offset_bottom = 963.66327
 grow_horizontal = 1
 grow_vertical = 1
+texture_normal = SubResource("AtlasTexture_ecd14")
+texture_hover = SubResource("AtlasTexture_oxg4q")
+label_text = "Settings"
 
 [node name="Exit" parent="TextureRect" instance=ExtResource("5_5gd8x")]
 layout_mode = 0
@@ -179,13 +140,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 360.75784
-offset_top = 767.9697
-offset_right = 488.75784
-offset_bottom = 874.9697
+offset_left = 735.9166
+offset_top = 846.17554
+offset_right = 863.9166
+offset_bottom = 963.17554
 grow_horizontal = 1
 grow_vertical = 1
-texture_normal = SubResource("AtlasTexture_oxg4q")
+label_text = "Exit"
 
 [node name="Resume" parent="TextureRect" instance=ExtResource("5_5gd8x")]
 layout_mode = 0
@@ -194,13 +155,15 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 86.143776
-offset_top = 767.6152
-offset_right = 214.14377
-offset_bottom = 874.6152
+offset_left = 461.3025
+offset_top = 845.821
+offset_right = 589.3025
+offset_bottom = 962.821
 grow_horizontal = 1
 grow_vertical = 1
 texture_normal = SubResource("AtlasTexture_wgecj")
+texture_hover = SubResource("AtlasTexture_sqe71")
+label_text = "Resume"
 
 [node name="CasseteAnim" type="AnimationPlayer" parent="."]
 libraries = {

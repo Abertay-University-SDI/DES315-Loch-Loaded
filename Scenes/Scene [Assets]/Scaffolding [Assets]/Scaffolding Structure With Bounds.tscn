@@ -25,6 +25,7 @@ size = Vector2(662.8575, 580.9525)
 size = Vector2(708.57153, 38.09524)
 
 [node name="Scaffolding_Structure_Bounds_0" type="Node2D"]
+z_index = 100
 scale = Vector2(0.175, 0.21)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]

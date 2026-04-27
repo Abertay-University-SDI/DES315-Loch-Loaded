@@ -11,6 +11,10 @@ extends TextureRect
 
 @export var brush_grid: GridContainer
 
+var painting_cur = load("res://Textures/UI/spray-cursor.png")
+var erasing_cur = load("res://Textures/UI/spraycan-cursor.png")
+
+
 var brush_texture: Texture2D
 var brush_img: Image
 
@@ -81,10 +85,14 @@ func _gui_input(event: InputEvent) -> void:
 			
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				current_color = brush_color.color
+				Input.set_custom_mouse_cursor(painting_cur)
+				
 			else:
+				Input.set_custom_mouse_cursor(erasing_cur)
 				current_color = ERASER_COLOR
 				
 			if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+				
 				draw_at_mouse(event.position)
 				texture.update(img)
 

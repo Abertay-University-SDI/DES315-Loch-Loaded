@@ -10,6 +10,7 @@ region = Rect2(918, 142, 520, 486)
 size = Vector2(400.00006, 461.9048)
 
 [node name="Van_0" type="Node2D"]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

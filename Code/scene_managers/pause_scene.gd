@@ -16,7 +16,9 @@ func _on_exit_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pause_ui.hide()
+	anim.play("Slide_out")
+	await anim.animation_finished
+	hide()
 	settings.show()
 
 

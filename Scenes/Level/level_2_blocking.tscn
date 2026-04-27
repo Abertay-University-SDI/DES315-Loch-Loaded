@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://fpd08rx3dyuw"]
+[gd_scene load_steps=156 format=3 uid="uid://fpd08rx3dyuw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_1x42q"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_kc4se"]
@@ -80,6 +80,7 @@
 [ext_resource type="PackedScene" uid="uid://cgy5b5jmcavlf" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 1.tscn" id="78_h1yw0"]
 [ext_resource type="PackedScene" uid="uid://6ovdql3xmk0u" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Area Blockers/Blocker v1.tscn" id="78_rluqg"]
 [ext_resource type="PackedScene" uid="uid://ulqr7bb884py" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Metal X 2.tscn" id="79_sm5bk"]
+[ext_resource type="Texture2D" uid="uid://cs2s5opvxm8o8" path="res://Textures/Temp/Cell_Floor_Again.png" id="80_rffg8"]
 [ext_resource type="PackedScene" uid="uid://dbqlicadqibya" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaff Ladder.tscn" id="80_rg2kg"]
 [ext_resource type="PackedScene" uid="uid://djwl4mwi1rngr" path="res://Scenes/Scene [Assets]/Signs [Assets]/Warning Signs/No Enty Sign.tscn" id="81_dih3e"]
 [ext_resource type="PackedScene" uid="uid://be5vh3p3fxbbq" path="res://Scenes/Scene [Assets]/Boombox V1.tscn" id="82_xtyvb"]
@@ -149,7 +150,7 @@ shader = ExtResource("11_unrsh")
 shader_parameter/mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4snqv"]
-size = Vector2(14758, 1954.5)
+size = Vector2(14764, 1955.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqj4t"]
 size = Vector2(250.5, 1972)
@@ -170,7 +171,7 @@ size = Vector2(24, 73)
 size = Vector2(23.5, 287.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnohd"]
-size = Vector2(14655, 20)
+size = Vector2(14657, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suaas"]
 size = Vector2(557, 410.62817)
@@ -290,7 +291,7 @@ position = Vector2(-1208, 696)
 gizmo_extents = 28.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea"]
-position = Vector2(5337, -258.25)
+position = Vector2(5334, -257.75)
 shape = SubResource("RectangleShape2D_4snqv")
 debug_color = Color(1, 1, 1, 0.16078432)
 
@@ -5094,16 +5095,18 @@ position = Vector2(6386, 675.0002)
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="Ground Collision" type="CollisionShape2D" parent="Ground"]
-position = Vector2(5281.5, 708)
+position = Vector2(5280.5, 709)
 shape = SubResource("RectangleShape2D_hnohd")
 
-[node name="Ground Image Colour" type="ColorRect" parent="Ground"]
-offset_left = -2047.0
+[node name="Ground Image Colour" type="TextureRect" parent="Ground"]
+offset_left = -2048.0
 offset_top = 698.0
-offset_right = 12588.009
-offset_bottom = 767.64325
+offset_right = 12588.007
+offset_bottom = 720.0
 scale = Vector2(1.0018443, 1)
-color = Color(0.288518, 0.28851798, 0.28851798, 1)
+texture = ExtResource("80_rffg8")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Enemies" type="Node2D" parent="."]
 
