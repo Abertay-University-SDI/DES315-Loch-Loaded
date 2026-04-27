@@ -53,7 +53,7 @@ func endOfLevel():
 			paintedBoards += 1
 	
 	levelPercent = ((deadEnemies / totalEnemies) + (paintedBoards / totalBoards)) * 50
-	if (levelPercent == 100):
+	if (levelPercent >= 100):
 		rank = "A"
 		if (endTime - startTime <= goodTime):
 			rank = "S"
