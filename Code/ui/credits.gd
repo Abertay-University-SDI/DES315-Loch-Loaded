@@ -38,3 +38,7 @@ func _process(delta: float) -> void:
 	if visible:
 		scroll_value += scroll_speed * delta
 		get_v_scroll_bar().value = scroll_value
+
+
+func _on_back_button_pressed() -> void:
+	pass # Replace with function body.

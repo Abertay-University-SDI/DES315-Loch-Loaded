@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Radical Ramapge"
 run/main_scene="uid://bbw2scq626wau"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0, 0.72671556, 0.8490468, 1)
 boot_splash/image="uid://bvokxk83ohi37"
 config/icon="uid://bvokxk83ohi37"
@@ -29,7 +29,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-mouse_cursor/custom_image="uid://barah6e5b7035"
+mouse_cursor/custom_image="uid://buixpyjv8pvsg"
 
 [dotnet]
 
