@@ -144,7 +144,7 @@ _data = {
 &"exit": SubResource("Animation_nvq4g")
 }
 
-[node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider", "GMButton")]
+[node name="SettingsScene" type="Control" node_paths=PackedStringArray("back_button", "master_slider", "sfx_slider", "music_slider", "filmGrainButton", "screenShakeButton", "GMButton")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -158,6 +158,8 @@ back_button = NodePath("PanelContainer/BackButton")
 master_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/master_slider")
 sfx_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/soundEffect_slider")
 music_slider = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Sound/volumes_container/music_slider")
+filmGrainButton = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer/fimGrain")
+screenShakeButton = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer/screenShake_button")
 GMButton = NodePath("PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer/MarginContainer/mode_button")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -230,6 +232,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -17.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 15
@@ -258,9 +261,10 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_p7gpx")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_nvq4g")
 theme_override_styles/tab_focus = SubResource("StyleBoxFlat_kfm54")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Sound" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_p7gpx")
 metadata/_tab_index = 0
@@ -314,7 +318,6 @@ step = 0.01
 value = 1.0
 
 [node name="Acessability" type="TabBar" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -333,15 +336,13 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 46.305)
 layout_mode = 2
 
-[node name="fimGrain" type="CheckButton" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer"]
+[node name="fimGrain" type="Button" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "film Grain"
-alignment = 1
+text = "film Grain Off"
 
-[node name="screenShake_button" type="CheckButton" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer"]
+[node name="screenShake_button" type="Button" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Screen Shake"
-alignment = 1
+text = "Screen Shake On"
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/main_vertical_container/TabContainer/Acessability/HBoxContainer/VBoxContainer"]
 layout_mode = 2

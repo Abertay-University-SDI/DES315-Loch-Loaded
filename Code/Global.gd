@@ -1,6 +1,7 @@
 extends Node
 
 var colorBlindMode = 0
+var filmGrain = false
 var screenShake = true
 var gameModeEasy = false
 var yoyoAbilityUnlocked = false
@@ -23,6 +24,12 @@ func getColorBlindMode() -> int:
 
 func setColorBlindMode(newMode: int) -> void:
 	colorBlindMode = newMode
+
+func getFilmGrainMode() -> bool:
+	return filmGrain
+
+func setFilmGrainMode(newMode: bool) -> void:
+	filmGrain = newMode
 
 func getScreenShakeMode() -> bool:
 	return screenShake
