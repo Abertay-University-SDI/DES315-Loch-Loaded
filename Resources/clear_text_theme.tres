@@ -3,6 +3,7 @@
 [sub_resource type="SystemFont" id="SystemFont_n7a1r"]
 font_names = PackedStringArray("Monospace")
 font_weight = 999
+oversampling = 4.0
 
 [resource]
 default_font = SubResource("SystemFont_n7a1r")
