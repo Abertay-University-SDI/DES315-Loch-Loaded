@@ -12,6 +12,7 @@ atlas = ExtResource("2_bdvv2")
 region = Rect2(1719, 881, 300, 343)
 
 [node name="building_window_curtain_0" type="Node2D"]
+modulate = Color(0.64466345, 0.64466345, 0.64466345, 1)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

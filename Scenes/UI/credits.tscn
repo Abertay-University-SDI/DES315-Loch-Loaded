@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4c6kxewkr8gw"]
+[gd_scene load_steps=5 format=3 uid="uid://c4c6kxewkr8gw"]
 
 [ext_resource type="Theme" uid="uid://ncs60230vi61" path="res://Resources/ui_theme.tres" id="1_nm7lk"]
 [ext_resource type="Script" uid="uid://c4ybi0v4kx2bd" path="res://Code/ui/credits.gd" id="2_c1t8d"]
+[ext_resource type="Script" uid="uid://c3f3xusl5oo4e" path="res://Code/ui/credits_manager.gd" id="2_tdxk4"]
 [ext_resource type="Script" uid="uid://c0yj041q8t3e4" path="res://Code/ui/button.gd" id="3_g4wvt"]
-
 
 [node name="credits_screen" type="Control"]
 layout_mode = 3
@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_nm7lk")
+script = ExtResource("2_tdxk4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -28,12 +29,48 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/normal_font_size = 66
 theme_override_font_sizes/bold_font_size = 84
-text = "Programers
+bbcode_enabled = true
+text = "
+
+
+
+
+
+[center][b]Programmers[/b]
+
 Peter Mazanik
+[img=300x500]res://credits_images/peter.png[/img]
+
 Andrew Moore
-Artists
-Niamh
-Mcmillan Lucy Doris Carah Paterson Producer Lee Cumming Music/SFX Laurence Watt Level Design Kris Clark"
+[img=64x64]res://credits_images/peter.png[/img]
+
+[b]Artists[/b]
+
+Niamh Mcmillan
+[img=64x64]res://credits_images/peter.png[/img]
+
+Lucy Doris
+[img=64x64]res://credits_images/peter.png[/img]
+
+Carah Paterson
+[img=64x64]res://credits_images/peter.png[/img]
+
+[b]Producer[/b]
+
+Lee Cumming
+[img=64x64]res://credits_images/peter.png[/img]
+
+[b]Music/SFX[/b]
+
+Laurence Watt
+[img=300x500]res://credits_images/laurence.png[/img]
+
+[b]Level Design[/b]
+
+Kris Clark
+[img=64x64]res://credits_images/peter.png[/img]
+
+[/center]"
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -51,3 +88,5 @@ size_flags_vertical = 4
 text = "back"
 script = ExtResource("3_g4wvt")
 scene = NodePath("..")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

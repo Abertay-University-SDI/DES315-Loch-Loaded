@@ -11,14 +11,22 @@ func _ready() -> void:
 	
 	# Programmers
 	text += "[center][b]Programmers[/b]\n\n"
-	text += "Peter Mazanik\n[img=300x500]res://credits_images/peter.png[/img]\n\n"
 	text += "Andrew Moore\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
+	text += "[center][b]VFX[/b]\n"
+	text += "Peter Mazanik\n[img=300x500]res://credits_images/peter.png[/img]\n\n"
 	
 	# Artists
 	text += "[b]Artists[/b]\n\n"
-	text += "Niamh Mcmillan\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
-	text += "Lucy Doris\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
+	text += "[center][b]Enviormental Artist[/b]\n\n"
 	text += "Carah Paterson\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
+	
+	text += "[center][b]Character Design[/b]\n"
+	text += "[center][b]UI[/b]\n\n"
+	text += "Niamh Mcmillan\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
+	
+	
+	text += "[center][b]Animation[/b]\n\n"
+	text += "Lucy Doris\n[img=64x64]res://credits_images/peter.png[/img]\n\n"
 	
 	# Producer
 	text += "[b]Producer[/b]\n\n"
@@ -38,3 +46,7 @@ func _process(delta: float) -> void:
 	if visible:
 		scroll_value += scroll_speed * delta
 		get_v_scroll_bar().value = scroll_value
+
+
+func _on_back_button_pressed() -> void:
+	pass # Replace with function body.

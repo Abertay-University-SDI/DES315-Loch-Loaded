@@ -1,6 +1,16 @@
 extends Control
 
-@export var back_button:Button
+@onready var tab_container: TabContainer = $PanelContainer/MarginContainer/main_vertical_container/TabContainer
+
+@onready var main_menu_settings: TextureRect = $Main_Menu_Settings
+@onready var background: TextureRect = $Background
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+
+@export var back_button:Control
+
+@export var main_menu:bool = false
 
 var SAVED_PATH = "res://Saves/save_data.txt"
 
@@ -17,12 +27,23 @@ var sfxValue = 1
 @export var music_slider:HSlider
 
 @export var filmGrainTextRect: TextureRect
+
+@export var filmGrainButton: Button
+@export var screenShakeButton: Button
 @export var GMButton: Button
 
 var screenShake
 var filmGrain
 
+var gameMode
+var styleboxN: StyleBox
+var styleboxP: StyleBox
+var styleboxH: StyleBox
+
 func _ready() -> void:
+	styleboxN = GMButton.get_theme_stylebox("normal")
+	styleboxP = GMButton.get_theme_stylebox("pressed")
+	styleboxH = GMButton.get_theme_stylebox("hover")
 	load_settings_from_file()
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(masterValue))
 	AudioServer.set_bus_volume_db(musicVolume, linear_to_db(musicValue))
@@ -33,6 +54,31 @@ func _ready() -> void:
 		db_to_linear(AudioServer.get_bus_volume_db(musicVolume)))
 	sfx_slider.set_value_no_signal(
 		db_to_linear(AudioServer.get_bus_volume_db(sfxVolume)))
+	if (Global.getGameModeEasy()):
+		GMButton.text = "ASSIST MODE"
+		styleboxN.bg_color = "00ff00"
+		styleboxP.bg_color = "00ff00"
+		styleboxH.bg_color = "00ff00"
+		GMButton.add_theme_stylebox_override("normal", styleboxN)
+		GMButton.add_theme_stylebox_override("pressed", styleboxP)
+		GMButton.add_theme_stylebox_override("hover", styleboxH)
+		
+	else:
+		GMButton.text = "REGULAR MODE"
+		styleboxN.bg_color = "1b7aff"
+		styleboxP.bg_color = "1b7aff"
+		styleboxH.bg_color = "1b7aff"
+		GMButton.add_theme_stylebox_override("normal", styleboxN)
+		GMButton.add_theme_stylebox_override("pressed", styleboxP)
+		GMButton.add_theme_stylebox_override("hover", styleboxH)
+	if (Global.getFilmGrainMode()):
+		filmGrainButton.text = "Screen Shake On"
+	else:
+		filmGrainButton.text = "Screen Shake Off"
+	if (Global.getScreenShakeMode()):
+		screenShakeButton.text = "Screen Shake On"
+	else:
+		screenShakeButton.text = "Screen Shake Off"
 
 func load_settings_from_file():
 	if not FileAccess.file_exists(SAVED_PATH):
@@ -52,6 +98,8 @@ func load_settings_from_file():
 			next = 4
 		if msg == "filmGrain":
 			next = 5
+		if msg == "gameMode":
+			next = 6
 		if next == 1:
 			masterValue = msg.to_float()
 		if next == 2:
@@ -62,6 +110,8 @@ func load_settings_from_file():
 			screenShake = msg
 		if next == 5:
 			filmGrain = msg
+		if next == 6:
+			gameMode = msg
 	return
 
 func save_settings_to_file():
@@ -76,6 +126,8 @@ func save_settings_to_file():
 	file.store_line(str(screenShake))
 	file.store_line("filmGrain")
 	file.store_line(str(filmGrain))
+	file.store_line("gameMode")
+	file.store_line(str())
 
 func _on_master_slider_value_changed(sliderValue: float) -> void:
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(sliderValue))
@@ -94,6 +146,7 @@ func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
 	screenShake = toggled_on
 
 func _on_fim_grain_toggled(toggled_on: bool) -> void:
+	Global.setFilmGrainMode(toggled_on)
 	filmGrain = toggled_on
 	if (filmGrainTextRect):
 		if (filmGrain):
@@ -102,24 +155,36 @@ func _on_fim_grain_toggled(toggled_on: bool) -> void:
 			filmGrainTextRect.hide()
 
 func _on_back_button_pressed() -> void:
+	
 	save_settings_to_file()
-	hide();
-	get_tree().get_nodes_in_group("current_ui").back().show()
+	
+	if(main_menu and not main_menu_settings.visible):
+		animation_player.play("exit")
+		await animation_player.animation_finished
+		main_menu_settings.show()
+	elif(not main_menu):
+		animation_player.play("exit")
+		await animation_player.animation_finished
+		hide()
+		get_tree().get_nodes_in_group("current_ui").back().show()
+	else:
+		hide()
+		get_tree().get_nodes_in_group("current_ui").back().show()
 
 func _on_color_blind_list_item_selected(index: int) -> void:
 	Global.setColorBlindMode(index)
 
 func _on_visibility_changed() -> void:
 	if(visible):
+		if animation_player!= null:
+			animation_player.play("enter")
 		back_button.grab_focus()
 
 func _on_mode_button_pressed() -> void:
-	var styleboxN: StyleBox = GMButton.get_theme_stylebox("normal")
-	var styleboxP: StyleBox = GMButton.get_theme_stylebox("pressed")
-	var styleboxH: StyleBox = GMButton.get_theme_stylebox("hover")
 	if (GMButton.text == "ASSIST MODE"):
 		Global.setGameModeEasy(false)
 		GMButton.text = "REGULAR MODE"
+		gameMode = "REGULAR MODE"
 		styleboxN.bg_color = "1b7aff"
 		styleboxP.bg_color = "1b7aff"
 		styleboxH.bg_color = "1b7aff"
@@ -129,9 +194,31 @@ func _on_mode_button_pressed() -> void:
 	else:
 		Global.setGameModeEasy(true)
 		GMButton.text = "ASSIST MODE"
+		gameMode = "ASSIST MODE"
 		styleboxN.bg_color = "00ff00"
 		styleboxP.bg_color = "00ff00"
 		styleboxH.bg_color = "00ff00"
 		GMButton.add_theme_stylebox_override("normal", styleboxN)
 		GMButton.add_theme_stylebox_override("pressed", styleboxP)
 		GMButton.add_theme_stylebox_override("hover", styleboxH)
+
+
+func main_menu_appear()-> void:
+	animation_player.play("enter")
+	background.show()
+	main_menu_settings.hide()
+
+func _on_sound_pressed() -> void:
+	tab_container.current_tab = 0
+	main_menu_appear()
+
+
+
+func _on_accessibility_pressed() -> void:
+	tab_container.current_tab = 1
+	main_menu_appear()
+
+
+func _on_controls_pressed() -> void:
+	tab_container.current_tab = 2
+	main_menu_appear()

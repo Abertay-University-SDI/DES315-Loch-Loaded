@@ -21,6 +21,7 @@ modulate = Color(0.422371, 0.422371, 0.422371, 1)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.37413925, 0.37413928, 0.37413922, 1)
 texture = SubResource("AtlasTexture_hoqb3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]

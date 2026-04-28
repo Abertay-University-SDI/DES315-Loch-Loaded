@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj3kwert7blyw"]
+[gd_scene load_steps=12 format=3 uid="uid://cj3kwert7blyw"]
 
-[ext_resource type="Texture2D" uid="uid://d3nf1toru3eio" path="res://Textures/UI/buttons/cassete_buttons.png" id="1_y8xr3"]
+[ext_resource type="Texture2D" uid="uid://b48phxkj2ti1f" path="res://Textures/UI/buttons/pause-button.png" id="1_ea7lj"]
+[ext_resource type="Texture2D" uid="uid://lw08cv6hkr44" path="res://Textures/UI/buttons/pause-button-paint.png" id="2_nuq8i"]
 [ext_resource type="Script" uid="uid://dv1kgm37k5f4e" path="res://Code/ui/menu_button.gd" id="2_vw4so"]
 [ext_resource type="AudioStream" uid="uid://dqyaps5cwev5u" path="res://Sounds/Tape recorder button press.wav" id="3_ea7lj"]
 [ext_resource type="AudioStream" uid="uid://c5tv74yhe75uh" path="res://Sounds/Tape recorder button press 2.wav" id="4_nuq8i"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw4so"]
-atlas = ExtResource("1_y8xr3")
-region = Rect2(256, 0, 128, 128)
+atlas = ExtResource("1_ea7lj")
+region = Rect2(150, 141, 105, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15lvr"]
+atlas = ExtResource("2_nuq8i")
+region = Rect2(150, 137, 105, 117)
+margin = Rect2(32, 0, 32, 0)
 
 [sub_resource type="Animation" id="Animation_vln86"]
 length = 0.001
@@ -24,6 +29,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_hover:margin")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(32, 0, 32, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vw4so"]
 resource_name = "hover"
@@ -31,14 +48,26 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture_normal:margin")
+tracks/0/path = NodePath(".:texture_hover:margin")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 0, 0), Rect2(0, 0, 0, -32)]
+"values": [Rect2(0, 0, 0, 0), Rect2(32, 0, 32, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_normal:margin")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 0), Rect2(32, 0, 32, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ea7lj"]
@@ -54,7 +83,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 0, -32), Rect2(0, 0, 0, 0)]
+"values": [Rect2(32, 0, 32, 0), Rect2(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_hover:margin")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(32, 0, 32, 0), Rect2(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nuq8i"]
@@ -71,15 +112,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.00009
-offset_top = -64.0
-offset_right = 64.00009
-offset_bottom = 64.0
+offset_left = -75.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -1.5707964
+pivot_offset = Vector2(64, 64)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_vw4so")
+texture_hover = SubResource("AtlasTexture_15lvr")
 flip_v = true
 script = ExtResource("2_vw4so")
 buttonHover = NodePath("buttonHover")

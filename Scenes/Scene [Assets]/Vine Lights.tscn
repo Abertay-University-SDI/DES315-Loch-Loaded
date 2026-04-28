@@ -7,6 +7,8 @@ atlas = ExtResource("1_4tnby")
 region = Rect2(1634, 755, 685, 207.69739)
 
 [node name="vine_lights_0" type="Node2D"]
+modulate = Color(0.5904411, 0.59044117, 0.5904411, 1)
+z_index = 10
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

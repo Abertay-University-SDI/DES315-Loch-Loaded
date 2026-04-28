@@ -2,7 +2,6 @@
 extends TextureRect
 
 @export var spray_size: Vector2i = Vector2i(512, 512)
-@export var brush_color:ColorPicker
 @export var brush_slide:HSlider
 
 @export var default_image_texture:TextureRect
@@ -10,6 +9,10 @@ extends TextureRect
 @onready var popup:Popup = $Popup
 
 @export var brush_grid: GridContainer
+@export var color_grid: GridContainer
+
+var painting_cur = load("res://Textures/UI/spraycan-cursor.png")
+var erasing_cur = load("res://Textures/UI/rubber-cursor.png")
 
 var brush_texture: Texture2D
 var brush_img: Image
@@ -22,6 +25,7 @@ const SAVED_PATH   := "user://RadicalRampage/Saves/Spray/saved.png"
 
 var img: Image
 var current_color:Color
+var select_color:Color=Color.WHITE
 
 const ERASER_COLOR:Color=Color(0,0,0,0)
 
@@ -32,6 +36,10 @@ func _on_brush_selected(tex: Texture2D):
 	brush_texture = tex
 	brush_img = tex.get_image()
 	updated_brush = true
+	
+func _on_color_selected(_color: Color):
+	select_color = _color
+	updated_brush = true
 
 func _ready() -> void:
 	var first = brush_grid.get_child(0)
@@ -40,6 +48,9 @@ func _ready() -> void:
 	for button in brush_grid.get_children():
 		if button.has_signal("brush_selected"):
 			button.brush_selected.connect(_on_brush_selected)
+	for button in color_grid.get_children():
+		if button.has_signal("color_selected"):
+			button.color_selected.connect(_on_color_selected)
 		
 	var dir = DirAccess.open("user://")
 	if dir:
@@ -80,11 +91,15 @@ func _gui_input(event: InputEvent) -> void:
 		if event.pressed and not event.is_echo():
 			
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				current_color = brush_color.color
+				current_color = select_color
+				Input.set_custom_mouse_cursor(painting_cur)
+				
 			else:
+				Input.set_custom_mouse_cursor(erasing_cur)
 				current_color = ERASER_COLOR
 				
 			if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+				
 				draw_at_mouse(event.position)
 				texture.update(img)
 
@@ -122,6 +137,7 @@ func rebuild_stamp():
 	cached_color = current_color
 
 	var stamp := brush_img.duplicate()
+	stamp.convert(Image.FORMAT_RGBA8)
 	stamp.resize(size, size, Image.INTERPOLATE_NEAREST)
 
 	var s :Vector2i= stamp.get_size()

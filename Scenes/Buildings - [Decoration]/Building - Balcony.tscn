@@ -13,6 +13,7 @@ size = Vector2(704.762, 33.33332)
 scale = Vector2(0.21, 0.21)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.353256, 1.353256, 1.101992, 1)
 z_index = 100
 texture = SubResource("AtlasTexture_yrnv0")
 
