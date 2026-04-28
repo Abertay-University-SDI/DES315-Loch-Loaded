@@ -2,8 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_g7cm4"]
 [ext_resource type="Texture2D" uid="uid://bfutlwq28n868" path="res://Textures/Decorations/pixil-frame-0.png" id="2_hwaej"]
-[ext_resource type="AudioStream" uid="uid://j3cn0bt85nqu" path="res://Sounds/All or nothing.mp3" id="2_u3g71"]
-
+[ext_resource type="AudioStream" uid="uid://p0qrsw6oywhc" path="res://Sounds/All or Nothing.wav" id="3_u3g71"]
 
 [node name="Label" type="TextureRect"]
 anchors_preset = 8
@@ -23,9 +22,8 @@ expand_mode = 1
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(31, 23)
-stream = ExtResource("2_u3g71")
+stream = ExtResource("3_u3g71")
 volume_db = -13.999
 autoplay = true
 attenuation = 2.828429
 bus = &"Music"
-parameters/looping = true

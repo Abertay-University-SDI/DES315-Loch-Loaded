@@ -56,6 +56,7 @@ func _ready() -> void:
 		db_to_linear(AudioServer.get_bus_volume_db(sfxVolume)))
 	if (Global.getGameModeEasy()):
 		GMButton.text = "ASSIST MODE"
+		gameMode = "ASSIST MODE"
 		styleboxN.bg_color = "00ff00"
 		styleboxP.bg_color = "00ff00"
 		styleboxH.bg_color = "00ff00"
@@ -65,6 +66,7 @@ func _ready() -> void:
 		
 	else:
 		GMButton.text = "REGULAR MODE"
+		gameMode = "REGULAR MODE"
 		styleboxN.bg_color = "1b7aff"
 		styleboxP.bg_color = "1b7aff"
 		styleboxH.bg_color = "1b7aff"
@@ -72,9 +74,9 @@ func _ready() -> void:
 		GMButton.add_theme_stylebox_override("pressed", styleboxP)
 		GMButton.add_theme_stylebox_override("hover", styleboxH)
 	if (Global.getFilmGrainMode()):
-		filmGrainButton.text = "Screen Shake On"
+		filmGrainButton.text = "Film Grain On"
 	else:
-		filmGrainButton.text = "Screen Shake Off"
+		filmGrainButton.text = "Film Grain Off"
 	if (Global.getScreenShakeMode()):
 		screenShakeButton.text = "Screen Shake On"
 	else:
@@ -127,7 +129,7 @@ func save_settings_to_file():
 	file.store_line("filmGrain")
 	file.store_line(str(filmGrain))
 	file.store_line("gameMode")
-	file.store_line(str())
+	file.store_line(gameMode)
 
 func _on_master_slider_value_changed(sliderValue: float) -> void:
 	AudioServer.set_bus_volume_db(masterVolume, linear_to_db(sliderValue))
@@ -141,18 +143,26 @@ func _on_sound_effect_slider_value_changed(sliderValue: float) -> void:
 	AudioServer.set_bus_volume_db(sfxVolume, linear_to_db(sliderValue))
 	sfxValue = sliderValue
 
-func _on_screen_shake_button_toggled(toggled_on: bool) -> void:
-	Global.setScreenShakeMode(toggled_on)
-	screenShake = toggled_on
+func _on_screen_shake_button_pressed() -> void:
+	Global.setScreenShakeMode(not Global.getScreenShakeMode())
+	screenShake = not Global.getScreenShakeMode()
+	if (Global.getScreenShakeMode()):
+		screenShakeButton.text = "Screen Shake On"
+	else:
+		screenShakeButton.text = "Screen Shake Off"
 
-func _on_fim_grain_toggled(toggled_on: bool) -> void:
-	Global.setFilmGrainMode(toggled_on)
-	filmGrain = toggled_on
+func _on_fim_grain_pressed() -> void:
+	Global.setFilmGrainMode(not Global.getFilmGrainMode())
+	filmGrain = not Global.getFilmGrainMode()
 	if (filmGrainTextRect):
 		if (filmGrain):
 			filmGrainTextRect.show()
 		else:
 			filmGrainTextRect.hide()
+	if (Global.getFilmGrainMode()):
+		filmGrainButton.text = "Film Grain On"
+	else:
+		filmGrainButton.text = "Film Grain Off"
 
 func _on_back_button_pressed() -> void:
 	
