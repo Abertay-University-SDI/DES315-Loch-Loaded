@@ -1,8 +1,9 @@
 @tool
-extends Control
+extends Label
 
 @export var action_name: String
-@onready var key_label = $TextureRect/Label
+
+var findword: String
 
 enum ControllerType {
 	XBOX,
@@ -11,19 +12,18 @@ enum ControllerType {
 	UNKNOWN
 }
 
-func _ready() -> void:
-	update_label()
+func _ready() -> void: 
+	text = str(text) % update_label()
 
-func update_label() -> void:
+func update_label() -> String:
 	if not InputMap.has_action(action_name):
-		key_label.text = "none"
-		return
+		return "none"
 
 	var events = InputMap.action_get_events(action_name)
 	if events.size() > 0:
-		key_label.text = get_input_text(events[0])
+		return get_input_text(events[0])
 	else:
-		key_label.text = "Unassigned"
+		return "Unassigned"
 
 func get_controller_type(device_id: int) -> int:
 	var controllerName = Input.get_joy_name(device_id).to_lower()

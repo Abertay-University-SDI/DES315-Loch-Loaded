@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4euddxhiwgh2"]
+[gd_scene load_steps=3 format=3 uid="uid://b4euddxhiwgh2"]
 
-[ext_resource type="Script" uid="uid://8gxfwkykgnii" path="res://Code/ui/display_key.gd" id="1_7ipir"]
 [ext_resource type="Texture2D" uid="uid://dfwp6xtdub6ml" path="res://Textures/UI/keycap.png" id="1_tladb"]
-
 
 [sub_resource type="SystemFont" id="SystemFont_7ipir"]
 font_names = PackedStringArray("Monospace")
@@ -17,8 +15,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_7ipir")
-action_name = "jump"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
