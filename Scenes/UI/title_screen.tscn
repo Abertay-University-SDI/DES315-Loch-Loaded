@@ -109,6 +109,10 @@ alignment = 1
 layout_mode = 2
 label_text = "Play"
 
+[node name="tutorial_button" parent="title_screen_ui/Buttons/VBoxContainer" instance=ExtResource("8_uv4ns")]
+layout_mode = 2
+label_text = "Tutorial"
+
 [node name="spray_editor_button" parent="title_screen_ui/Buttons/VBoxContainer" instance=ExtResource("8_uv4ns")]
 layout_mode = 2
 label_text = "Spray Editor"
@@ -144,6 +148,8 @@ expand_mode = 2
 stretch_mode = 4
 
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/studio_button" to="." method="_on_studio_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/tutorial_button" to="." method="_on_studio_button_pressed"]
+[connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/spray_editor_button" to="." method="_on_spray_editor_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="title_screen_ui/Buttons/VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
