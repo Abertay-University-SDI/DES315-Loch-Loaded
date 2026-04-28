@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://djy1tie4hveyy"]
+[gd_scene load_steps=197 format=3 uid="uid://djy1tie4hveyy"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_kch34"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_x41ir"]
@@ -183,6 +183,14 @@
 [ext_resource type="PackedScene" uid="uid://divk4lmp1np8n" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/White Flowers.tscn" id="181_4yvpm"]
 [ext_resource type="PackedScene" uid="uid://l7olfms0crm" path="res://Scenes/Scene [Assets]/Plant Pots [Assets]/Blue Pink Flowers.tscn" id="182_qser8"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="183_x41ir"]
+[ext_resource type="Texture2D" uid="uid://dl4r5w5l3rd33" path="res://Textures/characters/andrewNPC.png" id="184_sp6sw"]
+[ext_resource type="Texture2D" uid="uid://buwt0x4w88uae" path="res://Textures/characters/callyNPC.png" id="185_02r0p"]
+[ext_resource type="Texture2D" uid="uid://m6ahnrwr0blu" path="res://Textures/characters/carahNPC.png" id="186_r0lxt"]
+[ext_resource type="Texture2D" uid="uid://btempvkl050t3" path="res://Textures/characters/krisNPC.png" id="187_puqqb"]
+[ext_resource type="Texture2D" uid="uid://dkf4iesbrcgbo" path="res://Textures/characters/laurenceNPC.png" id="188_lj8o0"]
+[ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_yemep"]
+[ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_8lmdk"]
+[ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_akct4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -584,9 +592,6 @@ scale = Vector2(1.545, 1)
 
 [node name="Tall_Building_Window_98" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
 position = Vector2(2480, 207)
-
-[node name="Tall_Building_Window_113" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
-position = Vector2(8163, 774)
 
 [node name="Tall_Building_Window_125" parent="Tall Buildings/Tall - Buildings [Windows]" instance=ExtResource("24_v5g1a")]
 position = Vector2(8169, 546)
@@ -2794,7 +2799,7 @@ position = Vector2(28419.047, 2014.2856)
 scale = Vector2(4.7619047, 4.7619047)
 
 [node name="Lamp_11" parent="Decoration/Lamp Collection" instance=ExtResource("70_uesxb")]
-position = Vector2(39338.094, 4766.6665)
+position = Vector2(41900, 2038.0952)
 scale = Vector2(4.7619047, 4.7619047)
 
 [node name="Little Lights" type="Node2D" parent="Decoration"]
@@ -2842,6 +2847,10 @@ position = Vector2(5332, 648.00006)
 z_index = 1
 position = Vector2(1112.0001, 648.00006)
 
+[node name="Van_10" parent="Vehicles/Vans" instance=ExtResource("72_nmbt0")]
+z_index = 1
+position = Vector2(8938.001, 648.00006)
+
 [node name="Van_7" parent="Vehicles/Vans" instance=ExtResource("72_nmbt0")]
 position = Vector2(5333, 569.00006)
 
@@ -2865,6 +2874,10 @@ position = Vector2(5163, 675.0002)
 [node name="Car_6" parent="Vehicles/Cars" instance=ExtResource("73_8ntis")]
 position = Vector2(5163, 616.9999)
 rotation = -0.41944635
+
+[node name="Car_9" parent="Vehicles/Cars" instance=ExtResource("73_8ntis")]
+position = Vector2(9057.001, 667)
+scale = Vector2(0.24, 0.24)
 
 [node name="Car_4" parent="Vehicles/Cars" instance=ExtResource("73_8ntis")]
 position = Vector2(6467, 675.0002)
@@ -3224,6 +3237,10 @@ position = Vector2(462.00003, 295.0001)
 
 [node name="Small_Building_Door_0" parent="Prefabs Showcase" instance=ExtResource("58_1qj3n")]
 position = Vector2(1397, 1389.9999)
+
+[node name="Small_Building_Door_2" parent="Prefabs Showcase" instance=ExtResource("58_1qj3n")]
+z_index = 1
+position = Vector2(7088, 665)
 
 [node name="Small_Building_Door_1" parent="Prefabs Showcase" instance=ExtResource("58_1qj3n")]
 position = Vector2(2988.0002, 641)
@@ -4219,7 +4236,67 @@ position = Vector2(1564.0001, 708)
 
 [node name="Vent_2" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
 z_index = 1
-position = Vector2(1564.0001, 708)
+position = Vector2(907.0002, 708)
+
+[node name="Vent_3" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(274.00006, 708)
+
+[node name="Vent_4" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(-211.99994, 708)
+
+[node name="Vent_5" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(-776.99994, 708)
+
+[node name="Vent_6" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(2849, 708)
+
+[node name="Vent_7" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(3116.0002, 708)
+
+[node name="Vent_8" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(3781.0002, 708)
+
+[node name="Vent_9" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(4469, 708)
+
+[node name="Vent_10" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(4920.0005, 708)
+
+[node name="Vent_11" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(5405.0005, 708)
+
+[node name="Vent_12" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(6062.0005, 708)
+
+[node name="Vent_13" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(6842, 708)
+
+[node name="Vent_14" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(7387, 708)
+
+[node name="Vent_15" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(8066.0005, 708)
+
+[node name="Vent_16" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(8750, 708)
+
+[node name="Vent_17" parent="Prefabs Showcase" instance=ExtResource("125_gunad")]
+z_index = 1
+position = Vector2(9151.001, 708)
 
 [node name="Sandbags" parent="Prefabs Showcase" instance=ExtResource("126_is0pg")]
 z_index = 1
@@ -4549,6 +4626,10 @@ position = Vector2(1088.0001, 1755.9999)
 [node name="hot_dog_stand_2" parent="Prefabs Showcase" instance=ExtResource("138_wtmfc")]
 z_index = 1
 position = Vector2(4980.0005, 615.0001)
+
+[node name="hot_dog_stand_3" parent="Prefabs Showcase" instance=ExtResource("138_wtmfc")]
+z_index = 1
+position = Vector2(9465.001, 615.0001)
 
 [node name="hot_dog_stand_1" parent="Prefabs Showcase" instance=ExtResource("138_wtmfc")]
 position = Vector2(1744.0001, 616)
@@ -6167,10 +6248,6 @@ rotation = 3.1415927
 position = Vector2(7119.998, 573)
 scale = Vector2(0.22, 0.22)
 
-[node name="Small_Building_V2_2" parent="Prefabs Showcase" instance=ExtResource("162_mo85u")]
-position = Vector2(7119, 637.0002)
-rotation = 3.1415927
-
 [node name="Small_Building_Top_V2_2" parent="Prefabs Showcase" instance=ExtResource("163_t7wx4")]
 position = Vector2(7119.998, 573)
 scale = Vector2(0.22, 0.22)
@@ -6617,6 +6694,10 @@ rotation = 3.1415925
 position = Vector2(8797, 662)
 scale = Vector2(0.21, 0.28)
 
+[node name="Small_Building_Window_Thin_Blocked_6" parent="Prefabs Showcase" instance=ExtResource("55_sah44")]
+position = Vector2(7158, 651)
+scale = Vector2(0.13, 0.173)
+
 [node name="balcony_ladders_25" parent="Prefabs Showcase" instance=ExtResource("144_vddtd")]
 z_index = 10
 position = Vector2(8730.001, 557)
@@ -6782,18 +6863,18 @@ visible = false
 position = Vector2(5468, 700)
 
 [node name="Lamp_12" parent="Prefabs Showcase" instance=ExtResource("70_uesxb")]
-position = Vector2(7349, 1206)
+position = Vector2(7362, 702)
 
 [node name="Lamp_11" parent="Prefabs Showcase" instance=ExtResource("70_uesxb")]
 position = Vector2(6387, 701)
 
-[node name="plant_pot_0" parent="." instance=ExtResource("178_5ummm")]
-z_index = 1
-position = Vector2(-133, 1917.9998)
-
 [node name="blue_flowers_0" parent="Prefabs Showcase" instance=ExtResource("179_m3o72")]
 z_index = 1
 position = Vector2(-131.99998, 1884)
+
+[node name="plant_pot_0" parent="." instance=ExtResource("178_5ummm")]
+z_index = 1
+position = Vector2(-133, 1917.9998)
 
 [node name="plant_pot_1" parent="." instance=ExtResource("178_5ummm")]
 position = Vector2(791, 407)
@@ -6889,3 +6970,43 @@ position = Vector2(-1013, 695)
 
 [node name="SprayCollectable3" parent="." instance=ExtResource("183_x41ir")]
 position = Vector2(-960, 697)
+
+[node name="AndrewNpc" type="Sprite2D" parent="."]
+position = Vector2(4464.25, 1283.3334)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("184_sp6sw")
+
+[node name="CallyNpc" type="Sprite2D" parent="."]
+position = Vector2(4422, 1274)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("185_02r0p")
+
+[node name="CarahNpc" type="Sprite2D" parent="."]
+position = Vector2(4381, 1309)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("186_r0lxt")
+
+[node name="KrisNpc" type="Sprite2D" parent="."]
+position = Vector2(4312.5, 1293)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("187_puqqb")
+
+[node name="LaurenceNpc" type="Sprite2D" parent="."]
+position = Vector2(4240.5, 1289)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("188_lj8o0")
+
+[node name="LeeNpc" type="Sprite2D" parent="."]
+position = Vector2(4172.5, 1286)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("189_yemep")
+
+[node name="LucyNpc" type="Sprite2D" parent="."]
+position = Vector2(4100.5, 1287)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("190_8lmdk")
+
+[node name="PeterNpc" type="Sprite2D" parent="."]
+position = Vector2(4044.5, 1284)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("191_akct4")
