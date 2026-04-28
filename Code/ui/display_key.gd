@@ -41,19 +41,19 @@ func get_controller_type(device_id: int) -> int:
 
 func get_input_text(event: InputEvent) -> String:
 	var type = get_controller_type(0)
-
-	if event is InputEventKey:
-		return event.as_text().trim_suffix(" (Physical)")
 	
-	elif event is InputEventMouseButton:
-		return event.as_text()
+	if (type != null):
+		if event is InputEventJoypadButton:
+			return _get_joypad_button_name(event.button_index, type)
 	
-	elif event is InputEventJoypadButton:
-		return _get_joypad_button_name(event.button_index, type)
+		elif event is InputEventJoypadMotion:
+			return _get_joypad_axis_name(event.axis, event.axis_value)
+	else:
+		if event is InputEventKey:
+			return event.as_text().trim_suffix(" (Physical)")
 	
-	elif event is InputEventJoypadMotion:
-		return _get_joypad_axis_name(event.axis, event.axis_value)
-	
+		elif event is InputEventMouseButton:
+			return event.as_text()
 	return "Unknown"
 
 func _get_joypad_button_name(button: int, type: ControllerType) -> String:
