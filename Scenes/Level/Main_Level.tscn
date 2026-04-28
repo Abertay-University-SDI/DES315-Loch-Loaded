@@ -191,7 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_yemep"]
 [ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_8lmdk"]
 [ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_akct4"]
-[ext_resource type="PackedScene" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
+[ext_resource type="PackedScene" uid="uid://bidaqnvo231c3" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -251,7 +251,6 @@ bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("6_1h8s1")]
 visible = false
