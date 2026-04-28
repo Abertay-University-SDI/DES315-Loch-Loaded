@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://lroniiq8uhfv"]
+[gd_scene load_steps=195 format=3 uid="uid://6g4kowaka5fw"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_45ovo"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_vwtso"]
@@ -184,6 +184,7 @@
 [ext_resource type="Texture2D" uid="uid://m6ahnrwr0blu" path="res://Textures/characters/carahNPC.png" id="186_8x8n1"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="187_fqkqh"]
 [ext_resource type="Texture2D" uid="uid://btempvkl050t3" path="res://Textures/characters/krisNPC.png" id="187_q58mp"]
+[ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="188_htrle"]
 [ext_resource type="Texture2D" uid="uid://dkf4iesbrcgbo" path="res://Textures/characters/laurenceNPC.png" id="188_v6hew"]
 [ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_cnb67"]
 [ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_pfohb"]
@@ -2148,6 +2149,7 @@ offset_top = 593.0
 offset_right = -963.0001
 offset_bottom = 647.0
 scale = Vector2(0.625, 0.625)
+theme = ExtResource("188_htrle")
 text = "To adjust values Press 
 [button] and go to 'Settings'"
 horizontal_alignment = 1
