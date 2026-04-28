@@ -191,7 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_yemep"]
 [ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_8lmdk"]
 [ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_akct4"]
-[ext_resource type="PackedScene" uid="uid://bidaqnvo231c3" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
+[ext_resource type="PackedScene" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -251,6 +251,7 @@ bounds = NodePath("../../../PlayArea")
 bounds_shape = NodePath("../../../PlayArea/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="dialog" parent="CanvasLayer" instance=ExtResource("6_1h8s1")]
 visible = false
@@ -2185,16 +2186,16 @@ scale = Vector2(0.64, 1)
 position = Vector2(1113, 572)
 
 [node name="Beam_1_2" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(5202, 223)
+position = Vector2(5202, 228)
 
 [node name="Beam_1_3" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(5570, 131)
+position = Vector2(5570, 132)
 
 [node name="Beam_1_7" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(6625, -14)
+position = Vector2(6625, -15)
 
 [node name="Beam_1_11" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(6324, -60)
+position = Vector2(6324, -61)
 
 [node name="Beam_1_8" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
 position = Vector2(7912, -377)
@@ -2220,7 +2221,7 @@ position = Vector2(6909, 315.00006)
 scale = Vector2(1.495, 1)
 
 [node name="Beam_1_4" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(5987, 50)
+position = Vector2(5987, 49)
 scale = Vector2(1.592, 1)
 
 [node name="Scaffolding" type="Node2D" parent="."]
@@ -2562,7 +2563,7 @@ position = Vector2(2054, -537)
 position = Vector2(3578, -196)
 
 [node name="Spray Spot_4" parent="Spray Spots" instance=ExtResource("65_vnxxd")]
-position = Vector2(4778.9995, 209)
+position = Vector2(4778.9995, 211)
 
 [node name="Spray Spot_5" parent="Spray Spots" instance=ExtResource("65_vnxxd")]
 position = Vector2(5985, -37)
@@ -2948,6 +2949,27 @@ position = Vector2(4080, 554)
 [node name="Robot12" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
 position = Vector2(1015, 662)
 
+[node name="Robot14" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(4977, 642)
+
+[node name="Robot15" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(4591, 642)
+
+[node name="Robot16" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(7824, 248)
+
+[node name="Robot17" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(8273, -159)
+
+[node name="Robot18" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(8383, 263)
+
+[node name="Robot19" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(8011, 674)
+
+[node name="Robot20" parent="Enemies/Robots" instance=ExtResource("74_00bmj")]
+position = Vector2(8792, 669)
+
 [node name="FlyBots" type="Node2D" parent="Enemies"]
 
 [node name="Flybot" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
@@ -2968,6 +2990,27 @@ position = Vector2(2274, -49)
 [node name="Flybot6" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
 position = Vector2(2738, 83)
 
+[node name="Flybot7" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(6323, -157)
+
+[node name="Flybot8" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(5552, 41)
+
+[node name="Flybot9" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(7398, 175)
+
+[node name="Flybot10" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(7761, -237)
+
+[node name="Flybot11" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(8132, -247)
+
+[node name="Flybot12" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(8539, -244)
+
+[node name="Flybot13" parent="Enemies/FlyBots" instance=ExtResource("75_mqr7x")]
+position = Vector2(8775, 194)
+
 [node name="Chargers" type="Node2D" parent="Enemies"]
 
 [node name="Charger" parent="Enemies/Chargers" instance=ExtResource("76_biuao")]
@@ -2977,7 +3020,7 @@ position = Vector2(3397, 418)
 position = Vector2(2754, 29)
 
 [node name="Charger3" parent="Enemies/Chargers" instance=ExtResource("76_biuao")]
-position = Vector2(5505, 543)
+position = Vector2(5531, 607)
 
 [node name="Charger4" parent="Enemies/Chargers" instance=ExtResource("76_biuao")]
 position = Vector2(7004, 673)
@@ -5842,7 +5885,7 @@ position = Vector2(3377.0002, 505.00003)
 
 [node name="antenna_4" parent="Prefabs Showcase" instance=ExtResource("165_gphas")]
 z_index = 1
-position = Vector2(3086, 455.99997)
+position = Vector2(3084, 469.99994)
 rotation = 0.13344426
 
 [node name="building_vent_9" parent="Prefabs Showcase" instance=ExtResource("166_5w6ji")]
@@ -6410,7 +6453,7 @@ position = Vector2(8226, 444.00003)
 
 [node name="Bird_2_3" parent="Prefabs Showcase" instance=ExtResource("123_hgtf2")]
 z_index = 1
-position = Vector2(5604.0005, 117.99999)
+position = Vector2(5604.0005, 119.99999)
 
 [node name="Bird_3_3" parent="Prefabs Showcase" instance=ExtResource("124_4x4lc")]
 z_index = 1
