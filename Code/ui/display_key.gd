@@ -28,7 +28,7 @@ func update_label() -> String:
 func get_controller_type(device_id: int) -> int:
 	var controllerName = Input.get_joy_name(device_id).to_lower()
 	
-	if controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1:
+	if controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1 or controllerName.find("xinput") != -1:
 		return ControllerType.XBOX
 	
 	elif controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1:
