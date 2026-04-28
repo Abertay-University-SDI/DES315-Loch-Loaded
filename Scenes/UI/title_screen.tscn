@@ -130,6 +130,7 @@ layout_mode = 2
 label_text = "Exit"
 
 [node name="Tiff" type="TextureRect" parent="title_screen_ui"]
+visible = false
 modulate = Color(0.15294118, 0.16078432, 0.8784314, 1)
 layout_mode = 1
 anchors_preset = 3
