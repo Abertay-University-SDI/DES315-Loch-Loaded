@@ -34,6 +34,7 @@ func _on_hover_start() -> void:
 		buttonHover.play()
 
 	anim.play("hover")
+	await anim.animation_finished
 
 
 func _on_hover_end() -> void:
@@ -42,6 +43,7 @@ func _on_hover_end() -> void:
 
 	is_hovered = false
 	anim.play("hover_end")
+	await anim.animation_finished
 
 
 func _on_pressed() -> void:

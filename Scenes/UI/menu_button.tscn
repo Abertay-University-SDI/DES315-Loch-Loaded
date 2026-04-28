@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://btav3q4xobqyh"]
+[gd_scene load_steps=14 format=3 uid="uid://btav3q4xobqyh"]
 
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="1_56pne"]
 [ext_resource type="Texture2D" uid="uid://bymppv8b6lxca" path="res://Textures/UI/buttons/tab_bar.png" id="2_ujyj2"]
-[ext_resource type="Texture2D" uid="uid://cbx0mecweq07q" path="res://Textures/UI/buttons/tab_bar_selected.png" id="3_nqedb"]
 [ext_resource type="Script" uid="uid://dv1kgm37k5f4e" path="res://Code/ui/menu_button.gd" id="4_fttth"]
 [ext_resource type="AudioStream" uid="uid://dqyaps5cwev5u" path="res://Sounds/Tape recorder button press.wav" id="5_nqedb"]
 [ext_resource type="AudioStream" uid="uid://c5tv74yhe75uh" path="res://Sounds/Tape recorder button press 2.wav" id="6_fttth"]
-
 
 [sub_resource type="Animation" id="Animation_j0fq8"]
 length = 0.001
@@ -20,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0.827451, 0.30588236, 0.91764706, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -44,7 +42,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.48235294)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -71,6 +69,12 @@ tracks/4/keys = {
 "values": [Vector2(512, 0)]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ujyj2"]
+load_path = "res://.godot/imported/tab_bar.png-39d152946c488de212198144c727b928.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqedb"]
+load_path = "res://.godot/imported/tab_bar_selected.png-fa6524018e4c809fd65f8e3bc25d41f6.ctex"
+
 [sub_resource type="Animation" id="Animation_4a7w3"]
 resource_name = "hover"
 length = 0.4
@@ -84,7 +88,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(0.8509804, 0, 0.49803922, 1), Color(0.8156863, 0.2627451, 0.83137256, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -96,7 +100,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ExtResource("2_ujyj2"), ExtResource("3_nqedb")]
+"values": [SubResource("CompressedTexture2D_ujyj2"), SubResource("CompressedTexture2D_nqedb")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -108,7 +112,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.39, 0.4),
 "transitions": PackedFloat32Array(1, 1000000, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.31431612, 0.31431612, 0.3143161, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.48235294), Color(0.31431612, 0.31431612, 0.3143161, 1), Color(1, 1, 1, 0.48235294)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -135,9 +139,12 @@ tracks/4/keys = {
 "values": [Vector2(512, 0), Vector2(768, 0)]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fttth"]
+load_path = "res://.godot/imported/tab_bar.png-39d152946c488de212198144c727b928.ctex"
+
 [sub_resource type="Animation" id="Animation_56pne"]
 resource_name = "hover_end"
-length = 0.1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,10 +152,10 @@ tracks/0/path = NodePath("Label:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+"values": [Color(1, 0.26666668, 1, 1), Color(0.89411765, 0.3764706, 0.89411765, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -160,7 +167,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ExtResource("2_ujyj2")]
+"values": [SubResource("CompressedTexture2D_fttth")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -172,7 +179,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.0082619935, 0.10000001),
 "transitions": PackedFloat32Array(1, 1000000, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.31431612, 0.31431612, 0.3143161, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.31431612, 0.31431612, 0.3143161, 1), Color(1, 1, 1, 0.48235294)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -181,7 +188,7 @@ tracks/3/path = NodePath(".:stretch_mode")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 2]
@@ -193,7 +200,7 @@ tracks/4/path = NodePath(".:custom_minimum_size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(768, 0), Vector2(512, 0)]
@@ -211,7 +218,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 0, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -235,6 +242,7 @@ _data = {
 }
 
 [node name="Menu_button" type="TextureButton" node_paths=PackedStringArray("buttonHover", "buttonPress")]
+self_modulate = Color(1, 1, 1, 0.48235294)
 custom_minimum_size = Vector2(512, 0)
 offset_right = 512.0
 offset_bottom = 64.0
@@ -247,13 +255,13 @@ buttonPress = NodePath("AudioStreamPlayer2D2")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 213.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.827451, 0.30588236, 0.91764706, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.44313726)
+theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 48
 text = "Default"
 vertical_alignment = 1

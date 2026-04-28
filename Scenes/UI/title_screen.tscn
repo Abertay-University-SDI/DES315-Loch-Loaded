@@ -1,57 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbw2scq626wau"]
+[gd_scene load_steps=9 format=3 uid="uid://bbw2scq626wau"]
 
 [ext_resource type="Script" uid="uid://e3mekxxofvc6" path="res://Code/scene_managers/title_screen.gd" id="1_824g0"]
-[ext_resource type="PackedScene" uid="uid://bq46xt1yq4xty" path="res://Scenes/UI/animated_background.tscn" id="2_tjte5"]
-[ext_resource type="Shader" uid="uid://ebrhi03q532x" path="res://Code/shaders/background.gdshader" id="3_uv4ns"]
+[ext_resource type="Texture2D" uid="uid://ka7knq4sru6r" path="res://splash art- title-page.jpg" id="2_tjte5"]
 [ext_resource type="PackedScene" uid="uid://ci1im0k5mjoxu" path="res://Scenes/UI/settings_scene.tscn" id="4_nd20k"]
 [ext_resource type="FontFile" uid="uid://c8qpptiw1j53m" path="res://Fonts/Road_Rage.otf" id="5_3txao"]
 [ext_resource type="PackedScene" uid="uid://c4c6kxewkr8gw" path="res://Scenes/UI/credits.tscn" id="5_tjte5"]
 [ext_resource type="Script" uid="uid://cceg8nwwf7cwg" path="res://Code/ui/dynamic_text_shadow.gd" id="6_28uqs"]
 [ext_resource type="PackedScene" uid="uid://btav3q4xobqyh" path="res://Scenes/UI/menu_button.tscn" id="8_uv4ns"]
-[ext_resource type="Shader" uid="uid://jvgo0o6goxdl" path="res://Code/shaders/Glow.gdshader" id="10_nd20k"]
 [ext_resource type="Texture2D" uid="uid://c76x10pfkq4xy" path="res://Textures/characters/tiff_front_view.png" id="10_uv4ns"]
-
-[sub_resource type="Gradient" id="Gradient_tjte5"]
-offsets = PackedFloat32Array(0.033333335, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.06879827, 0.06879828, 0.06879828, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uv4ns"]
-gradient = SubResource("Gradient_tjte5")
-fill_from = Vector2(1, 1)
-fill_to = Vector2(0, 0)
-
-[sub_resource type="Gradient" id="Gradient_2tc6i"]
-offsets = PackedFloat32Array(0.00952381, 0.041269843, 0.4888889, 0.51746035, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3491902, 0.3491902, 0.3491902, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yjy2p"]
-gradient = SubResource("Gradient_2tc6i")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yjy2p"]
-shader = ExtResource("3_uv4ns")
-shader_parameter/aspect_ratio = 1.78
-shader_parameter/radius = 0.34
-shader_parameter/speed = 0.1
-shader_parameter/var_pos = Vector2(0, 0)
-shader_parameter/color = Color(0, 0, 0.29523852, 1)
-shader_parameter/gradient = SubResource("GradientTexture1D_yjy2p")
-shader_parameter/SPHERE_COUNT = 256
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nd20k"]
-noise_type = 3
-frequency = 0.0263
-fractal_type = 2
-fractal_lacunarity = 3.705
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3txao"]
-noise = SubResource("FastNoiseLite_nd20k")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3txao"]
-shader = ExtResource("10_nd20k")
-shader_parameter/line_color = Color(1, 0, 0.8999996, 1)
-shader_parameter/line_scale = 3.8590001833025
-shader_parameter/alpha = 1.0
-shader_parameter/noise = SubResource("NoiseTexture2D_3txao")
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -62,26 +18,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_824g0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_uv4ns")
+texture = ExtResource("2_tjte5")
 expand_mode = 2
-
-[node name="animated_background" parent="TextureRect" instance=ExtResource("2_tjte5")]
-material = SubResource("ShaderMaterial_yjy2p")
-layout_mode = 1
 
 [node name="SettingsScene" parent="." instance=ExtResource("4_nd20k")]
 visible = false
 layout_mode = 1
 main_menu = true
 
-[node name="Main_Menu_Settings" parent="SettingsScene" index="1"]
+[node name="Main_Menu_Settings" parent="SettingsScene" index="2"]
 visible = true
 
 [node name="credits_screen" parent="." instance=ExtResource("5_tjte5")]
@@ -98,17 +50,18 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="title_screen_ui"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 482.0
+offset_bottom = 319.0
+rotation = 0.0019580682
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Label" type="Label" parent="title_screen_ui/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="title_screen_ui/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="title_screen_ui/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -117,7 +70,20 @@ theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
 theme_override_fonts/font = ExtResource("5_3txao")
 theme_override_font_sizes/font_size = 81
-text = "Radical Rampage"
+text = "Radical"
+horizontal_alignment = 1
+script = ExtResource("6_28uqs")
+
+[node name="Label2" type="Label" parent="title_screen_ui/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(1, 0, 1, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("5_3txao")
+theme_override_font_sizes/font_size = 81
+text = "Rampage"
 horizontal_alignment = 1
 script = ExtResource("6_28uqs")
 
@@ -126,8 +92,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -280.0
-offset_right = 512.0
+offset_top = -374.0
+offset_right = 544.0
 grow_vertical = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 6
@@ -160,17 +126,17 @@ layout_mode = 2
 label_text = "Exit"
 
 [node name="Tiff" type="TextureRect" parent="title_screen_ui"]
-material = SubResource("ShaderMaterial_3txao")
+modulate = Color(0.15294118, 0.16078432, 0.8784314, 1)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -689.0
-offset_top = -634.0
-offset_right = 335.0
-offset_bottom = 214.0
+offset_left = -226.0
+offset_top = -587.0
+offset_right = 621.9999
+offset_bottom = -328.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("10_uv4ns")

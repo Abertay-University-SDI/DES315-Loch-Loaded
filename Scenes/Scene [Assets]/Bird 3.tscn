@@ -1,13 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dexoratjuv12a"]
+[gd_scene load_steps=5 format=3 uid="uid://dexoratjuv12a"]
 
-[ext_resource type="Texture2D" uid="uid://d324klbheq3f6" path="res://Textures/Assets/Others_kit_A.png" id="1_ag872"]
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_daxsm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihoji"]
-atlas = ExtResource("1_ag872")
-region = Rect2(1441, 1573, 57, 67)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3rm"]
+atlas = ExtResource("1_daxsm")
+region = Rect2(709, 3758, 67, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7i2g"]
+atlas = ExtResource("1_daxsm")
+region = Rect2(776, 3758, 67, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_du1i7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m3rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7i2g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
 
 [node name="Bird_3_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_ihoji")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_du1i7")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.35382763
