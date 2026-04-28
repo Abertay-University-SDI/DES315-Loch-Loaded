@@ -1,5 +1,6 @@
 extends Control
 
+@onready var rich_text_label: RichTextLabel = $RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +11,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_visibility_changed() -> void:
+	pass
+	##rich_text_label.scroll_value = 0.0
 
 func _on_back_button_pressed() -> void:
+
 		hide()
 		get_tree().get_nodes_in_group("current_ui").back().show()
