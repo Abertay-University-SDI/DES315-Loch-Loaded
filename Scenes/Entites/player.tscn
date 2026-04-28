@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bptto2mu63nvb" path="res://Sounds/Punch2.wav" id="6_kov73"]
 [ext_resource type="Texture2D" uid="uid://dg48i3rhtshh6" path="res://Textures/Scrap/yoyo.png" id="7_82p5m"]
 [ext_resource type="AudioStream" uid="uid://b0kqvh5284igq" path="res://Sounds/AOE Attack fire.wav" id="9_wooka"]
-[ext_resource type="AudioStream" uid="uid://devfv2oyn6y7f" path="res://Sounds/SoundtrackFinal.wav" id="10_4m0w1"]
+[ext_resource type="AudioStream" uid="uid://p0qrsw6oywhc" path="res://Sounds/All or Nothing.wav" id="10_4m0w1"]
 [ext_resource type="Shader" uid="uid://d0jmnqdfutqhs" path="res://Code/shaders/stun_aura.gdshader" id="10_wqwp5"]
 [ext_resource type="AudioStream" uid="uid://bbq8wc161a7ud" path="res://Sounds/AOE recharge.wav" id="10_x6bub"]
 [ext_resource type="Texture2D" uid="uid://ks5tyu50u1ek" path="res://Textures/white_pixel.png" id="11_7ag56"]
