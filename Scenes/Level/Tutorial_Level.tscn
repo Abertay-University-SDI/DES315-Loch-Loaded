@@ -2098,19 +2098,19 @@ text = "Dash To Hurt that Enemy"
 horizontal_alignment = 1
 
 [node name="blackboard4" type="ColorRect" parent="."]
-offset_left = -880.99994
+offset_left = -911.0
 offset_top = 606.0
-offset_right = -664.99994
+offset_right = -647.0
 offset_bottom = 689.0
 scale = Vector2(0.625, 0.625)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash2" type="Label" parent="."]
 texture_filter = 1
-offset_left = -895.0
-offset_top = 616.00006
-offset_right = -635.0
-offset_bottom = 670.00006
+offset_left = -910.0
+offset_top = 616.0
+offset_right = -650.0
+offset_bottom = 670.0
 scale = Vector2(0.625, 0.625)
 theme = ExtResource("188_htrle")
 text = "Use the 'balconys' & blue
@@ -2118,19 +2118,19 @@ text = "Use the 'balconys' & blue
 horizontal_alignment = 1
 
 [node name="blackboard21" type="ColorRect" parent="."]
-offset_left = -880.99994
-offset_top = 577.0
-offset_right = -664.99994
-offset_bottom = 615.4
+offset_left = -901.00006
+offset_top = 577.00006
+offset_right = -664.1999
+offset_bottom = 615.4001
 scale = Vector2(0.625, 0.625)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash19" type="Label" parent="."]
 texture_filter = 1
-offset_left = -867.0
-offset_top = 581.0
-offset_right = -685.3999
-offset_bottom = 606.6
+offset_left = -893.00006
+offset_top = 583.00006
+offset_right = -681.00006
+offset_bottom = 608.60004
 scale = Vector2(0.625, 0.625)
 theme = ExtResource("188_htrle")
 text = "Press [button] to jump"
@@ -2139,17 +2139,17 @@ horizontal_alignment = 1
 [node name="blackboard19" type="ColorRect" parent="."]
 offset_left = -1218.9995
 offset_top = 583.0
-offset_right = -972.59973
+offset_right = -923.00037
 offset_bottom = 666.0
 scale = Vector2(0.625, 0.625)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash17" type="Label" parent="."]
 texture_filter = 1
-offset_left = -1223.0001
-offset_top = 593.0
-offset_right = -963.0001
-offset_bottom = 647.0
+offset_left = -1213.0
+offset_top = 594.00006
+offset_right = -934.0
+offset_bottom = 648.00006
 scale = Vector2(0.625, 0.625)
 theme = ExtResource("188_htrle")
 text = "To adjust values Press 
@@ -2157,18 +2157,18 @@ text = "To adjust values Press
 horizontal_alignment = 1
 
 [node name="blackboard5" type="ColorRect" parent="."]
-offset_left = 387.0
+offset_left = 370.0
 offset_top = 206.0
-offset_right = 727.0
-offset_bottom = 247.0
+offset_right = 819.1228
+offset_bottom = 244.5965
 scale = Vector2(0.57, 0.57)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash3" type="Label" parent="."]
 texture_filter = 1
-offset_left = 392.0
+offset_left = 376.0
 offset_top = 211.00003
-offset_right = 717.0
+offset_right = 809.0
 offset_bottom = 236.00003
 scale = Vector2(0.57, 0.57)
 theme = ExtResource("188_htrle")
@@ -2176,18 +2176,18 @@ text = "Collect 3 'Spray Cans' to spray a 'billboard'"
 horizontal_alignment = 1
 
 [node name="blackboard7" type="ColorRect" parent="."]
-offset_left = 689.0
-offset_top = 207.0
-offset_right = 1029.0
-offset_bottom = 248.0
+offset_left = 658.00006
+offset_top = 206.0
+offset_right = 1054.3303
+offset_bottom = 247.0
 scale = Vector2(0.545, 0.545)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash5" type="Label" parent="."]
 texture_filter = 1
-offset_left = 693.00006
+offset_left = 664.00006
 offset_top = 211.0
-offset_right = 1018.00006
+offset_right = 1039.0
 offset_bottom = 236.0
 scale = Vector2(0.545, 0.545)
 theme = ExtResource("188_htrle")
@@ -2197,8 +2197,8 @@ horizontal_alignment = 1
 [node name="blackboard6" type="ColorRect" parent="."]
 offset_left = 1058.0
 offset_top = 226.0
-offset_right = 1362.4247
-offset_bottom = 267.0
+offset_right = 1429.6815
+offset_bottom = 264.93805
 scale = Vector2(0.565, 0.565)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
@@ -2214,18 +2214,18 @@ text = "Press [button] twice to 'double jump'"
 horizontal_alignment = 1
 
 [node name="blackboard13" type="ColorRect" parent="."]
-offset_left = 2833.0
+offset_left = 2834.0
 offset_top = 583.0
-offset_right = 3173.0
-offset_bottom = 652.0
+offset_right = 3200.6665
+offset_bottom = 647.1026
 scale = Vector2(0.78, 0.78)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash11" type="Label" parent="."]
 texture_filter = 1
-offset_left = 2845.0
+offset_left = 2846.0
 offset_top = 591.0
-offset_right = 3162.0
+offset_right = 3183.0
 offset_bottom = 640.0
 scale = Vector2(0.78, 0.78)
 theme = ExtResource("188_htrle")
@@ -2236,8 +2236,8 @@ horizontal_alignment = 1
 [node name="blackboard8" type="ColorRect" parent="."]
 offset_left = 3761.0
 offset_top = 558.0
-offset_right = 4101.0
-offset_bottom = 599.0
+offset_right = 4123.044
+offset_bottom = 595.9562
 scale = Vector2(0.685, 0.685)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
@@ -2253,18 +2253,18 @@ text = "Press [button] to 'punch' the Enemy"
 horizontal_alignment = 1
 
 [node name="blackboard15" type="ColorRect" parent="."]
-offset_left = 3380.0
+offset_left = 3358.9998
 offset_top = 564.0
-offset_right = 3720.0
-offset_bottom = 605.0
+offset_right = 3747.3215
+offset_bottom = 601.95624
 scale = Vector2(0.685, 0.685)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash13" type="Label" parent="."]
 texture_filter = 1
-offset_left = 3384.0
+offset_left = 3358.9998
 offset_top = 570.0
-offset_right = 3709.0
+offset_right = 3733.9998
 offset_bottom = 595.0
 scale = Vector2(0.685, 0.685)
 theme = ExtResource("188_htrle")
@@ -2274,8 +2274,8 @@ horizontal_alignment = 1
 [node name="blackboard11" type="ColorRect" parent="."]
 offset_left = 4195.0
 offset_top = 540.0
-offset_right = 4535.0
-offset_bottom = 581.0
+offset_right = 4486.0
+offset_bottom = 570.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash9" type="Label" parent="."]
@@ -2284,15 +2284,16 @@ offset_left = 4207.0
 offset_top = 548.0
 offset_right = 4524.0
 offset_bottom = 573.0
+scale = Vector2(0.735, 0.735)
 theme = ExtResource("188_htrle")
 text = "Press [button] to 'dash' at the Enemy"
 horizontal_alignment = 1
 
 [node name="blackboard14" type="ColorRect" parent="."]
 offset_left = 6687.0
-offset_top = 552.0
-offset_right = 6999.0
-offset_bottom = 593.0
+offset_top = 550.0
+offset_right = 7036.0
+offset_bottom = 591.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash12" type="Label" parent="."]
@@ -2308,8 +2309,8 @@ horizontal_alignment = 1
 [node name="blackboard17" type="ColorRect" parent="."]
 offset_left = 7293.0
 offset_top = 147.0
-offset_right = 7605.0
-offset_bottom = 188.0
+offset_right = 7619.0
+offset_bottom = 182.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash15" type="Label" parent="."]
@@ -2325,8 +2326,8 @@ horizontal_alignment = 1
 [node name="blackboard20" type="ColorRect" parent="."]
 offset_left = 8690.0
 offset_top = 563.0
-offset_right = 9006.0
-offset_bottom = 637.0
+offset_right = 9088.0
+offset_bottom = 626.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash18" type="Label" parent="."]
@@ -2341,30 +2342,29 @@ go to 'Spray Editor' on the 'Main Menu'"
 horizontal_alignment = 1
 
 [node name="blackboard22" type="ColorRect" parent="."]
-offset_left = 9227.0
+offset_left = 9212.0
 offset_top = 581.0
-offset_right = 9359.414
+offset_right = 9363.035
 offset_bottom = 616.86206
 scale = Vector2(1.45, 1.45)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash20" type="Label" parent="."]
 texture_filter = 1
-offset_left = 9235.0
-offset_top = 589.0
-offset_right = 9355.0
-offset_bottom = 616.0
-scale = Vector2(1.45, 1.45)
+offset_left = 9173.0
+offset_top = 593.0
+offset_right = 9385.0
+offset_bottom = 612.6891
+scale = Vector2(1.425, 1.425)
 theme = ExtResource("188_htrle")
-text = "End of Tutorial
-Press [button] to Exit"
+text = "End of Tutorial"
 horizontal_alignment = 1
 
 [node name="blackboard18" type="ColorRect" parent="."]
-offset_left = 7961.0
-offset_top = 439.0
-offset_right = 8173.0
-offset_bottom = 480.0
+offset_left = 8025.0
+offset_top = 444.0
+offset_right = 8110.0
+offset_bottom = 471.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash16" type="Label" parent="."]
@@ -2378,18 +2378,18 @@ text = "WOOOO!!"
 horizontal_alignment = 1
 
 [node name="blackboard16" type="ColorRect" parent="."]
-offset_left = 1632.0
-offset_top = 624.0
-offset_right = 1839.0
-offset_bottom = 665.0
+offset_left = 1603.0
+offset_top = 622.0
+offset_right = 1859.4514
+offset_bottom = 663.0
 scale = Vector2(0.62, 0.62)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash14" type="Label" parent="."]
 texture_filter = 1
-offset_left = 1638.0
+offset_left = 1610.0
 offset_top = 629.0
-offset_right = 1828.0
+offset_right = 1851.0
 offset_bottom = 654.0
 scale = Vector2(0.62, 0.62)
 theme = ExtResource("188_htrle")
@@ -2400,8 +2400,8 @@ horizontal_alignment = 1
 z_index = 225
 offset_left = 2364.0
 offset_top = 625.00006
-offset_right = 2623.6775
-offset_bottom = 714.38715
+offset_right = 2636.5806
+offset_bottom = 702.41925
 scale = Vector2(0.62, 0.62)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
@@ -2421,8 +2421,8 @@ horizontal_alignment = 1
 [node name="blackboard12" type="ColorRect" parent="."]
 offset_left = 4747.0
 offset_top = 540.0
-offset_right = 4982.9014
-offset_bottom = 608.0
+offset_right = 4916.0
+offset_bottom = 586.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash10" type="Label" parent="."]
@@ -2431,41 +2431,42 @@ offset_left = 4753.0
 offset_top = 548.0
 offset_right = 4977.0
 offset_bottom = 597.0
+scale = Vector2(0.645, 0.645)
 theme = ExtResource("188_htrle")
 text = "Jump & Press [button] to
 'ground smash' the Enemy"
 horizontal_alignment = 1
 
 [node name="blackboard9" type="ColorRect" parent="."]
-offset_left = 5823.0
+offset_left = 5827.0
 offset_top = 517.0
-offset_right = 6163.0
+offset_right = 6167.0
 offset_bottom = 558.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash7" type="Label" parent="."]
 texture_filter = 1
-offset_left = 5835.0
-offset_top = 525.0
-offset_right = 6152.0
-offset_bottom = 550.0
+offset_left = 5839.0
+offset_top = 528.0
+offset_right = 6156.0
+offset_bottom = 553.0
 theme = ExtResource("188_htrle")
 text = "Hold [button] to 'aim' the Yoyo"
 horizontal_alignment = 1
 
 [node name="blackboard24" type="ColorRect" parent="."]
-offset_left = 5449.0
+offset_left = 5436.0
 offset_top = 543.0
-offset_right = 5789.0
+offset_right = 5801.0
 offset_bottom = 584.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash22" type="Label" parent="."]
 texture_filter = 1
-offset_left = 5461.0
-offset_top = 551.0
-offset_right = 5778.0
-offset_bottom = 576.0
+offset_left = 5445.0
+offset_top = 553.0
+offset_right = 5791.0
+offset_bottom = 578.0
 theme = ExtResource("188_htrle")
 text = "Pull enemies 'closer' using the Yoyo"
 horizontal_alignment = 1
@@ -2473,19 +2474,19 @@ horizontal_alignment = 1
 [node name="blackboard10" type="ColorRect" parent="."]
 offset_left = 5823.0
 offset_top = 565.0
-offset_right = 6163.0
+offset_right = 6176.0
 offset_bottom = 606.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash8" type="Label" parent="."]
 texture_filter = 1
-offset_left = 5835.0
-offset_top = 573.0
-offset_right = 6152.0
-offset_bottom = 598.0
+offset_left = 5837.0
+offset_top = 575.0
+offset_right = 6164.0
+offset_bottom = 600.0
 theme = ExtResource("188_htrle")
 text = "Press [button] to 'throw' the Yoyo"
 horizontal_alignment = 1
 
 [node name="Charger" parent="." instance=ExtResource("187_fqkqh")]
-position = Vector2(7041, 659)
+position = Vector2(7123, 656)
