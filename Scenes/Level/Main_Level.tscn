@@ -191,7 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_yemep"]
 [ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_8lmdk"]
 [ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_akct4"]
-[ext_resource type="PackedScene" uid="uid://bidaqnvo231c3" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
+[ext_resource type="PackedScene" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -2182,7 +2182,7 @@ position = Vector2(1798, 475)
 scale = Vector2(0.64, 1)
 
 [node name="Beam_1_6" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(1113, 572)
+position = Vector2(1113, 569)
 
 [node name="Beam_1_2" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
 position = Vector2(5202, 228)
@@ -2216,7 +2216,7 @@ scale = Vector2(1.585, 1)
 position = Vector2(7632, -243.00006)
 
 [node name="Beam_1_9" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
-position = Vector2(6909, 315.00006)
+position = Vector2(6909, 313.00006)
 scale = Vector2(1.495, 1)
 
 [node name="Beam_1_4" parent="Beams/Beams [Long]" instance=ExtResource("61_bgf2m")]
@@ -2776,7 +2776,7 @@ position = Vector2(13480.952, 6752.3813)
 scale = Vector2(4.7619047, 4.7619047)
 
 [node name="Lamp_2" parent="Decoration/Lamp Collection" instance=ExtResource("70_uesxb")]
-position = Vector2(8423.809, 2014.2856)
+position = Vector2(8423.809, 2009.5234)
 scale = Vector2(4.7619047, 4.7619047)
 
 [node name="Lamp_3" parent="Decoration/Lamp Collection" instance=ExtResource("70_uesxb")]
