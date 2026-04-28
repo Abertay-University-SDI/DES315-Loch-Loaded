@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dexoratjuv12a"]
+[gd_scene load_steps=5 format=3 uid="uid://bidaqnvo231c3"]
 
-[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_daxsm"]
+[ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_o3add"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8m3rm"]
-atlas = ExtResource("1_daxsm")
+atlas = ExtResource("1_o3add")
 region = Rect2(709, 3758, 67, 75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f7i2g"]
-atlas = ExtResource("1_daxsm")
+atlas = ExtResource("1_o3add")
 region = Rect2(776, 3758, 67, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_du1i7"]
