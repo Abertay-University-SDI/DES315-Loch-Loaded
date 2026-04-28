@@ -14,8 +14,8 @@ config/name="Radical Ramapge"
 run/main_scene="uid://bbw2scq626wau"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0.83569735, 0.08812735, 0.7812011, 1)
-boot_splash/image="uid://mxpxmbu375aj"
-config/icon="uid://bvokxk83ohi37"
+boot_splash/image="uid://diqg703bbdxb5"
+config/icon="uid://mxpxmbu375aj"
 
 [autoload]
 
