@@ -615,9 +615,11 @@ func _throw_yoyo() -> void:
 	var controllerName = Input.get_joy_name(0).to_lower()
 	
 	if (controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1 or 
-	controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or 
-	controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
-	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or controllerName.find("pro controller") != -1):
+	controllerName.find("xinput") != -1 or controllerName.find("playstation") != -1 or 
+	controllerName.find("dualshock") != -1 or controllerName.find("dualsense") != -1 or 
+	controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
+	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or 
+	controllerName.find("pro controller") != -1):
 		var x = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 		var y = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
 		aimDir = Vector2(x,y).normalized()
@@ -784,9 +786,11 @@ func calculate_arrow_angle() -> void:
 	var controllerName = Input.get_joy_name(0).to_lower()
 	
 	if (controllerName.find("xbox") != -1 or controllerName.find("microsoft") != -1 or 
-	controllerName.find("playstation") != -1 or controllerName.find("dualshock") != -1 or 
-	controllerName.find("dualsense") != -1 or controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
-	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or controllerName.find("pro controller") != -1):
+	controllerName.find("xinput") != -1 or controllerName.find("playstation") != -1 or 
+	controllerName.find("dualshock") != -1 or controllerName.find("dualsense") != -1 or 
+	controllerName.find("ps4") != -1 or controllerName.find("ps5") != -1 or
+	controllerName.find("switch") != -1 or controllerName.find("nintendo") != -1 or 
+	controllerName.find("pro controller") != -1):
 		var x = Input.get_joy_axis(0, JOY_AXIS_RIGHT_X)
 		var y = Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
 		aimDir = Vector2(x,y).normalized()

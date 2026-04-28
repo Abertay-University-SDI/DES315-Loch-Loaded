@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://lroniiq8uhfv"]
+[gd_scene load_steps=64 format=3 uid="uid://lroniiq8uhfv"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_45ovo"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_vwtso"]
@@ -57,12 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://6u5aabm33bbc" path="res://Scenes/Scene [Assets]/Scaffolding [Assets]/Scaffolding Structure With Bounds.tscn" id="177_ggaht"]
 [ext_resource type="PackedScene" uid="uid://bfyv8qml70oci" path="res://Scenes/Spray Spots/spray_collectable.tscn" id="184_ng7ob"]
 [ext_resource type="PackedScene" uid="uid://2kui8xij1j7s" path="res://Scenes/Entites/charger.tscn" id="187_fqkqh"]
-[ext_resource type="Texture2D" uid="uid://btempvkl050t3" path="res://Textures/characters/krisNPC.png" id="187_q58mp"]
 [ext_resource type="Theme" uid="uid://d5g5dfw7y1fj" path="res://Resources/clear_text_theme.tres" id="188_htrle"]
-[ext_resource type="Texture2D" uid="uid://dkf4iesbrcgbo" path="res://Textures/characters/laurenceNPC.png" id="188_v6hew"]
-[ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_cnb67"]
-[ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_pfohb"]
-[ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_hc11a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("5_4ekmr")
@@ -1286,7 +1281,7 @@ offset_top = 583.00006
 offset_right = -681.00006
 offset_bottom = 608.60004
 scale = Vector2(0.625, 0.625)
-text = "Press %s to jump"
+text = "Press none to jump"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "jump"
@@ -1308,7 +1303,7 @@ offset_bottom = 648.00006
 scale = Vector2(0.625, 0.625)
 theme = ExtResource("188_htrle")
 text = "To adjust values Press 
-%s and go to 'Settings'"
+none and go to 'Settings'"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "pause"
@@ -1347,7 +1342,7 @@ offset_top = 211.0
 offset_right = 1039.0
 offset_bottom = 236.0
 scale = Vector2(0.545, 0.545)
-text = "Press %s to 'Spray' a 'billboard'"
+text = "Press none to 'Spray' a 'billboard'"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "spray"
@@ -1367,7 +1362,7 @@ offset_top = 231.0
 offset_right = 1349.0001
 offset_bottom = 256.0
 scale = Vector2(0.565, 0.565)
-text = "Press %s twice to 'double jump'"
+text = "Press none twice to 'double jump'"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "jump"
@@ -1407,7 +1402,7 @@ offset_top = 564.0
 offset_right = 4086.0
 offset_bottom = 589.0
 scale = Vector2(0.685, 0.685)
-text = "Press %s to 'punch' the Enemy"
+text = "Press none to 'punch' the Enemy"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "punch"
@@ -1444,7 +1439,7 @@ offset_left = 4207.0
 offset_top = 548.0
 offset_right = 4524.0
 offset_bottom = 573.0
-text = "Press %s to 'dash' at the Enemy"
+text = "Press none to 'dash' at the Enemy"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "dash"
@@ -1462,7 +1457,7 @@ offset_left = 6699.0
 offset_top = 560.0
 offset_right = 6987.0
 offset_bottom = 585.0
-text = "Press %s to 'stun' the Enemy"
+text = "Press none to 'stun' the Enemy"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "stun"
@@ -1553,7 +1548,7 @@ offset_top = 629.0
 offset_right = 1851.0
 offset_bottom = 654.0
 scale = Vector2(0.62, 0.62)
-text = "Press %s to 'slide'"
+text = "Press none to 'slide'"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "crouch"
@@ -1593,7 +1588,7 @@ offset_left = 4753.0
 offset_top = 548.0
 offset_right = 4977.0
 offset_bottom = 597.0
-text = "Jump & Press %s to
+text = "Jump & Press none to
 'ground smash' the Enemy"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
@@ -1612,7 +1607,7 @@ offset_left = 5835.0
 offset_top = 525.0
 offset_right = 6152.0
 offset_bottom = 550.0
-text = "Hold %s to 'aim' the Yoyo"
+text = "Hold none to 'aim' the Yoyo"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "ready yoyo"
@@ -1647,7 +1642,7 @@ offset_left = 5835.0
 offset_top = 573.0
 offset_right = 6152.0
 offset_bottom = 598.0
-text = "Press %s to 'throw' the Yoyo"
+text = "Press none to 'throw' the Yoyo"
 horizontal_alignment = 1
 script = ExtResource("57_847wv")
 action_name = "throw yoyo"
