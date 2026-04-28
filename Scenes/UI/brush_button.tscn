@@ -16,7 +16,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="TextureButton" type="TextureButton"]
-self_modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0)
 z_index = 765
 offset_right = 40.0
 offset_bottom = 40.0
