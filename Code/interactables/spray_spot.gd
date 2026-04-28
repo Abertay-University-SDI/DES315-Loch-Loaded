@@ -34,7 +34,10 @@ func _on_zone_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_in_zone = true
 		playerBody = body
-		label.text = 'Press "%s" to paint' % get_spray_button_text()
+		if playerBody.UI.getSprayValue() >= Global.spray_cans_needed:
+			label.text = 'Press "%s" to paint' % get_spray_button_text()
+		else:
+			label.text = str(int(playerBody.UI.getSprayValue())) + "/" + str(Global.spray_cans_needed) + " spray cans needed"
 		label.show()
 
 func _on_zone_body_exited(body: Node) -> void:
