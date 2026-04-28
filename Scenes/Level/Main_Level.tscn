@@ -1,4 +1,4 @@
-[gd_scene load_steps=197 format=3 uid="uid://djy1tie4hveyy"]
+[gd_scene load_steps=198 format=3 uid="uid://djy1tie4hveyy"]
 
 [ext_resource type="Script" uid="uid://ckqba765878sb" path="res://Code/scene_managers/level.gd" id="1_kch34"]
 [ext_resource type="PackedScene" uid="uid://2n10yfcb8tl1" path="res://Scenes/3D/background.tscn" id="2_x41ir"]
@@ -191,6 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://byq1fe7xqmlog" path="res://Textures/characters/leeNPC.png" id="189_yemep"]
 [ext_resource type="Texture2D" uid="uid://ccxma1235g47l" path="res://Textures/characters/lucyNPC.png" id="190_8lmdk"]
 [ext_resource type="Texture2D" uid="uid://b1egqtvc80ad5" path="res://Textures/characters/peterNPC.png" id="191_akct4"]
+[ext_resource type="PackedScene" uid="uid://bidaqnvo231c3" path="res://Scenes/Scene [Assets]/Bird 4.tscn" id="192_02r0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxng5"]
 shader = ExtResource("7_o2rjp")
@@ -7010,3 +7011,6 @@ texture = ExtResource("190_8lmdk")
 position = Vector2(4044.5, 1284)
 scale = Vector2(0.041, 0.041)
 texture = ExtResource("191_akct4")
+
+[node name="Bird_4_0" parent="." instance=ExtResource("192_02r0p")]
+position = Vector2(-1059.0001, 578)

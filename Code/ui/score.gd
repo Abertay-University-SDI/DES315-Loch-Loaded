@@ -1,6 +1,5 @@
 extends Label
 
-@onready var background_score = $"Background Score"
 @onready var added_score = $Added_Score
 @onready var player: Player = get_parent().get("player")
 
@@ -34,12 +33,12 @@ func add_score(amount: int) -> void:
 
 func update_score_display() -> void:
 	# Display main score
-	if displayed_score <= 0:
+	if displayed_score < 0:
 		text = ""
 	else:
 		text = str(int(displayed_score))
 
-	background_score.visible_characters = background_score.text.length() - text.length()
+	##background_score.visible_characters = background_score.text.length() - text.length()
 
 	# Display added score if there’s value
 	added_score.visible = added_amount > 0 && flying

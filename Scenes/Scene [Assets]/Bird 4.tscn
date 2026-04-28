@@ -1,34 +1,93 @@
-[gd_scene load_steps=5 format=3 uid="uid://bidaqnvo231c3"]
+[gd_scene load_steps=9 format=3 uid="uid://bidaqnvo231c3"]
 
 [ext_resource type="Texture2D" uid="uid://8vs7x25vq4hw" path="res://Textures/Assets/Others_kit_B.png" id="1_o3add"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8m3rm"]
-atlas = ExtResource("1_o3add")
-region = Rect2(709, 3758, 67, 75)
+[sub_resource type="Curve2D" id="Curve2D_o3add"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -119.047615, 95.2381, 0, 0, 0, 0, -85.71429, 61.904762, 0, 0, 0, 0, -61.904762, -9.523809, 0, 0, 0, 0, 38.095238, -171.42857, 0, 0, 0, 0, 123.809525, -209.5238, 0, 0, 0, 0, 204.7619, -233.33333, 0, 0, 0, 0, 319.0476, -233.33333, 0, 0, 0, 0, 414.2857, -180.95238, 0, 0, 0, 0, 471.42856, -33.333332, 0, 0, 0, 0, 447.61905, 52.38095, 0, 0, 0, 0, 409.5238, 100, 0, 0, 0, 0, 357.14285, 142.85715, 0, 0, 0, 0, 290.4762, 180.95238, 0, 0, 0, 0, 233.33333, 204.7619, 0, 0, 0, 0, 133.33333, 195.2381, 0, 0, 0, 0, 76.190475, 195.2381, 0, 0, 0, 0, 28.571428, 161.90475, 0, 0, 0, 0, 0, 71.42857, 0, 0, 0, 0, -23.809525, -14.285714, 0, 0, 0, 0, -76.190475, -166.66667, 0, 0, 0, 0, -114.28571, -223.80952, 0, 0, 0, 0, -195.2381, -233.33333, 0, 0, 0, 0, -295.2381, -219.04762, 0, 0, 0, 0, -347.61905, -200, 0, 0, 0, 0, -385.7143, -147.61905, 0, 0, 0, 0, -400, -71.42857, 0, 0, 0, 0, -357.14285, 4.7619047, 0, 0, 0, 0, -328.5714, 52.38095, 0, 0, 0, 0, -276.19046, 109.52381, 0, 0, 0, 0, -190.4762, 119.047615, 0, 0, 0, 0, -119.047615, 95.2381)
+}
+point_count = 31
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7i2g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ccw"]
 atlas = ExtResource("1_o3add")
-region = Rect2(776, 3758, 67, 75)
+region = Rect2(467, 3716, 80, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umk61"]
+atlas = ExtResource("1_o3add")
+region = Rect2(467, 3791, 80, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_du1i7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8m3rm")
+"texture": SubResource("AtlasTexture_a4ccw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f7i2g")
+"texture": SubResource("AtlasTexture_umk61")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 1.0
 }]
 
-[node name="Bird_3_0" type="Node2D"]
+[sub_resource type="Animation" id="Animation_xni7d"]
+resource_name = "fly"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.933332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_xi5nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ce3jk"]
+_data = {
+&"RESET": SubResource("Animation_xi5nk"),
+&"fly": SubResource("Animation_xni7d")
+}
+
+[node name="Bird_4_0" type="Node2D"]
 scale = Vector2(0.21, 0.21)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_o3add")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-119.047615, 95.2381)
+rotation = -0.7853983
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
+rotation = 0.7086037
 sprite_frames = SubResource("SpriteFrames_du1i7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.35382763
+frame_progress = 0.13659014
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ce3jk")
+}
+autoplay = "fly"
