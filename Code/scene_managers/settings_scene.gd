@@ -153,7 +153,7 @@ func _on_screen_shake_button_pressed() -> void:
 
 func _on_fim_grain_pressed() -> void:
 	Global.setFilmGrainMode(not Global.getFilmGrainMode())
-	filmGrain = not Global.getFilmGrainMode()
+	filmGrain = Global.getFilmGrainMode()
 	if (filmGrainTextRect):
 		if (filmGrain):
 			filmGrainTextRect.show()

@@ -20,10 +20,23 @@ func update_label() -> String:
 		return "none"
 
 	var events = InputMap.action_get_events(action_name)
-	if events.size() > 0:
-		return get_input_text(events[0])
-	else:
+
+	var keyboard_text := ""
+	var controller_text := ""
+
+	for event in events:
+		if event is InputEventKey or event is InputEventMouseButton:
+			keyboard_text = get_input_text(event)
+		elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+			controller_text = get_input_text(event)
+
+	if keyboard_text == "" and controller_text == "":
 		return "Unassigned"
+
+	if keyboard_text != "" and controller_text != "":
+		return keyboard_text + " OR " + controller_text
+	
+	return keyboard_text + controller_text
 
 func get_controller_type(device_id: int) -> int:
 	var controllerName = Input.get_joy_name(device_id).to_lower()
@@ -41,7 +54,7 @@ func get_controller_type(device_id: int) -> int:
 
 func get_input_text(event: InputEvent) -> String:
 	var type = get_controller_type(0)
-	
+
 	if event is InputEventKey:
 		return event.as_text().trim_suffix(" (Physical)")
 	
