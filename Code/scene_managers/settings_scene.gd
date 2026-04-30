@@ -144,16 +144,16 @@ func _on_sound_effect_slider_value_changed(sliderValue: float) -> void:
 	sfxValue = sliderValue
 
 func _on_screen_shake_button_pressed() -> void:
-	Global.setScreenShakeMode(not Global.getScreenShakeMode())
 	screenShake = not Global.getScreenShakeMode()
-	if (Global.getScreenShakeMode()):
+	Global.setScreenShakeMode(screenShake)
+	if (screenShake):
 		screenShakeButton.text = "Screen Shake On"
 	else:
 		screenShakeButton.text = "Screen Shake Off"
 
 func _on_fim_grain_pressed() -> void:
-	Global.setFilmGrainMode(not Global.getFilmGrainMode())
-	filmGrain = Global.getFilmGrainMode()
+	filmGrain = not Global.getFilmGrainMode()
+	Global.setFilmGrainMode(filmGrain)
 	if (filmGrainTextRect):
 		if (filmGrain):
 			filmGrainTextRect.show()
