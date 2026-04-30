@@ -1259,7 +1259,7 @@ texture_filter = 1
 offset_left = -910.0
 offset_top = 616.0
 offset_right = -650.0
-offset_bottom = 670.0
+offset_bottom = 679.0
 scale = Vector2(0.625, 0.625)
 theme = ExtResource("188_htrle")
 text = "Use the 'balconys' & blue
@@ -1371,7 +1371,7 @@ action_name = "jump"
 offset_left = 2834.0
 offset_top = 583.0
 offset_right = 3200.6665
-offset_bottom = 647.1026
+offset_bottom = 670.1795
 scale = Vector2(0.78, 0.78)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
@@ -1429,8 +1429,8 @@ horizontal_alignment = 1
 [node name="blackboard11" type="ColorRect" parent="."]
 offset_left = 4195.0
 offset_top = 540.0
-offset_right = 4486.0
-offset_bottom = 570.0
+offset_right = 4573.0
+offset_bottom = 583.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash9" type="Label" parent="."]
@@ -1534,19 +1534,19 @@ text = "WOOOO!!"
 horizontal_alignment = 1
 
 [node name="blackboard16" type="ColorRect" parent="."]
-offset_left = 1603.0
-offset_top = 622.0
-offset_right = 1859.4514
-offset_bottom = 663.0
+offset_left = 1552.0
+offset_top = 619.0
+offset_right = 1808.4514
+offset_bottom = 660.0
 scale = Vector2(0.62, 0.62)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash14" type="Label" parent="."]
 texture_filter = 1
-offset_left = 1610.0
-offset_top = 629.0
-offset_right = 1851.0
-offset_bottom = 654.0
+offset_left = 1559.0
+offset_top = 626.0
+offset_right = 1800.0
+offset_bottom = 651.0
 scale = Vector2(0.62, 0.62)
 text = "Press none to 'slide'"
 horizontal_alignment = 1
@@ -1558,7 +1558,7 @@ z_index = 225
 offset_left = 2364.0
 offset_top = 625.00006
 offset_right = 2636.5806
-offset_bottom = 702.41925
+offset_bottom = 726.61285
 scale = Vector2(0.62, 0.62)
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
@@ -1578,8 +1578,8 @@ horizontal_alignment = 1
 [node name="blackboard12" type="ColorRect" parent="."]
 offset_left = 4747.0
 offset_top = 540.0
-offset_right = 4916.0
-offset_bottom = 586.0
+offset_right = 5000.0
+offset_bottom = 603.0
 color = Color(0.05, 0.05, 0.05, 0.85490197)
 
 [node name="Dash10" type="Label" parent="."]
